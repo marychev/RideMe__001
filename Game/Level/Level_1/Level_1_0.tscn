@@ -89,7 +89,7 @@ z_index = -1
 position = Vector2( 14600, 1148 )
 
 [node name="BridgeLeft" parent="." instance=ExtResource( 16 )]
-position = Vector2( 245.23, 1218.99 )
+position = Vector2( 200, 1230 )
 
 [node name="BridgeRight" parent="." instance=ExtResource( 17 )]
 position = Vector2( 62.791, 1410.67 )

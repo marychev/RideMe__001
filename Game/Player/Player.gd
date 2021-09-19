@@ -17,14 +17,16 @@ var mass: int = 120
 var GUI: MarginContainer
 var SpeedBar: HBoxContainer
 var PowerBar: HBoxContainer
-
+var GoBtn: TouchScreenButton #  = GUI.get_node("Canvas/HBoxContainer/Bars/PowerBar")	
 onready var AnimPlayer: AnimationPlayer = $AnimationPlayer
 
 
-func __force_init__(gui_scene):
+func force_init(gui_scene):
 	GUI = gui_scene
+	
 	SpeedBar = GUI.get_node("Canvas/HBoxContainer/Bars/SpeedBar")
 	PowerBar = GUI.get_node("Canvas/HBoxContainer/Bars/PowerBar")
+	GoBtn = GUI.get_node("Canvas/ControlContainer/GoBtn")
 	SpeedBar.force_init(self)
 	PowerBar.force_init(self)
 
@@ -55,14 +57,13 @@ func on_jump_process(dt: float):
 
 
 func _on_CollisionDetector_area_entered(area: Area2D) -> void:
-	print('[_on_CollisionDetector_Area_entered]')
-	print(area.name, ': , root: ', area.get_node('../').name)
+	#print('[_on_CollisionDetector_Area_entered]')
+	#print(area.name, ': , root: ', area.get_node('../').name)
 	
 	var root = area.get_node('../')
 	if 'Plank' in root.name:
 		if Input.is_action_pressed("ui_select"):
 			_velocity = calculate_stomp_velocity(_velocity, max_power + power)
-			# root.live -= 1
 
 
 func _on_CollisionDetector_body_entered(body: Node) -> void:
@@ -75,7 +76,7 @@ func _on_CollisionDetector_body_entered(body: Node) -> void:
 func on_detect_collisions_process(delta):
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
-		print('!!! on_detect_collisions_process: ', collision.collider.name)
+		# print('!!! on_detect_collisions_process: ', collision.collider.name)
 		if 'MovingPlatform' in collision.collider.name:
 			collision.collider.move_down(delta, mass)
 
@@ -92,7 +93,7 @@ func _physics_process(delta: float):
 			on_wait_process(delta)
 		else:
 			on_relax_process(delta)
-			# on_detect_collisions_process(delta)
+
 	if Input.is_action_pressed("ui_select"):
 		on_jump_process(delta)
 		

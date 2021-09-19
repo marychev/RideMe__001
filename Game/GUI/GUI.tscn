@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Game/GUI/counter/RMCounter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/GUI/bar/SpeedBar.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Game/GUI/bar/SpeedBar.gd" type="Script" id=3]
+[ext_resource path="res://Game/GUI/controls/assets/btn_go.png" type="Texture" id=3]
 [ext_resource path="res://Game/GUI/bar/PowerBar.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Game/GUI/controls/JumpBtn.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Game/GUI/time/Time.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Game/GUI/controls/assets/btn_stop.png" type="Texture" id=7]
+[ext_resource path="res://Game/GUI/controls/GoBtn.gd" type="Script" id=8]
+[ext_resource path="res://Game/GUI/controls/StopBtn.gd" type="Script" id=9]
 
 [node name="GUI" type="MarginContainer"]
 anchor_right = 1.0
@@ -36,7 +40,6 @@ margin_bottom = 97.0
 
 [node name="SpeedBar" parent="Canvas/HBoxContainer/Bars" instance=ExtResource( 2 )]
 margin_right = 565.0
-script = ExtResource( 3 )
 
 [node name="PowerBar" parent="Canvas/HBoxContainer/Bars" instance=ExtResource( 4 )]
 margin_top = 57.0
@@ -53,3 +56,33 @@ margin_bottom = 97.0
 [node name="RMCounter" parent="Canvas/HBoxContainer/Counters" instance=ExtResource( 1 )]
 margin_right = 100.0
 margin_bottom = 97.0
+
+[node name="ControlContainer" type="HBoxContainer" parent="Canvas"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -149.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="JumpBtn" parent="Canvas/ControlContainer" instance=ExtResource( 5 )]
+position = Vector2( 152.479, 12.4504 )
+rotation = 3.14159
+scale = Vector2( 0.698289, -0.698289 )
+
+[node name="StopBtn" type="TouchScreenButton" parent="Canvas/ControlContainer"]
+modulate = Color( 1, 1, 1, 0.556863 )
+position = Vector2( 1.88687, -151.662 )
+scale = Vector2( 0.532235, 0.532235 )
+normal = ExtResource( 7 )
+action = "ui_left"
+script = ExtResource( 9 )
+
+[node name="GoBtn" type="TouchScreenButton" parent="Canvas/ControlContainer"]
+modulate = Color( 1, 1, 1, 0.627451 )
+position = Vector2( 1170.3, -17.6408 )
+scale = Vector2( 1.11131, 1.02626 )
+normal = ExtResource( 3 )
+action = "ui_right"
+script = ExtResource( 8 )

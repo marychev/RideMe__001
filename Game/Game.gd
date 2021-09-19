@@ -12,7 +12,7 @@ onready var Time: VBoxContainer = GUI.get_node("Canvas/HBoxContainer/Time")
 
 func _ready():
 	force_init_objects_to('RoadBody', Player, RoadSet)
-	Player.__force_init__(GUI)
+	Player.force_init(GUI)
 	force_init_objects_to('RM', GUI, Level_I_J)
 
 
