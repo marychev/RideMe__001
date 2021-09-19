@@ -15,15 +15,10 @@ anchor_right = 0.0
 margin_right = 1371.0
 margin_bottom = 86.0
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 0, 1000 )
-z_index = 1
-gravity = 42.0
-speed = Vector2( 0, 800 )
-max_speed = 600.0
-power = 400.0
-max_power = 500.0
-
 [node name="RoadSet" parent="." instance=ExtResource( 3 )]
 
 [node name="Level_1" parent="." instance=ExtResource( 4 )]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1000, -1000 )
+z_index = 1

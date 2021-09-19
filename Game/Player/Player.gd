@@ -106,16 +106,16 @@ func _physics_process(delta: float):
 # calculation
 
 func calculate_move_velocity(
-	linear_velocity: Vector2, direction: Vector2, speed: Vector2,
+	linear_velocity: Vector2, direction: Vector2, _speed: Vector2,
 	is_jump_interrupted: bool
 	) -> Vector2:
 	
 	var out: = linear_velocity
-	out.x = speed.x  # * direction.x ## убивает релах
+	out.x = _speed.x  # * direction.x ## убивает релах
 	out.y += gravity + get_physics_process_delta_time()
 	
 	if direction.y == -1.0:
-		out.y = speed.y * direction.y
+		out.y = _speed.y * direction.y
 		
 	if is_jump_interrupted:
 		out.y = 0.0
@@ -140,12 +140,14 @@ func get_direction() -> Vector2:
 
 func set_power(val):
 	power = positive_max_value(val, max_power)
-	PowerBar.set_progress_player()
+	if PowerBar:
+		PowerBar.set_progress_player()
 
 
 func set_speed(val_x = null):
 	if val_x:
 		speed.x = positive_max_value(val_x, max_speed)
+	if SpeedBar:
 		SpeedBar.set_progress_player()
 
 

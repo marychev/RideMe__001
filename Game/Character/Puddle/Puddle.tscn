@@ -25,4 +25,4 @@ position = Vector2( 60.343, 30.9518 )
 rotation = 1.70199
 shape = SubResource( 1 )
 
-[connection signal="body_entered" from="." to="." method="_on_Puddle_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
