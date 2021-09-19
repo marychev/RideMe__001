@@ -1,0 +1,77 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "Game",
+"language": "GDScript",
+"path": "res://Game/Game.gd"
+}, {
+"base": "Area2D",
+"class": "Grass",
+"language": "GDScript",
+"path": "res://Game/Character/Grass/Grass.gd"
+}, {
+"base": "RigidBody2D",
+"class": "MovingPlatform",
+"language": "GDScript",
+"path": "res://Game/Character/MovingPanel/MovingPlatform.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Game/Player/Player.gd"
+}, {
+"base": "Area2D",
+"class": "RM",
+"language": "GDScript",
+"path": "res://Game/Character/RM/RM.gd"
+}, {
+"base": "Reference",
+"class": "Time",
+"language": "GDScript",
+"path": "res://Game/GUI/time/Time.gd"
+} ]
+_global_script_class_icons={
+"Game": "",
+"Grass": "",
+"MovingPlatform": "",
+"Player": "",
+"RM": "",
+"Time": ""
+}
+
+[application]
+
+config/name="RideMe"
+run/main_scene="res://SplashScreen/SplashScreen.tscn"
+config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1366
+window/size/height=768
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="planks"
+2d_physics/layer_3="rms"
+2d_physics/layer_4="road"
+2d_physics/layer_5="moving_panels"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+2d/default_gravity=100
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

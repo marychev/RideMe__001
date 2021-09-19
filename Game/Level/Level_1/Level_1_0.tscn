@@ -1,0 +1,160 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Game/Character/Lamp/Lamp.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Character/RM/RM.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game/Character/Puddle/Puddle.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Game/Character/Rock/StaticRock.gd" type="Script" id=4]
+[ext_resource path="res://Game/Character/RM/RM.gd" type="Script" id=5]
+[ext_resource path="res://Game/Character/Plank/Plank.gd" type="Script" id=6]
+[ext_resource path="res://Game/Character/Puddle/Puddle.gd" type="Script" id=7]
+[ext_resource path="res://Game/Character/Rock/StaticRock.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Game/Character/MovingPanel/MovingPlatform.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Game/Character/Plank/Plank.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Game/Character/Grass/Grass.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Game/Character/Grass/Grass.gd" type="Script" id=12]
+[ext_resource path="res://Game/Character/MovingPanel/MovingPlatform.gd" type="Script" id=13]
+[ext_resource path="res://Game/Character/MovingPanel/MovingPanel.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Game/Character/Stairs/StaticStairs.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Game/Character/Bridge/BridgeLeft.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Game/Character/Bridge/BridgeRight.tscn" type="PackedScene" id=17]
+
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 0.02
+rough = true
+
+[node name="Level_1_0" type="Node"]
+
+[node name="StaticRock" type="StaticBody2D" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1532, 1340 )
+physics_material_override = SubResource( 1 )
+script = ExtResource( 4 )
+
+[node name="StaticRock2" type="StaticBody2D" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2388, 1316 )
+physics_material_override = SubResource( 1 )
+script = ExtResource( 4 )
+
+[node name="RM" type="Area2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2572, 1152 )
+input_pickable = false
+collision_layer = 4
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Puddle" type="Area2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3648.93, 1354 )
+rotation = -0.427762
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Lamp" type="Area2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 4746, 1074 )
+z_index = -1
+
+[node name="StaticRock3" type="StaticBody2D" parent="." instance=ExtResource( 8 )]
+position = Vector2( 5706, 1314 )
+physics_material_override = SubResource( 1 )
+script = ExtResource( 4 )
+
+[node name="StaticRock4" type="StaticBody2D" parent="." instance=ExtResource( 8 )]
+position = Vector2( 6070, 1306 )
+physics_material_override = SubResource( 1 )
+script = ExtResource( 4 )
+
+[node name="Plank" type="RigidBody2D" parent="." instance=ExtResource( 10 )]
+position = Vector2( 5768, 1250 )
+collision_layer = 2
+mass = 120.0
+gravity_scale = 5.0
+sleeping = true
+linear_damp = 10.0
+angular_damp = 5.0
+script = ExtResource( 6 )
+
+[node name="StaticStairs" type="StaticBody2D" parent="." instance=ExtResource( 15 )]
+position = Vector2( 6906, 1234 )
+rotation = -0.0711441
+scale = Vector2( 1.30184, 1.16259 )
+
+[node name="Plank2" type="RigidBody2D" parent="." instance=ExtResource( 10 )]
+position = Vector2( 7826.46, 1188.11 )
+collision_layer = 2
+mass = 120.0
+gravity_scale = 5.0
+sleeping = true
+linear_damp = 10.0
+angular_damp = 5.0
+script = ExtResource( 6 )
+
+[node name="RM2" type="Area2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 8401.77, 1039.82 )
+input_pickable = false
+collision_layer = 4
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Lamp2" type="Area2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 9688, 1074 )
+z_index = -1
+
+[node name="MovingPlatform" type="RigidBody2D" parent="." instance=ExtResource( 9 )]
+position = Vector2( 10400, 1300 )
+collision_layer = 16
+mode = 3
+mass = 10.0
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MovingPanel2" type="Node2D" parent="." instance=ExtResource( 14 )]
+position = Vector2( 10917.6, 1190 )
+
+[node name="MovingPanel3" type="Node2D" parent="." instance=ExtResource( 14 )]
+position = Vector2( 11480, 1080 )
+
+[node name="MovingPanel4" type="Node2D" parent="." instance=ExtResource( 14 )]
+position = Vector2( 11980, 960 )
+
+[node name="StaticRock5" type="StaticBody2D" parent="." instance=ExtResource( 8 )]
+position = Vector2( 11313.1, 1288.11 )
+physics_material_override = SubResource( 1 )
+script = ExtResource( 4 )
+
+[node name="Grass" type="Area2D" parent="." instance=ExtResource( 11 )]
+position = Vector2( 12400, 1340 )
+script = ExtResource( 12 )
+
+[node name="Lamp3" type="Area2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 14260, 1080 )
+z_index = -1
+
+[node name="Lamp4" type="Area2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 14600, 1148 )
+
+[node name="BridgeLeft" type="StaticBody2D" parent="." instance=ExtResource( 16 )]
+position = Vector2( 245.23, 1218.99 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="BridgeRight" type="StaticBody2D" parent="." instance=ExtResource( 17 )]
+position = Vector2( 62.791, 1410.67 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MovingPanel5" type="Node2D" parent="." instance=ExtResource( 14 )]
+position = Vector2( 18120, 1460 )
+
+[connection signal="body_entered" from="RM" to="RM" method="_on_body_entered"]
+[connection signal="body_entered" from="Puddle" to="Puddle" method="_on_Puddle_body_entered"]
+[connection signal="body_entered" from="RM2" to="RM2" method="_on_body_entered"]
+[connection signal="body_entered" from="MovingPlatform" to="MovingPlatform" method="_on_MovingPlatform_body_entered"]
+[connection signal="body_entered" from="Grass" to="Grass" method="_on_Grass_body_entered"]

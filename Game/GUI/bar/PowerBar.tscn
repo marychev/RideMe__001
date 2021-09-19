@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Game/GUI/bar/Bar.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/GUI/assets/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Game/GUI/bar/PowerBar.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 18
+font_data = ExtResource( 2 )
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/energy_bar_bg.png-e558b2ffdd58f2e6d766099c7be4f083.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/energy_bar_fill.png-d14816f49705e0112d19ba3064ba39a3.stex"
+
+[node name="PowerBar" instance=ExtResource( 1 )]
+margin_bottom = 40.0
+script = ExtResource( 3 )
+
+[node name="Count" parent="." index="0"]
+margin_bottom = 40.0
+
+[node name="Background" parent="Count" index="0"]
+margin_bottom = 40.0
+
+[node name="Label" parent="Count/Background" index="1"]
+text = "Power:"
+
+[node name="Value" parent="Count/Background" index="2"]
+custom_fonts/font = SubResource( 1 )
+text = "0.00"
+
+[node name="Gauge" parent="." index="1"]
+margin_right = 417.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 80, 0 )
+texture_under = SubResource( 2 )
+texture_progress = SubResource( 3 )

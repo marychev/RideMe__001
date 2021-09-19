@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Game/Character/Rock/assets/rock.png" type="Texture" id=1]
+[ext_resource path="res://Game/Character/Rock/StaticRock.gd" type="Script" id=2]
+
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 0.02
+rough = true
+
+[node name="StaticRock" type="StaticBody2D"]
+position = Vector2( 782.472, 514.411 )
+physics_material_override = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -97.5807, -43.3951 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 42.7318, 32.6484 )
+rotation = 6.28319
+scale = Vector2( 5.7, 2.6 )
+polygon = PoolVector2Array( 4.12254, -28.1343, 10.3186, -26.5173, 14.1543, -21.3426, 15.9246, -13.5805, 16.6782, 9.63602, -23.9946, 13.041, -23.981, 0.812164, -7.67949, -24.2532 )
