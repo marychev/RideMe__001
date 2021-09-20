@@ -1,16 +1,13 @@
-extends TouchScreenButton
+extends "res://Game/GUI/controls/ControlBtn.gd"
+class_name StopBtn
 
 
-func on_pressed() -> void:
-	modulate.a = 1
-	Input.action_press("ui_left")
+func on_stop_process(dt: float) -> void:
+	on_pressed()
 	
-
-func on_released() -> void:
-	modulate.a = 0.8
-	Input.action_release("ui_left")
+	AnimPlayer.stop()
+	Player.set_speed(Player.speed.x - (dt * Player.max_power))
+	Player.set_power(Player.power + (dt * Player.max_power))
 	
-
-func _ready() -> void:
-	connect("pressed", self, "on_pressed")
-	connect("released", self, "on_released")
+func on_stop_released() -> void:
+	on_released()

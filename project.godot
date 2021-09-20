@@ -9,15 +9,25 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "TouchScreenButton",
+"class": "ControlBtn",
+"language": "GDScript",
+"path": "res://Game/GUI/controls/ControlBtn.gd"
+}, {
 "base": "Node2D",
 "class": "Game",
 "language": "GDScript",
 "path": "res://Game/Game.gd"
 }, {
-"base": "Area2D",
-"class": "Grass",
+"base": "TouchScreenButton",
+"class": "GoBtn",
 "language": "GDScript",
-"path": "res://Game/Character/Grass/Grass.gd"
+"path": "res://Game/GUI/controls/GoBtn.gd"
+}, {
+"base": "TouchScreenButton",
+"class": "JumpBtn",
+"language": "GDScript",
+"path": "res://Game/GUI/controls/JumpBtn.gd"
 }, {
 "base": "RigidBody2D",
 "class": "MovingPlatform",
@@ -34,17 +44,25 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Game/Character/RM/RM.gd"
 }, {
+"base": "TouchScreenButton",
+"class": "StopBtn",
+"language": "GDScript",
+"path": "res://Game/GUI/controls/StopBtn.gd"
+}, {
 "base": "Reference",
 "class": "Time",
 "language": "GDScript",
 "path": "res://Game/GUI/time/Time.gd"
 } ]
 _global_script_class_icons={
+"ControlBtn": "",
 "Game": "",
-"Grass": "",
+"GoBtn": "",
+"JumpBtn": "",
 "MovingPlatform": "",
 "Player": "",
 "RM": "",
+"StopBtn": "",
 "Time": ""
 }
 

@@ -7,3 +7,7 @@ func _on_body_entered(body):
 		body.set_power(body.power / 2)
 		get_tree().queue_delete(self)
 
+
+
+func _on_VisibilityNotifier_screen_exited() -> void:
+	queue_free()

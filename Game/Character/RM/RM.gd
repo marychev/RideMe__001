@@ -32,3 +32,7 @@ func set_value_from_label(increment: int=0):
 	value = int(RMValue.text)
 	value += increment
 	RMValue.text = str(value)
+
+
+func _on_VisibilityNotifier_screen_exited() -> void:
+	queue_free()

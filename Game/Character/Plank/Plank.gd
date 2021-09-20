@@ -23,3 +23,7 @@ func die():
 	$Collision.disabled = true
 	queue_free()
 	
+
+
+func _on_VisibilityEnabler2D_screen_exited() -> void:
+	queue_free()

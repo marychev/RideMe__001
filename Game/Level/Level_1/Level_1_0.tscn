@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Game/Character/Lamp/Lamp.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Character/RM/RM.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://Game/Character/MovingPanel/MovingPlatform.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Game/Character/Plank/Plank.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Game/Character/Grass/Grass.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Game/Character/MovingPanel/MovingPanel.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Game/Character/Stairs/StaticStairs.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Game/Character/Bridge/BridgeLeft.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Game/Character/Bridge/BridgeRight.tscn" type="PackedScene" id=17]
@@ -56,7 +55,7 @@ scale = Vector2( 1.30184, 1.16259 )
 position = Vector2( 7826.46, 1188.11 )
 
 [node name="RM2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 8401.77, 1039.82 )
+position = Vector2( 8189.77, 1047.82 )
 
 [node name="Lamp2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 9688, 1074 )
@@ -65,24 +64,27 @@ z_index = -1
 [node name="MovingPlatform" parent="." instance=ExtResource( 9 )]
 position = Vector2( 10400, 1300 )
 
-[node name="MovingPanel2" parent="." instance=ExtResource( 14 )]
-position = Vector2( 10917.6, 1190 )
+[node name="MovingPlatform2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 10900, 1190 )
 
-[node name="MovingPanel3" parent="." instance=ExtResource( 14 )]
-position = Vector2( 11480, 1080 )
+[node name="MovingPlatform3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 11420, 1080 )
 
-[node name="MovingPanel4" parent="." instance=ExtResource( 14 )]
-position = Vector2( 11980, 960 )
+[node name="MovingPlatform4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 11940, 980 )
 
 [node name="StaticRock5" parent="." instance=ExtResource( 8 )]
 position = Vector2( 11313.1, 1288.11 )
 physics_material_override = SubResource( 1 )
 
 [node name="Grass" parent="." instance=ExtResource( 11 )]
-position = Vector2( 12400, 1340 )
+position = Vector2( 12420, 1250 )
+
+[node name="Plank3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 12400, 1095 )
 
 [node name="Lamp3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 14260, 1080 )
+position = Vector2( 14350, 1080 )
 z_index = -1
 
 [node name="Lamp4" parent="." instance=ExtResource( 1 )]
@@ -90,9 +92,10 @@ position = Vector2( 14600, 1148 )
 
 [node name="BridgeLeft" parent="." instance=ExtResource( 16 )]
 position = Vector2( 200, 1230 )
+z_index = -1
 
 [node name="BridgeRight" parent="." instance=ExtResource( 17 )]
 position = Vector2( 62.791, 1410.67 )
 
-[node name="MovingPanel5" parent="." instance=ExtResource( 14 )]
+[node name="MovingPlatform5" parent="." instance=ExtResource( 9 )]
 position = Vector2( 18120, 1460 )

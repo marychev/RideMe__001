@@ -8,18 +8,26 @@ friction = 0.02
 rough = true
 
 [node name="StaticRock" type="StaticBody2D"]
-position = Vector2( 782.472, 514.411 )
+position = Vector2( 140, 70 )
 physics_material_override = SubResource( 1 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -97.5807, -43.3951 )
+position = Vector2( -139.765, -71.3524 )
 scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 1 )
 centered = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2( 42.7318, 32.6484 )
 rotation = 6.28319
 scale = Vector2( 5.7, 2.6 )
 polygon = PoolVector2Array( 4.12254, -28.1343, 10.3186, -26.5173, 14.1543, -21.3426, 15.9246, -13.5805, 16.6782, 9.63602, -23.9946, 13.041, -23.981, 0.812164, -7.67949, -24.2532 )
+
+[node name="VisibilityNotifier" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 1462.67, -11.1434 )
+scale = Vector2( 12, 5.35 )
+
+[connection signal="screen_exited" from="VisibilityNotifier" to="." method="_on_VisibilityNotifier2D_screen_exited"]

@@ -24,4 +24,11 @@ rotation = -0.0214428
 scale = Vector2( 1.01057, 0.832519 )
 shape = SubResource( 1 )
 
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+position = Vector2( -0.594606, -0.594607 )
+scale = Vector2( 16.5191, 3.79464 )
+process_parent = true
+physics_process_parent = true
+
 [connection signal="body_entered" from="." to="." method="_on_MovingPlatform_body_entered"]
+[connection signal="screen_exited" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_exited"]
