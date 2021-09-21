@@ -5,8 +5,7 @@
 
 [node name="JumpBtn" type="TouchScreenButton"]
 modulate = Color( 1, 1, 1, 0.556863 )
-position = Vector2( 1361.02, 4.94855 )
-scale = Vector2( -0.783145, 0.783145 )
+scale = Vector2( 0.75, 0.75 )
 normal = ExtResource( 1 )
 action = "ui_select"
 script = ExtResource( 2 )

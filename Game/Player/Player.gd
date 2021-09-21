@@ -19,6 +19,7 @@ var PowerBar: HBoxContainer
 var JumpBtn: TouchScreenButton
 var GoBtn: TouchScreenButton
 var StopBtn: TouchScreenButton
+var last_collision_name: = ""
 
 onready var speed: = Vector2(10.0, 800.0) 
 onready var AnimPlayer: AnimationPlayer = $AnimationPlayer
@@ -40,7 +41,7 @@ func __force_init__(gui_scene):
 	
 
 func _on_CollisionDetector_area_entered(area: Area2D) -> void:
-	#print('[_on_CollisionDetector_Area_entered]')
+	print('[_on_CollisionDetector_Area_entered]', area.name)
 	#print(area.name, ': , root: ', area.get_node('../').name)
 	var root = area.get_node('../')
 	
@@ -54,15 +55,17 @@ func _on_CollisionDetector_body_entered(body: Node) -> void:
 	if 'MovingPlatform' in body.name:
 		AnimPlayer.stop()
 		body.move_down(get_physics_process_delta_time(), mass)
+	
 
 
 func on_detect_collisions_process(delta):
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
-		# print('!!! on_detect_collisions_process: ', collision.collider.name)
+		
 		if 'MovingPlatform' in collision.collider.name:
 			collision.collider.move_down(delta, mass)
-
+		elif 'StaticRock' in collision.collider.name:
+			die_from(collision.collider.name)
 
 # Processes
 
@@ -148,3 +151,15 @@ func positive_max_value(value, max_value):
 		return max_value
 	else:
 		return value
+
+
+func die_from(collision_name: String) -> void:
+	if last_collision_name != collision_name:
+		PlayerData.lives -= 1
+		last_collision_name = collision_name
+	die()
+
+
+func die() -> void:
+	if PlayerData.lives <= 0:
+		queue_free()

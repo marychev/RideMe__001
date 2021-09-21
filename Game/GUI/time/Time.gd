@@ -27,10 +27,18 @@ func timer_format():
 
 
 func player_format():
+	var vx = -8.8
+	var vy = -8.8
+	var px = -8.8
+	var py = -8.8
+	
+	if not('Deleted Object' in str(PlayerScn)):
+		vx = PlayerScn._velocity.x 
+		vy = PlayerScn._velocity.y
+		px = PlayerScn.position.x
+		py = PlayerScn.position.y
+		
 	return """
 	Velocity: %d, %d
 	Position: %d, %d
-	""" % [
-		PlayerScn._velocity.x, PlayerScn._velocity.y,
-		PlayerScn.position.x, PlayerScn.position.y,
-	]
+	""" % [vx, vy, px, py]

@@ -5,8 +5,7 @@
 
 [node name="GoBtn" type="TouchScreenButton"]
 modulate = Color( 1, 1, 1, 0.627451 )
-position = Vector2( 1170.3, -17.6408 )
-scale = Vector2( 1.11131, 1.02626 )
+scale = Vector2( 1.2, 1.1 )
 normal = ExtResource( 2 )
 action = "ui_right"
 script = ExtResource( 1 )

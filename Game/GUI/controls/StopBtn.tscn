@@ -5,8 +5,7 @@
 
 [node name="StopBtn" type="TouchScreenButton"]
 modulate = Color( 1, 1, 1, 0.556863 )
-position = Vector2( 1.88687, -151.662 )
-scale = Vector2( 0.532235, 0.532235 )
+scale = Vector2( 0.6, 0.6 )
 normal = ExtResource( 2 )
 action = "ui_left"
 script = ExtResource( 1 )
