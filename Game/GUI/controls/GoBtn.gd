@@ -15,4 +15,4 @@ func on_relax_process(dt: float):
 	
 	AnimPlayer.play("relax")
 	Player.set_power(Player.power + dt * Player.max_power/2)
-	Player.set_speed(Player.speed.x - dt * (Player.max_power/2))
+	Player.set_speed(Player.speed.x - dt * (Player.max_power))

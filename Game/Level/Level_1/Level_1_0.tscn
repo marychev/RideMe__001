@@ -18,11 +18,11 @@ rough = true
 [node name="Level_1_0" type="Node"]
 
 [node name="StaticRock" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1532, 1340 )
+position = Vector2( 1532, 1360 )
 physics_material_override = SubResource( 1 )
 
 [node name="StaticRock2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 2388, 1316 )
+position = Vector2( 2388, 1345 )
 physics_material_override = SubResource( 1 )
 
 [node name="RM" parent="." instance=ExtResource( 2 )]
@@ -36,15 +36,15 @@ position = Vector2( 4746, 1074 )
 z_index = -1
 
 [node name="StaticRock3" parent="." instance=ExtResource( 8 )]
-position = Vector2( 5706, 1314 )
+position = Vector2( 5706, 1350 )
 physics_material_override = SubResource( 1 )
 
 [node name="StaticRock4" parent="." instance=ExtResource( 8 )]
-position = Vector2( 6070, 1306 )
+position = Vector2( 6070, 1345 )
 physics_material_override = SubResource( 1 )
 
 [node name="Plank" parent="." instance=ExtResource( 10 )]
-position = Vector2( 5768, 1250 )
+position = Vector2( 5727.35, 1250 )
 
 [node name="StaticStairs" parent="." instance=ExtResource( 15 )]
 position = Vector2( 6906, 1234 )
@@ -74,14 +74,14 @@ position = Vector2( 11420, 1080 )
 position = Vector2( 11940, 980 )
 
 [node name="StaticRock5" parent="." instance=ExtResource( 8 )]
-position = Vector2( 11313.1, 1288.11 )
+position = Vector2( 11313.1, 1350 )
 physics_material_override = SubResource( 1 )
 
 [node name="Grass" parent="." instance=ExtResource( 11 )]
-position = Vector2( 12420, 1250 )
+position = Vector2( 12650, 1260 )
 
 [node name="Plank3" parent="." instance=ExtResource( 10 )]
-position = Vector2( 12400, 1095 )
+position = Vector2( 12400, 940 )
 
 [node name="Lamp3" parent="." instance=ExtResource( 1 )]
 position = Vector2( 14350, 1080 )

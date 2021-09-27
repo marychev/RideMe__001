@@ -4,7 +4,7 @@ signal score_updated
 signal lives_updated
 
 var score: = 0 setget set_score
-var lives: = 2 setget set_lives
+var lives: = 100 setget set_lives
 
 func set_score(value: int) -> void:
 	score = value

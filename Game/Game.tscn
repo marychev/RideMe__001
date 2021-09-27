@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Game/Game.gd" type="Script" id=1]
 [ext_resource path="res://Game/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Game/Road/RoadSet.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Game/Level/Level_1/Level_1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Game/Level/Background/Background.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Game/GUI/GUI.tscn" type="PackedScene" id=8]
 
 [node name="Game" type="Node2D"]
@@ -18,12 +19,16 @@ margin_top = -794.0
 margin_right = 1290.0
 margin_bottom = -30.0
 
+[node name="Background" parent="." instance=ExtResource( 5 )]
+
 [node name="RoadSet" parent="." instance=ExtResource( 3 )]
 
 [node name="Level_1" parent="." instance=ExtResource( 4 )]
+position = Vector2( -47.877, 2.51978 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 4340.56, 237.91 )
-max_speed = 550.0
-power = 500.0
-max_power = 700.0
+position = Vector2( 0, -190.273 )
+z_index = 1
+max_speed = 700.0
+power = 600.0
+max_power = 600.0

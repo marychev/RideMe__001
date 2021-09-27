@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Game/Level/assets/mountains.png" type="Texture" id=1]
+[ext_resource path="res://Game/Level/assets/sky.png" type="Texture" id=2]
+[ext_resource path="res://Game/Level/assets/cloud.png" type="Texture" id=3]
+
+[node name="Background" type="ParallaxBackground"]
+
+[node name="sky" type="Sprite" parent="."]
+position = Vector2( 691.993, 333.23 )
+scale = Vector2( 1.86133, 3.11944 )
+texture = ExtResource( 2 )
+
+[node name="mountains" type="Sprite" parent="."]
+position = Vector2( 690.317, 380.559 )
+scale = Vector2( 1.86569, 1.88323 )
+texture = ExtResource( 1 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2( 2000, 0 )
+
+[node name="cloud" type="Sprite" parent="ParallaxLayer"]
+position = Vector2( 53.5285, 694.86 )
+scale = Vector2( 0.589194, 0.589195 )
+texture = ExtResource( 3 )
+
+[node name="cloud2" type="Sprite" parent="ParallaxLayer"]
+position = Vector2( 1313.97, 746.082 )
+scale = Vector2( 0.744075, 0.744075 )
+texture = ExtResource( 3 )
