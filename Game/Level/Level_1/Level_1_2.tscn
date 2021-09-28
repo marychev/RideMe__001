@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Game/Character/Rock/StaticRock.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Character/MovingPanel/MovingPlatform.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Game/Character/Plank/Plank.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Game/Character/Crossroads/Crossroads.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Game/Character/Grass/Grass.tscn" type="PackedScene" id=5]
 
 [node name="Level_1_2" type="Node"]
 
@@ -19,44 +20,83 @@ position = Vector2( 39297.3, 1273.86 )
 [node name="MovingPlatform8" parent="." instance=ExtResource( 2 )]
 position = Vector2( 39661.2, 1129.49 )
 
-[node name="Plank4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 33912.5, 1143.91 )
-
 [node name="MovingPlatform9" parent="." instance=ExtResource( 2 )]
-position = Vector2( 40144.2, 1063.79 )
-
-[node name="Plank5" parent="." instance=ExtResource( 3 )]
-position = Vector2( 34339.8, 1096.36 )
+position = Vector2( 40150, 1063.79 )
 
 [node name="MovingPlatform10" parent="." instance=ExtResource( 2 )]
-position = Vector2( 40497.4, 1267.8 )
-
-[node name="Plank6" parent="." instance=ExtResource( 3 )]
-position = Vector2( 34846.2, 1218.55 )
+position = Vector2( 40560, 1260 )
 
 [node name="MovingPlatform11" parent="." instance=ExtResource( 2 )]
-position = Vector2( 40857.4, 1118.47 )
-
-[node name="Plank7" parent="." instance=ExtResource( 3 )]
-position = Vector2( 35398.2, 1138.21 )
+position = Vector2( 40980, 1160 )
 
 [node name="MovingPlatform12" parent="." instance=ExtResource( 2 )]
-position = Vector2( 41422.1, 1120.58 )
-
-[node name="Plank8" parent="." instance=ExtResource( 3 )]
-position = Vector2( 35856.1, 1043.94 )
-
-[node name="MovingPlatform13" parent="." instance=ExtResource( 2 )]
-position = Vector2( 43406.5, 1124.24 )
+position = Vector2( 41440, 1120.58 )
 
 [node name="MovingPlatform14" parent="." instance=ExtResource( 2 )]
 position = Vector2( 41931.5, 1122.54 )
 
-[node name="MovingPlatform15" parent="." instance=ExtResource( 2 )]
-position = Vector2( 44213.7, 1236.32 )
+[node name="Plank4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 42097.9, 1029.65 )
+
+[node name="Plank5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 42432.7, 1004.34 )
+
+[node name="Plank6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 42771.5, 986.185 )
+
+[node name="Plank7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 43104.5, 979.678 )
+
+[node name="Plank8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 43429.9, 1011.38 )
 
 [node name="Plank9" parent="." instance=ExtResource( 3 )]
-position = Vector2( 36292.9, 1239.01 )
+position = Vector2( 42165.3, 1081.63 )
+
+[node name="Plank10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 42520, 1063.14 )
+
+[node name="Plank11" parent="." instance=ExtResource( 3 )]
+position = Vector2( 42878.1, 1046.18 )
+
+[node name="Plank12" parent="." instance=ExtResource( 3 )]
+position = Vector2( 43240.5, 1065.25 )
+
+[node name="Plank13" parent="." instance=ExtResource( 3 )]
+position = Vector2( 43412.1, 1122.47 )
+
+[node name="Plank14" parent="." instance=ExtResource( 3 )]
+position = Vector2( 42115.3, 1118.23 )
+
+[node name="Plank15" parent="." instance=ExtResource( 3 )]
+position = Vector2( 42439.5, 1120.35 )
+
+[node name="Plank16" parent="." instance=ExtResource( 3 )]
+position = Vector2( 42763.7, 1118.23 )
+
+[node name="Plank17" parent="." instance=ExtResource( 3 )]
+position = Vector2( 43083.7, 1122.47 )
+
+[node name="MovingPlatform13" parent="." instance=ExtResource( 2 )]
+position = Vector2( 43992.4, 1200 )
 
 [node name="MovingPlatform16" parent="." instance=ExtResource( 2 )]
-position = Vector2( 44856.8, 1303.58 )
+position = Vector2( 44443.6, 1240.44 )
+
+[node name="Grass" parent="." instance=ExtResource( 5 )]
+position = Vector2( 42087.6, 1270.46 )
+
+[node name="Grass2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 42424.2, 1279.99 )
+
+[node name="Grass3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 42760.7, 1267.29 )
+
+[node name="Grass4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 43081.3, 1289.51 )
+
+[node name="Grass5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 43411.5, 1276.81 )
+
+[node name="Grass6" parent="." instance=ExtResource( 5 )]
+position = Vector2( 43733.6, 1298 )

@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Game/Character/Lamp/Lamp.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Character/RM/RM.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Game/Character/Puddle/Puddle.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Game/Character/Start/Start.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Game/Character/Rock/StaticRock.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Game/Character/MovingPanel/MovingPlatform.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Game/Character/Plank/Plank.tscn" type="PackedScene" id=10]
@@ -16,6 +17,9 @@ friction = 0.02
 rough = true
 
 [node name="Level_1_0" type="Node"]
+
+[node name="Start" parent="." instance=ExtResource( 4 )]
+position = Vector2( 80, 1360 )
 
 [node name="StaticRock" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1532, 1360 )
@@ -91,11 +95,11 @@ z_index = -1
 position = Vector2( 14600, 1148 )
 
 [node name="BridgeLeft" parent="." instance=ExtResource( 16 )]
-position = Vector2( 200, 1230 )
+position = Vector2( 14700, 920 )
 z_index = -1
 
 [node name="BridgeRight" parent="." instance=ExtResource( 17 )]
-position = Vector2( 62.791, 1410.67 )
+position = Vector2( 16240, 980 )
 
 [node name="MovingPlatform5" parent="." instance=ExtResource( 9 )]
-position = Vector2( 18120, 1460 )
+position = Vector2( 17994.4, 1407.67 )

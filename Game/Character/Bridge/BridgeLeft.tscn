@@ -7,22 +7,24 @@
 extents = Vector2( 632.658, 10.3186 )
 
 [node name="BridgeLeft" type="StaticBody2D"]
-position = Vector2( 214.961, -28.2843 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="SpriteLeft" type="Sprite" parent="."]
-position = Vector2( 15315.6, -65.1549 )
 texture = ExtResource( 1 )
+centered = false
 
 [node name="CollisionLeft" type="CollisionShape2D" parent="."]
-position = Vector2( 15337, -56.7145 )
+position = Vector2( 730.754, 211.667 )
 rotation = -0.250882
 shape = SubResource( 1 )
 
 [node name="VisibilityEnabler" type="VisibilityEnabler2D" parent="."]
+position = Vector2( 710.885, 198.931 )
+rotation = -0.242957
+scale = Vector2( 71.3653, 6.03969 )
 process_parent = true
 physics_process_parent = true
 
