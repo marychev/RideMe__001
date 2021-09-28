@@ -57,7 +57,6 @@ func _on_CollisionDetector_body_entered(body: Node) -> void:
 		body.move_down(get_physics_process_delta_time(), mass)
 	
 
-
 func on_detect_collisions_process(delta):
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
@@ -94,7 +93,9 @@ func _physics_process(delta: float):
 	var is_jump_interrupted: = Input.is_action_just_released("ui_select") and _velocity.y < 0.0
 	_velocity = calculate_move_velocity(_velocity, get_direction(), speed, is_jump_interrupted)
 	_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
-
+	
+	if position.y > 2000:
+		die(true)
 
 # calculation
 
@@ -160,6 +161,12 @@ func die_from(collision_name: String) -> void:
 	die()
 
 
-func die() -> void:
+func die(force: bool = false) -> void:
+	if force: 
+		PlayerData.lives = 0
+	
 	if PlayerData.lives <= 0:
 		queue_free()
+		
+		var end_game_scr: = "res://Game/GameScreen/EndGameScreen.tscn"
+		get_tree().change_scene(end_game_scr)

@@ -6,6 +6,12 @@ signal lives_updated
 var score: = 0 setget set_score
 var lives: = 100 setget set_lives
 
+
+func reset() -> void:
+	score = 0
+	lives = 0
+
+
 func set_score(value: int) -> void:
 	score = value
 	emit_signal("score_updated")

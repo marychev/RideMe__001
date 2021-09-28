@@ -32,6 +32,8 @@ func set_value_from_label(increment: int=0):
 	value = int(RMValue.text)
 	value += increment
 	RMValue.text = str(value)
+	
+	PlayerData.score += int(value) * 11
 
 
 func _on_VisibilityNotifier_screen_exited() -> void:

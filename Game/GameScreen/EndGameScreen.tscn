@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Game/GameScreen/QuitBtn.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Game/GameScreen/Title.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Game/GameScreen/PlayBtn.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Game/GameScreen/EndGameScreen.gd" type="Script" id=6]
+
+[node name="EndGameScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0588235, 0.0392157, 0.0784314, 0.376471 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" parent="PauseRect" instance=ExtResource( 4 )]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = -339.0
+margin_top = -690.326
+margin_right = 339.0
+margin_bottom = -596.326
+text = "You finished game"
+
+[node name="Label" type="Label" parent="PauseRect"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -54.5
+margin_top = 180.759
+margin_right = 54.5
+margin_bottom = 194.759
+text = "Your score is %s."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="VBoxContainer" parent="PauseRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -208.464
+margin_top = -87.9966
+margin_right = 225.536
+margin_bottom = 128.003
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayBtn" parent="PauseRect/Container" instance=ExtResource( 5 )]
+margin_top = 0.0
+margin_right = 434.0
+margin_bottom = 105.0
+level_scn = "res://Game/Game.tscn"
+
+[node name="QuitBtn" parent="PauseRect/Container" instance=ExtResource( 3 )]
+margin_top = 109.0
+margin_right = 434.0
+margin_bottom = 215.0
