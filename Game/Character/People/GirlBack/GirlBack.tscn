@@ -1,12 +1,41 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Game/Character/People/GirlBack/assets/girl-back3.png" type="Texture" id=1]
 [ext_resource path="res://Game/Character/People/GirlBack/assets/girl-back0.png" type="Texture" id=2]
 [ext_resource path="res://Game/Character/People/GirlBack/assets/girl-back1.png" type="Texture" id=3]
 [ext_resource path="res://Game/Character/People/GirlBack/assets/girl-back2.png" type="Texture" id=4]
+[ext_resource path="res://Game/Character/People/GirlBack/GirlBack.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 47.7108, 85.3718 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "collision"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1.2, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 20 ), Vector2( 400, 20 ), Vector2( 600, 20 ), Vector2( 700, 20 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.9, 1.4, 1.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 20.0, 60.0, 90.0 ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "walk"
@@ -22,7 +51,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 40 ), Vector2( -6, 0 ), Vector2( -4, -40 ), Vector2( -8, -80 ), Vector2( 0, -120 ), Vector2( -2, -160 ), Vector2( 2, -200 ) ]
+"values": [ Vector2( 0, 20 ), Vector2( -6, 0 ), Vector2( -4, -40 ), Vector2( -8, -80 ), Vector2( 0, -120 ), Vector2( -2, -160 ), Vector2( 2, -200 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("girl-back0:texture")
@@ -62,12 +91,12 @@ tracks/3/keys = {
 }
 
 [node name="GirlBack" type="RigidBody2D"]
-position = Vector2( 0, 40 )
-collision_layer = 0
+position = Vector2( 0, 20 )
+collision_layer = 32
 mode = 3
+script = ExtResource( 5 )
 
 [node name="girl-back0" type="Sprite" parent="."]
-position = Vector2( -7.04083, -24.5936 )
 scale = Vector2( 0.577832, 0.577832 )
 texture = ExtResource( 2 )
 
@@ -76,5 +105,7 @@ position = Vector2( -7.68428, -70.0628 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "walk"
+anims/collision = SubResource( 3 )
 anims/walk = SubResource( 2 )
+
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]

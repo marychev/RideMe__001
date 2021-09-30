@@ -103,6 +103,7 @@ pointing/emulate_touch_from_mouse=true
 2d_physics/layer_3="rms"
 2d_physics/layer_4="road"
 2d_physics/layer_5="moving_panels"
+2d_physics/layer_6="girl_back"
 
 [physics]
 

@@ -12,7 +12,7 @@ export var max_power: = 400.00
 const FLOOR_NORMAL: = Vector2.UP
 
 var _velocity: = Vector2.ZERO
-var mass: int = 120
+var mass: int = 130
 var GUI: MarginContainer
 var SpeedBar: HBoxContainer
 var PowerBar: HBoxContainer
@@ -42,7 +42,6 @@ func __force_init__(gui_scene):
 
 func _on_CollisionDetector_area_entered(area: Area2D) -> void:
 	print('[_on_CollisionDetector_Area_entered]', area.name)
-	#print(area.name, ': , root: ', area.get_node('../').name)
 	var root = area.get_node('../')
 	
 	if 'Plank' in root.name:
@@ -53,7 +52,7 @@ func _on_CollisionDetector_area_entered(area: Area2D) -> void:
 func _on_CollisionDetector_body_entered(body: Node) -> void:
 	print("[_on_CollisionDetector_Body_entered]: ", body.name)
 	if 'MovingPlatform' in body.name:
-		AnimPlayer.stop()
+		$AnimationPlayer.stop()
 		body.move_down(get_physics_process_delta_time(), mass)
 	
 
@@ -65,6 +64,10 @@ func on_detect_collisions_process(delta):
 			collision.collider.move_down(delta, mass)
 		elif 'StaticRock' in collision.collider.name:
 			die_from(collision.collider.name)
+		elif 'GirlBack' in collision.collider.name:
+			collision.collider.collision_with(self)
+			die_from(collision.collider.name)
+
 
 # Processes
 
@@ -156,8 +159,14 @@ func positive_max_value(value, max_value):
 
 func die_from(collision_name: String) -> void:
 	if last_collision_name != collision_name:
-		PlayerData.lives -= 1
+		
+		if 'StaticRock' in collision_name:
+			PlayerData.lives -= 1
+		elif 'GirlBack' in collision_name:
+			PlayerData.lives /= 2
+
 		last_collision_name = collision_name
+
 	die()
 
 
@@ -168,5 +177,5 @@ func die(force: bool = false) -> void:
 	if PlayerData.lives <= 0:
 		queue_free()
 		
-		var end_game_scr: = "res://Game/GameScreen/EndGameScreen.tscn"
+		var end_game_scr: String = "res://Game/GameScreen/EndGameScreen.tscn"
 		get_tree().change_scene(end_game_scr)
