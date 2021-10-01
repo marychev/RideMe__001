@@ -14,7 +14,7 @@ script = ExtResource( 2 )
 
 [node name="sprite" type="Sprite" parent="."]
 position = Vector2( -247.116, 255.912 )
-scale = Vector2( 1.64324, 0.970076 )
+scale = Vector2( 1.64324, 1 )
 texture = ExtResource( 1 )
 centered = false
 
@@ -24,7 +24,7 @@ shape = SubResource( 1 )
 
 [node name="sprite2" type="Sprite" parent="."]
 position = Vector2( 968.884, 255.912 )
-scale = Vector2( 1.64324, 0.970076 )
+scale = Vector2( 1.64324, 1 )
 texture = ExtResource( 1 )
 centered = false
 

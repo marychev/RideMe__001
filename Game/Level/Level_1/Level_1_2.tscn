@@ -88,19 +88,19 @@ position = Vector2( 44443.6, 1240.44 )
 position = Vector2( 42087.6, 1270.46 )
 
 [node name="Grass2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 42424.2, 1279.99 )
+position = Vector2( 42420.2, 1273.99 )
 
 [node name="Grass3" parent="." instance=ExtResource( 5 )]
 position = Vector2( 42760.7, 1267.29 )
 
 [node name="Grass4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 43081.3, 1289.51 )
+position = Vector2( 43087.3, 1273.51 )
 
 [node name="Grass5" parent="." instance=ExtResource( 5 )]
 position = Vector2( 43411.5, 1276.81 )
 
 [node name="Grass6" parent="." instance=ExtResource( 5 )]
-position = Vector2( 43733.6, 1298 )
+position = Vector2( 43759.8, 1284 )
 
 [node name="Refit" parent="." instance=ExtResource( 6 )]
 position = Vector2( 32982.8, 1137.12 )

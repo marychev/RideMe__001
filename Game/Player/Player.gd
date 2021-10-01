@@ -1,7 +1,10 @@
-extends KinematicBody2D
+extends Actor
 class_name Player
 
-export var gravity: = 42.0
+# export var gravity: = 42.0
+# const FLOOR_NORMAL: = Vector2.UP
+# var _velocity: = Vector2.ZERO
+# onready var speed: = Vector2(10.0, 800.0) 
 
 # The current speed as `x` and the max-power of jump as `y`
 
@@ -9,9 +12,7 @@ export var max_speed: = 400.00
 export var power: = 10.00
 export var max_power: = 400.00
 
-const FLOOR_NORMAL: = Vector2.UP
 
-var _velocity: = Vector2.ZERO
 var mass: int = 130
 var GUI: MarginContainer
 var SpeedBar: HBoxContainer
@@ -21,7 +22,7 @@ var GoBtn: TouchScreenButton
 var StopBtn: TouchScreenButton
 var last_collision_name: = ""
 
-onready var speed: = Vector2(10.0, 800.0) 
+
 onready var AnimPlayer: AnimationPlayer = $AnimationPlayer
 
 
@@ -54,7 +55,9 @@ func _on_CollisionDetector_body_entered(body: Node) -> void:
 	if 'MovingPlatform' in body.name:
 		$AnimationPlayer.stop()
 		body.move_down(get_physics_process_delta_time(), mass)
-	
+	elif 'KSMan' in body.name:
+		die(true)
+
 
 func on_detect_collisions_process(delta):
 	for i in get_slide_count():
