@@ -1,45 +1,23 @@
-extends Actor
+extends PlayerVelocity
 class_name Player
-
-# export var gravity: = 42.0
-# const FLOOR_NORMAL: = Vector2.UP
-# var _velocity: = Vector2.ZERO
-# onready var speed: = Vector2(10.0, 800.0) 
-
-# The current speed as `x` and the max-power of jump as `y`
 
 export var max_speed: = 400.00
 export var power: = 10.00
 export var max_power: = 400.00
 
-
 var mass: int = 130
-var GUI: MarginContainer
-var SpeedBar: HBoxContainer
-var PowerBar: HBoxContainer
-var JumpBtn: TouchScreenButton
-var GoBtn: TouchScreenButton
-var StopBtn: TouchScreenButton
 var last_collision_name: = ""
 
+onready var GUI: CanvasLayer = get_node(PlayerData.PATH_GUI)
+onready var GameScreen: Control = get_node(PlayerData.PATH_GAME_SCREEN_PAUSE)
+onready var SpeedBar: HBoxContainer = get_node(PlayerData.PATH_SPEED_BAR)
+onready var PowerBar: HBoxContainer = get_node(PlayerData.PATH_POWER_BAR)
+onready var JumpBtn: TouchScreenButton = get_node(PlayerData.PATH_JUMP_BTN)
+onready var GoBtn: TouchScreenButton = get_node(PlayerData.PATH_GO_BTN)
+onready var StopBtn: TouchScreenButton = get_node(PlayerData.PATH_STOP_BTN)
 
 onready var AnimPlayer: AnimationPlayer = $AnimationPlayer
 
-
-func __force_init__(gui_scene):
-	GUI = gui_scene
-	SpeedBar = GUI.get_node("Canvas/HBoxContainer/Bars/SpeedBar")
-	PowerBar = GUI.get_node("Canvas/HBoxContainer/Bars/PowerBar")
-	JumpBtn = GUI.get_node("Canvas/ControlContainer/JumpBtn")
-	GoBtn = GUI.get_node("Canvas/ControlContainer/GoBtn")
-	StopBtn = GUI.get_node("Canvas/ControlContainer/StopBtn")
-	
-	SpeedBar.force_init(self)
-	PowerBar.force_init(self)
-	JumpBtn.force_init(self)
-	GoBtn.force_init(self)
-	StopBtn.force_init(self)
-	
 
 func _on_CollisionDetector_area_entered(area: Area2D) -> void:
 	print('[_on_CollisionDetector_Area_entered]', area.name)
@@ -60,6 +38,7 @@ func _on_CollisionDetector_body_entered(body: Node) -> void:
 
 
 func on_detect_collisions_process(delta):
+		
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
 		
@@ -82,7 +61,7 @@ func _physics_process(delta: float):
 	elif Input.is_action_pressed("ui_left"):
 		StopBtn.on_stop_process(delta)
 	elif Input.is_action_just_released("ui_left"):
-		StopBtn.on_stop_released()
+		StopBtn.on_stop_released(delta)
 	else:
 		if speed.x < 1:
 			GoBtn.on_wait_process(delta)
@@ -103,40 +82,7 @@ func _physics_process(delta: float):
 	if position.y > 2000:
 		die(true)
 
-# calculation
-
-func calculate_move_velocity(
-	linear_velocity: Vector2, direction: Vector2, _speed: Vector2,
-	is_jump_interrupted: bool
-	) -> Vector2:
-	
-	var out: = linear_velocity
-	out.x = _speed.x  # * direction.x ## убивает релах
-	out.y += gravity + get_physics_process_delta_time()
-	
-	if direction.y == -1.0:
-		out.y = _speed.y * direction.y
-		
-	if is_jump_interrupted:
-		out.y = 0.0
-	
-	return out
-
-
-func calculate_stomp_velocity(linear_velocity: Vector2, impulse: float) -> Vector2:
-	var out := linear_velocity
-	out.y = -impulse
-	return out
-
-
-# Extra methods
-
-func get_direction() -> Vector2:
-	return Vector2(
-		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
-		-1.0 if Input.is_action_just_pressed("ui_select") and is_on_floor() else 0.0
-	)
-
+# set
 
 func set_power(val):
 	power = positive_max_value(val, max_power)
@@ -146,18 +92,9 @@ func set_power(val):
 
 func set_speed(val_x = null):
 	if val_x:
-		speed.x = positive_max_value(val_x, max_speed)
+		speed.x = max_value(val_x, max_speed)
 	if SpeedBar:
 		SpeedBar.set_progress_player()
-
-
-func positive_max_value(value, max_value):
-	if value < 0:
-		return 0
-	elif value > max_value:
-		return max_value
-	else:
-		return value
 
 
 func die_from(collision_name: String) -> void:

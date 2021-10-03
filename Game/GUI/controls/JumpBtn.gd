@@ -4,8 +4,8 @@ class_name JumpBtn
 
 func on_jump_process(dt: float) -> void:
 	on_pressed()
-	AnimPlayer.play("landing")
-	Player.set_power(Player.power - dt)
+	anim_player.play("landing")
+	player.set_power(player.power - dt)
 
 
 func on_landing_process(dt: float) -> void:

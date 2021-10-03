@@ -1,6 +1,6 @@
 extends TouchScreenButton
 
-onready var game_menu:Control = get_node("/root/Game/GUI/Canvas/GameScreen")
+onready var game_menu: Control = get_node("/root/Game/GUI/Canvas/GameScreenPause")
 
 
 func _on_pressed() -> void:

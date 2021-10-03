@@ -1,19 +1,14 @@
 extends TouchScreenButton
 class_name ControlBtn
 
-var Player: KinematicBody2D
-var AnimPlayer: AnimationPlayer
-
-
-func force_init(player_scene):
-	Player = player_scene
-	AnimPlayer = Player.get_node("./AnimationPlayer")
+onready var player: KinematicBody2D = get_node(PlayerData.PATH_PLAYER)
+onready var anim_player: AnimationPlayer = player.get_node("./AnimationPlayer")
 
 
 func on_wait_process(dt: float):
-	AnimPlayer.play("wait")
-	Player.set_power(Player.power + dt * (Player.max_power))
-	Player.set_speed(0)
+	anim_player.play("wait")
+	player.set_power(player.power + dt * (player.max_power))
+	player.set_speed(0)
 	
 	
 func on_pressed() -> void:

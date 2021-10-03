@@ -1,16 +1,14 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Game/GUI/assets/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Game/GUI/assets/label_HP_bg.png" type="Texture" id=2]
-[ext_resource path="res://Game/Character/RM/assets/rm_icon.png" type="Texture" id=3]
+[ext_resource path="res://Game/GUI/assets/emeralds_icon.png" type="Texture" id=2]
+[ext_resource path="res://Game/GUI/assets/label_HP_bg.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 18
 font_data = ExtResource( 1 )
 
-[node name="Counter" type="MarginContainer"]
-margin_left = 20.0
-margin_top = 20.0
+[node name="LivesCounter" type="MarginContainer"]
 margin_right = 100.0
 margin_bottom = 40.0
 __meta__ = {
@@ -21,18 +19,14 @@ __meta__ = {
 margin_right = 100.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 100, 40 )
-texture = ExtResource( 2 )
-region_rect = Rect2( -0.668571, 1.70013, 120.774, 41.4569 )
-patch_margin_left = 7
-patch_margin_top = 9
-patch_margin_right = 5
-patch_margin_bottom = 13
+texture = ExtResource( 3 )
+region_rect = Rect2( -0.0623627, 1.89209, 120.71, 44.1055 )
+patch_margin_left = 81
 
 [node name="Value" type="Label" parent="Background"]
-margin_left = 6.0
-margin_top = 1.0
-margin_right = 100.0
-margin_bottom = 41.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
 custom_fonts/font = SubResource( 1 )
 text = "0"
 valign = 1
@@ -44,20 +38,20 @@ __meta__ = {
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -41.0
-margin_right = 26.0
-margin_bottom = 20.0
-rect_scale = Vector2( 0.62, 0.64 )
+margin_left = -43.0
+margin_right = 56.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.5, 0.5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Icon" type="TextureRect" parent="Background/CenterContainer"]
-margin_left = 3.0
-margin_right = 63.0
-margin_bottom = 60.0
-rect_min_size = Vector2( 50, 0 )
-texture = ExtResource( 3 )
+margin_left = 9.0
+margin_right = 89.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 40, 0 )
+texture = ExtResource( 2 )
 stretch_mode = 4
 __meta__ = {
 "_edit_use_anchors_": false

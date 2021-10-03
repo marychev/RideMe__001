@@ -1,16 +1,14 @@
 extends HBoxContainer
 
-var PlayerScn
+onready var _label_value: Label = get_node(PlayerData.PATH_SPEED_BAR_COUNT_VALUE) 
+onready var _progress: TextureProgress = $"./Gauge"
+onready var player: Player = get_node(PlayerData.PATH_PLAYER)
 
-onready var _label_value = $"./Count/Background/Value"
-onready var _progress = $"./Gauge"
 
-
-func force_init(player_scene):
-	PlayerScn = player_scene
-	_progress.max_value = PlayerScn.max_power
+func _ready() -> void:
+	_progress.max_value = player.max_power
 
 
 func set_progress_player():
-	_label_value.text = '%.2f' % PlayerScn.power
-	_progress.value = PlayerScn.power
+	_label_value.text = '%.2f' % player.power
+	_progress.value = player.power

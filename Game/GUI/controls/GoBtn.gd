@@ -5,14 +5,14 @@ class_name GoBtn
 func on_go_process(dt: float) -> void:
 	on_pressed()
 	
-	AnimPlayer.play("go")
-	Player.set_power(Player.power - (dt * Player.max_power/4))
-	Player.set_speed(Player.speed.x + (dt * Player.power))
+	anim_player.play("go")
+	player.set_power(player.power - (dt * player.max_power/4))
+	player.set_speed(player.speed.x + (dt * player.power))
 
 
 func on_relax_process(dt: float):
 	on_released()
 	
-	AnimPlayer.play("relax")
-	Player.set_power(Player.power + dt * Player.max_power/2)
-	Player.set_speed(Player.speed.x - dt * (Player.max_power))
+	anim_player.play("relax")
+	player.set_power(player.power + dt * player.max_power/2)
+	player.set_speed(player.speed.x - dt * (player.max_power/3))

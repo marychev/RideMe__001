@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Game/GUI/counter/RMCounter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/GUI/bar/SpeedBar.tscn" type="PackedScene" id=2]
@@ -7,8 +7,10 @@
 [ext_resource path="res://Game/GUI/controls/JumpBtn.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Game/GUI/time/Time.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Game/GUI/controls/StopBtn.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Game/GameScreen/GameScreen.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Game/GameScreen/GameScreenPause.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Game/GUI/controls/MenuBtn.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Game/GUI/counter/LivesCounter.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Game/GUI/GUI.gd" type="Script" id=11]
 
 [node name="GUI" type="MarginContainer"]
 anchor_right = 1.0
@@ -19,19 +21,37 @@ custom_constants/margin_right = 20
 custom_constants/margin_top = 20
 custom_constants/margin_left = 20
 custom_constants/margin_bottom = 20
+script = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Canvas" type="CanvasLayer" parent="."]
 
-[node name="GameScreen" parent="Canvas" instance=ExtResource( 8 )]
+[node name="Counters" type="HBoxContainer" parent="Canvas"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -250.945
+margin_top = 24.9452
+margin_right = -24.9451
+margin_bottom = 64.9452
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RMCounter" parent="Canvas/Counters" instance=ExtResource( 1 )]
+margin_left = 0.0
+margin_top = 0.0
+
+[node name="LivesCounter" parent="Canvas/Counters" instance=ExtResource( 10 )]
+margin_left = 104.0
+margin_right = 204.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Canvas"]
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 1342.0
-margin_bottom = 73.0
+margin_bottom = 117.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -49,15 +69,7 @@ margin_right = 565.0
 margin_bottom = 97.0
 
 [node name="Time" parent="Canvas/HBoxContainer" instance=ExtResource( 6 )]
-
-[node name="Counters" type="HBoxContainer" parent="Canvas/HBoxContainer"]
-margin_left = 1222.0
 margin_right = 1322.0
-margin_bottom = 97.0
-
-[node name="RMCounter" parent="Canvas/HBoxContainer/Counters" instance=ExtResource( 1 )]
-margin_right = 100.0
-margin_bottom = 97.0
 
 [node name="ControlContainer" type="HBoxContainer" parent="Canvas"]
 anchor_top = 1.0
@@ -79,3 +91,5 @@ position = Vector2( 635.707, 72.0763 )
 
 [node name="GoBtn" parent="Canvas/ControlContainer" instance=ExtResource( 3 )]
 position = Vector2( 1146.43, -34.7568 )
+
+[node name="GameScreenPause" parent="Canvas" instance=ExtResource( 8 )]
