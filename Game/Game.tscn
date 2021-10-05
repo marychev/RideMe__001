@@ -27,7 +27,7 @@ margin_bottom = -30.0
 position = Vector2( -47.877, 2.51978 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 0, 385.002 )
+position = Vector2( 32000, 385.002 )
 z_index = 1
 max_speed = 600.0
 power = 400.0

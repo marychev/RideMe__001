@@ -38,17 +38,11 @@ func _on_CollisionDetector_body_entered(body: Node) -> void:
 
 
 func on_detect_collisions_process(delta):
-		
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
-		
+
 		if 'MovingPlatform' in collision.collider.name:
 			collision.collider.move_down(delta, mass)
-		elif 'StaticRock' in collision.collider.name:
-			die_from(collision.collider.name)
-		elif 'GirlBack' in collision.collider.name:
-			collision.collider.collision_with(self)
-			die_from(collision.collider.name)
 
 
 # Processes
@@ -82,6 +76,7 @@ func _physics_process(delta: float):
 	if position.y > 2000:
 		die(true)
 
+
 # set
 
 func set_power(val):
@@ -97,24 +92,13 @@ func set_speed(val_x = null):
 		SpeedBar.set_progress_player()
 
 
-func die_from(collision_name: String) -> void:
-	if last_collision_name != collision_name:
-		
-		if 'StaticRock' in collision_name:
-			PlayerData.lives -= 1
-		elif 'GirlBack' in collision_name:
-			PlayerData.lives /= 2
-
-		last_collision_name = collision_name
-
-	die()
-
-
 func die(force: bool = false) -> void:
 	if force: 
 		PlayerData.lives = 0
 	
 	if PlayerData.lives <= 0:
+		PlayerData.time_level = PlayerData.gui_time.time
+		
 		queue_free()
 		
 		var end_game_scr: String = "res://Game/GameScreen/EndGameScreen.tscn"

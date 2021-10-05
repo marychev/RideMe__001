@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Game/Character/People/GirlBack/assets/girl-back3.png" type="Texture" id=1]
 [ext_resource path="res://Game/Character/People/GirlBack/assets/girl-back0.png" type="Texture" id=2]
@@ -7,9 +7,9 @@
 [ext_resource path="res://Game/Character/People/GirlBack/GirlBack.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 47.7108, 85.3718 )
+extents = Vector2( 39.3711, 85.3718 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "collision"
 length = 2.0
 tracks/0/type = "value"
@@ -37,8 +37,7 @@ tracks/1/keys = {
 "values": [ 0.0, 20.0, 60.0, 90.0 ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "walk"
+[sub_resource type="Animation" id=3]
 length = 2.8
 loop = true
 tracks/0/type = "value"
@@ -90,6 +89,9 @@ tracks/3/keys = {
 "values": [ true, false ]
 }
 
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 47.9133, 83.6323 )
+
 [node name="GirlBack" type="RigidBody2D"]
 position = Vector2( 0, 20 )
 collision_layer = 32
@@ -101,11 +103,18 @@ scale = Vector2( 0.577832, 0.577832 )
 texture = ExtResource( 2 )
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2( -7.68428, -70.0628 )
+position = Vector2( -2.64461, -41.0846 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/collision = SubResource( 3 )
-anims/walk = SubResource( 2 )
+anims/collision = SubResource( 2 )
+anims/walk = SubResource( 3 )
+
+[node name="StopmDetector" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="StopmDetector"]
+position = Vector2( -0.244217, -48.8028 )
+shape = SubResource( 4 )
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
+[connection signal="body_entered" from="StopmDetector" to="." method="_on_StopmDetector_body_entered"]

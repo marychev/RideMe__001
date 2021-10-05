@@ -28,25 +28,6 @@ __meta__ = {
 
 [node name="Canvas" type="CanvasLayer" parent="."]
 
-[node name="Counters" type="HBoxContainer" parent="Canvas"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -250.945
-margin_top = 24.9452
-margin_right = -24.9451
-margin_bottom = 64.9452
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RMCounter" parent="Canvas/Counters" instance=ExtResource( 1 )]
-margin_left = 0.0
-margin_top = 0.0
-
-[node name="LivesCounter" parent="Canvas/Counters" instance=ExtResource( 10 )]
-margin_left = 104.0
-margin_right = 204.0
-
 [node name="HBoxContainer" type="HBoxContainer" parent="Canvas"]
 margin_left = 20.0
 margin_top = 20.0
@@ -70,6 +51,25 @@ margin_bottom = 97.0
 
 [node name="Time" parent="Canvas/HBoxContainer" instance=ExtResource( 6 )]
 margin_right = 1322.0
+
+[node name="Counters" type="HBoxContainer" parent="Canvas"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -250.945
+margin_top = 24.9452
+margin_right = -24.9451
+margin_bottom = 64.9452
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RMCounter" parent="Canvas/Counters" instance=ExtResource( 1 )]
+margin_left = 0.0
+margin_top = 0.0
+
+[node name="LivesCounter" parent="Canvas/Counters" instance=ExtResource( 10 )]
+margin_left = 104.0
+margin_right = 204.0
 
 [node name="ControlContainer" type="HBoxContainer" parent="Canvas"]
 anchor_top = 1.0

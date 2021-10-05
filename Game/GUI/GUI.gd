@@ -1,7 +1,6 @@
 extends MarginContainer
 class_name GUI
 
-
 onready var lives_value: Label = get_node(PlayerData.PATH_LIVES_COUNTER_VALUE)
 
 

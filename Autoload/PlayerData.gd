@@ -9,6 +9,8 @@ const INIT_LIVES: = 100
 var score: = 0 setget set_score
 var lives: = INIT_LIVES setget set_lives
 var rms: = 0 setget set_rms
+var time_level: = 0
+
 
 const PATH_PLAYER = "/root/Game/Player"
 
@@ -18,6 +20,7 @@ const PATH_LIVES_COUNTER_VALUE = PATH_GUI + "/Counters/LivesCounter/Background/V
 const PATH_RMS_COUNTER_VALUE = PATH_GUI + "/Counters/RMCounter/Background/Value"
 const PATH_SPEED_BAR = PATH_GUI + "/HBoxContainer/Bars/SpeedBar"
 const PATH_POWER_BAR = PATH_GUI + "/HBoxContainer/Bars/PowerBar"
+const PATH_GUI_TIME = PATH_GUI + "/HBoxContainer/Time"
 const PATH_SPEED_BAR_COUNT_VALUE = PATH_SPEED_BAR + "/Count/Background/Value"
 const PATH_POWER_BAR_COUNT_VALUE = PATH_SPEED_BAR + "/Count/Background/Value"
 const PATH_JUMP_BTN = PATH_GUI + "/ControlContainer/JumpBtn"
@@ -26,11 +29,13 @@ const PATH_STOP_BTN = PATH_GUI + "/ControlContainer/StopBtn"
 
 onready var lives_value: Label = get_node(PATH_LIVES_COUNTER_VALUE)
 onready var rms_value: Label = get_node(PATH_RMS_COUNTER_VALUE)
+onready var gui_time: VBoxContainer = get_node(PATH_GUI_TIME)
 
 
 func reset_progress() -> void:
 	score = 0
 	lives = INIT_LIVES
+	time_level = 0
 
 
 func set_score(value: int) -> void:
@@ -48,5 +53,3 @@ func set_rms(value: int) -> void:
 	rms = value
 	rms_value.text = str(rms)
 	emit_signal("rms_updated")
-
-
