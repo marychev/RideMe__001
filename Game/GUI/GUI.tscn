@@ -14,9 +14,9 @@
 
 [node name="GUI" type="MarginContainer"]
 anchor_right = 1.0
-anchor_bottom = 0.172
+anchor_bottom = 0.146
 margin_right = -4.0
-margin_bottom = -0.0960083
+margin_bottom = -0.128006
 custom_constants/margin_right = 20
 custom_constants/margin_top = 20
 custom_constants/margin_left = 20
@@ -29,36 +29,38 @@ __meta__ = {
 [node name="Canvas" type="CanvasLayer" parent="."]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Canvas"]
-margin_left = 20.0
-margin_top = 20.0
-margin_right = 1342.0
-margin_bottom = 117.0
+margin_left = 11.5147
+margin_top = 11.5147
+margin_right = 1333.51
+margin_bottom = 98.5147
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Bars" type="VBoxContainer" parent="Canvas/HBoxContainer"]
-margin_right = 565.0
-margin_bottom = 97.0
+margin_right = 410.0
+margin_bottom = 87.0
 
 [node name="SpeedBar" parent="Canvas/HBoxContainer/Bars" instance=ExtResource( 2 )]
-margin_right = 565.0
+margin_right = 410.0
 
 [node name="PowerBar" parent="Canvas/HBoxContainer/Bars" instance=ExtResource( 4 )]
-margin_top = 57.0
-margin_right = 565.0
-margin_bottom = 97.0
+margin_top = 44.0
+margin_right = 410.0
+margin_bottom = 84.0
 
 [node name="Time" parent="Canvas/HBoxContainer" instance=ExtResource( 6 )]
+margin_left = 414.0
 margin_right = 1322.0
+margin_bottom = 87.0
 
 [node name="Counters" type="HBoxContainer" parent="Canvas"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -250.945
-margin_top = 24.9452
-margin_right = -24.9451
-margin_bottom = 64.9452
+margin_left = -218.0
+margin_top = 14.0
+margin_right = -14.0
+margin_bottom = 54.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -66,6 +68,8 @@ __meta__ = {
 [node name="RMCounter" parent="Canvas/Counters" instance=ExtResource( 1 )]
 margin_left = 0.0
 margin_top = 0.0
+margin_right = 100.0
+margin_bottom = 40.0
 
 [node name="LivesCounter" parent="Canvas/Counters" instance=ExtResource( 10 )]
 margin_left = 104.0

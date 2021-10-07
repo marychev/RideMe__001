@@ -20,8 +20,10 @@ margin_right = 100.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 100, 40 )
 texture = ExtResource( 3 )
-region_rect = Rect2( -0.0623627, 1.89209, 120.71, 44.1055 )
-patch_margin_left = 81
+region_rect = Rect2( -0.378426, -0.644387, 121.288, 46.6444 )
+patch_margin_left = 10
+patch_margin_top = 8
+patch_margin_right = 3
 
 [node name="Value" type="Label" parent="Background"]
 anchor_right = 1.0
@@ -38,9 +40,10 @@ __meta__ = {
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -43.0
-margin_right = 56.0
-margin_bottom = 40.0
+margin_left = -34.5438
+margin_top = 0.401188
+margin_right = 64.4562
+margin_bottom = 40.4012
 rect_scale = Vector2( 0.5, 0.5 )
 __meta__ = {
 "_edit_use_anchors_": false
