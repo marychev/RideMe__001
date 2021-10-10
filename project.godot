@@ -34,6 +34,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Game/GUI/controls/GoBtn.gd"
 }, {
+"base": "Area2D",
+"class": "Hourgrass",
+"language": "GDScript",
+"path": "res://Game/Character/Hourgrass/Hourgrass.gd"
+}, {
 "base": "TouchScreenButton",
 "class": "JumpBtn",
 "language": "GDScript",
@@ -68,6 +73,11 @@ _global_script_classes=[ {
 "class": "Time",
 "language": "GDScript",
 "path": "res://Game/GUI/time/Time.gd"
+}, {
+"base": "MarginContainer",
+"class": "Timeout",
+"language": "GDScript",
+"path": "res://Game/GUI/counter/Timeout.gd"
 } ]
 _global_script_class_icons={
 "Actor": "",
@@ -75,13 +85,15 @@ _global_script_class_icons={
 "GUI": "",
 "Game": "",
 "GoBtn": "",
+"Hourgrass": "",
 "JumpBtn": "",
 "MovingPlatform": "",
 "Player": "",
 "PlayerVelocity": "",
 "RM": "",
 "StopBtn": "",
-"Time": ""
+"Time": "",
+"Timeout": ""
 }
 
 [application]

@@ -2,17 +2,21 @@ extends "res://Game/GUI/controls/ControlBtn.gd"
 class_name GoBtn
 
 
-func on_go_process(dt: float) -> void:
+func on_go_process(dt: float, animation_name: String = "go") -> void:
 	on_pressed()
 	
-	anim_player.play("go")
+	animation_name = detect_collision_animation(animation_name)
+	anim_player.play(animation_name)
+	
 	player.set_power(player.power - (dt * player.max_power/4))
 	player.set_speed(player.speed.x + (dt * player.power))
 
 
-func on_relax_process(dt: float):
+func on_relax_process(dt: float, animation_name : String = "relax"):
 	on_released()
 	
-	anim_player.play("relax")
+	animation_name = detect_collision_animation(animation_name)
+	anim_player.play(animation_name)
+	
 	player.set_power(player.power + dt * player.max_power/2)
 	player.set_speed(player.speed.x - dt * (player.max_power/3))

@@ -20,10 +20,7 @@ margin_right = 100.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 100, 40 )
 texture = ExtResource( 3 )
-region_rect = Rect2( -0.378426, -0.644387, 121.288, 46.6444 )
-patch_margin_left = 10
-patch_margin_top = 8
-patch_margin_right = 3
+region_rect = Rect2( 0, 0, 120, 46 )
 
 [node name="Value" type="Label" parent="Background"]
 anchor_right = 1.0

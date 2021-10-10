@@ -5,8 +5,10 @@ onready var player: KinematicBody2D = get_node(PlayerData.PATH_PLAYER)
 onready var anim_player: AnimationPlayer = player.get_node("./AnimationPlayer")
 
 
-func on_wait_process(dt: float):
-	anim_player.play("wait")
+func on_wait_process(dt: float, animation_name: String = "wait"):
+	animation_name = detect_collision_animation(animation_name)
+	anim_player.play(animation_name)
+	
 	player.set_power(player.power + dt * (player.max_power))
 	player.set_speed(0)
 	
@@ -24,6 +26,15 @@ func on_released() -> void:
 func _ready() -> void:
 	connect("pressed", self, "on_pressed")
 	connect("released", self, "on_released")
+
+
+
+func detect_collision_animation(animation_name: String) -> String:
+	if anim_player.is_playing():
+		if anim_player.current_animation == "collision":
+			return "collision"
+			
+	return animation_name
 
 
 """

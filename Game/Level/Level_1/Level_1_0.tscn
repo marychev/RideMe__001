@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Game/Character/Lamp/Lamp.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Character/RM/RM.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Game/Character/Puddle/Puddle.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Game/Character/Start/Start.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Game/Character/Hourgrass/Hourgrass.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Game/Character/Rock/StaticRock.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Game/Character/MovingPanel/MovingPlatform.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Game/Character/Plank/Plank.tscn" type="PackedScene" id=10]
@@ -25,12 +26,15 @@ position = Vector2( 80, 1360 )
 position = Vector2( 1532, 1360 )
 physics_material_override = SubResource( 1 )
 
+[node name="Hourgrass" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1780.81, 1120.16 )
+
 [node name="StaticRock2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 2388, 1345 )
 physics_material_override = SubResource( 1 )
 
 [node name="RM" parent="." instance=ExtResource( 2 )]
-position = Vector2( 2572, 1152 )
+position = Vector2( 2641.3, 1092.6 )
 
 [node name="Puddle" parent="." instance=ExtResource( 3 )]
 position = Vector2( 3648.93, 1354 )

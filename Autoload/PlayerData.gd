@@ -3,13 +3,15 @@ extends Node
 signal score_updated
 signal lives_updated
 signal rms_updated
+signal time_level_updated
 
 const INIT_LIVES: = 100
+const INIT_TIME_LEVEL: = 100
 
 var score: = 0 setget set_score
 var lives: = INIT_LIVES setget set_lives
+var time_level: = INIT_TIME_LEVEL setget set_time_level
 var rms: = 0 setget set_rms
-var time_level: = 0
 
 
 const PATH_PLAYER = "/root/Game/Player"
@@ -18,6 +20,7 @@ const PATH_GUI = "/root/Game/GUI/Canvas"
 const PATH_GAME_SCREEN_PAUSE = PATH_GUI + "/GameScreenPause"
 const PATH_LIVES_COUNTER_VALUE = PATH_GUI + "/Counters/LivesCounter/Background/Value"
 const PATH_RMS_COUNTER_VALUE = PATH_GUI + "/Counters/RMCounter/Background/Value"
+const PATH_TIME_LEVEL_VALUE = PATH_GUI + "/Counters/Timeout/Background/Value"
 const PATH_SPEED_BAR = PATH_GUI + "/HBoxContainer/Bars/SpeedBar"
 const PATH_POWER_BAR = PATH_GUI + "/HBoxContainer/Bars/PowerBar"
 const PATH_GUI_TIME = PATH_GUI + "/HBoxContainer/Time"
@@ -29,13 +32,15 @@ const PATH_STOP_BTN = PATH_GUI + "/ControlContainer/StopBtn"
 
 onready var lives_value: Label = get_node(PATH_LIVES_COUNTER_VALUE)
 onready var rms_value: Label = get_node(PATH_RMS_COUNTER_VALUE)
+onready var time_level_value: Label = get_node(PATH_TIME_LEVEL_VALUE)
+
 onready var gui_time: VBoxContainer = get_node(PATH_GUI_TIME)
 
 
 func reset_progress() -> void:
 	score = 0
 	lives = INIT_LIVES
-	time_level = 0
+	time_level = INIT_TIME_LEVEL
 
 
 func set_score(value: int) -> void:
@@ -43,13 +48,32 @@ func set_score(value: int) -> void:
 	emit_signal("score_updated")
 
 
-func set_lives(value: int) -> void:
+func set_lives(value: int, anim_collision: bool = true) -> void:
+	if not lives_value:
+		lives_value = get_node(PATH_LIVES_COUNTER_VALUE)
+		
 	lives = value
 	lives_value.text = str(lives)
 	emit_signal("lives_updated")
 
 
 func set_rms(value: int) -> void:
+	# when Splash as main sceen
+	if not rms_value:
+		rms_value = get_node(PATH_RMS_COUNTER_VALUE)
+
 	rms = value
 	rms_value.text = str(rms)
 	emit_signal("rms_updated")
+
+
+func set_time_level(value: int) -> void:
+	# when Splash as main sceen
+	if not time_level_value:
+		time_level_value = get_node(PATH_TIME_LEVEL_VALUE)
+		
+	# when Game as main sceen
+	time_level = value
+	time_level_value.text = str(time_level)
+	emit_signal("time_level_updated")
+	

@@ -11,6 +11,7 @@ var paused: = true setget set_paused
 
 func _ready():
 	set_paused(true)
+	
 	pause_rect.visible = true
 	title.visible = false
 	container_btn.visible = false

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Game/GUI/counter/BaseCounter.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Character/Hourgrass/assets/hourgrass.png" type="Texture" id=2]
+[ext_resource path="res://Game/GUI/counter/Timeout.gd" type="Script" id=3]
+
+[node name="Timeout" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="." index="0"]
+
+[node name="Icon" parent="Background/CenterContainer" index="0"]
+margin_left = 22.0
+margin_right = 76.0
+texture = ExtResource( 2 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
