@@ -1,16 +1,33 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Game/GUI/assets/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Game/GUI/assets/emeralds_icon.png" type="Texture" id=2]
 [ext_resource path="res://Game/GUI/assets/label_HP_bg.png" type="Texture" id=3]
+[ext_resource path="res://Game/GUI/counter/LivesCounter.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 18
 font_data = ExtResource( 1 )
 
+[sub_resource type="Animation" id=2]
+resource_name = "danger"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
 [node name="LivesCounter" type="MarginContainer"]
 margin_right = 100.0
 margin_bottom = 40.0
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -56,3 +73,6 @@ stretch_mode = 4
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/danger = SubResource( 2 )

@@ -9,5 +9,5 @@ func _on_Start_pressed() -> void:
 
 
 func _get_configuration_warning() -> String:
-	var msg:String = "Main Menu scene must be set "
+	var msg: String = "Main Menu scene must be set "
 	return msg if main_menu_tscn == "" else ""

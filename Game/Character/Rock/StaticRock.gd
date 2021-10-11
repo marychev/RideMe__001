@@ -10,7 +10,6 @@ func _on_StompDetector_body_entered(body: Node) -> void:
 		
 		body.anim_player.stop()
 		body.anim_player.play("collision")
-		
 		PlayerData.lives -= 1
 		
 		if body.speed.x > body.max_speed / 2:

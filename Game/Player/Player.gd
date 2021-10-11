@@ -51,7 +51,7 @@ func detect_landing_animation(current_animation_name: String) -> String:
 
 
 func get_input(delta: float):
-	var animation_name = ""
+	var animation_name = "undefined"
 	
 	if Input.is_action_pressed("ui_right"):
 		animation_name = detect_landing_animation("go")

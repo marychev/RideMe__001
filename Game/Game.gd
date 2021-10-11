@@ -4,9 +4,7 @@ class_name Game
 onready var Player: KinematicBody2D = $Player
 onready var RoadSet: Node2D = $RoadSet
 onready var FirstRoadBody: StaticBody2D = RoadSet.get_node("RoadBody")
-
-onready var GUI: MarginContainer = $GUI
-onready var Time: VBoxContainer = GUI.get_node("Canvas/HBoxContainer/Time")
+onready var Time: VBoxContainer = $GUI.get_node("Canvas/HBoxContainer/Time")
 
 
 func _ready():

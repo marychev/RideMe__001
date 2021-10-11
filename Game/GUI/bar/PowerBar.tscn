@@ -20,15 +20,15 @@ margin_bottom = 40.0
 [node name="Background" parent="Count" index="0"]
 margin_bottom = 40.0
 
-[node name="Label" parent="Count/Background" index="1"]
+[node name="Label" parent="Count/Background" index="0"]
 text = "Power:"
 
-[node name="Value" parent="Count/Background" index="2"]
+[node name="Value" parent="Count/Background" index="1"]
 custom_fonts/font = SubResource( 1 )
 text = "0.00"
 
 [node name="Gauge" parent="." index="1"]
-margin_right = 417.0
+margin_right = 410.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 80, 0 )
 texture_under = ExtResource( 5 )

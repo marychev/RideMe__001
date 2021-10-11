@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Game/Player/Actor.gd"
 }, {
+"base": "HBoxContainer",
+"class": "Bar",
+"language": "GDScript",
+"path": "res://Game/GUI/bar/Bar.gd"
+}, {
 "base": "TouchScreenButton",
 "class": "ControlBtn",
 "language": "GDScript",
@@ -43,6 +48,11 @@ _global_script_classes=[ {
 "class": "JumpBtn",
 "language": "GDScript",
 "path": "res://Game/GUI/controls/JumpBtn.gd"
+}, {
+"base": "MarginContainer",
+"class": "LivesCounter",
+"language": "GDScript",
+"path": "res://Game/GUI/counter/LivesCounter.gd"
 }, {
 "base": "RigidBody2D",
 "class": "MovingPlatform",
@@ -81,12 +91,14 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Actor": "",
+"Bar": "",
 "ControlBtn": "",
 "GUI": "",
 "Game": "",
 "GoBtn": "",
 "Hourgrass": "",
 "JumpBtn": "",
+"LivesCounter": "",
 "MovingPlatform": "",
 "Player": "",
 "PlayerVelocity": "",
@@ -99,7 +111,7 @@ _global_script_class_icons={
 [application]
 
 config/name="RideMe"
-run/main_scene="res://Game/Game.tscn"
+run/main_scene="res://SplashScreen/SplashScreen.tscn"
 config/icon="res://icon.png"
 
 [autoload]

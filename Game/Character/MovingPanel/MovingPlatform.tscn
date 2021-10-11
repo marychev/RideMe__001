@@ -11,9 +11,6 @@ collision_layer = 16
 mode = 3
 mass = 10.0
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -25,8 +22,8 @@ scale = Vector2( 1.01057, 0.832519 )
 shape = SubResource( 1 )
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
-position = Vector2( -0.594606, -0.594607 )
-scale = Vector2( 16.5191, 3.79464 )
+position = Vector2( 0.639648, -0.513611 )
+scale = Vector2( 68.7248, 38.3746 )
 process_parent = true
 physics_process_parent = true
 
