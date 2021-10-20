@@ -11,6 +11,13 @@ func _ready() -> void:
 	timer_value.set_text(str(PlayerData.time_level))
 
 
+func _physics_process(delta: float) -> void:
+		# animation
+	if PlayerData.time_level < 4:
+		$AnimationPlayer.play('danger')
+	
+	
+
 func _on_Timer_timeout() -> void:
 	if PlayerData.time_level == 0:
 		player.die(true)

@@ -28,12 +28,13 @@ func _ready() -> void:
 	connect("released", self, "on_released")
 
 
-
 func detect_collision_animation(animation_name: String) -> String:
 	if anim_player.is_playing():
 		if anim_player.current_animation == "collision":
 			return "collision"
-			
+		elif anim_player.current_animation == "success":
+			return "success"
+
 	return animation_name
 
 

@@ -1,11 +1,14 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Game/Game.gd" type="Script" id=1]
 [ext_resource path="res://Game/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Game/Road/RoadSet.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Game/Level/Level_1/Level_1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Game/Character/Rock/StaticRock.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Game/Level/Background/Background.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Game/Character/Hourgrass/Hourgrass.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Game/Character/Puddle/Puddle.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Game/GUI/GUI.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Game/Character/Bench/Bench.tscn" type="PackedScene" id=9]
 
 [node name="Game" type="Node2D"]
 pause_mode = 1
@@ -23,12 +26,28 @@ margin_bottom = -35.6569
 
 [node name="RoadSet" parent="." instance=ExtResource( 3 )]
 
-[node name="Level_1" parent="." instance=ExtResource( 4 )]
-position = Vector2( -47.877, 2.51978 )
-
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 420 )
 z_index = 1
 max_speed = 600.0
 power = 400.0
-max_power = 500.0
+max_power = 600.0
+
+[node name="Level_0" type="Node2D" parent="."]
+
+[node name="Level_0_0" type="Node" parent="Level_0"]
+
+[node name="StaticRock" parent="Level_0/Level_0_0" instance=ExtResource( 4 )]
+position = Vector2( 1423.59, 1370.71 )
+
+[node name="StaticRock2" parent="Level_0/Level_0_0" instance=ExtResource( 4 )]
+position = Vector2( 2464.28, 1363.15 )
+
+[node name="Hourgrass" parent="Level_0/Level_0_0" instance=ExtResource( 6 )]
+position = Vector2( 2720.64, 1142.25 )
+
+[node name="Bench" parent="Level_0/Level_0_0" instance=ExtResource( 9 )]
+position = Vector2( 3754.49, 1342.06 )
+
+[node name="Puddle" parent="Level_0/Level_0_0" instance=ExtResource( 7 )]
+position = Vector2( 4876.84, 1358.79 )

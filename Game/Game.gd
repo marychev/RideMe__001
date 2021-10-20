@@ -7,7 +7,7 @@ onready var FirstRoadBody: StaticBody2D = RoadSet.get_node("RoadBody")
 onready var Time: VBoxContainer = $GUI.get_node("Canvas/HBoxContainer/Time")
 
 
-func _ready():
+func _ready():	
 	PlayerData.reset_progress()
 
 

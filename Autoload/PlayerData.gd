@@ -6,7 +6,7 @@ signal rms_updated
 signal time_level_updated
 
 const INIT_LIVES: = 100
-const INIT_TIME_LEVEL: = 100
+const INIT_TIME_LEVEL: = 10
 
 var score: = 0 setget set_score
 var lives: = INIT_LIVES setget set_lives
@@ -21,8 +21,11 @@ const PATH_GAME_SCREEN_PAUSE = PATH_GUI + "/GameScreenPause"
 const PATH_LIVES_COUNTER = PATH_GUI + "/Counters/LivesCounter"
 const PATH_LIVES_COUNTER_VALUE = PATH_LIVES_COUNTER + "/Background/Value"
 
-const PATH_RMS_COUNTER_VALUE = PATH_GUI + "/Counters/RMCounter/Background/Value"
-const PATH_TIME_LEVEL_VALUE = PATH_GUI + "/Counters/Timeout/Background/Value"
+const PATH_RMS_COUNTER = PATH_GUI + "/Counters/RMCounter"
+const PATH_RMS_COUNTER_VALUE = PATH_RMS_COUNTER + "/Background/Value"
+
+const PATH_TIMEOUT = PATH_GUI + "/Counters/Timeout"
+const PATH_TIME_LEVEL_VALUE = PATH_TIMEOUT + "/Background/Value"
 
 const PATH_SPEED_BAR = PATH_GUI + "/HBoxContainer/Bars/SpeedBar"
 const PATH_POWER_BAR = PATH_GUI + "/HBoxContainer/Bars/PowerBar"
@@ -84,4 +87,5 @@ func set_time_level(value: int) -> void:
 	# when Game as main sceen
 	time_level = value
 	time_level_value.text = str(time_level)
+	
 	emit_signal("time_level_updated")

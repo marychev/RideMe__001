@@ -1,9 +1,8 @@
 extends Area2D
-# class_name Grass
+class_name Grass
 
 
 func _on_body_entered(body):
-	print('! ')
 	if body.name == "Player":
 		body.set_speed(body.speed.x/2)
 		body.set_power(body.power/2)

@@ -52,3 +52,4 @@ shape = SubResource( 3 )
 
 [connection signal="screen_exited" from="VisibilityNotifier" to="." method="_on_VisibilityNotifier2D_screen_exited"]
 [connection signal="body_entered" from="StompDetector" to="." method="_on_StompDetector_body_entered"]
+[connection signal="body_exited" from="StompDetector" to="." method="_on_StompDetector_body_exited"]

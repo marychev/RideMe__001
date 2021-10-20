@@ -31,14 +31,19 @@ func player_format():
 	var vy = -8.8
 	var px = -8.8
 	var py = -8.8
+	var sx = -8.8
+	var sy = -8.8
 	
 	if not('Deleted Object' in str(PlayerScn)):
 		vx = PlayerScn._velocity.x 
 		vy = PlayerScn._velocity.y
 		px = PlayerScn.position.x
 		py = PlayerScn.position.y
+		sx = PlayerScn.speed.x
+		sy = PlayerScn.speed.y
 		
 	return """
 	Velocity: %d, %d
 	Position: %d, %d
-	""" % [vx, vy, px, py]
+	Speed: 	  %d, %d
+	""" % [vx, vy, px, py, sx, sy]

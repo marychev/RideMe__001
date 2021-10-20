@@ -80,6 +80,7 @@ margin_right = 204.0
 [node name="Timeout" parent="Canvas/Counters" instance=ExtResource( 13 )]
 margin_left = 208.0
 margin_right = 308.0
+margin_bottom = 40.0
 
 [node name="ControlContainer" type="HBoxContainer" parent="Canvas"]
 anchor_top = 1.0

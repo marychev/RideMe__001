@@ -40,6 +40,11 @@ _global_script_classes=[ {
 "path": "res://Game/GUI/controls/GoBtn.gd"
 }, {
 "base": "Area2D",
+"class": "Grass",
+"language": "GDScript",
+"path": "res://Game/Character/Grass/Grass.gd"
+}, {
+"base": "Area2D",
 "class": "Hourgrass",
 "language": "GDScript",
 "path": "res://Game/Character/Hourgrass/Hourgrass.gd"
@@ -96,6 +101,7 @@ _global_script_class_icons={
 "GUI": "",
 "Game": "",
 "GoBtn": "",
+"Grass": "",
 "Hourgrass": "",
 "JumpBtn": "",
 "LivesCounter": "",
@@ -111,7 +117,7 @@ _global_script_class_icons={
 [application]
 
 config/name="RideMe"
-run/main_scene="res://SplashScreen/SplashScreen.tscn"
+run/main_scene="res://Game/Game.tscn"
 config/icon="res://icon.png"
 
 [autoload]

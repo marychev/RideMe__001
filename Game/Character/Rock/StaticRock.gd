@@ -8,6 +8,9 @@ func _on_VisibilityNotifier2D_screen_exited() -> void:
 func _on_StompDetector_body_entered(body: Node) -> void:
 	if "Player" == body.name:
 		
+		print('_on_StompDetector_body_entered__', body.name)
+		print('-------------------------------------------')
+		
 		body.anim_player.stop()
 		body.anim_player.play("collision")
 		PlayerData.lives -= 1
@@ -18,6 +21,6 @@ func _on_StompDetector_body_entered(body: Node) -> void:
 			PlayerData.lives -= 50
 		
 		if PlayerData.lives > 0:
-			body.set_speed(1)
+			body.set_speed(-body.speed.x/2)
 		else:
 			body.die()

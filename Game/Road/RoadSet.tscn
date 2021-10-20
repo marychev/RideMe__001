@@ -5,21 +5,22 @@
 [node name="RoadSet" type="Node2D"]
 
 [node name="RoadBody" parent="." instance=ExtResource( 2 )]
+position = Vector2( 247.116, 262.357 )
 
 [node name="RoadBody2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 2675, 256.25 )
+position = Vector2( 2675, 262.357 )
 
 [node name="RoadBody3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 5106.36, 256.306 )
+position = Vector2( 5106.36, 262.357 )
 
 [node name="RoadBody4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 7538.31, 256 )
+position = Vector2( 7538.31, 262.357 )
 
 [node name="RoadBody5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 9969.98, 256 )
+position = Vector2( 9969.98, 262.357 )
 
 [node name="RoadBody6" parent="." instance=ExtResource( 2 )]
-position = Vector2( 12401.6, 256 )
+position = Vector2( 12401.6, 262.357 )
 
 [node name="RoadBody7" parent="." instance=ExtResource( 2 )]
 position = Vector2( 18597.1, 262.357 )

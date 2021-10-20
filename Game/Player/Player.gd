@@ -2,6 +2,7 @@ extends PlayerVelocity
 class_name Player
 
 export var max_speed: = 400.00
+export var max_height_jump: = 900.00
 export var power: = 10.00
 export var max_power: = 400.00
 
@@ -39,9 +40,10 @@ func _on_CollisionDetector_body_entered(body: Node) -> void:
 func on_detect_collisions_process(delta):
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
-
+		# print('on_detect_collisions_process__ ',  collision.collider.name)
 		if 'MovingPlatform' in collision.collider.name:
 			collision.collider.move_down(delta, mass)
+		# elif 'StaticRock' in collision.collider.name:  pass
 
 
 func detect_landing_animation(current_animation_name: String) -> String:
@@ -50,7 +52,7 @@ func detect_landing_animation(current_animation_name: String) -> String:
 	return current_animation_name
 
 
-func get_input(delta: float):
+func get_input(delta: float):	
 	var animation_name = "undefined"
 	
 	if Input.is_action_pressed("ui_right"):
@@ -79,7 +81,8 @@ func get_input(delta: float):
 	elif Input.is_action_just_released("ui_select"):
 		animation_name = detect_landing_animation("landing")
 		JumpBtn.on_landing_process(delta, animation_name)
-	
+
+
 
 # Processes
 
@@ -87,12 +90,18 @@ func _physics_process(delta: float):
 	get_input(delta)
 	on_detect_collisions_process(delta)
 	
-	var is_jump_interrupted: = Input.is_action_just_released("ui_select") and _velocity.y < 0.0
+	var is_jump_interrupted: = Input.is_action_just_released("ui_select") \
+		and _velocity.y < 0.0
+	
 	_velocity = calculate_move_velocity(_velocity, get_direction(), speed, is_jump_interrupted)
 	_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
 	
-	modulate = Color(0.8, 0, 0.1) if PlayerData.time_level < 3 else Color(1, 1, 1) 
-
+	# modulate = Color(0.8, 0, 0.1) if PlayerData.time_level < 3 else Color(1, 1, 1) 
+	if PlayerData.time_level < 3:
+		if anim_player.current_animation != 'collision':
+			anim_player.stop()
+		anim_player.play('collision')
+		
 	if position.y > 2000:
 		die(true)
 
@@ -110,6 +119,11 @@ func set_speed(val_x = null):
 		speed.x = max_value(val_x, max_speed)
 	if SpeedBar:
 		SpeedBar.set_progress_player()
+
+
+func set_height_jump(val_y = null):
+	if val_y:
+		speed.y = max_value(val_y, max_height_jump)
 
 
 func die(force: bool = false) -> void:
