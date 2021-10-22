@@ -1,22 +1,8 @@
-extends PlayerVelocity
+extends BasePlayer
 class_name Player
 
-export var max_speed: = 400.00
-export var max_height_jump: = 900.00
-export var power: = 10.00
-export var max_power: = 400.00
 
 var mass: int = 130
-
-onready var GUI: CanvasLayer = get_node(PlayerData.PATH_GUI)
-onready var GameScreen: Control = get_node(PlayerData.PATH_GAME_SCREEN_PAUSE)
-onready var SpeedBar: HBoxContainer = get_node(PlayerData.PATH_SPEED_BAR)
-onready var PowerBar: HBoxContainer = get_node(PlayerData.PATH_POWER_BAR)
-onready var JumpBtn: TouchScreenButton = get_node(PlayerData.PATH_JUMP_BTN)
-onready var GoBtn: TouchScreenButton = get_node(PlayerData.PATH_GO_BTN)
-onready var StopBtn: TouchScreenButton = get_node(PlayerData.PATH_STOP_BTN)
-
-onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 
 func _on_CollisionDetector_area_entered(area: Area2D) -> void:
@@ -52,7 +38,7 @@ func detect_landing_animation(current_animation_name: String) -> String:
 	return current_animation_name
 
 
-func get_input(delta: float):	
+func get_input(delta: float):
 	var animation_name = "undefined"
 	
 	if Input.is_action_pressed("ui_right"):
@@ -83,7 +69,6 @@ func get_input(delta: float):
 		JumpBtn.on_landing_process(delta, animation_name)
 
 
-
 # Processes
 
 func _physics_process(delta: float):
@@ -96,34 +81,17 @@ func _physics_process(delta: float):
 	_velocity = calculate_move_velocity(_velocity, get_direction(), speed, is_jump_interrupted)
 	_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
 	
-	# modulate = Color(0.8, 0, 0.1) if PlayerData.time_level < 3 else Color(1, 1, 1) 
+	# Todo: Implement init default modulate
+	# modulate = Color(0.8, 0, 0.1) if PlayerData.time_level < 3 else Color(1, 1, 1)
+	
 	if PlayerData.time_level < 3:
 		if anim_player.current_animation != 'collision':
 			anim_player.stop()
 		anim_player.play('collision')
-		
+	
+	# Todo: Implement calculate the max height of a stopm with road area
 	if position.y > 2000:
 		die(true)
-
-
-# set
-
-func set_power(val):
-	power = positive_max_value(val, max_power)
-	if PowerBar:
-		PowerBar.set_progress_player()
-
-
-func set_speed(val_x = null):
-	if val_x:
-		speed.x = max_value(val_x, max_speed)
-	if SpeedBar:
-		SpeedBar.set_progress_player()
-
-
-func set_height_jump(val_y = null):
-	if val_y:
-		speed.y = max_value(val_y, max_height_jump)
 
 
 func die(force: bool = false) -> void:
@@ -133,7 +101,6 @@ func die(force: bool = false) -> void:
 	# todo: need to fix
 	if PlayerData.lives <= 0:
 		# PlayerData.time_level = PlayerData.gui_time.time
-		
 		queue_free()
 		
 		var end_game_scr: String = "res://Game/GameScreen/EndGameScreen.tscn"

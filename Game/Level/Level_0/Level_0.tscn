@@ -1,0 +1,155 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Game/Level/BaseLevel.gd" type="Script" id=1]
+[ext_resource path="res://Game/Character/Lamp/Lamp.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game/Character/Bench/Bench.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Game/Character/RM/RM.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Game/Character/Rock/StaticRock.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Game/Character/MovingPanel/MovingPlatform.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Game/Character/Crossroads/Crossroad.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Game/Character/Grass/Grass.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Game/Character/Plank/Plank.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Game/Character/Stairs/StaticStairs.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Game/Character/Puddle/Puddle.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Game/Character/Hourgrass/Hourgrass.tscn" type="PackedScene" id=21]
+
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 0.02
+rough = true
+
+[sub_resource type="PhysicsMaterial" id=2]
+friction = 0.02
+rough = true
+
+[sub_resource type="PhysicsMaterial" id=3]
+friction = 0.02
+rough = true
+
+[node name="Level_0" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Level_0_0" type="Node" parent="."]
+
+[node name="StaticRock" parent="Level_0_0" instance=ExtResource( 14 )]
+position = Vector2( 1423.59, 1370.71 )
+physics_material_override = SubResource( 1 )
+
+[node name="StaticRock2" parent="Level_0_0" instance=ExtResource( 14 )]
+position = Vector2( 2464.28, 1363.15 )
+physics_material_override = SubResource( 1 )
+
+[node name="Hourgrass" parent="Level_0_0" instance=ExtResource( 21 )]
+position = Vector2( 2720.64, 1142.25 )
+
+[node name="Bench" parent="Level_0_0" instance=ExtResource( 3 )]
+position = Vector2( 3754.49, 1342.06 )
+
+[node name="Puddle" parent="Level_0_0" instance=ExtResource( 20 )]
+position = Vector2( 4876.84, 1358.79 )
+
+[node name="Puddle2" parent="Level_0_0" instance=ExtResource( 20 )]
+position = Vector2( 6090.52, 1374.43 )
+
+[node name="Puddle3" parent="Level_0_0" instance=ExtResource( 20 )]
+position = Vector2( 7190.35, 1377.3 )
+
+[node name="Bench2" parent="Level_0_0" instance=ExtResource( 3 )]
+position = Vector2( 7455.37, 1353.55 )
+
+[node name="Crossroad" parent="Level_0_0" instance=ExtResource( 16 )]
+position = Vector2( 8597.91, 1356.67 )
+
+[node name="Lamp" parent="Level_0_0" instance=ExtResource( 2 )]
+position = Vector2( 9534.24, 1060.75 )
+
+[node name="Level_0_1" type="Node" parent="."]
+
+[node name="Hourgrass2" parent="Level_0_1" instance=ExtResource( 21 )]
+position = Vector2( 9667.51, 1219.31 )
+
+[node name="Lamp2" parent="Level_0_1" instance=ExtResource( 2 )]
+position = Vector2( 9734.03, 1153.51 )
+
+[node name="StaticRock6_0" parent="Level_0_1" instance=ExtResource( 14 )]
+position = Vector2( 11154.8, 1380.97 )
+physics_material_override = SubResource( 2 )
+
+[node name="StaticRock6" parent="Level_0_1/StaticRock6_0" instance=ExtResource( 14 )]
+position = Vector2( 173.6, -61.21 )
+rotation = 1.55683
+physics_material_override = SubResource( 2 )
+
+[node name="Puddle4" parent="Level_0_1" instance=ExtResource( 20 )]
+position = Vector2( 13400, 1370 )
+
+[node name="Puddle5" parent="Level_0_1" instance=ExtResource( 20 )]
+position = Vector2( 13760, 1370 )
+
+[node name="Puddle6" parent="Level_0_1" instance=ExtResource( 20 )]
+position = Vector2( 14100, 1370 )
+
+[node name="Puddle7" parent="Level_0_1" instance=ExtResource( 20 )]
+position = Vector2( 14433.3, 1370.49 )
+
+[node name="MovingPlatform" parent="Level_0_1" instance=ExtResource( 15 )]
+position = Vector2( 14525.4, 1326.5 )
+
+[node name="Puddle8" parent="Level_0_1" instance=ExtResource( 20 )]
+position = Vector2( 14793.3, 1370.49 )
+
+[node name="Puddle9" parent="Level_0_1" instance=ExtResource( 20 )]
+position = Vector2( 15133.3, 1370.49 )
+
+[node name="MovingPlatform2" parent="Level_0_1" instance=ExtResource( 15 )]
+position = Vector2( 14961.5, 1276.71 )
+
+[node name="Level_0_2" type="Node" parent="."]
+
+[node name="Hourgrass3" parent="Level_0_2" instance=ExtResource( 21 )]
+position = Vector2( 15860, 1224 )
+
+[node name="Grass" parent="Level_0_2" instance=ExtResource( 17 )]
+position = Vector2( 17060.7, 1286.95 )
+
+[node name="StaticStairs" parent="Level_0_2" instance=ExtResource( 19 )]
+position = Vector2( 16894.9, 1222.25 )
+
+[node name="StaticRock3" parent="Level_0_2" instance=ExtResource( 14 )]
+position = Vector2( 19167.8, 1361.65 )
+physics_material_override = SubResource( 3 )
+
+[node name="StaticRock4" parent="Level_0_2" instance=ExtResource( 14 )]
+position = Vector2( 19531.8, 1356.65 )
+physics_material_override = SubResource( 3 )
+
+[node name="RM" parent="Level_0_2" instance=ExtResource( 13 )]
+position = Vector2( 19333.2, 1032.34 )
+
+[node name="Plank" parent="Level_0_2" instance=ExtResource( 18 )]
+position = Vector2( 19189.1, 1261.65 )
+
+[node name="Lamp" parent="Level_0_2" instance=ExtResource( 2 )]
+position = Vector2( 20680.3, 1081.49 )
+
+[node name="Plank2" parent="Level_0_2" instance=ExtResource( 18 )]
+position = Vector2( 21719.5, 1285.41 )
+
+[node name="StaticRock5" parent="Level_0_2" instance=ExtResource( 14 )]
+position = Vector2( 21965.9, 1374.65 )
+physics_material_override = SubResource( 3 )
+
+[node name="StaticStairs2" parent="Level_0_2" instance=ExtResource( 19 )]
+position = Vector2( 23895.8, 1235.49 )
+rotation = -0.0711441
+scale = Vector2( 1.30184, 1.16259 )
+
+[node name="Plank3" parent="Level_0_2" instance=ExtResource( 18 )]
+position = Vector2( 24816.3, 1189.6 )
+
+[node name="Level_0_3" type="Node" parent="."]
+
+[node name="Hourgrass4" parent="Level_0_3" instance=ExtResource( 21 )]
+position = Vector2( 25287.9, 1002.41 )
+
+[node name="Hourgrass5" parent="Level_0_3" instance=ExtResource( 21 )]
+position = Vector2( 26045.1, 1282.15 )

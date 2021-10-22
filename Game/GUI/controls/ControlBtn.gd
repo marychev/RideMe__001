@@ -1,16 +1,26 @@
 extends TouchScreenButton
 class_name ControlBtn
 
+const POWER_GO: int = 10
+const POWER_RELAX: int = 4
+const POWER_WAIT: int = 2
+
 onready var player: KinematicBody2D = get_node(PlayerData.PATH_PLAYER)
 onready var anim_player: AnimationPlayer = player.get_node("./AnimationPlayer")
+
+var calc_power: float
+var calc_speed: float
 
 
 func on_wait_process(dt: float, animation_name: String = "wait"):
 	animation_name = detect_collision_animation(animation_name)
 	anim_player.play(animation_name)
 	
-	player.set_power(player.power + dt * (player.max_power))
-	player.set_speed(0)
+	calc_power = player.power + (dt * player.max_power / POWER_WAIT)
+	player.set_power(calc_power)
+	
+	calc_speed = 0
+	player.set_speed(calc_speed)
 	
 	
 func on_pressed() -> void:

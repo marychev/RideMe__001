@@ -1,4 +1,4 @@
-extends Node
+extends "res://Autoload/BasePlayerData.gd"
 
 signal score_updated
 signal lives_updated
@@ -10,34 +10,9 @@ const INIT_TIME_LEVEL: = 10
 
 var score: = 0 setget set_score
 var lives: = INIT_LIVES setget set_lives
+var time_level_count: int = 0
 var time_level: = INIT_TIME_LEVEL setget set_time_level
 var rms: = 0 setget set_rms
-
-
-const PATH_PLAYER = "/root/Game/Player"
-const PATH_GUI = "/root/Game/GUI/Canvas"
-
-const PATH_GAME_SCREEN_PAUSE = PATH_GUI + "/GameScreenPause"
-const PATH_LIVES_COUNTER = PATH_GUI + "/Counters/LivesCounter"
-const PATH_LIVES_COUNTER_VALUE = PATH_LIVES_COUNTER + "/Background/Value"
-
-const PATH_RMS_COUNTER = PATH_GUI + "/Counters/RMCounter"
-const PATH_RMS_COUNTER_VALUE = PATH_RMS_COUNTER + "/Background/Value"
-
-const PATH_TIMEOUT = PATH_GUI + "/Counters/Timeout"
-const PATH_TIME_LEVEL_VALUE = PATH_TIMEOUT + "/Background/Value"
-
-const PATH_SPEED_BAR = PATH_GUI + "/HBoxContainer/Bars/SpeedBar"
-const PATH_POWER_BAR = PATH_GUI + "/HBoxContainer/Bars/PowerBar"
-const PATH_GUI_TIME = PATH_GUI + "/HBoxContainer/Time"
-
-const PATH_SPEED_BAR_COUNT_VALUE = PATH_SPEED_BAR + "/Count/Background/Value"
-const PATH_POWER_BAR_COUNT_VALUE = PATH_SPEED_BAR + "/Count/Background/Value"
-
-const PATH_JUMP_BTN = PATH_GUI + "/ControlContainer/JumpBtn"
-const PATH_GO_BTN = PATH_GUI + "/ControlContainer/GoBtn"
-const PATH_STOP_BTN = PATH_GUI + "/ControlContainer/StopBtn"
-
 
 onready var lives_value: Label = get_node(PATH_LIVES_COUNTER_VALUE)
 onready var rms_value: Label = get_node(PATH_RMS_COUNTER_VALUE)
@@ -86,6 +61,25 @@ func set_time_level(value: int) -> void:
 		
 	# when Game as main sceen
 	time_level = value
-	time_level_value.text = str(time_level)
+	time_level_value.text = str(time_level) + ' | ' + str(time_level_count)
 	
 	emit_signal("time_level_updated")
+
+
+func set_time_level_count(player: KinematicBody2D) -> int:
+	time_level_count += 1
+	
+	if player.current_level.are_you_win():
+		var _finish = load("res://Game/Character/Start/Start.tscn")
+		var finish = _finish.instance()
+		finish.set_position(
+			Vector2(
+				player.position.x + 800, 
+				player.position.y + 300)
+		)
+	
+		var game = get_node(PlayerData.PATH_GAME)
+		game.add_child(finish)
+
+	return time_level_count
+

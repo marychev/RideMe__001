@@ -3,7 +3,7 @@ class_name Timeout
 
 onready var timer: Timer = get_node("Timer")
 onready var timer_value: Label = get_node("Background/Value")
-onready var player: Player = get_node(PlayerData.PATH_PLAYER)
+onready var player: KinematicBody2D = get_node(PlayerData.PATH_PLAYER)
 
 
 func _ready() -> void:

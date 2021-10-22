@@ -1,14 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Game/Game.gd" type="Script" id=1]
 [ext_resource path="res://Game/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Game/Road/RoadSet.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Game/Character/Rock/StaticRock.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Game/Level/Level_0/Level_0.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Game/Level/Background/Background.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Game/Character/Hourgrass/Hourgrass.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Game/Character/Puddle/Puddle.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Game/GUI/GUI.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Game/Character/Bench/Bench.tscn" type="PackedScene" id=9]
 
 [node name="Game" type="Node2D"]
 pause_mode = 1
@@ -24,30 +21,45 @@ margin_bottom = -35.6569
 
 [node name="Background" parent="." instance=ExtResource( 5 )]
 
-[node name="RoadSet" parent="." instance=ExtResource( 3 )]
+[node name="RoadSet_0" parent="." instance=ExtResource( 3 )]
+
+[node name="RoadBody7" parent="RoadSet_0" index="6"]
+position = Vector2( 14833.3, 262.183 )
+
+[node name="RoadBody8" parent="RoadSet_0" index="7"]
+position = Vector2( 17264.9, 262.279 )
+
+[node name="RoadBody9" parent="RoadSet_0" index="8"]
+position = Vector2( 19695.9, 262.357 )
+
+[node name="RoadBody10" parent="RoadSet_0" index="9"]
+position = Vector2( 22126.8, 262.357 )
+
+[node name="RoadBody11" parent="RoadSet_0" index="10"]
+position = Vector2( 24558.3, 262.357 )
+
+[node name="RoadBody12" parent="RoadSet_0" index="11"]
+position = Vector2( 26990.2, 262.357 )
+
+[node name="RoadBody13" parent="RoadSet_0" index="12"]
+position = Vector2( 29422.2, 262.357 )
+
+[node name="RoadBody14" parent="RoadSet_0" index="13"]
+position = Vector2( 31854.1, 262.357 )
+
+[node name="RoadBody15" parent="RoadSet_0" index="14"]
+position = Vector2( 34285.6, 262.357 )
+
+[node name="RoadBody16" parent="RoadSet_0" index="15"]
+position = Vector2( 36717.1, 262.357 )
+
+[node name="RoadBody17" parent="RoadSet_0" index="16"]
+position = Vector2( 39149.1, 262.357 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 0, 420 )
+position = Vector2( 2000, -141.563 )
 z_index = 1
-max_speed = 600.0
-power = 400.0
-max_power = 600.0
 
-[node name="Level_0" type="Node2D" parent="."]
+[node name="Level_0" parent="." instance=ExtResource( 4 )]
 
-[node name="Level_0_0" type="Node" parent="Level_0"]
-
-[node name="StaticRock" parent="Level_0/Level_0_0" instance=ExtResource( 4 )]
-position = Vector2( 1423.59, 1370.71 )
-
-[node name="StaticRock2" parent="Level_0/Level_0_0" instance=ExtResource( 4 )]
-position = Vector2( 2464.28, 1363.15 )
-
-[node name="Hourgrass" parent="Level_0/Level_0_0" instance=ExtResource( 6 )]
-position = Vector2( 2720.64, 1142.25 )
-
-[node name="Bench" parent="Level_0/Level_0_0" instance=ExtResource( 9 )]
-position = Vector2( 3754.49, 1342.06 )
-
-[node name="Puddle" parent="Level_0/Level_0_0" instance=ExtResource( 7 )]
-position = Vector2( 4876.84, 1358.79 )
+[editable path="RoadSet_0"]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Game/Character/Crossroads/Crossroads.gd" type="Script" id=1]
+[ext_resource path="res://Game/Character/Crossroads/assets/crossroads.png" type="Texture" id=2]
+
+[node name="Crossroad" type="Node2D"]
+scale = Vector2( 0.456429, 0.414936 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="crossroads" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+position = Vector2( 0, 10 )
+scale = Vector2( 18.6004, 14.6224 )
+process_parent = true
+physics_process_parent = true

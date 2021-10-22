@@ -4,7 +4,7 @@ onready var _label_value: Label = get_node(PlayerData.PATH_SPEED_BAR_COUNT_VALUE
 onready var _progress: TextureProgress = $"./Gauge"
 
 
-func _ready():
+func _ready() -> void:
 	_progress.max_value = player.max_speed
 	
 

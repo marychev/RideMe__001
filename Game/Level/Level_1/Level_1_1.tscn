@@ -63,8 +63,8 @@ position = Vector2( 25808.5, 1127.62 )
 position = Vector2( 27311.3, 1359.69 )
 physics_material_override = SubResource( 1 )
 
-[node name="StaticRock6" parent="." instance=ExtResource( 5 )]
-position = Vector2( 27484.9, 1298.48 )
+[node name="StaticRock6" parent="StaticRock6_0" instance=ExtResource( 5 )]
+position = Vector2( 173.6, -61.21 )
 rotation = 1.55683
 physics_material_override = SubResource( 1 )
 

@@ -21,6 +21,6 @@ func _on_StompDetector_body_entered(body: Node) -> void:
 			PlayerData.lives -= 50
 		
 		if PlayerData.lives > 0:
-			body.set_speed(-body.speed.x/2)
+			body.set_speed(-body.speed.x / 2)
 		else:
 			body.die()
