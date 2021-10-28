@@ -153,3 +153,30 @@ position = Vector2( 25287.9, 1002.41 )
 
 [node name="Hourgrass5" parent="Level_0_3" instance=ExtResource( 21 )]
 position = Vector2( 26045.1, 1282.15 )
+
+[node name="Lamp" parent="Level_0_3" instance=ExtResource( 2 )]
+position = Vector2( 25251.3, 1063.05 )
+
+[node name="MovingPlatform" parent="Level_0_3" instance=ExtResource( 15 )]
+position = Vector2( 27582, 1370.28 )
+
+[node name="Plank" parent="Level_0_3" instance=ExtResource( 18 )]
+position = Vector2( 26830.6, 1211.45 )
+
+[node name="Plank2" parent="Level_0_3" instance=ExtResource( 18 )]
+position = Vector2( 27848.7, 1263.7 )
+
+[node name="MovingPlatform2" parent="Level_0_3" instance=ExtResource( 15 )]
+position = Vector2( 29106.5, 1311.85 )
+
+[node name="Plank3" parent="Level_0_3" instance=ExtResource( 18 )]
+position = Vector2( 30151, 1271.94 )
+
+[node name="Plank4" parent="Level_0_3" instance=ExtResource( 18 )]
+position = Vector2( 31530.7, 1293.92 )
+
+[node name="Plank5" parent="Level_0_3" instance=ExtResource( 18 )]
+position = Vector2( 33282.3, 1260.78 )
+
+[node name="Hourgrass6" parent="Level_0_3" instance=ExtResource( 21 )]
+position = Vector2( 35026, 1148.96 )

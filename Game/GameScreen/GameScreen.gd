@@ -4,8 +4,9 @@ onready var sceen_tree: = get_tree()
 onready var pause_rect: ColorRect = get_node("PauseRect")
 onready var title: Label = get_node("PauseRect/Title")
 onready var container_btn: VBoxContainer = get_node("PauseRect/Container")
+onready var player: KinematicBody2D = get_node(PlayerData.PATH_PLAYER)
 
-var _counter: int = 1
+var _counter: int = 3
 var paused: = true setget set_paused
 
 
@@ -37,16 +38,21 @@ func _on_Timer_timeout() -> void:
 		$Timer.stop()
 		$Timer.queue_free()
 		$TimeToStart.queue_free()
-		return
+		# return
+		
 	elif _counter == 1:
 		set_paused(false)
 		pause_rect.visible = false
 		title.visible = true
 		container_btn.visible = true
 	
+		$TimeToStart.get_font("font").size = 64
+		
+		var current_level = player.current_level
+		var title = "Go go go\r\n%s" % current_level.title
+		$TimeToStart.set_text(title)
+		
 		_counter -= 1
-		$TimeToStart.get_font("font").size = 42
-		$TimeToStart.set_text('Go go go')
 	else:
 		_counter -= 1
 		$TimeToStart.set_text(str(_counter))
