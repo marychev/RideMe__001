@@ -1,6 +1,10 @@
 extends Area2D
 
 
+func _physics_process(delta):
+	set_physics_process(false)
+
+
 func _on_body_entered(body):
 	if body.name == "Player":
 		body.set_speed(body.speed.x / 2)

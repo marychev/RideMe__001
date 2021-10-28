@@ -25,3 +25,5 @@ const PATH_POWER_BAR_COUNT_VALUE = PATH_POWER_BAR + "/Count/Background/Value"
 const PATH_JUMP_BTN = PATH_GUI + "/ControlContainer/JumpBtn"
 const PATH_GO_BTN = PATH_GUI + "/ControlContainer/GoBtn"
 const PATH_STOP_BTN = PATH_GUI + "/ControlContainer/StopBtn"
+
+const PATH_PLAYER_STOMP_DETECTER = "res://Game/scripts/PlayerStompDetecter.gd"

@@ -1,8 +1,8 @@
 extends Node2D
 class_name BaseLevel
 
-const NUM_WIN: int = 4 # +1!
-var title: String = 'Collect the 5 hourgrass!'
+const NUM_WIN: int = 5
+var title: String = 'Collect the %s hourgrass!' % NUM_WIN
 var has_win: bool = false
 
 

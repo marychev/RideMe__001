@@ -1,4 +1,5 @@
 extends StaticBody2D
+class_name RoadBody
 
 export(bool) var has_repeat = false;
 
@@ -15,7 +16,6 @@ func repeat_two_sprites():
 	
 
 func _repeat_two_sprites():
-	""" It's imitation or analog the ParalaxBackground behavior """
 	if not has_repeat:
 		push_error("[ERROR] Advice: The 'Has Repeat' variable has not set at 'true'")
 		return
