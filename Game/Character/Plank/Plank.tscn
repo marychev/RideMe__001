@@ -4,19 +4,21 @@
 [ext_resource path="res://Game/Character/Plank/Plank.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 154.767, 7.09287 )
+extents = Vector2( 154.767, 10.2655 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 158.749, 5.10938 )
+extents = Vector2( 130.961, 10.8907 )
 
 [node name="Plank" type="RigidBody2D"]
 collision_layer = 2
 collision_mask = 9
-mass = 120.0
-gravity_scale = 5.0
+mass = 42.0
+gravity_scale = 14.0
 sleeping = true
-linear_damp = 10.0
-angular_damp = 5.0
+linear_damp = 16.0
+angular_damp = 8.0
+applied_force = Vector2( 1, 1 )
+applied_torque = 4.0
 script = ExtResource( 2 )
 
 [node name="sprite" type="Sprite" parent="."]
@@ -25,26 +27,26 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2( 156.145, 16.8627 )
+position = Vector2( 156, 12.4 )
 z_index = 1
 shape = SubResource( 1 )
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
-position = Vector2( -686.141, -463.938 )
-scale = Vector2( 4.39199, 42.636 )
+position = Vector2( -398.141, -491.821 )
+scale = Vector2( 3.59742, 48.5686 )
 rect = Rect2( 0, 2, 310, 18 )
 process_parent = true
 physics_process_parent = true
 
 [node name="StompDetector" type="Area2D" parent="."]
 modulate = Color( 0.0313726, 0, 1, 1 )
-position = Vector2( -0.876862, -0.732162 )
+position = Vector2( 1.87314, 1.01784 )
 input_pickable = false
 collision_layer = 2
 collision_mask = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StompDetector"]
-position = Vector2( 156.88, 6.76966 )
+position = Vector2( 154, 11.4 )
 shape = SubResource( 2 )
 
 [connection signal="screen_exited" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_exited"]

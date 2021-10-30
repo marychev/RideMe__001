@@ -11,7 +11,7 @@ func _on_CollisionDetector_area_entered(area: Area2D) -> void:
 	
 	if 'Plank' in root.name:
 		if Input.is_action_pressed("ui_select"):
-			_velocity = calculate_stomp_velocity(_velocity, max_power/2 + power)
+			_velocity = calculate_stomp_velocity(_velocity, max_power+power)
 
 
 func _on_CollisionDetector_body_entered(body: Node) -> void:
@@ -54,6 +54,9 @@ func get_input(delta: float):
 		animation_name = detect_landing_animation("")
 		StopBtn.on_stop_released(delta)
 	else:
+		print('else')
+		print(speed.x)
+		
 		if speed.x < 1:
 			animation_name = detect_landing_animation("wait")
 			GoBtn.on_wait_process(delta, animation_name)
@@ -84,7 +87,7 @@ func _physics_process(delta: float):
 	# Todo: Implement init default modulate
 	# modulate = Color(0.8, 0, 0.1) if PlayerData.time_level < 3 else Color(1, 1, 1)
 	
-	if PlayerData.time_level < 3:
+	if PlayerData.time_level < 5:
 		if anim_player.current_animation != 'collision':
 			anim_player.stop()
 		anim_player.play('collision')

@@ -6,24 +6,29 @@ signal rms_updated
 signal time_level_updated
 
 const INIT_LIVES: = 100
-const INIT_TIME_LEVEL: = 10
 
 var score: = 0 setget set_score
 var lives: = INIT_LIVES setget set_lives
 var time_level_count: int = 0
-var time_level: = INIT_TIME_LEVEL setget set_time_level
+var time_level: = 0 setget set_time_level
 var rms: = 0 setget set_rms
 
 onready var lives_value: Label = get_node(PATH_LIVES_COUNTER_VALUE)
 onready var rms_value: Label = get_node(PATH_RMS_COUNTER_VALUE)
 onready var time_level_value: Label = get_node(PATH_TIME_LEVEL_VALUE)
 onready var gui_time: VBoxContainer = get_node(PATH_GUI_TIME)
+onready var player: KinematicBody2D = get_node(PATH_PLAYER)
+
+
+func _ready():
+	if player.current_level.INIT_TIME_LEVEL:
+		time_level = player.current_level.INIT_TIME_LEVEL
 
 
 func reset_progress() -> void:
 	score = 0
 	lives = INIT_LIVES
-	time_level = INIT_TIME_LEVEL
+	time_level = player.current_level.INIT_TIME_LEVEL
 
 
 func set_score(value: int) -> void:
@@ -66,7 +71,10 @@ func set_time_level(value: int) -> void:
 	emit_signal("time_level_updated")
 
 
-func set_time_level_count(player: KinematicBody2D) -> int:
+func set_time_level_count(_player: KinematicBody2D) -> int:
+	if not player: 
+		player = _player
+
 	time_level_count += 1
 	
 	if player.current_level.are_you_win():

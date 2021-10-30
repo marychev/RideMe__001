@@ -1,7 +1,8 @@
 extends Area2D
 class_name Hourgrass
 
-onready var anim_player: AnimationPlayer = get_node("AnimationPlayer")
+onready var player: Player = get_node(PlayerData.PATH_PLAYER)
+onready var animation: AnimationPlayer = get_node("AnimationPlayer")
 
 
 func _ready() -> void:
@@ -10,7 +11,7 @@ func _ready() -> void:
 
 func _on_body_entered(body) -> void:
 	if body.name == "Player":
-		anim_player.play("fade_out")
+		animation.play("fade_out")
 		player_do_anim_success(body)
 		timeout_do_anim_success()
 		set_value_of_time_level(0.0)
@@ -33,16 +34,14 @@ func player_do_anim_success(player: KinematicBody2D) -> void:
 
 
 func timeout_do_anim_success() -> void:
-	var timeout_anim_player: AnimationPlayer = get_node(PlayerData.PATH_TIMEOUT + "/AnimationPlayer")
-	if timeout_anim_player.current_animation != 'success':
-		timeout_anim_player.play('success')
+	var timeout_animation: AnimationPlayer = get_node(PlayerData.PATH_TIMEOUT + "/AnimationPlayer")
+	if timeout_animation.current_animation != 'success':
+		timeout_animation.play('success')
 
 
 func get_value_of_time_level(level_num: float) -> int:
-	if level_num in [0.0, 0.1]:
-		return 20
-	elif level_num in [0.2, 0.3, 0.4]:
-		return 30
+	if player.current_level:
+		return player.current_level.INIT_TIME_LEVEL
 	return -1
 
 

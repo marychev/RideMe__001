@@ -3,20 +3,13 @@ extends RigidBody2D
 onready var live: int = 2
 
 
-func _ready():
-	set_physics_process(false)
-
-
 func _on_StompDetector_body_entered(body: Node) -> void:
-	print('[_on_StompDetector_body_entered]: ', body.name, live)
 	if "Player" == body.name:
-		
-		body.anim_player.stop()
-		body.anim_player.play("collision")
-		PlayerData.lives -= 1
-		
-		# if body.global_position.y > $StompDetector.global_position.y:
 		$sprite.flip_v = true
+		
+		live -= 1
+		body.anim_player.stop()
+		
 		if live == 0:
 			die()
 
@@ -26,7 +19,6 @@ func _on_VisibilityEnabler2D_screen_exited() -> void:
 
 
 func die():
-	print('[BOOM]: Add a new sprites the broken planks, two another', self)
 	live == 0
 	$Collision.disabled = true
 	queue_free()

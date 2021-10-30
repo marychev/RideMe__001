@@ -4,7 +4,7 @@
 [ext_resource path="res://Game/Character/People/KickScooter/KSMan/KSMan.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 37.7369, 54.0385 )
+extents = Vector2( 36.4023, 53.9135 )
 
 [node name="KSMan" type="KinematicBody2D"]
 position = Vector2( -38.2801, -110.121 )
@@ -22,7 +22,7 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2( 38.0507, 53.2673 )
+position = Vector2( 37.7534, 53.8619 )
 shape = SubResource( 1 )
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]

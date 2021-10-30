@@ -4,7 +4,7 @@
 [ext_resource path="res://Game/Player/Player.gd" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 33.0292, 35.6464 )
+extents = Vector2( 33.0292, 41.2327 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "collision"
@@ -102,7 +102,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 33.924, 21.085 )
+extents = Vector2( 33.924, 27.6183 )
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( -47.7295, -141.563 )
@@ -122,7 +122,7 @@ vframes = 4
 frame = 6
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2( 35.1504, 68.341 )
+position = Vector2( 41.3627, 68.341 )
 shape = SubResource( 1 )
 
 [node name="Camera" type="Camera2D" parent="."]
@@ -153,7 +153,7 @@ collision_layer = 0
 collision_mask = 114
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionDetector"]
-position = Vector2( -0.368818, -16.4242 )
+position = Vector2( 5.73215, -16.2016 )
 shape = SubResource( 8 )
 
 [connection signal="area_entered" from="CollisionDetector" to="." method="_on_CollisionDetector_area_entered"]

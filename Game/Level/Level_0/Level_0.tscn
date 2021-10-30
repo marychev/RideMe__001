@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Game/Level/BaseLevel.gd" type="Script" id=1]
 [ext_resource path="res://Game/Character/Lamp/Lamp.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Game/Character/Bench/Bench.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Game/Character/People/KickScooter/KSMan/KSMan.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Game/Character/RM/RM.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Game/Character/Rock/StaticRock.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Game/Character/MovingPanel/MovingPlatform.tscn" type="PackedScene" id=15]
@@ -45,19 +46,20 @@ position = Vector2( 2720.64, 1142.25 )
 position = Vector2( 3754.49, 1342.06 )
 
 [node name="Puddle" parent="Level_0_0" instance=ExtResource( 20 )]
-position = Vector2( 4876.84, 1358.79 )
+position = Vector2( 4876, 1358 )
 
 [node name="Puddle2" parent="Level_0_0" instance=ExtResource( 20 )]
-position = Vector2( 6090.52, 1374.43 )
+position = Vector2( 6090.52, 1358 )
 
 [node name="Puddle3" parent="Level_0_0" instance=ExtResource( 20 )]
-position = Vector2( 7190.35, 1377.3 )
+position = Vector2( 7190.35, 1358 )
 
 [node name="Bench2" parent="Level_0_0" instance=ExtResource( 3 )]
 position = Vector2( 7455.37, 1353.55 )
 
 [node name="Crossroad" parent="Level_0_0" instance=ExtResource( 16 )]
-position = Vector2( 8597.91, 1356.67 )
+position = Vector2( 8600, 1364 )
+scale = Vector2( 0.4, 0.4 )
 
 [node name="Lamp" parent="Level_0_0" instance=ExtResource( 2 )]
 position = Vector2( 9534.24, 1060.75 )
@@ -92,7 +94,7 @@ position = Vector2( 14100, 1370 )
 position = Vector2( 14433.3, 1370.49 )
 
 [node name="MovingPlatform" parent="Level_0_1" instance=ExtResource( 15 )]
-position = Vector2( 14525.4, 1326.5 )
+position = Vector2( 14540, 1286 )
 
 [node name="Puddle8" parent="Level_0_1" instance=ExtResource( 20 )]
 position = Vector2( 14793.3, 1370.49 )
@@ -101,7 +103,7 @@ position = Vector2( 14793.3, 1370.49 )
 position = Vector2( 15133.3, 1370.49 )
 
 [node name="MovingPlatform2" parent="Level_0_1" instance=ExtResource( 15 )]
-position = Vector2( 14961.5, 1276.71 )
+position = Vector2( 15031.3, 1203.69 )
 
 [node name="Level_0_2" type="Node" parent="."]
 
@@ -109,7 +111,7 @@ position = Vector2( 14961.5, 1276.71 )
 position = Vector2( 15860, 1224 )
 
 [node name="Grass" parent="Level_0_2" instance=ExtResource( 17 )]
-position = Vector2( 17060.7, 1286.95 )
+position = Vector2( 17305, 1261.98 )
 
 [node name="StaticStairs" parent="Level_0_2" instance=ExtResource( 19 )]
 position = Vector2( 16894.9, 1222.25 )
@@ -148,23 +150,25 @@ position = Vector2( 24816.3, 1189.6 )
 
 [node name="Level_0_3" type="Node" parent="."]
 
-[node name="Hourgrass4" parent="Level_0_3" instance=ExtResource( 21 )]
-position = Vector2( 25287.9, 1002.41 )
+[node name="RM" parent="Level_0_3" instance=ExtResource( 13 )]
+position = Vector2( 25217.7, 1005.54 )
 
 [node name="Hourgrass5" parent="Level_0_3" instance=ExtResource( 21 )]
-position = Vector2( 26045.1, 1282.15 )
+position = Vector2( 26045.1, 1272.35 )
 
 [node name="Lamp" parent="Level_0_3" instance=ExtResource( 2 )]
 position = Vector2( 25251.3, 1063.05 )
 
 [node name="MovingPlatform" parent="Level_0_3" instance=ExtResource( 15 )]
-position = Vector2( 27582, 1370.28 )
+position = Vector2( 27676.7, 1257.85 )
 
 [node name="Plank" parent="Level_0_3" instance=ExtResource( 18 )]
-position = Vector2( 26830.6, 1211.45 )
+position = Vector2( 27252.3, 1211.45 )
+rotation = -0.33083
 
 [node name="Plank2" parent="Level_0_3" instance=ExtResource( 18 )]
-position = Vector2( 27848.7, 1263.7 )
+position = Vector2( 27896.3, 1237.54 )
+rotation = 0.528958
 
 [node name="MovingPlatform2" parent="Level_0_3" instance=ExtResource( 15 )]
 position = Vector2( 29106.5, 1311.85 )
@@ -173,10 +177,27 @@ position = Vector2( 29106.5, 1311.85 )
 position = Vector2( 30151, 1271.94 )
 
 [node name="Plank4" parent="Level_0_3" instance=ExtResource( 18 )]
-position = Vector2( 31530.7, 1293.92 )
+position = Vector2( 30824.5, 1173.17 )
 
 [node name="Plank5" parent="Level_0_3" instance=ExtResource( 18 )]
-position = Vector2( 33282.3, 1260.78 )
+position = Vector2( 31446, 1037.49 )
 
 [node name="Hourgrass6" parent="Level_0_3" instance=ExtResource( 21 )]
-position = Vector2( 35026, 1148.96 )
+position = Vector2( 32650.2, 1110.86 )
+
+[node name="Plank8" parent="Level_0_3" instance=ExtResource( 18 )]
+position = Vector2( 32733.8, 1166.33 )
+linear_damp = 18.0
+applied_torque = 2.0
+
+[node name="KSMan" parent="Level_0_3" instance=ExtResource( 4 )]
+position = Vector2( 33162.6, 1064.62 )
+
+[node name="Hourgrass7" parent="Level_0_3" instance=ExtResource( 21 )]
+position = Vector2( 34730, 1245.84 )
+
+[node name="Hourgrass8" parent="Level_0_3" instance=ExtResource( 21 )]
+position = Vector2( 36912.2, 1260.96 )
+
+[node name="Hourgrass9" parent="Level_0_3" instance=ExtResource( 21 )]
+position = Vector2( 38968.4, 1255.92 )
