@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Game/GUI/assets/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Game/GUI/assets/label_HP_bg.png" type="Texture" id=2]
-[ext_resource path="res://Game/Character/RM/assets/rm_icon.png" type="Texture" id=3]
+[ext_resource path="res://Game/GUI/counter/RMIconContainer.tscn" type="PackedScene" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 18
@@ -36,27 +36,4 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="Background"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -50.0
-margin_top = -12.0
-margin_right = 30.0
-margin_bottom = 28.0
-rect_scale = Vector2( 0.8, 0.8 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Icon" type="TextureRect" parent="Background/CenterContainer"]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 70.0
-margin_bottom = 70.0
-rect_min_size = Vector2( 50, 0 )
-texture = ExtResource( 3 )
-stretch_mode = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="CenterContainer" parent="Background" instance=ExtResource( 3 )]

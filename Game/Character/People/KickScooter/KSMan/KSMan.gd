@@ -1,4 +1,5 @@
 extends "res://Game/Player/Actor.gd"
+class_name KSMan
 
 
 func _ready() -> void:

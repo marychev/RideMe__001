@@ -20,7 +20,9 @@ func _on_CollisionDetector_body_entered(body: Node) -> void:
 		anim_player.stop()
 		body.move_down(get_physics_process_delta_time(), mass)
 	elif 'KSMan' in body.name:
-		die(true)
+		# die(true)
+		push_warning('Todo:')
+		push_warning('Add collision via GirlBack instead player die')
 
 
 func on_detect_collisions_process(delta):
@@ -54,9 +56,6 @@ func get_input(delta: float):
 		animation_name = detect_landing_animation("")
 		StopBtn.on_stop_released(delta)
 	else:
-		print('else')
-		print(speed.x)
-		
 		if speed.x < 1:
 			animation_name = detect_landing_animation("wait")
 			GoBtn.on_wait_process(delta, animation_name)
@@ -94,6 +93,10 @@ func _physics_process(delta: float):
 	
 	# Todo: Implement calculate the max height of a stopm with road area
 	if position.y > 2000:
+		var _end_game_scr = load("res://Game/GameScreen/EndGameScreen.tscn")
+		var end_game_scr = _end_game_scr.instance()
+		PlayerData.set_fail_title(end_game_scr.FailTitleChoices.FELL)
+		PlayerData.set_score(global_position.x)
 		die(true)
 
 
@@ -106,5 +109,5 @@ func die(force: bool = false) -> void:
 		# PlayerData.time_level = PlayerData.gui_time.time
 		queue_free()
 		
-		var end_game_scr: String = "res://Game/GameScreen/EndGameScreen.tscn"
-		get_tree().change_scene(end_game_scr)
+		var _end_game_scr: String = "res://Game/GameScreen/EndGameScreen.tscn"
+		get_tree().change_scene(_end_game_scr)

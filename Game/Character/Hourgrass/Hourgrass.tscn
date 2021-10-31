@@ -19,7 +19,7 @@ position = Vector2( 27.1522, 40.0296 )
 shape = SubResource( 1 )
 
 [node name="VisibilityNotifier" parent="." index="3"]
-position = Vector2( 28.4651, 54.3053 )
-scale = Vector2( 98.1006, 44.9992 )
+position = Vector2( 0, 54 )
+scale = Vector2( 138, 44 )
 
 [connection signal="body_shape_entered" from="." to="." method="_on_Hourgrass_body_shape_entered"]

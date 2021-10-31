@@ -1,4 +1,5 @@
 extends Control
+class_name GameScreen
 
 onready var sceen_tree: = get_tree()
 onready var pause_rect: ColorRect = get_node("PauseRect")
@@ -37,9 +38,7 @@ func _on_Timer_timeout() -> void:
 	if _counter == 0:
 		$Timer.stop()
 		$Timer.queue_free()
-		$TimeToStart.queue_free()
-		# return
-		
+		$TimeToStart.queue_free()	
 	elif _counter == 1:
 		set_paused(false)
 		pause_rect.visible = false
@@ -48,8 +47,7 @@ func _on_Timer_timeout() -> void:
 	
 		$TimeToStart.get_font("font").size = 64
 		
-		var current_level = player.current_level
-		var title = "Go go go\r\n%s" % current_level.title
+		var title = "Go go go\r\n%s" % player.current_level.title
 		$TimeToStart.set_text(title)
 		
 		_counter -= 1
