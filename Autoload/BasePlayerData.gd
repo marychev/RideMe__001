@@ -26,4 +26,8 @@ const PATH_JUMP_BTN = PATH_GUI + "/ControlContainer/JumpBtn"
 const PATH_GO_BTN = PATH_GUI + "/ControlContainer/GoBtn"
 const PATH_STOP_BTN = PATH_GUI + "/ControlContainer/StopBtn"
 
+const END_GAME_SCREEN = "res://Game/GameScreen/EndGameScreen.tscn"
+
+# scripts
+const PATH_DIE_PLAYER = "res://Game/scripts/DiePlayer.gd"
 const PATH_PLAYER_STOMP_DETECTER = "res://Game/scripts/PlayerStompDetecter.gd"

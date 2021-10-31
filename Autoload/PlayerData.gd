@@ -13,7 +13,9 @@ var time_level_count: int = 0
 var time_level: = 0 setget set_time_level
 var rms: = 0 setget set_rms
 
-var fail_type_title: int
+var type_title: int = -1
+
+var current_level: Node
 
 onready var lives_value: Label = get_node(PATH_LIVES_COUNTER_VALUE)
 onready var rms_value: Label = get_node(PATH_RMS_COUNTER_VALUE)
@@ -24,17 +26,19 @@ onready var player: KinematicBody2D = get_node(PATH_PLAYER)
 
 func _ready():
 	if player.current_level.INIT_TIME_LEVEL:
-		time_level = player.current_level.INIT_TIME_LEVEL
-	
+		current_level = player.current_level
+		time_level = current_level.INIT_TIME_LEVEL
+
+
 func reset_progress() -> void:
+	_ready()
+
+	if not is_instance_valid(player):
+		player = load("res://Game/Player/Player.gd").new()
+		
+	time_level_count = 0
 	score = 0
 	lives = INIT_LIVES
-	
-	if not is_instance_valid(player):
-		var _player = load("res://Game/Player/Player.gd")
-		player = _player.new()
-		
-	time_level = player.current_level.INIT_TIME_LEVEL
 
 
 func set_score(value: int) -> void:
@@ -68,8 +72,6 @@ func set_time_level(value: int) -> void:
 	# when Splash as main sceen
 	if not is_instance_valid(time_level_value):
 		time_level_value = get_node(PATH_TIME_LEVEL_VALUE)
-	
-	__todo_1__(time_level_value)
 		
 	# when Game as main sceen
 	time_level = value
@@ -83,7 +85,7 @@ func set_time_level_count(_player: KinematicBody2D) -> int:
 
 	time_level_count += 1
 	
-	if player.current_level.are_you_win():
+	if current_level.are_you_win():
 		var _finish = load("res://Game/Character/Start/Start.tscn")
 		var finish = _finish.instance()
 		
@@ -103,16 +105,6 @@ func set_time_level_count(_player: KinematicBody2D) -> int:
 	return time_level_count
 
 
-func set_fail_title(type_title: int):
-	fail_type_title = type_title
-
-
-
-func __todo_1__(time_level_value_node) -> void:
-	if not is_instance_valid(time_level_value_node):
-		push_warning('Todo:')
-		push_warning('After Reload happened error or the die of plpayer')
-		push_warning('Need to implement via load(PATH_TIME_LEVEL_VALUE)')
-		push_warning('-- Errors was got at 28/10/21 --')
-		print()
+func set_type_title(_type_title: int):
+	type_title = _type_title
 

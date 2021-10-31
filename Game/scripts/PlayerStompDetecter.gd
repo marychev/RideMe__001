@@ -22,4 +22,6 @@ func on_player_entered() -> void:
 		if PlayerData.lives > 0:
 			player.set_speed(-player.speed.x / 2)
 		else:
-			player.die()
+			# die player from fell
+			var die_player = load(PlayerData.PATH_DIE_PLAYER).new()
+			die_player.from_broke_bike(player)

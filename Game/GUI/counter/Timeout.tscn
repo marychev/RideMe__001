@@ -25,8 +25,8 @@ script = ExtResource( 3 )
 [node name="Timer" type="Timer" parent="." index="0"]
 
 [node name="Icon" parent="Background/CenterContainer" index="0"]
-margin_left = 22.0
-margin_right = 76.0
+margin_left = 42.0
+margin_right = 96.0
 texture = ExtResource( 2 )
 
 [node name="AnimationPlayer" parent="." index="2"]

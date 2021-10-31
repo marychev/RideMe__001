@@ -17,9 +17,9 @@ __meta__ = {
 
 [node name="Icon" type="TextureRect" parent="."]
 margin_left = 10.0
-margin_top = 10.0
+margin_top = 374.0
 margin_right = 70.0
-margin_bottom = 70.0
+margin_bottom = 434.0
 rect_min_size = Vector2( 50, 0 )
 texture = ExtResource( 1 )
 stretch_mode = 4

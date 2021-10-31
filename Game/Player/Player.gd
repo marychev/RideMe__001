@@ -1,12 +1,11 @@
 extends BasePlayer
 class_name Player
 
-
 var mass: int = 130
 
 
 func _on_CollisionDetector_area_entered(area: Area2D) -> void:
-	print('[_on_CollisionDetector_Area_entered]', area.name)
+	# print('[_on_CollisionDetector_Area_entered]', area.name)
 	var root = area.get_node('../')
 	
 	if 'Plank' in root.name:
@@ -15,14 +14,15 @@ func _on_CollisionDetector_area_entered(area: Area2D) -> void:
 
 
 func _on_CollisionDetector_body_entered(body: Node) -> void:
-	print("[_on_CollisionDetector_Body_entered]: ", body.name)
+	# print("[_on_CollisionDetector_Body_entered]: ", body.name)
 	if 'MovingPlatform' in body.name:
 		anim_player.stop()
 		body.move_down(get_physics_process_delta_time(), mass)
 	elif 'KSMan' in body.name:
-		# die(true)
-		push_warning('Todo:')
-		push_warning('Add collision via GirlBack instead player die')
+		var die_player = load(PlayerData.PATH_DIE_PLAYER).new()
+		die_player.from_hir_person(self)
+		
+		__todo__()
 
 
 func on_detect_collisions_process(delta):
@@ -93,21 +93,11 @@ func _physics_process(delta: float):
 	
 	# Todo: Implement calculate the max height of a stopm with road area
 	if position.y > 2000:
-		var _end_game_scr = load("res://Game/GameScreen/EndGameScreen.tscn")
-		var end_game_scr = _end_game_scr.instance()
-		PlayerData.set_fail_title(end_game_scr.FailTitleChoices.FELL)
-		PlayerData.set_score(global_position.x)
-		die(true)
+		var die_player = load(PlayerData.PATH_DIE_PLAYER).new()
+		die_player.from_fell(self)
 
 
-func die(force: bool = false) -> void:
-	if force: 
-		PlayerData.lives = 0
-	
-	# todo: need to fix
-	if PlayerData.lives <= 0:
-		# PlayerData.time_level = PlayerData.gui_time.time
-		queue_free()
-		
-		var _end_game_scr: String = "res://Game/GameScreen/EndGameScreen.tscn"
-		get_tree().change_scene(_end_game_scr)
+func __todo__():
+	print('Todo:')
+	print('1. Add collision via GirlBack instead')
+	print()

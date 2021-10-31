@@ -15,11 +15,11 @@ func _physics_process(delta: float) -> void:
 		# animation
 	if PlayerData.time_level < 4:
 		$AnimationPlayer.play('danger')
-	
-	
+
 
 func _on_Timer_timeout() -> void:
 	if PlayerData.time_level == 0:
-		player.die(true)
-	
+		var die_player = load(PlayerData.PATH_DIE_PLAYER).new()
+		die_player.from_time_up(player)
+
 	PlayerData.time_level -= 1
