@@ -84,6 +84,10 @@ func _physics_process(delta: float):
 	_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
 	
 	# Todo: Implement init default modulate
+	print(anim_player.current_animation)
+	if anim_player.current_animation != 'collision':
+		modulate = Color(1, 1, 1)
+
 	# modulate = Color(0.8, 0, 0.1) if PlayerData.time_level < 3 else Color(1, 1, 1)
 	
 	if PlayerData.time_level < 5:
