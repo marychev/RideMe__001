@@ -16,13 +16,8 @@ func _on_CollisionDetector_area_entered(area: Area2D) -> void:
 func _on_CollisionDetector_body_entered(body: Node) -> void:
 	# print("[_on_CollisionDetector_Body_entered]: ", body.name)
 	if 'MovingPlatform' in body.name:
-		anim_player.stop()
 		body.move_down(get_physics_process_delta_time(), mass)
-	elif 'KSMan' in body.name:
-		var die_player = load(PlayerData.PATH_DIE_PLAYER).new()
-		die_player.from_hir_person(self)
-		
-		__todo__()
+	#elif 'KSMan' in body.name:
 
 
 func on_detect_collisions_process(delta):
@@ -96,8 +91,3 @@ func _physics_process(delta: float):
 		var die_player = load(PlayerData.PATH_DIE_PLAYER).new()
 		die_player.from_fell(self)
 
-
-func __todo__():
-	print('Todo:')
-	print('1. Add collision via GirlBack instead')
-	print()

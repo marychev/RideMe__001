@@ -18,7 +18,7 @@ func from_hir_person(_player: KinematicBody2D) -> void:
 	init_player(_player)
 	PlayerData.set_type_title(end_game_scr.TitleChoices.HIT_PERSON)
 	PlayerData.set_score(player.global_position.x)
-	die(true)
+	die()
 
 
 func from_fell(_player: KinematicBody2D):
@@ -42,6 +42,7 @@ func die(force: bool = false) -> void:
 	# todo: need to fix
 	if PlayerData.lives <= 0:
 		player.queue_free()
+
 		player.get_tree().change_scene(PlayerData.END_GAME_SCREEN)
 
 

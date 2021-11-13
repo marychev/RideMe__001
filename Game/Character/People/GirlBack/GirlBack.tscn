@@ -93,7 +93,8 @@ tracks/3/keys = {
 extents = Vector2( 47.9133, 83.6323 )
 
 [node name="GirlBack" type="RigidBody2D"]
-position = Vector2( 0, 20 )
+position = Vector2( 640, 20 )
+rotation = 1.0472
 collision_layer = 32
 mode = 3
 script = ExtResource( 5 )

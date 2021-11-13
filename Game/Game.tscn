@@ -57,7 +57,7 @@ position = Vector2( 36717.1, 262.357 )
 position = Vector2( 39149.1, 262.357 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 7500, 0 )
+position = Vector2( 32000, 0 )
 z_index = 1
 
 [node name="Level_0" parent="." instance=ExtResource( 4 )]

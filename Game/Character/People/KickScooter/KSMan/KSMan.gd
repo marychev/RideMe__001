@@ -1,6 +1,8 @@
 extends "res://Game/Player/Actor.gd"
 class_name KSMan
 
+onready var animation: AnimationPlayer = $AnimationPlayer
+
 
 func _ready() -> void:
 	set_physics_process(false)
@@ -9,8 +11,13 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	_velocity.y += (gravity * delta) * 10
-
-	if is_on_wall():
-		_velocity.x *= -1.0
-
 	_velocity.y = move_and_slide(_velocity, FLOOR_NORMAL).y
+
+
+func _on_StopmDetector_body_entered(body: Node) -> void:
+	if "Player" == body.name:
+		var animate_people = load(PlayerData.PATH_ANIMATE_PEOPLE).new()
+		animate_people.do_collision(animation, body)
+
+		var die_player = load(PlayerData.PATH_DIE_PLAYER).new()
+		die_player.from_hir_person(self)

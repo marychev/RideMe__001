@@ -31,3 +31,4 @@ const END_GAME_SCREEN = "res://Game/GameScreen/EndGameScreen.tscn"
 # scripts
 const PATH_DIE_PLAYER = "res://Game/scripts/DiePlayer.gd"
 const PATH_PLAYER_STOMP_DETECTER = "res://Game/scripts/PlayerStompDetecter.gd"
+const PATH_ANIMATE_PEOPLE = "res://Game/Character/People/scripts/AnimatePeople.gd"
