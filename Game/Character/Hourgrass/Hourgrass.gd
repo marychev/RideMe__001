@@ -29,7 +29,6 @@ func _on_Hourgrass_body_shape_entered(
 
 
 func player_do_anim_success(player: KinematicBody2D) -> void:
-	# if player.anim_player.current_animation != 'success':
 	player.anim_player.play('success')
 
 

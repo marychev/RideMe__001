@@ -24,6 +24,4 @@ func on_stop_process(dt: float, animation_name: String = "stop") -> void:
 
 func on_stop_released(dt: float) -> void:
 	on_released()
-	
-	anim_player.stop()
 	player.set_speed(player.speed.x + (dt*2))
