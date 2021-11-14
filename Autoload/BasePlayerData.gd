@@ -27,6 +27,7 @@ const PATH_GO_BTN = PATH_GUI + "/ControlContainer/GoBtn"
 const PATH_STOP_BTN = PATH_GUI + "/ControlContainer/StopBtn"
 
 const END_GAME_SCREEN = "res://Game/GameScreen/EndGameScreen.tscn"
+const BIKE_MENU_SCREEN = "res://BikeMenu/BikeMenu.tscn"
 
 # scripts
 const PATH_DIE_PLAYER = "res://Game/scripts/DiePlayer.gd"

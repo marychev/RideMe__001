@@ -5,7 +5,7 @@ export (String, FILE) var game_tscn: = ""
 
 
 func _on_NewGame_pressed() -> void:
-	pass
+	get_tree().change_scene(PlayerData.BIKE_MENU_SCREEN)
 
 
 func _on_Contunue_pressed():
