@@ -4,6 +4,10 @@ class_name GirlBack
 onready var animation: AnimationPlayer = $AnimationPlayer
 
 
+func _ready() -> void:
+	set_physics_process(false)
+
+
 func _on_tree_entered() -> void:
 	animation.play("walk")
 

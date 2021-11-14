@@ -93,8 +93,7 @@ tracks/3/keys = {
 extents = Vector2( 47.9133, 83.6323 )
 
 [node name="GirlBack" type="RigidBody2D"]
-position = Vector2( 640, 20 )
-rotation = 1.0472
+position = Vector2( 0, 20 )
 collision_layer = 32
 mode = 3
 script = ExtResource( 5 )
@@ -106,6 +105,10 @@ texture = ExtResource( 2 )
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2( -2.64461, -41.0846 )
 shape = SubResource( 1 )
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+process_parent = true
+physics_process_parent = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/collision = SubResource( 2 )

@@ -4,6 +4,10 @@ class_name Player
 var mass: int = 130
 
 
+func _ready():
+	modulate = Color(1, 1, 1)
+
+
 func _on_CollisionDetector_area_entered(area: Area2D) -> void:
 	# print('[_on_CollisionDetector_Area_entered]', area.name)
 	var root = area.get_node('../')

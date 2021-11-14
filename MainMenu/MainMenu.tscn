@@ -96,4 +96,5 @@ margin_right = 725.0
 margin_bottom = 680.0
 texture = ExtResource( 6 )
 
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/MenuOptions/Contunue" to="." method="_on_Contunue_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/MenuOptions/NewGame" to="." method="_on_NewGame_pressed"]
