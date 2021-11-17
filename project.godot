@@ -54,6 +54,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Game/scripts/DiePlayer.gd"
 }, {
+"base": "Node",
+"class": "DrawerBike",
+"language": "GDScript",
+"path": "res://Game/Bike/DrawerBike.gd"
+}, {
 "base": "Control",
 "class": "EndGameScreen",
 "language": "GDScript",
@@ -169,6 +174,7 @@ _global_script_class_icons={
 "BikeMenu": "",
 "ControlBtn": "",
 "DiePlayer": "",
+"DrawerBike": "",
 "EndGameScreen": "",
 "GUI": "",
 "Game": "",
@@ -195,7 +201,7 @@ _global_script_class_icons={
 [application]
 
 config/name="RideMe"
-run/main_scene="res://SplashScreen/SplashScreen.tscn"
+run/main_scene="res://BikeMenu/BikeMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
