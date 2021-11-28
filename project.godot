@@ -201,7 +201,7 @@ _global_script_class_icons={
 [application]
 
 config/name="RideMe"
-run/main_scene="res://BikeMenu/BikeMenu.tscn"
+run/main_scene="res://SplashScreen/SplashScreen.tscn"
 config/icon="res://icon.png"
 
 [autoload]

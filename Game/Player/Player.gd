@@ -5,6 +5,7 @@ var mass: int = 130
 
 
 func _ready():
+	$Sprite.texture = PlayerData.player_bike.texture
 	modulate = Color(1, 1, 1)
 
 

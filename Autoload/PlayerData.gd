@@ -11,11 +11,12 @@ var score: = 0 setget set_score
 var lives: = INIT_LIVES setget set_lives
 var time_level_count: int = 0
 var time_level: = 0 setget set_time_level
-var rms: = 0 setget set_rms
+var rms: = 100 setget set_rms
 
 var type_title: int = -1
 
 var current_level: Node
+var player_bike: Node
 
 onready var lives_value: Label = get_node(PATH_LIVES_COUNTER_VALUE)
 onready var rms_value: Label = get_node(PATH_RMS_COUNTER_VALUE)
@@ -63,6 +64,11 @@ func set_rms(value: int) -> void:
 	if not is_instance_valid(rms_value):
 		rms_value = get_node(PATH_RMS_COUNTER_VALUE)
 
+	# when BikeMenu as main sceen
+	if not is_instance_valid(rms_value):
+		var path = "/root/BikeMenu/TextureRect/RMCounter/Background/Value"
+		rms_value = get_node(path)
+	
 	rms = value
 	rms_value.text = str(rms)
 	emit_signal("rms_updated")

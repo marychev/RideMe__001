@@ -1,13 +1,12 @@
 extends Actor
 class_name BasePlayer
 
-var _sataur_bike = load("res://Game/Bike/SataurBike.gd")
-var sataur_bike = _sataur_bike.new()
+var player_bike = PlayerData.player_bike
 
-var max_speed: float = sataur_bike.max_speed
-var max_height_jump: float = sataur_bike.max_height_jump
-var power: float = sataur_bike.power
-var max_power: float = sataur_bike.max_power
+var max_speed: float = player_bike.max_speed
+var max_height_jump: float = player_bike.max_height_jump
+var power: float = player_bike.power
+var max_power: float = player_bike.max_power
 
 var _current_level = load("res://Game/Level/Level_0/Level_0.tscn")
 var current_level = _current_level.instance()
