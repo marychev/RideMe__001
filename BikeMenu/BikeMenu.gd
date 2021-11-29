@@ -1,16 +1,21 @@
 extends MarginContainer
 class_name BikeMenu
 
+onready var empty_bike:EmptyBike = load("res://Game/Bike/EmptyBike.gd").new()
 onready var sataur_bike:SataurBike = load("res://Game/Bike/SataurBike.gd").new()
 onready var drawer_bike:DrawerBike = load("res://Game/Bike/DrawerBike.gd").new()
 onready var menu_options = $TextureRect/SliderContainer/Detail/MenuOptions
+
+onready var field_log: FieldLog = preload("res://Game/scripts/FieldLog.gd").new()
 
 var selected_bike: Node
 
 
 func _ready():
 	$TextureRect/RMCounter/Background/Value.set_text(str(PlayerData.rms))
-
+	
+	field_log.target = $TextureRect
+	
 	if PlayerData.player_bike:
 		init_slide(PlayerData.player_bike)
 
@@ -35,38 +40,76 @@ func init_slide(bike: Node) -> void:
 
 
 func set_title(bike: Node) -> void:
-	var title = bike.title + " / No bike"
-	if PlayerData.player_bike:
-		title = bike.title + " / " + PlayerData.player_bike.title + "*"
+	var title: String = bike.title
+	
+	if PlayerData.player_bike: 
+		if PlayerData.player_bike.title == bike.title:
+			title = PlayerData.player_bike.title + "*"
+	
 	$TextureRect/Title.text = title
 
 
 func _on_Sataur_pressed():
+	field_log.clear()
+	$TextureRect/SliderContainer/Buttons/Sataur.flat = true
+	$TextureRect/SliderContainer/Buttons/Drawster.flat = false
+	$TextureRect/SliderContainer/Buttons/Current.flat = bool(PlayerData.player_bike != null)
+	$TextureRect/SliderContainer/Detail/Image/EmptySprite.hide()
 	init_slide(sataur_bike)
 
 
 func _on_Drawster_pressed():
+	field_log.clear()
+	$TextureRect/SliderContainer/Buttons/Drawster.flat = true
+	$TextureRect/SliderContainer/Buttons/Sataur.flat = false
+	$TextureRect/SliderContainer/Buttons/Current.flat = bool(PlayerData.player_bike != null)
+	$TextureRect/SliderContainer/Detail/Image/EmptySprite.hide()
 	init_slide(drawer_bike)
+
+
+func _on_Current_pressed() -> void:
+	field_log.clear()
+	$TextureRect/SliderContainer/Buttons/Current.flat = true
+	$TextureRect/SliderContainer/Buttons/Sataur.flat = false
+	$TextureRect/SliderContainer/Buttons/Current.flat = true
+	init_slide(selected_bike)
+
+
+
+func _on_Current_button_down() -> void:
+	if not PlayerData.player_bike:
+		$TextureRect/SliderContainer/Detail/Image/EmptySprite.show()
+		selected_bike = empty_bike
 
 
 func _on_btn_pay_pressed() -> void:
 	if not PlayerData.player_bike:
-		if  selected_bike:
+		if selected_bike and selected_bike.price > 0:
 			if PlayerData.rms < selected_bike.price:
-				print("Need to more Rms!")
-				modulate.a = 0.1
+				modulate.a = 0.2
+				field_log.error("Need to more Rms!")
 			else:
-				print("Bike was paid success!")
 				modulate.a = 0.6
+
 				PlayerData.rms -= selected_bike.price
 				PlayerData.player_bike = selected_bike
+				
+				$TextureRect/SliderContainer/Buttons/Current.flat = true
+				field_log.success("Bike was paid success!")
 		else:
-			print("A bike was not selected!")
-			modulate.a = 0.1
-			
+			modulate.a = 0.2
+			var message = "A bike was not selected!"
+			field_log.error(message)
 	else:
-		print("You have a bike already!")
-		modulate.a = 0.1
+		modulate.a = 0.2
+		var message = "You have a bike already!"
+		field_log.info(message)
+	
+	if PlayerData.player_bike:
+		$TextureRect/SliderContainer/Buttons/Sataur.flat = false
+		$TextureRect/SliderContainer/Buttons/Drawster.flat = false
+		$TextureRect/SliderContainer/Buttons/Sataur.disabled = true
+		$TextureRect/SliderContainer/Buttons/Drawster.disabled = true
 
 
 func _on_btn_pay_released() -> void:

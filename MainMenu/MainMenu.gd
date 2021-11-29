@@ -3,6 +3,8 @@ extends MarginContainer
 
 export (String, FILE) var game_tscn: = ""
 
+onready var field_log: FieldLog = preload("res://Game/scripts/FieldLog.gd").new()
+
 
 func _ready() -> void:
 	if not PlayerData.player_bike:
@@ -15,11 +17,9 @@ func _on_NewGame_pressed() -> void:
 
 func _on_Contunue_pressed():
 	if not PlayerData.player_bike:
-		var msg = Label.new()
-		msg.set_text("No bike selected! You don't have a bike.")
-		msg.set_position(Vector2(10, 66))
-		msg.set_scale(Vector2(2, 2))
-		$HBoxContainer/VBoxContainer/Logo.add_child(msg)
+		field_log.target = $HBoxContainer/VBoxContainer/Logo
+		field_log.position = Vector2(10, 66)
+		field_log.error("No bike selected! You don't have a bike")
 	else:
 		get_tree().change_scene(game_tscn)
 
