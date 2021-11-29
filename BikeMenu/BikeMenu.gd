@@ -119,3 +119,7 @@ func _on_btn_pay_released() -> void:
 func _on_btn_menu_pressed() -> void:
 	var main_menu: String = "res://MainMenu/MainMenu.tscn"
 	get_tree().change_scene(main_menu)
+
+
+func _on_btn_refit_pressed() -> void:
+	$BikeUpgradeDialog.popup()
