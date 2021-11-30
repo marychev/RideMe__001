@@ -122,4 +122,4 @@ func _on_btn_menu_pressed() -> void:
 
 
 func _on_btn_refit_pressed() -> void:
-	$BikeUpgradeDialog.popup()
+	$BikeUpgradeDialog.open(PlayerData.player_bike)
