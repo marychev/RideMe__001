@@ -1,22 +1,28 @@
 extends MarginContainer
 class_name BikeMenu
 
+onready var field_log: FieldLog = preload("res://Game/scripts/FieldLog.gd").new()
+
 onready var empty_bike:EmptyBike = load("res://Game/Bike/EmptyBike.gd").new()
 onready var sataur_bike:SataurBike = load("res://Game/Bike/SataurBike.gd").new()
 onready var drawer_bike:DrawerBike = load("res://Game/Bike/DrawerBike.gd").new()
-onready var menu_options = $TextureRect/SliderContainer/Detail/MenuOptions
 
-onready var field_log: FieldLog = preload("res://Game/scripts/FieldLog.gd").new()
+onready var menu_options = $TextureRect/SliderContainer/Detail/MenuOptions
+onready var btn_refit: TouchScreenButton = $TextureRect/ButtonContainer/btn_refit
+
+onready var bike_upgrade:Resource = preload("res://BikeMenu/BikeUpgradeDialog.tscn")
 
 var selected_bike: Node
 
 
 func _ready():
 	$TextureRect/RMCounter/Background/Value.set_text(str(PlayerData.rms))
+	btn_refit.modulate.a = 0.6
 	
 	field_log.target = $TextureRect
 	
 	if PlayerData.player_bike:
+		btn_refit.modulate.a = 1
 		init_slide(PlayerData.player_bike)
 
 
@@ -51,9 +57,9 @@ func set_title(bike: Node) -> void:
 
 func _on_Sataur_pressed():
 	field_log.clear()
+	$TextureRect/SliderContainer/Buttons/Current.flat = bool(PlayerData.player_bike != null)
 	$TextureRect/SliderContainer/Buttons/Sataur.flat = true
 	$TextureRect/SliderContainer/Buttons/Drawster.flat = false
-	$TextureRect/SliderContainer/Buttons/Current.flat = bool(PlayerData.player_bike != null)
 	$TextureRect/SliderContainer/Detail/Image/EmptySprite.hide()
 	init_slide(sataur_bike)
 
@@ -91,9 +97,11 @@ func _on_btn_pay_pressed() -> void:
 			else:
 				modulate.a = 0.6
 
-				PlayerData.rms -= selected_bike.price
+				PlayerData.set_rms(PlayerData.rms - selected_bike.price)
 				PlayerData.player_bike = selected_bike
 				
+				btn_refit.modulate.a = 1
+
 				$TextureRect/SliderContainer/Buttons/Current.flat = true
 				field_log.success("Bike was paid success!")
 		else:
@@ -122,4 +130,24 @@ func _on_btn_menu_pressed() -> void:
 
 
 func _on_btn_refit_pressed() -> void:
-	$BikeUpgradeDialog.open(PlayerData.player_bike)
+	if PlayerData.player_bike:
+		var bike_upgrade_instance: PopupDialog = bike_upgrade.instance()
+		var bike_upgrade_name = bike_upgrade_instance.name # == "BikeUpgradeDialog"
+		
+		add_child(bike_upgrade_instance)
+		yield(get_tree().create_timer(0.35), "timeout")
+		
+		if has_node(bike_upgrade_name) and get_node(bike_upgrade_name):
+			bike_upgrade_instance.open(PlayerData.player_bike)		
+	else:
+		var message = "You have not a bike!"
+		field_log.error(message)
+
+"""
+func _on_btn_refit_released() -> void:
+	var bike_upgrade_instance: PopupDialog = bike_upgrade.instance()
+	var bike_upgrade_name = bike_upgrade_instance.get_name() 	# name
+	
+	if has_node(bike_upgrade_name) and get_node(bike_upgrade_name):
+		bike_upgrade_instance.free()
+"""

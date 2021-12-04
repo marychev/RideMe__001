@@ -68,9 +68,9 @@ func set_rms(value: int) -> void:
 	if not is_instance_valid(rms_value):
 		var path = "/root/BikeMenu/TextureRect/RMCounter/Background/Value"
 		rms_value = get_node(path)
-	
+		
 	rms = value
-	rms_value.text = str(rms)
+	rms_value.set_text(str(rms))
 	emit_signal("rms_updated")
 
 
