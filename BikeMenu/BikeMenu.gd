@@ -5,7 +5,7 @@ onready var field_log: FieldLog = preload("res://Game/scripts/FieldLog.gd").new(
 
 onready var empty_bike:EmptyBike = load("res://Game/Bike/EmptyBike.gd").new()
 onready var sataur_bike:SataurBike = load("res://Game/Bike/SataurBike.gd").new()
-onready var drawer_bike:DrawerBike = load("res://Game/Bike/DrawerBike.gd").new()
+onready var drawer_bike:DrawsterBike = load("res://Game/Bike/DrawsterBike.gd").new()
 
 onready var menu_options = $TextureRect/SliderContainer/Detail/MenuOptions
 onready var btn_refit: TouchScreenButton = $TextureRect/ButtonContainer/btn_refit
@@ -16,6 +16,8 @@ var selected_bike: Node
 
 
 func _ready():
+	$TextureRect/SliderContainer/Buttons/Current.flat = bool(PlayerData.player_bike != null)
+	
 	$TextureRect/RMCounter/Background/Value.set_text(str(PlayerData.rms))
 	btn_refit.modulate.a = 0.6
 	
@@ -24,13 +26,18 @@ func _ready():
 	if PlayerData.player_bike:
 		btn_refit.modulate.a = 1
 		init_slide(PlayerData.player_bike)
-
+		
+		$TextureRect/SliderContainer/Buttons/Sataur.flat = bool(PlayerData.player_bike.title == "Sataur")
+		$TextureRect/SliderContainer/Buttons/Drawster.flat = bool(PlayerData.player_bike.title == "Drawster")
 
 func init_slide(bike: Node) -> void:
 	selected_bike = bike
 	set_title(bike)
 	
-	$TextureRect/SliderContainer/Detail/Image/Sprite.set_texture(bike.texture)
+	$TextureRect/SliderContainer/Detail/Image/Sprite.set_texture(bike.texture)	
+	if PlayerData.player_bike or selected_bike.price > 0:
+		$TextureRect/SliderContainer/Detail/Image/Sprite.show()
+		$TextureRect/SliderContainer/Detail/Image/EmptySprite.hide()
 	
 	var power_text = "Max power: ....... %d" % [bike.max_power]
 	var speed_text = "Max speed: ....... %d" % [bike.max_speed]
@@ -46,7 +53,7 @@ func init_slide(bike: Node) -> void:
 
 
 func set_title(bike: Node) -> void:
-	var title: String = bike.title
+	var title: String = bike.title if bike else "no"
 	
 	if PlayerData.player_bike: 
 		if PlayerData.player_bike.title == bike.title:
@@ -60,6 +67,7 @@ func _on_Sataur_pressed():
 	$TextureRect/SliderContainer/Buttons/Current.flat = bool(PlayerData.player_bike != null)
 	$TextureRect/SliderContainer/Buttons/Sataur.flat = true
 	$TextureRect/SliderContainer/Buttons/Drawster.flat = false
+	
 	$TextureRect/SliderContainer/Detail/Image/EmptySprite.hide()
 	init_slide(sataur_bike)
 
@@ -69,16 +77,22 @@ func _on_Drawster_pressed():
 	$TextureRect/SliderContainer/Buttons/Drawster.flat = true
 	$TextureRect/SliderContainer/Buttons/Sataur.flat = false
 	$TextureRect/SliderContainer/Buttons/Current.flat = bool(PlayerData.player_bike != null)
+	
 	$TextureRect/SliderContainer/Detail/Image/EmptySprite.hide()
 	init_slide(drawer_bike)
 
 
 func _on_Current_pressed() -> void:
 	field_log.clear()
-	$TextureRect/SliderContainer/Buttons/Current.flat = true
+	$TextureRect/SliderContainer/Buttons/Drawster.flat = false
 	$TextureRect/SliderContainer/Buttons/Sataur.flat = false
-	$TextureRect/SliderContainer/Buttons/Current.flat = true
+	$TextureRect/SliderContainer/Buttons/Current.flat = bool(PlayerData.player_bike != null)
+	
+	if not PlayerData.player_bike:
+		$TextureRect/SliderContainer/Detail/Image/Sprite.hide()
+
 	init_slide(selected_bike)
+	
 
 
 

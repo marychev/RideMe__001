@@ -1,7 +1,7 @@
 extends Node
-class_name DrawerBike
+class_name DrawsterBike
 
-const title = "Drawer"
+const title = "Drawster"
 const texture = preload("res://Game/Bike/assets/II/sprites.png")
 var max_speed: = 500.00
 var max_height_jump: = 870.00

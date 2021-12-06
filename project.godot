@@ -55,9 +55,9 @@ _global_script_classes=[ {
 "path": "res://Game/scripts/DiePlayer.gd"
 }, {
 "base": "Node",
-"class": "DrawerBike",
+"class": "DrawsterBike",
 "language": "GDScript",
-"path": "res://Game/Bike/DrawerBike.gd"
+"path": "res://Game/Bike/DrawsterBike.gd"
 }, {
 "base": "Node",
 "class": "EmptyBike",
@@ -184,7 +184,7 @@ _global_script_class_icons={
 "BikeMenu": "",
 "ControlBtn": "",
 "DiePlayer": "",
-"DrawerBike": "",
+"DrawsterBike": "",
 "EmptyBike": "",
 "EndGameScreen": "",
 "FieldLog": "",
