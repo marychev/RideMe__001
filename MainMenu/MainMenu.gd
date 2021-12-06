@@ -12,7 +12,7 @@ func _ready() -> void:
 
 
 func _on_NewGame_pressed() -> void:
-	get_tree().change_scene(PlayerData.BIKE_MENU_SCREEN)
+	_on_BikeMenu_pressed()
 
 
 func _on_Contunue_pressed():
@@ -24,12 +24,6 @@ func _on_Contunue_pressed():
 		get_tree().change_scene(game_tscn)
 
 
-func _get_configuration_warning() -> String:
-	var msg:String = "Game scene must be set "
-	return msg if game_tscn == "" else ""
-
-
-
 func _on_Contunue_button_down() -> void:
 	# modulate.a = 1
 	pass
@@ -38,3 +32,17 @@ func _on_Contunue_button_down() -> void:
 func _on_Contunue_button_up() -> void:
 	# modulate.a = 0.2
 	pass
+
+
+func _on_BikeMenu_pressed() -> void:
+	get_tree().change_scene(PlayerData.BIKE_MENU_SCREEN)
+
+
+
+func _on_Options_pressed() -> void:
+	_on_BikeMenu_pressed()
+
+
+func _get_configuration_warning() -> String:
+	var msg:String = "Game scene must be set "
+	return msg if game_tscn == "" else ""

@@ -134,45 +134,45 @@ rect_min_size = Vector2( 400, 360 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 0
-alignment = 2
+alignment = 1
 
 [node name="MaxPower" type="Label" parent="TextureRect/SliderContainer/Detail/MenuOptions"]
-margin_top = 60.0
+margin_top = 30.0
 margin_right = 638.0
-margin_bottom = 120.0
+margin_bottom = 90.0
 rect_min_size = Vector2( 420, 60 )
 custom_fonts/font = SubResource( 2 )
-text = "Max power: ....... 0"
+text = "max power: ....... 0"
 align = 1
 valign = 1
 
 [node name="MaxSpeed" type="Label" parent="TextureRect/SliderContainer/Detail/MenuOptions"]
-margin_top = 120.0
+margin_top = 90.0
 margin_right = 638.0
-margin_bottom = 180.0
+margin_bottom = 150.0
 rect_min_size = Vector2( 420, 60 )
 custom_fonts/font = SubResource( 2 )
-text = "Max speed: ....... 0"
+text = "max speed: ....... 0"
 align = 1
 valign = 1
 
 [node name="MaxJump" type="Label" parent="TextureRect/SliderContainer/Detail/MenuOptions"]
-margin_top = 180.0
+margin_top = 150.0
 margin_right = 638.0
-margin_bottom = 240.0
+margin_bottom = 210.0
 rect_min_size = Vector2( 420, 60 )
 custom_fonts/font = SubResource( 2 )
-text = "Max jump: .......... 0	"
+text = "max jump: .......... 0	"
 align = 1
 valign = 1
 
 [node name="Lives" type="Label" parent="TextureRect/SliderContainer/Detail/MenuOptions"]
-margin_top = 240.0
+margin_top = 210.0
 margin_right = 638.0
-margin_bottom = 300.0
+margin_bottom = 270.0
 rect_min_size = Vector2( 420, 60 )
 custom_fonts/font = SubResource( 2 )
-text = "Lives: .................... 0"
+text = "lives: .................... 0"
 align = 1
 valign = 1
 __meta__ = {
@@ -180,12 +180,12 @@ __meta__ = {
 }
 
 [node name="Price" type="Label" parent="TextureRect/SliderContainer/Detail/MenuOptions"]
-margin_top = 300.0
+margin_top = 270.0
 margin_right = 638.0
-margin_bottom = 360.0
+margin_bottom = 330.0
 rect_min_size = Vector2( 420, 60 )
 custom_fonts/font = SubResource( 2 )
-text = "Price: .................... 0"
+text = "price: .................... 0"
 align = 1
 valign = 1
 __meta__ = {
