@@ -9,10 +9,10 @@ onready var field_log: FieldLog = preload("res://Game/scripts/FieldLog.gd").new(
 func _ready() -> void:
 	if not PlayerData.player_bike:
 		$HBoxContainer/VBoxContainer/MenuOptions/Contunue.modulate.a = 0.4
-
+		$HBoxContainer/VBoxContainer/MenuOptions/NewGame.modulate.a = 0.4
 
 func _on_NewGame_pressed() -> void:
-	_on_BikeMenu_pressed()
+	_on_Contunue_pressed()
 
 
 func _on_Contunue_pressed():

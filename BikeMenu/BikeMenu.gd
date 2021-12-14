@@ -8,7 +8,8 @@ onready var sataur_bike:SataurBike = load("res://Game/Bike/SataurBike.gd").new()
 onready var drawer_bike:DrawsterBike = load("res://Game/Bike/DrawsterBike.gd").new()
 
 onready var menu_options = $TextureRect/SliderContainer/Detail/MenuOptions
-onready var btn_refit: TouchScreenButton = $TextureRect/ButtonContainer/btn_refit
+onready var btn_refit: TextureButton = $TextureRect/ButtonContainer/btn_refit
+onready var btn_pay: TextureButton = $TextureRect/ButtonContainer/btn_pay
 
 onready var bike_upgrade:Resource = preload("res://BikeMenu/BikeUpgradeDialog.tscn")
 
@@ -19,7 +20,7 @@ func _ready():
 	$TextureRect/SliderContainer/Buttons/Current.flat = bool(PlayerData.player_bike != null)
 	
 	$TextureRect/RMCounter/Background/Value.set_text(str(PlayerData.rms))
-	btn_refit.modulate.a = 0.6
+	btn_refit.modulate.a = 0.4
 	
 	field_log.target = $TextureRect
 	
@@ -29,6 +30,9 @@ func _ready():
 		
 		$TextureRect/SliderContainer/Buttons/Sataur.flat = bool(PlayerData.player_bike.title == "Sataur")
 		$TextureRect/SliderContainer/Buttons/Drawster.flat = bool(PlayerData.player_bike.title == "Drawster")
+		
+		btn_pay.modulate.a = 0.4
+
 
 func init_slide(bike: Node) -> void:
 	selected_bike = bike
@@ -95,7 +99,6 @@ func _on_Current_pressed() -> void:
 	
 
 
-
 func _on_Current_button_down() -> void:
 	if not PlayerData.player_bike:
 		$TextureRect/SliderContainer/Detail/Image/EmptySprite.show()
@@ -106,24 +109,20 @@ func _on_btn_pay_pressed() -> void:
 	if not PlayerData.player_bike:
 		if selected_bike and selected_bike.price > 0:
 			if PlayerData.rms < selected_bike.price:
-				modulate.a = 0.2
 				field_log.error("Need to more Rms!")
 			else:
-				modulate.a = 0.6
-
 				PlayerData.set_rms(PlayerData.rms - selected_bike.price)
 				PlayerData.player_bike = selected_bike
 				
 				btn_refit.modulate.a = 1
+				btn_pay.modulate.a = 0.4
 
 				$TextureRect/SliderContainer/Buttons/Current.flat = true
 				field_log.success("Bike was paid success!")
 		else:
-			modulate.a = 0.2
 			var message = "A bike was not selected!"
 			field_log.error(message)
 	else:
-		modulate.a = 0.2
 		var message = "You have a bike already!"
 		field_log.info(message)
 	
@@ -133,9 +132,6 @@ func _on_btn_pay_pressed() -> void:
 		$TextureRect/SliderContainer/Buttons/Sataur.disabled = true
 		$TextureRect/SliderContainer/Buttons/Drawster.disabled = true
 
-
-func _on_btn_pay_released() -> void:
-	modulate.a = 1.0
 
 
 func _on_btn_menu_pressed() -> void:
@@ -156,12 +152,3 @@ func _on_btn_refit_pressed() -> void:
 	else:
 		var message = "You have not a bike!"
 		field_log.error(message)
-
-"""
-func _on_btn_refit_released() -> void:
-	var bike_upgrade_instance: PopupDialog = bike_upgrade.instance()
-	var bike_upgrade_name = bike_upgrade_instance.get_name() 	# name
-	
-	if has_node(bike_upgrade_name) and get_node(bike_upgrade_name):
-		bike_upgrade_instance.free()
-"""

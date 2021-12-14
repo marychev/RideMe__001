@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/label_continue-pressed.png-6672fca28751fc1b4e059aee96beb00d.stex"
+path="res://.import/bg-pressed.png-f1c4529d9f6bd2f08883e2b7d304536c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MainMenu/assets/main_menu/label_continue-pressed.png"
-dest_files=[ "res://.import/label_continue-pressed.png-6672fca28751fc1b4e059aee96beb00d.stex" ]
+source_file="res://MainMenu/assets/bg-pressed.png"
+dest_files=[ "res://.import/bg-pressed.png-f1c4529d9f6bd2f08883e2b7d304536c.stex" ]
 
 [params]
 

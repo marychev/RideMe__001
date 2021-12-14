@@ -1,14 +1,14 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://MainMenu/assets/main_menu/bg-color.png" type="Texture" id=1]
 [ext_resource path="res://Game/GUI/assets/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://BikeMenu/assets/yes.png" type="Texture" id=3]
-[ext_resource path="res://BikeMenu/assets/no.png" type="Texture" id=4]
+[ext_resource path="res://MainMenu/assets/bg-pressed.png" type="Texture" id=4]
 [ext_resource path="res://Game/GUI/controls/assets/refit_car.png" type="Texture" id=5]
 [ext_resource path="res://BikeMenu/Buttons/Current.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Game/GUI/counter/RMCounter.tscn" type="PackedScene" id=7]
 [ext_resource path="res://BikeMenu/BikeMenu.gd" type="Script" id=8]
 [ext_resource path="res://Game/Bike/assets/I/collision.png" type="Texture" id=9]
+[ext_resource path="res://MainMenu/assets/bg-normal.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 88
@@ -17,13 +17,55 @@ outline_color = Color( 0.4, 0.4, 0.4, 1 )
 use_mipmaps = true
 font_data = ExtResource( 2 )
 
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.447059, 0.25098, 0.52549, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.196078, 0.419608, 0.223529, 1 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.890196, 0.243137, 0.533333, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.890196, 0.243137, 0.533333, 1 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.447059, 0.25098, 0.52549, 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.196078, 0.419608, 0.223529, 1 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.890196, 0.243137, 0.533333, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.890196, 0.243137, 0.533333, 1 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.447059, 0.25098, 0.52549, 1 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.196078, 0.419608, 0.223529, 1 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.823529, 0.32549, 0.54902, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.890196, 0.243137, 0.533333, 1 )
+
 [sub_resource type="DynamicFont" id=2]
 size = 28
 outline_size = 1
 outline_color = Color( 0.533333, 0.388235, 0.211765, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="DynamicFont" id=5]
+size = 62
+outline_size = 2
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=4]
 length = 6.8
 loop = true
 tracks/0/type = "value"
@@ -88,15 +130,27 @@ __meta__ = {
 }
 
 [node name="Current" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 6 )]
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/disabled = SubResource( 15 )
+custom_styles/normal = SubResource( 6 )
 
 [node name="Sataur" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 6 )]
 margin_left = 224.0
 margin_right = 444.0
+custom_styles/hover = SubResource( 13 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/disabled = SubResource( 16 )
+custom_styles/normal = SubResource( 7 )
 text = "Sataur"
 
 [node name="Drawster" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 6 )]
 margin_left = 448.0
 margin_right = 668.0
+custom_styles/hover = SubResource( 14 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/disabled = SubResource( 17 )
+custom_styles/normal = SubResource( 8 )
 text = "Drawster"
 
 [node name="Detail" type="HBoxContainer" parent="TextureRect/SliderContainer"]
@@ -196,37 +250,101 @@ __meta__ = {
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -213.0
+margin_top = -119.841
+margin_bottom = -43.8406
+custom_constants/separation = 40
+alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="btn_pay" type="TouchScreenButton" parent="TextureRect/ButtonContainer"]
-position = Vector2( 1163.04, 9.12265 )
-normal = ExtResource( 3 )
-
-[node name="btn_refit" type="TouchScreenButton" parent="TextureRect/ButtonContainer"]
-position = Vector2( 622.368, 54.9706 )
-scale = Vector2( 0.598312, 0.598312 )
-normal = ExtResource( 5 )
-
-[node name="btn_menu" type="TouchScreenButton" parent="TextureRect/ButtonContainer"]
-position = Vector2( 5.42429, 4.24725 )
-normal = ExtResource( 4 )
+[node name="btn_menu" type="TextureButton" parent="TextureRect/ButtonContainer"]
+margin_left = 43.0
+margin_right = 443.0
+margin_bottom = 76.0
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 4 )
 __meta__ = {
 "_editor_description_": ""
 }
 
+[node name="Label" type="Label" parent="TextureRect/ButtonContainer/btn_menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Bike menu"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_refit" type="TextureButton" parent="TextureRect/ButtonContainer"]
+margin_left = 483.0
+margin_right = 883.0
+margin_bottom = 76.0
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 4 )
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/ButtonContainer/btn_refit"]
+anchor_left = 0.584
+anchor_top = -0.738
+anchor_right = 0.584
+anchor_bottom = -0.738
+margin_left = -228.643
+margin_top = 72.1586
+margin_right = -3.64311
+margin_bottom = 297.159
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TextureRect/ButtonContainer/btn_refit"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Upgrade"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_pay" type="TextureButton" parent="TextureRect/ButtonContainer"]
+margin_left = 923.0
+margin_right = 1323.0
+margin_bottom = 76.0
+size_flags_horizontal = 8
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TextureRect/ButtonContainer/btn_pay"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Pay"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect"]
 autoplay = "demonstration"
-anims/demonstration = SubResource( 3 )
+anims/demonstration = SubResource( 4 )
 
 [connection signal="button_down" from="TextureRect/SliderContainer/Buttons/Current" to="." method="_on_Current_button_down"]
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Current" to="." method="_on_Current_pressed"]
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Sataur" to="." method="_on_Sataur_pressed"]
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Drawster" to="." method="_on_Drawster_pressed"]
-[connection signal="pressed" from="TextureRect/ButtonContainer/btn_pay" to="." method="_on_btn_pay_pressed"]
-[connection signal="released" from="TextureRect/ButtonContainer/btn_pay" to="." method="_on_btn_pay_released"]
-[connection signal="pressed" from="TextureRect/ButtonContainer/btn_refit" to="." method="_on_btn_refit_pressed"]
-[connection signal="released" from="TextureRect/ButtonContainer/btn_refit" to="." method="_on_btn_refit_released"]
 [connection signal="pressed" from="TextureRect/ButtonContainer/btn_menu" to="." method="_on_btn_menu_pressed"]
+[connection signal="pressed" from="TextureRect/ButtonContainer/btn_refit" to="." method="_on_btn_refit_pressed"]
+[connection signal="pressed" from="TextureRect/ButtonContainer/btn_pay" to="." method="_on_btn_pay_pressed"]
