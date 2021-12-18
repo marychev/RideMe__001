@@ -219,6 +219,7 @@ config/icon="res://icon.png"
 [autoload]
 
 PlayerData="*res://Autoload/PlayerData.tscn"
+GameData="*res://Autoload/GameData.tscn"
 
 [display]
 
