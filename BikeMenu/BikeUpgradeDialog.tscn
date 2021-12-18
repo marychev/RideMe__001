@@ -17,6 +17,7 @@ font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 30
+use_filter = true
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=4]
@@ -288,3 +289,4 @@ visibility_mode = 1
 [connection signal="pressed" from="Nine/Grid/JumpButtons/btn_jump_del" to="." method="_on_btn_jump_del_pressed"]
 [connection signal="released" from="Nine/Grid/JumpButtons/btn_jump_del" to="." method="_on_btn_jump_del_released"]
 [connection signal="pressed" from="Nine/ButtonContainer/btn_no" to="." method="_on_btn_no_pressed"]
+[connection signal="pressed" from="Nine/ButtonContainer/btn_yes" to="." method="_on_btn_yes_pressed"]

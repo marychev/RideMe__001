@@ -9,8 +9,11 @@ onready var title: = "Upgrade "
 
 onready var grid:GridContainer = $Nine/Grid
 onready var power_added:Label = grid.get_node("PowerAdded")
+onready var power_value:Label = grid.get_node("PowerValue")
 onready var speed_added:Label = grid.get_node("SpeedAdded")
+onready var speed_value:Label = grid.get_node("SpeedValue")
 onready var jump_added:Label = grid.get_node("JumpAdded")
+onready var jump_value:Label = grid.get_node("JumpValue")
 
 onready var btn_no:TouchScreenButton  = $Nine/ButtonContainer/btn_no
 onready var btn_yes:TouchScreenButton  = $Nine/ButtonContainer/btn_yes
@@ -104,6 +107,37 @@ func _on_btn_no_pressed() -> void:
 		# get_tree().reload_current_scene() # get_tree().change_scene("res://BikeMenu/BikeMenu.tscn")
 
 
+func _on_btn_yes_pressed():
+	btn_yes.modulate.a = 0.1
+		
+	if is_visible(): 
+		# Upgrade bike's parameters
+		if PlayerData.rms < selected_rms:
+			field_log.error("Need to more Rms!")
+		else:
+			upgrade_bike_parameters()
+			field_log.success("Bike's parameters was upgraded successful!")
+		
+		yield(get_tree().create_timer(1.6), "timeout")
+		get_tree().reload_current_scene()
+
+
+func upgrade_bike_parameters() -> void:
+	PlayerData.set_rms(PlayerData.rms - selected_rms)
+			
+	PlayerData.player_bike.max_power += power_added_rms
+	set_param_value(power_value, PlayerData.player_bike.max_power)
+	PlayerData.player_bike.max_speed += speed_added_rms
+	set_param_value(speed_value, PlayerData.player_bike.max_speed)
+	PlayerData.player_bike.max_height_jump += jump_added_rms
+	set_param_value(jump_value, PlayerData.player_bike.max_height_jump)
+
+
+func set_param_value(label_value: Label, value: float) -> void:
+	label_value.set_text(str(value))
+	label_value.get("custom_fonts/font").set_outline_size(1)
+
+
 func open(player_bike: Node) -> void:
 	popup()  # show()
 
@@ -143,7 +177,3 @@ func on_btn_del(price) -> bool:
 		return true
 
 	return false
-
-
-
-

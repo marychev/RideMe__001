@@ -17,55 +17,55 @@ outline_color = Color( 0.4, 0.4, 0.4, 1 )
 use_mipmaps = true
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=12]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.447059, 0.25098, 0.52549, 1 )
 
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.196078, 0.419608, 0.223529, 1 )
 
-[sub_resource type="StyleBoxFlat" id=15]
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.890196, 0.243137, 0.533333, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.890196, 0.243137, 0.533333, 1 )
 
 [sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0.890196, 0.243137, 0.533333, 1 )
-
-[sub_resource type="StyleBoxFlat" id=13]
 bg_color = Color( 0.447059, 0.25098, 0.52549, 1 )
 
-[sub_resource type="StyleBoxFlat" id=10]
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.196078, 0.419608, 0.223529, 1 )
 
-[sub_resource type="StyleBoxFlat" id=16]
+[sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.890196, 0.243137, 0.533333, 1 )
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0.890196, 0.243137, 0.533333, 1 )
 
-[sub_resource type="StyleBoxFlat" id=14]
+[sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0.447059, 0.25098, 0.52549, 1 )
 
 [sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 0.196078, 0.419608, 0.223529, 1 )
 
-[sub_resource type="StyleBoxFlat" id=17]
+[sub_resource type="StyleBoxFlat" id=12]
 bg_color = Color( 0.823529, 0.32549, 0.54902, 1 )
 
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="StyleBoxFlat" id=13]
 bg_color = Color( 0.890196, 0.243137, 0.533333, 1 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=14]
 size = 28
 outline_size = 1
 outline_color = Color( 0.533333, 0.388235, 0.211765, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=15]
 size = 62
 outline_size = 2
 use_filter = true
 font_data = ExtResource( 2 )
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=16]
 length = 6.8
 loop = true
 tracks/0/type = "value"
@@ -130,27 +130,27 @@ __meta__ = {
 }
 
 [node name="Current" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 6 )]
-custom_styles/hover = SubResource( 12 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/disabled = SubResource( 15 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
 
 [node name="Sataur" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 6 )]
 margin_left = 224.0
 margin_right = 444.0
-custom_styles/hover = SubResource( 13 )
-custom_styles/pressed = SubResource( 10 )
-custom_styles/disabled = SubResource( 16 )
-custom_styles/normal = SubResource( 7 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
 text = "Sataur"
 
 [node name="Drawster" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 6 )]
 margin_left = 448.0
 margin_right = 668.0
-custom_styles/hover = SubResource( 14 )
+custom_styles/hover = SubResource( 10 )
 custom_styles/pressed = SubResource( 11 )
-custom_styles/disabled = SubResource( 17 )
-custom_styles/normal = SubResource( 8 )
+custom_styles/disabled = SubResource( 12 )
+custom_styles/normal = SubResource( 13 )
 text = "Drawster"
 
 [node name="Detail" type="HBoxContainer" parent="TextureRect/SliderContainer"]
@@ -195,7 +195,7 @@ margin_top = 30.0
 margin_right = 638.0
 margin_bottom = 90.0
 rect_min_size = Vector2( 420, 60 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 14 )
 text = "max power: ....... 0"
 align = 1
 valign = 1
@@ -205,7 +205,7 @@ margin_top = 90.0
 margin_right = 638.0
 margin_bottom = 150.0
 rect_min_size = Vector2( 420, 60 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 14 )
 text = "max speed: ....... 0"
 align = 1
 valign = 1
@@ -215,7 +215,7 @@ margin_top = 150.0
 margin_right = 638.0
 margin_bottom = 210.0
 rect_min_size = Vector2( 420, 60 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 14 )
 text = "max jump: .......... 0	"
 align = 1
 valign = 1
@@ -225,7 +225,7 @@ margin_top = 210.0
 margin_right = 638.0
 margin_bottom = 270.0
 rect_min_size = Vector2( 420, 60 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 14 )
 text = "lives: .................... 0"
 align = 1
 valign = 1
@@ -238,7 +238,7 @@ margin_top = 270.0
 margin_right = 638.0
 margin_bottom = 330.0
 rect_min_size = Vector2( 420, 60 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 14 )
 text = "price: .................... 0"
 align = 1
 valign = 1
@@ -271,7 +271,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="TextureRect/ButtonContainer/btn_menu"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 15 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Bike menu"
 align = 1
@@ -305,7 +305,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="TextureRect/ButtonContainer/btn_refit"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 15 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Upgrade"
 align = 1
@@ -328,7 +328,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="TextureRect/ButtonContainer/btn_pay"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 15 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Pay"
 align = 1
@@ -339,7 +339,7 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect"]
 autoplay = "demonstration"
-anims/demonstration = SubResource( 4 )
+anims/demonstration = SubResource( 16 )
 
 [connection signal="button_down" from="TextureRect/SliderContainer/Buttons/Current" to="." method="_on_Current_button_down"]
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Current" to="." method="_on_Current_pressed"]
