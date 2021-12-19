@@ -1,7 +1,7 @@
 extends MarginContainer
 class_name GUI
 
-var path_data: PathData = preload("res://Autoload/PathData.gd").new()
+var path_data: PathData = load("res://Autoload/PathData.gd").new()
 
 onready var lives_value: Label = get_node(path_data.PATH_LIVES_COUNTER_VALUE)
 

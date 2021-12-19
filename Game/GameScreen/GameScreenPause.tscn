@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Game/GameScreen/Buttons/ReloadBtn.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/GameScreen/Buttons/QuitBtn.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Game/GameScreen/GameScreen.gd" type="Script" id=5]
 [ext_resource path="res://Game/GameScreen/Buttons/ContinueBtn.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Game/GameScreen/TimeToStart.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Game/GameScreen/Buttons/MainMenuBtn.tscn" type="PackedScene" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 42
@@ -64,17 +65,22 @@ __meta__ = {
 
 [node name="ContinueBtn" parent="PauseRect/Container" instance=ExtResource( 6 )]
 margin_right = 434.0
-margin_bottom = 69.0
+margin_bottom = 53.0
 
 [node name="ReloadBtn" parent="PauseRect/Container" instance=ExtResource( 1 )]
-margin_top = 73.0
+margin_top = 57.0
 margin_right = 434.0
-margin_bottom = 142.0
+margin_bottom = 110.0
 custom_fonts/font = SubResource( 1 )
 
-[node name="QuitBtn" parent="PauseRect/Container" instance=ExtResource( 2 )]
-margin_top = 146.0
+[node name="MainMenuBtn" parent="PauseRect/Container" instance=ExtResource( 8 )]
+margin_top = 114.0
 margin_right = 434.0
-margin_bottom = 215.0
+margin_bottom = 167.0
+
+[node name="QuitBtn2" parent="PauseRect/Container" instance=ExtResource( 2 )]
+margin_top = 171.0
+margin_right = 434.0
+margin_bottom = 224.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

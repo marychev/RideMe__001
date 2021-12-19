@@ -1,6 +1,9 @@
 extends MarginContainer
 class_name BikeMenu
 
+var path_data: PathData = preload("res://Autoload/PathData.gd").new()
+var selected_bike: Node
+
 onready var field_log: FieldLog = preload("res://Game/scripts/FieldLog.gd").new()
 
 onready var empty_bike:EmptyBike = load("res://Game/Bike/EmptyBike.gd").new()
@@ -12,8 +15,6 @@ onready var btn_refit: TextureButton = $TextureRect/ButtonContainer/btn_refit
 onready var btn_pay: TextureButton = $TextureRect/ButtonContainer/btn_pay
 
 onready var bike_upgrade:Resource = preload("res://BikeMenu/BikeUpgradeDialog.tscn")
-
-var selected_bike: Node
 
 
 func _ready():
@@ -136,7 +137,7 @@ func _on_btn_pay_pressed() -> void:
 
 
 func _on_btn_menu_pressed() -> void:
-	var main_menu: String = "res://MainMenu/MainMenu.tscn"
+	var main_menu: String = path_data.RES_MAIN_MENU_TSCN
 	get_tree().change_scene(main_menu)
 
 

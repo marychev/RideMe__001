@@ -1,13 +1,13 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://MainMenu/assets/main_menu/bg-color.png" type="Texture" id=1]
 [ext_resource path="res://Game/GUI/assets/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://LevelMenu/LevelMenu.gd" type="Script" id=3]
 [ext_resource path="res://MainMenu/assets/bg-pressed.png" type="Texture" id=4]
 [ext_resource path="res://Game/GUI/controls/assets/refit_car.png" type="Texture" id=5]
 [ext_resource path="res://BikeMenu/Buttons/Current.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Game/GUI/counter/RMCounter.tscn" type="PackedScene" id=7]
-[ext_resource path="res://BikeMenu/BikeMenu.gd" type="Script" id=8]
-[ext_resource path="res://Game/Bike/assets/I/collision.png" type="Texture" id=9]
+[ext_resource path="res://LevelMenu/assets/empty-map.png" type="Texture" id=8]
 [ext_resource path="res://MainMenu/assets/bg-normal.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
@@ -16,30 +16,6 @@ outline_size = 2
 outline_color = Color( 0.4, 0.4, 0.4, 1 )
 use_mipmaps = true
 font_data = ExtResource( 2 )
-
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.447059, 0.25098, 0.52549, 1 )
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.196078, 0.419608, 0.223529, 1 )
-
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.890196, 0.243137, 0.533333, 1 )
-
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0.890196, 0.243137, 0.533333, 1 )
-
-[sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0.447059, 0.25098, 0.52549, 1 )
-
-[sub_resource type="StyleBoxFlat" id=7]
-bg_color = Color( 0.196078, 0.419608, 0.223529, 1 )
-
-[sub_resource type="StyleBoxFlat" id=8]
-bg_color = Color( 0.823529, 0.32549, 0.54902, 1 )
-
-[sub_resource type="StyleBoxFlat" id=9]
-bg_color = Color( 0.890196, 0.243137, 0.533333, 1 )
 
 [sub_resource type="DynamicFont" id=10]
 size = 28
@@ -53,26 +29,10 @@ outline_size = 2
 use_filter = true
 font_data = ExtResource( 2 )
 
-[sub_resource type="Animation" id=12]
-length = 6.8
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("SliderContainer/Detail/Image/Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0.02, 0.31, 0.56, 0.82, 1.07, 1.33, 2.05, 2.27, 2.55, 2.85, 3.37, 3.67, 3.92, 4.2, 4.45, 4.69, 4.94, 5.19, 5.43, 5.68, 5.94, 6.19, 6.43, 8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 1 ]
-}
-
-[node name="BikeMenu" type="MarginContainer"]
+[node name="LevelMenu" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 8 )
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -94,7 +54,7 @@ margin_top = 29.3583
 margin_right = 722.885
 margin_bottom = 128.358
 custom_fonts/font = SubResource( 1 )
-text = "Choose a bike: "
+text = "Choose a level:"
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -118,25 +78,20 @@ __meta__ = {
 }
 
 [node name="Current" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 6 )]
-text = "Your bike"
+text = "Your level"
 
-[node name="Sataur" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 6 )]
+[node name="Level_0" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 6 )]
 margin_left = 224.0
 margin_right = 444.0
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
-text = "Sataur"
+hint_tooltip = "Level 0"
+text = "Mountains"
 
-[node name="Drawster" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 6 )]
+[node name="Level_1" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 6 )]
 margin_left = 448.0
 margin_right = 668.0
-custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = SubResource( 7 )
-custom_styles/disabled = SubResource( 8 )
-custom_styles/normal = SubResource( 9 )
-text = "Drawster"
+hint_tooltip = "Level 1"
+disabled = true
+text = "City"
 
 [node name="Detail" type="HBoxContainer" parent="TextureRect/SliderContainer"]
 margin_top = 60.0
@@ -154,16 +109,14 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="TextureRect/SliderContainer/Detail/Image"]
-position = Vector2( 182.245, 14.8972 )
-scale = Vector2( 1.4, 1.4 )
+position = Vector2( 18.8596, 31.3735 )
+scale = Vector2( 0.696705, 0.68024 )
 centered = false
-hframes = 6
-vframes = 4
-frame = 22
 
 [node name="EmptySprite" type="Sprite" parent="TextureRect/SliderContainer/Detail/Image"]
-position = Vector2( 318.368, 196.225 )
-texture = ExtResource( 9 )
+position = Vector2( 334.404, 213.152 )
+scale = Vector2( 0.922636, 0.754348 )
+texture = ExtResource( 8 )
 
 [node name="MenuOptions" type="VBoxContainer" parent="TextureRect/SliderContainer/Detail"]
 margin_left = 641.0
@@ -175,53 +128,40 @@ size_flags_vertical = 3
 custom_constants/separation = 0
 alignment = 1
 
-[node name="MaxPower" type="Label" parent="TextureRect/SliderContainer/Detail/MenuOptions"]
-margin_top = 30.0
+[node name="LevelIssue" type="Label" parent="TextureRect/SliderContainer/Detail/MenuOptions"]
+margin_top = 60.0
 margin_right = 638.0
-margin_bottom = 90.0
+margin_bottom = 120.0
 rect_min_size = Vector2( 420, 60 )
 custom_fonts/font = SubResource( 10 )
-text = "max power: ....... 0"
+text = "<Name of level issue>"
 align = 1
 valign = 1
 
-[node name="MaxSpeed" type="Label" parent="TextureRect/SliderContainer/Detail/MenuOptions"]
-margin_top = 90.0
+[node name="Level" type="Label" parent="TextureRect/SliderContainer/Detail/MenuOptions"]
+margin_top = 120.0
 margin_right = 638.0
-margin_bottom = 150.0
+margin_bottom = 180.0
 rect_min_size = Vector2( 420, 60 )
 custom_fonts/font = SubResource( 10 )
-text = "max speed: ....... 0"
+text = "level: ....... 0"
 align = 1
 valign = 1
 
-[node name="MaxJump" type="Label" parent="TextureRect/SliderContainer/Detail/MenuOptions"]
-margin_top = 150.0
+[node name="Track" type="Label" parent="TextureRect/SliderContainer/Detail/MenuOptions"]
+margin_top = 180.0
 margin_right = 638.0
-margin_bottom = 210.0
+margin_bottom = 240.0
 rect_min_size = Vector2( 420, 60 )
 custom_fonts/font = SubResource( 10 )
-text = "max jump: .......... 0	"
+text = "track: .......... 0	"
 align = 1
 valign = 1
-
-[node name="Lives" type="Label" parent="TextureRect/SliderContainer/Detail/MenuOptions"]
-margin_top = 210.0
-margin_right = 638.0
-margin_bottom = 270.0
-rect_min_size = Vector2( 420, 60 )
-custom_fonts/font = SubResource( 10 )
-text = "lives: .................... 0"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Price" type="Label" parent="TextureRect/SliderContainer/Detail/MenuOptions"]
-margin_top = 270.0
+margin_top = 240.0
 margin_right = 638.0
-margin_bottom = 330.0
+margin_bottom = 300.0
 rect_min_size = Vector2( 420, 60 )
 custom_fonts/font = SubResource( 10 )
 text = "price: .................... 0"
@@ -322,14 +262,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect"]
-autoplay = "demonstration"
-anims/demonstration = SubResource( 12 )
-
 [connection signal="button_down" from="TextureRect/SliderContainer/Buttons/Current" to="." method="_on_Current_button_down"]
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Current" to="." method="_on_Current_pressed"]
-[connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Sataur" to="." method="_on_Sataur_pressed"]
-[connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Drawster" to="." method="_on_Drawster_pressed"]
+[connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Level_0" to="." method="_on_Level_0_pressed"]
 [connection signal="pressed" from="TextureRect/ButtonContainer/btn_menu" to="." method="_on_btn_menu_pressed"]
 [connection signal="pressed" from="TextureRect/ButtonContainer/btn_refit" to="." method="_on_btn_refit_pressed"]
 [connection signal="pressed" from="TextureRect/ButtonContainer/btn_pay" to="." method="_on_btn_pay_pressed"]

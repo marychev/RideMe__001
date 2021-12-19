@@ -13,7 +13,7 @@ var max_power: float = player_bike.max_power
 # var current_level = _current_level.instance()
 var current_level = GameData.current_level
 
-var path_data: PathData = preload("res://Autoload/PathData.gd").new()
+var path_data: PathData = load("res://Autoload/PathData.gd").new()
 
 onready var GUI: CanvasLayer = get_node(path_data.PATH_GUI)
 onready var GameScreen: Control = get_node(path_data.PATH_GAME_SCREEN_PAUSE)

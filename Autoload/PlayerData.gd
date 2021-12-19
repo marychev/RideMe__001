@@ -16,7 +16,7 @@ var rms: = 100 setget set_rms
 var type_title: int = -1
 
 var player_bike: Node
-var path_data: PathData = preload("res://Autoload/PathData.gd").new()
+var path_data: PathData = load("res://Autoload/PathData.gd").new()
 
 onready var lives_value: Label = get_node(path_data.PATH_LIVES_COUNTER_VALUE)
 onready var rms_value: Label = get_node(path_data.PATH_RMS_COUNTER_VALUE)

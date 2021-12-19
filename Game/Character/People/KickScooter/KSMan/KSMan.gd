@@ -1,7 +1,7 @@
 extends "res://Game/Player/Actor.gd"
 class_name KSMan
 
-var path_data: PathData = preload("res://Autoload/PathData.gd").new()
+var path_data: PathData = load("res://Autoload/PathData.gd").new()
 
 onready var animation: AnimationPlayer = $AnimationPlayer
 
