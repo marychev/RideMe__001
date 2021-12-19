@@ -3,7 +3,7 @@ class_name BaseBikeMenu
 
 var path_data: PathData = preload("res://Autoload/PathData.gd").new()
 var selected_node: Node
-var title: String = "no"
+var title: String = "undefined"
 
 onready var field_log: FieldLog = preload("res://Game/scripts/FieldLog.gd").new()
 
@@ -29,8 +29,8 @@ func init_slide(node: Node) -> void:
 	sprite.set_texture(node.texture)
 
 
-func set_title(node: Node, title = "") -> void:
-	title = title if title else node.title
+func set_title(node: Node) -> void:
+	title = node.title if node else title
 	$TextureRect/Title.text = title
 
 

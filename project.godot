@@ -32,7 +32,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "BaseLevel",
 "language": "GDScript",
-"path": "res://Game/Level/BaseLevel.gd"
+"path": "res://Game/Level/Level_Train/BaseLevel.gd"
 }, {
 "base": "Actor",
 "class": "BasePlayer",
@@ -124,6 +124,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Menu/LevelMenu/LevelMenu.gd"
 }, {
+"base": "BaseLevel",
+"class": "Level_0",
+"language": "GDScript",
+"path": "res://Game/Level/Level_0/Level_0.gd"
+}, {
+"base": "BaseLevel",
+"class": "Level_1",
+"language": "GDScript",
+"path": "res://Game/Level/Level_1/Level_1.gd"
+}, {
 "base": "MarginContainer",
 "class": "LivesCounter",
 "language": "GDScript",
@@ -208,6 +218,8 @@ _global_script_class_icons={
 "JumpBtn": "",
 "KSMan": "",
 "LevelMenu": "",
+"Level_0": "",
+"Level_1": "",
 "LivesCounter": "",
 "MovingPlatform": "",
 "PathData": "",

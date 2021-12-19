@@ -1,9 +1,12 @@
 extends BaseBikeMenu
 class_name BikeMenu
 
-onready var empty_bike:EmptyBike = load("res://Game/Bike/EmptyBike.gd").new()
-onready var sataur_bike:SataurBike = load("res://Game/Bike/SataurBike.gd").new()
-onready var drawer_bike:DrawsterBike = load("res://Game/Bike/DrawsterBike.gd").new()
+onready var empty_bike: EmptyBike = load("res://Game/Bike/EmptyBike.gd").new()
+onready var sataur_bike: SataurBike = load("res://Game/Bike/SataurBike.gd").new()
+onready var drawer_bike: DrawsterBike = load("res://Game/Bike/DrawsterBike.gd").new()
+
+onready var btn_sataur: Button = $TextureRect/SliderContainer/Buttons/Sataur
+onready var btn_drawster: Button = $TextureRect/SliderContainer/Buttons/Drawster
 
 onready var bike_upgrade: Resource = preload("res://Menu/BikeMenu/BikeUpgradeDialog.tscn")
 
@@ -11,15 +14,12 @@ onready var bike_upgrade: Resource = preload("res://Menu/BikeMenu/BikeUpgradeDia
 func _ready():
 	._ready()
 	
-	btn_current_node.flat = bool(PlayerData.player_bike != null)
+	btn_current_node.flat = false
 		
 	if PlayerData.player_bike:
-		btn_refit.modulate.a = 1
 		init_slide(PlayerData.player_bike)
-		
-		$TextureRect/SliderContainer/Buttons/Sataur.flat = bool(PlayerData.player_bike.title == "Sataur")
-		$TextureRect/SliderContainer/Buttons/Drawster.flat = bool(PlayerData.player_bike.title == "Drawster")
-		
+		set_buttons_flat(btn_current_node)
+		btn_refit.modulate.a = 1
 		btn_pay.modulate.a = 0.4
 
 
@@ -28,11 +28,11 @@ func init_slide(bike: Node) -> void:
 	set_menu_options(bike)
 
 	
-func set_title(bike: Node, title = "") -> void:
+func set_title(bike: Node) -> void:
 	if PlayerData.player_bike and PlayerData.player_bike.title == bike.title:
 		title = PlayerData.player_bike.title + "*"
 
-	.set_title(bike, title)
+	.set_title(bike)
 
 
 func set_menu_options(bike: Node):
@@ -51,27 +51,19 @@ func set_menu_options(bike: Node):
 
 func _on_Sataur_pressed():
 	field_log.clear()
-	btn_current_node.flat = false
-	$TextureRect/SliderContainer/Buttons/Sataur.flat = true
-	$TextureRect/SliderContainer/Buttons/Drawster.flat = false
-	
+	set_buttons_flat(btn_sataur)
 	init_slide(sataur_bike)
 
 
 func _on_Drawster_pressed():
 	field_log.clear()
-	btn_current_node.flat = false
-	$TextureRect/SliderContainer/Buttons/Drawster.flat = true
-	$TextureRect/SliderContainer/Buttons/Sataur.flat = false
-	
+	set_buttons_flat(btn_drawster)
 	init_slide(drawer_bike)
 
 
 func _on_Current_pressed() -> void:
 	._on_Current_pressed()
-	
-	$TextureRect/SliderContainer/Buttons/Drawster.flat = false
-	$TextureRect/SliderContainer/Buttons/Sataur.flat = false
+	set_buttons_flat(btn_current_node)
 	
 	if not PlayerData.player_bike:
 		init_slide(selected_node)
@@ -125,3 +117,10 @@ func _on_btn_refit_pressed() -> void:
 	else:
 		var message = "You have not a bike!"
 		field_log.error(message)
+
+
+func set_buttons_flat(btn_active: Button) -> void:
+	btn_current_node.flat = bool(btn_current_node.name == btn_active.name)
+	btn_sataur.flat = bool(btn_sataur.name == btn_active.name)
+	btn_drawster.flat = bool(btn_drawster.name == btn_active.name)
+

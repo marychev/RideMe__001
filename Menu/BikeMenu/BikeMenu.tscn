@@ -11,7 +11,7 @@
 [ext_resource path="res://Menu/MainMenu/assets/bg-normal.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
-size = 88
+size = 80
 outline_size = 2
 outline_color = Color( 0.4, 0.4, 0.4, 1 )
 use_mipmaps = true

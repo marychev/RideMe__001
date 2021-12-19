@@ -11,7 +11,7 @@
 [ext_resource path="res://Game/GUI/counter/RMCounter.tscn" type="PackedScene" id=9]
 
 [sub_resource type="DynamicFont" id=1]
-size = 88
+size = 80
 outline_size = 2
 outline_color = Color( 0.4, 0.4, 0.4, 1 )
 use_mipmaps = true
@@ -80,15 +80,20 @@ __meta__ = {
 [node name="Current" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 8 )]
 text = "Your level"
 
-[node name="Level_0" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 8 )]
+[node name="Train" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 8 )]
 margin_left = 224.0
 margin_right = 444.0
+text = "Train"
+
+[node name="Level_0" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 8 )]
+margin_left = 448.0
+margin_right = 668.0
 hint_tooltip = "Level 0"
 text = "Mountains"
 
 [node name="Level_1" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 8 )]
-margin_left = 448.0
-margin_right = 668.0
+margin_left = 672.0
+margin_right = 892.0
 hint_tooltip = "Level 1"
 disabled = true
 text = "City"
@@ -264,6 +269,7 @@ __meta__ = {
 
 [connection signal="button_down" from="TextureRect/SliderContainer/Buttons/Current" to="." method="_on_Current_button_down"]
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Current" to="." method="_on_Current_pressed"]
+[connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Train" to="." method="_on_Train_pressed"]
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Level_0" to="." method="_on_Level_0_pressed"]
 [connection signal="pressed" from="TextureRect/ButtonContainer/btn_menu" to="." method="_on_btn_menu_pressed"]
 [connection signal="pressed" from="TextureRect/ButtonContainer/btn_refit" to="." method="_on_btn_refit_pressed"]

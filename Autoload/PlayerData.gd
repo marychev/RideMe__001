@@ -26,8 +26,8 @@ onready var player: KinematicBody2D = get_node(path_data.PATH_PLAYER)
 
 
 func _ready():
-	if is_instance_valid(player) and player.current_level.INIT_TIME_LEVEL:
-		time_level = player.current_level.INIT_TIME_LEVEL
+	if is_instance_valid(player) and player.current_level.init_time_level:
+		time_level = player.current_level.init_time_level
 
 
 func reset_progress() -> void:
@@ -66,6 +66,11 @@ func set_rms(value: int) -> void:
 	# when BikeMenu as main sceen
 	if not is_instance_valid(rms_value):
 		var path = "/root/BikeMenu/TextureRect/RMCounter/Background/Value"
+		rms_value = get_node(path)
+	
+	# when LevelMenu as main sceen
+	if not is_instance_valid(rms_value):
+		var path = "/root/LevelMenu/TextureRect/RMCounter/Background/Value"
 		rms_value = get_node(path)
 		
 	rms = value
