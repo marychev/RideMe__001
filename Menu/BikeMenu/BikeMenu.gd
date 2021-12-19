@@ -1,30 +1,18 @@
-extends MarginContainer
+extends BaseBikeMenu
 class_name BikeMenu
-
-var path_data: PathData = preload("res://Autoload/PathData.gd").new()
-var selected_bike: Node
-
-onready var field_log: FieldLog = preload("res://Game/scripts/FieldLog.gd").new()
 
 onready var empty_bike:EmptyBike = load("res://Game/Bike/EmptyBike.gd").new()
 onready var sataur_bike:SataurBike = load("res://Game/Bike/SataurBike.gd").new()
 onready var drawer_bike:DrawsterBike = load("res://Game/Bike/DrawsterBike.gd").new()
 
-onready var menu_options = $TextureRect/SliderContainer/Detail/MenuOptions
-onready var btn_refit: TextureButton = $TextureRect/ButtonContainer/btn_refit
-onready var btn_pay: TextureButton = $TextureRect/ButtonContainer/btn_pay
-
-onready var bike_upgrade:Resource = preload("res://BikeMenu/BikeUpgradeDialog.tscn")
+onready var bike_upgrade: Resource = preload("res://Menu/BikeMenu/BikeUpgradeDialog.tscn")
 
 
 func _ready():
-	$TextureRect/SliderContainer/Buttons/Current.flat = bool(PlayerData.player_bike != null)
+	._ready()
 	
-	$TextureRect/RMCounter/Background/Value.set_text(str(PlayerData.rms))
-	btn_refit.modulate.a = 0.4
-	
-	field_log.target = $TextureRect
-	
+	btn_current_node.flat = bool(PlayerData.player_bike != null)
+		
 	if PlayerData.player_bike:
 		btn_refit.modulate.a = 1
 		init_slide(PlayerData.player_bike)
@@ -36,14 +24,18 @@ func _ready():
 
 
 func init_slide(bike: Node) -> void:
-	selected_bike = bike
-	set_title(bike)
+	.init_slide(bike)
+	set_menu_options(bike)
+
 	
-	$TextureRect/SliderContainer/Detail/Image/Sprite.set_texture(bike.texture)	
-	if PlayerData.player_bike or selected_bike.price > 0:
-		$TextureRect/SliderContainer/Detail/Image/Sprite.show()
-		$TextureRect/SliderContainer/Detail/Image/EmptySprite.hide()
-	
+func set_title(bike: Node, title = "") -> void:
+	if PlayerData.player_bike and PlayerData.player_bike.title == bike.title:
+		title = PlayerData.player_bike.title + "*"
+
+	.set_title(bike, title)
+
+
+func set_menu_options(bike: Node):
 	var power_text = "Max power: ....... %d" % [bike.max_power]
 	var speed_text = "Max speed: ....... %d" % [bike.max_speed]
 	var jump_text = "Max jump: .......... %d" % [bike.max_height_jump]
@@ -57,64 +49,49 @@ func init_slide(bike: Node) -> void:
 	menu_options.get_node('Price').set_text(price_text)
 
 
-func set_title(bike: Node) -> void:
-	var title: String = bike.title if bike else "no"
-	
-	if PlayerData.player_bike: 
-		if PlayerData.player_bike.title == bike.title:
-			title = PlayerData.player_bike.title + "*"
-	
-	$TextureRect/Title.text = title
-
-
 func _on_Sataur_pressed():
 	field_log.clear()
-	$TextureRect/SliderContainer/Buttons/Current.flat = false
+	btn_current_node.flat = false
 	$TextureRect/SliderContainer/Buttons/Sataur.flat = true
 	$TextureRect/SliderContainer/Buttons/Drawster.flat = false
 	
-	$TextureRect/SliderContainer/Detail/Image/EmptySprite.hide()
 	init_slide(sataur_bike)
 
 
 func _on_Drawster_pressed():
 	field_log.clear()
+	btn_current_node.flat = false
 	$TextureRect/SliderContainer/Buttons/Drawster.flat = true
 	$TextureRect/SliderContainer/Buttons/Sataur.flat = false
-	$TextureRect/SliderContainer/Buttons/Current.flat = false
 	
-	$TextureRect/SliderContainer/Detail/Image/EmptySprite.hide()
 	init_slide(drawer_bike)
 
 
 func _on_Current_pressed() -> void:
-	field_log.clear()
+	._on_Current_pressed()
+	
 	$TextureRect/SliderContainer/Buttons/Drawster.flat = false
 	$TextureRect/SliderContainer/Buttons/Sataur.flat = false
-	$TextureRect/SliderContainer/Buttons/Current.flat = true
 	
 	if not PlayerData.player_bike:
-		$TextureRect/SliderContainer/Detail/Image/Sprite.hide()
-		init_slide(selected_bike)
+		init_slide(selected_node)
 	else:
 		init_slide(PlayerData.player_bike)
-	
 
 
 func _on_Current_button_down() -> void:
 	if not PlayerData.player_bike:
-		$TextureRect/SliderContainer/Detail/Image/EmptySprite.show()
-		selected_bike = empty_bike
+		selected_node = empty_bike
 
 
 func _on_btn_pay_pressed() -> void:
 	if not PlayerData.player_bike:
-		if selected_bike and selected_bike.price > 0:
-			if PlayerData.rms < selected_bike.price:
+		if selected_node and selected_node.price > 0:
+			if PlayerData.rms < selected_node.price:
 				field_log.error("Need to more Rms!")
 			else:
-				PlayerData.set_rms(PlayerData.rms - selected_bike.price)
-				PlayerData.player_bike = selected_bike
+				PlayerData.set_rms(PlayerData.rms - selected_node.price)
+				PlayerData.player_bike = selected_node
 				
 				btn_refit.modulate.a = 1
 				btn_pay.modulate.a = 0.4
@@ -133,12 +110,6 @@ func _on_btn_pay_pressed() -> void:
 		$TextureRect/SliderContainer/Buttons/Drawster.flat = false
 		$TextureRect/SliderContainer/Buttons/Sataur.disabled = true
 		$TextureRect/SliderContainer/Buttons/Drawster.disabled = true
-
-
-
-func _on_btn_menu_pressed() -> void:
-	var main_menu: String = path_data.RES_MAIN_MENU_TSCN
-	get_tree().change_scene(main_menu)
 
 
 func _on_btn_refit_pressed() -> void:

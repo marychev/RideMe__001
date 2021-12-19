@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bg-color.png-e16cbbd7b06fac17802698d663ad1634.stex"
+path="res://.import/bg-pressed.png-1b8256320c225bb64881484185c1dbfa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MainMenu/assets/main_menu/bg-color.png"
-dest_files=[ "res://.import/bg-color.png-e16cbbd7b06fac17802698d663ad1634.stex" ]
+source_file="res://Menu/MainMenu/assets/bg-pressed.png"
+dest_files=[ "res://.import/bg-pressed.png-1b8256320c225bb64881484185c1dbfa.stex" ]
 
 [params]
 

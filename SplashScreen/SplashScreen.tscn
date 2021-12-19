@@ -30,7 +30,7 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-main_menu_tscn = "res://MainMenu/MainMenu.tscn"
+main_menu_tscn = "res://Menu/MainMenu/MainMenu.tscn"
 
 [node name="Logo" type="TextureRect" parent="."]
 anchor_left = 0.5

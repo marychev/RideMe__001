@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://MainMenu/assets/main_menu/title.png" type="Texture" id=2]
-[ext_resource path="res://MainMenu/assets/main_menu/version.png" type="Texture" id=3]
-[ext_resource path="res://MainMenu/assets/bg-pressed.png" type="Texture" id=5]
-[ext_resource path="res://MainMenu/assets/main_menu/characters.png" type="Texture" id=6]
-[ext_resource path="res://MainMenu/assets/main_menu/bg-color.png" type="Texture" id=7]
+[ext_resource path="res://Menu/MainMenu/assets/main_menu/title.png" type="Texture" id=2]
+[ext_resource path="res://Menu/MainMenu/assets/main_menu/version.png" type="Texture" id=3]
+[ext_resource path="res://Menu/MainMenu/assets/bg-pressed.png" type="Texture" id=5]
+[ext_resource path="res://Menu/MainMenu/assets/main_menu/characters.png" type="Texture" id=6]
+[ext_resource path="res://Menu/MainMenu/assets/main_menu/bg-color.png" type="Texture" id=7]
 [ext_resource path="res://Game/GUI/assets/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=9]
-[ext_resource path="res://MainMenu/MainMenu.gd" type="Script" id=11]
-[ext_resource path="res://MainMenu/assets/bg-normal.png" type="Texture" id=12]
+[ext_resource path="res://Menu/MainMenu/MainMenu.gd" type="Script" id=11]
+[ext_resource path="res://Menu/MainMenu/assets/bg-normal.png" type="Texture" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 62

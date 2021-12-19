@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/yes.png-734f346e5c99ebbaf2a1c1ae9a96a5c9.stex"
+path="res://.import/minus.png-2c92edf9a20abbcf91a175a5c5e8f2ec.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BikeMenu/assets/yes.png"
-dest_files=[ "res://.import/yes.png-734f346e5c99ebbaf2a1c1ae9a96a5c9.stex" ]
+source_file="res://Menu/BikeMenu/assets/minus.png"
+dest_files=[ "res://.import/minus.png-2c92edf9a20abbcf91a175a5c5e8f2ec.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/minus.png-e4ff6974fc2851355a1e62631891a744.stex"
+path="res://.import/bg-normal.png-5c1cec159b8dd6f7c934939c6ffcd9fb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BikeMenu/assets/minus.png"
-dest_files=[ "res://.import/minus.png-e4ff6974fc2851355a1e62631891a744.stex" ]
+source_file="res://Menu/MainMenu/assets/bg-normal.png"
+dest_files=[ "res://.import/bg-normal.png-5c1cec159b8dd6f7c934939c6ffcd9fb.stex" ]
 
 [params]
 
