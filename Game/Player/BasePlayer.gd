@@ -8,16 +8,20 @@ var max_height_jump: float = player_bike.max_height_jump
 var power: float = player_bike.power
 var max_power: float = player_bike.max_power
 
-var _current_level = load("res://Game/Level/Level_0/Level_0.tscn")
-var current_level = _current_level.instance()
+# var _current_level = load("res://Game/Level/Level_0/Level_0.tscn")
+# var _current_level = load("res://Game/Level/Level_1/Level_1.tscn")
+# var current_level = _current_level.instance()
+var current_level = GameData.current_level
 
-onready var GUI: CanvasLayer = get_node(PlayerData.PATH_GUI)
-onready var GameScreen: Control = get_node(PlayerData.PATH_GAME_SCREEN_PAUSE)
-onready var SpeedBar: HBoxContainer = get_node(PlayerData.PATH_SPEED_BAR)
-onready var PowerBar: HBoxContainer = get_node(PlayerData.PATH_POWER_BAR)
-onready var JumpBtn: TouchScreenButton = get_node(PlayerData.PATH_JUMP_BTN)
-onready var GoBtn: TouchScreenButton = get_node(PlayerData.PATH_GO_BTN)
-onready var StopBtn: TouchScreenButton = get_node(PlayerData.PATH_STOP_BTN)
+var path_data: PathData = preload("res://Autoload/PathData.gd").new()
+
+onready var GUI: CanvasLayer = get_node(path_data.PATH_GUI)
+onready var GameScreen: Control = get_node(path_data.PATH_GAME_SCREEN_PAUSE)
+onready var SpeedBar: HBoxContainer = get_node(path_data.PATH_SPEED_BAR)
+onready var PowerBar: HBoxContainer = get_node(path_data.PATH_POWER_BAR)
+onready var JumpBtn: TouchScreenButton = get_node(path_data.PATH_JUMP_BTN)
+onready var GoBtn: TouchScreenButton = get_node(path_data.PATH_GO_BTN)
+onready var StopBtn: TouchScreenButton = get_node(path_data.PATH_STOP_BTN)
 onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 # The current speed as `x` and the max-power of jump as `y`

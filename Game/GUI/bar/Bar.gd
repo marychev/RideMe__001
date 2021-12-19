@@ -1,7 +1,9 @@
 extends HBoxContainer
 class_name Bar
 
-onready var player: KinematicBody2D = get_node(PlayerData.PATH_PLAYER)
+var path_data: PathData = preload("res://Autoload/PathData.gd").new()
+
+onready var player: KinematicBody2D = get_node(path_data.PATH_PLAYER)
 
 
 func do_or_stop_animation_danger(value, max_value):

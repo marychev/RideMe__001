@@ -68,7 +68,7 @@ func set_title(bike: Node) -> void:
 
 func _on_Sataur_pressed():
 	field_log.clear()
-	$TextureRect/SliderContainer/Buttons/Current.flat = bool(PlayerData.player_bike != null)
+	$TextureRect/SliderContainer/Buttons/Current.flat = false
 	$TextureRect/SliderContainer/Buttons/Sataur.flat = true
 	$TextureRect/SliderContainer/Buttons/Drawster.flat = false
 	
@@ -80,7 +80,7 @@ func _on_Drawster_pressed():
 	field_log.clear()
 	$TextureRect/SliderContainer/Buttons/Drawster.flat = true
 	$TextureRect/SliderContainer/Buttons/Sataur.flat = false
-	$TextureRect/SliderContainer/Buttons/Current.flat = bool(PlayerData.player_bike != null)
+	$TextureRect/SliderContainer/Buttons/Current.flat = false
 	
 	$TextureRect/SliderContainer/Detail/Image/EmptySprite.hide()
 	init_slide(drawer_bike)
@@ -90,12 +90,13 @@ func _on_Current_pressed() -> void:
 	field_log.clear()
 	$TextureRect/SliderContainer/Buttons/Drawster.flat = false
 	$TextureRect/SliderContainer/Buttons/Sataur.flat = false
-	$TextureRect/SliderContainer/Buttons/Current.flat = bool(PlayerData.player_bike != null)
+	$TextureRect/SliderContainer/Buttons/Current.flat = true
 	
 	if not PlayerData.player_bike:
 		$TextureRect/SliderContainer/Detail/Image/Sprite.hide()
-
-	init_slide(selected_bike)
+		init_slide(selected_bike)
+	else:
+		init_slide(PlayerData.player_bike)
 	
 
 
@@ -145,7 +146,7 @@ func _on_btn_refit_pressed() -> void:
 		var bike_upgrade_name = bike_upgrade_instance.name # == "BikeUpgradeDialog"
 		
 		add_child(bike_upgrade_instance)
-		yield(get_tree().create_timer(0.35), "timeout")
+		yield(get_tree().create_timer(0.4), "timeout")
 		
 		if has_node(bike_upgrade_name) and get_node(bike_upgrade_name):
 			bike_upgrade_instance.open(PlayerData.player_bike)		

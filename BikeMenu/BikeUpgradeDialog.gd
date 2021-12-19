@@ -99,12 +99,10 @@ func _on_btn_no_pressed() -> void:
 	power_added_rms = 0
 	speed_added_rms = 0
 	jump_added_rms = 0
-	
-	
+
 	if is_visible(): 
 		yield(get_tree().create_timer(0.4), "timeout")
 		hide()
-		# get_tree().reload_current_scene() # get_tree().change_scene("res://BikeMenu/BikeMenu.tscn")
 
 
 func _on_btn_yes_pressed():
@@ -115,27 +113,18 @@ func _on_btn_yes_pressed():
 		if PlayerData.rms < selected_rms:
 			field_log.error("Need to more Rms!")
 		else:
-			upgrade_bike_parameters()
+			var empty_bike: Node = load("res://Game/Bike/EmptyBike.gd").new()
+			empty_bike.upgrade_bike_parameters(
+				selected_rms,
+				power_value, power_added_rms,
+				speed_value, speed_added_rms,
+				jump_value, jump_added_rms
+			)
+			
 			field_log.success("Bike's parameters was upgraded successful!")
 		
-		yield(get_tree().create_timer(1.6), "timeout")
+		yield(get_tree().create_timer(1.4), "timeout")
 		get_tree().reload_current_scene()
-
-
-func upgrade_bike_parameters() -> void:
-	PlayerData.set_rms(PlayerData.rms - selected_rms)
-			
-	PlayerData.player_bike.max_power += power_added_rms
-	set_param_value(power_value, PlayerData.player_bike.max_power)
-	PlayerData.player_bike.max_speed += speed_added_rms
-	set_param_value(speed_value, PlayerData.player_bike.max_speed)
-	PlayerData.player_bike.max_height_jump += jump_added_rms
-	set_param_value(jump_value, PlayerData.player_bike.max_height_jump)
-
-
-func set_param_value(label_value: Label, value: float) -> void:
-	label_value.set_text(str(value))
-	label_value.get("custom_fonts/font").set_outline_size(1)
 
 
 func open(player_bike: Node) -> void:
@@ -143,11 +132,12 @@ func open(player_bike: Node) -> void:
 
 	if player_bike:
 		title += player_bike.title
+		
 		find_node("Title").set_text(title)
-		find_node("PowerValue").set_text(str(player_bike.max_power))
-		find_node("SpeedValue").set_text(str(player_bike.max_speed))
-		find_node("JumpValue").set_text(str(player_bike.max_height_jump))
-	
+		power_value.set_text(str(player_bike.max_power))
+		speed_value.set_text(str(player_bike.max_speed))
+		jump_value.set_text(str(player_bike.max_height_jump))
+		
 	#popup_centered()
 
 

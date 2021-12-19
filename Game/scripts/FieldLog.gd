@@ -6,6 +6,7 @@ const NAME: String = "FieldLog"
 const WHITE = Color(1, 1, 1)
 const GREEN = Color(0.1, 0.5, 0.1)
 const RED = Color(0.8, 0, 0)
+const FONT_PATH = "res://Game/GUI/assets/font/Comfortaa-Bold.ttf"
 
 enum MODE {INFO, SUCCESS, ERROR}
 	
@@ -17,6 +18,8 @@ var position = Vector2(20, 10)
 func create() -> Label:
 	field_log = Label.new()
 	field_log.name = NAME
+	set_dynamic_font(field_log)
+	
 	return field_log
 
 
@@ -63,3 +66,10 @@ func error(message: String):
 
 func info(message: String):
 	show(message, MODE.INFO)
+
+
+func set_dynamic_font(label: Label) -> void:
+	var dynamic_font = DynamicFont.new()
+	dynamic_font.font_data = load(FONT_PATH)
+	dynamic_font.size = 24
+	label.set("custom_fonts/font", dynamic_font)

@@ -1,4 +1,4 @@
-extends "res://Autoload/BasePlayerData.gd"
+extends Node
 
 signal score_updated
 signal lives_updated
@@ -15,27 +15,26 @@ var rms: = 100 setget set_rms
 
 var type_title: int = -1
 
-var current_level: Node
 var player_bike: Node
+var path_data: PathData = preload("res://Autoload/PathData.gd").new()
 
-onready var lives_value: Label = get_node(PATH_LIVES_COUNTER_VALUE)
-onready var rms_value: Label = get_node(PATH_RMS_COUNTER_VALUE)
-onready var time_level_value: Label = get_node(PATH_TIME_LEVEL_VALUE)
-onready var gui_time: VBoxContainer = get_node(PATH_GUI_TIME)
-onready var player: KinematicBody2D = get_node(PATH_PLAYER)
+onready var lives_value: Label = get_node(path_data.PATH_LIVES_COUNTER_VALUE)
+onready var rms_value: Label = get_node(path_data.PATH_RMS_COUNTER_VALUE)
+onready var time_level_value: Label = get_node(path_data.PATH_TIME_LEVEL_VALUE)
+onready var gui_time: VBoxContainer = get_node(path_data.PATH_GUI_TIME)
+onready var player: KinematicBody2D = get_node(path_data.PATH_PLAYER)
 
 
 func _ready():
 	if is_instance_valid(player) and player.current_level.INIT_TIME_LEVEL:
-		current_level = player.current_level
-		time_level = current_level.INIT_TIME_LEVEL
+		time_level = player.current_level.INIT_TIME_LEVEL
 
 
 func reset_progress() -> void:
 	_ready()
 
 	if not is_instance_valid(player):
-		player = load(PlayerData.PATH_PLAYER).new()
+		player = load(path_data.PATH_PLAYER).new()
 		
 	time_level_count = 0
 	score = 0
@@ -49,12 +48,12 @@ func set_score(value: int) -> void:
 
 func set_lives(value: int) -> void:
 	if not is_instance_valid(lives_value):
-		lives_value = get_node(PATH_LIVES_COUNTER_VALUE)
+		lives_value = get_node(path_data.PATH_LIVES_COUNTER_VALUE)
 		
 	lives = value
 	lives_value.text = str(lives)
 	
-	get_node(PATH_LIVES_COUNTER + "/AnimationPlayer").play('danger')
+	get_node(path_data.PATH_LIVES_COUNTER + "/AnimationPlayer").play('danger')
 	
 	emit_signal("lives_updated")
 
@@ -62,7 +61,7 @@ func set_lives(value: int) -> void:
 func set_rms(value: int) -> void:
 	# when Splash as main sceen
 	if not is_instance_valid(rms_value):
-		rms_value = get_node(PATH_RMS_COUNTER_VALUE)
+		rms_value = get_node(path_data.PATH_RMS_COUNTER_VALUE)
 
 	# when BikeMenu as main sceen
 	if not is_instance_valid(rms_value):
@@ -77,7 +76,7 @@ func set_rms(value: int) -> void:
 func set_time_level(value: int) -> void:
 	# when Splash as main sceen
 	if not is_instance_valid(time_level_value):
-		time_level_value = get_node(PATH_TIME_LEVEL_VALUE)
+		time_level_value = get_node(path_data.PATH_TIME_LEVEL_VALUE)
 		
 	# when Game as main sceen
 	time_level = value
@@ -91,11 +90,11 @@ func set_time_level_count(_player: KinematicBody2D) -> int:
 
 	time_level_count += 1
 	
-	if current_level.are_you_win():
+	if player.current_level.are_you_win():
 		var _finish = load("res://Game/Character/Start/Start.tscn")
 		var finish = _finish.instance()
 		
-		var game = get_node(PlayerData.PATH_GAME)
+		var game = get_node(path_data.PATH_GAME)
 		var road = game.FirstRoadBody
 		var road_texture = road.get_node('sprite').texture.get_size()
 		

@@ -1,11 +1,13 @@
 extends Control
 class_name GameScreen
 
+var path_data: PathData = preload("res://Autoload/PathData.gd").new()
+
 onready var sceen_tree: = get_tree()
 onready var pause_rect: ColorRect = get_node("PauseRect")
 onready var title: Label = get_node("PauseRect/Title")
 onready var container_btn: VBoxContainer = get_node("PauseRect/Container")
-onready var player: KinematicBody2D = get_node(PlayerData.PATH_PLAYER)
+onready var player: KinematicBody2D = get_node(path_data.PATH_PLAYER)
 
 var _counter: int = 3
 var paused: = true setget set_paused

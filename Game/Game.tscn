@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Game/Game.gd" type="Script" id=1]
 [ext_resource path="res://Game/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Game/Road/RoadSet.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Game/Level/Level_0/Level_0.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Game/Level/Background/Background.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Game/GUI/GUI.tscn" type="PackedScene" id=8]
 
@@ -58,8 +57,5 @@ position = Vector2( 39149.1, 262.357 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 z_index = 1
-
-[node name="Level_0" parent="." instance=ExtResource( 4 )]
-position = Vector2( -2.94336, 4.20447 )
 
 [editable path="RoadSet_0"]

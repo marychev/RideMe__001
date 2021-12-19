@@ -1,6 +1,8 @@
 extends "res://Game/Player/Actor.gd"
 class_name KSMan
 
+var path_data: PathData = preload("res://Autoload/PathData.gd").new()
+
 onready var animation: AnimationPlayer = $AnimationPlayer
 
 
@@ -16,8 +18,8 @@ func _physics_process(delta: float) -> void:
 
 func _on_StopmDetector_body_entered(body: Node) -> void:
 	if "Player" == body.name:
-		var animate_people = load(PlayerData.PATH_ANIMATE_PEOPLE).new()
+		var animate_people = load(path_data.PATH_ANIMATE_PEOPLE).new()
 		animate_people.do_collision(animation, body)
 
-		var die_player = load(PlayerData.PATH_DIE_PLAYER).new()
+		var die_player = load(path_data.PATH_DIE_PLAYER).new()
 		die_player.from_hir_person(self)

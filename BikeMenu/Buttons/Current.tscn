@@ -1,6 +1,18 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Game/GUI/assets/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.447059, 0.25098, 0.52549, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.196078, 0.419608, 0.223529, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.890196, 0.243137, 0.533333, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.890196, 0.243137, 0.533333, 1 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -10,8 +22,13 @@ font_data = ExtResource( 1 )
 margin_right = 220.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 220, 56 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
 custom_fonts/font = SubResource( 1 )
 text = "Your bike"
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": false,
+"_editor_description_": ""
 }

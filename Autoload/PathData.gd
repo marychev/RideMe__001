@@ -1,5 +1,5 @@
 extends Node
-class_name BasePlayerData
+class_name PathData
 
 const PATH_GAME = "/root/Game"
 const PATH_PLAYER = PATH_GAME + "/Player"

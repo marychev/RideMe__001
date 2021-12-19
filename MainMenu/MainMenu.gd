@@ -3,19 +3,21 @@ extends MarginContainer
 
 export (String, FILE) var game_tscn: = ""
 
-onready var field_log: FieldLog = preload("res://Game/scripts/FieldLog.gd").new()
+var path_data: PathData = preload("res://Autoload/PathData.gd").new()
 
+onready var field_log: FieldLog = preload("res://Game/scripts/FieldLog.gd").new()
+onready var btn_play: TextureButton = $HBoxContainer/VBoxContainer/MenuOptions/Play
 
 func _ready() -> void:
 	if not PlayerData.player_bike:
-		$HBoxContainer/VBoxContainer/MenuOptions/Contunue.modulate.a = 0.4
-		$HBoxContainer/VBoxContainer/MenuOptions/NewGame.modulate.a = 0.4
+		btn_play.modulate.a = 0.4
+		
 
-func _on_NewGame_pressed() -> void:
-	_on_Contunue_pressed()
+func _on_LevelMenu_pressed() -> void:
+	print(" _on_LevelMenu_pressed ! ! !")
 
 
-func _on_Contunue_pressed():
+func _on_Play_pressed():
 	if not PlayerData.player_bike:
 		field_log.target = $HBoxContainer/VBoxContainer/Logo
 		field_log.position = Vector2(10, 66)
@@ -24,23 +26,12 @@ func _on_Contunue_pressed():
 		get_tree().change_scene(game_tscn)
 
 
-func _on_Contunue_button_down() -> void:
-	# modulate.a = 1
-	pass
-
-
-func _on_Contunue_button_up() -> void:
-	# modulate.a = 0.2
-	pass
-
-
 func _on_BikeMenu_pressed() -> void:
-	get_tree().change_scene(PlayerData.BIKE_MENU_SCREEN)
-
+	get_tree().change_scene(path_data.BIKE_MENU_SCREEN)
 
 
 func _on_Options_pressed() -> void:
-	_on_BikeMenu_pressed()
+	pass
 
 
 func _get_configuration_warning() -> String:

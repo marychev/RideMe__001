@@ -1,7 +1,9 @@
 extends MarginContainer
 class_name GUI
 
-onready var lives_value: Label = get_node(PlayerData.PATH_LIVES_COUNTER_VALUE)
+var path_data: PathData = preload("res://Autoload/PathData.gd").new()
+
+onready var lives_value: Label = get_node(path_data.PATH_LIVES_COUNTER_VALUE)
 
 
 func _ready() -> void:
