@@ -19,6 +19,7 @@ func _ready():
 	if PlayerData.player_bike:
 		init_slide(PlayerData.player_bike)
 		set_buttons_flat(btn_current_node)
+		
 		btn_refit.modulate.a = 1
 		btn_pay.modulate.a = 0.4
 

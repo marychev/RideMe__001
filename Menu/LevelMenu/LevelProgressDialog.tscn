@@ -1,0 +1,179 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Menu/LevelMenu/LevelProgressDialog.gd" type="Script" id=1]
+[ext_resource path="res://Game/GUI/assets/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Menu/BikeMenu/assets/no.png" type="Texture" id=3]
+[ext_resource path="res://Menu/MainMenu/assets/bg-normal.png" type="Texture" id=4]
+[ext_resource path="res://Menu/BikeMenu/assets/yes.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+font_data = ExtResource( 2 )
+
+[node name="LevelProgressDialog" type="PopupDialog"]
+self_modulate = Color( 0.320071, 0.259384, 0.347656, 0.980392 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -606.5
+margin_top = -341.0
+margin_right = 606.5
+margin_bottom = 341.0
+size_flags_stretch_ratio = 1.67
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Nine" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 600, 400 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Nine"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -606.5
+margin_right = 606.5
+margin_bottom = 130.064
+rect_min_size = Vector2( 0, 120 )
+custom_fonts/font = SubResource( 1 )
+text = "<Name level progress>"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TableContainer" type="VBoxContainer" parent="Nine"]
+anchor_top = 0.184
+anchor_right = 1.0
+anchor_bottom = 0.759
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PassedRow" type="HBoxContainer" parent="Nine/TableContainer"]
+margin_right = 1213.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureButton" parent="Nine/TableContainer/PassedRow"]
+margin_left = 62.0
+margin_top = 4.0
+margin_right = 108.0
+margin_bottom = 50.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_min_size = Vector2( 46, 46 )
+hint_tooltip = "This track was passed"
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture_normal = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Nine/TableContainer/PassedRow"]
+margin_left = 112.0
+margin_top = 2.0
+margin_right = 758.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 646, 46 )
+custom_fonts/font = SubResource( 2 )
+text = "0.0: collect the %s hourgrass.  "
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Price" type="Label" parent="Nine/TableContainer/PassedRow"]
+margin_left = 762.0
+margin_top = 2.0
+margin_right = 882.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 120, 46 )
+custom_fonts/font = SubResource( 3 )
+text = " - rm"
+align = 1
+valign = 1
+
+[node name="Time" type="Label" parent="Nine/TableContainer/PassedRow"]
+margin_left = 886.0
+margin_top = 2.0
+margin_right = 1006.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 120, 46 )
+custom_fonts/font = SubResource( 4 )
+text = "08:72"
+align = 1
+valign = 1
+
+[node name="ReplayBtn" type="TextureButton" parent="Nine/TableContainer/PassedRow"]
+margin_left = 1010.0
+margin_right = 1150.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 140, 46 )
+hint_tooltip = "Replay this track again. The best result will be keep!"
+texture_normal = ExtResource( 4 )
+expand = true
+
+[node name="Label" type="Label" parent="Nine/TableContainer/PassedRow/ReplayBtn"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 140, 46 )
+custom_fonts/font = SubResource( 2 )
+text = "replay"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonContainer" type="HBoxContainer" parent="Nine"]
+anchor_top = 0.705
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -0.0300293
+rect_min_size = Vector2( 600, 100 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_no" type="TouchScreenButton" parent="Nine/ButtonContainer"]
+position = Vector2( 31.4915, 11.4847 )
+scale = Vector2( 0.8, 0.8 )
+normal = ExtResource( 3 )
+visibility_mode = 1
+
+[node name="btn_yes" type="TouchScreenButton" parent="Nine/ButtonContainer"]
+position = Vector2( 1012.3, 10.7136 )
+scale = Vector2( 0.8, 0.8 )
+normal = ExtResource( 5 )
+visibility_mode = 1
+
+[connection signal="pressed" from="Nine/ButtonContainer/btn_no" to="." method="_on_btn_no_pressed"]
+[connection signal="pressed" from="Nine/ButtonContainer/btn_yes" to="." method="_on_btn_yes_pressed"]

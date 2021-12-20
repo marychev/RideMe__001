@@ -8,7 +8,7 @@ var level_1 = load("res://Game/Level/Level_1/Level_1.tscn").instance()
 onready var btn_level_train: Node = $TextureRect/SliderContainer/Buttons/Train
 onready var btn_level_0: Node = $TextureRect/SliderContainer/Buttons/Level_0
 onready var btn_level_1: Node = $TextureRect/SliderContainer/Buttons/Level_1
-
+onready var progress_popup: Resource = preload("res://Menu/LevelMenu/LevelProgressDialog.tscn")
 
 func _ready():
 	._ready()
@@ -16,12 +16,12 @@ func _ready():
 	btn_current_node.flat = bool(GameData.current_level != null)
 	
 	if GameData.current_level:
-		btn_refit.modulate.a = 1
 		init_slide(GameData.current_level)
 		
 		btn_level_0.flat = false
 		btn_level_1.flat =  false
 		
+		btn_refit.modulate.a = 1
 		btn_pay.modulate.a = 0.4
 
 
@@ -79,7 +79,18 @@ func _on_btn_pay_pressed() -> void:
 
 
 func _on_btn_refit_pressed() -> void:
-	pass
+	if GameData.current_level:
+		var progress_popup_instance: PopupDialog = progress_popup.instance()
+		var progress_popup_name = progress_popup_instance.name
+		
+		add_child(progress_popup_instance)
+		yield(get_tree().create_timer(0.4), "timeout")
+		
+		if has_node(progress_popup_name) and get_node(progress_popup_name):
+			progress_popup_instance.open(GameData.current_level)		
+	else:
+		var message = "You have not a level!"
+		field_log.error(message)
 
 
 func _on_Current_pressed() -> void:

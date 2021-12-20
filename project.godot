@@ -124,6 +124,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Menu/LevelMenu/LevelMenu.gd"
 }, {
+"base": "PopupDialog",
+"class": "LevelProgressDialog",
+"language": "GDScript",
+"path": "res://Menu/LevelMenu/LevelProgressDialog.gd"
+}, {
 "base": "BaseLevel",
 "class": "Level_0",
 "language": "GDScript",
@@ -218,6 +223,7 @@ _global_script_class_icons={
 "JumpBtn": "",
 "KSMan": "",
 "LevelMenu": "",
+"LevelProgressDialog": "",
 "Level_0": "",
 "Level_1": "",
 "LivesCounter": "",
