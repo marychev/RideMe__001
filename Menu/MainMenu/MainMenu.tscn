@@ -57,6 +57,7 @@ custom_constants/separation = 30
 alignment = 1
 
 [node name="Play" type="TextureButton" parent="HBoxContainer/VBoxContainer/MenuOptions"]
+modulate = Color( 1, 1, 1, 0.4 )
 margin_top = 101.0
 margin_right = 400.0
 margin_bottom = 177.0
