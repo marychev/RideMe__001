@@ -127,7 +127,7 @@ _global_script_classes=[ {
 "base": "PopupDialog",
 "class": "LevelProgressDialog",
 "language": "GDScript",
-"path": "res://Menu/LevelMenu/LevelProgressDialog.gd"
+"path": "res://Menu/LevelMenu/LevelProgressDialog/LevelProgressDialog.gd"
 }, {
 "base": "BaseLevel",
 "class": "Level_0",

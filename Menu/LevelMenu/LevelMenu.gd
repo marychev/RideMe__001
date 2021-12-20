@@ -8,7 +8,9 @@ var level_1 = load("res://Game/Level/Level_1/Level_1.tscn").instance()
 onready var btn_level_train: Node = $TextureRect/SliderContainer/Buttons/Train
 onready var btn_level_0: Node = $TextureRect/SliderContainer/Buttons/Level_0
 onready var btn_level_1: Node = $TextureRect/SliderContainer/Buttons/Level_1
-onready var progress_popup: Resource = preload("res://Menu/LevelMenu/LevelProgressDialog.tscn")
+
+const RES_LEVEL_PROGRESS_DIALOG_TSCN: String = "res://Menu/LevelMenu/LevelProgressDialog/LevelProgressDialog.tscn"
+onready var progress_popup: Resource = preload(RES_LEVEL_PROGRESS_DIALOG_TSCN)
 
 func _ready():
 	._ready()
