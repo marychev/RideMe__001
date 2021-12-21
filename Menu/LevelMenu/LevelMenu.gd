@@ -122,7 +122,7 @@ func _on_Level_0_pressed():
 
 func set_buttons_flat(btn_active: Button) -> void:
 	btn_current_node.flat = bool(btn_current_node.name == btn_active.name)
-	btn_level_0.flat = bool(btn_level_0.name == btn_active.name)
+	btn_level_0.flat 	= bool(btn_level_0.name == btn_active.name)
 	btn_level_1.flat = bool(btn_level_1.name == btn_active.name)
 	btn_level_train.flat = bool(btn_level_train.name == btn_active.name)
 

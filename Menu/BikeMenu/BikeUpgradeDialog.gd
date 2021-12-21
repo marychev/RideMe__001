@@ -1,12 +1,14 @@
 extends PopupDialog
 
+onready var field_log: FieldLog = preload("res://Game/scripts/FieldLog.gd").new()
+onready var btn_no:TouchScreenButton  = $Nine/ButtonContainer/btn_no
+onready var btn_yes:TouchScreenButton  = $Nine/ButtonContainer/btn_yes
+
 const POWER_PRICE = 1
 const SPEED_PRICE = 1
 const JUMP_PRICE = 10
 
-onready var field_log: FieldLog = preload("res://Game/scripts/FieldLog.gd").new()
 onready var title: = "Upgrade "
-
 onready var grid:GridContainer = $Nine/Grid
 onready var power_added:Label = grid.get_node("PowerAdded")
 onready var power_value:Label = grid.get_node("PowerValue")
@@ -14,9 +16,6 @@ onready var speed_added:Label = grid.get_node("SpeedAdded")
 onready var speed_value:Label = grid.get_node("SpeedValue")
 onready var jump_added:Label = grid.get_node("JumpAdded")
 onready var jump_value:Label = grid.get_node("JumpValue")
-
-onready var btn_no:TouchScreenButton  = $Nine/ButtonContainer/btn_no
-onready var btn_yes:TouchScreenButton  = $Nine/ButtonContainer/btn_yes
 
 var power_added_rms: = 0
 var speed_added_rms: = 0
@@ -132,8 +131,8 @@ func open(player_bike: Node) -> void:
 
 	if player_bike:
 		title += player_bike.title
-		
 		find_node("Title").set_text(title)
+
 		power_value.set_text(str(player_bike.max_power))
 		speed_value.set_text(str(player_bike.max_speed))
 		jump_value.set_text(str(player_bike.max_height_jump))

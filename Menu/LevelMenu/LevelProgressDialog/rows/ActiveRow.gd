@@ -18,17 +18,18 @@ func _on_PlayBtn_pressed():
 
 
 func set_title() -> void:
-	var title = "%d/%d: %s" % [
-		current_level.level,
-		current_level.track,
-		current_level.issue
-	]
-	$Title.set_text(title)
+	if current_level:
+		var title = "%d/%d: %s" % [
+			current_level.level,
+			current_level.track,
+			current_level.issue
+		]
+		$Title.set_text(title)
 
 
 func set_current_level(level: BaseLevel) -> void:
-	if not level and not GameData.current_level and not current_level:
-		level = preload("res://Game/Level/Level_Train/Level_Train.tscn").instance()
-
-	current_level = level
-	GameData.current_level = current_level
+	# if not level and not GameData.current_level and not current_level:
+	#	level = preload("res://Game/Level/Level_Train/Level_Train.tscn").instance()
+	if level:
+		current_level = level
+		GameData.current_level = current_level
