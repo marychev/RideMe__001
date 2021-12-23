@@ -12,6 +12,7 @@ onready var btn_level_1: Node = $TextureRect/SliderContainer/Buttons/Level_1
 const RES_LEVEL_PROGRESS_DIALOG_TSCN: String = "res://Menu/LevelMenu/LevelProgressDialog/LevelProgressDialog.tscn"
 onready var progress_popup: Resource = preload(RES_LEVEL_PROGRESS_DIALOG_TSCN)
 
+
 func _ready():
 	._ready()
 

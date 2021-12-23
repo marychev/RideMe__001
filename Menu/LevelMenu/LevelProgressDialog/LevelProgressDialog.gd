@@ -5,33 +5,34 @@ const RES_LEVEL_PROGRESS_DIALOG_ROWS = "res://Menu/LevelMenu/LevelProgressDialog
 
 onready var table: VBoxContainer = $Nine/TableContainer
 
+var level_track_states = preload("res://Menu/scripts/LevelTrackStates.gd").new()
+
 
 func _ready():
 	._ready()
 	
-	title = "<Progress %s>"
+	title = "Progress %s"
 	
 	for level in GameData.level_0_map:
-		add_passed_row_to_table(level)
-		add_active_row_to_table(level)
-		add_pay_row_to_table(level)
+		# add_passed_row_to_table(level)
+		if level_track_states.ACTIVE == level.state:
+			add_active_row_to_table(level)
+		elif level_track_states.PAY == level.state:
+			add_pay_row_to_table(level)
 
 
 # work on table 
 
 func add_passed_row_to_table(level_map: Dictionary) -> void:
-	if level_map.is_passed and level_map.is_paid:
-		add_row_to_table(load(RES_LEVEL_PROGRESS_DIALOG_ROWS + "PassedRow.tscn"), level_map)
+	add_row_to_table(load(RES_LEVEL_PROGRESS_DIALOG_ROWS + "PassedRow.tscn"), level_map)
 
 
 func add_active_row_to_table(level_map: Dictionary) -> void:
-	if level_map.is_active and level_map.is_paid and not level_map.is_passed:
-		add_row_to_table(load(RES_LEVEL_PROGRESS_DIALOG_ROWS + "ActiveRow.tscn"), level_map)
+	add_row_to_table(load(RES_LEVEL_PROGRESS_DIALOG_ROWS + "ActiveRow.tscn"), level_map)
 
 
 func add_pay_row_to_table(level_map: Dictionary) -> void:
-	if not level_map.is_paid and not level_map.is_passed:
-		add_row_to_table(load(RES_LEVEL_PROGRESS_DIALOG_ROWS + "PayRow.tscn"), level_map)
+	add_row_to_table(load(RES_LEVEL_PROGRESS_DIALOG_ROWS + "PayRow.tscn"), level_map)
 
 
 func add_row_to_table(resource: Resource, level_map: Dictionary) -> void:

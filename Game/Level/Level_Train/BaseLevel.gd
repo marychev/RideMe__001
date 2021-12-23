@@ -15,13 +15,13 @@ var has_win: bool
 
 
 func _init():
-	num_win = 10
+	num_win = 2
 	init_time_level = 100
 	price = 0
 	level = -1
 	track = -1
 	
-	title = 'Training to mountains'
+	title = 'Train'
 	issue = 'Collect the %s hourgrass!' % num_win
 	texture = preload("res://Game/Level/assets/mountains.png")
 	

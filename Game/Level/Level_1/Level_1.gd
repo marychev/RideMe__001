@@ -8,7 +8,7 @@ func _init():
 	title = 'Mountains'
 	issue = 'Collect the %s hourgrass!' % num_win
 	texture = preload("res://Game/Level/assets/mountains-bottom.png")
-	price = 40
+	price = 10
 	level = 0
 	track = 1
 

@@ -139,6 +139,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Menu/LevelMenu/LevelProgressDialog/LevelProgressDialog.gd"
 }, {
+"base": "Reference",
+"class": "LevelTrackStates",
+"language": "GDScript",
+"path": "res://Menu/scripts/LevelTrackStates.gd"
+}, {
 "base": "BaseLevel",
 "class": "Level_0",
 "language": "GDScript",
@@ -246,6 +251,7 @@ _global_script_class_icons={
 "KSMan": "",
 "LevelMenu": "",
 "LevelProgressDialog": "",
+"LevelTrackStates": "",
 "Level_0": "",
 "Level_1": "",
 "LivesCounter": "",
