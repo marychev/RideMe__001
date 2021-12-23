@@ -13,7 +13,8 @@ func _ready():
 	
 	title = "Progress %s"
 	
-	for level in GameData.level_0_map:
+	var track_cfg = load("res://config/TrackCfg.gd").new()
+	for level in track_cfg.get_tracks():
 		# add_passed_row_to_table(level)
 		if level_track_states.ACTIVE == level.state:
 			add_active_row_to_table(level)
