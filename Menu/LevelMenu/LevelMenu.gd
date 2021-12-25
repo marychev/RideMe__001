@@ -53,13 +53,20 @@ func set_title(level: Node) -> void:
 
 
 func _on_btn_pay_pressed() -> void:
+	# check PlayerTracks
+	# change state level
+	# try to reload popup OR update 
 	if not GameData.current_level:
 		if selected_node:
 			if PlayerData.rms < selected_node.price:
 				field_log.error("Need to more Rms!")
 			else:
 				PlayerData.set_rms(PlayerData.rms - selected_node.price)
+				
 				GameData.current_level = selected_node
+				
+				var time = OS.get_datetime()
+				print(time)
 				
 				btn_refit.modulate.a = 1
 				btn_pay.modulate.a = 0.4

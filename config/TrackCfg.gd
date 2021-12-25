@@ -29,10 +29,10 @@ func get_resource(track) -> String:
 	# resource = "res://Game/Level/Level_Train/Level_Train.tscn"
 	return config.get_value(track, KEY_RESOURCE)
 
-func get_level(track) -> BaseLevel:
+func get_level(track):
 	return load(get_resource(track)).instance()
 
-func get_issue(track) -> int:
+func get_issue(track) -> String:
 	return config.get_value(track, KEY_ISSUE)
 
 func get_state(track) -> LevelTrackStates:

@@ -3,12 +3,16 @@ class_name Level_1
 
 
 func _init():
-	num_win = 20
-	init_time_level = 40
-	title = 'Mountains'
-	issue = 'Collect the %s hourgrass!' % num_win
-	texture = preload("res://Game/Level/assets/mountains-bottom.png")
-	price = 10
-	level = 0
-	track = 1
-
+	SECTION = "LevelTrack_1"
+	
+	level = level_cfg.get_id("Level_0")
+	title = level_cfg.get_title("Level_0")
+	
+	num_win = track_cfg.get_num_win(SECTION)
+	init_time_level = track_cfg.get_init_time_level(SECTION)
+	price = track_cfg.get_price(SECTION)
+	track = track_cfg.get_id(SECTION)
+	issue = track_cfg.get_issue(SECTION) % num_win
+	texture = load(track_cfg.get_texture(SECTION))
+	
+	

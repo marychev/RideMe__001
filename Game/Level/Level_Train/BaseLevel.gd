@@ -1,6 +1,11 @@
 extends Node2D
-class_name BaseLevel
+class_name BaseLevel  # via BaseModel
 
+var level_cfg: LevelCfg = preload("res://config/LevelCfg.gd").new()
+var track_cfg: TrackCfg = preload("res://config/TrackCfg.gd").new()
+var player_track_cfg: PlayerTrackCfg = preload("res://config/PlayerTrackCfg.gd").new()
+
+var SECTION: String
 var num_win: int
 var init_time_level: int
 var price: int
@@ -15,16 +20,18 @@ var has_win: bool
 
 
 func _init():
-	num_win = 2
-	init_time_level = 100
-	price = 0
-	level = -1
-	track = -1
+	SECTION = "LevelTrack_Train"
 	
-	title = 'Train'
-	issue = 'Collect the %s hourgrass!' % num_win
-	texture = preload("res://Game/Level/assets/mountains.png")
+	level = level_cfg.get_id("Level_0")
+	title = 'Train '
 	
+	num_win = track_cfg.get_num_win(SECTION)
+	init_time_level = track_cfg.get_init_time_level(SECTION)
+	price = track_cfg.get_price(SECTION)
+	track = track_cfg.get_id(SECTION)
+	issue = track_cfg.get_issue(SECTION) % num_win
+	texture = load(track_cfg.get_texture(SECTION))
+
 	has_win = false
 
 

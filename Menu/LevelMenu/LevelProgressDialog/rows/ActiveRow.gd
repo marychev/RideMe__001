@@ -21,7 +21,7 @@ func set_title() -> void:
 	if current_level:
 		var title = "%d/%d: %s" % [current_level.level, current_level.track, current_level.issue]
 		
-		if current_level.level < 0 and current_level.track < 0:
+		if current_level.level < 0 or current_level.track < 0:
 			title = "%s: %s" % [current_level.title, current_level.issue]
 
 		$Title.set_text(title)

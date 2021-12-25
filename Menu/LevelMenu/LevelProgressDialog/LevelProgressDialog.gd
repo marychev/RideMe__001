@@ -15,11 +15,15 @@ func _ready():
 	
 	var track_cfg = load("res://config/TrackCfg.gd").new()
 	for level in track_cfg.get_tracks():
-		# add_passed_row_to_table(level)
-		if level_track_states.ACTIVE == level.state:
+		if level_track_states.PASSED == level.state:
+			add_passed_row_to_table(level)
+			print("passed: ", level)
+		elif level_track_states.ACTIVE == level.state:
 			add_active_row_to_table(level)
+			print("active: ", level)
 		elif level_track_states.PAY == level.state:
 			add_pay_row_to_table(level)
+			print("pay: ", level)
 
 
 # work on table 
