@@ -45,6 +45,13 @@ func _ready() -> void:
 	var travel_time = 'Travel time:           %s' % [timer_format(PlayerData.time_level)]
 	var distance_travel = 'Distance traveled: %d m' % [PlayerData.score / 100]
 	label.set_text(travel_time + '\r\n'  + distance_travel)
+	
+	# Update writes to .cfg files
+	var track_cfg: TrackCfg = preload("res://config/TrackCfg.gd").new()
+	var player_track_cfg: PlayerTrackCfg = preload("res://config/PlayerTrackCfg.gd").new()
+
+	track_cfg.set_state(GameData.current_level.SECTION, LevelTrackStates.FAIL)
+	player_track_cfg.set_best_time(GameData.current_level.SECTION, timer_format(PlayerData.time_level))
 
 
 func set_title_and_rect_color():

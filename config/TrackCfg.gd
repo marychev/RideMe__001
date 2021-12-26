@@ -2,6 +2,7 @@ extends Cfg
 class_name TrackCfg
 
 const FILE = "tracks.cfg"
+const PREFIX: String = "LevelTrack"
 
 const KEY_ID = "id"
 const KEY_LEVEL = "level"
@@ -53,6 +54,11 @@ func get_price(track) -> int:
 
 
 # metthods
+
+func set_state(current_level_SECTION: String, state: int):
+	config.set_value(current_level_SECTION, KEY_STATE, state)
+	config.save(path_file_cfg)
+
 
 func get_tracks():
 	var store = []

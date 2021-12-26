@@ -2,6 +2,7 @@ extends Cfg
 class_name LevelCfg
 
 const FILE = "levels.cfg"
+const PREFIX: String = "Level"
 
 const KEY_ID = "id"
 const KEY_TITLE = "title"

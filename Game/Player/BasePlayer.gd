@@ -8,11 +8,6 @@ var max_height_jump: float = player_bike.max_height_jump
 var power: float = player_bike.power
 var max_power: float = player_bike.max_power
 
-# var _current_level = load("res://Game/Level/Level_0/Level_0.tscn")
-# var _current_level = load("res://Game/Level/Level_1/Level_1.tscn")
-# var current_level = _current_level.instance()
-var current_level = GameData.current_level
-
 var path_data: PathData = load("res://Autoload/PathData.gd").new()
 
 onready var GUI: CanvasLayer = get_node(path_data.PATH_GUI)

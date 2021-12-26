@@ -42,8 +42,10 @@ func _get_configuration_warning() -> String:
 
 
 func can_start_play() -> bool:
-	return PlayerData.player_bike and GameData.current_level
-
+	if not PlayerData.player_bike or not GameData.current_level:
+		return false
+	return true
+	
 
 func field_log_start_play() -> void:
 	if not PlayerData.player_bike:

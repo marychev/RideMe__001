@@ -8,7 +8,8 @@ onready var Time: VBoxContainer = $GUI.get_node("Canvas/HBoxContainer/Time")
 
 
 func _ready():
-	add_child(player.current_level)
+	var current_level = GameData.current_level.duplicate()
+	add_child(current_level)
 	# TODO: Add RoadSet_X related to Level_X
 	PlayerData.reset_progress()
 

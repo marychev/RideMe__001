@@ -26,8 +26,8 @@ onready var player: KinematicBody2D = get_node(path_data.PATH_PLAYER)
 
 
 func _ready():
-	if is_instance_valid(player) and player.current_level.init_time_level:
-		time_level = player.current_level.init_time_level
+	if is_instance_valid(player) and GameData.current_level.init_time_level:
+		time_level = GameData.current_level.init_time_level
 
 
 func reset_progress() -> void:
@@ -95,7 +95,7 @@ func set_time_level_count(_player: KinematicBody2D) -> int:
 
 	time_level_count += 1
 	
-	if player.current_level.are_you_win():
+	if GameData.current_level.are_you_win():
 		var _finish = load("res://Game/Character/Start/Start.tscn")
 		var finish = _finish.instance()
 		

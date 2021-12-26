@@ -42,9 +42,8 @@ func die(force: bool = false) -> void:
 	# todo: need to fix
 	if PlayerData.lives <= 0:
 		player.queue_free()
-
 		player.get_tree().change_scene(path_data.END_GAME_SCREEN)
-
+		
 
 func init_player(_player: KinematicBody2D) -> void:
 	if not is_instance_valid(player):

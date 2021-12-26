@@ -22,7 +22,7 @@ func _ready():
 
 	$Timer.start()
 	$TimeToStart.set_text(str(_counter))
-
+	
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
@@ -49,7 +49,7 @@ func _on_Timer_timeout() -> void:
 	
 		$TimeToStart.get_font("font").size = 64
 		
-		var title = "Go go go\r\n%s" % player.current_level.title
+		var title = "Go go go\r\n%s" % GameData.current_level.title
 		$TimeToStart.set_text(title)
 		
 		_counter -= 1

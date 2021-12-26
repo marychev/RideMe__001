@@ -1,5 +1,5 @@
 extends HBoxContainer
-class_name ActiveRow
+class_name ActiveRow   # via BaseClass of the Rows
 
 const DEFAULT_TITLE: String = "<0.0: collect the %s hourgrass>"
 
@@ -12,7 +12,7 @@ func _ready() -> void:
 	set_title()
 
 
-func _on_PlayBtn_pressed():
+func _on_PlayBtn_pressed() -> void:
 	GameData.current_level = current_level
 	$PlayBtn._on_pressed()
 

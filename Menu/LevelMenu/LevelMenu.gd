@@ -1,9 +1,10 @@
 extends BaseBikeMenu
 class_name LevelMenu
 
-var level_train = load("res://Game/Level/Level_Train/Level_Train.tscn").instance()
-var level_0 = load("res://Game/Level/Level_0/Level_0.tscn").instance()
-var level_1 = load("res://Game/Level/Level_1/Level_1.tscn").instance()
+# to top slider's buttons
+var level_train = preload("res://Game/Level/Level_Train/Level_Train.tscn").instance()
+var level_0 = preload("res://Game/Level/Level_0/Level_0.tscn").instance()
+var level_1 = preload("res://Game/Level/Level_1/Level_1.tscn").instance()
 
 onready var btn_level_train: Node = $TextureRect/SliderContainer/Buttons/Train
 onready var btn_level_0: Node = $TextureRect/SliderContainer/Buttons/Level_0
@@ -51,23 +52,16 @@ func set_title(level: Node) -> void:
 	.set_title(level)
 
 
-
 func _on_btn_pay_pressed() -> void:
-	# check PlayerTracks
-	# change state level
-	# try to reload popup OR update 
 	if not GameData.current_level:
 		if selected_node:
 			if PlayerData.rms < selected_node.price:
 				field_log.error("Need to more Rms!")
 			else:
 				PlayerData.set_rms(PlayerData.rms - selected_node.price)
-				
+
 				GameData.current_level = selected_node
-				
-				var time = OS.get_datetime()
-				print(time)
-				
+
 				btn_refit.modulate.a = 1
 				btn_pay.modulate.a = 0.4
 
