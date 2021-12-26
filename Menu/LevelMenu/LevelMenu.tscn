@@ -81,19 +81,20 @@ __meta__ = {
 text = "Your level"
 
 [node name="Train" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 8 )]
+visible = false
 margin_left = 224.0
 margin_right = 444.0
 text = "Train"
 
 [node name="Level_0" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 8 )]
-margin_left = 448.0
-margin_right = 668.0
+margin_left = 224.0
+margin_right = 444.0
 hint_tooltip = "Level 0"
 text = "Mountains"
 
 [node name="Level_1" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 8 )]
-margin_left = 672.0
-margin_right = 892.0
+margin_left = 448.0
+margin_right = 668.0
 hint_tooltip = "Level 1"
 disabled = true
 text = "City"
@@ -260,7 +261,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Pay"
+text = "Go"
 align = 1
 valign = 1
 __meta__ = {

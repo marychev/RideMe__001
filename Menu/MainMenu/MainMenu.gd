@@ -1,5 +1,6 @@
 tool
 extends MarginContainer
+class_name MainMenu
 
 export (String, FILE) var game_tscn: = ""
 
@@ -10,9 +11,16 @@ onready var btn_play: TextureButton = $HBoxContainer/VBoxContainer/MenuOptions/P
 
 
 func _ready() -> void:
+	btn_play.modulate.a = 1
+	
+	btn_play.hint_tooltip = "Play the %s level track on %s bike" % [
+		GameData.current_level.title if GameData.current_level else "no",
+		PlayerData.player_bike.title if PlayerData.player_bike else "no",
+	]
+	
 	if not can_start_play():
 		btn_play.modulate.a = 0.4
-
+		
 
 func _on_Play_pressed():
 	if not PlayerData.player_bike and not GameData.current_level:
@@ -36,15 +44,8 @@ func _on_Options_pressed() -> void:
 	field_log.info("TO DO")
 
 
-func _get_configuration_warning() -> String:
-	var msg:String = "Game scene must be set "
-	return msg if game_tscn == "" else ""
-
-
 func can_start_play() -> bool:
-	if not PlayerData.player_bike or not GameData.current_level:
-		return false
-	return true
+	return PlayerData.player_bike and GameData.current_level
 	
 
 func field_log_start_play() -> void:
@@ -55,3 +56,8 @@ func field_log_start_play() -> void:
 	else:
 		var error = "Undefined error. You can not start play. Try ro reboot game"
 		field_log.error(error)
+
+
+func _get_configuration_warning() -> String:
+	var msg:String = "Game scene must be set "
+	return msg if game_tscn == "" else ""

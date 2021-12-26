@@ -41,8 +41,8 @@ func timeout_do_anim_success() -> void:
 
 
 func get_value_of_time_level(level_num: float) -> int:
-	if player.current_level:
-		return player.current_level.init_time_level
+	if GameData.current_level:
+		return GameData.current_level.init_time_level
 	return -1
 
 
