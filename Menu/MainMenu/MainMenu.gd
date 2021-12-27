@@ -20,7 +20,10 @@ func _ready() -> void:
 	
 	if not can_start_play():
 		btn_play.modulate.a = 0.4
-		
+	
+	show_player_bike()
+	show_current_track()
+	
 
 func _on_Play_pressed():
 	if not PlayerData.player_bike and not GameData.current_level:
@@ -56,6 +59,26 @@ func field_log_start_play() -> void:
 	else:
 		var error = "Undefined error. You can not start play. Try ro reboot game"
 		field_log.error(error)
+
+
+func show_player_bike() -> void:
+	if PlayerData.player_bike:
+		var _sataur: TextureRect = $HBoxContainer/CenterContainer/Characters/Sataur
+		var _drawster: TextureRect = $HBoxContainer/CenterContainer/Characters/Drawster
+
+		if _sataur.name == PlayerData.player_bike.title:
+			_sataur.modulate.a = 1
+			_drawster.visible = false
+		elif _drawster.name == PlayerData.player_bike.title:
+			_drawster.modulate.a = 1
+			_sataur.visible = false
+
+
+func show_current_track() -> void:
+	if GameData.current_level:
+		var _current_track: NinePatchRect = $HBoxContainer/CenterContainer/CurrentTrack
+		_current_track.visible = true
+		_current_track.texture = GameData.current_level.texture
 
 
 func _get_configuration_warning() -> String:

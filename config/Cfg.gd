@@ -1,6 +1,6 @@
 class_name Cfg
 
-const RES = "res://config/"
+const RES = "user://config/"
 
 var path_file_cfg: String
 var config: ConfigFile

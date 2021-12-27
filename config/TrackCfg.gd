@@ -17,6 +17,9 @@ const KEY_PRICE = "price"
 
 
 func _init():
+	
+	print(RES + FILE)
+	
 	path_file_cfg = RES + FILE
 	config = get_config()
 
