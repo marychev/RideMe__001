@@ -1,17 +1,16 @@
 extends Cfg
 class_name PlayerTrackCfg
 
-const FILE = "player_tracks.cfg"
-const PREFIX: String = "PlayerTrack"
-
-const KEY_ID: String = "id"
-const KEY_TRACK = "track"
-const KEY_PAID_AT = "paid_at"
-const KEY_BEST_TIME_AT = "best_time_at"
-const KEY_ATTEMPTS = "attempts"
+const FILE = "test_player_tracks.cfg"
+const KEY_ID: = "id"
+const KEY_TRACK: = "track"
+const KEY_PAID_AT: = "paid_at"
+const KEY_BEST_TIME_AT: = "best_time_at"
+const KEY_ATTEMPTS: = "attempts"
 
 
 func _init():
+	prefix = "PlayerTrack"
 	path_file_cfg = RES + FILE
 	config = get_config()
 
@@ -37,7 +36,7 @@ func get_attempts(track) -> Array:
 # setters
 
 func set_best_time(current_track_SECTION: String, value: String) -> void:
-	var player_track_SECTION = current_track_SECTION.replace("LevelTrack", PREFIX)
+	var player_track_SECTION = current_track_SECTION.replace("LevelTrack", prefix)
 	var attempts = get_attempts(player_track_SECTION)
 	attempts.append(value)
 	
@@ -52,9 +51,9 @@ func set_best_time(current_track_SECTION: String, value: String) -> void:
 
 # metthods
 
-func create(current_track_SECTION: String, player_track_SECTION: String) -> void:
+func create(current_track_SECTION: String, player_track_SECTION: String) -> int:
 	config.set_value(player_track_SECTION, KEY_TRACK, get_id(current_track_SECTION))
 	config.set_value(player_track_SECTION, KEY_PAID_AT, OS.get_datetime())
 	config.set_value(player_track_SECTION, KEY_BEST_TIME_AT, "00:00:00")
 	config.set_value(player_track_SECTION, KEY_ATTEMPTS, [])
-	config.save(path_file_cfg)
+	return config.save(path_file_cfg)

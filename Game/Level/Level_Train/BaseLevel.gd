@@ -1,12 +1,11 @@
 extends Node2D
 class_name BaseLevel  # via BaseModelView
 
-var level_cfg: LevelCfg = preload("res://config/LevelCfg.gd").new()
-var track_cfg: TrackCfg = preload("res://config/TrackCfg.gd").new()
+var level_cfg: LevelCfg = load("res://config/LevelCfg.gd").new()
+var track_cfg: TrackCfg = load("res://config/TrackCfg.gd").new()
 var player_track_cfg: PlayerTrackCfg = preload("res://config/PlayerTrackCfg.gd").new()
 
-var SECTION: String
-
+var ID: int
 var num_win: int
 var init_time_level: int
 var price: int
@@ -21,16 +20,16 @@ var has_win: bool
 
 
 func _init():
-	SECTION = "LevelTrack_Train"
-	
+	ID = -1
 	title = 'Train '
-	level = level_cfg.get_id("Level_0")
-	num_win = track_cfg.get_num_win(SECTION)
-	init_time_level = track_cfg.get_init_time_level(SECTION)
-	price = track_cfg.get_price(SECTION)
-	track = track_cfg.get_id(SECTION)
-	issue = track_cfg.get_issue(SECTION) % num_win
-	texture = load(track_cfg.get_texture(SECTION))
+	var section: = "%s_%s" % [track_cfg.prefix, ID]
+	
+	num_win = track_cfg.get_num_win(section)
+	init_time_level = track_cfg.get_init_time_level(section)
+	price = track_cfg.get_price(section)
+	track = track_cfg.get_id(section)
+	issue = track_cfg.get_issue(section) % num_win
+	texture = load(track_cfg.get_texture(section))
 
 	has_win = false
 

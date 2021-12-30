@@ -31,7 +31,10 @@ func _on_PayBtn_pressed():
 		field_log.error(message)
 		return
 	
-	var player_track_SECTION: String = current_level.SECTION.replace("LevelTrack", "PlayerTrack")
+	# var player_track_SECTION: String = current_level.SECTION.replace("LevelTrack", "PlayerTrack")
+	var current_track_SECTION: = track_cfg.get_section(current_level.ID)
+	var player_track_SECTION: = current_track_SECTION.replace(track_cfg.prefix, player_track_cfg.prefix)
+	
 	if player_track_cfg.config.has_section(player_track_SECTION):
 		var message = "You have already paid for this track %s" % player_track_SECTION
 		field_log.info(message)
@@ -42,8 +45,8 @@ func _on_PayBtn_pressed():
 		return
 		
 	PlayerData.set_rms(PlayerData.rms - current_level.price)
-	player_track_cfg.create(current_level.SECTION, player_track_SECTION)
-	track_cfg.set_state(current_level.SECTION, LevelTrackStates.ACTIVE)
+	player_track_cfg.create(current_track_SECTION, player_track_SECTION)
+	track_cfg.set_state(current_track_SECTION, LevelTrackStates.ACTIVE)
 	
 	set_current_level(current_level)
 
