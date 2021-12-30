@@ -6,15 +6,15 @@ var track_cfg: TrackCfg = load("res://config/TrackCfg.gd").new()
 var player_track_cfg: PlayerTrackCfg = preload("res://config/PlayerTrackCfg.gd").new()
 
 var ID: int
+var issue: String
 var num_win: int
 var init_time_level: int
 var price: int
-var level:int 
 var track:int 
-
-var title: String
 var texture: Resource
-var issue: String
+# level's keys
+var level:int 
+var title: String
 
 var has_win: bool
 
@@ -22,6 +22,7 @@ var has_win: bool
 func _init():
 	ID = -1
 	title = 'Train '
+	
 	var section: = "%s_%s" % [track_cfg.prefix, ID]
 	
 	num_win = track_cfg.get_num_win(section)
@@ -32,7 +33,6 @@ func _init():
 	texture = load(track_cfg.get_texture(section))
 
 	has_win = false
-
 
 
 func are_you_win(hourgrass_count: int = PlayerData.time_level_count) -> bool:

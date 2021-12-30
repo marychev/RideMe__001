@@ -1,6 +1,8 @@
 class_name Cfg
 
-const RES = "user://data/"
+# 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
+
+const RES = "user://"
 const KEY_SECTION = "_section"
 
 var prefix: String
