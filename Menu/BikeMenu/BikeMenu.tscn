@@ -46,7 +46,7 @@ outline_size = 1
 outline_color = Color( 0.533333, 0.388235, 0.211765, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=11]
 length = 6.8
 loop = true
 tracks/0/type = "value"
@@ -270,7 +270,7 @@ title = "Pay"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect"]
 autoplay = "demonstration"
-anims/demonstration = SubResource( 12 )
+anims/demonstration = SubResource( 11 )
 
 [connection signal="button_down" from="TextureRect/SliderContainer/Buttons/Current" to="." method="_on_Current_button_down"]
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Current" to="." method="_on_Current_pressed"]

@@ -8,7 +8,7 @@ var title: String = "undefined"
 onready var field_log: FieldLog = preload("res://Game/scripts/FieldLog.gd").new()
 
 onready var sprite: Sprite = $TextureRect/SliderContainer/Detail/Image/Sprite
-onready var menu_options = $TextureRect/SliderContainer/Detail/MenuOptions
+onready var menu_options: VBoxContainer = $TextureRect/SliderContainer/Detail/MenuOptions
 onready var btn_current_node: Node = $TextureRect/SliderContainer/Buttons/Current
 onready var btn_refit: TextureButton = $TextureRect/ButtonContainer/btn_refit
 onready var btn_pay: TextureButton = $TextureRect/ButtonContainer/btn_pay

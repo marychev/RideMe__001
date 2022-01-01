@@ -14,7 +14,7 @@ func _ready():
 		$PayBtn.disabled = true
 
 
-func set_current_level(level: BaseLevel) -> void:
+func set_current_level(level: Node2D) -> void:
 	.set_current_level(level)
 	
 	if level:

@@ -1,12 +1,11 @@
 extends BaseLevel
-class_name Level_0
+class_name Level_2
+
 
 
 func _init():
-	ID = 0
-	# level = level_cfg.get_id("%s_%s" % [level_cfg.prefix, ID])
-	
-	title = level_cfg.get_title(level_cfg.get_section(ID))  # "Level_0"
+	ID = 2
+	title = level_cfg.get_title(level_cfg.get_section(ID))
 	
 	var section: = track_cfg.get_section(ID)
 	if track_cfg.get_id(section):
@@ -16,4 +15,3 @@ func _init():
 		track = track_cfg.get_id(section)
 		issue = track_cfg.get_issue(section) % num_win
 		texture = load(track_cfg.get_texture(section))
-

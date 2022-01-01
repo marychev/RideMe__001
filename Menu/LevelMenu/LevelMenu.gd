@@ -1,18 +1,14 @@
 extends BaseBikeMenu
 class_name LevelMenu
 
-signal btn_refit_pressed
-signal btn_pay_pressed
-
-
 # to top slider's buttons
-var level_train = preload("res://Game/Level/Level_Train/Level_Train.tscn").instance()
-var level_0 = preload("res://Game/Level/Level_0/Level_0.tscn").instance()
-var level_1 = preload("res://Game/Level/Level_1/Level_1.tscn").instance()
+var level_0: = preload("res://Game/Level/Level_0/Level_0.tscn").instance()
+var level_1: = preload("res://Game/Level/Level_1/Level_1.tscn").instance()
+var level_2: = preload("res://Game/Level/Level_2/Level_2.tscn").instance()
 
-onready var btn_level_train: Node = $TextureRect/SliderContainer/Buttons/Train
-onready var btn_level_0: Node = $TextureRect/SliderContainer/Buttons/Level_0
-onready var btn_level_1: Node = $TextureRect/SliderContainer/Buttons/Level_1
+onready var btn_level_0: Button = $TextureRect/SliderContainer/Buttons/Level_0
+onready var btn_level_1: Button = $TextureRect/SliderContainer/Buttons/Level_1
+onready var btn_level_2: Button = $TextureRect/SliderContainer/Buttons/Level_2
 
 const RES_LEVEL_PROGRESS_DIALOG_TSCN: String = "res://Menu/LevelMenu/LevelProgressDialog/LevelProgressDialog.tscn"
 onready var progress_popup: Resource = preload(RES_LEVEL_PROGRESS_DIALOG_TSCN)
@@ -29,8 +25,8 @@ func _ready():
 	if GameData.current_level:
 		init_slide(GameData.current_level)
 		
-		btn_level_0.flat = false
-		btn_level_1.flat =  false
+		btn_level_1.flat = false
+		btn_level_2.flat =  false
 		
 		btn_refit.modulate.a = 1
 		btn_pay.modulate.a = 0.4
@@ -82,11 +78,11 @@ func _on_btn_pay_pressed() -> void:
 		field_log.info(message)
 	
 	if GameData.current_level:
-		btn_level_0.flat = false
 		btn_level_1.flat = false
+		btn_level_2.flat = false
 		
-		btn_level_0.disabled = true
 		btn_level_1.disabled = true
+		btn_level_2.disabled = true
 
 
 func _on_btn_refit_pressed() -> void:
@@ -98,7 +94,7 @@ func _on_btn_refit_pressed() -> void:
 		yield(get_tree().create_timer(0.4), "timeout")
 		
 		if has_node(progress_popup_name) and get_node(progress_popup_name):
-			progress_popup_instance.open(GameData.current_level)		
+			progress_popup_instance.open(GameData.current_level)
 	else:
 		var message = "You have not a level!"
 		field_log.error(message)
@@ -109,20 +105,13 @@ func _on_Current_pressed() -> void:
 	set_buttons_flat(btn_current_node)
 
 	if not GameData.current_level:
-		selected_node = level_train
+		selected_node = level_0
 		init_slide(selected_node)
 	else:
 		init_slide(GameData.current_level)
 
 
-func _on_Train_pressed():
-	field_log.clear()
-	set_buttons_flat(btn_level_train)
-	selected_node = level_train
-	init_slide(selected_node)
-
-
-func _on_Level_0_pressed():
+func _on_Level_1_pressed():
 	field_log.clear()
 	set_buttons_flat(btn_level_0)
 	selected_node = level_0
@@ -131,7 +120,6 @@ func _on_Level_0_pressed():
 
 func set_buttons_flat(btn_active: Button) -> void:
 	btn_current_node.flat = bool(btn_current_node.name == btn_active.name)
-	btn_level_0.flat 	= bool(btn_level_0.name == btn_active.name)
+	btn_level_0.flat = bool(btn_level_0.name == btn_active.name)
 	btn_level_1.flat = bool(btn_level_1.name == btn_active.name)
-	btn_level_train.flat = bool(btn_level_train.name == btn_active.name)
-
+	btn_level_2.flat = bool(btn_level_2.name == btn_active.name)

@@ -4,7 +4,7 @@
 [ext_resource path="res://Game/GameScreen/Buttons/QuitBtn.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Game/GameScreen/Title.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Game/GUI/assets/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://Game/GameScreen/GameScreen.gd" type="Script" id=5]
+[ext_resource path="res://Game/GameScreen/GameScreenPause.gd" type="Script" id=5]
 [ext_resource path="res://Game/GameScreen/Buttons/ContinueBtn.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Game/GameScreen/TimeToStart.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Game/GameScreen/Buttons/MainMenuBtn.tscn" type="PackedScene" id=8]
@@ -78,7 +78,7 @@ margin_top = 114.0
 margin_right = 434.0
 margin_bottom = 167.0
 
-[node name="QuitBtn2" parent="PauseRect/Container" instance=ExtResource( 2 )]
+[node name="QuitBtn" parent="PauseRect/Container" instance=ExtResource( 2 )]
 margin_top = 171.0
 margin_right = 434.0
 margin_bottom = 224.0

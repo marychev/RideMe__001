@@ -4,8 +4,7 @@ class_name Level_1
 
 func _init():
 	ID = 1
-	level = level_cfg.get_id("Level_0")
-	title = level_cfg.get_title("Level_0")
+	title = level_cfg.get_title(level_cfg.get_section(1))
 	
 	var section: = track_cfg.get_section(ID)
 	if track_cfg.get_id(section):
@@ -15,3 +14,4 @@ func _init():
 		track = track_cfg.get_id(section)
 		issue = track_cfg.get_issue(section) % num_win
 		texture = load(track_cfg.get_texture(section))
+

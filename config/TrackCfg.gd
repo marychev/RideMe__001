@@ -1,15 +1,13 @@
 extends Cfg
 class_name TrackCfg
 
-const FILE = "test_tracks.cfg"
+const FILE = "tracks.cfg"
 
 const KEY_ID = "id"
 const KEY_LEVEL = "level"
 const KEY_ISSUE = "issue"
-# resource = "res://Game/Level/Level_Train/Level_Train.tscn"
 const KEY_RESOURCE = "resource"
 const KEY_STATE = "state"
-# texture = "res://Game/Level/assets/mountains.png"
 const KEY_TEXTURE = "texture"
 const KEY_NUM_WIN = "num_win"
 const KEY_INIT_TIME_LEVEL = "init_time_level"
@@ -24,32 +22,35 @@ func _init():
 
 # getters
 
-func get_id(track) -> int:
-	return config.get_value(track, KEY_ID)
+func get_id(section: String) -> int:
+	return config.get_value(section, KEY_ID)
 
-func get_resource(track) -> String:
-	return config.get_value(track, KEY_RESOURCE)
+func get_resource(section: String) -> String:
+	return config.get_value(section, KEY_RESOURCE)
 
-func get_level(track):
-	return load(get_resource(track)).instance()
+func get_level(section: String) -> Node2D:
+	# print("section: ", section)
+	#var res = load(get_resource(section)).instance()
+	#print(typeof(res))
+	return load(get_resource(section)).instance()
 
-func get_issue(track) -> String:
-	return config.get_value(track, KEY_ISSUE)
+func get_issue(section: String) -> String:
+	return config.get_value(section, KEY_ISSUE)
 
-func get_state(track) -> int:
-	return config.get_value(track, KEY_STATE)
+func get_state(section: String) -> int:
+	return config.get_value(section, KEY_STATE)
 
-func get_texture(track) -> String:
-	return config.get_value(track, KEY_TEXTURE)
+func get_texture(section: String) -> String:
+	return config.get_value(section, KEY_TEXTURE)
 
-func get_num_win(track) -> int:
-	return config.get_value(track, KEY_NUM_WIN)
+func get_num_win(section: String) -> int:
+	return config.get_value(section, KEY_NUM_WIN)
 	
-func get_init_time_level(track) -> int:
-	return config.get_value(track, KEY_INIT_TIME_LEVEL)
+func get_init_time_level(section: String) -> int:
+	return config.get_value(section, KEY_INIT_TIME_LEVEL)
 
-func get_price(track) -> int:
-	return config.get_value(track, KEY_PRICE)
+func get_price(section: String) -> int:
+	return config.get_value(section, KEY_PRICE)
 
 
 func get_as_dict(section: String) -> Dictionary:

@@ -1,5 +1,5 @@
 extends Control
-class_name GameScreen
+class_name GameScreenPause
 
 var path_data: PathData = preload("res://Autoload/PathData.gd").new()
 

@@ -1,5 +1,5 @@
 extends Node2D
-class_name BaseLevel  # via BaseModelView
+class_name BaseLevel
 
 # Keys
 var ID: int
@@ -21,8 +21,8 @@ var track_cfg: TrackCfg = load("res://config/TrackCfg.gd").new()
 var player_track_cfg: PlayerTrackCfg = preload("res://config/PlayerTrackCfg.gd").new()
 
 
-func _init():
-	ID = -1
+func _init() -> void:
+	ID = 0
 	title = 'Train '
 	
 	var section: = "%s_%s" % [track_cfg.prefix, ID]

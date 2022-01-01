@@ -13,34 +13,7 @@ onready var bike_upgrade: Resource = preload("res://Menu/BikeMenu/BikeUpgradeDia
 
 func _ready():
 	._ready()
-
 	init_btn_current_node()
-
-
-func init_slide(bike: Node) -> void:
-	.init_slide(bike)
-	set_menu_options(bike)
-
-
-func set_title(bike: Node) -> void:
-	if PlayerData.player_bike and PlayerData.player_bike.title == bike.title:
-		title = PlayerData.player_bike.title + "*"
-
-	.set_title(bike)
-
-
-func set_menu_options(bike: Node):
-	var power_text = "Max power: ....... %d" % [bike.max_power]
-	var speed_text = "Max speed: ....... %d" % [bike.max_speed]
-	var jump_text = "Max jump: .......... %d" % [bike.max_height_jump]
-	var lives_text = "Lives: .................... %d" % [PlayerData.lives]
-	var price_text = "Price: .................... %d" % [bike.price]
-	
-	menu_options.get_node('MaxPower').set_text(power_text)
-	menu_options.get_node('MaxSpeed').set_text(speed_text)
-	menu_options.get_node('MaxJump').set_text(jump_text)
-	menu_options.get_node('Lives').set_text(lives_text)
-	menu_options.get_node('Price').set_text(price_text)
 
 
 func _on_Sataur_pressed():
@@ -113,6 +86,11 @@ func _on_btn_refit_pressed() -> void:
 		field_log.error(message)
 
 
+func init_slide(bike: Node) -> void:
+	.init_slide(bike)
+	set_menu_options(bike)
+
+
 func init_btn_current_node() -> void:
 	btn_current_node.flat = false
 	btn_current_node.disabled = true
@@ -127,8 +105,28 @@ func init_btn_current_node() -> void:
 		btn_current_node.disabled = false
 
 
+func set_title(bike: Node) -> void:
+	if PlayerData.player_bike and PlayerData.player_bike.title == bike.title:
+		title = PlayerData.player_bike.title + "*"
+
+	.set_title(bike)
+
+
+func set_menu_options(bike: Node):
+	var power_text = "Max power: ....... %d" % [bike.max_power]
+	var speed_text = "Max speed: ....... %d" % [bike.max_speed]
+	var jump_text = "Max jump: .......... %d" % [bike.max_height_jump]
+	var lives_text = "Lives: .................... %d" % [PlayerData.lives]
+	var price_text = "Price: .................... %d" % [bike.price]
+	
+	menu_options.get_node('MaxPower').set_text(power_text)
+	menu_options.get_node('MaxSpeed').set_text(speed_text)
+	menu_options.get_node('MaxJump').set_text(jump_text)
+	menu_options.get_node('Lives').set_text(lives_text)
+	menu_options.get_node('Price').set_text(price_text)
+
+
 func set_buttons_flat(btn_active: Button) -> void:
 	btn_current_node.flat = bool(btn_current_node.name == btn_active.name)
 	btn_sataur.flat = bool(btn_sataur.name == btn_active.name)
 	btn_drawster.flat = bool(btn_drawster.name == btn_active.name)
-

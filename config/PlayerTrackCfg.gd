@@ -1,7 +1,7 @@
 extends Cfg
 class_name PlayerTrackCfg
 
-const FILE = "test_player_tracks.cfg"
+const FILE:  = "player_tracks.cfg"
 
 const KEY_ID: = "id"
 const KEY_TRACK: = "track"

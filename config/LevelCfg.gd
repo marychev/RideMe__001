@@ -1,7 +1,7 @@
 extends Cfg
 class_name LevelCfg
 
-const FILE = "test_levels.cfg"
+const FILE = "levels.cfg"
 
 const KEY_ID = "id"
 const KEY_TITLE = "title"
@@ -31,7 +31,7 @@ func get_id(section: String) -> int:
 func get_title(section: String) -> String:
 	return config.get_value(section, KEY_TITLE)
 
-func get_passed_at(section: String):
+func get_passed_at(section: String) -> String:
 	return config.get_value(section, KEY_PASSED_AT)
 
 
