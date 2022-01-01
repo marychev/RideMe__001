@@ -28,15 +28,19 @@ tracks/0/keys = {
 }
 
 [node name="TextureIconButton" type="TextureButton"]
-margin_left = 483.0
-margin_right = 883.0
-margin_bottom = 76.0
+anchor_right = 0.293
+anchor_bottom = 0.099
+margin_right = -0.238007
+margin_bottom = -0.0320053
+rect_min_size = Vector2( 0, 76 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 3 )
 expand = true
 script = ExtResource( 5 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 title = "<label>"
 
@@ -45,10 +49,10 @@ anchor_left = 0.584
 anchor_top = -0.738
 anchor_right = 0.584
 anchor_bottom = -0.738
-margin_left = -228.643
-margin_top = 72.1586
-margin_right = -3.64311
-margin_bottom = 297.159
+margin_left = -221.916
+margin_top = 70.4768
+margin_right = 3.08406
+margin_bottom = 295.477
 rect_scale = Vector2( 0.2, 0.2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -57,10 +61,12 @@ __meta__ = {
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 1.0
+rect_min_size = Vector2( 400, 76 )
+size_flags_horizontal = 15
+size_flags_vertical = 15
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "<icon btn>"
+text = "<label>"
 align = 1
 valign = 1
 __meta__ = {

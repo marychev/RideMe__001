@@ -47,12 +47,16 @@ __meta__ = {
 }
 
 [node name="Start" parent="." instance=ExtResource( 6 )]
-margin_left = 457.0
-margin_top = 175.0
-margin_right = 955.0
-margin_bottom = 321.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -229.5
+margin_top = -169.0
+margin_right = 229.5
+margin_bottom = -39.0
 title = "START"
-is_flicker = true
+change_scene = "res://Menu/MainMenu/MainMenu.tscn"
 
 [node name="Copyright" type="Label" parent="."]
 anchor_top = 1.0

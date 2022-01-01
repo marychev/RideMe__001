@@ -1,13 +1,10 @@
 extends TextureButton
 class_name TextureIconButton
 
-
 export (String) var title
 export (Texture) var icon
+export (String, FILE) var change_scene
 export (bool) var is_flicker
-
-
-var change_scene: String
 
 
 func _ready():

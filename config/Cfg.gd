@@ -19,8 +19,13 @@ func get_config() -> ConfigFile:
 	var err = config.load(path_file_cfg)
 	
 	if err != OK:
-		var message = "ERROR: Config file was not undefined!"
+		var message =  str(err) + "ERROR: Config file was not undefined!\r\n" + path_file_cfg
 		push_error(message)
 		print(message)
 
 	return config
+
+
+func clear() -> void:
+	config.clear()
+	config.save(path_file_cfg)

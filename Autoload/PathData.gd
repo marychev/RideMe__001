@@ -31,6 +31,7 @@ const END_GAME_SCREEN = "res://Game/GameScreen/EndGameScreen.tscn"
 const BIKE_MENU_SCREEN = "res://Menu/BikeMenu/BikeMenu.tscn"
 const RES_MAIN_MENU_TSCN = "res://Menu/MainMenu/MainMenu.tscn"
 const RES_LEVEL_MENU_TSCN = "res://Menu/LevelMenu/LevelMenu.tscn"
+const RES_OPTION_MENU_TSCN = "res://Menu/OptionMenu/OptionMenu.tscn"
 
 # scripts
 const PATH_DIE_PLAYER = "res://Game/scripts/DiePlayer.gd"

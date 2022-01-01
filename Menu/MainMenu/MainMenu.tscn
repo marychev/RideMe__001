@@ -47,49 +47,55 @@ margin_bottom = 52.0
 texture = ExtResource( 2 )
 
 [node name="MenuOptions" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
-margin_top = 56.0
+margin_top = 126.0
 margin_right = 400.0
-margin_bottom = 590.0
-size_flags_vertical = 15
+margin_bottom = 520.0
+size_flags_vertical = 6
 custom_constants/separation = 30
 alignment = 1
 
 [node name="Play" parent="HBoxContainer/VBoxContainer/MenuOptions" instance=ExtResource( 3 )]
 modulate = Color( 1, 1, 1, 0.4 )
-margin_left = 0.0
-margin_top = 70.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_right = 400.0
-margin_bottom = 146.0
+margin_bottom = 76.0
 hint_tooltip = "Play game button"
 expand = false
 title = "Play"
 
 [node name="BikeMenu" parent="HBoxContainer/VBoxContainer/MenuOptions" instance=ExtResource( 3 )]
-margin_left = 0.0
-margin_top = 176.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 106.0
 margin_right = 400.0
-margin_bottom = 252.0
+margin_bottom = 182.0
 hint_tooltip = "Bike menu button"
 expand = false
 title = "Bike menu"
+change_scene = "res://Menu/BikeMenu/BikeMenu.tscn"
 
 [node name="LevelMenu" parent="HBoxContainer/VBoxContainer/MenuOptions" instance=ExtResource( 3 )]
-margin_left = 0.0
-margin_top = 282.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 212.0
 margin_right = 400.0
-margin_bottom = 358.0
+margin_bottom = 288.0
 hint_tooltip = "Level menu button"
 expand = false
 title = "Level menu"
+change_scene = "res://Menu/LevelMenu/LevelMenu.tscn"
 
 [node name="Options" parent="HBoxContainer/VBoxContainer/MenuOptions" instance=ExtResource( 3 )]
-margin_left = 0.0
-margin_top = 388.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 318.0
 margin_right = 400.0
-margin_bottom = 464.0
+margin_bottom = 394.0
 hint_tooltip = "Options menu button"
 expand = false
 title = "Options"
+change_scene = "res://Menu/OptionMenu/OptionMenu.tscn"
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
 margin_top = 594.0
@@ -141,6 +147,4 @@ margin_bottom = 600.0
 size_flags_vertical = 8
 texture = ExtResource( 4 )
 
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/MenuOptions/BikeMenu" to="." method="_on_BikeMenu_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/MenuOptions/LevelMenu" to="." method="_on_LevelMenu_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/MenuOptions/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/MenuOptions/Play" to="." method="_on_Play_pressed"]

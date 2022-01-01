@@ -42,19 +42,6 @@ func _on_Play_pressed():
 		get_tree().change_scene(game_tscn)
 
 
-func _on_BikeMenu_pressed() -> void:
-	get_tree().change_scene(path_data.BIKE_MENU_SCREEN)
-
-
-func _on_LevelMenu_pressed() -> void:
-	get_tree().change_scene(path_data.RES_LEVEL_MENU_TSCN)
-	
-
-func _on_Options_pressed() -> void:
-	field_log.target = $HBoxContainer/VBoxContainer/Logo
-	field_log.info("TO DO")
-
-
 func can_start_play() -> bool:
 	return PlayerData.player_bike and GameData.current_level
 	
