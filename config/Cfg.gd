@@ -5,14 +5,14 @@ class_name Cfg
 const RES = "user://"
 const KEY_SECTION = "_section"
 
-var prefix: String
+var prefix: String  		# Example: LevelTrack
 var path_file_cfg: String
 var config: ConfigFile
 
 
 func get_section(id: int) -> String:
 	return "%s_%s" % [prefix, id]
-		
+
 
 func get_config() -> ConfigFile:
 	config = ConfigFile.new()
@@ -22,5 +22,5 @@ func get_config() -> ConfigFile:
 		var message = "ERROR: Config file was not undefined!"
 		push_error(message)
 		print(message)
-		
+
 	return config

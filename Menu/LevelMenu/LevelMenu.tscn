@@ -1,14 +1,15 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Game/GUI/assets/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Menu/MainMenu/assets/bg-pressed.png" type="Texture" id=2]
-[ext_resource path="res://Game/GUI/controls/assets/refit_car.png" type="Texture" id=3]
+[ext_resource path="res://components/buttons/TextureIconButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Menu/LevelMenu/LevelMenu.gd" type="Script" id=4]
 [ext_resource path="res://Menu/LevelMenu/assets/empty-map.png" type="Texture" id=5]
 [ext_resource path="res://Menu/MainMenu/assets/bg-normal.png" type="Texture" id=6]
 [ext_resource path="res://Menu/MainMenu/assets/main_menu/bg-color.png" type="Texture" id=7]
 [ext_resource path="res://Menu/BikeMenu/Buttons/Current.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Game/GUI/counter/RMCounter.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Game/GUI/controls/assets/refit_car.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
@@ -211,67 +212,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="btn_refit" type="TextureButton" parent="TextureRect/ButtonContainer"]
-margin_left = 483.0
-margin_right = 883.0
-margin_bottom = 76.0
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 2 )
+[node name="btn_refit" parent="TextureRect/ButtonContainer" instance=ExtResource( 3 )]
+hint_tooltip = "Progress button"
+expand = false
+title = "Progress"
+icon = ExtResource( 10 )
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect/ButtonContainer/btn_refit"]
-anchor_left = 0.584
-anchor_top = -0.738
-anchor_right = 0.584
-anchor_bottom = -0.738
-margin_left = -228.643
-margin_top = 72.1586
-margin_right = -3.64311
-margin_bottom = 297.159
-rect_scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="TextureRect/ButtonContainer/btn_refit"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Progress"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="btn_pay" type="TextureButton" parent="TextureRect/ButtonContainer"]
+[node name="btn_pay" parent="TextureRect/ButtonContainer" instance=ExtResource( 3 )]
 margin_left = 923.0
 margin_right = 1323.0
-margin_bottom = 76.0
-size_flags_horizontal = 8
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="TextureRect/ButtonContainer/btn_pay"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Go"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+expand = false
+title = "Go"
 
 [connection signal="button_down" from="TextureRect/SliderContainer/Buttons/Current" to="." method="_on_Current_button_down"]
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Current" to="." method="_on_Current_pressed"]
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Train" to="." method="_on_Train_pressed"]
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Level_0" to="." method="_on_Level_0_pressed"]
 [connection signal="pressed" from="TextureRect/ButtonContainer/btn_menu" to="." method="_on_btn_menu_pressed"]
-[connection signal="pressed" from="TextureRect/ButtonContainer/btn_refit" to="." method="_on_btn_refit_pressed"]
-[connection signal="pressed" from="TextureRect/ButtonContainer/btn_pay" to="." method="_on_btn_pay_pressed"]

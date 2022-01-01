@@ -1,10 +1,7 @@
 extends Node2D
 class_name BaseLevel  # via BaseModelView
 
-var level_cfg: LevelCfg = load("res://config/LevelCfg.gd").new()
-var track_cfg: TrackCfg = load("res://config/TrackCfg.gd").new()
-var player_track_cfg: PlayerTrackCfg = preload("res://config/PlayerTrackCfg.gd").new()
-
+# Keys
 var ID: int
 var issue: String
 var num_win: int
@@ -12,11 +9,16 @@ var init_time_level: int
 var price: int
 var track:int 
 var texture: Resource
-# level's keys
+
+# Level's keys
 var level:int 
 var title: String
 
 var has_win: bool
+
+var level_cfg: LevelCfg = load("res://config/LevelCfg.gd").new()
+var track_cfg: TrackCfg = load("res://config/TrackCfg.gd").new()
+var player_track_cfg: PlayerTrackCfg = preload("res://config/PlayerTrackCfg.gd").new()
 
 
 func _init():

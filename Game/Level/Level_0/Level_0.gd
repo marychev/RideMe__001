@@ -4,8 +4,9 @@ class_name Level_0
 
 func _init():
 	ID = 0
-	level = level_cfg.get_id("Level_0")
-	title = level_cfg.get_title("Level_0")
+	# level = level_cfg.get_id("%s_%s" % [level_cfg.prefix, ID])
+	
+	title = level_cfg.get_title(level_cfg.get_section(ID))  # "Level_0"
 	
 	var section: = track_cfg.get_section(ID)
 	

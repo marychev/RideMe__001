@@ -1,6 +1,10 @@
 extends BaseBikeMenu
 class_name LevelMenu
 
+signal btn_refit_pressed
+signal btn_pay_pressed
+
+
 # to top slider's buttons
 var level_train = preload("res://Game/Level/Level_Train/Level_Train.tscn").instance()
 var level_0 = preload("res://Game/Level/Level_0/Level_0.tscn").instance()
@@ -16,7 +20,10 @@ onready var progress_popup: Resource = preload(RES_LEVEL_PROGRESS_DIALOG_TSCN)
 
 func _ready():
 	._ready()
-
+	
+	btn_refit.connect("pressed", self, "_on_btn_refit_pressed")
+	btn_pay.connect("pressed", self, "_on_btn_pay_pressed")
+	
 	btn_current_node.flat = bool(GameData.current_level != null)
 	
 	if GameData.current_level:
@@ -127,5 +134,4 @@ func set_buttons_flat(btn_active: Button) -> void:
 	btn_level_0.flat 	= bool(btn_level_0.name == btn_active.name)
 	btn_level_1.flat = bool(btn_level_1.name == btn_active.name)
 	btn_level_train.flat = bool(btn_level_train.name == btn_active.name)
-
 

@@ -1,0 +1,40 @@
+extends TextureButton
+class_name TextureIconButton
+
+
+export (String) var title
+export (Texture) var icon
+export (bool) var is_flicker
+
+
+var change_scene: String
+
+
+func _ready():
+	set_title(title)
+	set_icon(icon)
+	
+	if is_flicker:
+		anim_flicker()
+
+
+func _on_pressed():
+	if not change_scene.empty():
+		get_tree().change_scene(change_scene)
+	else:
+		print("[warn] TextureIconButton: Change scene does not init")
+
+
+func set_title(val) -> void:
+	if not val.empty():
+		$Label.set_text(val)
+
+
+func set_icon(val) -> void:
+	if val:
+		$Icon.texture = val
+
+
+func anim_flicker() -> void:
+	is_flicker = true
+	$AnimPlayer.play("flicker")

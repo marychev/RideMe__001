@@ -2,11 +2,13 @@ extends Cfg
 class_name PlayerTrackCfg
 
 const FILE = "test_player_tracks.cfg"
+
 const KEY_ID: = "id"
 const KEY_TRACK: = "track"
 const KEY_PAID_AT: = "paid_at"
 const KEY_BEST_TIME_AT: = "best_time_at"
 const KEY_ATTEMPTS: = "attempts"
+const DEFAULT_BEST_TIME_AT: = "00:00:00"
 
 
 func _init():
@@ -51,9 +53,9 @@ func set_best_time(current_track_SECTION: String, value: String) -> void:
 
 # metthods
 
-func create(current_track_SECTION: String, player_track_SECTION: String) -> int:
-	config.set_value(player_track_SECTION, KEY_TRACK, get_id(current_track_SECTION))
-	config.set_value(player_track_SECTION, KEY_PAID_AT, OS.get_datetime())
-	config.set_value(player_track_SECTION, KEY_BEST_TIME_AT, "00:00:00")
-	config.set_value(player_track_SECTION, KEY_ATTEMPTS, [])
+func create(track_section: String, player_track_section: String) -> int:
+	config.set_value(player_track_section, KEY_TRACK, get_id(track_section))
+	config.set_value(player_track_section, KEY_PAID_AT, OS.get_datetime())
+	config.set_value(player_track_section, KEY_BEST_TIME_AT, DEFAULT_BEST_TIME_AT)
+	config.set_value(player_track_section, KEY_ATTEMPTS, [])
 	return config.save(path_file_cfg)

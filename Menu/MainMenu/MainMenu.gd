@@ -7,19 +7,27 @@ export (String, FILE) var game_tscn: = ""
 var path_data: PathData = preload("res://Autoload/PathData.gd").new()
 
 onready var field_log: FieldLog = preload("res://Game/scripts/FieldLog.gd").new()
+onready var btn_bike_menu: TextureIconButton = $HBoxContainer/VBoxContainer/MenuOptions/BikeMenu
+onready var btn_level_menu: TextureIconButton = $HBoxContainer/VBoxContainer/MenuOptions/LevelMenu
+onready var btn_options: TextureIconButton = $HBoxContainer/VBoxContainer/MenuOptions/Options
 onready var btn_play: TextureButton = $HBoxContainer/VBoxContainer/MenuOptions/Play
 
 
 func _ready() -> void:
 	btn_play.modulate.a = 1
-	
+	if not can_start_play():
+		btn_play.modulate.a = 0.4
+		
 	btn_play.hint_tooltip = "Play the %s level track on %s bike" % [
 		GameData.current_level.title if GameData.current_level else "no",
 		PlayerData.player_bike.title if PlayerData.player_bike else "no",
 	]
 	
-	if not can_start_play():
-		btn_play.modulate.a = 0.4
+	if not PlayerData.player_bike:
+		btn_bike_menu.anim_flicker()
+
+	if not GameData.current_level:
+		btn_level_menu.anim_flicker()
 	
 	show_player_bike()
 	show_current_track()

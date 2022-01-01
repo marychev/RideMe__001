@@ -4,9 +4,9 @@ class_name TrackCfg
 const FILE = "test_tracks.cfg"
 
 const KEY_ID = "id"
-# resource = "res://Game/Level/Level_Train/Level_Train.tscn"
 const KEY_LEVEL = "level"
 const KEY_ISSUE = "issue"
+# resource = "res://Game/Level/Level_Train/Level_Train.tscn"
 const KEY_RESOURCE = "resource"
 const KEY_STATE = "state"
 # texture = "res://Game/Level/assets/mountains.png"

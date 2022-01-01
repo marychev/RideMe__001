@@ -7,8 +7,8 @@ onready var title:Label = get_node("PauseRect/Title")
 onready var description:Label = get_node("PauseRect/Description")
 
 var default_rect_color: = Color(0.40, 0.25, 0.56, 1.00)  # 67428f
-var rect_color_win = Color(0.25, 0.56, 0.34, 1.00) 		 # 428f57
-var rect_color_lose = Color(0.56, 0.25, 0.25, 1.00)
+var rect_color_win: = Color(0.25, 0.56, 0.34, 1.00) 		 # 428f57
+var rect_color_lose: = Color(0.56, 0.25, 0.25, 1.00)
 
 var default_title: String = 'Title menu: You are win or You are fail'
 var title_value: String = ''
