@@ -192,6 +192,7 @@ margin_right = 400.0
 margin_bottom = 76.0
 expand = false
 title = "Main menu"
+change_scene = "res://Menu/MainMenu/MainMenu.tscn"
 
 [node name="btn_refit" parent="TextureRect/ButtonContainer" instance=ExtResource( 3 )]
 anchor_right = 0.0
@@ -217,4 +218,3 @@ title = "Go"
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Current" to="." method="_on_Current_pressed"]
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Train" to="." method="_on_Train_pressed"]
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Level_0" to="." method="_on_Level_0_pressed"]
-[connection signal="pressed" from="TextureRect/ButtonContainer/btn_menu" to="." method="_on_btn_menu_pressed"]

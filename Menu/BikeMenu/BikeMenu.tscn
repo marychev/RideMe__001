@@ -1,14 +1,13 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Menu/MainMenu/assets/main_menu/bg-color.png" type="Texture" id=1]
 [ext_resource path="res://Game/GUI/assets/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Menu/LevelMenu/assets/empty-map.png" type="Texture" id=3]
-[ext_resource path="res://Menu/MainMenu/assets/bg-pressed.png" type="Texture" id=4]
 [ext_resource path="res://Game/GUI/controls/assets/refit_car.png" type="Texture" id=5]
 [ext_resource path="res://Menu/BikeMenu/Buttons/Current.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Game/GUI/counter/RMCounter.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Menu/BikeMenu/BikeMenu.gd" type="Script" id=8]
-[ext_resource path="res://Menu/MainMenu/assets/bg-normal.png" type="Texture" id=10]
+[ext_resource path="res://components/buttons/TextureIconButton.tscn" type="PackedScene" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
@@ -45,12 +44,6 @@ bg_color = Color( 0.890196, 0.243137, 0.533333, 1 )
 size = 28
 outline_size = 1
 outline_color = Color( 0.533333, 0.388235, 0.211765, 1 )
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=11]
-size = 62
-outline_size = 2
-use_filter = true
 font_data = ExtResource( 2 )
 
 [sub_resource type="Animation" id=12]
@@ -233,95 +226,47 @@ __meta__ = {
 }
 
 [node name="ButtonContainer" type="HBoxContainer" parent="TextureRect"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -119.841
-margin_bottom = -43.8406
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -640.0
+margin_top = 266.0
+margin_right = 640.0
+margin_bottom = 342.0
 custom_constants/separation = 40
 alignment = 1
 __meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="btn_menu" type="TextureButton" parent="TextureRect/ButtonContainer"]
-margin_left = 43.0
-margin_right = 443.0
-margin_bottom = 76.0
-texture_normal = ExtResource( 10 )
-texture_pressed = ExtResource( 4 )
-__meta__ = {
+"_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
-[node name="Label" type="Label" parent="TextureRect/ButtonContainer/btn_menu"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = SubResource( 11 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Main menu"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="btn_refit" type="TextureButton" parent="TextureRect/ButtonContainer"]
-margin_left = 483.0
-margin_right = 883.0
+[node name="btn_menu" parent="TextureRect/ButtonContainer" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 400.0
 margin_bottom = 76.0
-texture_normal = ExtResource( 10 )
-texture_pressed = ExtResource( 4 )
+expand = false
+title = "Main menu"
+change_scene = "res://Menu/MainMenu/MainMenu.tscn"
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect/ButtonContainer/btn_refit"]
-anchor_left = 0.584
-anchor_top = -0.738
-anchor_right = 0.584
-anchor_bottom = -0.738
-margin_left = -228.643
-margin_top = 72.1586
-margin_right = -3.64311
-margin_bottom = 297.159
-rect_scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="TextureRect/ButtonContainer/btn_refit"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = SubResource( 11 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Upgrade"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="btn_pay" type="TextureButton" parent="TextureRect/ButtonContainer"]
-margin_left = 923.0
-margin_right = 1323.0
+[node name="btn_refit" parent="TextureRect/ButtonContainer" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 440.0
+margin_right = 840.0
 margin_bottom = 76.0
-size_flags_horizontal = 8
-texture_normal = ExtResource( 10 )
-texture_pressed = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+title = "Upgrade"
+icon = ExtResource( 5 )
 
-[node name="Label" type="Label" parent="TextureRect/ButtonContainer/btn_pay"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = SubResource( 11 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Pay"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="btn_pay" parent="TextureRect/ButtonContainer" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 880.0
+margin_right = 1280.0
+margin_bottom = 76.0
+expand = false
+title = "Pay"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect"]
 autoplay = "demonstration"
@@ -331,6 +276,5 @@ anims/demonstration = SubResource( 12 )
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Current" to="." method="_on_Current_pressed"]
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Sataur" to="." method="_on_Sataur_pressed"]
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Drawster" to="." method="_on_Drawster_pressed"]
-[connection signal="pressed" from="TextureRect/ButtonContainer/btn_menu" to="." method="_on_btn_menu_pressed"]
 [connection signal="pressed" from="TextureRect/ButtonContainer/btn_refit" to="." method="_on_btn_refit_pressed"]
 [connection signal="pressed" from="TextureRect/ButtonContainer/btn_pay" to="." method="_on_btn_pay_pressed"]

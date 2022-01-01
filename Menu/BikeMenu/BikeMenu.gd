@@ -13,22 +13,15 @@ onready var bike_upgrade: Resource = preload("res://Menu/BikeMenu/BikeUpgradeDia
 
 func _ready():
 	._ready()
-	
-	btn_current_node.flat = false
-		
-	if PlayerData.player_bike:
-		init_slide(PlayerData.player_bike)
-		set_buttons_flat(btn_current_node)
-		
-		btn_refit.modulate.a = 1
-		btn_pay.modulate.a = 0.4
+
+	init_btn_current_node()
 
 
 func init_slide(bike: Node) -> void:
 	.init_slide(bike)
 	set_menu_options(bike)
 
-	
+
 func set_title(bike: Node) -> void:
 	if PlayerData.player_bike and PlayerData.player_bike.title == bike.title:
 		title = PlayerData.player_bike.title + "*"
@@ -118,6 +111,20 @@ func _on_btn_refit_pressed() -> void:
 	else:
 		var message = "You have not a bike!"
 		field_log.error(message)
+
+
+func init_btn_current_node() -> void:
+	btn_current_node.flat = false
+	btn_current_node.disabled = true
+
+	if PlayerData.player_bike:
+		init_slide(PlayerData.player_bike)
+		set_buttons_flat(btn_current_node)
+		
+		btn_refit.modulate.a = 1
+		btn_pay.modulate.a = 0.4
+
+		btn_current_node.disabled = false
 
 
 func set_buttons_flat(btn_active: Button) -> void:

@@ -26,13 +26,13 @@ func _init():
 	title = 'Train '
 	
 	var section: = "%s_%s" % [track_cfg.prefix, ID]
-	
-	num_win = track_cfg.get_num_win(section)
-	init_time_level = track_cfg.get_init_time_level(section)
-	price = track_cfg.get_price(section)
-	track = track_cfg.get_id(section)
-	issue = track_cfg.get_issue(section) % num_win
-	texture = load(track_cfg.get_texture(section))
+	if track_cfg.get_id(section):
+		num_win = track_cfg.get_num_win(section)
+		init_time_level = track_cfg.get_init_time_level(section)
+		price = track_cfg.get_price(section)
+		track = track_cfg.get_id(section)
+		issue = track_cfg.get_issue(section) % num_win
+		texture = load(track_cfg.get_texture(section))
 
 	has_win = false
 

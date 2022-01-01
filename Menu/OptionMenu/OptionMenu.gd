@@ -49,7 +49,3 @@ func create_tracks() -> void:
 	_init_time_level = 40
 	_price = 120
 	track_cfg.create(_track_id, _level_id, _issue, _resource, _texture, _num_win,  _init_time_level, _price)
-
-
-func reset_player_tracks() -> void:
-	player_track_cfg.config.clear()
