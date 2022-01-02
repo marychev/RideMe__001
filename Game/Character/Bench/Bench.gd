@@ -1,7 +1,6 @@
 extends StaticBody2D
 
-var path_data: PathData = preload("res://Autoload/PathData.gd").new()
-var _player_stomp_detecter = load(path_data.PATH_PLAYER_STOMP_DETECTER)
+var _player_stomp_detecter = load(PathData.PATH_PLAYER_STOMP_DETECTER)
 
 onready var player_stomp_detecter = _player_stomp_detecter.new()
 

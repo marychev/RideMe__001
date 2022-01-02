@@ -1,10 +1,10 @@
-extends BaseLevel
+extends Level_0
 class_name Level_1
 
 
 func _init():
 	ID = 1
-	title = level_cfg.get_title(level_cfg.get_section(1))
+	title = level_cfg.get_title(level_cfg.get_section(ID))
 	
 	var section: = track_cfg.get_section(ID)
 	if track_cfg.get_id(section):
@@ -12,6 +12,6 @@ func _init():
 		init_time_level = track_cfg.get_init_time_level(section)
 		price = track_cfg.get_price(section)
 		track = track_cfg.get_id(section)
-		issue = track_cfg.get_issue(section) % num_win
+		issue = track_cfg.get_issue(section)
 		texture = load(track_cfg.get_texture(section))
 

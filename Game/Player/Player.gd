@@ -93,6 +93,6 @@ func _physics_process(delta: float):
 	
 	# Todo: Implement calculate the max height of a stopm with road area
 	if position.y > 2000:
-		var die_player = load(path_data.PATH_DIE_PLAYER).new()
+		var die_player = load(PathData.PATH_DIE_PLAYER).new()
 		die_player.from_fell(self)
 

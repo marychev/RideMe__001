@@ -1,9 +1,7 @@
 extends Area2D
 class_name Hourgrass
 
-var path_data: PathData = preload("res://Autoload/PathData.gd").new()
-
-onready var player: Player = get_node(path_data.PATH_PLAYER)
+onready var player: Player = get_node(PathData.PATH_PLAYER)
 onready var animation: AnimationPlayer = get_node("AnimationPlayer")
 
 
@@ -35,7 +33,7 @@ func player_do_anim_success(player: KinematicBody2D) -> void:
 
 
 func timeout_do_anim_success() -> void:
-	var timeout_animation: AnimationPlayer = get_node(path_data.PATH_TIMEOUT + "/AnimationPlayer")
+	var timeout_animation: AnimationPlayer = get_node(PathData.PATH_TIMEOUT + "/AnimationPlayer")
 	if timeout_animation.current_animation != 'success':
 		timeout_animation.play('success')
 

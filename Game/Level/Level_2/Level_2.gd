@@ -1,6 +1,5 @@
-extends BaseLevel
+extends Level_1
 class_name Level_2
-
 
 
 func _init():
@@ -13,5 +12,5 @@ func _init():
 		init_time_level = track_cfg.get_init_time_level(section)
 		price = track_cfg.get_price(section)
 		track = track_cfg.get_id(section)
-		issue = track_cfg.get_issue(section) % num_win
+		issue = track_cfg.get_issue(section)
 		texture = load(track_cfg.get_texture(section))

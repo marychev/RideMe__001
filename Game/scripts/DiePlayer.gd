@@ -1,9 +1,8 @@
 extends Node
 class_name DiePlayer
 
-var path_data: PathData = preload("res://Autoload/PathData.gd").new()
 var player: KinematicBody2D
-var _end_game_scr = load(path_data.END_GAME_SCREEN)
+var _end_game_scr = load(PathData.END_GAME_SCREEN)
 var end_game_scr = _end_game_scr.instance()
 
 
@@ -42,7 +41,7 @@ func die(force: bool = false) -> void:
 	# todo: need to fix
 	if PlayerData.lives <= 0:
 		player.queue_free()
-		player.get_tree().change_scene(path_data.END_GAME_SCREEN)
+		player.get_tree().change_scene(PathData.END_GAME_SCREEN)
 		
 
 func init_player(_player: KinematicBody2D) -> void:

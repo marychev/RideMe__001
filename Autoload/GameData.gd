@@ -1,5 +1,4 @@
 extends Node
 
-onready var level_track_states: LevelTrackStates = preload("res://Menu/scripts/LevelTrackStates.gd").new()
-
-var current_level: BaseLevel
+var current_level: Level_0
+var current_track: Level_0

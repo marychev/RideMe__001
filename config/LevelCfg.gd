@@ -16,7 +16,7 @@ func _init():
 
 # getters
 
-func get_as_dict(section: String) -> Dictionary:
+func as_dict(section: String) -> Dictionary:
 	return {
 		KEY_SECTION: section,
 		KEY_ID: get_id(section), 
@@ -33,6 +33,12 @@ func get_title(section: String) -> String:
 
 func get_passed_at(section: String) -> String:
 	return config.get_value(section, KEY_PASSED_AT)
+
+func get_tracks(level_id: int) -> Array:
+	var store = []
+	for section in config.get_sections():
+		store.append(as_dict(section))
+	return []
 
 
 # create

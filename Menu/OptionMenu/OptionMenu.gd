@@ -1,10 +1,9 @@
 extends MarginContainer
 class_name OptionMenu
 
-var path_data: PathData = preload("res://Autoload/PathData.gd").new()
-var level_cfg: LevelCfg = preload("res://config/LevelCfg.gd").new()
-var track_cfg: TrackCfg = preload("res://config/TrackCfg.gd").new()
-var player_track_cfg: PlayerTrackCfg = preload("res://config/PlayerTrackCfg.gd").new()
+var level_cfg: LevelCfg = load(PathData.LEVEL_MODEL).new()
+var track_cfg: TrackCfg = load(PathData.TRACK_MODEL).new()
+var player_track_cfg: PlayerTrackCfg = load(PathData.PLAYER_TRACK_MODEL).new()
 
 
 func _on_ClearGame_pressed():
@@ -45,6 +44,7 @@ func create_tracks() -> void:
 	
 	_track_id = 2
 	_resource = "res://Game/Level/Level_2/Level_2.tscn"
+	_texture = "res://Game/Level/assets/sky.png"
 	_num_win = 20
 	_init_time_level = 40
 	_price = 120

@@ -5,7 +5,6 @@ onready var field_log: FieldLog = preload("res://Game/scripts/FieldLog.gd").new(
 
 
 func _ready():
-	._ready()
 	
 	field_log.target = $Title
 	
@@ -14,48 +13,42 @@ func _ready():
 		$PayBtn.disabled = true
 
 
-func set_current_level(level: Node2D) -> void:
-	.set_current_level(level)
-	
-	if level:
-		$Price.set_text("%d rm" % [current_level.price])
-
-
 func _on_PayBtn_pressed():
-	var level_cfg: LevelCfg = load("res://config/LevelCfg.gd").new()
-	var track_cfg: TrackCfg = load("res://config/TrackCfg.gd").new()
-	var player_track_cfg: PlayerTrackCfg = load("res://config/PlayerTrackCfg.gd").new()
+	var level_cfg: LevelCfg = load(PathData.LEVEL_MODEL).new()
+	var track_cfg: TrackCfg = load(PathData.TRACK_MODEL).new()
+	var player_track_cfg: PlayerTrackCfg = load(PathData.PLAYER_TRACK_MODEL).new()
 	
-	if not current_level:
-		var message = "You have not a current level"
+	if not _track:
+		var message = "You have not an initial track"
 		field_log.error(message)
 		return
 	
-	# var player_track_SECTION: String = current_level.SECTION.replace("LevelTrack", "PlayerTrack")
-	var current_track_SECTION: = track_cfg.get_section(current_level.ID)
-	var player_track_SECTION: = current_track_SECTION.replace(track_cfg.prefix, player_track_cfg.prefix)
+	var _track_section: = track_cfg.get_section(_track.id)
+	var player_track_section: = _track_section.replace(track_cfg.prefix, player_track_cfg.prefix)
 	
-	if player_track_cfg.config.has_section(player_track_SECTION):
-		var message = "You have already paid for this track %s" % player_track_SECTION
+	if player_track_cfg.config.has_section(player_track_section):
+		var message = "You have already paid for this track %s" % player_track_section
 		field_log.info(message)
 		return
 	
-	if PlayerData.rms < current_level.price:
+	if PlayerData.rms < _track.price:
 		field_log.error("Need to more Rms!")
 		return
 		
-	PlayerData.set_rms(PlayerData.rms - current_level.price)
-	player_track_cfg.create(current_track_SECTION, player_track_SECTION)
-	track_cfg.set_state(current_track_SECTION, LevelTrackStates.ACTIVE)
+	PlayerData.set_rms(PlayerData.rms - _track.price)
+	player_track_cfg.create(_track_section, player_track_section)
+	track_cfg.set_state(_track_section, LevelTrackStates.ACTIVE)
 	
-	set_current_level(current_level)
-
-	var message = "The %s track was paid!" % player_track_SECTION
+	var message = "The %s track was paid!" % player_track_section
 	field_log.success(message)
-	# yield(get_tree().create_timer(0.4), "timeout")
-	
+
 	if has_node("/root/LevelMenu"):
 		var level_menu: LevelMenu = get_node("/root/LevelMenu")
 		level_menu._on_btn_refit_pressed()
 
 
+func set_price() -> void:
+	$Price.set_text("%s rm" % [str(_track.price)])
+
+func set_time() -> void:
+	$Time.set_text("..:..")

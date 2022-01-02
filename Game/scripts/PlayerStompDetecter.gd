@@ -1,7 +1,6 @@
 extends Node
 class_name PlayerStompDetecter
 
-var path_data: PathData = preload("res://Autoload/PathData.gd").new()
 var player: KinematicBody2D
 
 
@@ -24,5 +23,5 @@ func on_player_entered() -> void:
 			player.set_speed(-player.speed.x / 2)
 		else:
 			# die player from fell
-			var die_player = load(path_data.PATH_DIE_PLAYER).new()
+			var die_player = load(PathData.PATH_DIE_PLAYER).new()
 			die_player.from_broke_bike(player)

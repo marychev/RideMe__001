@@ -3,8 +3,6 @@ class_name RM
 
 onready var anim_player: AnimationPlayer = get_node("AnimationPlayer")
 
-var path_data: PathData = preload("res://Autoload/PathData.gd").new()
-
 
 func _ready() -> void:
 	set_physics_process(false)
@@ -34,8 +32,6 @@ func player_do_anim_success(player: Player) -> void:
 
 
 func rm_counter_do_anim_success() -> void:
-	
-	var _anim_player: AnimationPlayer = get_node(
-		path_data.PATH_RMS_COUNTER + '/AnimationPlayer')
+	var _anim_player: AnimationPlayer = get_node(PathData.PATH_RMS_COUNTER + '/AnimationPlayer')
 	if _anim_player.current_animation != 'success':
 		_anim_player.play('success')

@@ -5,8 +5,6 @@ const RES_LEVEL_PROGRESS_DIALOG_ROWS = "res://Menu/LevelMenu/LevelProgressDialog
 
 onready var table: VBoxContainer = $Nine/TableContainer
 
-var level_track_states = preload("res://Menu/scripts/LevelTrackStates.gd").new()
-
 
 func _ready():
 	._ready()
@@ -27,37 +25,37 @@ func clean_table() -> void:
 
 
 func fill_table() -> void:
-	var track_cfg = preload("res://config/TrackCfg.gd").new()
+	var track_cfg: TrackCfg = load(PathData.TRACK_MODEL).new()
 	
-	for level in track_cfg.get_tracks():
-		if level_track_states.PASSED == level.state:
-			add_passed_row_to_table(level)
-		elif level_track_states.FAIL == level.state:
-			add_fail_row_to_table(level)
-		elif level_track_states.ACTIVE == level.state:
-			add_active_row_to_table(level)
-		elif level_track_states.PAY == level.state:
-			add_pay_row_to_table(level)
+	for track in track_cfg.get_tracks(GameData.current_level.ID):
+		if LevelTrackStates.PASSED == track.state:
+			add_passed_row_to_table(track)
+		elif LevelTrackStates.FAIL == track.state:
+			add_fail_row_to_table(track)
+		elif LevelTrackStates.ACTIVE == track.state:
+			add_active_row_to_table(track)
+		elif LevelTrackStates.PAY == track.state:
+			add_pay_row_to_table(track)
 
 
-func add_passed_row_to_table(level_map: Dictionary) -> void:
-	add_row_to_table(load(RES_LEVEL_PROGRESS_DIALOG_ROWS + "PassedRow.tscn"), level_map)
+func add_passed_row_to_table(track: Dictionary) -> void:
+	add_row_to_table(load(RES_LEVEL_PROGRESS_DIALOG_ROWS + "PassedRow.tscn"), track)
 
 
-func add_active_row_to_table(level_map: Dictionary) -> void:
-	add_row_to_table(load(RES_LEVEL_PROGRESS_DIALOG_ROWS + "ActiveRow.tscn"), level_map)
+func add_active_row_to_table(track: Dictionary) -> void:
+	add_row_to_table(load(RES_LEVEL_PROGRESS_DIALOG_ROWS + "ActiveRow.tscn"), track)
 
 
-func add_pay_row_to_table(level_map: Dictionary) -> void:
-	add_row_to_table(load(RES_LEVEL_PROGRESS_DIALOG_ROWS + "PayRow.tscn"), level_map)
+func add_pay_row_to_table(track: Dictionary) -> void:
+	add_row_to_table(load(RES_LEVEL_PROGRESS_DIALOG_ROWS + "PayRow.tscn"), track)
 
 
-func add_fail_row_to_table(level_map: Dictionary) -> void:
-	add_row_to_table(load(RES_LEVEL_PROGRESS_DIALOG_ROWS + "FailRow.tscn"), level_map)
+func add_fail_row_to_table(track: Dictionary) -> void:
+	add_row_to_table(load(RES_LEVEL_PROGRESS_DIALOG_ROWS + "FailRow.tscn"), track)
 	
 
-func add_row_to_table(resource: Resource, level_map: Dictionary) -> void:
+func add_row_to_table(resource: Resource, track: Dictionary) -> void:
 	if is_instance_valid(table):
-		var row: Node = resource.instance()
-		row.set_current_level(level_map.level)
+		var row: ActiveRow = resource.instance()
+		row.init_track(track)
 		table.add_child(row)

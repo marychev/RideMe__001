@@ -1,6 +1,6 @@
 extends "res://Game/GUI/bar/Bar.gd"
 
-onready var _label_value: Label = get_node(path_data.PATH_SPEED_BAR_COUNT_VALUE) 
+onready var _label_value: Label = get_node(PathData.PATH_SPEED_BAR_COUNT_VALUE) 
 onready var _progress: TextureProgress = $"./Gauge"
 
 

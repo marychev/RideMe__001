@@ -4,7 +4,7 @@ class_name TrackCfg
 const FILE = "tracks.cfg"
 
 const KEY_ID = "id"
-const KEY_LEVEL = "level"
+const KEY_LEVEL_ID = "level_id"
 const KEY_ISSUE = "issue"
 const KEY_RESOURCE = "resource"
 const KEY_STATE = "state"
@@ -25,17 +25,14 @@ func _init():
 func get_id(section: String) -> int:
 	return config.get_value(section, KEY_ID)
 
+func get_level_id(section: String) -> int:
+	return config.get_value(section, KEY_LEVEL_ID)
+
 func get_resource(section: String) -> String:
 	return config.get_value(section, KEY_RESOURCE)
 
-func get_level(section: String) -> Node2D:
-	# print("section: ", section)
-	#var res = load(get_resource(section)).instance()
-	#print(typeof(res))
-	return load(get_resource(section)).instance()
-
 func get_issue(section: String) -> String:
-	return config.get_value(section, KEY_ISSUE)
+	return config.get_value(section, KEY_ISSUE) % [get_num_win(section)]
 
 func get_state(section: String) -> int:
 	return config.get_value(section, KEY_STATE)
@@ -53,25 +50,40 @@ func get_price(section: String) -> int:
 	return config.get_value(section, KEY_PRICE)
 
 
-func get_as_dict(section: String) -> Dictionary:
-	return {
-		KEY_LEVEL: get_level(section),
-		KEY_STATE: get_state(section)
-	}
+ # setters
+
+func set_state(current_level_SECTION: String, state: int):
+	config.set_value(current_level_SECTION, KEY_STATE, state)
+	config.save(path_file_cfg)
 
 
-func get_tracks() -> Array:
+# methods
+
+func get_tracks(level_id: int) -> Array:
 	var store = []
 	for section in config.get_sections():
-		store.append(get_as_dict(section))
+		if get_level_id(section) == level_id:
+			store.append(as_dict(section))
 	return store
 
 
-# metthods
+func as_dict(section: String) -> Dictionary:
+	return {
+		KEY_ID: get_id(section),
+		KEY_LEVEL_ID: get_level_id(section),
+		KEY_STATE: get_state(section),
+		KEY_ISSUE: get_issue(section),
+		KEY_RESOURCE: get_resource(section),
+		KEY_TEXTURE: get_texture(section),
+		KEY_NUM_WIN: get_num_win(section),
+		KEY_INIT_TIME_LEVEL: get_init_time_level(section),
+		KEY_PRICE: get_price(section)
+	}
+
 
 func create(
 	id: int,
-	level: int, 
+	level_id: int, 
 	issue: String,
 	resource: String,
 	texture: String,
@@ -84,7 +96,7 @@ func create(
 	var section = get_section(id)
 	
 	config.set_value(section, KEY_ID, id)
-	config.set_value(section, KEY_LEVEL, level)
+	config.set_value(section, KEY_LEVEL_ID, level_id)
 	config.set_value(section, KEY_ISSUE, issue)
 	config.set_value(section, KEY_RESOURCE, resource)
 	config.set_value(section, KEY_STATE, state)
@@ -94,11 +106,5 @@ func create(
 	config.set_value(section, KEY_PRICE, price)
 	
 	return config.save(path_file_cfg)
-
-
-func set_state(current_level_SECTION: String, state: int):
-	config.set_value(current_level_SECTION, KEY_STATE, state)
-	config.save(path_file_cfg)
-
 
 

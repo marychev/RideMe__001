@@ -73,13 +73,6 @@ __meta__ = {
 [node name="Current" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 8 )]
 text = "Your level"
 
-[node name="Level_0" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 8 )]
-visible = false
-margin_left = 224.0
-margin_right = 444.0
-hint_tooltip = "Level 0"
-text = "Level 0"
-
 [node name="Level_1" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 8 )]
 margin_left = 224.0
 margin_right = 444.0
@@ -217,5 +210,4 @@ title = "Go"
 
 [connection signal="button_down" from="TextureRect/SliderContainer/Buttons/Current" to="." method="_on_Current_button_down"]
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Current" to="." method="_on_Current_pressed"]
-[connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Level_0" to="." method="_on_Train_pressed"]
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Level_1" to="." method="_on_Level_1_pressed"]

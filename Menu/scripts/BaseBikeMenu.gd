@@ -1,15 +1,13 @@
 extends MarginContainer
 class_name BaseBikeMenu
 
-var path_data: PathData = preload("res://Autoload/PathData.gd").new()
-var selected_node: Node
-var title: String = "undefined"
+var selected_node: Node2D  # Track / Level / Bike - ?
 
 onready var field_log: FieldLog = preload("res://Game/scripts/FieldLog.gd").new()
 
 onready var sprite: Sprite = $TextureRect/SliderContainer/Detail/Image/Sprite
 onready var menu_options: VBoxContainer = $TextureRect/SliderContainer/Detail/MenuOptions
-onready var btn_current_node: Node = $TextureRect/SliderContainer/Buttons/Current
+onready var btn_current_node: Button = $TextureRect/SliderContainer/Buttons/Current
 onready var btn_refit: TextureButton = $TextureRect/ButtonContainer/btn_refit
 onready var btn_pay: TextureButton = $TextureRect/ButtonContainer/btn_pay
 
@@ -23,15 +21,14 @@ func _ready():
 	field_log.target = $TextureRect
 
 
-func init_slide(node: Node) -> void:
+func init_slide(node: Node2D) -> void:
 	selected_node = node
 	set_title(node)
 	sprite.set_texture(node.texture)
 
 
-func set_title(node: Node) -> void:
-	title = node.title if node else title
-	$TextureRect/Title.text = title
+func set_title(node: Node2D) -> void:
+	$TextureRect/Title.text = node.title if node.title else "undefined"
 
 
 func _on_Current_pressed() -> void:
@@ -40,5 +37,5 @@ func _on_Current_pressed() -> void:
 
 
 func _on_btn_menu_pressed() -> void:
-	var main_menu: String = path_data.RES_MAIN_MENU_TSCN
+	var main_menu: String = PathData.RES_MAIN_MENU_TSCN
 	get_tree().change_scene(main_menu)

@@ -7,9 +7,9 @@ const POWER_WAIT: int = 2
 
 var calc_power: float
 var calc_speed: float
-var path_data: PathData = preload("res://Autoload/PathData.gd").new()
+# var path_data: PathData = preload("res://Autoload/PathData.gd").new()
 
-onready var player: KinematicBody2D = get_node(path_data.PATH_PLAYER)
+onready var player: KinematicBody2D = get_node(PathData.PATH_PLAYER)
 onready var anim_player: AnimationPlayer = player.get_node("./AnimationPlayer")
 
 

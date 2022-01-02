@@ -86,7 +86,7 @@ func _on_btn_refit_pressed() -> void:
 		field_log.error(message)
 
 
-func init_slide(bike: Node) -> void:
+func init_slide(bike) -> void:
 	.init_slide(bike)
 	set_menu_options(bike)
 
@@ -105,14 +105,15 @@ func init_btn_current_node() -> void:
 		btn_current_node.disabled = false
 
 
-func set_title(bike: Node) -> void:
-	if PlayerData.player_bike and PlayerData.player_bike.title == bike.title:
-		title = PlayerData.player_bike.title + "*"
+func set_title(bike) -> void:
+	"""if PlayerData.player_bike and PlayerData.player_bike.title == bike.title:
+		title = PlayerData.player_bike.title + "*" 
+	"""
 
 	.set_title(bike)
 
 
-func set_menu_options(bike: Node):
+func set_menu_options(bike):
 	var power_text = "Max power: ....... %d" % [bike.max_power]
 	var speed_text = "Max speed: ....... %d" % [bike.max_speed]
 	var jump_text = "Max jump: .......... %d" % [bike.max_height_jump]

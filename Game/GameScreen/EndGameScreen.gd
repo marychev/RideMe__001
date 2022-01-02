@@ -47,11 +47,11 @@ func _ready() -> void:
 	label.set_text(travel_time + '\r\n'  + distance_travel)
 	
 	# Update writes to .cfg files
-	var track_cfg: TrackCfg = preload("res://config/TrackCfg.gd").new()
-	var player_track_cfg: PlayerTrackCfg = preload("res://config/PlayerTrackCfg.gd").new()
+	var track_cfg: TrackCfg = load(PathData.TRACK_MODEL).new()
+	var player_track_cfg: PlayerTrackCfg = load(PathData.PLAYER_TRACK_MODEL).new()
 
-	track_cfg.set_state(GameData.current_level.SECTION, LevelTrackStates.FAIL)
-	player_track_cfg.set_best_time(GameData.current_level.SECTION, timer_format(PlayerData.time_level))
+	track_cfg.set_state(GameData.current_level.get_section(), LevelTrackStates.FAIL)
+	player_track_cfg.set_best_time(GameData.current_level.get_section(), timer_format(PlayerData.time_level))
 
 
 func set_title_and_rect_color():

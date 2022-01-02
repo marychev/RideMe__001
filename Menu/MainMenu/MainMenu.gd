@@ -83,10 +83,11 @@ func show_player_bike() -> void:
 
 
 func show_current_track() -> void:
-	if GameData.current_level:
+	var level_track: = GameData.current_track if GameData.current_track else GameData.current_level
+	if level_track:
 		var _current_track: NinePatchRect = $HBoxContainer/CenterContainer/CurrentTrack
 		_current_track.visible = true
-		_current_track.texture = GameData.current_level.texture
+		_current_track.texture = level_track.texture
 
 
 func _get_configuration_warning() -> String:
