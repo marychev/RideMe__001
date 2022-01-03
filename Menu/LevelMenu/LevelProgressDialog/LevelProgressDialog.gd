@@ -15,6 +15,14 @@ func _ready():
 	fill_table()
 
 
+func _on_btn_yes_pressed():
+	._on_btn_yes_pressed()
+	
+	if has_node("/root/LevelMenu"):
+		var resource: String = GameData.current_track.resource if GameData.current_track else GameData.current_level.resource
+		var level_track: Level_0 = load(resource).instance()
+		get_node("/root/LevelMenu").selected_node = level_track
+	
 # work on table
 
 func clean_table() -> void:

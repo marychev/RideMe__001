@@ -6,14 +6,13 @@ var _track: Dictionary
 
 func _on_PlayBtn_pressed() -> void:
 	if has_node("/root/LevelMenu"):
-		var level_menu = get_node("/root/LevelMenu")
-		var level_track: Node2D = load(_track.resource).instance()
-		level_menu.selected_node = level_track
+		var level_track: Level_0 = load(_track.resource).instance()
+		get_node("/root/LevelMenu").selected_node = level_track
 		GameData.current_track = level_track
 
 
 func set_title() -> void:
-	var title = "%d/%d: %s" % [_track.level_id, _track.id, _track.issue]
+	var title := "%d/%d: %s" % [_track.level_id, _track.id, _track.issue]
 	$Title.set_text(title)
 
 

@@ -6,7 +6,7 @@ onready var label:Label = get_node("PauseRect/Label")
 onready var title:Label = get_node("PauseRect/Title")
 onready var description:Label = get_node("PauseRect/Description")
 
-var default_rect_color: = Color(0.40, 0.25, 0.56, 1.00)  # 67428f
+var default_rect_color: = Color(0.40, 0.25, 0.56, 1.00) 	 # 67428f
 var rect_color_win: = Color(0.25, 0.56, 0.34, 1.00) 		 # 428f57
 var rect_color_lose: = Color(0.56, 0.25, 0.25, 1.00)
 
@@ -47,11 +47,16 @@ func _ready() -> void:
 	label.set_text(travel_time + '\r\n'  + distance_travel)
 	
 	# Update writes to .cfg files
-	var track_cfg: TrackCfg = load(PathData.TRACK_MODEL).new()
-	var player_track_cfg: PlayerTrackCfg = load(PathData.PLAYER_TRACK_MODEL).new()
-
-	track_cfg.set_state(GameData.current_level.get_section(), LevelTrackStates.FAIL)
-	player_track_cfg.set_best_time(GameData.current_level.get_section(), timer_format(PlayerData.time_level))
+	if GameData.current_track:
+		var track_cfg: TrackCfg = load(PathData.TRACK_MODEL).new()
+		var player_track_cfg: PlayerTrackCfg = load(PathData.PLAYER_TRACK_MODEL).new()
+		
+		var track_section: = track_cfg.get_section(GameData.current_track.ID)
+		var player_track_section: = track_section.replace(track_cfg.prefix, player_track_cfg.prefix)
+	
+		track_cfg.set_state(track_section, LevelTrackStates.FAIL)
+		player_track_cfg.set_best_time(player_track_section, timer_format(PlayerData.time_level))
+		# player_track_cfg.set_best_time(GameData.current_level.get_section(), timer_format(PlayerData.time_level))
 
 
 func set_title_and_rect_color():
@@ -77,7 +82,9 @@ func set_description():
 
 
 func timer_format(time):
-	return "%02d : %02d : %02d" % [
+	print("timer_format: ", time)
+	
+	return "%02d:%02d:%02d" % [
 		fmod(time, 60 * 60) / 60,
 		fmod(time, 60),
 		fmod(time, 1) * 100

@@ -109,9 +109,9 @@ func _on_btn_yes_pressed():
 		
 	if is_visible(): 
 		# Upgrade bike's parameters
-		if PlayerData.rms < selected_rms:
+		if PlayerData.rms < selected_rms: 
 			field_log.error("Need to more Rms!")
-		else:
+		elif selected_rms > 0:
 			var empty_bike: Node = load("res://Game/Bike/EmptyBike.gd").new()
 			empty_bike.upgrade_bike_parameters(
 				selected_rms,
@@ -122,7 +122,7 @@ func _on_btn_yes_pressed():
 			
 			field_log.success("Bike's parameters was upgraded successful!")
 		
-		yield(get_tree().create_timer(1.4), "timeout")
+		yield(get_tree().create_timer(.4), "timeout")
 		get_tree().reload_current_scene()
 
 

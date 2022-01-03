@@ -106,10 +106,6 @@ func init_btn_current_node() -> void:
 
 
 func set_title(bike) -> void:
-	"""if PlayerData.player_bike and PlayerData.player_bike.title == bike.title:
-		title = PlayerData.player_bike.title + "*" 
-	"""
-
 	.set_title(bike)
 
 

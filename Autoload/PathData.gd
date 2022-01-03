@@ -24,10 +24,12 @@ const PATH_STOP_BTN = PATH_GUI + "/ControlContainer/StopBtn"
 
 # resources
 const END_GAME_SCREEN = "res://Game/GameScreen/EndGameScreen.tscn"
+
 const BIKE_MENU_SCREEN = "res://Menu/BikeMenu/BikeMenu.tscn"
 const RES_MAIN_MENU_TSCN = "res://Menu/MainMenu/MainMenu.tscn"
 const RES_LEVEL_MENU_TSCN = "res://Menu/LevelMenu/LevelMenu.tscn"
 const RES_OPTION_MENU_TSCN = "res://Menu/OptionMenu/OptionMenu.tscn"
+const RES_GAME_SCREEN_PAUSE = "res://Game/GameScreen/GameScreenPause.tscn"
 
 # levels
 const PATH_GAME_LEVEL = "res://Game/Level/"

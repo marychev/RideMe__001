@@ -127,7 +127,7 @@ margin_right = 638.0
 margin_bottom = 120.0
 rect_min_size = Vector2( 420, 60 )
 custom_fonts/font = SubResource( 2 )
-text = "<Name of level issue>"
+text = "No selected track"
 align = 1
 valign = 1
 
@@ -196,7 +196,7 @@ margin_right = 840.0
 margin_bottom = 76.0
 hint_tooltip = "Progress button"
 expand = false
-title = "Progress"
+title = "Tracks"
 icon = ExtResource( 10 )
 
 [node name="btn_pay" parent="TextureRect/ButtonContainer" instance=ExtResource( 3 )]
@@ -206,7 +206,7 @@ margin_left = 880.0
 margin_right = 1280.0
 margin_bottom = 76.0
 expand = false
-title = "Go"
+title = "Set level"
 
 [connection signal="button_down" from="TextureRect/SliderContainer/Buttons/Current" to="." method="_on_Current_button_down"]
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Current" to="." method="_on_Current_pressed"]

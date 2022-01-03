@@ -11,7 +11,7 @@ var config: ConfigFile
 
 
 func get_section(id: int) -> String:
-	return "%s_%s" % [prefix, id]
+	return "%s_%s" % [prefix.strip_edges(), id]
 
 
 func get_config() -> ConfigFile:

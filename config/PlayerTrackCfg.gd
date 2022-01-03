@@ -8,7 +8,6 @@ const KEY_TRACK_ID: = "track_id"
 const KEY_PAID_AT: = "paid_at"
 const KEY_BEST_TIME_AT: = "best_time_at"
 const KEY_ATTEMPTS: = "attempts"
-const DEFAULT_BEST_TIME_AT: = "00:00:00"
 
 
 func _init():
@@ -22,7 +21,7 @@ func _init():
 func get_id(track) -> int:
 	return config.get_value(track, KEY_ID)
 
-func get_track(track) -> int:
+func get_track_id(track) -> int:
 	return config.get_value(track, KEY_TRACK_ID)
 
 func get_paid_at(track) -> String:
@@ -37,25 +36,28 @@ func get_attempts(track) -> Array:
 
 # setters
 
-func set_best_time(current_track_SECTION: String, value: String) -> void:
-	var player_track_SECTION = current_track_SECTION.replace("LevelTrack", prefix)
-	var attempts = get_attempts(player_track_SECTION)
+func set_best_time(track_section: String, value: String) -> void:
+	var attempts := get_attempts(track_section)
 	attempts.append(value)
 	
 	var _best_time_at = attempts.min()
 	if _best_time_at and _best_time_at > value:
 		value = _best_time_at
 		
-	config.set_value(player_track_SECTION, KEY_BEST_TIME_AT, value)
-	config.set_value(player_track_SECTION, KEY_ATTEMPTS, attempts)
+	config.set_value(track_section, KEY_BEST_TIME_AT, value)
+	config.set_value(track_section, KEY_ATTEMPTS, attempts)
 	config.save(path_file_cfg)
 
 
 # metthods
 
 func create(track_section: String, player_track_section: String) -> int:
-	config.set_value(player_track_section, KEY_TRACK_ID, get_id(track_section))
+	var track_id := int(track_section.split("_")[1])
+	
+	config.set_value(player_track_section, KEY_ID, track_id)
+	config.set_value(player_track_section, KEY_TRACK_ID, track_id)
 	config.set_value(player_track_section, KEY_PAID_AT, OS.get_datetime())
-	config.set_value(player_track_section, KEY_BEST_TIME_AT, DEFAULT_BEST_TIME_AT)
+	config.set_value(player_track_section, KEY_BEST_TIME_AT, "00:00")
 	config.set_value(player_track_section, KEY_ATTEMPTS, [])
+	
 	return config.save(path_file_cfg)

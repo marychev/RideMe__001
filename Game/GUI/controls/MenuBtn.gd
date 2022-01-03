@@ -1,10 +1,10 @@
 extends TouchScreenButton
 
-onready var game_menu: Control = get_node("/root/Game/GUI/Canvas/GameScreenPause")
-
 
 func _on_pressed() -> void:
 	$AnimationPlayer.play("rotate")
 
+
 func _on_released() -> void:
+	var game_menu: Control = get_node(PathData.PATH_GAME_SCREEN_PAUSE)
 	game_menu.set_paused(true)

@@ -25,7 +25,7 @@ func _on_btn_yes_pressed():
 	btn_yes.modulate.a = 0.1
 		
 	if is_visible(): 
-		yield(get_tree().create_timer(1.4), "timeout")
+		yield(get_tree().create_timer(0.4), "timeout")
 		get_tree().reload_current_scene()
 
 

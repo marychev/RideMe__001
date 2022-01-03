@@ -7,11 +7,12 @@ var issue: String
 var num_win: int
 var init_time_level: int
 var price: int
-var track:int 
+var track_id: int 
 var texture: Resource
+var resource: String
 
 # Level's keys
-var level:int 
+var level_id:int 
 var title: String
 
 var has_win: bool
@@ -27,14 +28,14 @@ func _init() -> void:
 	var section: = get_section()
 	
 	if track_cfg.get_id(section) != null:
-		var _level_id:int = track_cfg.get_level_id(section)
-		
-		title = level_cfg.get_title(level_cfg.get_section(_level_id))
+		level_id = track_cfg.get_level_id(section)
+		title = level_cfg.get_title(level_cfg.get_section(level_id))
 		num_win = track_cfg.get_num_win(section)
 		init_time_level = track_cfg.get_init_time_level(section)
 		price = track_cfg.get_price(section)
-		track = track_cfg.get_id(section)
+		track_id = track_cfg.get_id(section)
 		issue = track_cfg.get_issue(section)
+		resource = track_cfg.get_resource(section)
 		texture = load(track_cfg.get_texture(section))
 
 	has_win = false

@@ -9,7 +9,8 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	do_or_stop_animation_danger(player.power, player.max_power)
+	if is_instance_valid(player):
+		do_or_stop_animation_danger(player.power, player.max_power)
 	
 	
 func set_progress_player():

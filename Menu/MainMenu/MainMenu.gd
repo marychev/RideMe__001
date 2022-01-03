@@ -34,7 +34,7 @@ func _ready() -> void:
 	
 
 func _on_Play_pressed():
-	if not PlayerData.player_bike and not GameData.current_level:
+	if not PlayerData.player_bike and (not GameData.current_level or GameData.current_track):
 		field_log.target = $HBoxContainer/VBoxContainer/Logo
 		field_log.position = Vector2(10, 66)
 		field_log_start_play()

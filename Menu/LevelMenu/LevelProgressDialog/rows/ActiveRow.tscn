@@ -28,8 +28,8 @@ __meta__ = {
 }
 
 [node name="Icon" type="TextureButton" parent="."]
-margin_left = 59.0
-margin_right = 105.0
+margin_left = 62.0
+margin_right = 108.0
 margin_bottom = 46.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -43,8 +43,8 @@ __meta__ = {
 }
 
 [node name="Title" type="Label" parent="."]
-margin_left = 109.0
-margin_right = 755.0
+margin_left = 112.0
+margin_right = 758.0
 margin_bottom = 46.0
 rect_min_size = Vector2( 646, 46 )
 custom_fonts/font = SubResource( 1 )
@@ -56,8 +56,8 @@ __meta__ = {
 }
 
 [node name="Price" type="Label" parent="."]
-margin_left = 759.0
-margin_right = 879.0
+margin_left = 762.0
+margin_right = 882.0
 margin_bottom = 46.0
 rect_min_size = Vector2( 120, 46 )
 custom_fonts/font = SubResource( 2 )
@@ -66,17 +66,15 @@ align = 1
 valign = 1
 
 [node name="Time" type="Label" parent="."]
-margin_left = 883.0
-margin_right = 1009.0
+margin_left = 886.0
+margin_right = 1006.0
 margin_bottom = 46.0
 rect_min_size = Vector2( 120, 46 )
 custom_fonts/font = SubResource( 3 )
-text = "00:00:00"
+text = "00:00"
 align = 1
 valign = 1
 
 [node name="PlayBtn" parent="." instance=ExtResource( 2 )]
-margin_left = 1013.0
-margin_right = 1153.0
 
 [connection signal="pressed" from="PlayBtn" to="." method="_on_PlayBtn_pressed"]
