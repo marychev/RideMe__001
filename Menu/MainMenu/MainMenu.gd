@@ -33,8 +33,8 @@ func _ready() -> void:
 	show_current_track()
 	
 
-func _on_Play_pressed():
-	if not PlayerData.player_bike and (not GameData.current_level or GameData.current_track):
+func _on_Play_pressed() -> void:
+	if not can_start_play():
 		field_log.target = $HBoxContainer/VBoxContainer/Logo
 		field_log.position = Vector2(10, 66)
 		field_log_start_play()
@@ -43,8 +43,8 @@ func _on_Play_pressed():
 
 
 func can_start_play() -> bool:
-	var has_tracks: bool = not str(track_cfg.get_id(track_cfg.get_section(0))).empty()
-	return PlayerData.player_bike and GameData.current_level and has_tracks
+	# var has_tracks: bool = not str(track_cfg.get_id(track_cfg.get_section(0))).empty()
+	return PlayerData.player_bike and GameData.current_level and GameData.current_track # and has_tracks
 
 
 func field_log_start_play() -> void:
@@ -52,6 +52,8 @@ func field_log_start_play() -> void:
 		field_log.error("No bike selected! You don't have a bike")
 	elif not GameData.current_level:
 		field_log.error("No level selected! You don't have the current level")
+	elif not GameData.current_track:
+		field_log.error("No track selected! You don't have the current track")
 	else:
 		var error = "Undefined error. You can not start play. Try ro reboot game"
 		field_log.error(error)

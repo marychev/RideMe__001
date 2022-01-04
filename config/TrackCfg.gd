@@ -67,6 +67,14 @@ func get_tracks(level_id: int) -> Array:
 	return store
 
 
+func get_active_track(level_id: int) -> Dictionary:
+	var track: Dictionary = {}
+	for section in config.get_sections():
+		if get_level_id(section) == level_id and get_state(section) == LevelTrackStates.ACTIVE:
+			track = as_dict(section) # as last item
+	return track
+
+
 func as_dict(section: String) -> Dictionary:
 	return {
 		KEY_ID: get_id(section),

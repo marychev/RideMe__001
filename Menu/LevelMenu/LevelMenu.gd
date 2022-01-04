@@ -20,6 +20,11 @@ func _ready():
 	
 	btn_refit.connect("pressed", self, "_on_btn_refit_pressed")
 	btn_pay.connect("pressed", self, "_on_btn_pay_pressed")
+	
+	if PlayerData.player_bike and GameData.current_track:
+		btn_pay.modulate.a = 1
+	else:
+		btn_pay.modulate.a = 0.4
 
 
 func init_slide(level: Node2D) -> void:
@@ -39,35 +44,12 @@ func set_menu_options(level: Level_0) -> void:
 
 
 func _on_btn_pay_pressed() -> void:
-	if not GameData.current_level:
-		if selected_node:
-			# TODO:
-			
-			if PlayerData.rms < selected_node.price:
-				field_log.error("Need to more Rms!")
-			else:
-				PlayerData.set_rms(PlayerData.rms - selected_node.price)
-
-				GameData.current_level = selected_node
-
-				btn_refit.modulate.a = 1
-				btn_pay.modulate.a = 0.4
-
-				btn_current_node.flat = true
-				field_log.success("Level's track has been initiated successfully!")
-		else:
-			var message = "A level was not selected!"
-			field_log.error(message)
+	var main_menu: MainMenu = load(PathData.RES_MAIN_MENU_TSCN).instance()  
+	if not main_menu.can_start_play():
+		main_menu.field_log = field_log
+		main_menu.field_log_start_play()
 	else:
-		var message = "You have a level already!"
-		field_log.info(message)
-	
-	if GameData.current_level:
-		btn_level_1.flat = false
-		btn_level_2.flat = false
-		
-		btn_level_1.disabled = true
-		btn_level_2.disabled = true
+		get_tree().change_scene(main_menu.game_tscn) 
 
 
 func _on_btn_refit_pressed() -> void:
@@ -102,7 +84,19 @@ func _on_Current_pressed() -> void:
 func _on_Level_1_pressed():
 	field_log.clear()
 	set_buttons_flat(btn_level_1)
-	selected_node = level_1
+	
+	var level_id = 1
+	var track_cfg: TrackCfg = load(PathData.TRACK_MODEL).new()
+	
+	GameData.current_level = level_1
+	
+	var _level_track: Dictionary = track_cfg.get_active_track(level_id)
+	if not _level_track.empty():
+		GameData.current_track = load(_level_track.resource).instance()
+		selected_node = GameData.current_track
+	else:
+		selected_node = GameData.current_level
+		
 	init_slide(selected_node)
 
 
@@ -126,4 +120,3 @@ func init_btn_current_node() -> void:
 		btn_level_2.flat =  false
 		
 		btn_refit.modulate.a = 1
-		btn_pay.modulate.a = 0.4

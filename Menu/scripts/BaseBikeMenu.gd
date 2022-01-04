@@ -21,6 +21,16 @@ func _ready():
 	field_log.target = $TextureRect
 
 
+func _on_Current_pressed() -> void:
+	field_log.clear()
+	btn_current_node.flat = true
+
+
+func _on_btn_menu_pressed() -> void:
+	var main_menu: String = PathData.RES_MAIN_MENU_TSCN
+	get_tree().change_scene(main_menu)
+
+
 func init_slide(node: Node2D) -> void:
 	selected_node = node
 	set_title(node)
@@ -31,11 +41,4 @@ func set_title(node: Node2D) -> void:
 	$TextureRect/Title.text = node.title if node.title else "undefined"
 
 
-func _on_Current_pressed() -> void:
-	field_log.clear()
-	btn_current_node.flat = true
 
-
-func _on_btn_menu_pressed() -> void:
-	var main_menu: String = PathData.RES_MAIN_MENU_TSCN
-	get_tree().change_scene(main_menu)

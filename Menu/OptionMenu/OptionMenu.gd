@@ -10,10 +10,14 @@ func _on_ClearGame_pressed():
 	track_cfg.clear()
 	player_track_cfg.clear()
 	
+	GameData.current_level = null
+	GameData.current_track = null
+	
 
 func _on_ResetGame_pressed():
 	create_levels()
 	create_tracks()
+	create_player_track()
 
 
 # Managing to app user data
@@ -32,7 +36,8 @@ func create_tracks() -> void:
 	var _num_win: = 2
 	var _init_time_level: = 100
 	var _price: = 0
-	track_cfg.create(_track_id, _level_id, _issue, _resource, _texture, _num_win,  _init_time_level, _price)
+	var _state: = LevelTrackStates.ACTIVE
+	track_cfg.create(_track_id, _level_id, _issue, _resource, _texture, _num_win,  _init_time_level, _price, _state)
 	
 	_track_id = 1
 	_resource = "res://Game/Level/Level_1/Level_1.tscn"
@@ -49,3 +54,10 @@ func create_tracks() -> void:
 	_init_time_level = 40
 	_price = 120
 	track_cfg.create(_track_id, _level_id, _issue, _resource, _texture, _num_win,  _init_time_level, _price)
+
+
+func create_player_track() -> void:
+	var track_train_id := 0
+	var track_section := track_cfg.get_section(track_train_id)
+	var player_track_section := track_section.replace(track_cfg.prefix, player_track_cfg.prefix)
+	player_track_cfg.create(track_section, player_track_section) 
