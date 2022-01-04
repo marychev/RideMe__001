@@ -5,7 +5,7 @@ signal lives_updated
 signal rms_updated
 signal time_level_updated
 
-const INIT_LIVES: = 100
+const INIT_LIVES: = 2
 
 var score: = 0 setget set_score
 var lives: = INIT_LIVES setget set_lives
@@ -37,7 +37,7 @@ func reset_progress() -> void:
 		
 	time_level_count = 0
 	score = 0
-	lives = INIT_LIVES
+	set_lives(INIT_LIVES)
 
 
 func set_score(value: int) -> void:

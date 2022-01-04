@@ -5,6 +5,7 @@ var player: KinematicBody2D
 
 
 func on_player_entered() -> void:
+	
 	if "Player" == player.name:
 		
 		print('_on_StompDetector_body_entered__', player.name)

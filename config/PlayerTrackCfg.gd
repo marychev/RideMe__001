@@ -35,7 +35,6 @@ func get_attempts(track) -> Array:
 
 
 # setters
-
 func set_best_time(track_section: String, value: String) -> void:
 	var attempts := get_attempts(track_section)
 	attempts.append(value)

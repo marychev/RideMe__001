@@ -1,7 +1,7 @@
 extends Control
 class_name GameScreenPause
 
-onready var sceen_tree: = get_tree()
+onready var sceen_tree := get_tree()
 onready var pause_rect: ColorRect = get_node("PauseRect")
 onready var title: Label = get_node("PauseRect/Title")
 onready var container_btn: VBoxContainer = get_node("PauseRect/Container")
@@ -21,6 +21,11 @@ func _ready():
 	$Timer.start()
 	$TimeToStart.set_text(str(_counter))
 	
+	# Die or Win
+	# var pause_die = load("res://Game/GameScreen/GamePauseDie.gd").new()
+	# pause_die._ready()
+
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):

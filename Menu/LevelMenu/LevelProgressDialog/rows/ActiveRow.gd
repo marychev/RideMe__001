@@ -1,6 +1,10 @@
 extends HBoxContainer
 class_name ActiveRow   # via BaseClass of the Rows
 
+var level_cfg: LevelCfg = load(PathData.LEVEL_MODEL).new()
+var track_cfg: TrackCfg = load(PathData.TRACK_MODEL).new()
+var player_track_cfg: PlayerTrackCfg = load(PathData.PLAYER_TRACK_MODEL).new()
+	
 var _track: Dictionary
 
 

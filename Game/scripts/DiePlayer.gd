@@ -2,8 +2,7 @@ extends Node
 class_name DiePlayer
 
 var player: Player
-var _end_game_scr = load(PathData.END_GAME_SCREEN)
-var end_game_scr = _end_game_scr.instance()
+var end_game_scr = load(PathData.PATH_PAUSE_DIE).new()
 
 
 func from_time_up(_player: Player) -> void:
@@ -28,7 +27,7 @@ func from_fell(_player: Player):
 	
 
 func from_broke_bike(_player: Player):
-	init_player(player)
+	init_player(_player)
 	PlayerData.set_type_title(end_game_scr.TitleChoices.BROKE_BIKE)
 	PlayerData.set_score(player.global_position.x)
 	die()
@@ -39,17 +38,20 @@ func die(force: bool = false) -> void:
 		PlayerData.lives = 0
 	
 	if PlayerData.lives <= 0:
-		
-		yield(player.get_tree().create_timer(4), "timeout")
-		
-		# var game_menu: GameScreenPause = get_node(PathData.PATH_GAME_SCREEN_PAUSE)
-		# var game_menu: GameScreenPause = load(PathData.RES_GAME_SCREEN_PAUSE).instance()
-		# game_menu.paused = true
+		var tree: SceneTree = player.get_tree()
+		var pause_screen: GameScreenPause = tree.current_scene.get_node("GUI/Canvas/GameScreenPause")
 
-		if is_instance_valid(player):
-			player.get_tree().change_scene(PathData.END_GAME_SCREEN)
-			player.queue_free()
+		yield(player.get_tree().create_timer(1), "timeout")
 		
+		if is_instance_valid(pause_screen):
+			pause_screen.set_paused(true)
+			var continue_btn: Button = pause_screen.get_node("PauseRect/Container/ContinueBtn")
+			continue_btn.visible = false
+		
+			var pause_die = preload("res://Game/GameScreen/GamePauseDie.gd").new()
+			pause_die.do_init(pause_screen.title, pause_screen.pause_rect)
+			# player.queue_free()
+
 
 func init_player(_player: Player) -> void:
 	if not is_instance_valid(player):

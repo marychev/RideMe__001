@@ -1,7 +1,6 @@
 extends Node
 class_name PathData
 
-
 # game process
 const PATH_GAME = "/root/Game"
 const PATH_PLAYER = PATH_GAME + "/Player"
@@ -23,8 +22,7 @@ const PATH_GO_BTN = PATH_GUI + "/ControlContainer/GoBtn"
 const PATH_STOP_BTN = PATH_GUI + "/ControlContainer/StopBtn"
 
 # resources
-const END_GAME_SCREEN = "res://Game/GameScreen/EndGameScreen.tscn"
-
+# const END_GAME_SCREEN = "res://Game/GameScreen/EndGameScreen.tscn"
 const BIKE_MENU_SCREEN = "res://Menu/BikeMenu/BikeMenu.tscn"
 const RES_MAIN_MENU_TSCN = "res://Menu/MainMenu/MainMenu.tscn"
 const RES_LEVEL_MENU_TSCN = "res://Menu/LevelMenu/LevelMenu.tscn"
@@ -38,12 +36,13 @@ const PATH_LEVEL_1 = PATH_GAME_LEVEL + "Level_1/Level_1.tscn"
 const PATH_LEVEL_2 = PATH_GAME_LEVEL + "Level_2/Level_2.tscn"
 
 # levels' models
-const PATH_MODEL = "res://config/"
-const LEVEL_MODEL = PATH_MODEL + "LevelCfg.gd"
-const TRACK_MODEL = PATH_MODEL + "TrackCfg.gd"
-const PLAYER_TRACK_MODEL = PATH_MODEL + "PlayerTrackCfg.gd"
+const _PATH_MODEL = "res://config/"
+const LEVEL_MODEL = _PATH_MODEL + "LevelCfg.gd"
+const TRACK_MODEL = _PATH_MODEL + "TrackCfg.gd"
+const PLAYER_TRACK_MODEL = _PATH_MODEL + "PlayerTrackCfg.gd"
 
 # scripts
 const PATH_DIE_PLAYER = "res://Game/scripts/DiePlayer.gd"
+const PATH_PAUSE_DIE = "res://Game/GameScreen/GamePauseDie.gd"
 const PATH_PLAYER_STOMP_DETECTER = "res://Game/scripts/PlayerStompDetecter.gd"
 const PATH_ANIMATE_PEOPLE = "res://Game/Character/People/scripts/AnimatePeople.gd"

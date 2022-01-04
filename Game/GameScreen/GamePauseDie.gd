@@ -1,0 +1,83 @@
+class_name GamePauseDie
+
+
+# var default_rect_color: = Color(0.40, 0.25, 0.56, 0.6) 	 # 67428f
+var rect_color_win: = Color(0.25, 0.56, 0.34, 0.8) 		 # 428f57
+var rect_color_lose: = Color(0.56, 0.25, 0.25, 0.8)
+
+const TIME_UP_TEXT: String = 'Your time is up'
+const BROKE_BIKE_TEXT: String = 'You broke the bike'
+const FELL_TEXT: String = 'You fell and you need to try again'
+const HIT_PERSON_TEXT: String = 'You hit a person'
+
+enum TitleChoices {
+	TIME_UP, BROKE_BIKE, FELL, HIT_PERSON, 
+	WIN_PLAYER 
+}
+
+
+func do_init(title: Label, pause_rect: ColorRect) -> void:
+	if PlayerData.lives <= 0 and PlayerData.type_title > -1:
+		set_title_and_rect_color(title, pause_rect)
+	
+		# set_screen_items()
+		update_as_fail_cfg()
+
+
+func set_screen_items(label_items: Label) -> void:
+	"""var rm_item_res_value: Label = $PauseRect/ResourceContainer/RMItemResource/Value
+	var hourgrass_item_res_value: Label = $PauseRect/ResourceContainer/HourgrassItemResource/Value
+	rm_item_res_value.set_text(str(PlayerData.rms))
+	hourgrass_item_res_value.set_text(str(PlayerData.time_level_count))
+	
+	var travel_time = 'Travel time:           %s' % [timer_format(PlayerData.time_level)]
+	var distance_travel = 'Distance traveled: %d m' % [PlayerData.score / 100]
+	label_items.set_text(travel_time + '\r\n'  + distance_travel)
+	"""
+	
+	print("to do")
+
+
+func set_title_and_rect_color(title: Label, pause_rect: ColorRect):
+	if PlayerData.type_title != TitleChoices.WIN_PLAYER:
+		title.set_text(get_info())
+		pause_rect.color = rect_color_lose
+
+
+func get_info() -> String:
+	#if PlayerData.type_title == TitleChoices.WIN_PLAYER:
+	#	description.set_text(PlayerData.current_level.title)
+	
+	var title = "Lose: "
+	
+	if PlayerData.type_title == TitleChoices.FELL:
+		title += FELL_TEXT
+	elif PlayerData.type_title == TitleChoices.BROKE_BIKE:
+		title += BROKE_BIKE_TEXT
+	elif PlayerData.type_title == TitleChoices.TIME_UP:
+		title += TIME_UP_TEXT
+	elif PlayerData.type_title == TitleChoices.HIT_PERSON:
+		title += HIT_PERSON_TEXT
+	
+	return title
+
+func timer_format(time):	
+	return "%02d:%02d:%02d" % [
+		fmod(time, 60 * 60) / 60,
+		fmod(time, 60),
+		fmod(time, 1) * 100
+	]
+
+
+func update_as_fail_cfg():
+	# Update writes to .cfg files
+	if GameData.current_track:
+		var track_cfg: TrackCfg = load(PathData.TRACK_MODEL).new()
+		var player_track_cfg: PlayerTrackCfg = load(PathData.PLAYER_TRACK_MODEL).new()
+		
+		var track_section: = track_cfg.get_section(GameData.current_track.ID)
+		var player_track_section: = track_section.replace(track_cfg.prefix, player_track_cfg.prefix)
+	
+		track_cfg.set_state(track_section, LevelTrackStates.FAIL)
+		player_track_cfg.set_best_time(player_track_section, timer_format("00:00:00"))
+		# player_track_cfg.set_best_time(player_track_section, timer_format(PlayerData.time_level))

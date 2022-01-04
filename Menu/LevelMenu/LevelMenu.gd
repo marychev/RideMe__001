@@ -2,7 +2,7 @@ extends BaseBikeMenu
 class_name LevelMenu
 
 # to top slider's buttons
-# var level_0: Level_0 = load(PathData.PATH_LEVEL_0).instance()
+var level_0: Level_0 = load(PathData.PATH_LEVEL_0).instance()
 var level_1: Level_1 = load(PathData.PATH_LEVEL_1).instance()
 var level_2: Level_2 = load(PathData.PATH_LEVEL_2).instance()
 
@@ -12,9 +12,6 @@ onready var btn_level_2: Button = $TextureRect/SliderContainer/Buttons/Level_2
 
 const RES_LEVEL_PROGRESS_DIALOG_TSCN: String = "res://Menu/LevelMenu/LevelProgressDialog/LevelProgressDialog.tscn"
 onready var progress_popup: Resource = preload(RES_LEVEL_PROGRESS_DIALOG_TSCN)
-
-
-
 
 
 func _ready():
@@ -90,6 +87,7 @@ func _on_btn_refit_pressed() -> void:
 
 func _on_Current_pressed() -> void:
 	._on_Current_pressed()
+	
 	set_buttons_flat(btn_current_node)
 	
 	if GameData.current_track:
@@ -97,14 +95,8 @@ func _on_Current_pressed() -> void:
 	elif GameData.current_level:
 		init_slide(GameData.current_level)
 	else:
-		selected_node = level_1
-		init_slide(selected_node)
-	
-	"""	if not GameData.current_level:
 		selected_node = level_0
 		init_slide(selected_node)
-	else:
-		init_slide(GameData.current_level) """
 
 
 func _on_Level_1_pressed():

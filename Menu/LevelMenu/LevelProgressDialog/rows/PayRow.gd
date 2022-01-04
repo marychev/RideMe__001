@@ -5,7 +5,6 @@ onready var field_log: FieldLog = preload("res://Game/scripts/FieldLog.gd").new(
 
 
 func _ready():
-	
 	field_log.target = $Title
 	
 	if PlayerData.rms < int($Price.text.replace("rm", "")):
@@ -14,10 +13,6 @@ func _ready():
 
 
 func _on_PayBtn_pressed():
-	var level_cfg: LevelCfg = load(PathData.LEVEL_MODEL).new()
-	var track_cfg: TrackCfg = load(PathData.TRACK_MODEL).new()
-	var player_track_cfg: PlayerTrackCfg = load(PathData.PLAYER_TRACK_MODEL).new()
-	
 	if not _track:
 		var message = "You have not an initial track"
 		field_log.error(message)

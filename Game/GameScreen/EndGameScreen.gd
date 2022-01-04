@@ -36,7 +36,8 @@ func _ready() -> void:
 	if PlayerData.type_title > -1:
 		set_title_and_rect_color()
 		set_description()
-
+	
+	# set win items
 	var rm_item_res_value: Label = $PauseRect/ResourceContainer/RMItemResource/Value
 	var hourgrass_item_res_value: Label = $PauseRect/ResourceContainer/HourgrassItemResource/Value
 	rm_item_res_value.set_text(str(PlayerData.rms))
@@ -81,9 +82,7 @@ func set_description():
 		description.set_text(HIT_PERSON_TEXT)
 
 
-func timer_format(time):
-	print("timer_format: ", time)
-	
+func timer_format(time):	
 	return "%02d:%02d:%02d" % [
 		fmod(time, 60 * 60) / 60,
 		fmod(time, 60),
