@@ -14,8 +14,7 @@ func _ready():
 
 func _on_PayBtn_pressed():
 	if not _track:
-		var message = "You have not an initial track"
-		field_log.error(message)
+		field_log.error("You have not an initial track")
 		return
 	
 	var _track_section: = track_cfg.get_section(_track.id)
@@ -34,8 +33,7 @@ func _on_PayBtn_pressed():
 	player_track_cfg.create(_track_section, player_track_section)
 	track_cfg.set_state(_track_section, LevelTrackStates.ACTIVE)
 	
-	var message = "The %s track was paid!" % player_track_section
-	field_log.success(message)
+	field_log.success("The %s track was paid!" % player_track_section)
 
 	if has_node("/root/LevelMenu"):
 		var level_menu: LevelMenu = get_node("/root/LevelMenu")

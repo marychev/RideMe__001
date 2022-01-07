@@ -16,6 +16,9 @@ func _ready():
 	$TextureRect/RMCounter/Background/Value.set_text(str(PlayerData.rms))
 	
 	btn_refit.modulate.a = 0.4
+	if GameData.current_level:
+		btn_refit.modulate.a = 1
+		
 	btn_current_node.flat = bool(PlayerData.player_bike != null)
 	
 	field_log.target = $TextureRect
@@ -39,6 +42,3 @@ func init_slide(node: Node2D) -> void:
 
 func set_title(node: Node2D) -> void:
 	$TextureRect/Title.text = node.title if node.title else "undefined"
-
-
-

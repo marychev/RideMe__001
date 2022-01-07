@@ -61,6 +61,7 @@ func get_info() -> String:
 	
 	return title
 
+
 func timer_format(time):	
 	return "%02d:%02d:%02d" % [
 		fmod(time, 60 * 60) / 60,

@@ -21,10 +21,12 @@ func _ready():
 	btn_refit.connect("pressed", self, "_on_btn_refit_pressed")
 	btn_pay.connect("pressed", self, "_on_btn_pay_pressed")
 	
+	if GameData.current_level:
+		btn_refit.modulate.a = 1
+	
+	btn_pay.modulate.a = 0.4
 	if PlayerData.player_bike and GameData.current_track:
 		btn_pay.modulate.a = 1
-	else:
-		btn_pay.modulate.a = 0.4
 
 
 func init_slide(level: Node2D) -> void:
@@ -118,5 +120,3 @@ func init_btn_current_node() -> void:
 		
 		btn_level_1.flat = false
 		btn_level_2.flat =  false
-		
-		btn_refit.modulate.a = 1

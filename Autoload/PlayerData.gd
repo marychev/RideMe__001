@@ -5,7 +5,7 @@ signal lives_updated
 signal rms_updated
 signal time_level_updated
 
-const INIT_LIVES: = 2
+const INIT_LIVES: = 50
 
 var score: = 0 setget set_score
 var lives: = INIT_LIVES setget set_lives
@@ -25,8 +25,8 @@ onready var player: KinematicBody2D = get_node(PathData.PATH_PLAYER)
 
 
 func _ready():
-	if is_instance_valid(player) and GameData.current_level.init_time_level:
-		time_level = GameData.current_level.init_time_level
+	if is_instance_valid(player) and GameData.current_track.init_time_level:
+		time_level = GameData.current_track.init_time_level
 
 
 func reset_progress() -> void:
@@ -94,7 +94,7 @@ func set_time_level_count(_player: KinematicBody2D) -> int:
 
 	time_level_count += 1
 	
-	if GameData.current_level.are_you_win():
+	if GameData.current_track.are_you_win():
 		var _finish = load("res://Game/Character/Start/Start.tscn")
 		var finish = _finish.instance()
 		

@@ -9,7 +9,7 @@ func _ready() -> void:
 	set_physics_process(false)
 
 
-func _on_body_entered(body) -> void:
+func _on_body_entered(body: KinematicBody2D) -> void:
 	if body.name == "Player":
 		animation.play("fade_out")
 		player_do_anim_success(body)

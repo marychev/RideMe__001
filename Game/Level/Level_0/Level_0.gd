@@ -45,6 +45,6 @@ func get_section() -> String:
 	return "%s_%s" % [track_cfg.prefix, ID]
 
 
-func are_you_win(hourgrass_count: int = PlayerData.time_level_count) -> bool:
-	has_win = hourgrass_count == num_win
+func are_you_win() -> bool:
+	has_win = PlayerData.time_level_count == num_win
 	return has_win

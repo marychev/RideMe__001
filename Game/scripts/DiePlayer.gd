@@ -50,7 +50,7 @@ func die(force: bool = false) -> void:
 		
 			var pause_die = preload("res://Game/GameScreen/GamePauseDie.gd").new()
 			pause_die.do_init(pause_screen.title, pause_screen.pause_rect)
-			# player.queue_free()
+			# player.queue_free() ????
 
 
 func init_player(_player: Player) -> void:
