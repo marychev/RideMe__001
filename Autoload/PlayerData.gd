@@ -11,10 +11,10 @@ var score: = 0 setget set_score
 var lives: = INIT_LIVES setget set_lives
 var time_level_count: int = 0
 var time_level: = 0 setget set_time_level
+var rms_count: int = 0
 var rms: = 100 setget set_rms
 
 var type_title: int = -1
-
 var player_bike: Node
 
 onready var lives_value: Label = get_node(PathData.PATH_LIVES_COUNTER_VALUE)
@@ -25,7 +25,7 @@ onready var player: KinematicBody2D = get_node(PathData.PATH_PLAYER)
 
 
 func _ready():
-	if is_instance_valid(player) and GameData.current_track.init_time_level:
+	if is_instance_valid(player) and is_instance_valid(GameData.current_track):
 		time_level = GameData.current_track.init_time_level
 
 
@@ -35,6 +35,7 @@ func reset_progress() -> void:
 	if not is_instance_valid(player):
 		player = load(PathData.PATH_PLAYER).new()
 		
+	rms_count = 0
 	time_level_count = 0
 	score = 0
 	set_lives(INIT_LIVES)
@@ -53,7 +54,6 @@ func set_lives(value: int) -> void:
 	lives_value.text = str(lives)
 	
 	get_node(PathData.PATH_LIVES_COUNTER + "/AnimationPlayer").play('danger')
-	
 	emit_signal("lives_updated")
 
 
@@ -71,9 +71,10 @@ func set_rms(value: int) -> void:
 	if not is_instance_valid(rms_value):
 		var path = "/root/LevelMenu/TextureRect/RMCounter/Background/Value"
 		rms_value = get_node(path)
-		
+	
+	rms_count += 1
 	rms = value
-	rms_value.set_text(str(rms))
+	rms_value.set_text(str(rms) + ' | ' + str(rms_count))
 	emit_signal("rms_updated")
 
 
@@ -84,7 +85,7 @@ func set_time_level(value: int) -> void:
 		
 	# when Game as main sceen
 	time_level = value
-	time_level_value.text = str(time_level) + ' | ' + str(time_level_count)
+	time_level_value.set_text(str(time_level) + ' | ' + str(time_level_count))
 	emit_signal("time_level_updated")
 
 
@@ -94,6 +95,7 @@ func set_time_level_count(_player: KinematicBody2D) -> int:
 
 	time_level_count += 1
 	
+	# define finish
 	if GameData.current_track.are_you_win():
 		var _finish = load("res://Game/Character/Start/Start.tscn")
 		var finish = _finish.instance()

@@ -1,24 +1,10 @@
 extends Area2D
-class_name Start
-
-var use_as_finish: bool = false
+class_name Start  # or Finish
 
 
 func _on_Start_body_entered(body: KinematicBody2D) -> void:
-	
-	print("_on_Start_body_entered: ", GameData.current_track.are_you_win())
-	
 	if body.name == 'Player' and GameData.current_track.are_you_win():
 		finished(body)
-
-		"""
-		var end_game_scr = load(PathData.END_GAME_SCREEN).instance()
-		PlayerData.set_type_title(end_game_scr.TitleChoices.WIN_PLAYER)
-		PlayerData.set_score(body.global_position.x)
-		
-		var die_player = load(PathData.PATH_DIE_PLAYER).new()
-		die_player.player = body
-		die_player.die(true)"""
 
 
 func finished(player: Player):
@@ -32,6 +18,9 @@ func finished(player: Player):
 		var continue_btn: Button = pause_screen.get_node("PauseRect/Container/ContinueBtn")
 		continue_btn.visible = false
 	
-		var pause_die = preload("res://Game/GameScreen/GamePauseDie.gd").new()
-		pause_die.do_init(pause_screen.title, pause_screen.pause_rect)
-		# player.queue_free() ????
+		var pause_win = load("res://Game/GameScreen/GamePauseWin.gd").new()
+		PlayerData.set_score(player.position.x)
+		PlayerData.set_type_title(pause_win.TitleChoices.WIN_PLAYER)
+		
+		pause_win.do_init(pause_screen.title, pause_screen.pause_rect)
+		# player.queue_free() # ????

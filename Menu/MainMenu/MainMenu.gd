@@ -43,7 +43,6 @@ func _on_Play_pressed() -> void:
 
 
 func can_start_play() -> bool:
-	# var has_tracks: bool = not str(track_cfg.get_id(track_cfg.get_section(0))).empty()
 	return PlayerData.player_bike and GameData.current_level and GameData.current_track # and has_tracks
 
 
@@ -86,7 +85,7 @@ func show_player_bike() -> void:
 
 func show_current_track() -> void:
 	var level_track: = GameData.current_track if GameData.current_track else GameData.current_level
-	if level_track:
+	if is_instance_valid(level_track):
 		var _current_track: NinePatchRect = $HBoxContainer/CenterContainer/CurrentTrack
 		_current_track.visible = true
 		_current_track.texture = level_track.texture

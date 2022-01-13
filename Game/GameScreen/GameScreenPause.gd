@@ -21,11 +21,6 @@ func _ready():
 	$Timer.start()
 	$TimeToStart.set_text(str(_counter))
 	
-	# Die or Win
-	# var pause_die = load("res://Game/GameScreen/GamePauseDie.gd").new()
-	# pause_die._ready()
-
-
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):

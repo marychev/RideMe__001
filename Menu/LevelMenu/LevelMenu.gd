@@ -35,14 +35,15 @@ func init_slide(level: Node2D) -> void:
 
 
 func set_menu_options(level: Level_0) -> void:
-	var level_text = "level: ....... %d" % [level.level_id]
-	var track_text = "track: .......... %d" % [level.track_id]
-	var price_text = "price: .................... %d" % [level.price]
-	
-	menu_options.get_node('LevelIssue').set_text(level.issue)
-	menu_options.get_node('Level').set_text(level_text)
-	menu_options.get_node('Track').set_text(track_text)
-	menu_options.get_node('Price').set_text(price_text)
+	if is_instance_valid(level):
+		var level_text = "level: ....... %d" % [level.level_id]
+		var track_text = "track: .......... %d" % [level.track_id]
+		var price_text = "price: .................... %d" % [level.price]
+		
+		menu_options.get_node('LevelIssue').set_text(level.issue)
+		menu_options.get_node('Level').set_text(level_text)
+		menu_options.get_node('Track').set_text(track_text)
+		menu_options.get_node('Price').set_text(price_text)
 
 
 func _on_btn_pay_pressed() -> void:

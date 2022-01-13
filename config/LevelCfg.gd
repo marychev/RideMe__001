@@ -34,7 +34,7 @@ func get_title(section: String) -> String:
 func get_passed_at(section: String) -> String:
 	return config.get_value(section, KEY_PASSED_AT)
 
-func get_tracks(level_id: int) -> Array:
+func get_tracks() -> Array:
 	var store = []
 	for section in config.get_sections():
 		store.append(as_dict(section))

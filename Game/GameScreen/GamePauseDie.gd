@@ -1,8 +1,6 @@
 class_name GamePauseDie
 
 
-# var default_rect_color: = Color(0.40, 0.25, 0.56, 0.6) 	 # 67428f
-var rect_color_win: = Color(0.25, 0.56, 0.34, 0.8) 		 # 428f57
 var rect_color_lose: = Color(0.56, 0.25, 0.25, 0.8)
 
 const TIME_UP_TEXT: String = 'Your time is up'
@@ -19,23 +17,8 @@ enum TitleChoices {
 func do_init(title: Label, pause_rect: ColorRect) -> void:
 	if PlayerData.lives <= 0 and PlayerData.type_title > -1:
 		set_title_and_rect_color(title, pause_rect)
-	
-		# set_screen_items()
 		update_as_fail_cfg()
 
-
-func set_screen_items(label_items: Label) -> void:
-	"""var rm_item_res_value: Label = $PauseRect/ResourceContainer/RMItemResource/Value
-	var hourgrass_item_res_value: Label = $PauseRect/ResourceContainer/HourgrassItemResource/Value
-	rm_item_res_value.set_text(str(PlayerData.rms))
-	hourgrass_item_res_value.set_text(str(PlayerData.time_level_count))
-	
-	var travel_time = 'Travel time:           %s' % [timer_format(PlayerData.time_level)]
-	var distance_travel = 'Distance traveled: %d m' % [PlayerData.score / 100]
-	label_items.set_text(travel_time + '\r\n'  + distance_travel)
-	"""
-	
-	print("to do")
 
 
 func set_title_and_rect_color(title: Label, pause_rect: ColorRect):

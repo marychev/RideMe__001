@@ -11,15 +11,11 @@ func _ready() -> void:
 func _on_body_entered(body):
 	if body.name == "Player":
 		anim_player.play("fade_out")
-		
-		PlayerData.rms += 1
-		PlayerData.score += int(PlayerData.rms) * 10
-		
 		player_do_anim_success(body)
 		rm_counter_do_anim_success()
 		
-		# Animation player will remove it.
-		## get_tree().queue_delete(self)
+		PlayerData.rms += 1
+		
 
 
 func _on_VisibilityNotifier_screen_exited() -> void:

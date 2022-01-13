@@ -35,10 +35,12 @@ func _on_btn_menu_pressed() -> void:
 
 
 func init_slide(node: Node2D) -> void:
-	selected_node = node
-	set_title(node)
-	sprite.set_texture(node.texture)
+	if is_instance_valid(node):
+		selected_node = node
+		set_title(node)
+		sprite.set_texture(node.texture)
 
 
 func set_title(node: Node2D) -> void:
-	$TextureRect/Title.text = node.title if node.title else "undefined"
+	if is_instance_valid(node):
+		$TextureRect/Title.text = node.title if node.title else "undefined"

@@ -1,12 +1,12 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Game/GUI/assets/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Game/GUI/counter/RMIconContainer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game/GameScreen/Resource/RMItemResource.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Game/GameScreen/Buttons/QuitBtn.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Game/GameScreen/Title.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Game/GameScreen/Buttons/PlayBtn.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Game/GameScreen/EndGameScreen.gd" type="Script" id=6]
-[ext_resource path="res://Game/Character/Hourgrass/assets/hourgrass.png" type="Texture" id=7]
+[ext_resource path="res://Game/GameScreen/Resource/HourgrassItemResource.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Game/GameScreen/Buttons/MainMenuBtn.tscn" type="PackedScene" id=8]
 
 [sub_resource type="DynamicFont" id=1]
@@ -14,14 +14,6 @@ size = 34
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 42
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 40
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=4]
 size = 28
 font_data = ExtResource( 1 )
 
@@ -75,74 +67,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RMItemResource" type="HBoxContainer" parent="PauseRect/ResourceContainer"]
-margin_right = 159.0
-margin_bottom = 60.0
-
-[node name="RMIconContainer" parent="PauseRect/ResourceContainer/RMItemResource" instance=ExtResource( 2 )]
-anchor_left = 0.0
+[node name="RMItemResource" parent="PauseRect/ResourceContainer" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 60.0
-margin_bottom = 60.0
-rect_scale = Vector2( 1, 1 )
-
-[node name="Separete" type="Label" parent="PauseRect/ResourceContainer/RMItemResource"]
-margin_left = 64.0
-margin_top = 6.0
-margin_right = 111.0
-margin_bottom = 53.0
-custom_fonts/font = SubResource( 2 )
-text = " x "
-
-[node name="Value" type="Label" parent="PauseRect/ResourceContainer/RMItemResource"]
-margin_left = 115.0
-margin_top = 7.0
-margin_right = 138.0
-margin_bottom = 53.0
-custom_fonts/font = SubResource( 3 )
-text = "0"
-
-[node name="HourgrassItemResource" type="HBoxContainer" parent="PauseRect/ResourceContainer"]
-margin_top = 64.0
 margin_right = 159.0
-margin_bottom = 144.0
+margin_bottom = 40.0
 
-[node name="HourgrassIconContainer" parent="PauseRect/ResourceContainer/HourgrassItemResource" instance=ExtResource( 2 )]
-anchor_left = 0.0
+[node name="HourgrassItemResource" parent="PauseRect/ResourceContainer" instance=ExtResource( 7 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 54.0
-margin_bottom = 80.0
-rect_scale = Vector2( 1, 1 )
-
-[node name="Icon" parent="PauseRect/ResourceContainer/HourgrassItemResource/HourgrassIconContainer" index="0"]
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 54.0
-margin_bottom = 80.0
-rect_min_size = Vector2( 40, 0 )
-texture = ExtResource( 7 )
-
-[node name="Separete" type="Label" parent="PauseRect/ResourceContainer/HourgrassItemResource"]
-margin_left = 58.0
-margin_top = 16.0
-margin_right = 105.0
-margin_bottom = 63.0
-custom_fonts/font = SubResource( 2 )
-text = " x "
-
-[node name="Value" type="Label" parent="PauseRect/ResourceContainer/HourgrassItemResource"]
-margin_left = 109.0
-margin_top = 17.0
-margin_right = 132.0
-margin_bottom = 63.0
-custom_fonts/font = SubResource( 3 )
-text = "0"
+margin_top = 44.0
+margin_right = 159.0
+margin_bottom = 84.0
 
 [node name="Label" parent="PauseRect" instance=ExtResource( 4 )]
 anchor_top = 0.5
@@ -151,7 +87,7 @@ margin_left = -184.049
 margin_top = -19.2375
 margin_right = 260.951
 margin_bottom = 47.7625
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 2 )
 text = "Distance traveled: %.2f
 Travel time is:        %s"
 
@@ -182,5 +118,3 @@ level_scn = "res://Game/Game.tscn"
 margin_top = 146.0
 margin_right = 434.0
 margin_bottom = 215.0
-
-[editable path="PauseRect/ResourceContainer/HourgrassItemResource/HourgrassIconContainer"]

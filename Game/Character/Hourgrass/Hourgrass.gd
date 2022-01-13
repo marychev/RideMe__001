@@ -14,7 +14,7 @@ func _on_body_entered(body: KinematicBody2D) -> void:
 		animation.play("fade_out")
 		player_do_anim_success(body)
 		timeout_do_anim_success()
-		set_value_of_time_level(0.0)
+		set_value_of_time_level()
 		PlayerData.set_time_level_count(body)
 
 
@@ -38,12 +38,12 @@ func timeout_do_anim_success() -> void:
 		timeout_animation.play('success')
 
 
-func get_value_of_time_level(level_num: float) -> int:
-	if GameData.current_level:
-		return GameData.current_level.init_time_level
+func get_value_of_time_level() -> int:
+	if GameData.current_track:
+		return GameData.current_track.init_time_level
 	return -1
 
 
-func set_value_of_time_level(level_num: float) -> void:
-	var value_of_time_level = get_value_of_time_level(level_num)
+func set_value_of_time_level() -> void:
+	var value_of_time_level = get_value_of_time_level()
 	PlayerData.time_level += value_of_time_level
