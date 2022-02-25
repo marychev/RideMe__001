@@ -115,7 +115,7 @@ func set_title(bike) -> void:
 
 
 func set_menu_options(bike):
-	var power_text = "Max power: ....... %d" % [bike.max_power]
+	var power_text = "Max power: ....... %s" % [bike.max_power]
 	var speed_text = "Max speed: ....... %d" % [bike.max_speed]
 	var jump_text = "Max jump: .......... %d" % [bike.max_height_jump]
 	var lives_text = "Lives: .................... %d" % [PlayerData.lives]

@@ -25,11 +25,16 @@ var player_track_cfg: PlayerTrackCfg = load(PathData.PLAYER_TRACK_MODEL).new()
 func _init() -> void:
 	ID = 0
 	
-	var section: = get_section()
+	var section: = track_cfg.get_section(ID)
+	init_level_track(section, ID)
 	
+	has_win = false
+
+
+func init_level_track(section: String, id_track: int) -> void:
 	if track_cfg.get_id(section) != null:
 		level_id = track_cfg.get_level_id(section)
-		title = level_cfg.get_title(level_cfg.get_section(level_id))
+		title = level_cfg.get_title(level_cfg.get_section(id_track))
 		num_win = track_cfg.get_num_win(section)
 		init_time_level = track_cfg.get_init_time_level(section)
 		price = track_cfg.get_price(section)
@@ -37,12 +42,6 @@ func _init() -> void:
 		issue = track_cfg.get_issue(section)
 		resource = track_cfg.get_resource(section)
 		texture = load(track_cfg.get_texture(section))
-
-	has_win = false
-
-
-func get_section() -> String:
-	return "%s_%s" % [track_cfg.prefix, ID]
 
 
 func are_you_win() -> bool:

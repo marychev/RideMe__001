@@ -1,26 +1,59 @@
 extends MarginContainer
 class_name OptionMenu
 
+var bike_cfg: BikeCfg = load(PathData.BIKE_MODEL).new()
 var level_cfg: LevelCfg = load(PathData.LEVEL_MODEL).new()
 var track_cfg: TrackCfg = load(PathData.TRACK_MODEL).new()
 var player_track_cfg: PlayerTrackCfg = load(PathData.PLAYER_TRACK_MODEL).new()
 
 
 func _on_ClearGame_pressed():
+	bike_cfg.clear()
 	track_cfg.clear()
 	player_track_cfg.clear()
 	
 	GameData.current_level = null
 	GameData.current_track = null
+	PlayerData.player_bike = null
 	
 
 func _on_ResetGame_pressed():
+	create_bikes()
 	create_levels()
 	create_tracks()
 	create_player_track()
 
 
-# Managing to app user data
+# Managing to app user data: TODO: CREATE TO START
+
+func create_bikes() -> void:
+	var _title: = "Empty"
+	var _texture: ="res://Game/Bike/assets/I/animation/collision.png"
+	var _max_speed = 0.00
+	var _max_height_jump = 0.00
+	var _power = 0.00
+	var _max_power = 0.00
+	var _price: = 0
+	bike_cfg.create(_title, _texture, _max_speed, _max_height_jump, _power, _max_power, _price)
+	
+	_title = "Sataur"
+	_texture = "res://Game/Bike/assets/I/animation/sprites.png"
+	_max_speed = 520.00
+	_max_height_jump = 860.00
+	_power = 300.00
+	_max_power = 400.00
+	_price = 90
+	bike_cfg.create(_title, _texture, _max_speed, _max_height_jump, _power, _max_power, _price)
+	
+	_title = "Drawster"
+	_texture = "res://Game/Bike/assets/II/sprites.png"
+	_max_speed = 500.00
+	_max_height_jump = 870.00
+	_power = 300.00
+	_max_power = 420.00
+	_price = 80
+	bike_cfg.create(_title, _texture, _max_speed, _max_height_jump, _power, _max_power, _price)
+	
 
 func create_levels() -> void:
 	level_cfg.create(1, "Mountains")

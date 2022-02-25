@@ -82,7 +82,7 @@ func create(
 	config.set_value(section, KEY_MAX_SPEED, max_speed)
 	config.set_value(section, KEY_MAX_HEIGHT_JUMP, max_height_jump)
 	config.set_value(section, KEY_POWER, power)
-	config.set_value(section, KEY_POWER, max_power)
+	config.set_value(section, KEY_MAX_POWER, max_power)
 	config.set_value(section, KEY_PRICE, price)
 	
 	return config.save(path_file_cfg)

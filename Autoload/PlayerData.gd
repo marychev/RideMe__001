@@ -15,7 +15,7 @@ var rms_count: int = 0
 var rms: = 100 setget set_rms
 
 var type_title: int = -1
-var player_bike: Node2D
+var player_bike: EmptyBike
 
 onready var lives_value: Label = get_node(PathData.PATH_LIVES_COUNTER_VALUE)
 onready var rms_value: Label = get_node(PathData.PATH_RMS_COUNTER_VALUE)
