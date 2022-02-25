@@ -35,6 +35,9 @@ func _on_btn_menu_pressed() -> void:
 
 
 func init_slide(node: Node2D) -> void:
+	
+	print(node.name, "Node")
+	
 	if is_instance_valid(node):
 		selected_node = node
 		set_title(node)

@@ -10,8 +10,8 @@ var path_file_cfg: String
 var config: ConfigFile
 
 
-func get_section(id: int) -> String:
-	return "%s_%s" % [prefix.strip_edges(), id]
+func get_section(id_str) -> String:
+	return "%s_%s" % [prefix.strip_edges(), id_str]
 
 
 func get_config() -> ConfigFile:

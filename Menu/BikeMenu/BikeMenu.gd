@@ -25,6 +25,11 @@ func _on_Sataur_pressed():
 func _on_Drawster_pressed():
 	field_log.clear()
 	set_buttons_flat(btn_drawster)
+	
+	PlayerData.player_bike = drawer_bike
+	
+	print(drawer_bike.texture)
+	
 	init_slide(drawer_bike)
 
 

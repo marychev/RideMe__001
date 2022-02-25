@@ -37,6 +37,7 @@ const PATH_LEVEL_2 = PATH_GAME_LEVEL + "Level_2/Level_2.tscn"
 
 # levels' models
 const _PATH_MODEL = "res://config/"
+const BIKE_MODEL = _PATH_MODEL + "BikeCfg.gd"
 const LEVEL_MODEL = _PATH_MODEL + "LevelCfg.gd"
 const TRACK_MODEL = _PATH_MODEL + "TrackCfg.gd"
 const PLAYER_TRACK_MODEL = _PATH_MODEL + "PlayerTrackCfg.gd"

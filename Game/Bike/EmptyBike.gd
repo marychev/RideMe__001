@@ -1,15 +1,33 @@
 extends Node2D
 class_name EmptyBike
 
-var title: = "No bike"
-var texture: = preload("res://Game/Bike/assets/I/collision.png")
-var max_speed: = 0.00
-var max_height_jump: = 0.00
-var power: = 0.00
-var max_power: = 0.00
-var price: = 0
+
+# Keys
+var title: String
+var texture: Resource
+var max_speed: float
+var max_height_jump: float
+var power: float
+var max_power: float
+var price: int
+
+var bike_cfg: BikeCfg = load(PathData.BIKE_MODEL).new()
 
 
+func _init(section: String = "Bike_Empty"):
+	if bike_cfg.get_title(section):
+		title = bike_cfg.get_title(section)
+		texture = load(bike_cfg.get_texture(section))
+		max_speed = bike_cfg.get_max_speed(section)
+		max_height_jump = bike_cfg.get_max_height_jump(section)
+		power = bike_cfg.get_power(section)
+		max_power = bike_cfg.get_max_power(section)
+		price = bike_cfg.get_price(section)
+
+
+# -----------------
+# TODO: !!!!!!!!!!!
+# -----------------
 static func upgrade_bike_parameters(
 	selected_rms: int,
 	power_value: Label, power_added_rms: int,
