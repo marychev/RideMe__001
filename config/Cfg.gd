@@ -27,3 +27,14 @@ func get_config() -> ConfigFile:
 func clear() -> void:
 	config.clear()
 	config.save(path_file_cfg)
+
+
+func as_dict(section: String) -> Dictionary:
+	return {}
+
+
+func get_all() -> Array:
+	var store = []
+	for section in config.get_sections():
+		store.append(as_dict(section))
+	return store

@@ -2,6 +2,7 @@ extends MarginContainer
 class_name OptionMenu
 
 var bike_cfg: BikeCfg = load(PathData.BIKE_MODEL).new()
+var player_bike_cfg: PlayerBikeCfg = load(PathData.PLAYER_BIKE_MODEL).new()
 var level_cfg: LevelCfg = load(PathData.LEVEL_MODEL).new()
 var track_cfg: TrackCfg = load(PathData.TRACK_MODEL).new()
 var player_track_cfg: PlayerTrackCfg = load(PathData.PLAYER_TRACK_MODEL).new()
@@ -10,6 +11,7 @@ var player_track_cfg: PlayerTrackCfg = load(PathData.PLAYER_TRACK_MODEL).new()
 func _on_ClearGame_pressed():
 	bike_cfg.clear()
 	track_cfg.clear()
+	player_bike_cfg.clear()
 	player_track_cfg.clear()
 	
 	GameData.current_level = null
@@ -25,6 +27,11 @@ func _on_ResetGame_pressed():
 
 
 # Managing to app user data: TODO: CREATE TO START
+
+
+func create_player_bike() -> void:
+	player_bike_cfg.create("Empty")
+
 
 func create_bikes() -> void:
 	var _title: = "Empty"

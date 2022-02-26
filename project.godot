@@ -229,6 +229,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Game/Player/Player.gd"
 }, {
+"base": "Cfg",
+"class": "PlayerBikeCfg",
+"language": "GDScript",
+"path": "res://config/PlayerBikeCfg.gd"
+}, {
 "base": "Node",
 "class": "PlayerStompDetecter",
 "language": "GDScript",
@@ -329,6 +334,7 @@ _global_script_class_icons={
 "PathData": "",
 "PayRow": "",
 "Player": "",
+"PlayerBikeCfg": "",
 "PlayerStompDetecter": "",
 "PlayerTrackCfg": "",
 "RM": "",

@@ -25,11 +25,6 @@ func _on_Sataur_pressed():
 func _on_Drawster_pressed():
 	field_log.clear()
 	set_buttons_flat(btn_drawster)
-	
-	PlayerData.player_bike = drawer_bike
-	
-	print(drawer_bike.texture)
-	
 	init_slide(drawer_bike)
 
 
@@ -56,6 +51,7 @@ func _on_btn_pay_pressed() -> void:
 			else:
 				PlayerData.set_rms(PlayerData.rms - selected_node.price)
 				PlayerData.player_bike = selected_node
+				# save to DB
 				
 				btn_refit.modulate.a = 1
 				btn_pay.modulate.a = 0.4

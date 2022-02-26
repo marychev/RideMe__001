@@ -5,17 +5,17 @@ signal lives_updated
 signal rms_updated
 signal time_level_updated
 
-const INIT_LIVES: = 50
-
 var score: = 0 setget set_score
-var lives: = INIT_LIVES setget set_lives
 var time_level_count: int = 0
 var time_level: = 0 setget set_time_level
 var rms_count: int = 0
-var rms: = 100 setget set_rms
+
+var rms: int
+var lives: int
 
 var type_title: int = -1
 var player_bike: EmptyBike
+var player_bike_cfg: PlayerBikeCfg
 
 onready var lives_value: Label = get_node(PathData.PATH_LIVES_COUNTER_VALUE)
 onready var rms_value: Label = get_node(PathData.PATH_RMS_COUNTER_VALUE)
@@ -25,6 +25,15 @@ onready var player: KinematicBody2D = get_node(PathData.PATH_PLAYER)
 
 
 func _ready():
+	player_bike_cfg = load(PathData.PLAYER_BIKE_MODEL).new()
+	
+	var player_bike_data: Dictionary = {}
+	var bikes = player_bike_cfg.get_all()
+	if len(bikes) > 0:
+		player_bike_data = bikes[0]
+		rms = player_bike_data["rm"]
+		lives = player_bike_data["lives"]
+
 	if is_instance_valid(player) and is_instance_valid(GameData.current_track):
 		time_level = GameData.current_track.init_time_level
 
@@ -38,7 +47,7 @@ func reset_progress() -> void:
 	rms_count = 0
 	time_level_count = 0
 	score = 0
-	set_lives(INIT_LIVES)
+	set_lives(lives)
 
 
 func set_score(value: int) -> void:
@@ -61,12 +70,10 @@ func set_rms(value: int) -> void:
 	# when Splash as main sceen
 	if not is_instance_valid(rms_value):
 		rms_value = get_node(PathData.PATH_RMS_COUNTER_VALUE)
-
 	# when BikeMenu as main sceen
 	if not is_instance_valid(rms_value):
 		var path = "/root/BikeMenu/TextureRect/RMCounter/Background/Value"
 		rms_value = get_node(path)
-	
 	# when LevelMenu as main sceen
 	if not is_instance_valid(rms_value):
 		var path = "/root/LevelMenu/TextureRect/RMCounter/Background/Value"
