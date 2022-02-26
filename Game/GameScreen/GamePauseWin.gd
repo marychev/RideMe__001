@@ -20,7 +20,6 @@ func set_screen_items(pause_rect: ColorRect) -> void:
 	
 	var rm_item_res_value: Label = pause_rect.get_node("ResourceContainer/RMItemResource/Value")
 	var hourgrass_item_res_value: Label = pause_rect.get_node("ResourceContainer/HourgrassItemResource/Value")
-	
 	rm_item_res_value.set_text(str(PlayerData.rms_count))
 	hourgrass_item_res_value.set_text(str(PlayerData.time_level_count))
 	
@@ -44,9 +43,10 @@ func update_as_win_cfg():
 	if GameData.current_track:
 		var track_cfg: TrackCfg = load(PathData.TRACK_MODEL).new()
 		var player_track_cfg: PlayerTrackCfg = load(PathData.PLAYER_TRACK_MODEL).new()
-		
 		var track_section: = track_cfg.get_section(GameData.current_track.ID)
 		var player_track_section: = track_section.replace(track_cfg.prefix, player_track_cfg.prefix)
-	
+		
 		track_cfg.set_state(track_section, LevelTrackStates.PASSED)
 		player_track_cfg.set_best_time(player_track_section, timer_format(PlayerData.time_level))
+		
+		PlayerData.save_rms(PlayerData.rms + PlayerData.rms_count)

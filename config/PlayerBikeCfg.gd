@@ -8,53 +8,60 @@ const KEY_RM = "rm"
 const KEY_LIVES = "lives"
 const KEY_MAX_SPEED = "max_speed"
 const KEY_MAX_HEIGHT_JUMP = "max_height_jump"
-const KEY_POWER = "power"
 const KEY_MAX_POWER = "max_power"
+var SECTION_1
 
 
 func _init():
 	prefix = "PlayerBike"
 	path_file_cfg = RES + FILE
 	config = get_config()
+	SECTION_1 = get_section("1")
 
 
 # getters
 
-func get_bike_title(section: String) -> String:
+func get_bike_title(section: String = SECTION_1) -> String:
 	return config.get_value(section, KEY_BIKE_TITLE)
 
-func get_rm(section: String) -> int:
+func get_rm(section: String = SECTION_1) -> int:
 	return config.get_value(section, KEY_RM)
 
-func get_lives(section: String) -> int:
+func get_lives(section: String = SECTION_1) -> int:
 	return config.get_value(section, KEY_LIVES)
 
-func get_max_speed(section: String) -> float:
+func get_max_speed(section: String = SECTION_1) -> float:
 	return config.get_value(section, KEY_MAX_SPEED)
 
-func get_max_height_jump(section: String) -> float:
+func get_max_height_jump(section: String = SECTION_1) -> float:
 	return config.get_value(section, KEY_MAX_HEIGHT_JUMP)
 
-func get_power(section: String) -> float:
-	return config.get_value(section, KEY_POWER)
-
-func get_max_power(section: String) -> float:
+func get_max_power(section: String = SECTION_1) -> float:
 	return config.get_value(section, KEY_MAX_POWER)
 
 
 # setters
 
-func set_rm(rm: int):
-	var section: = prefix + "_1"
-	config.set_value(section, KEY_RM, rm)
+func set_rm(rm: int) -> void:
+	config.set_value(SECTION_1, KEY_RM, rm)
 	config.save(path_file_cfg)
 
-
-func set_bike_title(title: String):
-	var section: = prefix + "_1"
-	config.set_value(section, KEY_BIKE_TITLE, title)
+func set_bike_title(title: String) -> void:
+	config.set_value(SECTION_1, KEY_BIKE_TITLE, title)
 	config.save(path_file_cfg)
-	
+
+func set_max_speed(val: float) -> void:
+	config.set_value(SECTION_1, KEY_MAX_SPEED, val)
+	config.save(path_file_cfg)
+
+func set_max_height_jump(val: float) -> void:
+	config.set_value(SECTION_1, KEY_MAX_HEIGHT_JUMP, val)
+	config.save(path_file_cfg)
+
+func set_max_power(val: float) -> void:
+	config.set_value(SECTION_1, KEY_MAX_POWER, val)
+	config.save(path_file_cfg)
+
 
 # methods
 
@@ -73,7 +80,6 @@ func as_dict(section: String) -> Dictionary:
 		KEY_LIVES: get_lives(section),
 		KEY_MAX_SPEED: get_max_speed(section),
 		KEY_MAX_HEIGHT_JUMP: get_max_height_jump(section),
-		KEY_POWER: get_power(section),
 		KEY_MAX_POWER: get_max_power(section)
 	}
 
@@ -84,7 +90,6 @@ func create(
 	lives: int = 99,
 	max_speed: float = 0.00, 
 	max_height_jump: float = 0.00,
-	power: float = 0.00, 
 	max_power: float = 0.00
 ) -> int:
 
@@ -95,7 +100,6 @@ func create(
 	config.set_value(section, KEY_LIVES, lives)
 	config.set_value(section, KEY_MAX_SPEED, max_speed)
 	config.set_value(section, KEY_MAX_HEIGHT_JUMP, max_height_jump)
-	config.set_value(section, KEY_POWER, power)
 	config.set_value(section, KEY_MAX_POWER, max_power)
 	
 	return config.save(path_file_cfg)

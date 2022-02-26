@@ -9,14 +9,13 @@ var score: = 0 setget set_score
 var time_level_count: int = 0
 var time_level: = 0 setget set_time_level
 var rms_count: int = 0
+var type_title: int = -1
 
 var rms: int
 var lives: int
-
-var type_title: int = -1
 var player_bike: EmptyBike
-var player_bike_cfg: PlayerBikeCfg
 
+onready var player_bike_cfg: PlayerBikeCfg = load(PathData.PLAYER_BIKE_MODEL).new()
 onready var lives_value: Label = get_node(PathData.PATH_LIVES_COUNTER_VALUE)
 onready var rms_value: Label = get_node(PathData.PATH_RMS_COUNTER_VALUE)
 onready var time_level_value: Label = get_node(PathData.PATH_TIME_LEVEL_VALUE)
@@ -25,14 +24,13 @@ onready var player: KinematicBody2D = get_node(PathData.PATH_PLAYER)
 
 
 func _ready():
-	player_bike_cfg = load(PathData.PLAYER_BIKE_MODEL).new()
+	var player_bike_data: = player_bike_cfg.first()
+	set_player_data(player_bike_data)
 	
-	var player_bike_data: Dictionary = player_bike_cfg.first()
-	if not player_bike_data.empty():
-		rms = player_bike_data["rm"]
-		lives = player_bike_data["lives"]
+	if not player_bike_data.empty() and player_bike_data["bike_title"] != "Empty":
 		player_bike = load("res://Game/Bike/" + player_bike_data["bike_title"] + "Bike.gd").new()
-		
+		player_bike.set_player_bike(player_bike_data)
+
 	if is_instance_valid(player) and is_instance_valid(GameData.current_track):
 		time_level = GameData.current_track.init_time_level
 
@@ -131,3 +129,8 @@ func set_time_level_count(_player: KinematicBody2D) -> int:
 func set_type_title(_type_title: int):
 	type_title = _type_title
 
+
+func set_player_data(player_bike_data: Dictionary) -> void:
+	if not player_bike_data.empty() :
+		rms = player_bike_data["rm"]
+		lives = player_bike_data["lives"]
