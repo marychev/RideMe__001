@@ -42,6 +42,30 @@ func get_max_power(section: String) -> float:
 	return config.get_value(section, KEY_MAX_POWER)
 
 
+# setters
+
+func set_rm(rm: int):
+	var section: = prefix + "_1"
+	config.set_value(section, KEY_RM, rm)
+	config.save(path_file_cfg)
+
+
+func set_bike_title(title: String):
+	var section: = prefix + "_1"
+	config.set_value(section, KEY_BIKE_TITLE, title)
+	config.save(path_file_cfg)
+	
+
+# methods
+
+func first() -> Dictionary:
+	var records = get_all()
+	var first: = {}
+	if len(records) > 0:
+		first = records[0]
+	return first
+
+
 func as_dict(section: String) -> Dictionary:
 	return {
 		KEY_BIKE_TITLE: get_bike_title(section),
@@ -56,7 +80,7 @@ func as_dict(section: String) -> Dictionary:
 
 func create(
 	bike_title: String,
-	rm: int = 100,
+	rm: int = 99,
 	lives: int = 99,
 	max_speed: float = 0.00, 
 	max_height_jump: float = 0.00,

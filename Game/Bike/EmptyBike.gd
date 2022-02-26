@@ -34,7 +34,7 @@ static func upgrade_bike_parameters(
 	speed_value: Label,	speed_added_rms: int,
 	jump_value: Label,	jump_added_rms: int
 ):
-	PlayerData.set_rms(PlayerData.rms - selected_rms)
+	PlayerData.save_rms(PlayerData.rms - selected_rms)
 
 	PlayerData.player_bike.max_power += power_added_rms
 	set_param_value(power_value, PlayerData.player_bike.max_power)

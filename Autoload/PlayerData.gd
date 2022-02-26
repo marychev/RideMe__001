@@ -27,20 +27,19 @@ onready var player: KinematicBody2D = get_node(PathData.PATH_PLAYER)
 func _ready():
 	player_bike_cfg = load(PathData.PLAYER_BIKE_MODEL).new()
 	
-	var player_bike_data: Dictionary = {}
-	var bikes = player_bike_cfg.get_all()
-	if len(bikes) > 0:
-		player_bike_data = bikes[0]
+	var player_bike_data: Dictionary = player_bike_cfg.first()
+	if not player_bike_data.empty():
 		rms = player_bike_data["rm"]
 		lives = player_bike_data["lives"]
-
+		player_bike = load("res://Game/Bike/" + player_bike_data["bike_title"] + "Bike.gd").new()
+		
 	if is_instance_valid(player) and is_instance_valid(GameData.current_track):
 		time_level = GameData.current_track.init_time_level
 
 
 func reset_progress() -> void:
 	_ready()
-
+	
 	if not is_instance_valid(player):
 		player = load(PathData.PATH_PLAYER).new()
 		
@@ -79,10 +78,16 @@ func set_rms(value: int) -> void:
 		var path = "/root/LevelMenu/TextureRect/RMCounter/Background/Value"
 		rms_value = get_node(path)
 	
+	# for counter of game process
 	rms_count += 1
 	rms = value
 	rms_value.set_text(str(rms) + ' | ' + str(rms_count))
 	emit_signal("rms_updated")
+
+
+func save_rms(rm: int) -> void:
+	player_bike_cfg.set_rm(rm)
+	set_rms(rm)
 
 
 func set_time_level(value: int) -> void:

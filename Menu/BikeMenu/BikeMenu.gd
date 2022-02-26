@@ -49,9 +49,9 @@ func _on_btn_pay_pressed() -> void:
 			if PlayerData.rms < selected_node.price:
 				field_log.error("Need to more Rms!")
 			else:
-				PlayerData.set_rms(PlayerData.rms - selected_node.price)
+				PlayerData.player_bike_cfg.set_bike_title(selected_node.title)
+				PlayerData.save_rms(PlayerData.rms - selected_node.price)
 				PlayerData.player_bike = selected_node
-				# save to DB
 				
 				btn_refit.modulate.a = 1
 				btn_pay.modulate.a = 0.4

@@ -21,6 +21,7 @@ func _on_ClearGame_pressed():
 
 func _on_ResetGame_pressed():
 	create_bikes()
+	create_player_bike()
 	create_levels()
 	create_tracks()
 	create_player_track()
