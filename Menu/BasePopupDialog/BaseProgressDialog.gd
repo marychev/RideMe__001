@@ -22,6 +22,7 @@ func _on_btn_no_pressed() -> void:
 
 
 func _on_btn_yes_pressed():
+	GameData._ready()
 	btn_yes.modulate.a = 0.1
 		
 	if is_visible(): 

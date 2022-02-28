@@ -32,12 +32,12 @@ func _on_PayBtn_pressed():
 	PlayerData.save_rms(PlayerData.rms - _track.price)
 	player_track_cfg.create(_track_section, player_track_section)
 	track_cfg.set_state(_track_section, LevelTrackStates.ACTIVE)
-	
 	field_log.success("The %s track was paid!" % player_track_section)
-
-	if has_node("/root/LevelMenu"):
-		var level_menu: LevelMenu = get_node("/root/LevelMenu")
-		level_menu._on_btn_refit_pressed()
+	
+	yield(get_tree().create_timer(0.4), "timeout")
+	if has_node("/root/LevelMenu/LevelProgressDialog"):
+		var level_popup: LevelProgressDialog = get_node("/root/LevelMenu/LevelProgressDialog")
+		level_popup._on_btn_yes_pressed()
 
 
 func set_price() -> void:

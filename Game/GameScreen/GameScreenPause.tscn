@@ -144,6 +144,9 @@ anchor_bottom = 0.0
 margin_top = 91.0
 margin_right = 434.0
 margin_bottom = 167.0
+icon = null
+change_scene = ""
+is_flicker = false
 
 [node name="ReloadGameBtn" parent="PauseRect/Container" instance=ExtResource( 1 )]
 anchor_right = 0.0
@@ -151,6 +154,9 @@ anchor_bottom = 0.0
 margin_top = 182.0
 margin_right = 434.0
 margin_bottom = 258.0
+icon = null
+change_scene = ""
+is_flicker = false
 
 [node name="MainMenuBtn" parent="PauseRect/Container" instance=ExtResource( 8 )]
 anchor_right = 0.0
@@ -158,6 +164,8 @@ anchor_bottom = 0.0
 margin_top = 273.0
 margin_right = 434.0
 margin_bottom = 349.0
+icon = null
+is_flicker = false
 
 [node name="ExitBtn" parent="PauseRect/Container" instance=ExtResource( 2 )]
 anchor_right = 0.0
@@ -165,5 +173,8 @@ anchor_bottom = 0.0
 margin_top = 364.0
 margin_right = 434.0
 margin_bottom = 440.0
+icon = null
+change_scene = ""
+is_flicker = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

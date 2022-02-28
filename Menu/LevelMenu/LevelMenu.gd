@@ -27,6 +27,9 @@ func _ready():
 	btn_pay.modulate.a = 0.4
 	if PlayerData.player_bike and GameData.current_track:
 		btn_pay.modulate.a = 1
+	
+	if GameData.current_level and not is_instance_valid(GameData.current_track):
+		_on_btn_refit_pressed()
 
 
 func init_slide(level: Node2D) -> void:
