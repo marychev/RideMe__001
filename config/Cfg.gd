@@ -9,7 +9,7 @@ var config: ConfigFile
 
 
 func get_section(id_str) -> String:
-	return "%s_%s" % [prefix.strip_edges(), id_str]
+	return "%s_%s" % [prefix.strip_edges(), str(id_str)]
 
 
 func get_config() -> ConfigFile:

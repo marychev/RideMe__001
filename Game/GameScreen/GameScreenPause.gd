@@ -17,6 +17,9 @@ func _ready():
 	pause_rect.visible = true
 	title.visible = false
 	container_btn.visible = false
+	
+	var next_level_btn: NextLevelBtn = pause_rect.get_node("Container/NextLevelBtn")
+	next_level_btn.visible = false
 
 	$Timer.start()
 	$TimeToStart.set_text(str(_counter))
@@ -54,3 +57,4 @@ func _on_Timer_timeout() -> void:
 	else:
 		_counter -= 1
 		$TimeToStart.set_text(str(_counter))
+

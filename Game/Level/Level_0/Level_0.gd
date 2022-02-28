@@ -24,7 +24,6 @@ var player_track_cfg: PlayerTrackCfg = load(PathData.PLAYER_TRACK_MODEL).new()
 
 func _init() -> void:
 	ID = 0
-	
 	var section: = track_cfg.get_section(ID)
 	init_level_track(section, ID)
 	
@@ -34,7 +33,7 @@ func _init() -> void:
 func init_level_track(section: String, id_track: int) -> void:
 	if track_cfg.get_id(section) != null:
 		level_id = track_cfg.get_level_id(section)
-		title = level_cfg.get_title(level_cfg.get_section(id_track))
+		title = level_cfg.get_title(level_cfg.get_section(level_id))
 		num_win = track_cfg.get_num_win(section)
 		init_time_level = track_cfg.get_init_time_level(section)
 		price = track_cfg.get_price(section)

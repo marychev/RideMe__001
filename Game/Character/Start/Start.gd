@@ -15,7 +15,7 @@ func finished(player: Player):
 	
 	if is_instance_valid(pause_screen):
 		pause_screen.set_paused(true)
-		var continue_btn: Button = pause_screen.get_node("PauseRect/Container/ContinueBtn")
+		var continue_btn: TextureIconButton = pause_screen.get_node("PauseRect/Container/ContinueBtn")
 		continue_btn.visible = false
 	
 		var pause_win = load("res://Game/GameScreen/GamePauseWin.gd").new()

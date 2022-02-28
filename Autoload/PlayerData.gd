@@ -11,8 +11,8 @@ var time_level: = 0 setget set_time_level
 var rms_count: int = 0
 var type_title: int = -1
 
-var rms: int
-var lives: int
+var rms: int = 0 setget set_rms
+var lives: int = 0 setget set_lives
 var player_bike: EmptyBike
 
 onready var player_bike_cfg: PlayerBikeCfg = load(PathData.PLAYER_BIKE_MODEL).new()
@@ -63,7 +63,7 @@ func set_lives(value: int) -> void:
 	emit_signal("lives_updated")
 
 
-func set_rms(value: int) -> void:
+func set_rms(value: int, is_game_mode:= true) -> void:
 	# when Splash as main sceen
 	if not is_instance_valid(rms_value):
 		rms_value = get_node(PathData.PATH_RMS_COUNTER_VALUE)
@@ -76,16 +76,19 @@ func set_rms(value: int) -> void:
 		var path = "/root/LevelMenu/TextureRect/RMCounter/Background/Value"
 		rms_value = get_node(path)
 	
-	# for counter of game process
-	rms_count += 1
+	var _value = str(rms)
+	if is_game_mode:
+		rms_count += 1
+		_value += ' | ' + str(rms_count)
+		
 	rms = value
-	rms_value.set_text(str(rms) + ' | ' + str(rms_count))
+	rms_value.set_text(_value)
 	emit_signal("rms_updated")
 
 
 func save_rms(rm: int) -> void:
 	player_bike_cfg.set_rm(rm)
-	set_rms(rm)
+	set_rms(rm, false)
 
 
 func set_time_level(value: int) -> void:

@@ -45,7 +45,10 @@ func die(force: bool = false) -> void:
 		
 		if is_instance_valid(pause_screen):
 			pause_screen.set_paused(true)
-			var continue_btn: Button = pause_screen.get_node("PauseRect/Container/ContinueBtn")
+			
+			var next_level_btn: TextureIconButton = pause_screen.get_node("PauseRect/Container/NextLevelBtn")
+			var continue_btn: TextureIconButton = pause_screen.get_node("PauseRect/Container/ContinueBtn")
+			next_level_btn.visible = false
 			continue_btn.visible = false
 		
 			var pause_die = preload("res://Game/GameScreen/GamePauseDie.gd").new()

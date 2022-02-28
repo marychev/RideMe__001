@@ -65,8 +65,11 @@ func init_btn_level_menu():
 	else:
 		btn_level_menu.modulate.a = 1
 		btn_level_menu.disabled = false
-
-		if not GameData.current_level:
+		
+		print("current_level: ", GameData.current_level, ", track: ", GameData.current_track)
+		# get_active_track
+		
+		if not GameData.current_track:
 			btn_level_menu.anim_flicker()
 
 
@@ -84,11 +87,11 @@ func show_player_bike() -> void:
 
 
 func show_current_track() -> void:
-	var level_track: = GameData.current_track if GameData.current_track else GameData.current_level
-	if is_instance_valid(level_track):
+	#var level_track: = GameData.current_track if GameData.current_track else GameData.current_level
+	if is_instance_valid(GameData.current_track):
 		var _current_track: NinePatchRect = $HBoxContainer/CenterContainer/CurrentTrack
 		_current_track.visible = true
-		_current_track.texture = level_track.texture
+		_current_track.texture = GameData.current_track.texture  # level_track.texture
 
 
 func _get_configuration_warning() -> String:

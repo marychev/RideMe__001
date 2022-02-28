@@ -43,4 +43,5 @@ func init_slide(node: Node2D) -> void:
 
 func set_title(node: Node2D) -> void:
 	if is_instance_valid(node):
+		print(node)
 		$TextureRect/Title.text = node.title if node.title else "undefined"

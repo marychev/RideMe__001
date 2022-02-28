@@ -50,6 +50,10 @@ func _on_btn_pay_pressed() -> void:
 				field_log.error("Need to more Rms!")
 			else:
 				PlayerData.player_bike_cfg.set_bike_title(selected_node.title)
+				PlayerData.player_bike_cfg.set_max_speed(selected_node.max_speed)
+				PlayerData.player_bike_cfg.set_max_power(selected_node.max_power)
+				PlayerData.player_bike_cfg.set_max_height_jump(selected_node.max_height_jump)
+				
 				PlayerData.save_rms(PlayerData.rms - selected_node.price)
 				PlayerData.player_bike = selected_node
 				
@@ -90,19 +94,21 @@ func _on_btn_refit_pressed() -> void:
 func init_slide(bike) -> void:
 	.init_slide(bike)
 	set_menu_options(bike)
-
+	
+	if selected_node and not PlayerData.player_bike and selected_node.price < PlayerData.rms:
+		btn_pay.modulate.a = 1
 
 func init_btn_current_node() -> void:
+	btn_refit.modulate.a = 0.4
 	btn_current_node.flat = false
 	btn_current_node.disabled = true
-
+	
 	if PlayerData.player_bike:
 		init_slide(PlayerData.player_bike)
 		set_buttons_flat(btn_current_node)
 		
 		btn_refit.modulate.a = 1
 		btn_pay.modulate.a = 0.4
-
 		btn_current_node.disabled = false
 
 

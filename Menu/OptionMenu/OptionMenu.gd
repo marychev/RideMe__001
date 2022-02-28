@@ -27,9 +27,6 @@ func _on_ResetGame_pressed():
 	create_player_track()
 
 
-# Managing to app user data: TODO: CREATE TO START
-
-
 func create_player_bike() -> void:
 	player_bike_cfg.create("Empty")
 
@@ -93,7 +90,7 @@ func create_tracks() -> void:
 	_texture = "res://Game/Level/assets/sky.png"
 	_num_win = 20
 	_init_time_level = 40
-	_price = 120
+	_price = 10
 	track_cfg.create(_track_id, _level_id, _issue, _resource, _texture, _num_win,  _init_time_level, _price)
 
 

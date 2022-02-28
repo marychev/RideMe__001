@@ -20,7 +20,6 @@ func do_init(title: Label, pause_rect: ColorRect) -> void:
 		update_as_fail_cfg()
 
 
-
 func set_title_and_rect_color(title: Label, pause_rect: ColorRect):
 	if PlayerData.type_title != TitleChoices.WIN_PLAYER:
 		title.set_text(get_info())
@@ -55,7 +54,9 @@ func timer_format(time):
 
 func update_as_fail_cfg():
 	# Update writes to .cfg files
-	if GameData.current_track:
+	print("DIE: ", GameData.current_level, GameData.current_track)
+
+	if is_instance_valid(GameData.current_track):
 		var track_cfg: TrackCfg = load(PathData.TRACK_MODEL).new()
 		var player_track_cfg: PlayerTrackCfg = load(PathData.PLAYER_TRACK_MODEL).new()
 		
@@ -63,5 +64,5 @@ func update_as_fail_cfg():
 		var player_track_section: = track_section.replace(track_cfg.prefix, player_track_cfg.prefix)
 	
 		track_cfg.set_state(track_section, LevelTrackStates.FAIL)
-		player_track_cfg.set_best_time(player_track_section, timer_format("00:00:00"))
+		player_track_cfg.set_best_time(player_track_section, "00:00:00")
 		# player_track_cfg.set_best_time(player_track_section, timer_format(PlayerData.time_level))
