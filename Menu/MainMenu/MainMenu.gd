@@ -65,10 +65,7 @@ func init_btn_level_menu():
 	else:
 		btn_level_menu.modulate.a = 1
 		btn_level_menu.disabled = false
-		
-		print("current_level: ", GameData.current_level, ", track: ", GameData.current_track)
-		# get_active_track
-		
+				
 		if not GameData.current_track:
 			btn_level_menu.anim_flicker()
 

@@ -54,8 +54,6 @@ func timer_format(time):
 
 func update_as_fail_cfg():
 	# Update writes to .cfg files
-	print("DIE: ", GameData.current_level, GameData.current_track)
-
 	if is_instance_valid(GameData.current_track):
 		var track_cfg: TrackCfg = load(PathData.TRACK_MODEL).new()
 		var player_track_cfg: PlayerTrackCfg = load(PathData.PLAYER_TRACK_MODEL).new()

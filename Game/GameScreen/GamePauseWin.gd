@@ -53,7 +53,5 @@ func update_as_win_cfg():
 		track_cfg.set_state(track_section, LevelTrackStates.PASSED)
 		player_track_cfg.set_best_time(player_track_section, timer_format(PlayerData.time_level))
 		
-		print("SAVE RMS: update_as_win_cfg", PlayerData.rms, PlayerData.rms_count)
 		PlayerData.rms_count = 0
 		PlayerData.save_rms(PlayerData.rms)
-		print("---------")

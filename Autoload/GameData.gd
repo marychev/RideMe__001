@@ -11,7 +11,6 @@ func _ready():
 	var level_resource: String
 	var level_id: int
 	
-	print("INIT GAME LEVEL AND TRACK")
 	for section in track_cfg.config.get_sections():
 		if track_cfg.get_state(section) == LevelTrackStates.ACTIVE:
 			track_resource = track_cfg.get_resource(section)
@@ -30,9 +29,6 @@ func _ready():
 	
 	if level_id >= 0:
 		for _as_level in track_cfg.get_tracks(level_id):
-			
-			print(level_id, _as_level.id, "<<<")
-			
 			if level_id == _as_level.id:
 				level_resource = _as_level.resource
 				GameData.current_level = load(level_resource).instance()

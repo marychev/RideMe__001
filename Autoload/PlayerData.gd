@@ -5,7 +5,7 @@ signal lives_updated
 signal rms_updated
 signal time_level_updated
 
-var score: = 0 setget set_score
+var score: = 0 setget set_score # not used anywhere
 var time_level_count: int = 0
 var time_level: = 0 setget set_time_level
 var rms_count: int = 0
@@ -108,7 +108,6 @@ func set_time_level_count(_player: KinematicBody2D) -> int:
 
 	time_level_count += 1
 	
-	# define finish
 	if GameData.current_track.are_you_win():
 		var _finish = load("res://Game/Character/Start/Start.tscn")
 		var finish = _finish.instance()
@@ -116,11 +115,12 @@ func set_time_level_count(_player: KinematicBody2D) -> int:
 		var game = get_node(PathData.PATH_GAME)
 		var road = game.FirstRoadBody
 		var road_texture = road.get_node('sprite').texture.get_size()
-		
+		var finish_texture = finish.get_node('start').texture.get_size()
+
 		finish.set_position(
 			Vector2(
 				player.position.x + 888,
-				(road.position.y * 2) + (road_texture.y / 2)
+				(road.position.y * 2) - abs(finish_texture.y - road_texture.y)
 			)
 		)
 		

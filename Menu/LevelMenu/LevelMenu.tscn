@@ -97,23 +97,23 @@ margin_bottom = 420.0
 alignment = 1
 
 [node name="Image" type="CenterContainer" parent="TextureRect/SliderContainer/Detail"]
-margin_right = 637.0
+margin_right = 620.0
 margin_bottom = 360.0
-rect_min_size = Vector2( 600, 360 )
-size_flags_horizontal = 3
+rect_min_size = Vector2( 620, 360 )
+size_flags_horizontal = 6
+size_flags_vertical = 6
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Sprite" type="Sprite" parent="TextureRect/SliderContainer/Detail/Image"]
-position = Vector2( 18.8596, 31.3735 )
-scale = Vector2( 0.696705, 0.68024 )
+position = Vector2( 23.4631, 23.9864 )
 centered = false
 
 [node name="EmptySprite" type="Sprite" parent="TextureRect/SliderContainer/Detail/Image"]
-position = Vector2( 334, 214 )
-scale = Vector2( 0.9, 0.76 )
+scale = Vector2( 0.88, 0.82 )
 texture = ExtResource( 5 )
+centered = false
 
 [node name="MenuOptions" type="VBoxContainer" parent="TextureRect/SliderContainer/Detail"]
 margin_left = 641.0
