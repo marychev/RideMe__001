@@ -3,7 +3,7 @@ class_name BaseBikeMenu
 
 var selected_node: Node2D  # Track / Level / Bike - ?
 
-onready var field_log: FieldLog = preload("res://Game/scripts/FieldLog.gd").new()
+onready var field_log: FieldLog = preload("res://components/field_log/FieldLog.gd").new()
 
 onready var sprite: Sprite = $TextureRect/SliderContainer/Detail/Image/Sprite
 onready var menu_options: VBoxContainer = $TextureRect/SliderContainer/Detail/MenuOptions
@@ -21,7 +21,7 @@ func _ready():
 		
 	btn_current_node.flat = bool(PlayerData.player_bike != null)
 	
-	field_log.target = $TextureRect
+	field_log.target = $TextureRect/Title
 
 
 func _on_Current_pressed() -> void:

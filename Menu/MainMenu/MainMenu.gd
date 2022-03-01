@@ -7,7 +7,7 @@ export (String, FILE) var game_tscn: = ""
 var path_data: PathData = preload("res://Autoload/PathData.gd").new()
 var track_cfg: TrackCfg = preload("res://config/TrackCfg.gd").new()
 
-onready var field_log: FieldLog = preload("res://Game/scripts/FieldLog.gd").new()
+onready var field_log: FieldLog = preload("res://components/field_log/FieldLog.gd").new()
 onready var btn_bike_menu: TextureIconButton = $HBoxContainer/VBoxContainer/MenuOptions/BikeMenu
 onready var btn_level_menu: TextureIconButton = $HBoxContainer/VBoxContainer/MenuOptions/LevelMenu
 onready var btn_options: TextureIconButton = $HBoxContainer/VBoxContainer/MenuOptions/Options
@@ -49,6 +49,7 @@ func can_start_play() -> bool:
 func field_log_start_play() -> void:
 	if not PlayerData.player_bike:
 		field_log.error("No bike selected! You don't have a bike")
+		
 	elif not GameData.current_level:
 		field_log.error("No level selected! You don't have the current level")
 	elif not GameData.current_track:

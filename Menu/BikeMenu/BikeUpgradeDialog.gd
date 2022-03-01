@@ -1,6 +1,6 @@
 extends PopupDialog
 
-onready var field_log: FieldLog = preload("res://Game/scripts/FieldLog.gd").new()
+onready var field_log: FieldLog = preload("res://components/field_log/FieldLog.gd").new()
 onready var btn_no:TouchScreenButton  = $Nine/ButtonContainer/btn_no
 onready var btn_yes:TouchScreenButton  = $Nine/ButtonContainer/btn_yes
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/slide-track-00.png-8c0a882d5a9bee109e0daeada8280964.stex"
+path="res://.import/track-00.png-5e9d29e7efc7a3d16792c6b70b8af65b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Level/assets/slide-track-00.png"
-dest_files=[ "res://.import/slide-track-00.png-8c0a882d5a9bee109e0daeada8280964.stex" ]
+source_file="res://Game/Level/assets/slides/track-00.png"
+dest_files=[ "res://.import/track-00.png-5e9d29e7efc7a3d16792c6b70b8af65b.stex" ]
 
 [params]
 

@@ -70,7 +70,7 @@ func create_tracks() -> void:
 	var _level_id: = 1
 	var _issue: = "Collect the %s hourgrass!"
 	var _resource: = "res://Game/Level/Level_0/Level_0.tscn"
-	var _texture: = "res://Game/Level/assets/slide-track-00.png"
+	var _texture: = "res://Game/Level/assets/slides/track-00.png"
 	var _num_win: = 2
 	var _init_time_level: = 100
 	var _price: = 0
@@ -79,7 +79,7 @@ func create_tracks() -> void:
 	
 	_track_id = 1
 	_resource = "res://Game/Level/Level_1/Level_1.tscn"
-	_texture = "res://Game/Level/assets/slide-track-01.png"
+	_texture = "res://Game/Level/assets/slides/track-01.png"
 	_num_win = 5
 	_init_time_level = 20
 	_price = 2

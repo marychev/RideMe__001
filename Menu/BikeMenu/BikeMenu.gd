@@ -23,7 +23,11 @@ func _on_Sataur_pressed():
 
 
 func _on_Drawster_pressed():
-	field_log.clear()
+	#field_log.clear()
+	
+	yield(get_tree().create_timer(1), "timeout")
+	remove_child(field_log)
+	
 	set_buttons_flat(btn_drawster)
 	init_slide(drawer_bike)
 
@@ -44,6 +48,7 @@ func _on_Current_button_down() -> void:
 
 
 func _on_btn_pay_pressed() -> void:
+	field_log.clear()
 	if not PlayerData.player_bike:
 		if selected_node and selected_node.price > 0:
 			if PlayerData.rms < selected_node.price:
