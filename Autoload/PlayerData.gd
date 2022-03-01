@@ -12,7 +12,7 @@ var rms_count: int = 0
 var type_title: int = -1
 
 var rms: int = 0 setget set_rms
-var lives: int = 0 setget set_lives
+var lives: int = 99 setget set_lives
 var player_bike: EmptyBike
 
 onready var player_bike_cfg: PlayerBikeCfg = load(PathData.PLAYER_BIKE_MODEL).new()

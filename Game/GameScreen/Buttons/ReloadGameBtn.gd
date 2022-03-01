@@ -2,9 +2,9 @@ extends TextureIconButton
 class_name ReloadGameBtn
 
 
-func _pressed():
+func _on_pressed():
 	._on_pressed()
 	PlayerData.score = 0
-	PlayerData.set_lives(PlayerData.player_bike_cfg.get_lives())
+	GameData._ready()
 	get_tree().paused = false
 	get_tree().reload_current_scene()

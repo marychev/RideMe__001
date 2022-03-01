@@ -65,12 +65,9 @@ tracks/1/keys = {
 }
 
 [node name="RM" type="Area2D"]
-input_pickable = false
 collision_layer = 4
+input_pickable = false
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -86,8 +83,8 @@ anims/bouncing = SubResource( 2 )
 anims/fade_out = SubResource( 3 )
 
 [node name="VisibilityNotifier" type="VisibilityNotifier2D" parent="."]
-position = Vector2( 31.0168, 32.1571 )
-scale = Vector2( 3.09361, 3.04907 )
+position = Vector2( 40.9161, 101.454 )
+scale = Vector2( 67.7232, 38.263 )
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier" to="." method="_on_VisibilityNotifier_screen_exited"]
