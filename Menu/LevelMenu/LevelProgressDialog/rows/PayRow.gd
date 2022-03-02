@@ -1,7 +1,7 @@
 extends ActiveRow
 class_name PayRow
 
-onready var field_log: FieldLog = preload("res://Game/scripts/FieldLog.gd").new()
+onready var field_log: FieldLog = preload("res://components/field_log/FieldLog.gd").new()
 
 
 func _ready():
@@ -34,9 +34,10 @@ func _on_PayBtn_pressed():
 	track_cfg.set_state(_track_section, LevelTrackStates.ACTIVE)
 	field_log.success("The %s track was paid!" % player_track_section)
 	
-	yield(get_tree().create_timer(0.4), "timeout")
-	if has_node("/root/LevelMenu/LevelProgressDialog"):
-		var level_popup: LevelProgressDialog = get_node("/root/LevelMenu/LevelProgressDialog")
+	yield(get_tree().create_timer(2), "timeout")
+	var path_popup = "/root/LevelMenu/LevelProgressDialog"
+	if has_node(path_popup):
+		var level_popup: = get_node(path_popup)
 		level_popup._on_btn_yes_pressed()
 
 

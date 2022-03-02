@@ -11,15 +11,8 @@ use_filter = true
 extra_spacing_char = 1
 font_data = ExtResource( 2 )
 
-[node name="FieldLog" type="MarginContainer"]
-anchor_right = 1.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/margin_right = 1
+[node name="FieldLog" type="CanvasLayer"]
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 1365.0
@@ -42,7 +35,6 @@ custom_constants/line_spacing = 0
 custom_fonts/font = SubResource( 1 )
 text = "<Note:  Try ro reboot game>"
 align = 1
-percent_visible = -0.0454545
 __meta__ = {
 "_edit_use_anchors_": true
 }

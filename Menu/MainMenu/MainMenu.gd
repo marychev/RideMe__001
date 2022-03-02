@@ -35,8 +35,7 @@ func _ready() -> void:
 
 func _on_Play_pressed() -> void:
 	if not can_start_play():
-		field_log.target = $HBoxContainer/VBoxContainer/Logo
-		field_log.position = Vector2(10, 66)
+		field_log.target = $"."
 		field_log_start_play()
 	else:
 		get_tree().change_scene(game_tscn)
@@ -47,6 +46,8 @@ func can_start_play() -> bool:
 
 
 func field_log_start_play() -> void:
+	field_log.clear()
+	
 	if not PlayerData.player_bike:
 		field_log.error("No bike selected! You don't have a bike")
 		
