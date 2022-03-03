@@ -384,7 +384,6 @@ GameData="*res://Autoload/GameData.tscn"
 
 window/size/width=1366
 window/size/height=768
-window/size/resizable=false
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
