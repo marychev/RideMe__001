@@ -5,22 +5,22 @@ signal lives_updated
 signal rms_updated
 signal time_level_updated
 
-var score: = 0 setget set_score # not used anywhere
-var time_level_count: int = 0
-var time_level: = 0 setget set_time_level
-var rms_count: int = 0
-var type_title: int = -1
-
-var rms: int = 0 setget set_rms
-var lives: int = 99 setget set_lives
-var player_bike: EmptyBike
-
 onready var player_bike_cfg: PlayerBikeCfg = load(PathData.PLAYER_BIKE_MODEL).new()
 onready var lives_value: Label = get_node(PathData.PATH_LIVES_COUNTER_VALUE)
 onready var rms_value: Label = get_node(PathData.PATH_RMS_COUNTER_VALUE)
 onready var time_level_value: Label = get_node(PathData.PATH_TIME_LEVEL_VALUE)
 onready var gui_time: VBoxContainer = get_node(PathData.PATH_GUI_TIME)
 onready var player: KinematicBody2D = get_node(PathData.PATH_PLAYER)
+
+var score: = 0 setget set_score # not used anywhere
+var time_level_count: int = 0
+var time_level: = 0 setget set_time_level
+var rms_count: int = 0
+var type_title: int = -1
+
+var rms: int = PlayerBikeCfg.DEFAULT_VALUE setget set_rms
+var lives: int = 99 setget set_lives
+var player_bike: EmptyBike
 
 
 func _ready():

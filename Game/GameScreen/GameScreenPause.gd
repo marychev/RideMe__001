@@ -38,23 +38,24 @@ func set_paused(value: bool) -> void:
 
 
 func _on_Timer_timeout() -> void:
-	if _counter == 0:
-		$Timer.stop()
-		$Timer.queue_free()
-		$TimeToStart.queue_free()	
-	elif _counter == 1:
-		set_paused(false)
-		pause_rect.visible = false
-		title.visible = true
-		container_btn.visible = true
-	
-		$TimeToStart.get_font("font").size = 64
+	if is_instance_valid(GameData.current_track):
+		if _counter == 0:
+			$Timer.stop()
+			$Timer.queue_free()
+			$TimeToStart.queue_free()	
+		elif _counter == 1:
+			set_paused(false)
+			pause_rect.visible = false
+			title.visible = true
+			container_btn.visible = true
 		
-		var title = "Go go go\r\n%s: %d" % [GameData.current_level.title, GameData.current_track.ID]
-		$TimeToStart.set_text(title)
-		
-		_counter -= 1
-	else:
-		_counter -= 1
-		$TimeToStart.set_text(str(_counter))
+			$TimeToStart.get_font("font").size = 64
+			
+			var title = "Go go go\r\n%s: %d" % [GameData.current_level.title, GameData.current_track.ID]
+			$TimeToStart.set_text(title)
+			
+			_counter -= 1
+		else:
+			_counter -= 1
+			$TimeToStart.set_text(str(_counter))
 

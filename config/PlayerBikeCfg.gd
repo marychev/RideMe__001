@@ -9,6 +9,7 @@ const KEY_LIVES = "lives"
 const KEY_MAX_SPEED = "max_speed"
 const KEY_MAX_HEIGHT_JUMP = "max_height_jump"
 const KEY_MAX_POWER = "max_power"
+const DEFAULT_VALUE = 9999
 var SECTION_1
 
 
@@ -86,7 +87,7 @@ func as_dict(section: String) -> Dictionary:
 
 func create(
 	bike_title: String,
-	rm: int = 99,
+	rm: int = DEFAULT_VALUE,
 	lives: int = 99,
 	max_speed: float = 0.00, 
 	max_height_jump: float = 0.00,
