@@ -111,19 +111,15 @@ func set_time_level_count(_player: KinematicBody2D) -> int:
 	if GameData.current_track.are_you_win():
 		var _finish = load("res://Game/Character/Start/Start.tscn")
 		var finish = _finish.instance()
-		
 		var game = get_node(PathData.PATH_GAME)
-		var road = game.FirstRoadBody
-		var road_texture = road.get_node('sprite').texture.get_size()
-		var finish_texture = finish.get_node('start').texture.get_size()
-
+		
 		finish.set_position(
 			Vector2(
 				player.position.x + 888,
-				(road.position.y * 2) - abs(finish_texture.y - road_texture.y)
+				player.position.y + 88
 			)
 		)
-		
+		finish.z_index = 1
 		game.add_child(finish)
 
 	return time_level_count

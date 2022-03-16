@@ -42,15 +42,15 @@ static func upgrade_bike_parameters(
 
 	var player_bike_cfg = PlayerData.player_bike_cfg
 	
-	PlayerData.player_bike.max_power += power_added_rms
+	PlayerData.player_bike.max_power += power_added_rms * 10
 	set_param_value(power_label, PlayerData.player_bike.max_power)
 	player_bike_cfg.set_max_power(PlayerData.player_bike.max_power)
 	
-	PlayerData.player_bike.max_speed += speed_added_rms
+	PlayerData.player_bike.max_speed += speed_added_rms * 10
 	set_param_value(speed_label, PlayerData.player_bike.max_speed)
 	player_bike_cfg.set_max_speed(PlayerData.player_bike.max_speed)
 	
-	PlayerData.player_bike.max_height_jump += jump_added_rms
+	PlayerData.player_bike.max_height_jump += jump_added_rms * 10
 	set_param_value(jump_label, PlayerData.player_bike.max_height_jump)
 	player_bike_cfg.set_max_height_jump(PlayerData.player_bike.max_height_jump)
 

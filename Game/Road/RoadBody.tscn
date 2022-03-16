@@ -7,27 +7,26 @@
 extents = Vector2( 616, 16 )
 
 [node name="RoadBody" type="StaticBody2D"]
-position = Vector2( 247.116, 256.088 )
 collision_layer = 8
 collision_mask = 0
 script = ExtResource( 2 )
 
 [node name="sprite" type="Sprite" parent="."]
-position = Vector2( -247.116, 255.912 )
+position = Vector2( 4.59955, 4.19646 )
 scale = Vector2( 1.64324, 1 )
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2( 352.884, 335.912 )
+position = Vector2( 604.6, 84.1965 )
 shape = SubResource( 1 )
 
 [node name="sprite2" type="Sprite" parent="."]
-position = Vector2( 968.884, 255.912 )
+position = Vector2( 1220.6, 4.19646 )
 scale = Vector2( 1.64324, 1 )
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Collision2" type="CollisionShape2D" parent="."]
-position = Vector2( 1576.88, 335.912 )
+position = Vector2( 1828.6, 84.1965 )
 shape = SubResource( 1 )

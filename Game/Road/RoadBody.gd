@@ -7,10 +7,6 @@ var PlayerScn
 onready var road_width = $sprite.texture.get_size().x
 
 
-func __force_init__(player_node):
-	PlayerScn = player_node
-
-
 func repeat_two_sprites():
 	has_repeat and _repeat_two_sprites()
 	
