@@ -8,7 +8,7 @@ friction = 0.02
 rough = true
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 0.726876, 15.8628 )
+extents = Vector2( 2.83379, 15.8628 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 0.867264, 29.1898 )
@@ -30,7 +30,7 @@ centered = false
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 rotation = 6.28319
 scale = Vector2( 5.7, 2.6 )
-polygon = PoolVector2Array( 4.12254, -28.1343, 10.3186, -26.5173, 14.1543, -21.3426, 15.4371, -13.7559, 16.2736, 9.67449, -23.9946, 13.041, -23.981, 0.812164, -7.67949, -24.2532 )
+polygon = PoolVector2Array( 4.12254, -28.1343, 10.3186, -26.5173, 14.1543, -21.3426, 15.4371, -13.7559, 16.2736, 9.67449, -22.107, 11.6677, -23.2662, 6.49453, -22.6038, -0.0399952, -7.67949, -24.2532 )
 
 [node name="VisibilityNotifier" type="VisibilityNotifier2D" parent="."]
 position = Vector2( 4200, -11.143 )
@@ -41,8 +41,8 @@ position = Vector2( -1.12247, 0 )
 rotation = 0.0629231
 
 [node name="Collision" type="CollisionShape2D" parent="StompDetector"]
-position = Vector2( -134.094, 26.4777 )
-rotation = -0.0622658
+position = Vector2( -124.253, 24.685 )
+rotation = -0.321638
 shape = SubResource( 2 )
 
 [node name="Collision2" type="CollisionShape2D" parent="StompDetector"]

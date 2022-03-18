@@ -89,8 +89,8 @@ func create_tracks() -> void:
 	_track_id = 2
 	_resource = "res://Game/Level/Level_2/Level_2.tscn"
 	_texture = "res://Game/Level/assets/mountains-bottom.png"
-	_num_win = 20
-	_init_time_level = 40
+	_num_win = 10
+	_init_time_level = 10
 	_price = 10
 	track_cfg.create(_track_id, _level_id, _issue, _resource, _texture, _num_win,  _init_time_level, _price)
 

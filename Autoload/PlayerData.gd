@@ -116,7 +116,7 @@ func set_time_level_count(_player: KinematicBody2D) -> int:
 		finish.set_position(
 			Vector2(
 				player.position.x + 888,
-				player.position.y + 88
+				364
 			)
 		)
 		finish.z_index = 1
