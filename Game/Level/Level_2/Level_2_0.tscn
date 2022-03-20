@@ -46,6 +46,9 @@ position = Vector2( 2641.3, 1092.6 )
 [node name="Puddle" parent="." instance=ExtResource( 9 )]
 position = Vector2( 3648.93, 1354 )
 
+[node name="Hourgrass3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 6780.93, 1193.54 )
+
 [node name="RoadBody3" parent="." instance=ExtResource( 13 )]
 position = Vector2( 4860, 1314 )
 

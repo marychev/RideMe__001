@@ -208,20 +208,11 @@ position = Vector2( 27252.3, 1211.45 )
 rotation = -0.33083
 
 [node name="Plank2" parent="Level_1_3" instance=ExtResource( 9 )]
-position = Vector2( 27874.9, 1197.11 )
+position = Vector2( 27844.6, 1176.93 )
 rotation = 0.528958
 
 [node name="MovingPlatform2" parent="Level_1_3" instance=ExtResource( 3 )]
 position = Vector2( 29077.9, 1261.05 )
-
-[node name="Plank3" parent="Level_1_3" instance=ExtResource( 9 )]
-position = Vector2( 30151, 1271.94 )
-
-[node name="Plank4" parent="Level_1_3" instance=ExtResource( 9 )]
-position = Vector2( 30824.5, 1173.17 )
-
-[node name="Plank5" parent="Level_1_3" instance=ExtResource( 9 )]
-position = Vector2( 31446, 1037.49 )
 
 [node name="Hourgrass6" parent="Level_1_3" instance=ExtResource( 11 )]
 position = Vector2( 32650.2, 1110.86 )
@@ -233,6 +224,15 @@ position = Vector2( 29170.9, 1314 )
 position = Vector2( 32733.8, 1166.33 )
 linear_damp = 18.0
 applied_torque = 2.0
+
+[node name="Plank3" parent="Level_1_3" instance=ExtResource( 9 )]
+position = Vector2( 30151, 1271.94 )
+
+[node name="Plank4" parent="Level_1_3" instance=ExtResource( 9 )]
+position = Vector2( 30824.5, 1173.17 )
+
+[node name="Plank5" parent="Level_1_3" instance=ExtResource( 9 )]
+position = Vector2( 31446, 1037.49 )
 
 [node name="RoadBody14" parent="Level_1_3" instance=ExtResource( 14 )]
 position = Vector2( 31602.5, 1314 )

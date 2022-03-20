@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Game/Character/Rock/StaticRock.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Character/MovingPanel/MovingPlatform.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Game/Character/RM/RM.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Game/Character/Hourgrass/Hourgrass.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Game/Character/People/GirlBack/GirlBack.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Game/Character/People/KickScooter/KSMan/KSMan.tscn" type="PackedScene" id=12]
 
 [node name="Level_2_2" type="Node"]
 
@@ -123,19 +124,13 @@ z_index = 1
 position = Vector2( 40600, 1314 )
 
 [node name="RM" parent="." instance=ExtResource( 9 )]
-position = Vector2( 44734.4, 1230.36 )
+position = Vector2( 44479.9, 1192.56 )
 
 [node name="RM3" parent="." instance=ExtResource( 9 )]
-position = Vector2( 44895, 1181.82 )
+position = Vector2( 44824.4, 1160.4 )
 
 [node name="RM4" parent="." instance=ExtResource( 9 )]
-position = Vector2( 45036, 1242.82 )
-
-[node name="RM5" parent="." instance=ExtResource( 9 )]
-position = Vector2( 45173, 1176.82 )
-
-[node name="RM6" parent="." instance=ExtResource( 9 )]
-position = Vector2( 45305, 1228.82 )
+position = Vector2( 45025.9, 1205.02 )
 
 [node name="Hourgrass" parent="." instance=ExtResource( 10 )]
 position = Vector2( 36855, 1164.83 )
@@ -170,3 +165,6 @@ position = Vector2( 43759.8, 1284 )
 
 [node name="Refit" parent="." instance=ExtResource( 6 )]
 position = Vector2( 33063, 1076.97 )
+
+[node name="KSMan" parent="." instance=ExtResource( 12 )]
+position = Vector2( 44774.8, 1179.93 )

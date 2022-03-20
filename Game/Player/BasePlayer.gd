@@ -76,7 +76,11 @@ func get_direction() -> Vector2:
 
 
 func max_value(value, max_value):
+	print("value: ", value, ", max_value: ", max_value)	
+	if value is Vector2:
+		value = value.x
 	return max_value if value > max_value else value
+
 
 
 func positive_max_value(value, max_value):
