@@ -135,7 +135,6 @@ position = Vector2( 61142, 1314 )
 [node name="Hourgrass4" parent="." instance=ExtResource( 7 )]
 position = Vector2( 63514.4, 1288.85 )
 rotation = 0.00330378
-scale = Vector2( 1, 1 )
 
 [node name="Bench2" parent="." instance=ExtResource( 12 )]
 position = Vector2( 61097.7, 1267.35 )
@@ -218,4 +217,3 @@ position = Vector2( 63573.6, 1314.16 )
 [node name="Hourgrass5" parent="." instance=ExtResource( 7 )]
 position = Vector2( 64742.9, 1281.25 )
 rotation = 0.00330378
-scale = Vector2( 1, 1 )

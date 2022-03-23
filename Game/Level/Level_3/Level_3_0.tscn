@@ -1,0 +1,183 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Game/Character/Crossroads/Crossroad.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Character/Bench/Bench.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game/Character/Crossroads/CrossroadWithGirl.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Game/Character/Lamp/Lamp.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Game/Character/Plank/Plank.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Game/Character/Grass/Grass.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Game/Character/Hourgrass/Hourgrass.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Game/Character/People/KickScooter/KSMan/KSMan.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Game/Character/Start/Start.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Game/Road/RoadBody.tscn" type="PackedScene" id=13]
+
+[node name="Level_3_0" type="Node"]
+
+[node name="RoadBody" parent="." instance=ExtResource( 13 )]
+position = Vector2( 0, 1314 )
+
+[node name="Start" parent="." instance=ExtResource( 12 )]
+position = Vector2( -85.753, 1310 )
+
+[node name="Lamp" parent="." instance=ExtResource( 4 )]
+position = Vector2( 170.101, 1162.38 )
+
+[node name="Lamp0" parent="Lamp" instance=ExtResource( 4 )]
+position = Vector2( -106.374, -41.9705 )
+scale = Vector2( 0.8, 0.8 )
+z_index = -1
+
+[node name="RoadBody2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 2431.92, 1314 )
+
+[node name="Lamp2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2374.42, 1160.27 )
+
+[node name="Lamp0" parent="Lamp2" instance=ExtResource( 4 )]
+position = Vector2( -118.447, -44.0006 )
+scale = Vector2( 0.8, 0.8 )
+z_index = -1
+
+[node name="RoadBody3" parent="." instance=ExtResource( 13 )]
+position = Vector2( 4863.92, 1314 )
+
+[node name="Crossroad" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3652.18, 1363.76 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="Lamp3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 4806.73, 1159.88 )
+
+[node name="Lamp0" parent="Lamp3" instance=ExtResource( 4 )]
+position = Vector2( -114.924, -44.7498 )
+scale = Vector2( 0.8, 0.8 )
+z_index = -1
+
+[node name="Hourgrass" parent="." instance=ExtResource( 7 )]
+position = Vector2( 4756.8, 1060.47 )
+
+[node name="RoadBody4" parent="." instance=ExtResource( 13 )]
+position = Vector2( 7295.88, 1314 )
+
+[node name="Bench2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 6113.4, 1363.45 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+
+[node name="Plank" parent="Bench2" instance=ExtResource( 5 )]
+position = Vector2( 278.156, 22.4902 )
+rotation = -2.96713
+sleeping = false
+
+[node name="Lamp4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 7238.68, 1159.78 )
+
+[node name="Lamp0" parent="Lamp4" instance=ExtResource( 4 )]
+position = Vector2( -114.924, -44.7498 )
+scale = Vector2( 0.8, 0.8 )
+z_index = -1
+
+[node name="Hourgrass2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 9620.27, 1066.94 )
+
+[node name="RoadBody5" parent="." instance=ExtResource( 13 )]
+position = Vector2( 9727.84, 1314 )
+
+[node name="Lamp5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 9670.65, 1159.91 )
+
+[node name="Lamp0" parent="Lamp5" instance=ExtResource( 4 )]
+position = Vector2( -114.924, -44.7498 )
+scale = Vector2( 0.8, 0.8 )
+z_index = -1
+
+[node name="Bench" parent="." instance=ExtResource( 2 )]
+position = Vector2( 10640.3, 1359.74 )
+
+[node name="Plank2" parent="Bench" instance=ExtResource( 5 )]
+position = Vector2( -233.889, 25.4321 )
+rotation = -0.174466
+scale = Vector2( 1, -1 )
+sleeping = false
+
+[node name="Grass" parent="." instance=ExtResource( 6 )]
+position = Vector2( 10603.5, 1292.07 )
+rotation = -0.0337304
+
+[node name="RoadBody6" parent="." instance=ExtResource( 13 )]
+position = Vector2( 12159.6, 1314 )
+
+[node name="Lamp6" parent="." instance=ExtResource( 4 )]
+position = Vector2( 12102.4, 1160.26 )
+
+[node name="Lamp0" parent="Lamp6" instance=ExtResource( 4 )]
+position = Vector2( -114.924, -44.7498 )
+scale = Vector2( 0.8, 0.8 )
+z_index = -1
+
+[node name="Hourgrass3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 14465.6, 1174.01 )
+
+[node name="RoadBody7" parent="." instance=ExtResource( 13 )]
+position = Vector2( 14591.5, 1314 )
+
+[node name="Lamp7" parent="." instance=ExtResource( 4 )]
+position = Vector2( 14534.3, 1160.14 )
+
+[node name="Lamp0" parent="Lamp7" instance=ExtResource( 4 )]
+position = Vector2( -114.924, -44.7498 )
+scale = Vector2( 0.8, 0.8 )
+z_index = -1
+
+[node name="Crossroads" parent="." instance=ExtResource( 3 )]
+position = Vector2( 15838.3, 1359.2 )
+scale = Vector2( 0.36, 0.36 )
+
+[node name="Grass2" parent="Crossroads" instance=ExtResource( 6 )]
+position = Vector2( -313.387, -37.0259 )
+scale = Vector2( 1.6834, 1.6834 )
+
+[node name="RoadBody8" parent="." instance=ExtResource( 13 )]
+position = Vector2( 17022, 1314 )
+
+[node name="Lamp8" parent="." instance=ExtResource( 4 )]
+position = Vector2( 16966.3, 1159.94 )
+
+[node name="Lamp0" parent="Lamp8" instance=ExtResource( 4 )]
+position = Vector2( -114.924, -44.7498 )
+scale = Vector2( 0.8, 0.8 )
+z_index = -1
+
+[node name="Hourgrass4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 19340.6, 1136.89 )
+
+[node name="RoadBody9" parent="." instance=ExtResource( 13 )]
+position = Vector2( 19453.6, 1314 )
+
+[node name="Lamp9" parent="." instance=ExtResource( 4 )]
+position = Vector2( 19397.9, 1160.57 )
+
+[node name="Lamp0" parent="Lamp9" instance=ExtResource( 4 )]
+position = Vector2( -114.924, -44.7498 )
+scale = Vector2( 0.8, 0.8 )
+z_index = -1
+
+[node name="KSMan" parent="." instance=ExtResource( 8 )]
+position = Vector2( 20629.4, 1286.32 )
+
+[node name="KSMan2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 21124.4, 1271.59 )
+
+[node name="KSMan3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 21822.4, 1248.18 )
+
+[node name="RoadBody10" parent="." instance=ExtResource( 13 )]
+position = Vector2( 21884, 1314 )
+
+[node name="Lamp10" parent="." instance=ExtResource( 4 )]
+position = Vector2( 21829.3, 1159.98 )
+
+[node name="Lamp0" parent="Lamp10" instance=ExtResource( 4 )]
+position = Vector2( -114.924, -44.7498 )
+scale = Vector2( 0.8, 0.8 )
+z_index = -1

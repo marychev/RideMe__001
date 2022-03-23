@@ -29,6 +29,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Game/GUI/bar/Bar.gd"
 }, {
+"base": "Area2D",
+"class": "BaseArea2D",
+"language": "GDScript",
+"path": "res://Game/Character/script/BaseArea2D.gd"
+}, {
 "base": "MarginContainer",
 "class": "BaseBikeMenu",
 "language": "GDScript",
@@ -134,7 +139,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Game/GUI/controls/GoBtn.gd"
 }, {
-"base": "Area2D",
+"base": "BaseArea2D",
 "class": "Grass",
 "language": "GDScript",
 "path": "res://Game/Character/Grass/Grass.gd"
@@ -188,6 +193,11 @@ _global_script_classes=[ {
 "class": "Level_2",
 "language": "GDScript",
 "path": "res://Game/Level/Level_2/Level_2.gd"
+}, {
+"base": "Level_0",
+"class": "Level_3",
+"language": "GDScript",
+"path": "res://Game/Level/Level_3/Level_3.gd"
 }, {
 "base": "MarginContainer",
 "class": "LivesCounter",
@@ -254,6 +264,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://config/PlayerTrackCfg.gd"
 }, {
+"base": "BaseArea2D",
+"class": "Puddle",
+"language": "GDScript",
+"path": "res://Game/Character/Puddle/Puddle.gd"
+}, {
 "base": "Area2D",
 "class": "RM",
 "language": "GDScript",
@@ -309,6 +324,7 @@ _global_script_class_icons={
 "Actor": "",
 "AnimatePeople": "",
 "Bar": "",
+"BaseArea2D": "",
 "BaseBikeMenu": "",
 "BasePlayer": "",
 "BaseProgressDialog": "",
@@ -341,6 +357,7 @@ _global_script_class_icons={
 "Level_0": "",
 "Level_1": "",
 "Level_2": "",
+"Level_3": "",
 "LivesCounter": "",
 "MainMenu": "",
 "MainMenuBtn": "",
@@ -354,6 +371,7 @@ _global_script_class_icons={
 "PlayerBikeCfg": "",
 "PlayerStompDetecter": "",
 "PlayerTrackCfg": "",
+"Puddle": "",
 "RM": "",
 "ReloadGameBtn": "",
 "RoadBody": "",

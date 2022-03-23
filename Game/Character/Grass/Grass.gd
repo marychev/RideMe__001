@@ -1,11 +1,10 @@
-extends Area2D
+extends BaseArea2D
 class_name Grass
 
 
 func _on_body_entered(body):
 	if body.name == "Player":
-		body.set_speed(body.speed.x/2)
-		body.set_power(body.power/2)
+		._on_body_entered(body)
 		
 		var animation: AnimationPlayer = body.get_node("AnimationPlayer")
 		if animation.current_animation:
@@ -14,7 +13,3 @@ func _on_body_entered(body):
 
 func _on_VisibilityEnabler_screen_exited() -> void:
 	queue_free()
-
-
-func _ready() -> void:
-	set_physics_process(false)
