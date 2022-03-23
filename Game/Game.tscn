@@ -20,5 +20,4 @@ margin_bottom = -35.6569
 [node name="Background" parent="." instance=ExtResource( 5 )]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 0, -141.563 )
 z_index = 1

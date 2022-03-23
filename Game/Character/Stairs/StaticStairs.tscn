@@ -14,11 +14,11 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 19.2977, 129.619, 10.2662, 54.7914, 106.605, 5.80164, 644.734, 5.80161, 747.987, 58.6092, 732.834, 130.413 )
+polygon = PoolVector2Array( 19.2977, 129.619, 10.2662, 54.7914, 106.605, 5.80164, 644.734, 5.80161, 747.987, 58.6092, 731, 129, 549, 124, 375, 88, 203, 124 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-position = Vector2( 358.744, 85.2085 )
-scale = Vector2( 75.7211, 42.9768 )
+position = Vector2( 278, -183 )
+scale = Vector2( 131.5, 74.6351 )
 
 [node name="StompDetector" type="Area2D" parent="."]
 

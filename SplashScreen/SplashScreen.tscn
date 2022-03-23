@@ -26,9 +26,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 2 )
 script = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 main_menu_tscn = "res://Menu/MainMenu/MainMenu.tscn"
 
 [node name="Logo" type="TextureRect" parent="."]

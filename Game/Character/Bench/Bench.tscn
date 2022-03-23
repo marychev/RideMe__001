@@ -19,8 +19,8 @@ position = Vector2( -20091.9, -89.765 )
 polygon = PoolVector2Array( 20007.4, 97.9757, 20045.7, 148.915, 20057.5, 124.221, 20142.3, 84.3736, 20177.4, 44.7481, 20134.8, 32.7994 )
 
 [node name="VisibilityNotifier" type="VisibilityNotifier2D" parent="."]
-position = Vector2( 40, -100 )
-scale = Vector2( 40, 20 )
+position = Vector2( 36.3118, -102.512 )
+scale = Vector2( 77.3172, 36.3086 )
 
 [node name="StompDetector" type="Area2D" parent="."]
 
