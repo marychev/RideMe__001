@@ -30,6 +30,11 @@ func _init() -> void:
 	has_win = false
 
 
+func _ready():
+	var sky: Sprite = get_parent().get_node('Background/sky')
+	sky.modulate = Color(1, 1, 1)
+
+
 func init_level_track(section: String, id_track: int) -> void:
 	if track_cfg.get_id(section) != null:
 		level_id = track_cfg.get_level_id(section)
