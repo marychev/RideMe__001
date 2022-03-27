@@ -13,6 +13,9 @@ custom_constants/margin_top = 20
 custom_constants/margin_left = 20
 custom_constants/margin_bottom = 20
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="bg-color" type="Sprite" parent="."]
 position = Vector2( -0.404572, 0.465439 )

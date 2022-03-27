@@ -34,7 +34,7 @@ func _on_PayBtn_pressed():
 	track_cfg.set_state(_track_section, LevelTrackStates.ACTIVE)
 	field_log.success("The %s track was paid!" % player_track_section)
 	
-	yield(get_tree().create_timer(2), "timeout")
+	yield(get_tree().create_timer(1), "timeout")
 	var path_popup = "/root/LevelMenu/LevelProgressDialog"
 	if has_node(path_popup):
 		var level_popup: = get_node(path_popup)

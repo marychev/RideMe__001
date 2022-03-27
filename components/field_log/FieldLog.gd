@@ -2,7 +2,7 @@ extends CanvasLayer
 class_name FieldLog
 
 const NAME: String = "FieldLog"
-const TIMEOUT_CLEAR: int = 3
+const TIMEOUT_CLEAR: int = 1
 
 var field_log: FieldLog
 var target: Node

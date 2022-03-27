@@ -122,7 +122,7 @@ func _on_btn_yes_pressed():
 			
 			field_log.success("Bike's parameters was upgraded successful!")
 		
-		yield(get_tree().create_timer(2), "timeout")
+		yield(get_tree().create_timer(1), "timeout")
 		get_tree().reload_current_scene()
 
 

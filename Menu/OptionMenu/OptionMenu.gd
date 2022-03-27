@@ -25,6 +25,7 @@ func _on_ResetGame_pressed():
 	create_levels()
 	create_tracks()
 	create_player_track()
+	
 
 
 func create_player_bike() -> void:
@@ -96,7 +97,8 @@ func create_tracks() -> void:
 
 	_track_id = 3
 	_resource = "res://Game/Level/Level_3/Level_3.tscn"
-	_texture = "res://Game/Level/assets/mountains.png"
+	# _texture = "res://Game/Level/assets/mountains.png"
+	_texture = "res://Game/Level/assets/slides/track-03.png"
 	_num_win = 11
 	_init_time_level = 18
 	_price = 20

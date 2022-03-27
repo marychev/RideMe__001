@@ -9,7 +9,7 @@ const KEY_LIVES = "lives"
 const KEY_MAX_SPEED = "max_speed"
 const KEY_MAX_HEIGHT_JUMP = "max_height_jump"
 const KEY_MAX_POWER = "max_power"
-const DEFAULT_VALUE = 9999
+const DEFAULT_VALUE = 999
 var SECTION_1
 
 
