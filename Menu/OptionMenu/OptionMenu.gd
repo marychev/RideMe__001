@@ -97,8 +97,8 @@ func create_tracks() -> void:
 	_track_id = 3
 	_resource = "res://Game/Level/Level_3/Level_3.tscn"
 	_texture = "res://Game/Level/assets/mountains.png"
-	_num_win = 10
-	_init_time_level = 15
+	_num_win = 11
+	_init_time_level = 18
 	_price = 20
 	_issue = "Time is limited. " + _issue
 	track_cfg.create(_track_id, _level_id, _issue, _resource, _texture, _num_win,  _init_time_level, _price)
