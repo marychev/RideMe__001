@@ -12,6 +12,14 @@ func _ready():
 		$PayBtn.disabled = true
 
 
+func _on_PayBtn_button_down():
+	if PlayerData.rms < _track.price:
+		$PayBtn/AudioStreamPlayer2D.set_stream(audio_btn_error)
+	else:
+		$PayBtn/AudioStreamPlayer2D.set_stream(audio_btn_pay)
+	$PayBtn/AudioStreamPlayer2D.play()
+
+
 func _on_PayBtn_pressed():
 	if not _track:
 		field_log.error("You have not an initial track")
@@ -46,3 +54,6 @@ func set_price() -> void:
 
 func set_time() -> void:
 	$Time.set_text("..:..")
+
+
+

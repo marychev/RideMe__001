@@ -275,6 +275,8 @@ scale = Vector2( 0.8, 0.8 )
 normal = ExtResource( 5 )
 visibility_mode = 1
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="pressed" from="Nine/Grid/PowerButtons/btn_power_add" to="." method="_on_btn_power_add_pressed"]
 [connection signal="released" from="Nine/Grid/PowerButtons/btn_power_add" to="." method="_on_btn_power_add_released"]
 [connection signal="pressed" from="Nine/Grid/PowerButtons/btn_power_del" to="." method="_on_btn_power_del_pressed"]

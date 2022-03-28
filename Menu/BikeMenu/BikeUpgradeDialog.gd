@@ -7,6 +7,9 @@ onready var btn_yes:TouchScreenButton  = $Nine/ButtonContainer/btn_yes
 const POWER_PRICE = 1
 const SPEED_PRICE = 1
 const JUMP_PRICE = 10
+const audio_btn_pressed = preload("res://media/ui/btn_pressed.wav")
+const audio_btn_pay = preload("res://media/ui/btn_pay.wav")
+const audio_btn_error = preload("res://media/ui/btn_error.wav")
 
 onready var title: = "Upgrade "
 onready var grid:GridContainer = $Nine/Grid
@@ -98,7 +101,10 @@ func _on_btn_no_pressed() -> void:
 	power_added_rms = 0
 	speed_added_rms = 0
 	jump_added_rms = 0
-
+	
+	$AudioStreamPlayer2D.set_stream(audio_btn_pressed)
+	$AudioStreamPlayer2D.play()
+	
 	if is_visible(): 
 		yield(get_tree().create_timer(0.4), "timeout")
 		hide()
@@ -106,11 +112,14 @@ func _on_btn_no_pressed() -> void:
 
 func _on_btn_yes_pressed():
 	btn_yes.modulate.a = 0.1
+	$AudioStreamPlayer2D.set_stream(audio_btn_pressed)
 		
 	if is_visible(): 
 		# Upgrade bike's parameters
 		if PlayerData.rms < selected_rms: 
 			field_log.error("Need to more Rms!")
+			$AudioStreamPlayer2D.set_stream(audio_btn_error)
+			
 		elif selected_rms > 0:
 			var empty_bike: Node = load("res://Game/Bike/EmptyBike.gd").new()
 			empty_bike.upgrade_bike_parameters(
@@ -121,7 +130,9 @@ func _on_btn_yes_pressed():
 			)
 			
 			field_log.success("Bike's parameters was upgraded successful!")
+			$AudioStreamPlayer2D.set_stream(audio_btn_pay)
 		
+		$AudioStreamPlayer2D.play()
 		yield(get_tree().create_timer(1), "timeout")
 		get_tree().reload_current_scene()
 
@@ -150,9 +161,13 @@ func on_btn_added(price) -> bool:
 	if PlayerData.rms > selected_rms + price:
 		selected_rms += price
 		# set_rm_counter()
+		$AudioStreamPlayer2D.set_stream(audio_btn_pressed)
+		$AudioStreamPlayer2D.play()
 		return true
 	else:
 		field_log.error("Have not enough the Rms")
+		$AudioStreamPlayer2D.set_stream(audio_btn_error)
+		$AudioStreamPlayer2D.play()
 		return false
 		
 
@@ -163,6 +178,10 @@ func on_btn_del(price) -> bool:
 	if selected_rms - price >= 0:
 		selected_rms -= price
 		# set_rm_counter()
+		$AudioStreamPlayer2D.set_stream(audio_btn_pressed)
+		$AudioStreamPlayer2D.play()
 		return true
-
+	
+	$AudioStreamPlayer2D.set_stream(audio_btn_error)
+	$AudioStreamPlayer2D.play()
 	return false
