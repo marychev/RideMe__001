@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/broke-bike.wav-1fbc28bb578a089de60678b4e7154ed5.sample"
+
+[deps]
+
+source_file="res://media/move/broke-bike.wav"
+dest_files=[ "res://.import/broke-bike.wav-1fbc28bb578a089de60678b4e7154ed5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -130,6 +130,6 @@ func set_type_title(_type_title: int):
 
 
 func set_player_data(player_bike_data: Dictionary) -> void:
-	if not player_bike_data.empty() :
+	if not player_bike_data.empty():
 		rms = player_bike_data["rm"]
 		lives = player_bike_data["lives"]

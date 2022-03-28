@@ -6,7 +6,6 @@ var level_0: Level_0 = load(PathData.PATH_LEVEL_0).instance()
 var level_1: Level_1 = load(PathData.PATH_LEVEL_1).instance()
 var level_2: Level_2 = load(PathData.PATH_LEVEL_2).instance()
 
-# onready var btn_level_0: Button = $TextureRect/SliderContainer/Buttons/Level_0
 onready var btn_level_1: Button = $TextureRect/SliderContainer/Buttons/Level_1
 onready var btn_level_2: Button = $TextureRect/SliderContainer/Buttons/Level_2
 
@@ -27,26 +26,10 @@ func _ready():
 	btn_pay.modulate.a = 0.4
 	if PlayerData.player_bike and GameData.current_track:
 		btn_pay.modulate.a = 1
+		btn_pay.type = "Run"
 	
 	if GameData.current_level and not is_instance_valid(GameData.current_track):
 		_on_btn_refit_pressed()
-
-
-func init_slide(level: Node2D) -> void:
-	.init_slide(level)
-	set_menu_options(level)
-
-
-func set_menu_options(level: Level_0) -> void:
-	if is_instance_valid(level):
-		var level_text = "level: ....... %d" % [level.level_id]
-		var track_text = "track: .......... %d" % [level.track_id]
-		var price_text = "price: .................... %d" % [level.price]
-		
-		menu_options.get_node('LevelIssue').set_text(level.issue)
-		menu_options.get_node('Level').set_text(level_text)
-		menu_options.get_node('Track').set_text(track_text)
-		menu_options.get_node('Price').set_text(price_text)
 
 
 func _on_btn_pay_pressed() -> void:
@@ -55,6 +38,7 @@ func _on_btn_pay_pressed() -> void:
 		main_menu.field_log = field_log
 		main_menu.field_log_start_play()
 	else:
+		yield(get_tree().create_timer(0.4), "timeout")
 		get_tree().change_scene(main_menu.game_tscn) 
 
 
@@ -106,10 +90,27 @@ func _on_Level_1_pressed():
 	init_slide(selected_node)
 
 
+func set_menu_options(level: Level_0) -> void:
+	if is_instance_valid(level):
+		var level_text = "level: ....... %d" % [level.level_id]
+		var track_text = "track: .......... %d" % [level.track_id]
+		var price_text = "price: .................... %d" % [level.price]
+		
+		menu_options.get_node('LevelIssue').set_text(level.issue)
+		menu_options.get_node('Level').set_text(level_text)
+		menu_options.get_node('Track').set_text(track_text)
+		menu_options.get_node('Price').set_text(price_text)
+
+
 func set_buttons_flat(btn_active: Button) -> void:
 	btn_current_node.flat = bool(btn_current_node.name == btn_active.name)
 	btn_level_1.flat = bool(btn_level_1.name == btn_active.name)
 	btn_level_2.flat = bool(btn_level_2.name == btn_active.name)
+
+
+func init_slide(level: Node2D) -> void:
+	.init_slide(level)
+	set_menu_options(level)
 
 
 func init_btn_current_node() -> void:

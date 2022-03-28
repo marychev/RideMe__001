@@ -55,7 +55,6 @@ custom_constants/separation = 30
 alignment = 1
 
 [node name="Play" parent="HBoxContainer/VBoxContainer/MenuOptions" instance=ExtResource( 3 )]
-modulate = Color( 1, 1, 1, 0.4 )
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 400.0

@@ -43,6 +43,13 @@ func _on_Current_button_down() -> void:
 		selected_node = empty_bike
 
 
+func _on_btn_pay_button_down():
+	if not PlayerData.player_bike and selected_node and PlayerData.rms > selected_node.price:
+		$TextureRect/ButtonContainer/btn_pay.type = "Pay"
+	else:
+		$TextureRect/ButtonContainer/btn_pay.type = "Error"
+
+
 func _on_btn_pay_pressed() -> void:
 	# TODO: redo
 	# field_log.clear
@@ -65,6 +72,7 @@ func _on_btn_pay_pressed() -> void:
 				
 				btn_refit.modulate.a = 1
 				btn_pay.modulate.a = 0.4
+				btn_pay.type = "Error"
 
 				$TextureRect/SliderContainer/Buttons/Current.flat = true
 				field_log.success("Bike was paid success!")
@@ -140,3 +148,4 @@ func set_buttons_flat(btn_active: Button) -> void:
 	btn_current_node.flat = bool(btn_current_node.name == btn_active.name)
 	btn_sataur.flat = bool(btn_sataur.name == btn_active.name)
 	btn_drawster.flat = bool(btn_drawster.name == btn_active.name)
+

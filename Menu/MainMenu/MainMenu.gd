@@ -16,8 +16,11 @@ onready var btn_play: TextureButton = $HBoxContainer/VBoxContainer/MenuOptions/P
 
 func _ready() -> void:
 	btn_play.modulate.a = 1
+	btn_play.type = "Run"
+	
 	if not can_start_play():
 		btn_play.modulate.a = 0.4
+		btn_play.type = "Error"
 
 	btn_play.hint_tooltip = "Play the %s level track on %s bike" % [
 		GameData.current_level.title if GameData.current_level else "no",
@@ -31,17 +34,18 @@ func _ready() -> void:
 	show_player_bike()
 	show_current_track()
 	
-
+	
 func _on_Play_pressed() -> void:
 	if not can_start_play():
 		field_log.target = $"."
 		field_log_start_play()
 	else:
+		yield(get_tree().create_timer(0.6), "timeout")
 		get_tree().change_scene(game_tscn)
 
 
 func can_start_play() -> bool:
-	return PlayerData.player_bike and GameData.current_level and GameData.current_track # and has_tracks
+	return is_instance_valid(PlayerData.player_bike) and is_instance_valid(GameData.current_track) and GameData.current_level # and has_tracks
 
 
 func field_log_start_play() -> void:
@@ -49,7 +53,6 @@ func field_log_start_play() -> void:
 	
 	if not PlayerData.player_bike:
 		field_log.error("No bike selected! You don't have a bike")
-		
 	elif not GameData.current_level:
 		field_log.error("No level selected! You don't have the current level")
 	elif not GameData.current_track:

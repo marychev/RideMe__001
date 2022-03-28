@@ -286,4 +286,5 @@ autoplay = true
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Sataur" to="." method="_on_Sataur_pressed"]
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Drawster" to="." method="_on_Drawster_pressed"]
 [connection signal="pressed" from="TextureRect/ButtonContainer/btn_refit" to="." method="_on_btn_refit_pressed"]
+[connection signal="button_down" from="TextureRect/ButtonContainer/btn_pay" to="." method="_on_btn_pay_button_down"]
 [connection signal="pressed" from="TextureRect/ButtonContainer/btn_pay" to="." method="_on_btn_pay_pressed"]
