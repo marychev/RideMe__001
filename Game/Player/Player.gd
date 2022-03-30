@@ -3,6 +3,11 @@ class_name Player
 
 var mass: int = 130
 
+var audio_go = preload("res://media/move/go.wav")
+var audio_relax = preload("res://media/move/relax.wav")
+var audio_stop = preload("res://media/move/stop.wav")
+var audio_jump = preload("res://media/move/jump.wav")
+
 
 func _ready():
 	$Sprite.texture = PlayerData.player_bike.texture
@@ -43,17 +48,34 @@ func detect_landing_animation(current_animation_name: String) -> String:
 func get_input(delta: float):
 	var animation_name = "undefined"
 	
-	if Input.is_action_pressed("ui_right"):
+	# Move right
+	if Input.is_action_just_pressed("ui_right"):
 		animation_name = detect_landing_animation("go")
 		GoBtn.on_go_process(delta, animation_name)
+		$AudioStreamPlayer2D.set_stream(audio_go)
+		$AudioStreamPlayer2D.play()
+	elif Input.is_action_pressed("ui_right"):
+		animation_name = detect_landing_animation("go")
+		GoBtn.on_go_process(delta, animation_name)
+		if $AudioStreamPlayer2D.playing == false:
+			$AudioStreamPlayer2D.play()
 	elif Input.is_action_just_released("ui_right"):
 		animation_name = detect_landing_animation("relax")
 		GoBtn.on_relax_process(delta)
+		$AudioStreamPlayer2D.set_stream(audio_relax)
+		$AudioStreamPlayer2D.play()
+	
+	# Move back
+	elif Input.is_action_just_pressed("ui_left"):
+		animation_name = detect_landing_animation("stop")
+		StopBtn.on_stop_process(delta)
+		$AudioStreamPlayer2D.set_stream(audio_stop)
+		$AudioStreamPlayer2D.play()
 	elif Input.is_action_pressed("ui_left"):
-		animation_name = detect_landing_animation("stop_DEV")
+		animation_name = detect_landing_animation("stop")
 		StopBtn.on_stop_process(delta)
 	elif Input.is_action_just_released("ui_left"):
-		animation_name = detect_landing_animation("")
+		animation_name = detect_landing_animation("relax")
 		StopBtn.on_stop_released(delta)
 	else:
 		if speed.x < 1:
@@ -62,8 +84,14 @@ func get_input(delta: float):
 		else:
 			animation_name = detect_landing_animation("relax")
 			GoBtn.on_relax_process(delta, animation_name)
-
-	if Input.is_action_pressed("ui_select"):
+	
+	# Move is not on floor. Jump / Landing
+	if Input.is_action_just_pressed("ui_select"):
+		animation_name = detect_landing_animation("landing")
+		JumpBtn.on_jump_process(delta, animation_name)
+		$AudioStreamPlayer2D.set_stream(audio_jump)
+		$AudioStreamPlayer2D.play()
+	elif Input.is_action_pressed("ui_select"):
 		animation_name = detect_landing_animation("landing")
 		JumpBtn.on_jump_process(delta, animation_name)
 	elif Input.is_action_just_released("ui_select"):
@@ -95,4 +123,3 @@ func _physics_process(delta: float):
 	if position.y > 2000:
 		var die_player = load(PathData.PATH_DIE_PLAYER).new()
 		die_player.from_fell(self)
-

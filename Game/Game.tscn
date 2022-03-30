@@ -24,8 +24,8 @@ margin_bottom = -35.6569
 z_index = 1
 
 [node name="Music" type="AudioStreamPlayer2D" parent="Player"]
+visible = false
 position = Vector2( 0, -619 )
 stream = ExtResource( 3 )
-autoplay = true
 max_distance = 1600.0
 attenuation = 0.0122591
