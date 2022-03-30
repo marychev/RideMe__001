@@ -108,19 +108,18 @@ func set_time_level_count(_player: KinematicBody2D) -> int:
 
 	time_level_count += 1
 	
+	var finish: Start = GameData.current_track.find_node('Finish')
+	var finish_pos_x = player.position.x + 888
+	
 	if GameData.current_track.are_you_win():
-		var _finish = load("res://Game/Character/Start/Start.tscn")
-		var finish = _finish.instance()
-		var game = get_node(PathData.PATH_GAME)
-		
-		finish.set_position(
-			Vector2(
-				player.position.x + 888,
-				364
-			)
-		)
-		finish.z_index = 1
-		game.add_child(finish)
+		if is_instance_valid(finish):
+			finish.position.x = finish_pos_x
+		else:
+			var _finish = load("res://Game/Character/Start/Start.tscn")
+			finish = _finish.instance()
+			finish.z_index = 1
+			finish.set_position(Vector2(finish_pos_x, player.position.y + 100))
+			GameData.current_track.add_child(finish)
 
 	return time_level_count
 

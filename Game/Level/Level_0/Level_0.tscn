@@ -113,3 +113,7 @@ position = Vector2( 12825, 1105.3 )
 
 [node name="Hourgrass3" parent="Level_0_1" instance=ExtResource( 21 )]
 position = Vector2( 12877.3, 945.791 )
+
+[node name="Finish" parent="Level_0_1" instance=ExtResource( 5 )]
+position = Vector2( 11550.5, 1173.98 )
+scale = Vector2( 0.9, 0.9 )

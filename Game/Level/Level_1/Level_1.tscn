@@ -254,3 +254,7 @@ position = Vector2( 38968.4, 1255.92 )
 
 [node name="RoadBody16" parent="Level_1_3" instance=ExtResource( 14 )]
 position = Vector2( 36466.1, 1314 )
+
+[node name="Finish" parent="Level_1_3" instance=ExtResource( 15 )]
+position = Vector2( 38715, 1314 )
+scale = Vector2( 0.9, 0.9 )

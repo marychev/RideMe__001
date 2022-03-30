@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Game/Character/RM/RM.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Character/Rock/StaticRock.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Game/Character/Bench/Bench.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Game/Road/RoadBody.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Game/Character/Crossroads/CrossroadWithGirl.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Game/Character/Start/Start.tscn" type="PackedScene" id=15]
 
 [node name="Level_2_3" type="Node"]
 
@@ -133,7 +134,7 @@ rotation = 0.00330378
 position = Vector2( 61142, 1314 )
 
 [node name="Hourgrass4" parent="." instance=ExtResource( 7 )]
-position = Vector2( 63514.4, 1288.85 )
+position = Vector2( 62533.7, 1241.24 )
 rotation = 0.00330378
 
 [node name="Bench2" parent="." instance=ExtResource( 12 )]
@@ -215,5 +216,14 @@ scale = Vector2( 0.8, 0.8 )
 position = Vector2( 63573.6, 1314.16 )
 
 [node name="Hourgrass5" parent="." instance=ExtResource( 7 )]
-position = Vector2( 64742.9, 1281.25 )
+position = Vector2( 63553.5, 1235.89 )
 rotation = 0.00330378
+
+[node name="Hourgrass11" parent="." instance=ExtResource( 7 )]
+position = Vector2( 64311.2, 1251.75 )
+rotation = 0.00330378
+scale = Vector2( 1, 1 )
+
+[node name="Finish" parent="." instance=ExtResource( 15 )]
+position = Vector2( 65826.2, 1314.34 )
+scale = Vector2( 0.9, 0.9 )
