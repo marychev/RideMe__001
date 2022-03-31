@@ -53,7 +53,8 @@ func get_input(delta: float):
 		animation_name = detect_landing_animation("go")
 		GoBtn.on_go_process(delta, animation_name)
 		$AudioStreamPlayer2D.set_stream(audio_go)
-		$AudioStreamPlayer2D.play()
+		if $AudioStreamPlayer2D.playing == false:
+			$AudioStreamPlayer2D.play()
 	elif Input.is_action_pressed("ui_right"):
 		animation_name = detect_landing_animation("go")
 		GoBtn.on_go_process(delta, animation_name)
@@ -97,8 +98,9 @@ func get_input(delta: float):
 	elif Input.is_action_just_released("ui_select"):
 		animation_name = detect_landing_animation("landing")
 		JumpBtn.on_landing_process(delta, animation_name)
-
-
+		$AudioStreamPlayer2D.set_stream(audio_go)
+		$AudioStreamPlayer2D.play()
+		
 # Processes
 
 func _physics_process(delta: float):
