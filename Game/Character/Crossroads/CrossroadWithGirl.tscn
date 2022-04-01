@@ -12,6 +12,8 @@ __meta__ = {
 }
 
 [node name="crossroads" type="Sprite" parent="."]
+position = Vector2( -0.773396, 0.12568 )
+scale = Vector2( 0.677725, 0.677725 )
 texture = ExtResource( 1 )
 
 [node name="GirlBack" parent="." instance=ExtResource( 2 )]
