@@ -1,8 +1,7 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Game/Character/Rock/StaticRock.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Character/MovingPanel/MovingPlatform.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Game/Character/Crossroads/Crossroad.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Game/Character/Plank/Plank.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Game/Character/Grass/Grass.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Game/Character/Refit/Refit.tscn" type="PackedScene" id=6]
@@ -10,8 +9,8 @@
 [ext_resource path="res://Game/Character/Lamp/Lamp.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Game/Character/RM/RM.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Game/Character/Hourgrass/Hourgrass.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Game/Character/People/GirlBack/GirlBack.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Game/Character/People/KickScooter/KSMan/KSMan.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Game/Character/Crossroads/CrossroadWithGirl.tscn" type="PackedScene" id=13]
 
 [node name="Level_2_2" type="Node"]
 
@@ -22,11 +21,9 @@ scale = Vector2( 0.456429, 0.414936 )
 [node name="RoadBody" parent="." instance=ExtResource( 7 )]
 position = Vector2( 32144, 1314 )
 
-[node name="Crossroads" parent="." instance=ExtResource( 3 )]
-position = Vector2( 32228.1, 1368.78 )
-
-[node name="GirlBack" parent="Crossroads" instance=ExtResource( 11 )]
-position = Vector2( 110.352, -48.8303 )
+[node name="Crossroads2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 32434.9, 1367.71 )
+scale = Vector2( 0.456429, 0.414936 )
 
 [node name="StaticRock7" parent="." instance=ExtResource( 1 )]
 position = Vector2( 33402.1, 1340.56 )

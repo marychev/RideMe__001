@@ -3,6 +3,8 @@ class_name DiePlayer
 
 var player: Player
 var end_game_scr = load(PathData.PATH_PAUSE_DIE).new()
+var audio_broke_bike = preload("res://media/move/broke-bike.wav")
+var audio_btn_error = preload("res://media/ui/btn_error.wav")
 
 
 func from_time_up(_player: Player) -> void:
@@ -20,6 +22,7 @@ func from_hir_person(_player: Player) -> void:
 
 
 func from_fell(_player: Player):
+	_player.position = Vector2.ZERO
 	init_player(_player)
 	PlayerData.set_type_title(end_game_scr.TitleChoices.FELL)
 	PlayerData.set_score(player.global_position.x)
@@ -41,11 +44,11 @@ func die(force: bool = false) -> void:
 		var tree: SceneTree = player.get_tree()
 		var pause_screen: GameScreenPause = tree.current_scene.get_node("GUI/Canvas/GameScreenPause")
 
-		yield(player.get_tree().create_timer(1), "timeout")
+		yield(player.get_tree().create_timer(1.6), "timeout")
 		
 		if is_instance_valid(pause_screen):
 			pause_screen.set_paused(true)
-			
+
 			var next_level_btn: TextureIconButton = pause_screen.get_node("PauseRect/Container/NextLevelBtn")
 			var continue_btn: TextureIconButton = pause_screen.get_node("PauseRect/Container/ContinueBtn")
 			next_level_btn.visible = false
@@ -53,9 +56,19 @@ func die(force: bool = false) -> void:
 		
 			var pause_die = preload("res://Game/GameScreen/GamePauseDie.gd").new()
 			pause_die.do_init(pause_screen.title, pause_screen.pause_rect)
-			# player.queue_free() ????
+			# player.queue_free()
+			player.anim_player.play('collision')
 
 
 func init_player(_player: Player) -> void:
+	_player.get_node('Music').volume_db = 8
+	_player.get_node('Music').set_stream(audio_broke_bike)
+	_player.get_node('Music').play()
+
+	_player.get_node('AudioMove').set_stream(audio_btn_error)
+	_player.get_node('AudioMove').play()
+	
 	if not is_instance_valid(player):
 		player = _player
+		
+

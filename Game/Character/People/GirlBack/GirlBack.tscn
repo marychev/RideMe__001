@@ -122,5 +122,7 @@ anims/walk = SubResource( 3 )
 position = Vector2( -1.66283, -44.7583 )
 shape = SubResource( 4 )
 
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 [connection signal="body_entered" from="StopmDetector" to="." method="_on_StopmDetector_body_entered"]

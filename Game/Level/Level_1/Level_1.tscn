@@ -37,7 +37,8 @@ script = ExtResource( 5 )
 position = Vector2( -7.368, 1314 )
 
 [node name="Start" parent="Level_1_0" instance=ExtResource( 15 )]
-position = Vector2( -54.2001, 1303.54 )
+position = Vector2( -9.60484, 1314.24 )
+scale = Vector2( 0.9, 0.9 )
 
 [node name="RoadBody2" parent="Level_1_0" instance=ExtResource( 14 )]
 position = Vector2( 2424.63, 1314 )

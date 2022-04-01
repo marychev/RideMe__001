@@ -7,11 +7,13 @@ var audio_go = preload("res://media/move/go.wav")
 var audio_relax = preload("res://media/move/relax.wav")
 var audio_stop = preload("res://media/move/stop.wav")
 var audio_jump = preload("res://media/move/jump.wav")
+var audio_broke = preload("res://media/move/broke-bike.wav")
 
 
 func _ready():
 	$Sprite.texture = PlayerData.player_bike.texture
 	modulate = Color(1, 1, 1)
+	$AudioMove.volume_db = 1
 
 
 func _on_CollisionDetector_area_entered(area: Area2D) -> void:
@@ -52,26 +54,27 @@ func get_input(delta: float):
 	if Input.is_action_just_pressed("ui_right"):
 		animation_name = detect_landing_animation("go")
 		GoBtn.on_go_process(delta, animation_name)
-		$AudioStreamPlayer2D.set_stream(audio_go)
-		if $AudioStreamPlayer2D.playing == false:
-			$AudioStreamPlayer2D.play()
+		$AudioMove.set_stream(audio_go)
+		if $AudioMove.playing == false:
+			$AudioMove.play()
 	elif Input.is_action_pressed("ui_right"):
 		animation_name = detect_landing_animation("go")
 		GoBtn.on_go_process(delta, animation_name)
-		if $AudioStreamPlayer2D.playing == false:
-			$AudioStreamPlayer2D.play()
+		var has_broke = $AudioMove.stream and $AudioMove.stream.resource_path.get_file().get_basename() == "broke-bike"
+		if not has_broke and $AudioMove.playing == false:
+			$AudioMove.play()
 	elif Input.is_action_just_released("ui_right"):
 		animation_name = detect_landing_animation("relax")
 		GoBtn.on_relax_process(delta)
-		$AudioStreamPlayer2D.set_stream(audio_relax)
-		$AudioStreamPlayer2D.play()
+		$AudioMove.set_stream(audio_relax)
+		$AudioMove.play()
 	
 	# Move back
 	elif Input.is_action_just_pressed("ui_left"):
 		animation_name = detect_landing_animation("stop")
 		StopBtn.on_stop_process(delta)
-		$AudioStreamPlayer2D.set_stream(audio_stop)
-		$AudioStreamPlayer2D.play()
+		$AudioMove.set_stream(audio_stop)
+		$AudioMove.play()
 	elif Input.is_action_pressed("ui_left"):
 		animation_name = detect_landing_animation("stop")
 		StopBtn.on_stop_process(delta)
@@ -90,16 +93,16 @@ func get_input(delta: float):
 	if Input.is_action_just_pressed("ui_select"):
 		animation_name = detect_landing_animation("landing")
 		JumpBtn.on_jump_process(delta, animation_name)
-		$AudioStreamPlayer2D.set_stream(audio_jump)
-		$AudioStreamPlayer2D.play()
+		$AudioMove.set_stream(audio_jump)
+		$AudioMove.play()
 	elif Input.is_action_pressed("ui_select"):
 		animation_name = detect_landing_animation("landing")
 		JumpBtn.on_jump_process(delta, animation_name)
 	elif Input.is_action_just_released("ui_select"):
 		animation_name = detect_landing_animation("landing")
 		JumpBtn.on_landing_process(delta, animation_name)
-		$AudioStreamPlayer2D.set_stream(audio_go)
-		$AudioStreamPlayer2D.play()
+		$AudioMove.set_stream(audio_go)
+		$AudioMove.play()
 		
 # Processes
 
