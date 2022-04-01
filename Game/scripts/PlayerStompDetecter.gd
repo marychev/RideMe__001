@@ -2,7 +2,7 @@ extends Node
 class_name PlayerStompDetecter
 
 var player: KinematicBody2D
-var audio_broke_bike = preload("res://media/move/broke-bike.wav")
+var audio_broke_bike = preload("res://media/move/broken.wav")
 
 
 func on_player_entered() -> void:
@@ -10,7 +10,6 @@ func on_player_entered() -> void:
 		print('_on_StompDetector_body_entered__', player.name)
 		
 		player.get_node('AudioMove').set_stream(audio_broke_bike)
-		player.get_node('AudioMove').volume_db = 4
 		player.get_node('AudioMove').play()
 		
 		player.anim_player.stop()

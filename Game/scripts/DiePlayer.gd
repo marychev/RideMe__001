@@ -3,7 +3,7 @@ class_name DiePlayer
 
 var player: Player
 var end_game_scr = load(PathData.PATH_PAUSE_DIE).new()
-var audio_broke_bike = preload("res://media/move/broke-bike.wav")
+var audio_broke_bike = preload("res://media/move/broken.wav")
 var audio_btn_error = preload("res://media/ui/btn_error.wav")
 
 
@@ -61,7 +61,7 @@ func die(force: bool = false) -> void:
 
 
 func init_player(_player: Player) -> void:
-	_player.get_node('Music').volume_db = 8
+	_player.get_node('Music').volume_db = 4
 	_player.get_node('Music').set_stream(audio_broke_bike)
 	_player.get_node('Music').play()
 

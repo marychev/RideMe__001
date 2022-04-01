@@ -7,6 +7,9 @@ var bike_power
 
 func _on_body_entered(body):
 	set_bike_parameters(body)
+	
+	body.get_node('AudioMove').set_stream(body.audio_stop)
+	body.get_node('AudioMove').play()
 
 
 func _ready() -> void:

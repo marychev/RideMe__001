@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/broke-bike.wav-1fbc28bb578a089de60678b4e7154ed5.sample"
+path="res://.import/colected.wav-d152dd4195f949574a4b3631f2df0379.sample"
 
 [deps]
 
-source_file="res://media/move/broke-bike.wav"
-dest_files=[ "res://.import/broke-bike.wav-1fbc28bb578a089de60678b4e7154ed5.sample" ]
+source_file="res://media/move/colected.wav"
+dest_files=[ "res://.import/colected.wav-d152dd4195f949574a4b3631f2df0379.sample" ]
 
 [params]
 

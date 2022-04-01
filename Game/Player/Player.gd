@@ -7,7 +7,8 @@ var audio_go = preload("res://media/move/go.wav")
 var audio_relax = preload("res://media/move/relax.wav")
 var audio_stop = preload("res://media/move/stop.wav")
 var audio_jump = preload("res://media/move/jump.wav")
-var audio_broke = preload("res://media/move/broke-bike.wav")
+var audio_broke = preload("res://media/move/broken.wav")
+var audio_colected = preload("res://media/move/colected.wav")
 
 
 func _ready():
@@ -60,7 +61,7 @@ func get_input(delta: float):
 	elif Input.is_action_pressed("ui_right"):
 		animation_name = detect_landing_animation("go")
 		GoBtn.on_go_process(delta, animation_name)
-		var has_broke = $AudioMove.stream and $AudioMove.stream.resource_path.get_file().get_basename() == "broke-bike"
+		var has_broke = $AudioMove.stream and $AudioMove.stream.resource_path.get_file().get_basename() == "broken"
 		if not has_broke and $AudioMove.playing == false:
 			$AudioMove.play()
 	elif Input.is_action_just_released("ui_right"):

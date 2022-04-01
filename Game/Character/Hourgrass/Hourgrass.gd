@@ -14,6 +14,8 @@ func _on_body_entered(body: KinematicBody2D) -> void:
 		animation.play("fade_out")
 		player_do_anim_success(body)
 		timeout_do_anim_success()
+		body.get_node('AudioMove').set_stream(body.audio_colected)
+		body.get_node('AudioMove').play()
 		set_value_of_time_level()
 		PlayerData.set_time_level_count(body)
 

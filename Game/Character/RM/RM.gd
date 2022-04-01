@@ -8,12 +8,13 @@ func _ready() -> void:
 	set_physics_process(false)
 
 
-func _on_body_entered(body):
+func _on_body_entered(body: Player) -> void:
 	if body.name == "Player":
 		anim_player.play("fade_out")
 		player_do_anim_success(body)
 		rm_counter_do_anim_success()
-		
+		body.get_node('AudioMove').set_stream(body.audio_colected)
+		body.get_node('AudioMove').play()
 		PlayerData.rms += 1
 		
 
