@@ -8,7 +8,24 @@ var track_cfg: TrackCfg = load(PathData.TRACK_MODEL).new()
 var player_track_cfg: PlayerTrackCfg = load(PathData.PLAYER_TRACK_MODEL).new()
 
 
-func _on_ClearGame_pressed():
+func _on_ResetGame_pressed():
+	clear_game_config()
+	
+	create_bikes()
+	create_player_bike()
+	create_levels()
+	create_tracks()
+	create_player_track()
+	
+	var audio_btn_run = load("res://media/ui/btn_run.wav")
+	$VBoxContainer/Return/AudioStreamPlayer2D.set_stream(audio_btn_run)
+	$VBoxContainer/Return/AudioStreamPlayer2D.play()
+	yield(get_tree().create_timer(1), "timeout")
+
+	get_tree().change_scene(PathData.RES_MAIN_MENU_TSCN)
+
+
+func clear_game_config():
 	bike_cfg.clear()
 	track_cfg.clear()
 	player_bike_cfg.clear()
@@ -17,15 +34,6 @@ func _on_ClearGame_pressed():
 	GameData.current_level = null
 	GameData.current_track = null
 	PlayerData.player_bike = null
-	
-
-func _on_ResetGame_pressed():
-	create_bikes()
-	create_player_bike()
-	create_levels()
-	create_tracks()
-	create_player_track()
-	
 
 
 func create_player_bike() -> void:
@@ -109,5 +117,15 @@ func create_tracks() -> void:
 func create_player_track() -> void:
 	var track_train_id := 0
 	var track_section := track_cfg.get_section(track_train_id)
+	var track_resource = track_cfg.get_resource(track_section)
+	
 	var player_track_section := track_section.replace(track_cfg.prefix, player_track_cfg.prefix)
-	player_track_cfg.create(track_section, player_track_section) 
+	player_track_cfg.create(track_section, player_track_section)
+	
+	GameData.current_track = load(track_resource).instance()
+	GameData.current_track.resource = track_resource
+	
+
+
+	
+	

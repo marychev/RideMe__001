@@ -129,13 +129,13 @@ position = Vector2( 36.0439, 72.6625 )
 shape = SubResource( 1 )
 
 [node name="Camera" type="Camera2D" parent="."]
-position = Vector2( -180, -390 )
+position = Vector2( -128, -388 )
 anchor_mode = 0
 current = true
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 smoothing_enabled = true
-smoothing_speed = 6.0
+smoothing_speed = 8.0
 drag_margin_left = 0.0
 drag_margin_right = 0.0
 editor_draw_limits = true
