@@ -1,4 +1,6 @@
-extends TouchScreenButton
+# extends TouchScreenButton
+extends "res://Game/GUI/controls/ControlBtn.gd"
+class_name MenuBtn
 
 
 func _on_pressed() -> void:

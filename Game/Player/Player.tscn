@@ -129,7 +129,7 @@ position = Vector2( 36.0439, 72.6625 )
 shape = SubResource( 1 )
 
 [node name="Camera" type="Camera2D" parent="."]
-position = Vector2( -128, -388 )
+position = Vector2( -128, -360 )
 anchor_mode = 0
 current = true
 drag_margin_h_enabled = true

@@ -23,7 +23,6 @@ position = Vector2( 32144, 1314 )
 
 [node name="Crossroads2" parent="." instance=ExtResource( 13 )]
 position = Vector2( 32434.9, 1367.71 )
-scale = Vector2( 0.456429, 0.414936 )
 
 [node name="StaticRock7" parent="." instance=ExtResource( 1 )]
 position = Vector2( 33402.1, 1340.56 )
@@ -161,7 +160,7 @@ position = Vector2( 42887.5, 1288.25 )
 position = Vector2( 43759.8, 1284 )
 
 [node name="Refit" parent="." instance=ExtResource( 6 )]
-position = Vector2( 33063, 1076.97 )
+position = Vector2( 33164.6, 1182.53 )
 
 [node name="KSMan" parent="." instance=ExtResource( 12 )]
 position = Vector2( 44774.8, 1179.93 )

@@ -1,4 +1,5 @@
 extends Area2D
+class_name Refit
 
 
 func _on_body_entered(body: Player) -> void:

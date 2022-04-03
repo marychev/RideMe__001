@@ -13,6 +13,22 @@ onready var player: KinematicBody2D = get_node(PathData.PATH_PLAYER)
 onready var anim_player: AnimationPlayer = player.get_node("./AnimationPlayer")
 
 
+func on_pressed() -> void:
+	modulate.a = 1
+	Input.action_press(action)
+	
+
+func on_released() -> void:
+	modulate.a = 0.8
+	Input.action_release(action)
+	
+
+func _ready() -> void:
+	modulate.a = 0.8
+	connect("pressed", self, "on_pressed")
+	connect("released", self, "on_released")
+
+
 func on_wait_process(dt: float, animation_name: String = "wait"):
 	animation_name = detect_collision_animation(animation_name)
 	anim_player.play(animation_name)
@@ -22,21 +38,6 @@ func on_wait_process(dt: float, animation_name: String = "wait"):
 	
 	calc_speed = 0
 	player.set_speed(calc_speed)
-	
-	
-func on_pressed() -> void:
-	modulate.a = 1
-	Input.action_press(action)
-	
-
-func on_released() -> void:
-	modulate.a = 0.6
-	Input.action_release(action)
-	
-
-func _ready() -> void:
-	connect("pressed", self, "on_pressed")
-	connect("released", self, "on_released")
 
 
 func detect_collision_animation(animation_name: String) -> String:

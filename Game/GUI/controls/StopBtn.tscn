@@ -4,8 +4,6 @@
 [ext_resource path="res://Game/GUI/controls/assets/btn_stop.png" type="Texture" id=2]
 
 [node name="StopBtn" type="TouchScreenButton"]
-modulate = Color( 1, 1, 1, 0.556863 )
-scale = Vector2( 0.68, 0.7 )
 normal = ExtResource( 2 )
 action = "ui_left"
 script = ExtResource( 1 )

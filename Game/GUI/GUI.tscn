@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Game/GUI/counter/RMCounter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/GUI/bar/SpeedBar.tscn" type="PackedScene" id=2]
@@ -11,7 +11,6 @@
 [ext_resource path="res://Game/GUI/controls/MenuBtn.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Game/GUI/counter/LivesCounter.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Game/GUI/GUI.gd" type="Script" id=11]
-[ext_resource path="res://Game/GUI/controls/assets/refit_car.png" type="Texture" id=12]
 [ext_resource path="res://Game/GUI/counter/Timeout.tscn" type="PackedScene" id=13]
 
 [node name="GUI" type="MarginContainer"]
@@ -95,18 +94,15 @@ __meta__ = {
 }
 
 [node name="JumpBtn" parent="Canvas/ControlContainer" instance=ExtResource( 5 )]
-position = Vector2( 5.53648, -23.5429 )
+position = Vector2( 3.82843, 36 )
 
 [node name="StopBtn" parent="Canvas/ControlContainer" instance=ExtResource( 7 )]
-position = Vector2( 6, -240 )
+position = Vector2( 6.82843, -139 )
 
 [node name="MenuBtn" parent="Canvas/ControlContainer" instance=ExtResource( 9 )]
-modulate = Color( 1, 1, 1, 0.627451 )
-position = Vector2( 642.007, 54.4374 )
-scale = Vector2( 0.4, 0.4 )
-normal = ExtResource( 12 )
+position = Vector2( 630, 60 )
 
 [node name="GoBtn" parent="Canvas/ControlContainer" instance=ExtResource( 3 )]
-position = Vector2( 1146.43, -34.7568 )
+position = Vector2( 1192.34, -10.3137 )
 
 [node name="GameScreenPause" parent="Canvas" instance=ExtResource( 8 )]

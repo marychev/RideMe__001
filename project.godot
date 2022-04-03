@@ -219,6 +219,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Game/GameScreen/Buttons/MainMenuBtn.gd"
 }, {
+"base": "TouchScreenButton",
+"class": "MenuBtn",
+"language": "GDScript",
+"path": "res://Game/GUI/controls/MenuBtn.gd"
+}, {
 "base": "RigidBody2D",
 "class": "MovingPlatform",
 "language": "GDScript",
@@ -283,6 +288,11 @@ _global_script_classes=[ {
 "class": "RM",
 "language": "GDScript",
 "path": "res://Game/Character/RM/RM.gd"
+}, {
+"base": "Area2D",
+"class": "Refit",
+"language": "GDScript",
+"path": "res://Game/Character/Refit/Refit.gd"
 }, {
 "base": "TextureIconButton",
 "class": "ReloadGameBtn",
@@ -372,6 +382,7 @@ _global_script_class_icons={
 "LivesCounter": "",
 "MainMenu": "",
 "MainMenuBtn": "",
+"MenuBtn": "",
 "MovingPlatform": "",
 "NextLevelBtn": "",
 "OptionMenu": "",
@@ -385,6 +396,7 @@ _global_script_class_icons={
 "PlayerTrackCfg": "",
 "Puddle": "",
 "RM": "",
+"Refit": "",
 "ReloadGameBtn": "",
 "RoadBody": "",
 "SataurBike": "",
