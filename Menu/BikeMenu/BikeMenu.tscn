@@ -57,10 +57,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.02, 0.31, 0.56, 0.82, 1.07, 1.33, 2.05, 2.27, 2.55, 2.85, 3.37, 3.67, 3.92, 4.2, 4.45, 4.69, 4.94, 5.19, 5.43, 5.68, 5.94, 6.19, 6.43, 8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0.02, 0.6132, 1.06894, 1.578, 1.93629, 2.32623, 2.66723, 3.03883, 3.39463, 3.79209, 4.25794, 4.85031, 5.42517, 5.98671 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 1 ]
+"values": [ 0, 1, 6, 7, 8, 9, 12, 13, 14, 15, 18, 19, 22, 23 ]
 }
 
 [node name="BikeMenu" type="MarginContainer"]
@@ -157,7 +157,6 @@ scale = Vector2( 1.4, 1.4 )
 centered = false
 hframes = 6
 vframes = 4
-frame = 22
 
 [node name="EmptySprite" type="Sprite" parent="TextureRect/SliderContainer/Detail/Image"]
 position = Vector2( 334, 214 )

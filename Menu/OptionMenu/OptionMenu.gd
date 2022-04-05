@@ -51,8 +51,7 @@ func create_bikes() -> void:
 	bike_cfg.create(_title, _texture, _max_speed, _max_height_jump, _power, _max_power, _price)
 	
 	_title = "Sataur"
-	# _texture = "res://Game/Bike/assets/I/animation/sprites.png"
-	_texture = "res://Game/Bike/assets/I/animation/demo-I-sprites.png"
+	_texture = "res://Game/Bike/assets/I/sprites.png"
 	_max_speed = 520.00
 	_max_height_jump = 860.00
 	_power = 300.00
