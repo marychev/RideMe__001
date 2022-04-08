@@ -94,10 +94,10 @@ __meta__ = {
 }
 
 [node name="JumpBtn" parent="Canvas/ControlContainer" instance=ExtResource( 5 )]
-position = Vector2( 3.82843, 36 )
+position = Vector2( 11.32, 18.0203 )
 
 [node name="StopBtn" parent="Canvas/ControlContainer" instance=ExtResource( 7 )]
-position = Vector2( 6.82843, -139 )
+position = Vector2( 6.82843, -168.966 )
 
 [node name="MenuBtn" parent="Canvas/ControlContainer" instance=ExtResource( 9 )]
 position = Vector2( 630, 60 )
