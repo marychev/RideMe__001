@@ -20,7 +20,7 @@ func _ready():
 	btn_refit.connect("pressed", self, "_on_btn_refit_pressed")
 	btn_pay.connect("pressed", self, "_on_btn_pay_pressed")
 	
-	if GameData.current_level:
+	if GameData.current_level or selected_node:
 		btn_refit.modulate.a = 1
 	
 	btn_pay.modulate.a = 0.4
@@ -111,6 +111,7 @@ func set_buttons_flat(btn_active: Button) -> void:
 func init_slide(level: Node2D) -> void:
 	.init_slide(level)
 	set_menu_options(level)
+	btn_refit.modulate.a = 1
 
 
 func init_btn_current_node() -> void:

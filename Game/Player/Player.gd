@@ -18,16 +18,13 @@ func _ready():
 
 
 func _on_CollisionDetector_area_entered(area: Area2D) -> void:
-	# print('[_on_CollisionDetector_Area_entered]', area.name)
 	var root = area.get_node('../')
-	
 	if 'Plank' in root.name:
 		if Input.is_action_pressed("ui_select"):
 			_velocity = calculate_stomp_velocity(_velocity, max_power+power)
 
 
 func _on_CollisionDetector_body_entered(body: Node) -> void:
-	# print("[_on_CollisionDetector_Body_entered]: ", body.name)
 	if 'MovingPlatform' in body.name:
 		body.move_down(get_physics_process_delta_time(), mass)
 	#elif 'KSMan' in body.name:
@@ -36,7 +33,6 @@ func _on_CollisionDetector_body_entered(body: Node) -> void:
 func on_detect_collisions_process(delta):
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
-		# print('on_detect_collisions_process__ ',  collision.collider.name)
 		if 'MovingPlatform' in collision.collider.name:
 			collision.collider.move_down(delta, mass)
 		# elif 'StaticRock' in collision.collider.name:  pass
@@ -51,24 +47,34 @@ func detect_landing_animation(current_animation_name: String) -> String:
 func get_input(delta: float):
 	var animation_name = "undefined"
 	
+	var has_broke: bool = $AudioMove.stream and $AudioMove.stream.resource_path.get_file().get_basename() == "broken"
+	var has_colected: bool = $AudioMove.stream and $AudioMove.stream.resource_path.get_file().get_basename() == "colected"
+		
 	# Move right
 	if Input.is_action_just_pressed("ui_right"):
 		animation_name = detect_landing_animation("go")
 		GoBtn.on_go_process(delta, animation_name)
+		
 		$AudioMove.set_stream(audio_go)
 		if $AudioMove.playing == false:
 			$AudioMove.play()
+
 	elif Input.is_action_pressed("ui_right"):
 		animation_name = detect_landing_animation("go")
 		GoBtn.on_go_process(delta, animation_name)
-		var has_broke = $AudioMove.stream and $AudioMove.stream.resource_path.get_file().get_basename() == "broken"
-		if not has_broke and $AudioMove.playing == false:
+		
+		has_broke = $AudioMove.stream and $AudioMove.stream.resource_path.get_file().get_basename() == "broken"
+		has_colected = $AudioMove.stream and $AudioMove.stream.resource_path.get_file().get_basename() == "colected"
+		if $AudioMove.playing == false:
 			$AudioMove.play()
+
 	elif Input.is_action_just_released("ui_right"):
 		animation_name = detect_landing_animation("relax")
 		GoBtn.on_relax_process(delta)
-		$AudioMove.set_stream(audio_relax)
-		$AudioMove.play()
+		
+		if not has_colected or not has_colected:
+			$AudioMove.set_stream(audio_relax)
+			$AudioMove.play()
 	
 	# Move back
 	elif Input.is_action_just_pressed("ui_left"):
@@ -94,15 +100,24 @@ func get_input(delta: float):
 	if Input.is_action_just_pressed("ui_select"):
 		animation_name = detect_landing_animation("landing")
 		JumpBtn.on_jump_process(delta, animation_name)
-		$AudioMove.set_stream(audio_jump)
-		$AudioMove.play()
+		
+		if not has_broke or not has_colected:
+			$AudioMove.set_stream(audio_jump)
+		
 	elif Input.is_action_pressed("ui_select"):
 		animation_name = detect_landing_animation("landing")
 		JumpBtn.on_jump_process(delta, animation_name)
+
+		if not has_broke or not has_colected:
+			if $AudioMove.playing == false:
+				$AudioMove.play()
+			
 	elif Input.is_action_just_released("ui_select"):
 		animation_name = detect_landing_animation("landing")
 		JumpBtn.on_landing_process(delta, animation_name)
-		$AudioMove.set_stream(audio_go)
+		
+		if not has_colected or not has_colected:
+			$AudioMove.set_stream(audio_go)
 		$AudioMove.play()
 		
 # Processes

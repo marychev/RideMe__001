@@ -20,5 +20,4 @@ func _on_StopmDetector_body_entered(body: Node) -> void:
 		animate_people.do_collision(animation, body)
 
 		var die_player = load(PathData.PATH_DIE_PLAYER).new()
-		# die_player.from_hir_person(self)
 		die_player.from_hir_person(body)

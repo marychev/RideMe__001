@@ -112,12 +112,15 @@ func init_slide(bike) -> void:
 	if selected_node and not PlayerData.player_bike and selected_node.price < PlayerData.rms:
 		btn_pay.modulate.a = 1
 
+
 func init_btn_current_node() -> void:
+	btn_pay.modulate.a = 0.4
 	btn_refit.modulate.a = 0.4
 	btn_current_node.flat = false
 	btn_current_node.disabled = true
 	
 	if PlayerData.player_bike:
+		print("!!!")
 		init_slide(PlayerData.player_bike)
 		set_buttons_flat(btn_current_node)
 		

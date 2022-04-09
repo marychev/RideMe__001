@@ -49,5 +49,5 @@ func init_level_track(section: String, id_track: int) -> void:
 
 
 func are_you_win() -> bool:
-	has_win = PlayerData.time_level_count == num_win
+	has_win = PlayerData.time_level_count >= num_win
 	return has_win

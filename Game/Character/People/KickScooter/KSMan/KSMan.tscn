@@ -49,4 +49,6 @@ position = Vector2( 0, 20 )
 position = Vector2( 0.33252, -20.3418 )
 polygon = PoolVector2Array( 36.0312, -1.11202, 51.6866, -1.02555, 58.0148, 89.292, 74.8517, 91.9578, 75.6753, 109.769, -1.64235, 109.432 )
 
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="body_entered" from="StopmDetector" to="." method="_on_StopmDetector_body_entered"]

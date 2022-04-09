@@ -111,7 +111,7 @@ func set_time_level_count(_player: KinematicBody2D) -> int:
 	var finish: Start = GameData.current_track.find_node('Finish')
 	var finish_pos_x = player.position.x + 888
 	
-	if GameData.current_track.are_you_win():
+	if GameData.current_track.are_you_win():	
 		if is_instance_valid(finish):
 			finish.position.x = finish_pos_x
 		else:

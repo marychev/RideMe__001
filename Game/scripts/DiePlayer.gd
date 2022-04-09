@@ -41,6 +41,9 @@ func die(force: bool = false) -> void:
 		PlayerData.lives = 0
 	
 	if PlayerData.lives <= 0:
+		player.get_node('AudioMove').set_stream(audio_btn_error)
+		player.get_node('AudioMove').play()
+	
 		var tree: SceneTree = player.get_tree()
 		var pause_screen: GameScreenPause = tree.current_scene.get_node("GUI/Canvas/GameScreenPause")
 
@@ -61,14 +64,8 @@ func die(force: bool = false) -> void:
 
 
 func init_player(_player: Player) -> void:
-	_player.get_node('Music').volume_db = 4
-	_player.get_node('Music').set_stream(audio_broke_bike)
-	_player.get_node('Music').play()
-
-	_player.get_node('AudioMove').set_stream(audio_btn_error)
+	_player.get_node('AudioMove').set_stream(audio_broke_bike)
 	_player.get_node('AudioMove').play()
 	
 	if not is_instance_valid(player):
 		player = _player
-		
-

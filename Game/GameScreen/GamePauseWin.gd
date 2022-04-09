@@ -6,6 +6,12 @@ var rect_color_win: = Color(0.25, 0.56, 0.34, 0.8) 		 # 428f57
 
 
 func do_init(title: Label, pause_rect: ColorRect) -> void:
+	print("GameData.current_track.are_you_win()", GameData.current_track.are_you_win())
+	print(PlayerData.time_level_count)
+	print(GameData.current_track)
+	print(GameData.current_track.num_win)
+	print(PlayerData.type_title == TitleChoices.WIN_PLAYER)
+	
 	if GameData.current_track.are_you_win() and PlayerData.type_title == TitleChoices.WIN_PLAYER:
 		var next_level_btn: TextureIconButton = pause_rect.get_node("Container/NextLevelBtn")
 		next_level_btn.visible = true

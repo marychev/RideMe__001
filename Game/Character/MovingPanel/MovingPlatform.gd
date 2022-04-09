@@ -5,7 +5,6 @@ onready var start_pos_y = position.y
 
 
 func _on_MovingPlatform_body_entered(body: Node) -> void:
-	print('[_on_MovingPlatform_body_entered]: ', body.name)
 	if "Player" == body.name:
 		move_down(get_physics_process_delta_time(), body.mass)
 
