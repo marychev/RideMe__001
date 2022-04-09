@@ -22,12 +22,5 @@ func finished(player: Player):
 		PlayerData.set_score(player.position.x)
 		PlayerData.set_type_title(pause_win.TitleChoices.WIN_PLAYER)
 		
-		print("do_init", PlayerData.type_title)
-		print(pause_screen.title, pause_screen.pause_rect)
-		print("GameData.current_track.are_you_win()", GameData.current_track.are_you_win())
-		print(PlayerData.time_level_count)
-		print(GameData.current_track)
-		print(GameData.current_track.num_win)
-		
 		pause_win.do_init(pause_screen.title, pause_screen.pause_rect)
 		# player.queue_free() # ????

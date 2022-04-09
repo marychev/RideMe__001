@@ -54,7 +54,6 @@ func _on_btn_pay_pressed() -> void:
 	# TODO: redo
 	# field_log.clear
 	if is_instance_valid(field_log):
-		print("DEL: ", field_log)
 		$TextureRect/Title.remove_child(field_log)
 	
 	if not PlayerData.player_bike:
@@ -120,7 +119,6 @@ func init_btn_current_node() -> void:
 	btn_current_node.disabled = true
 	
 	if PlayerData.player_bike:
-		print("!!!")
 		init_slide(PlayerData.player_bike)
 		set_buttons_flat(btn_current_node)
 		

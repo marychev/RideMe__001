@@ -7,8 +7,6 @@ var audio_broke_bike = preload("res://media/move/broken.wav")
 
 func on_player_entered() -> void:
 	if "Player" == player.name:
-		print('_on_StompDetector_body_entered__', player.name)
-		
 		player.get_node('AudioMove').set_stream(audio_broke_bike)
 		player.get_node('AudioMove').play()
 		
