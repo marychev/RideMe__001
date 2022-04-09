@@ -21,7 +21,8 @@ func _on_ResetGame_pressed():
 	$VBoxContainer/Return/AudioStreamPlayer2D.set_stream(audio_btn_run)
 	$VBoxContainer/Return/AudioStreamPlayer2D.play()
 	yield(get_tree().create_timer(1), "timeout")
-
+	
+	GameData._ready()
 	get_tree().change_scene(PathData.RES_MAIN_MENU_TSCN)
 
 
@@ -31,7 +32,7 @@ func clear_game_config():
 	player_bike_cfg.clear()
 	player_track_cfg.clear()
 	
-	GameData.current_level = null
+	GameData.current_level = {}
 	GameData.current_track = null
 	PlayerData.player_bike = null
 
@@ -75,8 +76,9 @@ func create_levels() -> void:
 
 
 func create_tracks() -> void:
-	var _track_id: = 0
 	var _level_id: = 1
+	
+	var _track_id: = 0
 	var _issue: = "Collect the %s hourgrass."
 	var _resource: = "res://Game/Level/Level_0/Level_0.tscn"
 	var _texture: = "res://Game/Level/assets/slides/track-00.png"
@@ -120,11 +122,8 @@ func create_player_track() -> void:
 	
 	var player_track_section := track_section.replace(track_cfg.prefix, player_track_cfg.prefix)
 	player_track_cfg.create(track_section, player_track_section)
-	
+	track_cfg.set_state(track_section, LevelTrackStates.ACTIVE)
+		
 	GameData.current_track = load(track_resource).instance()
 	GameData.current_track.resource = track_resource
-	
 
-
-	
-	

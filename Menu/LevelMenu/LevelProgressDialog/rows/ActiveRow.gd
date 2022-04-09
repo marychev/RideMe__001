@@ -14,10 +14,10 @@ var _track: Dictionary
 
 
 func _on_PlayBtn_pressed() -> void:
-	if has_node("/root/LevelMenu"):
-		var level_track: Level_0 = load(_track.resource).instance()
-		get_node("/root/LevelMenu").selected_node = level_track
-		GameData.current_track = level_track
+	if has_node("/root/LevelMenu") and not _track.empty():
+		var track: Level_0 = load(_track.resource).instance()
+		get_node("/root/LevelMenu").selected_node = track
+		GameData.current_track = track
 
 
 func set_title() -> void:

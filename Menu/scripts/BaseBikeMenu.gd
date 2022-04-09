@@ -16,7 +16,7 @@ func _ready():
 	$TextureRect/RMCounter/Background/Value.set_text(str(PlayerData.rms))
 	
 	btn_refit.modulate.a = 0.4
-	if GameData.current_level:
+	if not GameData.current_level.empty():
 		btn_refit.modulate.a = 1
 		
 	btn_current_node.flat = bool(PlayerData.player_bike != null)

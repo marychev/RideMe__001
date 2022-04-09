@@ -16,19 +16,20 @@ onready var progress_popup: Resource = preload(RES_LEVEL_PROGRESS_DIALOG_TSCN)
 func _ready():
 	._ready()
 	init_btn_current_node()
+	btn_current_node.flat = not GameData.current_level.empty()
 	
 	btn_refit.connect("pressed", self, "_on_btn_refit_pressed")
 	btn_pay.connect("pressed", self, "_on_btn_pay_pressed")
 	
-	if GameData.current_level or selected_node:
+	if selected_node != null:
 		btn_refit.modulate.a = 1
 	
 	btn_pay.modulate.a = 0.4
-	if PlayerData.player_bike and GameData.current_track:
+	if PlayerData.player_bike and GameData.current_track and not GameData.current_level.empty():
 		btn_pay.modulate.a = 1
 		btn_pay.type = "Run"
 	
-	if GameData.current_level and not is_instance_valid(GameData.current_track):
+	if not is_instance_valid(GameData.current_track):
 		_on_btn_refit_pressed()
 
 
@@ -63,12 +64,11 @@ func _on_Current_pressed() -> void:
 	set_buttons_flat(btn_current_node)
 	
 	if GameData.current_track:
-		init_slide(GameData.current_track)
-	elif GameData.current_level:
-		init_slide(GameData.current_level)
+		selected_node = GameData.current_track
 	else:
 		selected_node = level_0
-		init_slide(selected_node)
+		
+	init_slide(selected_node)
 
 
 func _on_Level_1_pressed():
@@ -76,19 +76,31 @@ func _on_Level_1_pressed():
 	set_buttons_flat(btn_level_1)
 	
 	var level_id = 1
+	var level_cfg: LevelCfg = load(PathData.LEVEL_MODEL).new()
 	var track_cfg: TrackCfg = load(PathData.TRACK_MODEL).new()
 	
-	GameData.current_level = level_1
-	
-	var _level_track: Dictionary = track_cfg.get_active_track(level_id)
-	if not _level_track.empty():
-		GameData.current_track = load(_level_track.resource).instance()
-		selected_node = GameData.current_track
-	else:
-		selected_node = GameData.current_level
+	var level_section = level_cfg.get_section(level_id)
+	var track: Dictionary = track_cfg.get_active_track(level_id)
+	if not track.empty():
+		GameData.current_track = load(track.resource).instance()
+		GameData.current_level = level_cfg.as_dict(level_section)
 		
+		if PlayerData.player_bike:
+			btn_pay.modulate.a = 1
+
+	selected_node = GameData.current_track
 	init_slide(selected_node)
 
+
+func init_btn_current_node() -> void:
+	btn_current_node.flat = false
+	btn_current_node.disabled = true
+
+	if not GameData.current_level.empty() and GameData.current_track:
+		init_slide(GameData.current_track)
+		btn_level_1.flat = false
+		btn_level_2.flat =  false
+		
 
 func set_menu_options(level: Level_0) -> void:
 	if is_instance_valid(level):
@@ -108,21 +120,10 @@ func set_buttons_flat(btn_active: Button) -> void:
 	btn_level_2.flat = bool(btn_level_2.name == btn_active.name)
 
 
-func init_slide(level: Node2D) -> void:
-	.init_slide(level)
-	set_menu_options(level)
+func init_slide(track: Node2D) -> void:
+	.init_slide(track)
+	set_menu_options(track)
 	btn_refit.modulate.a = 1
+	
 
 
-func init_btn_current_node() -> void:
-	btn_current_node.flat = false
-	btn_current_node.disabled = true
-
-	if GameData.current_level:
-		if GameData.current_track:
-			init_slide(GameData.current_track)
-		else:
-			init_slide(GameData.current_level)
-		
-		btn_level_1.flat = false
-		btn_level_2.flat =  false

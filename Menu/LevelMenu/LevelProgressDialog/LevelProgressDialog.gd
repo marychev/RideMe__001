@@ -9,8 +9,8 @@ onready var table: VBoxContainer = $Nine/TableContainer
 func _ready():
 	._ready()
 	
-	title = "Progress %s"
-
+	set_title(GameData.current_track)
+	
 	clean_table()
 	fill_table()
 
@@ -18,10 +18,9 @@ func _ready():
 func _on_btn_yes_pressed():
 	._on_btn_yes_pressed()
 	
-	if has_node("/root/LevelMenu") and is_instance_valid(GameData.current_level):
-		var resource: String = GameData.current_track.resource if is_instance_valid(GameData.current_track) else GameData.current_level.resource
-		var level_track: Level_0 = load(resource).instance()
-		get_node("/root/LevelMenu").selected_node = level_track
+	if has_node("/root/LevelMenu") and not GameData.current_level.empty() and GameData.current_track:
+		get_node("/root/LevelMenu").selected_node = GameData.current_track
+		set_title(GameData.current_track)
 	
 # work on table
 
@@ -35,7 +34,7 @@ func clean_table() -> void:
 func fill_table() -> void:
 	var track_cfg: TrackCfg = load(PathData.TRACK_MODEL).new()
 	
-	for track in track_cfg.get_tracks(GameData.current_level.ID):
+	for track in track_cfg.get_tracks(GameData.current_level.id):
 		if LevelTrackStates.PASSED == track.state:
 			add_passed_row_to_table(track)
 		elif LevelTrackStates.FAIL == track.state:
