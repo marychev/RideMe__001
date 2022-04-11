@@ -123,10 +123,11 @@ func set_buttons_flat(btn_active: Button) -> void:
 
 
 func init_slide(track: Node2D) -> void:
-	.init_slide(track)
-	set_menu_options(track)
-	btn_refit.modulate.a = 1
-	$Completed.visible = GameData.track_cfg.has_passed_level(track.level_id)
+	if track:
+		.init_slide(track)
+		set_menu_options(track)
+		btn_refit.modulate.a = 1
+		$Completed.visible = GameData.track_cfg.has_passed_level(track.level_id)
 	
 
 

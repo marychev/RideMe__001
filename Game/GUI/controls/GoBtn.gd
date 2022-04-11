@@ -4,6 +4,7 @@ class_name GoBtn
 
 func on_go_process(dt: float, animation_name: String = "go") -> void:
 	on_pressed()
+	modulate_switcher()
 	
 	animation_name = detect_collision_animation(animation_name)
 	anim_player.play(animation_name)
@@ -13,10 +14,11 @@ func on_go_process(dt: float, animation_name: String = "go") -> void:
 	
 	calc_speed = player.speed.x + (dt * player.power)
 	player.set_speed(calc_speed)
-
+	
 
 func on_relax_process(dt: float, animation_name : String = "relax"):
 	on_released()
+	modulate_switcher()
 	
 	animation_name = detect_collision_animation(animation_name)
 	anim_player.play(animation_name)
@@ -26,3 +28,12 @@ func on_relax_process(dt: float, animation_name : String = "relax"):
 	
 	calc_speed = player.speed.x - (dt * player.power)
 	player.set_speed(calc_speed)
+	
+
+func modulate_switcher() -> void:
+	if player.power < player.max_power / 4:
+		modulate = Color.red
+	elif player.power < player.max_power / 2:
+		modulate = Color.orange
+	else:
+		modulate = Color.white
