@@ -66,3 +66,13 @@ func add_row_to_table(resource: Resource, track: Dictionary) -> void:
 		var row: ActiveRow = resource.instance()
 		row.init_track(track)
 		table.add_child(row)
+
+
+func set_title(track: Node2D) -> void:
+	.set_title(track)
+	if track and not GameData.current_level.empty() and GameData.track_cfg.has_passed_level(GameData.current_level.id):
+		$Nine/Title.set_text("%s passed!" % [track.title])
+		$Nine/Title.modulate = Color(0.1, 0.5, 0.1) # GREEN
+		
+		$Completed.visible = true
+		$PopupCompleted.popup()

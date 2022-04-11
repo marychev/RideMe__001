@@ -28,6 +28,7 @@ func _ready():
 	if PlayerData.player_bike and GameData.current_track and not GameData.current_level.empty():
 		btn_pay.modulate.a = 1
 		btn_pay.type = "Run"
+		btn_pay.anim_flicker()
 	
 	if not is_instance_valid(GameData.current_track):
 		_on_btn_refit_pressed()
@@ -87,6 +88,7 @@ func _on_Level_1_pressed():
 		
 		if PlayerData.player_bike:
 			btn_pay.modulate.a = 1
+			btn_pay.anim_flicker()
 
 	selected_node = GameData.current_track
 	init_slide(selected_node)
@@ -124,6 +126,7 @@ func init_slide(track: Node2D) -> void:
 	.init_slide(track)
 	set_menu_options(track)
 	btn_refit.modulate.a = 1
+	$Completed.visible = GameData.track_cfg.has_passed_level(track.level_id)
 	
 
 

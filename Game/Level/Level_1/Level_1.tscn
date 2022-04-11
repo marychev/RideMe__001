@@ -98,8 +98,8 @@ position = Vector2( 11157.8, 1371.97 )
 physics_material_override = SubResource( 2 )
 
 [node name="StaticRock6" parent="Level_1_1/StaticRock6_0" instance=ExtResource( 2 )]
-position = Vector2( 119.6, -55.21 )
-rotation = 1.55683
+position = Vector2( 167.708, -42.7368 )
+rotation = 0.454528
 physics_material_override = SubResource( 2 )
 
 [node name="RoadBody6" parent="Level_1_1" instance=ExtResource( 14 )]

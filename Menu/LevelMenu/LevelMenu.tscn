@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Game/GUI/assets/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://media/start_track.wav" type="AudioStream" id=2]
 [ext_resource path="res://components/buttons/TextureIconButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Menu/LevelMenu/LevelMenu.gd" type="Script" id=4]
 [ext_resource path="res://Menu/LevelMenu/assets/empty-map.png" type="Texture" id=5]
+[ext_resource path="res://Game/Level/assets/completed.png" type="Texture" id=6]
 [ext_resource path="res://Menu/MainMenu/assets/main_menu/bg-color.png" type="Texture" id=7]
 [ext_resource path="res://Menu/BikeMenu/Buttons/Current.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Game/GUI/counter/RMCounter.tscn" type="PackedScene" id=9]
@@ -218,6 +219,11 @@ title = "Run"
 stream = ExtResource( 2 )
 autoplay = true
 max_distance = 1400.0
+
+[node name="Completed" type="Sprite" parent="."]
+visible = false
+position = Vector2( 560.823, 512.552 )
+texture = ExtResource( 6 )
 
 [connection signal="button_down" from="TextureRect/SliderContainer/Buttons/Current" to="." method="_on_Current_button_down"]
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Current" to="." method="_on_Current_pressed"]

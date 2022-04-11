@@ -137,6 +137,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 434.0
 margin_bottom = 76.0
+is_flicker = true
 
 [node name="ContinueBtn" parent="PauseRect/Container" instance=ExtResource( 12 )]
 anchor_right = 0.0

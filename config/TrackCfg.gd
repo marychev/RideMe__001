@@ -75,6 +75,22 @@ func get_active_track(level_id: int) -> Dictionary:
 	return track
 
 
+func get_passed_tracks(level_id: int) -> Array:
+	var store = []
+	for section in config.get_sections():
+		if get_level_id(section) == level_id and get_state(section) == LevelTrackStates.PASSED:
+			store.append(as_dict(section))
+	return store
+
+
+func has_passed_level(level_id: int) -> bool:
+	var count_tracks: int = 0
+	var count_passed_tracks: int = 0
+	count_tracks = len(get_tracks(level_id))
+	count_passed_tracks = len(get_passed_tracks(level_id))
+	return count_tracks == count_passed_tracks
+
+
 func as_dict(section: String) -> Dictionary:
 	return {
 		KEY_ID: get_id(section),

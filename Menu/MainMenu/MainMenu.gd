@@ -15,12 +15,13 @@ onready var btn_play: TextureButton = $HBoxContainer/VBoxContainer/MenuOptions/P
 
 
 func _ready() -> void:
-	btn_play.modulate.a = 1
-	btn_play.type = "Run"
-	
 	if not can_start_play():
 		btn_play.modulate.a = 0.4
 		btn_play.type = "Error"
+	else:
+		btn_play.modulate.a = 1
+		btn_play.type = "Run"
+		btn_play.anim_flicker()
 
 	btn_play.hint_tooltip = "Play the %s level track on %s bike" % [
 		GameData.current_level.title if GameData.current_level else "no",
@@ -33,6 +34,8 @@ func _ready() -> void:
 	init_btn_level_menu()
 	show_player_bike()
 	show_current_track()
+	
+	
 	
 	
 func _on_Play_pressed() -> void:
