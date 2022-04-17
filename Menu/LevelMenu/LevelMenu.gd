@@ -15,6 +15,7 @@ onready var progress_popup: Resource = preload(RES_LEVEL_PROGRESS_DIALOG_TSCN)
 
 func _ready():
 	._ready()
+	
 	init_btn_current_node()
 	btn_current_node.flat = not GameData.current_level.empty()
 	
@@ -32,6 +33,11 @@ func _ready():
 	
 	if not is_instance_valid(GameData.current_track):
 		_on_btn_refit_pressed()
+
+	if $Completed.visible:
+		var popup_completed: Popup = load("res://Menu/LevelMenu/PopupCompleted/PopupCompleted.tscn").instance()
+		add_child(popup_completed)
+		popup_completed.popup()
 
 
 func _on_btn_pay_pressed() -> void:
@@ -77,14 +83,11 @@ func _on_Level_1_pressed():
 	set_buttons_flat(btn_level_1)
 	
 	var level_id = 1
-	var level_cfg: LevelCfg = load(PathData.LEVEL_MODEL).new()
-	var track_cfg: TrackCfg = load(PathData.TRACK_MODEL).new()
-	
-	var level_section = level_cfg.get_section(level_id)
-	var track: Dictionary = track_cfg.get_active_track(level_id)
+	var level_section = GameData.level_cfg.get_section(level_id)
+	var track: Dictionary = GameData.track_cfg.get_active_track(level_id)
 	if not track.empty():
 		GameData.current_track = load(track.resource).instance()
-		GameData.current_level = level_cfg.as_dict(level_section)
+		GameData.current_level = GameData.level_cfg.as_dict(level_section)
 		
 		if PlayerData.player_bike:
 			btn_pay.modulate.a = 1
@@ -127,7 +130,5 @@ func init_slide(track: Node2D) -> void:
 		.init_slide(track)
 		set_menu_options(track)
 		btn_refit.modulate.a = 1
+		
 		$Completed.visible = GameData.track_cfg.has_passed_level(track.level_id)
-	
-
-

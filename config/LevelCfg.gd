@@ -34,6 +34,9 @@ func get_title(section: String) -> String:
 func get_passed_at(section: String) -> String:
 	return config.get_value(section, KEY_PASSED_AT)
 
+func set_passed_at(section: String) -> void:
+	config.set_value(section, KEY_PASSED_AT, OS.get_datetime())
+	config.save(path_file_cfg)
 
 # create
 

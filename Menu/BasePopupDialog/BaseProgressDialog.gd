@@ -30,8 +30,8 @@ func _on_btn_yes_pressed():
 # popup
 
 func open(current_node: Node2D) -> void:
-	popup()  # show()
 	set_title(current_node)
+	popup()  # show()
 
 
 # setters

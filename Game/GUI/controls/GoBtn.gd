@@ -3,8 +3,8 @@ class_name GoBtn
 
 
 func on_go_process(dt: float, animation_name: String = "go") -> void:
-	on_pressed()
 	modulate_switcher()
+	on_pressed()
 	
 	animation_name = detect_collision_animation(animation_name)
 	anim_player.play(animation_name)
@@ -17,9 +17,9 @@ func on_go_process(dt: float, animation_name: String = "go") -> void:
 	
 
 func on_relax_process(dt: float, animation_name : String = "relax"):
-	on_released()
 	modulate_switcher()
-	
+	on_released()
+
 	animation_name = detect_collision_animation(animation_name)
 	anim_player.play(animation_name)
 	

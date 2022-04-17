@@ -45,7 +45,7 @@ func _on_Current_button_down() -> void:
 
 func _on_btn_pay_button_down():
 	if not PlayerData.player_bike and selected_node and PlayerData.rms > selected_node.price:
-		$TextureRect/ButtonContainer/btn_pay.type = "Pay"
+		$TextureRect/ButtonContainer/btn_pay.type = "Buy"
 	else:
 		$TextureRect/ButtonContainer/btn_pay.type = "Error"
 
@@ -71,10 +71,14 @@ func _on_btn_pay_pressed() -> void:
 				
 				btn_refit.modulate.a = 1
 				btn_pay.modulate.a = 0.4
-				btn_pay.type = "Error"
+				
+				btn_pay.type = "Buy"
 
 				$TextureRect/SliderContainer/Buttons/Current.flat = true
 				field_log.success("Bike was paid success!")
+				
+				yield(get_tree().create_timer(0.4), "timeout")
+				get_tree().reload_current_scene()
 		else:
 			var message = "A bike was not selected!"
 			field_log.error(message)
@@ -98,7 +102,7 @@ func _on_btn_refit_pressed() -> void:
 		yield(get_tree().create_timer(0.4), "timeout")
 		
 		if has_node(bike_upgrade_name) and get_node(bike_upgrade_name):
-			bike_upgrade_instance.open(PlayerData.player_bike)		
+			bike_upgrade_instance.open(PlayerData.player_bike)
 	else:
 		var message = "You have not a bike!"
 		field_log.error(message)

@@ -25,10 +25,10 @@ func _on_PayBtn_pressed():
 		field_log.error("You have not an initial track")
 		return
 	
-	var track_section: = track_cfg.get_section(_track.id)
-	var player_track_section: = track_section.replace(track_cfg.prefix, player_track_cfg.prefix)
+	var track_section: = GameData.track_cfg.get_section(_track.id)
+	var player_track_section: = track_section.replace(GameData.track_cfg.prefix, GameData.player_track_cfg.prefix)
 	
-	if player_track_cfg.config.has_section(player_track_section):
+	if GameData.player_track_cfg.config.has_section(player_track_section):
 		var message = "You have already paid for this track %s" % player_track_section
 		field_log.info(message)
 		return
@@ -55,11 +55,11 @@ func set_time() -> void:
 
 
 func create_player_track(track_section:String) -> void:
-	var track_resource := track_cfg.get_resource(track_section)
-	var player_track_section := track_section.replace(track_cfg.prefix, player_track_cfg.prefix)
+	var track_resource := GameData.track_cfg.get_resource(track_section)
+	var player_track_section := track_section.replace(GameData.track_cfg.prefix, GameData.player_track_cfg.prefix)
 	
-	player_track_cfg.create(track_section, player_track_section)
-	track_cfg.set_state(track_section, LevelTrackStates.ACTIVE)
+	GameData.player_track_cfg.create(track_section, player_track_section)
+	GameData.track_cfg.set_state(track_section, LevelTrackStates.ACTIVE)
 	
 	GameData.current_track = load(track_resource).instance()
 	GameData.current_track.resource = track_resource

@@ -35,7 +35,10 @@ func _ready() -> void:
 	show_player_bike()
 	show_current_track()
 	
-	
+	"""if GameData.track_cfg.has_passed_level(GameData.current_level.id):
+		var popup_complete: Popup = load("res://Menu/LevelMenu/PopupCompleted/PopupCompleted.tscn").instance()
+		add_child(popup_complete)
+		popup_complete.popup()"""
 	
 	
 func _on_Play_pressed() -> void:

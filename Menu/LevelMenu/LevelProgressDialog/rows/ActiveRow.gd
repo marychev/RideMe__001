@@ -6,10 +6,10 @@ const audio_btn_run = preload("res://media/ui/btn_run.wav")
 const audio_btn_pay = preload("res://media/ui/btn_pay.wav")
 const audio_btn_error = preload("res://media/ui/btn_error.wav")
 
-var level_cfg: LevelCfg = load(PathData.LEVEL_MODEL).new()
+"""var level_cfg: LevelCfg = load(PathData.LEVEL_MODEL).new()
 var track_cfg: TrackCfg = load(PathData.TRACK_MODEL).new()
 var player_track_cfg: PlayerTrackCfg = load(PathData.PLAYER_TRACK_MODEL).new()
-	
+"""
 var _track: Dictionary
 
 

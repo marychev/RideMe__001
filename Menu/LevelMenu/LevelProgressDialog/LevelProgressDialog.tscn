@@ -86,6 +86,7 @@ normal = ExtResource( 2 )
 visibility_mode = 1
 
 [node name="Completed" type="Sprite" parent="."]
+visible = false
 position = Vector2( 619.19, 572.587 )
 texture = ExtResource( 5 )
 

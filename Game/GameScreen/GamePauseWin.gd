@@ -45,13 +45,17 @@ func get_info() -> String:
 
 func update_as_win_cfg():
 	if GameData.current_track:
-		var track_cfg: TrackCfg = load(PathData.TRACK_MODEL).new()
-		var player_track_cfg: PlayerTrackCfg = load(PathData.PLAYER_TRACK_MODEL).new()
-		var track_section: = track_cfg.get_section(GameData.current_track.ID)
-		var player_track_section: = track_section.replace(track_cfg.prefix, player_track_cfg.prefix)
+		# 
+		# TODO: remode from PATHDATA 
+		var track_section: = GameData.track_cfg.get_section(GameData.current_track.ID)
+		var player_track_section: = track_section.replace(GameData.track_cfg.prefix, GameData.player_track_cfg.prefix)
 		
-		track_cfg.set_state(track_section, LevelTrackStates.PASSED)
-		player_track_cfg.set_best_time(player_track_section, timer_format(PlayerData.time_level))
+		GameData.track_cfg.set_state(track_section, LevelTrackStates.PASSED)
+		GameData.player_track_cfg.set_best_time(player_track_section, timer_format(PlayerData.time_level))
 		
 		PlayerData.rms_count = 0
 		PlayerData.save_rms(PlayerData.rms)
+		
+		if GameData.track_cfg.has_passed_level(GameData.current_track.level_id):
+			var level_section: String = GameData.level_cfg.get_section(GameData.current_track.level_id)
+			GameData.level_cfg.set_passed_at(level_section)

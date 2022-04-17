@@ -30,6 +30,7 @@ text = "00:00:00"
 align = 1
 
 [node name="Extra" type="Label" parent="Container"]
+visible = false
 margin_right = 260.0
 margin_bottom = 60.0
 size_flags_vertical = 1

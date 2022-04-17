@@ -32,9 +32,7 @@ func clean_table() -> void:
 
 
 func fill_table() -> void:
-	var track_cfg: TrackCfg = load(PathData.TRACK_MODEL).new()
-	
-	for track in track_cfg.get_tracks(GameData.current_level.id):
+	for track in GameData.track_cfg.get_tracks(GameData.current_level.id):
 		if LevelTrackStates.PASSED == track.state:
 			add_passed_row_to_table(track)
 		elif LevelTrackStates.FAIL == track.state:
@@ -69,8 +67,17 @@ func add_row_to_table(resource: Resource, track: Dictionary) -> void:
 
 
 func set_title(track: Node2D) -> void:
+	if not track and GameData.current_level:
+		var passed_tracks := GameData.track_cfg.get_passed_tracks(GameData.current_level.id)
+		if not passed_tracks.empty():
+			var passed_track = passed_tracks[0]
+			
+			track = load(passed_track.resource).instance()
+			GameData.current_track = track
+		
 	.set_title(track)
-	if track and not GameData.current_level.empty() and GameData.track_cfg.has_passed_level(GameData.current_level.id):
+	
+	if not GameData.current_level.passed_at.empty():
 		$Nine/Title.set_text("%s passed!" % [track.title])
 		$Nine/Title.modulate = Color(0.1, 0.5, 0.1) # GREEN
 		

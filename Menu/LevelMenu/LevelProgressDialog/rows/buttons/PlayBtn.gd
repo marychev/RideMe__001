@@ -15,7 +15,7 @@ func _on_button_down():
 		$AudioStreamPlayer2D.set_stream(audio_btn_error)
 	elif "Run" == type:
 		$AudioStreamPlayer2D.set_stream(audio_btn_run)
-	elif "Pay" == type:
+	elif "Buy" == type:
 		$AudioStreamPlayer2D.set_stream(audio_btn_pay)
 	else:
 		$AudioStreamPlayer2D.set_stream(audio_btn_pressed)
