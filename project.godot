@@ -64,6 +64,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://config/Cfg.gd"
 }, {
+"base": "Node2D",
+"class": "CloudMove",
+"language": "GDScript",
+"path": "res://Game/Character/Cloud/CloudMove.gd"
+}, {
 "base": "TextureIconButton",
 "class": "ContinueGameBtn",
 "language": "GDScript",
@@ -163,6 +168,11 @@ _global_script_classes=[ {
 "class": "KSMan",
 "language": "GDScript",
 "path": "res://Game/Character/People/KickScooter/KSMan/KSMan.gd"
+}, {
+"base": "Level_0",
+"class": "Level2_0",
+"language": "GDScript",
+"path": "res://Game/Level2/Level2_0/Level2_0.gd"
 }, {
 "base": "Cfg",
 "class": "LevelCfg",
@@ -351,6 +361,7 @@ _global_script_class_icons={
 "BikeCfg": "",
 "BikeMenu": "",
 "Cfg": "",
+"CloudMove": "",
 "ContinueGameBtn": "",
 "ControlBtn": "",
 "Current": "",
@@ -371,6 +382,7 @@ _global_script_class_icons={
 "Hourgrass": "",
 "JumpBtn": "",
 "KSMan": "",
+"Level2_0": "",
 "LevelCfg": "",
 "LevelMenu": "",
 "LevelProgressDialog": "",
@@ -428,6 +440,11 @@ window/size/width=1366
 window/size/height=768
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
+
+[global]
+
+music=false
+audio=false
 
 [input]
 

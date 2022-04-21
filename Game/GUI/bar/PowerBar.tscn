@@ -11,11 +11,13 @@ size = 18
 font_data = ExtResource( 2 )
 
 [node name="PowerBar" instance=ExtResource( 1 )]
+margin_right = 410.0
 margin_bottom = 40.0
 script = ExtResource( 3 )
 
 [node name="Count" parent="." index="0"]
 margin_bottom = 40.0
+rect_min_size = Vector2( 158, 40 )
 
 [node name="Background" parent="Count" index="0"]
 margin_bottom = 40.0

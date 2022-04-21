@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Game/GUI/assets/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Menu/MainMenu/assets/bg-pressed.png" type="Texture" id=2]
@@ -17,6 +17,22 @@ font_data = ExtResource( 1 )
 [sub_resource type="DynamicFont" id=3]
 size = 32
 font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "flicker"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.713726, 0.415686, 0.729412, 1 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="PayRow" type="HBoxContainer"]
 margin_right = 1213.0
@@ -87,6 +103,7 @@ margin_left = 1010.0
 margin_right = 1150.0
 margin_bottom = 46.0
 rect_min_size = Vector2( 140, 46 )
+rect_pivot_offset = Vector2( -914.436, -124.112 )
 hint_tooltip = "Replay this track again. The best result will be keep!"
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
@@ -106,6 +123,9 @@ __meta__ = {
 }
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PayBtn"]
+
+[node name="AnimPlayer" type="AnimationPlayer" parent="PayBtn"]
+anims/flicker = SubResource( 4 )
 
 [connection signal="button_down" from="PayBtn" to="." method="_on_PayBtn_button_down"]
 [connection signal="pressed" from="PayBtn" to="." method="_on_PayBtn_pressed"]

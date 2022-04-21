@@ -40,6 +40,11 @@ __meta__ = {
 [node name="Count" type="MarginContainer" parent="."]
 margin_right = 158.0
 margin_bottom = 53.0
+rect_min_size = Vector2( 158, 50 )
+rect_clip_content = true
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Background" type="NinePatchRect" parent="Count"]
 margin_right = 158.0

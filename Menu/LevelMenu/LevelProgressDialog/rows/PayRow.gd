@@ -1,6 +1,7 @@
 extends ActiveRow
 class_name PayRow
 
+export (bool) var is_flicker
 onready var field_log: FieldLog = preload("res://components/field_log/FieldLog.gd").new()
 
 
@@ -10,6 +11,10 @@ func _ready():
 	if PlayerData.rms < int($Price.text.replace("rm", "")):
 		$PayBtn.modulate.a = 0.4
 		$PayBtn.disabled = true
+	
+	is_flicker = PlayerData.rms/2 > _track.price
+	if is_flicker:
+		anim_flicker()
 
 
 func _on_PayBtn_button_down():
@@ -48,6 +53,7 @@ func _on_PayBtn_pressed():
 
 
 func set_price() -> void:
+
 	$Price.set_text("%s rm" % [str(_track.price)])
 
 func set_time() -> void:
@@ -63,3 +69,8 @@ func create_player_track(track_section:String) -> void:
 	
 	GameData.current_track = load(track_resource).instance()
 	GameData.current_track.resource = track_resource
+
+
+func anim_flicker() -> void:
+	is_flicker = true
+	$PayBtn/AnimPlayer.play("flicker")

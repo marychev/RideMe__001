@@ -89,7 +89,6 @@ text = "Mountains"
 margin_left = 448.0
 margin_right = 668.0
 hint_tooltip = "Level 2"
-disabled = true
 text = "City"
 
 [node name="Detail" type="HBoxContainer" parent="TextureRect/SliderContainer"]
@@ -137,6 +136,7 @@ custom_fonts/font = SubResource( 2 )
 text = "No selected track"
 align = 1
 valign = 1
+autowrap = true
 
 [node name="Level" type="Label" parent="TextureRect/SliderContainer/Detail/MenuOptions"]
 margin_top = 120.0
@@ -228,3 +228,4 @@ texture = ExtResource( 6 )
 [connection signal="button_down" from="TextureRect/SliderContainer/Buttons/Current" to="." method="_on_Current_button_down"]
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Current" to="." method="_on_Current_pressed"]
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Level_1" to="." method="_on_Level_1_pressed"]
+[connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Level_2" to="." method="_on_Level_2_pressed"]

@@ -5,6 +5,7 @@ var current_track: Level_0
 var track_cfg: TrackCfg = load(PathData.TRACK_MODEL).new()
 var level_cfg: LevelCfg = load(PathData.LEVEL_MODEL).new()
 var player_track_cfg: PlayerTrackCfg = load(PathData.PLAYER_TRACK_MODEL).new()
+var bike_cfg: BikeCfg = load(PathData.BIKE_MODEL).new()
 
 
 func _ready():

@@ -21,6 +21,7 @@ margin_bottom = -32.0933
 [node name="Background" parent="." instance=ExtResource( 5 )]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 40.465, -139.043 )
 z_index = 1
 
 [node name="Music" type="AudioStreamPlayer2D" parent="Player"]

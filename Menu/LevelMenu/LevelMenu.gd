@@ -3,8 +3,9 @@ class_name LevelMenu
 
 # to top slider's buttons
 var level_0: Level_0 = load(PathData.PATH_LEVEL_0).instance()
-var level_1: Level_1 = load(PathData.PATH_LEVEL_1).instance()
-var level_2: Level_2 = load(PathData.PATH_LEVEL_2).instance()
+# var level_1: Level_1 = load(PathData.PATH_LEVEL_1).instance()
+# var level_2: Level_2 = load(PathData.PATH_LEVEL_2).instance()
+
 
 onready var btn_level_1: Button = $TextureRect/SliderContainer/Buttons/Level_1
 onready var btn_level_2: Button = $TextureRect/SliderContainer/Buttons/Level_2
@@ -14,6 +15,8 @@ onready var progress_popup: Resource = preload(RES_LEVEL_PROGRESS_DIALOG_TSCN)
 
 
 func _ready():
+	# ! btn_level_2.disabled = true
+	
 	._ready()
 	
 	init_btn_current_node()
@@ -78,16 +81,18 @@ func _on_Current_pressed() -> void:
 	init_slide(selected_node)
 
 
+# --- Level ---
+
 func _on_Level_1_pressed():
 	field_log.clear()
-	set_buttons_flat(btn_level_1)
-	
+
 	var level_id = 1
 	var level_section = GameData.level_cfg.get_section(level_id)
 	var track: Dictionary = GameData.track_cfg.get_active_track(level_id)
 	if not track.empty():
 		GameData.current_track = load(track.resource).instance()
 		GameData.current_level = GameData.level_cfg.as_dict(level_section)
+		set_buttons_flat(btn_level_1)
 		
 		if PlayerData.player_bike:
 			btn_pay.modulate.a = 1
@@ -95,6 +100,25 @@ func _on_Level_1_pressed():
 
 	selected_node = GameData.current_track
 	init_slide(selected_node)
+
+
+func _on_Level_2_pressed():
+	field_log.clear()
+	
+	var level_id = 2
+	var level_section = GameData.level_cfg.get_section(level_id)
+	var track: Dictionary = GameData.track_cfg.get_active_track(level_id)
+	if not track.empty():
+		GameData.current_track = load(track.resource).instance()
+		GameData.current_level = GameData.level_cfg.as_dict(level_section)
+		set_buttons_flat(btn_level_2)
+
+	selected_node = GameData.current_track
+	init_slide(selected_node)
+
+
+
+# ---  END Level ---
 
 
 func init_btn_current_node() -> void:

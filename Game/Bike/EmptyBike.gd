@@ -11,18 +11,16 @@ var power: float
 var max_power: float
 var price: int
 
-var bike_cfg: BikeCfg = load(PathData.BIKE_MODEL).new()
-
 
 func _init(section: String = "Bike_Empty"):
-	if bike_cfg.get_title(section):
-		title = bike_cfg.get_title(section)
-		texture = load(bike_cfg.get_texture(section))
-		max_speed = bike_cfg.get_max_speed(section)
-		max_height_jump = bike_cfg.get_max_height_jump(section)
-		power = bike_cfg.get_power(section)
-		max_power = bike_cfg.get_max_power(section)
-		price = bike_cfg.get_price(section)
+	if GameData.bike_cfg.get_title(section):
+		title = GameData.bike_cfg.get_title(section)
+		texture = load(GameData.bike_cfg.get_texture(section))
+		max_speed = GameData.bike_cfg.get_max_speed(section)
+		max_height_jump = GameData.bike_cfg.get_max_height_jump(section)
+		power = GameData.bike_cfg.get_power(section)
+		max_power = GameData.bike_cfg.get_max_power(section)
+		price = GameData.bike_cfg.get_price(section)
 
 
 func set_player_bike(player_bike_data: Dictionary) -> void:
@@ -58,4 +56,14 @@ static func upgrade_bike_parameters(
 static func set_param_value(label_value: Label, value: float) -> void:
 	label_value.set_text(str(value))
 	label_value.get("custom_fonts/font").set_outline_size(1)
+	
 
+
+static func create_for_cfg() -> void:
+	var texture: ="res://Game/Bike/assets/I/animation/collision.png"
+	var max_speed = 0.00
+	var max_height_jump = 0.00
+	var power = 0.00
+	var max_power = 0.00
+	var price: = 0
+	GameData.bike_cfg.create("Empty", texture, max_speed, max_height_jump, power, max_power, price)

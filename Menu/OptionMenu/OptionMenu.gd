@@ -41,33 +41,10 @@ func create_player_bike() -> void:
 
 
 func create_bikes() -> void:
-	var _title: = "Empty"
-	var _texture: ="res://Game/Bike/assets/I/animation/collision.png"
-	var _max_speed = 0.00
-	var _max_height_jump = 0.00
-	var _power = 0.00
-	var _max_power = 0.00
-	var _price: = 0
-	bike_cfg.create(_title, _texture, _max_speed, _max_height_jump, _power, _max_power, _price)
-	
-	_title = "Sataur"
-	_texture = "res://Game/Bike/assets/I/sprites.png"
-	_max_speed = 520.00
-	_max_height_jump = 860.00
-	_power = 300.00
-	_max_power = 400.00
-	_price = 90
-	bike_cfg.create(_title, _texture, _max_speed, _max_height_jump, _power, _max_power, _price)
-	
-	_title = "Drawster"
-	_texture = "res://Game/Bike/assets/II/sprites.png"
-	_max_speed = 500.00
-	_max_height_jump = 870.00
-	_power = 300.00
-	_max_power = 420.00
-	_price = 90
-	bike_cfg.create(_title, _texture, _max_speed, _max_height_jump, _power, _max_power, _price)
-	
+	EmptyBike.create_for_cfg()
+	SataurBike.create_for_cfg()
+	DrawsterBike.create_for_cfg()
+
 
 func create_levels() -> void:
 	GameData.level_cfg.create(1, "Mountains")
@@ -75,43 +52,13 @@ func create_levels() -> void:
 
 
 func create_tracks() -> void:
-	var _level_id: = 1
-	
-	var _track_id: = 0
-	var _issue: = "Collect the %s hourgrass."
-	var _resource: = "res://Game/Level/Level_0/Level_0.tscn"
-	var _texture: = "res://Game/Level/assets/slides/track-00.png"
-	var _num_win: = 2
-	var _init_time_level: = 100
-	var _price: = 0
-	var _state: = LevelTrackStates.ACTIVE
-	GameData.track_cfg.create(_track_id, _level_id, _issue, _resource, _texture, _num_win,  _init_time_level, _price, _state)
-	
-	_track_id = 1
-	_resource = "res://Game/Level/Level_1/Level_1.tscn"
-	_texture = "res://Game/Level/assets/slides/track-01.png"
-	_num_win = 5
-	_init_time_level = 20
-	_price = 2
-	GameData.track_cfg.create(_track_id, _level_id, _issue, _resource, _texture, _num_win,  _init_time_level, _price)
-	
-	_track_id = 2
-	_resource = "res://Game/Level/Level_2/Level_2.tscn"
-	_texture = "res://Game/Level/assets/slides/track-02.png"
-	_num_win = 10
-	_init_time_level = 30
-	_price = 10
-	GameData.track_cfg.create(_track_id, _level_id, _issue, _resource, _texture, _num_win,  _init_time_level, _price)
-
-	_track_id = 3
-	_resource = "res://Game/Level/Level_3/Level_3.tscn"
-	# _texture = "res://Game/Level/assets/mountains.png"
-	_texture = "res://Game/Level/assets/slides/track-03.png"
-	_num_win = 11
-	_init_time_level = 18
-	_price = 20
-	_issue = "Time is limited. " + _issue
-	GameData.track_cfg.create(_track_id, _level_id, _issue, _resource, _texture, _num_win,  _init_time_level, _price)
+	# Level 1
+	Level_0.create_for_cfg()
+	Level_1.create_for_cfg()
+	Level_2.create_for_cfg()
+	Level_3.create_for_cfg()
+	# Level 2
+	Level2_0.create_for_cfg()
 
 
 func create_player_track() -> void:

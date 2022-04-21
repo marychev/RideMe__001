@@ -40,20 +40,20 @@ __meta__ = {
 
 [node name="Bars" type="VBoxContainer" parent="Canvas/HBoxContainer"]
 margin_right = 410.0
-margin_bottom = 87.0
+margin_bottom = 94.0
 
 [node name="SpeedBar" parent="Canvas/HBoxContainer/Bars" instance=ExtResource( 2 )]
 margin_right = 410.0
+margin_bottom = 50.0
 
 [node name="PowerBar" parent="Canvas/HBoxContainer/Bars" instance=ExtResource( 4 )]
-margin_top = 44.0
-margin_right = 410.0
-margin_bottom = 84.0
+margin_top = 54.0
+margin_bottom = 94.0
 
 [node name="Time" parent="Canvas/HBoxContainer" instance=ExtResource( 6 )]
 margin_left = 414.0
 margin_right = 1321.0
-margin_bottom = 87.0
+margin_bottom = 94.0
 
 [node name="Counters" type="HBoxContainer" parent="Canvas"]
 anchor_left = 1.0
