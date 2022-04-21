@@ -32,7 +32,7 @@ func get_resource(section: String) -> String:
 	return config.get_value(section, KEY_RESOURCE)
 
 func get_issue(section: String) -> String:
-	return config.get_value(section, KEY_ISSUE) % [get_num_win(section)]
+	return config.get_value(section, KEY_ISSUE) # % [get_num_win(section)]
 
 func get_state(section: String) -> int:
 	return config.get_value(section, KEY_STATE)

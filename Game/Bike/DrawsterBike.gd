@@ -13,4 +13,5 @@ static func create_for_cfg() -> void:
 	var power = 300.00
 	var max_power = 410.00
 	var price: = 90
-	GameData.bike_cfg.create("Sataur", texture, max_speed, max_height_jump, power, max_power, price)
+	var bike_cfg: BikeCfg = load(PathData.BIKE_MODEL).new()
+	bike_cfg.create("Drawster", texture, max_speed, max_height_jump, power, max_power, price)

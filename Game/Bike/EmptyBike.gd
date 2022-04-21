@@ -1,6 +1,7 @@
 extends Node2D
 class_name EmptyBike
 
+var bike_cfg: BikeCfg = load(PathData.BIKE_MODEL).new()
 
 # Keys
 var title: String
@@ -13,14 +14,14 @@ var price: int
 
 
 func _init(section: String = "Bike_Empty"):
-	if GameData.bike_cfg.get_title(section):
-		title = GameData.bike_cfg.get_title(section)
-		texture = load(GameData.bike_cfg.get_texture(section))
-		max_speed = GameData.bike_cfg.get_max_speed(section)
-		max_height_jump = GameData.bike_cfg.get_max_height_jump(section)
-		power = GameData.bike_cfg.get_power(section)
-		max_power = GameData.bike_cfg.get_max_power(section)
-		price = GameData.bike_cfg.get_price(section)
+	if bike_cfg.get_title(section):
+		title = bike_cfg.get_title(section)
+		texture = load(bike_cfg.get_texture(section))
+		max_speed = bike_cfg.get_max_speed(section)
+		max_height_jump = bike_cfg.get_max_height_jump(section)
+		power = bike_cfg.get_power(section)
+		max_power = bike_cfg.get_max_power(section)
+		price = bike_cfg.get_price(section)
 
 
 func set_player_bike(player_bike_data: Dictionary) -> void:
@@ -66,4 +67,5 @@ static func create_for_cfg() -> void:
 	var power = 0.00
 	var max_power = 0.00
 	var price: = 0
-	GameData.bike_cfg.create("Empty", texture, max_speed, max_height_jump, power, max_power, price)
+	var bike_cfg: BikeCfg = load(PathData.BIKE_MODEL).new()
+	bike_cfg.create("Empty", texture, max_speed, max_height_jump, power, max_power, price)
