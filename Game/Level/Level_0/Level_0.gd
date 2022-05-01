@@ -61,5 +61,5 @@ static func create_for_cfg() -> void:
 	var price = 0
 	var issue: = "Collect the %s hourgrass."
 	var state: = LevelTrackStates.ACTIVE
-	var track_cfg: TrackCfg = load(PathData.TRACK_MODEL).new()
-	track_cfg.create(1, 0, issue, resource, texture, num_win, init_time_level, price, state)
+	
+	GameData.track_cfg.create(0, 1, issue, resource, texture, num_win, init_time_level, price, state)

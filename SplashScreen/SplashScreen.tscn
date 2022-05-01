@@ -80,3 +80,5 @@ anims/intro = SubResource( 1 )
 stream = ExtResource( 1 )
 autoplay = true
 max_distance = 1600.0
+
+[connection signal="button_down" from="Start" to="." method="_on_Start_button_down"]

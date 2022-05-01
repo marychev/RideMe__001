@@ -15,7 +15,7 @@ onready var progress_popup: Resource = preload(RES_LEVEL_PROGRESS_DIALOG_TSCN)
 
 
 func _ready():
-	# ! btn_level_2.disabled = true
+	btn_level_2.disabled = true
 	
 	._ready()
 	

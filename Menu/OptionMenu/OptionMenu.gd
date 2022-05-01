@@ -6,6 +6,17 @@ var player_bike_cfg: PlayerBikeCfg = load(PathData.PLAYER_BIKE_MODEL).new()
 
 
 func _on_ResetGame_pressed():
+	reset_game_config()
+	
+	var audio_btn_run = load("res://media/ui/btn_run.wav")
+	$VBoxContainer/Return/AudioStreamPlayer2D.set_stream(audio_btn_run)
+	$VBoxContainer/Return/AudioStreamPlayer2D.play()
+	yield(get_tree().create_timer(1), "timeout")
+	
+	get_tree().change_scene(PathData.RES_MAIN_MENU_TSCN)
+
+
+func reset_game_config():
 	clear_game_config()
 	
 	create_bikes()
@@ -16,13 +27,6 @@ func _on_ResetGame_pressed():
 	
 	PlayerData._ready()
 	GameData._ready()
-	
-	var audio_btn_run = load("res://media/ui/btn_run.wav")
-	$VBoxContainer/Return/AudioStreamPlayer2D.set_stream(audio_btn_run)
-	$VBoxContainer/Return/AudioStreamPlayer2D.play()
-	yield(get_tree().create_timer(1), "timeout")
-	
-	get_tree().change_scene(PathData.RES_MAIN_MENU_TSCN)
 
 
 func clear_game_config():
@@ -61,17 +65,18 @@ func create_tracks() -> void:
 	var _init_time_level: = 100
 	var _price: = 0
 	var _state: = LevelTrackStates.ACTIVE
-	GameData.track_cfg.create(_track_id, _level_id, _issue, _resource, _texture, _num_win,  _init_time_level, _price, _state)
 	
-	"""
+	# GameData.track_cfg.create(_track_id, _level_id, _issue, _resource, _texture, _num_win,  _init_time_level, _price, _state)
+	
+	
 	Level_0.create_for_cfg()
 	Level_1.create_for_cfg()
 	Level_2.create_for_cfg()
 	Level_3.create_for_cfg()
 	
 	Level2_0.create_for_cfg()
-	"""
 	
+	"""
 	_track_id = 1
 	_resource = "res://Game/Level/Level_1/Level_1.tscn"
 	_texture = "res://Game/Level/assets/slides/track-01.png"
@@ -108,11 +113,11 @@ func create_tracks() -> void:
 	_price = 8
 	_issue = "Time is limited. " + _issue
 	GameData.track_cfg.create(_track_id, _level_id, _issue, _resource, _texture, _num_win,  _init_time_level, _price, _state)
-
+	"""
 
 func create_player_track() -> void:
 	var track_train_id := 0
-	var track_section := GameData.track_cfg.get_section(track_train_id)
+	var track_section: String = GameData.track_cfg.get_section(track_train_id)
 	var track_resource = GameData.track_cfg.get_resource(track_section)
 	
 	var player_track_section := track_section.replace(GameData.track_cfg.prefix, GameData.player_track_cfg.prefix)
