@@ -83,6 +83,14 @@ func get_passed_tracks(level_id: int) -> Array:
 	return store
 
 
+func get_fail_tracks(level_id: int) -> Array:
+	var store = []
+	for section in config.get_sections():
+		if get_level_id(section) == level_id and get_state(section) == LevelTrackStates.FAIL:
+			store.append(as_dict(section))
+	return store
+
+
 func has_passed_level(level_id: int) -> bool:
 	var count_tracks: int = 0
 	var count_passed_tracks: int = 0

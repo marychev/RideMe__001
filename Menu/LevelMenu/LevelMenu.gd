@@ -83,17 +83,32 @@ func _on_Current_pressed() -> void:
 	init_slide(selected_node)
 
 
-# --- Level ---
+# --- Levels pressed ---
 
-func _on_Level_1_pressed():
-	field_log.clear()
-
-	var level_id = 1
+func set_active_or_passed_or_fail_track(level_id: int) -> void:
 	var level_section = GameData.level_cfg.get_section(level_id)
 	var track: Dictionary = GameData.track_cfg.get_active_track(level_id)
+	
+	var has_passed_level: bool = not GameData.level_cfg.get_passed_at(level_section).empty()
+	var passed_levels: Array = GameData.track_cfg.get_passed_tracks(level_id)
+	if track.empty() and has_passed_level and not passed_levels.empty():
+		track = passed_levels[-1]
+	
+	if track.empty():
+		var fail_levels: Array = GameData.track_cfg.get_fail_tracks(level_id)
+		if not fail_levels.empty():
+			track = fail_levels[-1]
+	
 	if not track.empty():
 		GameData.current_track = load(track.resource).instance()
 		GameData.current_level = GameData.level_cfg.as_dict(level_section)
+
+
+func _on_Level_1_pressed():
+	field_log.clear()
+	set_active_or_passed_or_fail_track(1)
+	
+	if GameData.current_track:
 		set_buttons_flat(btn_level_1)
 		
 		if PlayerData.player_bike:
@@ -106,13 +121,9 @@ func _on_Level_1_pressed():
 
 func _on_Level_2_pressed():
 	field_log.clear()
+	set_active_or_passed_or_fail_track(2)
 	
-	var level_id = 2
-	var level_section = GameData.level_cfg.get_section(level_id)
-	var track: Dictionary = GameData.track_cfg.get_active_track(level_id)
-	if not track.empty():
-		GameData.current_track = load(track.resource).instance()
-		GameData.current_level = GameData.level_cfg.as_dict(level_section)
+	if GameData.current_track:
 		set_buttons_flat(btn_level_2)
 
 	selected_node = GameData.current_track
@@ -129,8 +140,8 @@ func init_btn_current_node() -> void:
 
 	if not GameData.current_level.empty() and GameData.current_track:
 		init_slide(GameData.current_track)
-		btn_level_1.flat = false
-		btn_level_2.flat =  false
+		btn_level_1.flat = bool(btn_level_1.name == GameData.current_level.title)  # false
+		btn_level_2.flat =  bool(btn_level_2.name == GameData.current_level.title) # false
 		
 
 func set_menu_options(level: Level_0) -> void:
@@ -157,4 +168,4 @@ func init_slide(track: Node2D) -> void:
 		set_menu_options(track)
 		btn_refit.modulate.a = 1
 		
-		$Completed.visible = GameData.track_cfg.has_passed_level(track.level_id)
+		$Completed.visible = GameData.track_cfg.has_passed_level(GameData.current_level.id)
