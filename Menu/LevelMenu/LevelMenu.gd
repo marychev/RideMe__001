@@ -15,7 +15,8 @@ onready var progress_popup: Resource = preload(RES_LEVEL_PROGRESS_DIALOG_TSCN)
 
 
 func _ready():
-	btn_level_2.disabled = true
+	# Demo mode
+	# btn_level_2.disabled = true
 	
 	._ready()
 	
@@ -36,11 +37,12 @@ func _ready():
 	
 	if not is_instance_valid(GameData.current_track):
 		_on_btn_refit_pressed()
-
-	if $Completed.visible:
-		var popup_completed: Popup = load("res://Menu/LevelMenu/PopupCompleted/PopupCompleted.tscn").instance()
-		add_child(popup_completed)
-		popup_completed.popup()
+	
+	# Demo mode
+	# if $Completed.visible:
+	#	var popup_completed: Popup = load("res://Menu/LevelMenu/PopupCompleted/PopupCompleted.tscn").instance()
+	#	add_child(popup_completed)
+	#	popup_completed.popup()
 
 
 func _on_btn_pay_pressed() -> void:

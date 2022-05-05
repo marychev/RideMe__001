@@ -82,4 +82,6 @@ func set_title(track: Node2D) -> void:
 		$Nine/Title.modulate = Color(0.1, 0.5, 0.1) # GREEN
 		
 		$Completed.visible = true
-		$PopupCompleted.popup()
+		
+		# Demo mode
+		# $PopupCompleted.popup()
