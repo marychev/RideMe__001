@@ -72,21 +72,19 @@ position = Vector2( -1117.85, 28.5409 )
 motion_mirroring = Vector2( 2000, 0 )
 
 [node name="cloud" type="Sprite" parent="ParallaxLayer"]
-position = Vector2( 1205.05, 846.652 )
+position = Vector2( 1200, 875.243 )
 scale = Vector2( 0.589194, 0.589195 )
 texture = ExtResource( 3 )
 
 [node name="cloud2" type="Sprite" parent="ParallaxLayer"]
-position = Vector2( 1710.86, 749.546 )
+position = Vector2( 1800, 800 )
 scale = Vector2( 0.744075, 0.744075 )
 texture = ExtResource( 3 )
 
 [node name="cloud3" type="Sprite" parent="ParallaxLayer"]
-position = Vector2( 2406.73, 816.455 )
+position = Vector2( 2400, 840 )
 scale = Vector2( 0.479514, 0.479515 )
 texture = ExtResource( 3 )
-
-[node name="Canvas" type="CanvasLayer" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "sweem_clouds"

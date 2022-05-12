@@ -23,8 +23,10 @@ func reset_game_config():
 	create_player_bike()
 	create_levels()
 	create_tracks()
-	create_player_track()
 	
+	create_player_track(0)
+	create_player_track(4)
+		
 	PlayerData._ready()
 	GameData._ready()
 
@@ -56,7 +58,7 @@ func create_levels() -> void:
 
 
 func create_tracks() -> void:
-	var _level_id: = 1
+	"""var _level_id: = 1
 	var _track_id: = 0
 	var _issue: = "Collect the %s hourgrass."
 	var _resource: = "res://Game/Level/Level_0/Level_0.tscn"
@@ -64,10 +66,8 @@ func create_tracks() -> void:
 	var _num_win: = 2
 	var _init_time_level: = 100
 	var _price: = 0
-	var _state: = LevelTrackStates.ACTIVE
-	
+	var _state: = LevelTrackStates.ACTIVE"""
 	# GameData.track_cfg.create(_track_id, _level_id, _issue, _resource, _texture, _num_win,  _init_time_level, _price, _state)
-	
 	
 	Level_0.create_for_cfg()
 	Level_1.create_for_cfg()
@@ -115,8 +115,7 @@ func create_tracks() -> void:
 	GameData.track_cfg.create(_track_id, _level_id, _issue, _resource, _texture, _num_win,  _init_time_level, _price, _state)
 	"""
 
-func create_player_track() -> void:
-	var track_train_id := 0
+func create_player_track(track_train_id: int = 0) -> void:
 	var track_section: String = GameData.track_cfg.get_section(track_train_id)
 	var track_resource = GameData.track_cfg.get_resource(track_section)
 	

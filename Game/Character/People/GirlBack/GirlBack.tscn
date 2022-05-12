@@ -208,6 +208,7 @@ position = Vector2( 1.7, -238 )
 scale = Vector2( 0.8, 0.8 )
 collision_layer = 32
 mode = 3
+can_sleep = false
 script = ExtResource( 5 )
 
 [node name="girl-back0" type="Sprite" parent="."]

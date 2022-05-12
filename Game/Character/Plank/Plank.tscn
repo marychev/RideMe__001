@@ -32,8 +32,8 @@ z_index = 1
 shape = SubResource( 1 )
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
-position = Vector2( -398.141, -491.821 )
-scale = Vector2( 3.59742, 48.5686 )
+position = Vector2( -658.356, -935.935 )
+scale = Vector2( 6.55367, 88.4809 )
 rect = Rect2( 0, 2, 310, 18 )
 process_parent = true
 physics_process_parent = true

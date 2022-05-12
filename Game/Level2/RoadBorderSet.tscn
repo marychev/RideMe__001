@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Game/Level2/assets/road_border.png" type="Texture" id=1]
+
+[node name="RoadBorderSet" type="Node2D"]
+
+[node name="RoadBorder" type="Sprite" parent="."]
+position = Vector2( 0.339, 0 )
+rotation = -0.00371203
+z_index = -8
+texture = ExtResource( 1 )
+centered = false
+
+[node name="RoadBorder2" type="Sprite" parent="."]
+position = Vector2( 143.402, 0 )
+rotation = -0.00371203
+z_index = -8
+texture = ExtResource( 1 )
+centered = false
+
+[node name="RoadBorder3" type="Sprite" parent="."]
+position = Vector2( 286.369, 0 )
+rotation = -0.00371203
+z_index = -8
+texture = ExtResource( 1 )
+centered = false
+
+[node name="RoadBorder4" type="Sprite" parent="."]
+position = Vector2( 428.911, 0 )
+rotation = -0.00371203
+z_index = -8
+texture = ExtResource( 1 )
+centered = false
+
+[node name="RoadBorder5" type="Sprite" parent="."]
+position = Vector2( 572.409, 0 )
+rotation = -0.00371203
+z_index = -8
+texture = ExtResource( 1 )
+centered = false
+
+[node name="RoadBorder6" type="Sprite" parent="."]
+position = Vector2( 715.874, 0 )
+rotation = -0.00371203
+z_index = -8
+texture = ExtResource( 1 )
+centered = false
+
+[node name="RoadBorder7" type="Sprite" parent="."]
+position = Vector2( 859.576, 0 )
+rotation = -0.00371203
+z_index = -8
+texture = ExtResource( 1 )
+centered = false
+
+[node name="RoadBorder8" type="Sprite" parent="."]
+position = Vector2( 1002.61, 0 )
+rotation = -0.00371203
+z_index = -8
+texture = ExtResource( 1 )
+centered = false
+
+[node name="RoadBorder9" type="Sprite" parent="."]
+position = Vector2( 1145.89, 0 )
+rotation = -0.00371203
+z_index = -8
+texture = ExtResource( 1 )
+centered = false
