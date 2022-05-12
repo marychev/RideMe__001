@@ -19,7 +19,6 @@ func _physics_process(delta):
 	
 func _on_MotionDetecter_body_entered(body: Player):
 	if body != self and body == player:
-		print("audio Gav Gav")
 		set_is_attack(true)
 		
 
@@ -40,12 +39,16 @@ func set_is_attack(val: bool) -> void:
 
 
 func do_attack():
+	print('TODO: jump Dog')
+	position.x += 180
+	
+	position.y += 20
+
+	set_is_attack(false)
+
 	var animate_people = load(PathData.PATH_ANIMATE_PEOPLE).new()
 	animate_people.do_collision(AnimationPlayer.new(), player)
 	player.power = 0
 	
-	print('TODO: jump Dog')
-	position.x += 180
-	position.y += 40
-
-	set_is_attack(false)
+	var die_player = load(PathData.PATH_DIE_PLAYER).new()
+	die_player.die()

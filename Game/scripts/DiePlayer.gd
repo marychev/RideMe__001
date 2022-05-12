@@ -40,7 +40,7 @@ func die(force: bool = false) -> void:
 	if force: 
 		PlayerData.lives = 0
 	
-	if PlayerData.lives <= 0:
+	if PlayerData.lives <= 0 and player:
 		player.get_node('AudioMove').set_stream(audio_btn_error)
 		player.get_node('AudioMove').play()
 	
