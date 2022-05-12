@@ -2,7 +2,8 @@ class_name AnimatePeople
 
 
 func do_collision(animation:AnimationPlayer, player: Player):
-	animation.play("collision")
+	if animation:
+		animation.play("collision")
 		
 	if PlayerData.lives > 25:
 		PlayerData.lives /= 2

@@ -1,10 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Game/Character/Dog/assets/dog-0.png" type="Texture" id=1]
 [ext_resource path="res://Game/Character/Dog/Dog.gd" type="Script" id=2]
+[ext_resource path="res://media/characters/ryk-psa.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 40.5679, 18.8201 )
+extents = Vector2( 40.5679, 32.4116 )
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 140.893
@@ -18,15 +19,19 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 40.3971, 45.1653 )
+position = Vector2( 40.3971, 37.5738 )
 shape = SubResource( 1 )
 
 [node name="MotionDetecter" type="Area2D" parent="."]
+position = Vector2( 27, -55 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MotionDetecter"]
 position = Vector2( 0.156799, -0.844551 )
 rotation = -1.57127
 shape = SubResource( 2 )
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
 
 [connection signal="body_entered" from="MotionDetecter" to="." method="_on_MotionDetecter_body_entered"]
 [connection signal="body_exited" from="MotionDetecter" to="." method="_on_MotionDetecter_body_exited"]

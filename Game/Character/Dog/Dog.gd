@@ -1,24 +1,51 @@
 extends KinematicBody2D
+
+const SPEED_JUMP_ATTACK: float = 1.4
+
 onready var player: Player = get_node("/root/Game/Player")
+onready var direction: Vector2 = Vector2.ZERO
+onready var is_attack: bool = false
 
 
 func _physics_process(delta):
-	if player:
-		#position.x = player.position.x
-		#position.y = position.y + 1
+	if player and is_attack:
+		direction = (player.global_position - global_position).normalized()
+		direction = direction * (SPEED_JUMP_ATTACK + delta)
+		
+		var collision := move_and_collide(direction)
+		if collision and collision.collider == player:
+			do_attack()
 
-		var direction = (player.global_position - global_position).normalized()
-		move_and_collide(direction * 1)
-
-
+	
 func _on_MotionDetecter_body_entered(body: Player):
-	if body != self:
-		# player = body
-		print("Gav gav ...")
+	if body != self and body == player:
+		print("audio Gav Gav")
+		set_is_attack(true)
 		
 
 
 func _on_MotionDetecter_body_exited(body: Player):
-	#player = null
-	print("Buy buy dog!")
-	#queue_free()
+	if body != self and body == player:
+		set_is_attack(false)
+
+
+func set_is_attack(val: bool) -> void:
+	is_attack = val
+	$Sprite.flip_h = not is_attack
+	
+	if is_attack:
+		$Audio.play()
+	else:
+		$Audio.stop()
+
+
+func do_attack():
+	var animate_people = load(PathData.PATH_ANIMATE_PEOPLE).new()
+	animate_people.do_collision(AnimationPlayer.new(), player)
+	player.power = 0
+	
+	print('TODO: jump Dog')
+	position.x += 180
+	position.y += 40
+
+	set_is_attack(false)

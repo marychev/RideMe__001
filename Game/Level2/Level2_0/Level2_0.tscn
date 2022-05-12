@@ -18,7 +18,7 @@
 [ext_resource path="res://Game/Character/MovingPanel/MovingPlatform.tscn" type="PackedScene" id=16]
 
 [node name="Level2_0" type="Node2D"]
-position = Vector2( 17.7268, 90.6941 )
+position = Vector2( -99.8718, 112.076 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
@@ -31,7 +31,7 @@ position = Vector2( -242.9, 2544.8 )
 z_index = 1
 
 [node name="Dog" parent="Level2_0_0" instance=ExtResource( 4 )]
-position = Vector2( 5805.07, 2578.21 )
+position = Vector2( 5436.24, 2720.75 )
 z_index = 1
 
 [node name="RoadBorderSet2" parent="Level2_0_0" instance=ExtResource( 1 )]
