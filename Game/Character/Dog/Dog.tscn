@@ -8,8 +8,8 @@
 extents = Vector2( 40.5679, 32.4116 )
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 92.8484
-height = 118.092
+radius = 80.3931
+height = 185.059
 
 [node name="Dog" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -27,7 +27,7 @@ shape = SubResource( 1 )
 position = Vector2( 27, -55 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MotionDetecter"]
-position = Vector2( -9.62456, 41.9032 )
+position = Vector2( 7.30254, 56.1576 )
 rotation = -1.57127
 shape = SubResource( 2 )
 

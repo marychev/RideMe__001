@@ -28,9 +28,9 @@ static func create_for_cfg() -> void:
 	var track_id = 4
 	var resource = "res://Game/Level2/Level2_0/Level2_0.tscn"
 	var texture = "res://Game/Level2/assets/city-image-0.png"
-	var num_win = 88
-	var init_time_level = 888
-	var price = 8
+	var num_win = 10
+	var init_time_level = 24
+	var price = 10
 	var issue = "TODO: Level in progress %"
 	var state = LevelTrackStates.ACTIVE
 	GameData.track_cfg.create(track_id, level_id, issue, resource, texture, num_win, init_time_level, price, state)
