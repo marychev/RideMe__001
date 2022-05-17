@@ -24,18 +24,13 @@ func _on_CollisionDetector_area_entered(area: Area2D) -> void:
 			_velocity = calculate_stomp_velocity(_velocity, max_power+power)
 
 
-func _on_CollisionDetector_body_entered(body: Node) -> void:
-	if 'MovingPlatform' in body.name:
-		body.move_down(get_physics_process_delta_time(), mass)
-	#elif 'KSMan' in body.name:
-
-
 func on_detect_collisions_process(delta):
 	for i in get_slide_count():
-		var collision = get_slide_collision(i)
-		if 'MovingPlatform' in collision.collider.name:
-			collision.collider.move_down(delta, mass)
-		# elif 'StaticRock' in collision.collider.name:  pass
+		var collision := get_slide_collision(i)
+		var body := collision.collider
+		
+		if 'MovingPlatform' in body.name:
+			body.move_down(delta)
 
 
 func detect_landing_animation(current_animation_name: String) -> String:
@@ -119,7 +114,8 @@ func get_input(delta: float):
 		if not has_colected or not has_colected:
 			$AudioMove.set_stream(audio_go)
 		$AudioMove.play()
-		
+
+
 # Processes
 
 func _physics_process(delta: float):
@@ -141,6 +137,18 @@ func _physics_process(delta: float):
 		anim_player.play('collision')
 	
 	# Todo: Implement calculate the max height of a stopm with road area
-	if position.y > 40000:
+	if position.y > 11000:
 		var die_player = load(PathData.PATH_DIE_PLAYER).new()
 		die_player.from_fell(self)
+
+
+func _on_CollisionDetector_body_entered(body):
+	if 'MovingPlatform' in body.name:
+		body.has_move_up = false
+		body.position.y += mass / 10
+
+
+func _on_CollisionDetector_body_exited(body):
+	if 'MovingPlatform' in body.name:
+		body.has_move_up = true
+		body.position.y -= mass / 10

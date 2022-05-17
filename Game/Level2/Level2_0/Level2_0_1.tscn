@@ -1,0 +1,202 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Game/Character/Bridge/BridgeLeft.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Road/DoubleRoadBody.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game/Level2/assets/road_border.png" type="Texture" id=3]
+[ext_resource path="res://Game/Character/Hourgrass/Hourgrass.gd" type="Script" id=5]
+[ext_resource path="res://Game/Character/Bench/Bench.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Game/Character/RM/RM.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Game/Character/Dog/Dog.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Game/Character/Lamp/Lamp.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Game/Character/Hourgrass/Hourgrass.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Game/Character/Plank/Plank.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Game/Character/Rock/StaticRock.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Game/Character/MovingPanel/MovingPlatform.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Game/Character/Puddle/Puddle.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Game/Character/Stairs/StaticStairs.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Game/Level2/RoadBorderSet.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Game/Road/RoadBody.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Game/Character/Refit/Refit.tscn" type="PackedScene" id=28]
+
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 0.02
+rough = true
+
+[node name="Level2_0_1" type="Node"]
+
+[node name="MovingPlatform3" parent="." instance=ExtResource( 23 )]
+position = Vector2( 17910.8, 2658.71 )
+
+[node name="RoadBorder" type="Sprite" parent="MovingPlatform3"]
+position = Vector2( -69.0732, -30.8503 )
+z_index = -1
+texture = ExtResource( 3 )
+
+[node name="RoadBorder2" type="Sprite" parent="MovingPlatform3"]
+position = Vector2( 73.0244, -29.5137 )
+z_index = -1
+texture = ExtResource( 3 )
+
+[node name="RM" parent="." instance=ExtResource( 17 )]
+position = Vector2( 17923.1, 2310.59 )
+
+[node name="RM2" parent="." instance=ExtResource( 17 )]
+position = Vector2( 18335.1, 2595.09 )
+
+[node name="Plank" parent="." instance=ExtResource( 21 )]
+position = Vector2( 17701.4, 1896.61 )
+
+[node name="Plank2" parent="." instance=ExtResource( 21 )]
+position = Vector2( 18073.6, 1959.75 )
+
+[node name="Plank3" parent="." instance=ExtResource( 21 )]
+position = Vector2( 18196.1, 1795.38 )
+
+[node name="Plank4" parent="." instance=ExtResource( 21 )]
+position = Vector2( 18631.1, 1896.52 )
+rotation = 3.08749
+
+[node name="Plank5" parent="." instance=ExtResource( 21 )]
+position = Vector2( 18658.4, 1817.25 )
+rotation = 0.000973314
+
+[node name="Plank6" parent="." instance=ExtResource( 21 )]
+position = Vector2( 18513.5, 1631.57 )
+
+[node name="RM3" parent="." instance=ExtResource( 17 )]
+position = Vector2( 18551, 2319.22 )
+script = ExtResource( 5 )
+
+[node name="Hourgrass" parent="." instance=ExtResource( 20 )]
+position = Vector2( 19365.5, 2360.49 )
+
+[node name="RoadBody" parent="." instance=ExtResource( 27 )]
+position = Vector2( 18873.5, 2437.84 )
+
+[node name="Refit" parent="." instance=ExtResource( 28 )]
+position = Vector2( 21269.3, 2265.53 )
+
+[node name="RoadBody2" parent="." instance=ExtResource( 27 )]
+position = Vector2( 21304.9, 2437.84 )
+
+[node name="RoadBody3" parent="." instance=ExtResource( 27 )]
+position = Vector2( 21304.9, 2437.84 )
+
+[node name="Puddle2" parent="." instance=ExtResource( 24 )]
+position = Vector2( 23480.1, 2482.99 )
+
+[node name="Lamp" parent="." instance=ExtResource( 19 )]
+position = Vector2( 17988.4, 2615.48 )
+
+[node name="DoubleRoadBody6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 18059.8, 2855.27 )
+
+[node name="StaticRock" parent="." instance=ExtResource( 22 )]
+position = Vector2( 18127.1, 2974.13 )
+rotation = 3.12253
+scale = Vector2( 1, -1 )
+physics_material_override = SubResource( 1 )
+
+[node name="Lamp2" parent="." instance=ExtResource( 19 )]
+position = Vector2( 18280.2, 2797 )
+
+[node name="RoadBorderSet10" parent="." instance=ExtResource( 26 )]
+position = Vector2( 18056.7, 2783.78 )
+rotation = -0.0026052
+z_index = 1
+
+[node name="RoadBorderSet11" parent="." instance=ExtResource( 26 )]
+position = Vector2( 19345, 2780.81 )
+rotation = 0.00403077
+z_index = 1
+
+[node name="Puddle" parent="." instance=ExtResource( 24 )]
+position = Vector2( 18842.9, 2922.51 )
+
+[node name="Hourgrass2" parent="." instance=ExtResource( 20 )]
+position = Vector2( 20316.6, 2691.72 )
+
+[node name="DoubleRoadBody7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 20495.5, 2856.67 )
+
+[node name="Dog" parent="." instance=ExtResource( 18 )]
+position = Vector2( 20320.2, 2899.16 )
+
+[node name="RoadBorderSet12" parent="." instance=ExtResource( 26 )]
+position = Vector2( 20632.6, 2786.02 )
+rotation = -0.0026052
+z_index = 1
+
+[node name="Bench" parent="." instance=ExtResource( 15 )]
+position = Vector2( 22903.5, 2872.63 )
+rotation = 0.0971788
+
+[node name="MovingPlatform4" parent="." instance=ExtResource( 23 )]
+position = Vector2( 23157.3, 3105.96 )
+
+[node name="RoadBorder" type="Sprite" parent="MovingPlatform4"]
+position = Vector2( -69.0732, -30.8503 )
+z_index = -1
+texture = ExtResource( 3 )
+
+[node name="RoadBorder2" type="Sprite" parent="MovingPlatform4"]
+position = Vector2( 73.0244, -29.5137 )
+z_index = -1
+texture = ExtResource( 3 )
+
+[node name="MovingPlatform5" parent="." instance=ExtResource( 23 )]
+position = Vector2( 23557.3, 2915.47 )
+
+[node name="RoadBorder" type="Sprite" parent="MovingPlatform5"]
+position = Vector2( -69.0732, -30.8503 )
+z_index = -1
+texture = ExtResource( 3 )
+
+[node name="RoadBorder2" type="Sprite" parent="MovingPlatform5"]
+position = Vector2( 73.0244, -29.5137 )
+z_index = -1
+texture = ExtResource( 3 )
+
+[node name="RoadBorderSet13" parent="." instance=ExtResource( 26 )]
+position = Vector2( 23937.4, 3777.09 )
+rotation = -1.55819
+z_index = 1
+
+[node name="RoadBorderSet14" parent="." instance=ExtResource( 26 )]
+position = Vector2( 24154, 3755.53 )
+rotation = -0.57093
+
+[node name="Lamp3" parent="." instance=ExtResource( 19 )]
+position = Vector2( 24119.4, 3597.88 )
+
+[node name="MovingPlatform2" parent="." instance=ExtResource( 23 )]
+position = Vector2( 23990.1, 2760.72 )
+
+[node name="StaticStairs" parent="." instance=ExtResource( 25 )]
+position = Vector2( 23671.7, 3784.68 )
+rotation = -0.0457047
+
+[node name="BridgeLeft" parent="." instance=ExtResource( 1 )]
+position = Vector2( 24123.6, 3501.29 )
+rotation = -0.326512
+
+[node name="Bench3" parent="." instance=ExtResource( 15 )]
+position = Vector2( 23712, 3788.38 )
+rotation = -3.10839
+
+[node name="Lamp4" parent="." instance=ExtResource( 19 )]
+position = Vector2( 24329, 3557.64 )
+
+[node name="Bench2" parent="." instance=ExtResource( 15 )]
+position = Vector2( 24332.6, 3785.38 )
+rotation = -2.59174
+
+[node name="Bench4" parent="." instance=ExtResource( 15 )]
+position = Vector2( 25382.5, 3105.51 )
+rotation = 0.492498
+
+[node name="StaticRock2" parent="." instance=ExtResource( 22 )]
+position = Vector2( 24727.3, 3555.66 )
+rotation = -0.535928
+scale = Vector2( 1, 1 )
+physics_material_override = SubResource( 1 )

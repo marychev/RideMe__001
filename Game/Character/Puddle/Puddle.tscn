@@ -43,9 +43,9 @@ rotation = 1.70199
 shape = SubResource( 1 )
 
 [node name="VisibilityNotifier" type="VisibilityNotifier2D" parent="."]
-position = Vector2( 80.4651, 68.1139 )
+position = Vector2( 141.948, 26.2682 )
 rotation = 0.427938
-scale = Vector2( 66.2343, 41.5474 )
+scale = Vector2( 124.363, 78.0105 )
 
 [node name="Particles" type="Particles2D" parent="."]
 position = Vector2( 93.5859, -16.8857 )

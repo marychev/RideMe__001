@@ -4,19 +4,17 @@
 [ext_resource path="res://Game/Character/MovingPanel/assets/moving-panel.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 164.84, 17.9491 )
+extents = Vector2( 164.84, 7.13462 )
 
-[node name="MovingPlatform" type="RigidBody2D"]
-collision_layer = 16
-mode = 3
-mass = 10.0
+[node name="MovingPlatform" type="KinematicBody2D"]
+collision_mask = 17
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2( -0.768753, -3.71189 )
+position = Vector2( -0.775321, -4.01817 )
 rotation = -0.0214428
 scale = Vector2( 1.01057, 0.832519 )
 shape = SubResource( 1 )
@@ -27,5 +25,4 @@ scale = Vector2( 137.142, 70.6747 )
 process_parent = true
 physics_process_parent = true
 
-[connection signal="body_entered" from="." to="." method="_on_MovingPlatform_body_entered"]
 [connection signal="screen_exited" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_exited"]

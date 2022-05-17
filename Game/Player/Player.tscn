@@ -132,10 +132,11 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 39.2455, 27.4649 )
+extents = Vector2( 39.8907, 27.4649 )
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( -47.7295, -141.563 )
+rotation = -0.00633928
 scale = Vector2( 1.34, 1.34 )
 collision_mask = 10
 script = ExtResource( 6 )
@@ -147,9 +148,9 @@ __meta__ = {
 attenuation = 0.183011
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 42.1707, 64.314 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-centered = false
 hframes = 6
 vframes = 4
 frame = 15
@@ -184,13 +185,13 @@ anims/wait = SubResource( 7 )
 [node name="CollisionDetector" type="Area2D" parent="."]
 modulate = Color( 0, 0.207843, 1, 1 )
 position = Vector2( 35.873, 98.5574 )
-collision_layer = 0
 collision_mask = 114
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionDetector"]
-position = Vector2( 5.73484, -12.3659 )
+position = Vector2( 5.77422, -12.3699 )
 shape = SubResource( 8 )
 
 [connection signal="area_entered" from="CollisionDetector" to="." method="_on_CollisionDetector_area_entered"]
 [connection signal="body_entered" from="CollisionDetector" to="." method="_on_CollisionDetector_body_entered"]
+[connection signal="body_exited" from="CollisionDetector" to="." method="_on_CollisionDetector_body_exited"]
