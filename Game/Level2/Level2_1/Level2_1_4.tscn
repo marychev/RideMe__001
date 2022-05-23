@@ -1,0 +1,142 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Game/Level2/RoadBorderSet.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Character/Bridge/BridgeLeft.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game/Character/Bridge/BridgeRight.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Game/Character/Start/Start.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Game/Character/Hourgrass/Hourgrass.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Game/Character/Grass/Grass.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Game/Road/DoubleRoadBody.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Game/Character/Dog/Dog.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Game/Character/Plank/Plank.tscn" type="PackedScene" id=9]
+
+[node name="Level2_1_4" type="Node"]
+
+[node name="BridgeLeft" parent="." instance=ExtResource( 2 )]
+position = Vector2( 72285.6, 6085.21 )
+
+[node name="BridgeLeft2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 73419.2, 5802.03 )
+
+[node name="BridgeLeft3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 75037.2, 5623.12 )
+
+[node name="BridgeLeft4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 76605.7, 5453.42 )
+
+[node name="BridgeLeft5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 78246.6, 5312.3 )
+
+[node name="BridgeLeft6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 79440.1, 5015.87 )
+
+[node name="Hourgrass" parent="." instance=ExtResource( 5 )]
+position = Vector2( 77850.3, 5234.2 )
+
+[node name="BridgeLeft7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 80646.4, 4713.05 )
+
+[node name="BridgeRight" parent="." instance=ExtResource( 3 )]
+position = Vector2( 82220.8, 4719.61 )
+
+[node name="BridgeRight2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 83440, 5106.93 )
+
+[node name="BridgeRight3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 84685.2, 5480.65 )
+
+[node name="BridgeRight4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 85911.5, 5883.75 )
+
+[node name="BridgeRight5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 87211.6, 6289.54 )
+
+[node name="BridgeRight6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 88461.3, 6700.94 )
+
+[node name="BridgeLeft8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 89851.8, 6698.88 )
+
+[node name="RoadBorderSet" parent="." instance=ExtResource( 1 )]
+position = Vector2( 89851.6, 6955.35 )
+rotation = -0.24343
+z_index = 1
+
+[node name="BridgeLeft9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 91066.1, 6394.26 )
+
+[node name="RoadBorderSet2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 91101.4, 6643.33 )
+rotation = -0.24343
+z_index = 1
+
+[node name="BridgeLeft10" parent="." instance=ExtResource( 2 )]
+position = Vector2( 92635.2, 6017.38 )
+
+[node name="RoadBorderSet3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 92587.1, 6278.09 )
+rotation = -0.24343
+z_index = 1
+
+[node name="BridgeLeft11" parent="." instance=ExtResource( 2 )]
+position = Vector2( 93850.7, 5713.14 )
+
+[node name="RoadBorderSet4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 93838.5, 5967.71 )
+rotation = -0.24343
+z_index = 1
+
+[node name="Dog" parent="." instance=ExtResource( 8 )]
+position = Vector2( 94077, 5957.62 )
+
+[node name="BridgeLeft12" parent="." instance=ExtResource( 2 )]
+position = Vector2( 95382.2, 5328.78 )
+
+[node name="RoadBorderSet5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 95346.4, 5590.45 )
+rotation = -0.24343
+z_index = 1
+
+[node name="BridgeLeft13" parent="." instance=ExtResource( 2 )]
+position = Vector2( 96835.5, 4964.07 )
+
+[node name="RoadBorderSet6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 96817.9, 5221.33 )
+rotation = -0.24343
+z_index = 1
+
+[node name="Hourgrass2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 98296.7, 4810.3 )
+
+[node name="DoubleRoadBody6" parent="." instance=ExtResource( 7 )]
+position = Vector2( 98247.8, 5149.46 )
+
+[node name="Grass" parent="." instance=ExtResource( 6 )]
+position = Vector2( 98177.3, 5082.85 )
+
+[node name="Plank" parent="." instance=ExtResource( 9 )]
+position = Vector2( 100502, 5014.27 )
+
+[node name="Grass2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 99157.2, 5207.21 )
+
+[node name="Grass3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 99670.2, 5138.84 )
+
+[node name="DoubleRoadBody7" parent="." instance=ExtResource( 7 )]
+position = Vector2( 100679, 5149.46 )
+
+[node name="Grass4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 100563, 5131.12 )
+
+[node name="Hourgrass3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 103236, 5002.68 )
+
+[node name="DoubleRoadBody8" parent="." instance=ExtResource( 7 )]
+position = Vector2( 103108, 5149.46 )
+
+[node name="DoubleRoadBody9" parent="." instance=ExtResource( 7 )]
+position = Vector2( 105546, 5149.46 )
+
+[node name="Finish" parent="." instance=ExtResource( 4 )]
+position = Vector2( 107750, 5147.11 )

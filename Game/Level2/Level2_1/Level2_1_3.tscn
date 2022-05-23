@@ -1,0 +1,122 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Game/Character/Refit/Refit.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Character/RM/RM.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Game/Character/Rock/StaticRock.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Game/Character/Bench/Bench.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Game/Character/Bridge/BridgeLeft.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Game/Character/Stairs/StaticStairs.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Game/Road/RoadBody.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Game/Character/MovingPanel/MovingPlatform.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Game/Level2/RoadBorderSet.tscn" type="PackedScene" id=17]
+
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 0.02
+rough = true
+
+[node name="Level2_1_3" type="Node"]
+
+[node name="RoadBody" parent="." instance=ExtResource( 15 )]
+position = Vector2( 66372.2, 3544.78 )
+
+[node name="StaticRock" parent="." instance=ExtResource( 4 )]
+position = Vector2( 68399, 3586.28 )
+physics_material_override = SubResource( 1 )
+
+[node name="Bench1" parent="." instance=ExtResource( 5 )]
+position = Vector2( 68759.9, 3556.62 )
+
+[node name="Bench2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 68764.3, 3500.5 )
+
+[node name="Bench3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 68764.4, 3454.84 )
+
+[node name="Bench4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 68764.4, 3410.39 )
+
+[node name="Refit" parent="." instance=ExtResource( 1 )]
+position = Vector2( 69127.4, 3053.64 )
+
+[node name="StaticStairs" parent="." instance=ExtResource( 14 )]
+position = Vector2( 69562.5, 3057.26 )
+rotation = -1.5708
+
+[node name="StaticStairs2" parent="." instance=ExtResource( 14 )]
+position = Vector2( 69562.5, 3785.26 )
+rotation = -1.5708
+
+[node name="StaticStairs3" parent="." instance=ExtResource( 14 )]
+position = Vector2( 69562.5, 4517.71 )
+rotation = -1.5708
+
+[node name="RoadBorderSet" parent="." instance=ExtResource( 17 )]
+position = Vector2( 69226.1, 4496.92 )
+rotation = -1.5708
+z_index = 1
+
+[node name="RoadBorderSet2" parent="." instance=ExtResource( 17 )]
+position = Vector2( 69226.1, 5784.53 )
+rotation = -1.5708
+z_index = 1
+
+[node name="MovingPlatform" parent="." instance=ExtResource( 16 )]
+position = Vector2( 69266.9, 3252.06 )
+
+[node name="MovingPlatform2" parent="." instance=ExtResource( 16 )]
+position = Vector2( 69265.8, 5040.02 )
+
+[node name="RoadBorderSet3" parent="." instance=ExtResource( 17 )]
+position = Vector2( 69573.8, 6065.07 )
+rotation = -1.5708
+z_index = 1
+
+[node name="RM" parent="." instance=ExtResource( 3 )]
+position = Vector2( 69504.7, 4804.59 )
+
+[node name="MovingPlatform3" parent="." instance=ExtResource( 16 )]
+position = Vector2( 69614.5, 4932 )
+
+[node name="MovingPlatform4" parent="." instance=ExtResource( 16 )]
+position = Vector2( 69615, 5592.83 )
+
+[node name="RM2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 70012.1, 4901.48 )
+
+[node name="RoadBorderSet4" parent="." instance=ExtResource( 17 )]
+position = Vector2( 70092, 6064.29 )
+rotation = -1.5708
+z_index = 1
+
+[node name="MovingPlatform5" parent="." instance=ExtResource( 16 )]
+position = Vector2( 70130.5, 5023.09 )
+
+[node name="MovingPlatform6" parent="." instance=ExtResource( 16 )]
+position = Vector2( 70130.5, 5380.27 )
+
+[node name="MovingPlatform7" parent="." instance=ExtResource( 16 )]
+position = Vector2( 70578.2, 5335.75 )
+
+[node name="MovingPlatform8" parent="." instance=ExtResource( 16 )]
+position = Vector2( 70967, 5280.41 )
+
+[node name="MovingPlatform9" parent="." instance=ExtResource( 16 )]
+position = Vector2( 71352.2, 5242.65 )
+
+[node name="RoadBorderSet5" parent="." instance=ExtResource( 17 )]
+position = Vector2( 71833.1, 6083.16 )
+rotation = -1.5708
+z_index = 1
+
+[node name="MovingPlatform10" parent="." instance=ExtResource( 16 )]
+position = Vector2( 71876.5, 5292.34 )
+
+[node name="MovingPlatform11" parent="." instance=ExtResource( 16 )]
+position = Vector2( 71876.5, 6093.3 )
+
+[node name="BridgeLeft" parent="." instance=ExtResource( 13 )]
+position = Vector2( 71084.2, 6386.54 )
+
+[node name="StaticStairs4" parent="." instance=ExtResource( 14 )]
+position = Vector2( 70482.6, 6599.71 )
+rotation = -0.00702846
