@@ -140,17 +140,11 @@ position = Vector2( 31174.8, 2786.02 )
 rotation = -0.0026052
 z_index = 1
 
-[node name="Plank7" parent="." instance=ExtResource( 21 )]
-position = Vector2( 34627.2, 2778.8 )
-
-[node name="Plank8" parent="." instance=ExtResource( 21 )]
-position = Vector2( 34395.5, 2625.57 )
-
 [node name="Plank9" parent="." instance=ExtResource( 21 )]
 position = Vector2( 34231.6, 2450.95 )
 
 [node name="BridgeRight" parent="." instance=ExtResource( 4 )]
-position = Vector2( 33413.8, 2907.49 )
+position = Vector2( 33406.1, 2873.6 )
 rotation = 0.199127
 z_index = 0
 
