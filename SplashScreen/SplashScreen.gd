@@ -14,5 +14,5 @@ func _on_Start_button_down():
 	# First start game
 	var player_bike_cfg: PlayerBikeCfg = load(PathData.PLAYER_BIKE_MODEL).new()
 	if player_bike_cfg.first().empty():
-		var option_menu:OptionMenu = load("res://Menu/OptionMenu/OptionMenu.tscn").instance()
+		var option_menu: OptionMenu = load("res://Menu/OptionMenu/OptionMenu.tscn").instance()
 		option_menu.reset_game_config()

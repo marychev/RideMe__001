@@ -8,7 +8,7 @@
 [ext_resource path="res://Game/Level2/Level2_0/Level2_0_3.tscn" type="PackedScene" id=10]
 
 [node name="Level2_0" type="Node2D"]
-position = Vector2( -131.644, -671.512 )
+position = Vector2( -90.021, -664.971 )
 z_index = 1
 script = ExtResource( 6 )
 __meta__ = {

@@ -179,6 +179,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Game/Level2/Level2_1/Level2_1.gd"
 }, {
+"base": "Level_0",
+"class": "Level2_2",
+"language": "GDScript",
+"path": "res://Game/Level2/Level2_2/Level2_2.gd"
+}, {
 "base": "Cfg",
 "class": "LevelCfg",
 "language": "GDScript",
@@ -389,6 +394,7 @@ _global_script_class_icons={
 "KSMan": "",
 "Level2_0": "",
 "Level2_1": "",
+"Level2_2": "",
 "LevelCfg": "",
 "LevelMenu": "",
 "LevelProgressDialog": "",

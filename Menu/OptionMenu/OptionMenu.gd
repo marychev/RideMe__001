@@ -62,8 +62,10 @@ func create_tracks() -> void:
 	Level_1.create_for_cfg()
 	Level_2.create_for_cfg()
 	Level_3.create_for_cfg()
+	
 	Level2_0.create_for_cfg()
 	Level2_1.create_for_cfg()
+	Level2_2.create_for_cfg()
 
 
 func create_player_track(track_train_id: int = 0) -> void:
