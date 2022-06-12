@@ -25,7 +25,7 @@
 friction = 0.02
 rough = true
 
-[node name="Level2_0_0" type="Node"]
+[node name="Level2_2_0" type="Node"]
 
 [node name="RoadBorderSet" parent="." instance=ExtResource( 25 )]
 position = Vector2( -242.9, 2544.8 )

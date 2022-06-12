@@ -22,7 +22,7 @@
 friction = 0.02
 rough = true
 
-[node name="Level2_0_1" type="Node"]
+[node name="Level2_2_1" type="Node"]
 
 [node name="MovingPlatform3" parent="." instance=ExtResource( 23 )]
 position = Vector2( 27857.2, 2531.04 )

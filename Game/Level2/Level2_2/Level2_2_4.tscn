@@ -10,7 +10,7 @@
 [ext_resource path="res://Game/Character/Dog/Dog.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Game/Character/Plank/Plank.tscn" type="PackedScene" id=16]
 
-[node name="Level2_0_4" type="Node"]
+[node name="Level2_2_4" type="Node"]
 
 [node name="BridgeLeft" parent="." instance=ExtResource( 3 )]
 position = Vector2( 72285.6, 6085.21 )
