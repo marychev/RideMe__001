@@ -198,7 +198,6 @@ position = Vector2( 34292.7, 2640.27 )
 [node name="Bench18" parent="." instance=ExtResource( 1 )]
 position = Vector2( 34445.6, 2640.62 )
 rotation = 0.000649336
-scale = Vector2( 1, 1 )
 
 [node name="RoadBorderSet11" parent="." instance=ExtResource( 26 )]
 position = Vector2( 35444.5, 2697.94 )
@@ -217,12 +216,10 @@ scale = Vector2( 0.8, 0.8 )
 [node name="Bench19" parent="." instance=ExtResource( 1 )]
 position = Vector2( 34843.4, 2635.01 )
 rotation = 0.000649336
-scale = Vector2( 1, 1 )
 
 [node name="Bench20" parent="." instance=ExtResource( 1 )]
 position = Vector2( 35473.2, 2614.69 )
 rotation = 0.000649336
-scale = Vector2( 1, 1 )
 
 [node name="Refit" parent="." instance=ExtResource( 28 )]
 position = Vector2( 36643.8, 2465.39 )

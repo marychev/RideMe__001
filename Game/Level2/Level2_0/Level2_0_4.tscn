@@ -55,18 +55,18 @@ position = Vector2( 87139.8, 6289.54 )
 position = Vector2( 88446.2, 6700.94 )
 
 [node name="BridgeLeft8" parent="." instance=ExtResource( 3 )]
-position = Vector2( 89851.8, 6698.88 )
+position = Vector2( 89973, 6679.77 )
 
 [node name="RoadBorderSet" parent="." instance=ExtResource( 2 )]
-position = Vector2( 89851.6, 6955.35 )
+position = Vector2( 89972.8, 6936.24 )
 rotation = -0.24343
 z_index = 1
 
 [node name="BridgeLeft9" parent="." instance=ExtResource( 3 )]
-position = Vector2( 91066.1, 6394.26 )
+position = Vector2( 91188.7, 6370.27 )
 
 [node name="RoadBorderSet2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 91101.4, 6643.33 )
+position = Vector2( 91224.1, 6619.34 )
 rotation = -0.24343
 z_index = 1
 

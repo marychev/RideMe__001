@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Game/Character/Bridge/BridgeLeft.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Road/DoubleRoadBody.tscn" type="PackedScene" id=2]
@@ -15,7 +15,6 @@
 [ext_resource path="res://Game/Character/Puddle/Puddle.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Game/Character/Stairs/StaticStairs.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Game/Level2/RoadBorderSet.tscn" type="PackedScene" id=26]
-[ext_resource path="res://Game/Road/RoadBody.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Game/Character/Refit/Refit.tscn" type="PackedScene" id=28]
 
 [sub_resource type="PhysicsMaterial" id=1]
@@ -60,13 +59,13 @@ position = Vector2( 28877.4, 2595.09 )
 position = Vector2( 27865.6, 2184.08 )
 
 [node name="Plank2" parent="." instance=ExtResource( 21 )]
-position = Vector2( 28059.4, 2257.32 )
+position = Vector2( 28022.4, 2324.59 )
 
 [node name="Plank3" parent="." instance=ExtResource( 21 )]
-position = Vector2( 28175.3, 2079.5 )
+position = Vector2( 28011.4, 1986.85 )
 
 [node name="Plank4" parent="." instance=ExtResource( 21 )]
-position = Vector2( 28593.4, 2173.91 )
+position = Vector2( 28526.1, 2157.09 )
 rotation = 3.08749
 
 [node name="Plank5" parent="." instance=ExtResource( 21 )]
@@ -74,26 +73,14 @@ position = Vector2( 28566.9, 2074.46 )
 rotation = 0.000973314
 
 [node name="Plank6" parent="." instance=ExtResource( 21 )]
-position = Vector2( 28385, 1986.31 )
+position = Vector2( 28445.5, 1935.86 )
 
 [node name="RM3" parent="." instance=ExtResource( 17 )]
-position = Vector2( 29093.2, 2319.22 )
+position = Vector2( 28691.8, 2719.71 )
 script = ExtResource( 5 )
-
-[node name="Hourgrass" parent="." instance=ExtResource( 20 )]
-position = Vector2( 29907.8, 2360.49 )
-
-[node name="RoadBody" parent="." instance=ExtResource( 27 )]
-position = Vector2( 29415.8, 2437.84 )
 
 [node name="Refit" parent="." instance=ExtResource( 28 )]
 position = Vector2( 31811.6, 2265.53 )
-
-[node name="RoadBody2" parent="." instance=ExtResource( 27 )]
-position = Vector2( 31847.2, 2437.84 )
-
-[node name="RoadBody3" parent="." instance=ExtResource( 27 )]
-position = Vector2( 31847.2, 2437.84 )
 
 [node name="Puddle2" parent="." instance=ExtResource( 24 )]
 position = Vector2( 34022.4, 2482.99 )

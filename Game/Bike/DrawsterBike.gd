@@ -8,7 +8,7 @@ func _init(section: String = "Bike_Drawster"):
 
 static func create_for_cfg() -> void:
 	var texture = "res://Game/Bike/assets/II/sprites.png"
-	var max_speed = 500.00
+	var max_speed = 600.00
 	var max_height_jump = 865.00
 	var power = 300.00
 	var max_power = 410.00

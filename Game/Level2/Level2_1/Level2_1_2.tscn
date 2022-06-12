@@ -324,5 +324,11 @@ position = Vector2( 63671.9, 3531.52 )
 [node name="DoubleRoadBody10" parent="." instance=ExtResource( 6 )]
 position = Vector2( 63940, 3545.25 )
 
+[node name="Dog4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 64666.9, 3636.25 )
+
+[node name="Dog5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 65754.7, 3585.31 )
+
 [node name="KSMan4" parent="." instance=ExtResource( 4 )]
 position = Vector2( 64410.1, 3524.22 )
