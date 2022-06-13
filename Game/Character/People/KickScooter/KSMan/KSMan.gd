@@ -6,7 +6,7 @@ onready var animation: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
 	set_physics_process(false)
-	_velocity.x = -speed.x
+	_velocity.x = -speed.x if scale.x > 0 else speed.x
 
 
 func _physics_process(delta: float) -> void:

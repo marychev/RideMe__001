@@ -60,25 +60,28 @@ position = Vector2( 111191, 3648.19 )
 [node name="Grass6" parent="." instance=ExtResource( 6 )]
 position = Vector2( 114447, 3802.21 )
 rotation = -0.013517
+
+[node name="Bench9" parent="." instance=ExtResource( 9 )]
+position = Vector2( 114489, 3865.2 )
 scale = Vector2( 1, 1 )
 
-[node name="Bench9" parent="Grass6" instance=ExtResource( 9 )]
-position = Vector2( 41.5938, 63.5625 )
-rotation = 0.013517
+[node name="Grass8" parent="." instance=ExtResource( 6 )]
+position = Vector2( 114160, 3846 )
+rotation = -0.013517
+scale = Vector2( 1, 1 )
 
-[node name="Grass5" parent="Grass6" instance=ExtResource( 6 )]
-position = Vector2( -287.57, 39.9048 )
+[node name="Dog4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 114325, 3944.42 )
+scale = Vector2( 1, 1 )
 
-[node name="Dog4" parent="Grass6" instance=ExtResource( 8 )]
-position = Vector2( -124.133, 140.549 )
-rotation = 0.013517
+[node name="Dog5" parent="." instance=ExtResource( 8 )]
+position = Vector2( 114731, 3917.49 )
+scale = Vector2( 1, 1 )
 
-[node name="Dog5" parent="Grass6" instance=ExtResource( 8 )]
-position = Vector2( 282.523, 119.105 )
-rotation = 0.013517
-
-[node name="Grass6" parent="Grass6" instance=ExtResource( 6 )]
-position = Vector2( 40.4375, 94.8442 )
+[node name="Grass9" parent="." instance=ExtResource( 6 )]
+position = Vector2( 114489, 3896.5 )
+rotation = -0.013517
+scale = Vector2( 1, 1 )
 
 [node name="DoubleRoadBody5" parent="." instance=ExtResource( 7 )]
 position = Vector2( 116749, 3834.28 )
@@ -89,14 +92,15 @@ position = Vector2( 116912, 3537.94 )
 [node name="Grass7" parent="ChildrenSlide4" instance=ExtResource( 6 )]
 position = Vector2( -344.664, 305.726 )
 rotation = -0.013517
+
+[node name="Grass10" parent="ChildrenSlide4" instance=ExtResource( 6 )]
+position = Vector2( 490.461, 346.135 )
+rotation = -0.013517
 scale = Vector2( 1, 1 )
 
-[node name="Grass8" parent="ChildrenSlide4/Grass7" instance=ExtResource( 6 )]
-position = Vector2( 834.492, 51.6929 )
-scale = Vector2( 1, 1 )
-
-[node name="Grass9" parent="ChildrenSlide4/Grass7" instance=ExtResource( 6 )]
-position = Vector2( 1372.23, 26.0269 )
+[node name="Grass11" parent="ChildrenSlide4" instance=ExtResource( 6 )]
+position = Vector2( 1027.79, 313.203 )
+rotation = -0.013517
 scale = Vector2( 1, 1 )
 
 [node name="DoubleRoadBody6" parent="." instance=ExtResource( 7 )]
@@ -108,14 +112,15 @@ position = Vector2( 120122, 3537.94 )
 [node name="Grass7" parent="ChildrenSlide5" instance=ExtResource( 6 )]
 position = Vector2( -344.664, 305.726 )
 rotation = -0.013517
+
+[node name="Grass10" parent="ChildrenSlide5" instance=ExtResource( 6 )]
+position = Vector2( 490.453, 346.135 )
+rotation = -0.013517
 scale = Vector2( 1, 1 )
 
-[node name="Grass8" parent="ChildrenSlide5/Grass7" instance=ExtResource( 6 )]
-position = Vector2( 834.492, 51.6929 )
-scale = Vector2( 1, 1 )
-
-[node name="Grass9" parent="ChildrenSlide5/Grass7" instance=ExtResource( 6 )]
-position = Vector2( 1372.23, 26.0269 )
+[node name="Grass11" parent="ChildrenSlide5" instance=ExtResource( 6 )]
+position = Vector2( 1027.79, 313.203 )
+rotation = -0.013517
 scale = Vector2( 1, 1 )
 
 [node name="DoubleRoadBody7" parent="." instance=ExtResource( 7 )]
@@ -136,14 +141,15 @@ position = Vector2( 125061, 3537.94 )
 [node name="Grass7" parent="ChildrenSlide6" instance=ExtResource( 6 )]
 position = Vector2( -344.664, 305.726 )
 rotation = -0.013517
+
+[node name="Grass8" parent="ChildrenSlide6" instance=ExtResource( 6 )]
+position = Vector2( 490.453, 346.135 )
+rotation = -0.013517
 scale = Vector2( 1, 1 )
 
-[node name="Grass8" parent="ChildrenSlide6/Grass7" instance=ExtResource( 6 )]
-position = Vector2( 834.492, 51.6929 )
-scale = Vector2( 1, 1 )
-
-[node name="Grass9" parent="ChildrenSlide6/Grass7" instance=ExtResource( 6 )]
-position = Vector2( 1372.23, 26.0269 )
+[node name="Grass9" parent="ChildrenSlide6" instance=ExtResource( 6 )]
+position = Vector2( 1027.79, 313.203 )
+rotation = -0.013517
 scale = Vector2( 1, 1 )
 
 [node name="DoubleRoadBody9" parent="." instance=ExtResource( 7 )]
@@ -152,59 +158,59 @@ position = Vector2( 126502, 3834.28 )
 [node name="Grass5" parent="." instance=ExtResource( 6 )]
 position = Vector2( 126396, 3845.71 )
 
-[node name="Grass7" parent="Grass5" instance=ExtResource( 6 )]
-position = Vector2( 325.133, -7.49121 )
+[node name="Grass10" parent="." instance=ExtResource( 6 )]
+position = Vector2( 126721, 3838.22 )
 
-[node name="Grass8" parent="Grass5" instance=ExtResource( 6 )]
-position = Vector2( 657.023, -19.864 )
+[node name="Grass11" parent="." instance=ExtResource( 6 )]
+position = Vector2( 127053, 3825.85 )
 
-[node name="Grass9" parent="Grass5" instance=ExtResource( 6 )]
-position = Vector2( 995.062, -19.864 )
+[node name="Grass12" parent="." instance=ExtResource( 6 )]
+position = Vector2( 127391, 3825.85 )
 
-[node name="Grass10" parent="Grass5" instance=ExtResource( 6 )]
-position = Vector2( 1322.64, -27.4236 )
+[node name="Grass13" parent="." instance=ExtResource( 6 )]
+position = Vector2( 127719, 3818.29 )
 
-[node name="Grass11" parent="Grass5" instance=ExtResource( 6 )]
-position = Vector2( 1651.07, -29.5425 )
+[node name="Grass14" parent="." instance=ExtResource( 6 )]
+position = Vector2( 128047, 3816.17 )
 
-[node name="Grass12" parent="Grass5" instance=ExtResource( 6 )]
-position = Vector2( 1989.61, -33.106 )
+[node name="Grass15" parent="." instance=ExtResource( 6 )]
+position = Vector2( 128386, 3812.6 )
 
 [node name="Plank" parent="." instance=ExtResource( 10 )]
 position = Vector2( 126677, 3615.15 )
 
-[node name="RM" parent="Plank" instance=ExtResource( 11 )]
-position = Vector2( 85.7812, -149.295 )
+[node name="RM" parent="." instance=ExtResource( 11 )]
+position = Vector2( 126763, 3465.85 )
 
-[node name="Plank2" parent="Plank" instance=ExtResource( 10 )]
-position = Vector2( 253.141, -86.2671 )
+[node name="Plank3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 126930, 3528.88 )
 
-[node name="Plank3" parent="Plank" instance=ExtResource( 10 )]
-position = Vector2( 514.766, -5.65698 )
+[node name="Plank4" parent="." instance=ExtResource( 10 )]
+position = Vector2( 127192, 3609.49 )
 
-[node name="RM2" parent="Plank" instance=ExtResource( 11 )]
-position = Vector2( 625.781, -149.295 )
+[node name="RM2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 127303, 3465.85 )
 
-[node name="Plank4" parent="Plank" instance=ExtResource( 10 )]
-position = Vector2( 763.664, -94.7522 )
+[node name="Plank5" parent="." instance=ExtResource( 10 )]
+position = Vector2( 127441, 3520.4 )
 
-[node name="Plank5" parent="Plank" instance=ExtResource( 10 )]
-position = Vector2( 998.602, -9.03247 )
+[node name="Plank6" parent="." instance=ExtResource( 10 )]
+position = Vector2( 127676, 3606.12 )
 
-[node name="RM3" parent="Plank" instance=ExtResource( 11 )]
-position = Vector2( 1147.78, -149.295 )
+[node name="RM3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 127825, 3465.85 )
 
-[node name="Plank6" parent="Plank" instance=ExtResource( 10 )]
-position = Vector2( 1274.8, -94.7522 )
+[node name="Plank7" parent="." instance=ExtResource( 10 )]
+position = Vector2( 127952, 3520.4 )
 
-[node name="Plank7" parent="Plank" instance=ExtResource( 10 )]
-position = Vector2( 1506.56, -21.7317 )
+[node name="Plank8" parent="." instance=ExtResource( 10 )]
+position = Vector2( 128184, 3593.42 )
 
-[node name="RM4" parent="Plank" instance=ExtResource( 11 )]
-position = Vector2( 1661.78, -149.295 )
+[node name="RM4" parent="." instance=ExtResource( 11 )]
+position = Vector2( 128339, 3465.85 )
 
-[node name="Plank8" parent="Plank" instance=ExtResource( 10 )]
-position = Vector2( 1814.52, -104.277 )
+[node name="Plank9" parent="." instance=ExtResource( 10 )]
+position = Vector2( 128492, 3510.87 )
 
 [node name="DoubleRoadBody10" parent="." instance=ExtResource( 7 )]
 position = Vector2( 128940, 3834.28 )
@@ -212,59 +218,59 @@ position = Vector2( 128940, 3834.28 )
 [node name="Grass7" parent="." instance=ExtResource( 6 )]
 position = Vector2( 128740, 3797.54 )
 
-[node name="Grass7" parent="Grass7" instance=ExtResource( 6 )]
-position = Vector2( 325.133, -7.49121 )
+[node name="Grass16" parent="." instance=ExtResource( 6 )]
+position = Vector2( 129065, 3790.05 )
 
-[node name="Grass8" parent="Grass7" instance=ExtResource( 6 )]
-position = Vector2( 657.023, -19.864 )
+[node name="Grass17" parent="." instance=ExtResource( 6 )]
+position = Vector2( 129397, 3777.68 )
 
-[node name="Grass9" parent="Grass7" instance=ExtResource( 6 )]
-position = Vector2( 995.062, -19.864 )
+[node name="Grass18" parent="." instance=ExtResource( 6 )]
+position = Vector2( 129735, 3777.68 )
 
-[node name="Grass10" parent="Grass7" instance=ExtResource( 6 )]
-position = Vector2( 1322.64, -27.4236 )
+[node name="Grass19" parent="." instance=ExtResource( 6 )]
+position = Vector2( 130063, 3770.12 )
 
-[node name="Grass11" parent="Grass7" instance=ExtResource( 6 )]
-position = Vector2( 1651.07, -29.5425 )
+[node name="Grass20" parent="." instance=ExtResource( 6 )]
+position = Vector2( 130391, 3768 )
 
-[node name="Grass12" parent="Grass7" instance=ExtResource( 6 )]
-position = Vector2( 1989.61, -33.106 )
+[node name="Grass21" parent="." instance=ExtResource( 6 )]
+position = Vector2( 130730, 3764.43 )
 
 [node name="Plank2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 129021, 3615.27 )
 
-[node name="RM" parent="Plank2" instance=ExtResource( 11 )]
-position = Vector2( 85.7812, -149.295 )
+[node name="RM5" parent="." instance=ExtResource( 11 )]
+position = Vector2( 129107, 3465.98 )
 
-[node name="Plank2" parent="Plank2" instance=ExtResource( 10 )]
-position = Vector2( 253.141, -86.2671 )
+[node name="Plank10" parent="." instance=ExtResource( 10 )]
+position = Vector2( 129274, 3529 )
 
-[node name="Plank3" parent="Plank2" instance=ExtResource( 10 )]
-position = Vector2( 514.766, -5.65698 )
+[node name="Plank11" parent="." instance=ExtResource( 10 )]
+position = Vector2( 129536, 3609.61 )
 
-[node name="RM2" parent="Plank2" instance=ExtResource( 11 )]
-position = Vector2( 625.781, -149.295 )
+[node name="RM6" parent="." instance=ExtResource( 11 )]
+position = Vector2( 129647, 3465.98 )
 
-[node name="Plank4" parent="Plank2" instance=ExtResource( 10 )]
-position = Vector2( 763.664, -94.7522 )
+[node name="Plank12" parent="." instance=ExtResource( 10 )]
+position = Vector2( 129785, 3520.52 )
 
-[node name="Plank5" parent="Plank2" instance=ExtResource( 10 )]
-position = Vector2( 998.602, -9.03247 )
+[node name="Plank13" parent="." instance=ExtResource( 10 )]
+position = Vector2( 130020, 3606.24 )
 
-[node name="RM3" parent="Plank2" instance=ExtResource( 11 )]
-position = Vector2( 1147.78, -149.295 )
+[node name="RM7" parent="." instance=ExtResource( 11 )]
+position = Vector2( 130169, 3465.98 )
 
-[node name="Plank6" parent="Plank2" instance=ExtResource( 10 )]
-position = Vector2( 1274.8, -94.7522 )
+[node name="Plank14" parent="." instance=ExtResource( 10 )]
+position = Vector2( 130296, 3520.52 )
 
-[node name="Plank7" parent="Plank2" instance=ExtResource( 10 )]
-position = Vector2( 1506.56, -21.7317 )
+[node name="Plank15" parent="." instance=ExtResource( 10 )]
+position = Vector2( 130528, 3593.54 )
 
-[node name="RM4" parent="Plank2" instance=ExtResource( 11 )]
-position = Vector2( 1661.78, -149.295 )
+[node name="RM8" parent="." instance=ExtResource( 11 )]
+position = Vector2( 130683, 3465.98 )
 
-[node name="Plank8" parent="Plank2" instance=ExtResource( 10 )]
-position = Vector2( 1814.52, -104.277 )
+[node name="Plank16" parent="." instance=ExtResource( 10 )]
+position = Vector2( 130836, 3510.99 )
 
 [node name="DoubleRoadBody11" parent="." instance=ExtResource( 7 )]
 position = Vector2( 131378, 3834.28 )

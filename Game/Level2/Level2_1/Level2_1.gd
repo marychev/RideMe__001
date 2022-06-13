@@ -28,7 +28,7 @@ static func create_for_cfg() -> void:
 	var track_id = 5
 	var resource = "res://Game/Level2/Level2_1/Level2_1.tscn"
 	var texture = "res://Game/Level2/assets/city-image-0.png"
-	var num_win = 8
+	var num_win = 6
 	var init_time_level = 40
 	var price = 20
 	var issue = "TODO: Level in progress %"
