@@ -70,30 +70,57 @@ position = Vector2( 69266.9, 3252.06 )
 [node name="MovingPlatform2" parent="." instance=ExtResource( 16 )]
 position = Vector2( 69265.8, 5040.02 )
 
+[node name="RoadBorderSet3" parent="." instance=ExtResource( 17 )]
+position = Vector2( 69573.8, 6065.07 )
+rotation = -1.5708
+z_index = 1
+
 [node name="RM" parent="." instance=ExtResource( 3 )]
 position = Vector2( 69504.7, 4804.59 )
 
+[node name="MovingPlatform3" parent="." instance=ExtResource( 16 )]
+position = Vector2( 69614.5, 4932 )
+
+[node name="MovingPlatform4" parent="." instance=ExtResource( 16 )]
+position = Vector2( 69615, 5592.83 )
+
 [node name="RM2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 70012.1, 4901.48 )
+
+[node name="RoadBorderSet4" parent="." instance=ExtResource( 17 )]
+position = Vector2( 70092, 6064.29 )
+rotation = -1.5708
+z_index = 1
+
+[node name="MovingPlatform5" parent="." instance=ExtResource( 16 )]
+position = Vector2( 70130.5, 5023.09 )
+
+[node name="MovingPlatform6" parent="." instance=ExtResource( 16 )]
+position = Vector2( 70130.5, 5380.27 )
+
+[node name="MovingPlatform7" parent="." instance=ExtResource( 16 )]
+position = Vector2( 70578.2, 5335.75 )
+
+[node name="MovingPlatform8" parent="." instance=ExtResource( 16 )]
+position = Vector2( 70967, 5280.41 )
+
+[node name="MovingPlatform9" parent="." instance=ExtResource( 16 )]
+position = Vector2( 71352.2, 5242.65 )
+
+[node name="RoadBorderSet5" parent="." instance=ExtResource( 17 )]
+position = Vector2( 71833.1, 6083.16 )
+rotation = -1.5708
+z_index = 1
+
+[node name="MovingPlatform10" parent="." instance=ExtResource( 16 )]
+position = Vector2( 71876.5, 5292.34 )
+
+[node name="MovingPlatform11" parent="." instance=ExtResource( 16 )]
+position = Vector2( 71876.5, 6093.3 )
 
 [node name="BridgeLeft" parent="." instance=ExtResource( 13 )]
 position = Vector2( 71084.2, 6386.54 )
 
 [node name="StaticStairs4" parent="." instance=ExtResource( 14 )]
-position = Vector2( 68413.1, 5647.64 )
-
-[node name="StaticStairs5" parent="." instance=ExtResource( 14 )]
-position = Vector2( 69142.8, 5641.11 )
-rotation = 0.333069
-
-[node name="StaticStairs6" parent="." instance=ExtResource( 14 )]
-position = Vector2( 69825.4, 5879.9 )
-rotation = 0.38986
-
-[node name="StaticStairs7" parent="." instance=ExtResource( 14 )]
-position = Vector2( 70486.7, 6160.18 )
-rotation = 0.404927
-
-[node name="StaticRock2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 71235, 6688.52 )
-rotation = 0.0872346
+position = Vector2( 70482.6, 6599.71 )
+rotation = -0.00702846

@@ -83,8 +83,8 @@ anims/bouncing = SubResource( 2 )
 anims/fade_out = SubResource( 3 )
 
 [node name="VisibilityNotifier" type="VisibilityNotifier2D" parent="."]
-position = Vector2( 40.9161, 101.454 )
-scale = Vector2( 67.7232, 38.263 )
+position = Vector2( 1.31807, 72.0103 )
+scale = Vector2( 99.4016, 69.8789 )
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier" to="." method="_on_VisibilityNotifier_screen_exited"]

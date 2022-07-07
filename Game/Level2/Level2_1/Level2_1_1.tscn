@@ -79,12 +79,6 @@ position = Vector2( 28445.5, 1935.86 )
 position = Vector2( 28691.8, 2719.71 )
 script = ExtResource( 5 )
 
-[node name="Refit" parent="." instance=ExtResource( 28 )]
-position = Vector2( 31811.6, 2265.53 )
-
-[node name="Puddle2" parent="." instance=ExtResource( 24 )]
-position = Vector2( 34022.4, 2482.99 )
-
 [node name="Lamp" parent="." instance=ExtResource( 19 )]
 position = Vector2( 28530.7, 2615.48 )
 
@@ -121,6 +115,9 @@ position = Vector2( 31037.8, 2856.67 )
 
 [node name="Dog" parent="." instance=ExtResource( 18 )]
 position = Vector2( 30862.5, 2899.16 )
+
+[node name="Refit" parent="." instance=ExtResource( 28 )]
+position = Vector2( 31364.5, 2724.56 )
 
 [node name="RoadBorderSet12" parent="." instance=ExtResource( 26 )]
 position = Vector2( 31174.8, 2786.02 )

@@ -218,7 +218,7 @@ position = Vector2( 19386.2, 2585.4 )
 position = Vector2( 19754.8, 2586.54 )
 
 [node name="ChildrenSlide" parent="." instance=ExtResource( 3 )]
-position = Vector2( 20219.1, 2310.49 )
+position = Vector2( 20230.4, 2306.08 )
 scale = Vector2( -1, 1 )
 
 [node name="StaticRock5" parent="." instance=ExtResource( 20 )]

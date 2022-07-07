@@ -4,7 +4,7 @@
 [ext_resource path="res://Game/Road/RoadBody.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 610.49, 12.5202 )
+extents = Vector2( 611.38, 13.1918 )
 
 [node name="DoubleRoadBody" type="StaticBody2D"]
 collision_layer = 8
@@ -17,14 +17,14 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2( 610.11, 86.2746 )
+position = Vector2( 609.456, 88.1977 )
 shape = SubResource( 1 )
 
 [node name="sprite2" type="Sprite" parent="."]
-position = Vector2( 1218.03, 0.906692 )
+position = Vector2( 1218.49, -0.282013 )
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Collision2" type="CollisionShape2D" parent="."]
-position = Vector2( 1828.6, 85.5983 )
+position = Vector2( 1829.71, 88.2237 )
 shape = SubResource( 1 )

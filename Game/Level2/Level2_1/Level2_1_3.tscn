@@ -19,7 +19,7 @@
 [node name="Level2_1_3" type="Node"]
 
 [node name="RoadBody" parent="." instance=ExtResource( 15 )]
-position = Vector2( 66372.2, 3544.78 )
+position = Vector2( 66372.2, 3548.35 )
 
 [node name="Bench1" parent="." instance=ExtResource( 5 )]
 position = Vector2( 68759.9, 3556.62 )
@@ -239,28 +239,23 @@ position = Vector2( 91849.1, 3635.45 )
 [node name="Grass4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 93040.1, 3616.95 )
 rotation = -0.013517
-scale = Vector2( 1, 1 )
 
 [node name="Bench9" parent="." instance=ExtResource( 5 )]
 position = Vector2( 93050.8, 3668.83 )
-scale = Vector2( 1, 1 )
 
 [node name="Grass7" parent="." instance=ExtResource( 2 )]
 position = Vector2( 92718.2, 3641.69 )
 rotation = -0.013517
-scale = Vector2( 1, 1 )
 
 [node name="DoubleRoadBody11" parent="." instance=ExtResource( 1 )]
 position = Vector2( 94287.6, 3734.56 )
 
 [node name="Bench10" parent="." instance=ExtResource( 5 )]
 position = Vector2( 96365.2, 3741.51 )
-scale = Vector2( 1, 1 )
 
 [node name="Grass8" parent="." instance=ExtResource( 2 )]
 position = Vector2( 96032.6, 3714.37 )
 rotation = -0.013517
-scale = Vector2( 1, 1 )
 
 [node name="Grass5" parent="." instance=ExtResource( 2 )]
 position = Vector2( 96354.5, 3689.63 )
@@ -275,29 +270,23 @@ position = Vector2( 99160, 3834.29 )
 [node name="Grass6" parent="." instance=ExtResource( 2 )]
 position = Vector2( 99169.2, 3775.51 )
 rotation = -0.013517
-scale = Vector2( 1, 1 )
 
 [node name="Bench11" parent="." instance=ExtResource( 5 )]
 position = Vector2( 99211.6, 3838.5 )
-scale = Vector2( 1, 1 )
 
 [node name="Grass9" parent="." instance=ExtResource( 2 )]
 position = Vector2( 98882.2, 3819.3 )
 rotation = -0.013517
-scale = Vector2( 1, 1 )
 
 [node name="Dog9" parent="." instance=ExtResource( 3 )]
 position = Vector2( 99047, 3917.72 )
-scale = Vector2( 1, 1 )
 
 [node name="Dog10" parent="." instance=ExtResource( 3 )]
 position = Vector2( 99453.3, 3890.79 )
-scale = Vector2( 1, 1 )
 
 [node name="Grass10" parent="." instance=ExtResource( 2 )]
 position = Vector2( 99210.9, 3869.8 )
 rotation = -0.013517
-scale = Vector2( 1, 1 )
 
 [node name="DoubleRoadBody14" parent="." instance=ExtResource( 1 )]
 position = Vector2( 101598, 3834.28 )
