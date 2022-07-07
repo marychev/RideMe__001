@@ -8,7 +8,7 @@ onready var bd: ParallaxBackground = root.get_node("Background")
 
 
 func _init() -> void:
-	ID = 5 
+	ID = 5  # first track in level
 	var section: = track_cfg.get_section(ID)
 	.init_level_track(section, ID)
 
@@ -30,7 +30,7 @@ static func create_for_cfg() -> void:
 	var texture = "res://Game/Level2/assets/city-image-0.png"
 	var num_win = 6
 	var init_time_level = 40
-	var price = 20
+	var price = 10
 	var issue = "TODO: Level in progress %"
-	var state = LevelTrackStates.PAY
+	var state = LevelTrackStates.ACTIVE
 	GameData.track_cfg.create(track_id, level_id, issue, resource, texture, num_win, init_time_level, price, state)
