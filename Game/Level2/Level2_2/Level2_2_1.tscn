@@ -111,18 +111,15 @@ position = Vector2( 53885.7, 3391.38 )
 [node name="KSMan8" parent="." instance=ExtResource( 1 )]
 position = Vector2( 53851.2, 3360.34 )
 
-[node name="RoadBodyOne" parent="." instance=ExtResource( 5 )]
-position = Vector2( 56319.1, 3395.96 )
-
 [node name="RoadBodyOne8" parent="." instance=ExtResource( 5 )]
-position = Vector2( 56319.1, 3395.96 )
+position = Vector2( 56319.1, 3397.96 )
 
 [node name="RoadBodyOne2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 56429.2, 3396.51 )
+position = Vector2( 56429.2, 3398.51 )
 rotation = -0.0822606
 
 [node name="RoadBodyOne3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 56534, 3389.28 )
+position = Vector2( 56534, 3390.28 )
 rotation = -0.219723
 
 [node name="RoadBodyOne4" parent="." instance=ExtResource( 5 )]

@@ -53,13 +53,13 @@ position = Vector2( 4776.74, 2266.73 )
 position = Vector2( 5179.41, 2287.24 )
 
 [node name="RoadBodyOne" parent="." instance=ExtResource( 4 )]
-position = Vector2( 6799.18, 2752.92 )
+position = Vector2( 6800.18, 2759.59 )
 
 [node name="RoadBodyOne2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 6917.35, 2752.92 )
+position = Vector2( 6918.35, 2759.59 )
 
 [node name="RoadBodyOne3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 7026.74, 2752.92 )
+position = Vector2( 7027.74, 2759.59 )
 
 [node name="Lamp3" parent="." instance=ExtResource( 23 )]
 position = Vector2( 7083.12, 2516.83 )
@@ -143,15 +143,15 @@ texture = ExtResource( 2 )
 position = Vector2( 22042.1, 3758.49 )
 
 [node name="RoadBodyOne15" parent="." instance=ExtResource( 4 )]
-position = Vector2( 24459.5, 3759.84 )
+position = Vector2( 24469.1, 3762.52 )
 rotation = -0.0844345
 
 [node name="RoadBodyOne16" parent="." instance=ExtResource( 4 )]
-position = Vector2( 24568.9, 3751.42 )
+position = Vector2( 24579.6, 3754.09 )
 rotation = -0.188098
 
 [node name="Hourgrass" parent="." instance=ExtResource( 5 )]
-position = Vector2( 22180.9, 3695.4 )
+position = Vector2( 22255, 3713.74 )
 
 [node name="Lamp6" parent="." instance=ExtResource( 23 )]
 position = Vector2( 21991, 3515.78 )
@@ -160,7 +160,7 @@ position = Vector2( 21991, 3515.78 )
 position = Vector2( 22280.3, 3601.55 )
 
 [node name="BridgeLeft3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 24559.3, 3441.58 )
+position = Vector2( 24583.4, 3441.14 )
 
 [node name="RoadBodyOne12" parent="." instance=ExtResource( 4 )]
 position = Vector2( 26207.9, 3410.1 )
@@ -261,6 +261,22 @@ position = Vector2( 29159.3, 3733.34 )
 [node name="DoubleRoadBody5" parent="." instance=ExtResource( 21 )]
 position = Vector2( 31346.4, 3797.26 )
 
+[node name="RoadBodyOne29" parent="." instance=ExtResource( 4 )]
+position = Vector2( 33767.7, 3805.48 )
+rotation = -0.19536
+
+[node name="BridgeLeft4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 33772.2, 3491.17 )
+
+[node name="RoadBodyOne26" parent="." instance=ExtResource( 4 )]
+position = Vector2( 35274, 3410.1 )
+
+[node name="RoadBodyOne27" parent="." instance=ExtResource( 4 )]
+position = Vector2( 35391.3, 3410.16 )
+
+[node name="RoadBodyOne28" parent="." instance=ExtResource( 4 )]
+position = Vector2( 35509.5, 3410.1 )
+
 [node name="Plank" parent="." instance=ExtResource( 27 )]
 position = Vector2( 35057.3, 3125.84 )
 
@@ -275,19 +291,6 @@ position = Vector2( 35859.9, 3350.96 )
 
 [node name="Plank5" parent="." instance=ExtResource( 27 )]
 position = Vector2( 36004, 3250.41 )
-
-[node name="RoadBodyOne29" parent="." instance=ExtResource( 4 )]
-position = Vector2( 33764.9, 3799.53 )
-rotation = -0.19536
-
-[node name="RoadBodyOne26" parent="." instance=ExtResource( 4 )]
-position = Vector2( 35274, 3410.1 )
-
-[node name="RoadBodyOne27" parent="." instance=ExtResource( 4 )]
-position = Vector2( 35391.3, 3410.16 )
-
-[node name="RoadBodyOne28" parent="." instance=ExtResource( 4 )]
-position = Vector2( 35509.5, 3410.1 )
 
 [node name="RoadBorder7" type="Sprite" parent="."]
 position = Vector2( 35383.6, 3397.48 )
@@ -397,9 +400,6 @@ texture = ExtResource( 2 )
 [node name="RoadBorder3" type="Sprite" parent="RoadBorder11"]
 position = Vector2( 142.125, 0 )
 texture = ExtResource( 2 )
-
-[node name="BridgeLeft4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 33751.7, 3488.17 )
 
 [node name="Plank7" parent="." instance=ExtResource( 27 )]
 position = Vector2( 37843.5, 3926.3 )
