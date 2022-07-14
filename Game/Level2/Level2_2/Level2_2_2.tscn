@@ -371,13 +371,13 @@ position = Vector2( 142.125, 0 )
 texture = ExtResource( 8 )
 
 [node name="MovingPlatform6" parent="." instance=ExtResource( 7 )]
-position = Vector2( 105895, 3598.89 )
+position = Vector2( 105825, 3664.58 )
 
 [node name="MovingPlatform7" parent="." instance=ExtResource( 7 )]
-position = Vector2( 106334, 3583.02 )
+position = Vector2( 106264, 3648.71 )
 
 [node name="MovingPlatform8" parent="." instance=ExtResource( 7 )]
-position = Vector2( 106771, 3589.74 )
+position = Vector2( 106701, 3655.43 )
 
 [node name="Lamp3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 107047, 3451.32 )
@@ -390,6 +390,9 @@ position = Vector2( 107380, 3495.82 )
 
 [node name="Dog2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 108804, 3660.38 )
+
+[node name="Hourgrass2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 107253, 3600 )
 
 [node name="RoadBody14" parent="." instance=ExtResource( 1 )]
 position = Vector2( 109534, 3660.26 )

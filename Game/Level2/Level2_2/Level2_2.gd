@@ -1,7 +1,7 @@
 extends Level_0
 class_name Level2_2
 
-onready var _custom_background: Resource = load("res://Game/Level2/Background/Background.tscn")
+onready var _custom_background: Resource = preload("res://Game/Level2/Background/Background.tscn")
 onready var custom_background: ParallaxBackground = _custom_background.instance()
 onready var root := get_parent()
 onready var bd: ParallaxBackground = root.get_node("Background")
