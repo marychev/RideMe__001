@@ -4,8 +4,8 @@ class_name ControlBtn
 const POWER_GO: int = 10
 const POWER_RELAX: int = 4
 const POWER_WAIT: int = 2
-const MODULATE_A_OFF = 0.7
-const MODULATE_A_ON = 1
+const MODULATE_A_OFF = 1
+const MODULATE_A_ON = 0.7
 
 var calc_power: float
 var calc_speed: float

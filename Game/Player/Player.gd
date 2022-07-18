@@ -1,7 +1,10 @@
 extends BasePlayer
 class_name Player
 
-var mass: int = 130
+var mass: int = 108
+
+var is_jumping = false
+var align_speed = 0.4
 
 var audio_go = preload("res://media/move/go.wav")
 var audio_relax = preload("res://media/move/relax.wav")
@@ -115,18 +118,24 @@ func get_input(delta: float):
 			$AudioMove.set_stream(audio_go)
 		$AudioMove.play()
 
-
+	
 # Processes
 
 func _physics_process(delta: float):
 	get_input(delta)
 	on_detect_collisions_process(delta)
+
+	var is_jump_interrupted: bool = Input.is_action_just_released("ui_select") and _velocity.y < 0.0
+	var direction: Vector2 = get_direction()
+	var snap: Vector2 = Vector2.DOWN * 64 if !is_jumping else Vector2.ZERO
 	
-	var is_jump_interrupted: = Input.is_action_just_released("ui_select") \
-		and _velocity.y < 0.0
+	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
+	_velocity = move_and_slide_with_snap(_velocity, snap, FLOOR_NORMAL, true)
+	# _velocity = move_and_slide(_velocity, FLOOR_NORMAL)
 	
-	_velocity = calculate_move_velocity(_velocity, get_direction(), speed, is_jump_interrupted)
-	_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
+	if is_on_floor():
+		rotation = lerp(rotation, get_floor_normal().angle() + PI/2, align_speed)
+		is_jumping = Input.is_action_just_pressed("ui_select")
 	
 	if anim_player.current_animation != 'collision':
 		modulate = Color(1, 1, 1)

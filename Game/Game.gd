@@ -9,7 +9,6 @@ onready var Time: VBoxContainer = $GUI.get_node("Canvas/HBoxContainer/Time")
 func _ready():
 	var track = GameData.current_track
 	add_child(track)
-	# TODO: Add RoadSet_X related to Level_X
 	PlayerData.reset_progress()
 
 
