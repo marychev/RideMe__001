@@ -31,7 +31,10 @@ func get_best_time_at(track) -> String:
 	return config.get_value(track, KEY_BEST_TIME_AT)
 
 func get_attempts(track) -> Array:
-	return config.get_value(track, KEY_ATTEMPTS)
+	var attempts = config.get_value(track, KEY_ATTEMPTS)
+	if attempts:
+		return attempts
+	return []
 
 
 # setters

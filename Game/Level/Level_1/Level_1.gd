@@ -21,5 +21,4 @@ static func create_for_cfg() -> void:
 	var price = 2
 	var issue: = "Collect the %s hourgrass."
 	
-	
 	GameData.track_cfg.create(1, 1, issue, resource, texture, num_win, init_time_level, price)

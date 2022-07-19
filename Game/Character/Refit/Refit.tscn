@@ -4,7 +4,7 @@
 [ext_resource path="res://Game/Character/Refit/Refit.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 108.714, 111.483 )
+extents = Vector2( 81.118, 80.0823 )
 
 [node name="Refit" type="Area2D"]
 scale = Vector2( 0.6, 0.6 )
@@ -18,8 +18,7 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2( 109.905, 112.283 )
+position = Vector2( 82.309, 80.8823 )
 shape = SubResource( 1 )
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

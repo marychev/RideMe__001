@@ -20,9 +20,6 @@ rough = true
 [node name="RoadBody" parent="." instance=ExtResource( 15 )]
 position = Vector2( 66372.2, 3550 )
 
-[node name="Hourgrass" parent="." instance=ExtResource( 2 )]
-position = Vector2( 68748.1, 3244.66 )
-
 [node name="StaticRock" parent="." instance=ExtResource( 4 )]
 position = Vector2( 68399, 3586.28 )
 physics_material_override = SubResource( 1 )
@@ -40,7 +37,10 @@ position = Vector2( 68764.4, 3454.84 )
 position = Vector2( 68764.4, 3410.39 )
 
 [node name="Refit" parent="." instance=ExtResource( 1 )]
-position = Vector2( 69127.4, 3053.64 )
+position = Vector2( 69123.7, 3323.24 )
+
+[node name="Hourgrass" parent="." instance=ExtResource( 2 )]
+position = Vector2( 69360.6, 3313.9 )
 
 [node name="StaticStairs" parent="." instance=ExtResource( 14 )]
 position = Vector2( 69562.5, 3057.26 )
@@ -65,7 +65,7 @@ rotation = -1.5708
 z_index = 1
 
 [node name="MovingPlatform" parent="." instance=ExtResource( 16 )]
-position = Vector2( 69266.9, 3252.06 )
+position = Vector2( 69266.9, 3441.61 )
 
 [node name="MovingPlatform2" parent="." instance=ExtResource( 16 )]
 position = Vector2( 69265.8, 5040.02 )

@@ -18,7 +18,7 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2( 611.078, 85.1836 )
+position = Vector2( 611.078, 85 )
 shape = SubResource( 1 )
 
 [node name="sprite2" type="Sprite" parent="."]
@@ -28,5 +28,5 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="Collision2" type="CollisionShape2D" parent="."]
-position = Vector2( 1828.99, 84.9977 )
+position = Vector2( 1828.99, 85 )
 shape = SubResource( 1 )

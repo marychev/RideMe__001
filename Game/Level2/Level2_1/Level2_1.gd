@@ -15,6 +15,9 @@ func _init() -> void:
 
 func _ready() -> void:
 	apply_custom_background()
+	
+	var sky: Sprite = get_parent().get_node('Background/Sky')
+	sky.modulate = Color('#e6e588')
 
 
 func apply_custom_background() -> void:
@@ -27,7 +30,7 @@ static func create_for_cfg() -> void:
 	var level_id = 2
 	var track_id = 5
 	var resource = "res://Game/Level2/Level2_1/Level2_1.tscn"
-	var texture = "res://Game/Level2/assets/city-image-0.png"
+	var texture = "res://Game/Level2/assets/slides/track-2_1.png"
 	var num_win = 6
 	var init_time_level = 40
 	var price = 10

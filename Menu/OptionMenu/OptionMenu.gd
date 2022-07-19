@@ -18,7 +18,7 @@ func _on_ResetGame_pressed():
 
 func reset_game_config():
 	clear_game_config()
-	
+
 	create_bikes()
 	create_player_bike()
 	create_levels()
@@ -26,7 +26,7 @@ func reset_game_config():
 	
 	create_player_track(0)
 	create_player_track(4)
-		
+
 	PlayerData._ready()
 	GameData._ready()
 
