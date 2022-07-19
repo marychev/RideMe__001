@@ -1,21 +1,15 @@
 extends BaseBikeMenu
 class_name LevelMenu
 
-# to top slider's buttons
-var level_0: Level_0 = load(PathData.PATH_LEVEL_0).instance()
-# var level_1: Level_1 = load(PathData.PATH_LEVEL_1).instance()
-# var level_2: Level_2 = load(PathData.PATH_LEVEL_2).instance()
-
-
 onready var btn_level_1: Button = $TextureRect/SliderContainer/Buttons/Level_1
 onready var btn_level_2: Button = $TextureRect/SliderContainer/Buttons/Level_2
 
-const RES_LEVEL_PROGRESS_DIALOG_TSCN: String = "res://Menu/LevelMenu/LevelProgressDialog/LevelProgressDialog.tscn"
-onready var progress_popup: Resource = preload(RES_LEVEL_PROGRESS_DIALOG_TSCN)
+const RES_LEVEL_PROGRESS_DIALOG: String = "res://Menu/LevelMenu/LevelProgressDialog/LevelProgressDialog.tscn"
+onready var progress_popup: Resource = preload(RES_LEVEL_PROGRESS_DIALOG)
 
 
 func _ready():
-	# Demo mode
+	# -- Demo mode
 	# btn_level_2.disabled = true
 	
 	._ready()
@@ -38,7 +32,7 @@ func _ready():
 	if not is_instance_valid(GameData.current_track):
 		_on_btn_refit_pressed()
 	
-	# Demo mode
+	# -- Demo mode
 	# if $Completed.visible:
 	#	var popup_completed: Popup = load("res://Menu/LevelMenu/PopupCompleted/PopupCompleted.tscn").instance()
 	#	add_child(popup_completed)
@@ -78,7 +72,7 @@ func _on_Current_pressed() -> void:
 	if GameData.current_track:
 		selected_node = GameData.current_track
 	else:
-		selected_node = level_0
+		selected_node = load(PathData.PATH_LEVEL_0).instance()
 		
 	init_slide(selected_node)
 
@@ -144,13 +138,13 @@ func init_btn_current_node() -> void:
 		btn_level_2.flat =  bool(btn_level_2.name == GameData.current_level.title) # false
 		
 
-func set_menu_options(level: Level_0) -> void:
+func set_menu_options(level: Level_0) -> void:	
 	if is_instance_valid(level):
-		var level_text = "level: ....... %d" % [level.level_id]
-		var track_text = "track: .......... %d" % [level.track_id]
-		var price_text = "price: .................... %d" % [level.price]
+		var level_text: String = "level: ....... %d" % [level.level_id]
+		var track_text: String = "track: .......... %d" % [level.track_id]
+		var price_text: String = "price: .................... %d" % [level.price]
 		
-		menu_options.get_node('LevelIssue').set_text(level.issue)
+		menu_options.get_node('LevelIssue').set_text(level.init_issue())
 		menu_options.get_node('Level').set_text(level_text)
 		menu_options.get_node('Track').set_text(track_text)
 		menu_options.get_node('Price').set_text(price_text)

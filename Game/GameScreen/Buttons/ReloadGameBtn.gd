@@ -6,7 +6,6 @@ func _on_pressed():
 	._on_pressed()
 	
 	# PlayerData.score = 0
-	print(GameData.current_track)
 	GameData.reload_game(GameData.current_track.ID)
 	# GameData._ready()
 	

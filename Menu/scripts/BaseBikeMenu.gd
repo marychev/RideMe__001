@@ -1,7 +1,7 @@
 extends MarginContainer
 class_name BaseBikeMenu
 
-var selected_node: Node2D  # Track / Level / Bike - ?
+var selected_node: Node2D  # Track or Level or Bike
 
 onready var field_log: FieldLog = preload("res://components/field_log/FieldLog.gd").new()
 

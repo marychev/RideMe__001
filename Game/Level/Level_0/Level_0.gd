@@ -33,7 +33,7 @@ func _init() -> void:
 func _ready():
 	var sky: Sprite = get_parent().get_node('Background/sky')
 	sky.modulate = Color(1, 1, 1)
-	
+
 
 func init_level_track(section: String, id_track: int) -> void:
 	if track_cfg.get_id(section) != null:
@@ -48,6 +48,12 @@ func init_level_track(section: String, id_track: int) -> void:
 		texture = load(track_cfg.get_texture(section))
 
 
+func init_issue() -> String:
+	if not '%s' in issue:
+		return "Todo: init issue ..."
+	return issue % [num_win]
+
+
 func are_you_win() -> bool:
 	has_win = PlayerData.time_level_count >= num_win
 	return has_win
@@ -59,7 +65,7 @@ static func create_for_cfg() -> void:
 	var num_win = 2
 	var init_time_level = 100
 	var price = 0
-	var issue: = "Collect the %s hourgrass."
+	var issue: = "First experience: сollect the %s hourgrass"
 	var state: = LevelTrackStates.ACTIVE
 	
 	GameData.track_cfg.create(0, 1, issue, resource, texture, num_win, init_time_level, price, state)
