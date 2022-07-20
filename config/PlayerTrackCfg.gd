@@ -41,11 +41,20 @@ func get_attempts(track) -> Array:
 func set_best_time(track_section: String, value: String) -> void:
 	var attempts: Array = get_attempts(track_section)
 	attempts.append(value)
-	
-	var _best_time_at = attempts.min()
-	if _best_time_at and _best_time_at > value:
-		value = _best_time_at
+
+	var _old_value = get_best_time_at(track_section)
+	if _old_value != "00:00" and _old_value != "00:00:00":
+		var mimsecmls_value: Array = value.rsplit(":", true, 2)
+		var old_value: Array = _old_value.rsplit(":", true, 2)
 		
+
+		if int(old_value[0]) < int(mimsecmls_value[0]):
+			value = _old_value
+		elif int(old_value[0]) == int(mimsecmls_value[0]) and int(old_value[1]) < int(mimsecmls_value[1]):
+			value = _old_value
+		elif int(old_value[0]) == int(mimsecmls_value[0]) and int(old_value[1]) == int(mimsecmls_value[1]) and int(old_value[2]) < int(mimsecmls_value[2]):
+			value = _old_value
+
 	config.set_value(track_section, KEY_BEST_TIME_AT, value)
 	config.set_value(track_section, KEY_ATTEMPTS, attempts)
 	config.save(path_file_cfg)

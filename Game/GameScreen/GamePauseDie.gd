@@ -5,7 +5,7 @@ var rect_color_lose: = Color(0.56, 0.25, 0.25, 0.8)
 
 const TIME_UP_TEXT: String = 'Your time is up'
 const BROKE_BIKE_TEXT: String = 'You broke the bike'
-const FELL_TEXT: String = 'You fell and you need to try again'
+const FELL_TEXT: String = 'You fell and you need \r\n to try again'
 const HIT_PERSON_TEXT: String = 'You hit a person'
 
 enum TitleChoices {
@@ -44,14 +44,6 @@ func get_info() -> String:
 	return title
 
 
-func timer_format(time):	
-	return "%02d:%02d:%02d" % [
-		fmod(time, 60 * 60) / 60,
-		fmod(time, 60),
-		fmod(time, 1) * 100
-	]
-
-
 func update_as_fail_cfg():
 	# Update writes to .cfg files
 	if is_instance_valid(GameData.current_track):
@@ -63,4 +55,3 @@ func update_as_fail_cfg():
 	
 		track_cfg.set_state(track_section, LevelTrackStates.FAIL)
 		player_track_cfg.set_best_time(player_track_section, "00:00:00")
-		# player_track_cfg.set_best_time(player_track_section, timer_format(PlayerData.time_level))

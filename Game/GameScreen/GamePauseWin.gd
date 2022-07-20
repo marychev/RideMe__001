@@ -15,6 +15,17 @@ func do_init(title: Label, pause_rect: ColorRect) -> void:
 		update_as_win_cfg()
 
 
+func get_traveled_time() -> String:
+	var path_gui_time: String = "/root/Game/GUI/Canvas/HBoxContainer/Time/Container/Value"
+	
+	if GameData.current_track.has_node(path_gui_time):
+		var gui_time: String = GameData.current_track.get_node(path_gui_time).text
+		if " : " in gui_time:
+			gui_time = gui_time.replace(" ", "")
+		return gui_time
+	return "00:00:00"
+
+
 func set_screen_items(pause_rect: ColorRect) -> void:
 	pause_rect.get_node("LabelItems").visible = true
 	pause_rect.get_node("ResourceContainer").visible = true
@@ -24,7 +35,7 @@ func set_screen_items(pause_rect: ColorRect) -> void:
 	rm_item_res_value.set_text(str(PlayerData.rms_count))
 	hourgrass_item_res_value.set_text(str(PlayerData.time_level_count))
 	
-	var travel_time = 'Travel time:..................%s' % [timer_format(PlayerData.time_level)]
+	var travel_time = 'Travel time:..................%s' % [get_traveled_time()]
 	var distance_travel = 'Distance traveled:....%d m' % [PlayerData.score / 100]
 	pause_rect.get_node("LabelItems").set_text(travel_time + '\r\n'  + distance_travel)
 	
@@ -51,8 +62,8 @@ func update_as_win_cfg():
 		var player_track_section: = track_section.replace(GameData.track_cfg.prefix, GameData.player_track_cfg.prefix)
 		
 		GameData.track_cfg.set_state(track_section, LevelTrackStates.PASSED)
-		GameData.player_track_cfg.set_best_time(player_track_section, timer_format(PlayerData.time_level))
-		
+		GameData.player_track_cfg.set_best_time(player_track_section, get_traveled_time())
+
 		PlayerData.rms_count = 0
 		PlayerData.save_rms(PlayerData.rms)
 		

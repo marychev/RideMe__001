@@ -35,5 +35,5 @@ static func create_for_cfg() -> void:
 	var init_time_level = 40
 	var price = 10
 	var issue = "Game children's road. Collect %s hourglasses. Time is limited!"
-	var state = LevelTrackStates.ACTIVE
-	GameData.track_cfg.create(track_id, level_id, issue, resource, texture, num_win, init_time_level, price, state)
+	
+	GameData.track_cfg.create(track_id, level_id, issue, resource, texture, num_win, init_time_level, price)
