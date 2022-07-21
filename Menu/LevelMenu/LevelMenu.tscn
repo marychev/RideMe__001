@@ -73,18 +73,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Current" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 8 )]
-text = "Your level"
-
 [node name="Level_1" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 8 )]
-margin_left = 224.0
-margin_right = 444.0
 hint_tooltip = "Level 1"
 text = "Mountains"
 
 [node name="Level_2" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 8 )]
-margin_left = 448.0
-margin_right = 668.0
+margin_left = 224.0
+margin_right = 444.0
 hint_tooltip = "Level 2"
 text = "City"
 
@@ -222,7 +217,5 @@ visible = false
 position = Vector2( 560.823, 512.552 )
 texture = ExtResource( 6 )
 
-[connection signal="button_down" from="TextureRect/SliderContainer/Buttons/Current" to="." method="_on_Current_button_down"]
-[connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Current" to="." method="_on_Current_pressed"]
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Level_1" to="." method="_on_Level_1_pressed"]
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Level_2" to="." method="_on_Level_2_pressed"]

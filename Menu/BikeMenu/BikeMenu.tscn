@@ -112,12 +112,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Current" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 6 )]
-text = "Your bike"
-
 [node name="Sataur" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 6 )]
-margin_left = 224.0
-margin_right = 444.0
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 3 )
 custom_styles/disabled = SubResource( 4 )
@@ -125,8 +120,8 @@ custom_styles/normal = SubResource( 5 )
 text = "Sataur"
 
 [node name="Drawster" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 6 )]
-margin_left = 448.0
-margin_right = 668.0
+margin_left = 224.0
+margin_right = 444.0
 custom_styles/hover = SubResource( 6 )
 custom_styles/pressed = SubResource( 7 )
 custom_styles/disabled = SubResource( 8 )
@@ -278,8 +273,6 @@ anims/demonstration = SubResource( 11 )
 stream = ExtResource( 4 )
 autoplay = true
 
-[connection signal="button_down" from="TextureRect/SliderContainer/Buttons/Current" to="." method="_on_Current_button_down"]
-[connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Current" to="." method="_on_Current_pressed"]
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Sataur" to="." method="_on_Sataur_pressed"]
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Drawster" to="." method="_on_Drawster_pressed"]
 [connection signal="pressed" from="TextureRect/ButtonContainer/btn_refit" to="." method="_on_btn_refit_pressed"]

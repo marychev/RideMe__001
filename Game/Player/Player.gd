@@ -1,7 +1,7 @@
 extends BasePlayer
 class_name Player
 
-# Todo: Implement calculate the max height of a stopm with road area
+# the max height of a stopm with road area to broken bike
 const HEIGHT_STOPM_ROAD = 10000
 
 var mass: int = 108
@@ -17,7 +17,7 @@ var audio_broke = preload("res://media/move/broken.wav")
 var audio_colected = preload("res://media/move/colected.wav")
 
 
-func _ready():
+func _ready() -> void:
 	$Sprite.texture = PlayerData.player_bike.texture
 	modulate = Color(1, 1, 1)
 	$AudioMove.volume_db = 1
@@ -30,7 +30,7 @@ func _on_CollisionDetector_area_entered(area: Area2D) -> void:
 			_velocity = calculate_stomp_velocity(_velocity, max_power+power)
 
 
-func on_detect_collisions_process(delta):
+func on_detect_collisions_process(delta) -> void:
 	for i in get_slide_count():
 		var collision := get_slide_collision(i)
 		var body := collision.collider
@@ -45,7 +45,7 @@ func detect_landing_animation(current_animation_name: String) -> String:
 	return current_animation_name
 
 
-func get_input(delta: float):
+func get_input(delta: float) -> void:
 	var animation_name = "undefined"
 	
 	var has_broke: bool = $AudioMove.stream and $AudioMove.stream.resource_path.get_file().get_basename() == "broken"
@@ -124,7 +124,7 @@ func get_input(delta: float):
 	
 # Processes
 
-func _physics_process(delta: float):
+func _physics_process(delta: float) -> void:
 	get_input(delta)
 	on_detect_collisions_process(delta)
 
@@ -154,13 +154,13 @@ func _physics_process(delta: float):
 		die_player.from_fell(self)
 
 
-func _on_CollisionDetector_body_entered(body):
+func _on_CollisionDetector_body_entered(body) -> void:
 	if 'MovingPlatform' in body.name:
 		body.has_move_up = false
 		body.position.y += mass / 10
 
 
-func _on_CollisionDetector_body_exited(body):
+func _on_CollisionDetector_body_exited(body) -> void:
 	if 'MovingPlatform' in body.name:
 		body.has_move_up = true
 		body.position.y -= mass / 10

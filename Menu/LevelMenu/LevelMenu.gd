@@ -8,14 +8,13 @@ const RES_LEVEL_PROGRESS_DIALOG: String = "res://Menu/LevelMenu/LevelProgressDia
 onready var progress_popup: Resource = preload(RES_LEVEL_PROGRESS_DIALOG)
 
 
-func _ready():
+func _ready() -> void:
 	# -- Demo mode
 	# btn_level_2.disabled = true
 	
 	._ready()
 	
 	init_btn_current_node()
-	btn_current_node.flat = not GameData.current_level.empty()
 	
 	btn_refit.connect("pressed", self, "_on_btn_refit_pressed")
 	btn_pay.connect("pressed", self, "_on_btn_pay_pressed")
@@ -64,20 +63,33 @@ func _on_btn_refit_pressed() -> void:
 		field_log.error(message)
 
 
-func _on_Current_pressed() -> void:
-	._on_Current_pressed()
-	
-	set_buttons_flat(btn_current_node)
+# --- Levels pressed ---
+
+func _on_Level_1_pressed() -> void:
+	field_log.clear()
+	set_active_or_passed_or_fail_track(1)
 	
 	if GameData.current_track:
-		selected_node = GameData.current_track
-	else:
-		selected_node = load(PathData.PATH_LEVEL_0).instance()
+		set_buttons_flat(btn_level_1)
 		
+		if PlayerData.player_bike:
+			btn_pay.modulate.a = 1
+			btn_pay.anim_flicker()
+
+	selected_node = GameData.current_track
 	init_slide(selected_node)
 
 
-# --- Levels pressed ---
+func _on_Level_2_pressed() -> void:
+	field_log.clear()
+	set_active_or_passed_or_fail_track(2)
+	
+	if GameData.current_track:
+		set_buttons_flat(btn_level_2)
+
+	selected_node = GameData.current_track
+	init_slide(selected_node)
+
 
 func set_active_or_passed_or_fail_track(level_id: int) -> void:
 	var level_section = GameData.level_cfg.get_section(level_id)
@@ -97,41 +109,18 @@ func set_active_or_passed_or_fail_track(level_id: int) -> void:
 		GameData.current_track = load(track.resource).instance()
 		GameData.current_level = GameData.level_cfg.as_dict(level_section)
 
-
-func _on_Level_1_pressed():
-	field_log.clear()
-	set_active_or_passed_or_fail_track(1)
-	
-	if GameData.current_track:
-		set_buttons_flat(btn_level_1)
-		
-		if PlayerData.player_bike:
-			btn_pay.modulate.a = 1
-			btn_pay.anim_flicker()
-
-	selected_node = GameData.current_track
-	init_slide(selected_node)
-
-
-func _on_Level_2_pressed():
-	field_log.clear()
-	set_active_or_passed_or_fail_track(2)
-	
-	if GameData.current_track:
-		set_buttons_flat(btn_level_2)
-
-	selected_node = GameData.current_track
-	init_slide(selected_node)
-
-
-
 # ---  END Level ---
 
 
-func init_btn_current_node() -> void:
-	btn_current_node.flat = false
-	btn_current_node.disabled = true
+func init_slide(track: Node2D) -> void:
+	if track:
+		.init_slide(track)
+		set_menu_options(track)
+		btn_refit.modulate.a = 1
+		$Completed.visible = GameData.track_cfg.has_passed_level(GameData.current_level.id)
 
+
+func init_btn_current_node() -> void:
 	if not GameData.current_level.empty() and GameData.current_track:
 		init_slide(GameData.current_track)
 		btn_level_1.flat = bool(btn_level_1.name == GameData.current_level.title)  # false
@@ -151,15 +140,5 @@ func set_menu_options(level: Level_0) -> void:
 
 
 func set_buttons_flat(btn_active: Button) -> void:
-	btn_current_node.flat = bool(btn_current_node.name == btn_active.name)
 	btn_level_1.flat = bool(btn_level_1.name == btn_active.name)
 	btn_level_2.flat = bool(btn_level_2.name == btn_active.name)
-
-
-func init_slide(track: Node2D) -> void:
-	if track:
-		.init_slide(track)
-		set_menu_options(track)
-		btn_refit.modulate.a = 1
-		
-		$Completed.visible = GameData.track_cfg.has_passed_level(GameData.current_level.id)
