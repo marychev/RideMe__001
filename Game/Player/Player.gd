@@ -1,6 +1,9 @@
 extends BasePlayer
 class_name Player
 
+# Todo: Implement calculate the max height of a stopm with road area
+const HEIGHT_STOPM_ROAD = 10000
+
 var mass: int = 108
 
 var is_jumping = false
@@ -145,8 +148,8 @@ func _physics_process(delta: float):
 			anim_player.stop()
 		anim_player.play('collision')
 	
-	# Todo: Implement calculate the max height of a stopm with road area
-	if position.y > 11000:
+	
+	if position.y > HEIGHT_STOPM_ROAD:
 		var die_player = load(PathData.PATH_DIE_PLAYER).new()
 		die_player.from_fell(self)
 
