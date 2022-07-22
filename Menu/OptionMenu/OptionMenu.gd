@@ -26,8 +26,8 @@ func reset_game_config():
 	
 	create_player_track(0)
 	
-	# Todo: City 1th track will need buy in feature
-	create_player_track(4)
+	# START::Todo: City 1th track will need buy in feature
+	# create_player_track(4)
 
 	PlayerData._ready()
 	GameData._ready()

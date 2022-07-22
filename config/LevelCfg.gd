@@ -31,7 +31,7 @@ func get_id(section: String) -> int:
 func get_title(section: String) -> String:
 	return config.get_value(section, KEY_TITLE)
 
-func get_passed_at(section: String) -> String:
+func get_passed_at(section: String):#  -> String as "" and Dict {"day": 22, "dst": false ...} :
 	return config.get_value(section, KEY_PASSED_AT)
 
 func set_passed_at(section: String) -> void:

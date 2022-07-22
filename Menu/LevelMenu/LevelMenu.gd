@@ -9,9 +9,10 @@ onready var progress_popup: Resource = preload(RES_LEVEL_PROGRESS_DIALOG)
 
 
 func _ready() -> void:
-	# -- Demo mode
-	# btn_level_2.disabled = true
-	
+	# False if all tracks of level 1 (Mountains) were passed successful!
+	var section_level_1: String = GameData.level_cfg.get_section("1")
+	btn_level_2.disabled = GameData.level_cfg.get_passed_at(section_level_1).empty()
+
 	._ready()
 	
 	init_btn_current_node()
@@ -81,13 +82,26 @@ func _on_Level_1_pressed() -> void:
 
 
 func _on_Level_2_pressed() -> void:
-	field_log.clear()
-	set_active_or_passed_or_fail_track(2)
+	var pk: int = 2
 	
-	if GameData.current_track:
+	field_log.clear()
+	set_active_or_passed_or_fail_track(pk)
+	
+	if not btn_level_2.disabled:
 		set_buttons_flat(btn_level_2)
+	
+	var passed_tracks: Array = GameData.track_cfg.get_passed_tracks(pk)
+	var active_track: Dictionary = GameData.track_cfg.get_active_track(pk)
+	
+	if GameData.current_level.id == 2:
+		selected_node = GameData.current_track
+	# If level 2 is active AND not any paid track of level 2
+	elif not btn_level_2.disabled and passed_tracks.empty() and active_track.empty():
+		var option_menu: OptionMenu = load("res://Menu/OptionMenu/OptionMenu.tscn").instance()
+		option_menu.create_player_track(4)  # First id track of level 2
+		selected_node = GameData.current_track
+		GameData.current_level = GameData.level_cfg.as_dict(GameData.level_cfg.get_section(2))
 
-	selected_node = GameData.current_track
 	init_slide(selected_node)
 
 
@@ -123,8 +137,8 @@ func init_slide(track: Node2D) -> void:
 func init_btn_current_node() -> void:
 	if not GameData.current_level.empty() and GameData.current_track:
 		init_slide(GameData.current_track)
-		btn_level_1.flat = bool(btn_level_1.name == GameData.current_level.title)  # false
-		btn_level_2.flat =  bool(btn_level_2.name == GameData.current_level.title) # false
+		btn_level_1.flat = bool(btn_level_1.name == GameData.current_level.title)
+		btn_level_2.flat =  bool(btn_level_2.name == GameData.current_level.title)
 		
 
 func set_menu_options(level: Level_0) -> void:	
