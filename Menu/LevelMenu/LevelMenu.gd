@@ -30,7 +30,12 @@ func _ready() -> void:
 		btn_pay.anim_flicker()
 	
 	if not is_instance_valid(GameData.current_track):
-		_on_btn_refit_pressed()
+		if GameData.current_level.id == 1:
+			_on_Level_1_pressed()
+		elif GameData.current_level.id == 2:
+			_on_Level_2_pressed()
+		else:
+			_on_btn_refit_pressed()
 	
 	# -- Demo mode
 	# if $Completed.visible:
