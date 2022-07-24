@@ -30,7 +30,7 @@ func _on_MotionDetecter_body_exited(body: Player):
 
 func set_is_attack(val: bool) -> void:
 	is_attack = val
-	$Sprite.flip_h = not is_attack
+	$Sprite.flip_h = player.position.x < position.x
 	
 	if is_attack:
 		$Audio.play()
@@ -41,14 +41,13 @@ func set_is_attack(val: bool) -> void:
 func do_attack():
 	print('TODO: jump Dog')
 	position.x += 180
-	
-	position.y += 20
-
-	set_is_attack(false)
+	position.y += 18
 
 	var animate_people = load(PathData.PATH_ANIMATE_PEOPLE).new()
 	animate_people.do_collision(AnimationPlayer.new(), player)
 	player.power = 0
 	
 	var die_player = load(PathData.PATH_DIE_PLAYER).new()
-	die_player.die()
+	die_player.from_bitten_by_dog(player)
+	
+	set_is_attack(false)

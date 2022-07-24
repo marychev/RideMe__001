@@ -25,5 +25,3 @@ func _on_StopmDetector_body_entered(body: Node) -> void:
 		var die_player = load(PathData.PATH_DIE_PLAYER).new()
 		die_player.from_hir_person(body)
 
-		# body.get_node('AudioMove').set_stream(body.audio_broke)
-		# body.get_node('AudioMove').play()

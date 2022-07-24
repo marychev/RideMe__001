@@ -36,6 +36,13 @@ func from_broke_bike(_player: Player):
 	die()
 
 
+func from_bitten_by_dog(_player: Player) -> void:
+	init_player(_player)
+	PlayerData.set_type_title(end_game_scr.TitleChoices.BITTEN_BY_DOG)
+	PlayerData.set_score(player.global_position.x)
+	die()
+
+
 func die(force: bool = false) -> void:
 	if force: 
 		PlayerData.lives = 0

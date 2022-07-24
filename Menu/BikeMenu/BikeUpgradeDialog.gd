@@ -29,6 +29,10 @@ var selected_rms: = 0
 
 func _ready():
 	field_log.target = $"."
+	
+	if PlayerData.rms < 2:
+		grid.modulate.a = 0.5
+		field_log.error("Need to more Rms!")
 
 
 func _on_btn_power_add_pressed() -> void:
