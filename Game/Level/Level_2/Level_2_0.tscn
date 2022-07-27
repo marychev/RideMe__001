@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Game/Character/RM/RM.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Character/Rock/StaticRock.tscn" type="PackedScene" id=2]
@@ -13,7 +13,6 @@
 [ext_resource path="res://Game/Character/Bridge/BridgeRight.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Game/Character/Start/Start.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Game/Road/RoadBody.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Game/Road/assets/upder_constarction.png" type="Texture" id=14]
 [ext_resource path="res://Game/Level2/assets/road_border.png" type="Texture" id=15]
 
 [sub_resource type="PhysicsMaterial" id=1]
@@ -200,45 +199,3 @@ position = Vector2( 18050.4, 1075.76 )
 
 [node name="MovingPlatform5" parent="." instance=ExtResource( 3 )]
 position = Vector2( 17873.1, 1236.42 )
-
-[node name="UpderConstarction2" type="Sprite" parent="."]
-position = Vector2( 14488.4, 1365.92 )
-rotation = 1.5708
-scale = Vector2( 0.138263, 0.092287 )
-texture = ExtResource( 14 )
-
-[node name="UpderConstarction7" type="Sprite" parent="."]
-position = Vector2( 14738.3, 1208.29 )
-rotation = -0.251017
-scale = Vector2( 0.3221, 0.172975 )
-texture = ExtResource( 14 )
-
-[node name="UpderConstarction8" type="Sprite" parent="."]
-position = Vector2( 14896.7, 1274.65 )
-rotation = -3.38456
-scale = Vector2( 0.3221, 0.172975 )
-texture = ExtResource( 14 )
-
-[node name="UpderConstarction3" type="Sprite" parent="."]
-position = Vector2( 14512.4, 1365.92 )
-rotation = 1.5708
-scale = Vector2( 0.138263, 0.092287 )
-texture = ExtResource( 14 )
-
-[node name="UpderConstarction4" type="Sprite" parent="."]
-position = Vector2( 14536.7, 1365.92 )
-rotation = 1.5708
-scale = Vector2( 0.138263, 0.092287 )
-texture = ExtResource( 14 )
-
-[node name="UpderConstarction5" type="Sprite" parent="."]
-position = Vector2( 14561.5, 1365.92 )
-rotation = 1.5708
-scale = Vector2( 0.138263, 0.092287 )
-texture = ExtResource( 14 )
-
-[node name="UpderConstarction6" type="Sprite" parent="."]
-position = Vector2( 14585.4, 1365.92 )
-rotation = 1.5708
-scale = Vector2( 0.138263, 0.092287 )
-texture = ExtResource( 14 )

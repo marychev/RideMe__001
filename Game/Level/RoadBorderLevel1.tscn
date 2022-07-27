@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Game/Road/RoadBody.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Road/RoadBody.gd" type="Script" id=2]
+[ext_resource path="res://Game/Road/assets/borders_bottom_1368x76.png" type="Texture" id=3]
+[ext_resource path="res://Game/Road/border/BordersBottom.tscn" type="PackedScene" id=4]
+
+[node name="RoadBorderLevel1" type="Node2D"]
+
+[node name="RoadBody" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -4.68555, 1172.92 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 2 )
+
+[node name="BordersTop" type="Sprite" parent="RoadBody" instance=ExtResource( 4 )]
+position = Vector2( -93.9438, 29.4851 )
+scale = Vector2( 1, -1 )
+z_index = -1
+texture = ExtResource( 3 )
+centered = false
+
+[node name="BordersTop2" type="Sprite" parent="RoadBody/BordersTop" instance=ExtResource( 4 )]
+position = Vector2( 1308.66, 0 )
+z_index = -1
+texture = ExtResource( 3 )
+centered = false
+
+[node name="BordersTop3" type="Sprite" parent="RoadBody/BordersTop" instance=ExtResource( 4 )]
+position = Vector2( 2655.97, 0 )
+z_index = -1
+texture = ExtResource( 3 )
+centered = false
+
+[node name="BordersTop4" type="Sprite" parent="RoadBody/BordersTop" instance=ExtResource( 4 )]
+position = Vector2( 3218.5, 0 )
+z_index = -1
+texture = ExtResource( 3 )
+centered = false
+
+[node name="BordersBottom" type="Sprite" parent="RoadBody" instance=ExtResource( 4 )]
+position = Vector2( -20.1902, 98.3113 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="BordersBottom2" type="Sprite" parent="RoadBody/BordersBottom" instance=ExtResource( 4 )]
+position = Vector2( 1367.04, 0 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="BordersBottom3" type="Sprite" parent="RoadBody/BordersBottom" instance=ExtResource( 4 )]
+position = Vector2( 2723.05, 0 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="BordersBottom4" type="Sprite" parent="RoadBody/BordersBottom" instance=ExtResource( 4 )]
+position = Vector2( 3145.54, 0 )
+texture = ExtResource( 3 )
+centered = false

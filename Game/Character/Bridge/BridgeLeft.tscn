@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Game/Character/Bridge/assets/bridge-up.png" type="Texture" id=1]
 [ext_resource path="res://Game/Character/Bridge/BridgeLeft.gd" type="Script" id=2]
+[ext_resource path="res://Game/Road/upder_constarction/UpderConstarction.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 636.438, 10.3186 )
+extents = Vector2( 636.438, 6.48738 )
 
 [node name="BridgeLeft" type="StaticBody2D"]
 script = ExtResource( 2 )
@@ -12,14 +13,34 @@ __meta__ = {
 "_edit_group_": true
 }
 
+[node name="UpderConstarction2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 4.35086, 305.796 )
+rotation = -0.238965
+scale = Vector2( 0.49133, 0.49133 )
+
+[node name="UpderConstarction3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1064.52, 44.2778 )
+rotation = -0.238965
+scale = Vector2( 0.49133, 0.49133 )
+
 [node name="SpriteLeft" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 centered = false
 
 [node name="CollisionLeft" type="CollisionShape2D" parent="."]
-position = Vector2( 747.692, 209.267 )
+position = Vector2( 746.741, 205.556 )
 rotation = -0.250882
 shape = SubResource( 1 )
+
+[node name="UpderConstarction" parent="." instance=ExtResource( 3 )]
+position = Vector2( 147.53, 366.471 )
+rotation = -0.238965
+scale = Vector2( 0.49133, 0.49133 )
+
+[node name="UpderConstarction4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1205.15, 95.0564 )
+rotation = -0.238965
+scale = Vector2( 0.49133, 0.49133 )
 
 [node name="VisibilityEnabler" type="VisibilityEnabler2D" parent="."]
 position = Vector2( 123.974, 100.453 )
