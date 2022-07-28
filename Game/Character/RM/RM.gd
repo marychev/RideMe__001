@@ -9,7 +9,7 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: Player) -> void:
-	if body.name == "Player":
+	if is_instance_valid(body) and body.name == "Player":
 		anim_player.play("fade_out")
 		player_do_anim_success(body)
 		rm_counter_do_anim_success()

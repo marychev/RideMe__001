@@ -32,9 +32,9 @@ func _ready() -> void:
 	if not is_instance_valid(GameData.current_track):
 		if GameData.current_level.id == 1:
 			_on_Level_1_pressed()
+			_on_btn_refit_pressed()
 		elif GameData.current_level.id == 2:
 			_on_Level_2_pressed()
-		else:
 			_on_btn_refit_pressed()
 	
 	# -- Demo mode

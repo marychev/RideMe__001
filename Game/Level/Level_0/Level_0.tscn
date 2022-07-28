@@ -111,7 +111,7 @@ position = Vector2( 15668.2, 1229.82 )
 position = Vector2( 16066.5, 1186 )
 scale = Vector2( 0.8, 0.8 )
 
-[node name="UpderConstarction412X60" parent="Level_0_1" instance=ExtResource( 2 )]
+[node name="UpderConstarction" parent="Level_0_1" instance=ExtResource( 2 )]
 position = Vector2( 17523.7, 1191.47 )
 
 [node name="StaticRock6_0" parent="Level_0_1" instance=ExtResource( 14 )]

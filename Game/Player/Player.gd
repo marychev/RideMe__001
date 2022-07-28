@@ -21,6 +21,8 @@ func _ready() -> void:
 	$Sprite.texture = PlayerData.player_bike.texture
 	modulate = Color(1, 1, 1)
 	$AudioMove.volume_db = 1
+	
+	print(get_node("Music"))
 
 
 func _on_CollisionDetector_area_entered(area: Area2D) -> void:
