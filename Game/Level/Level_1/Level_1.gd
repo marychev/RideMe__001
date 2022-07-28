@@ -16,7 +16,7 @@ func _ready():
 static func create_for_cfg() -> void:
 	var resource = "res://Game/Level/Level_1/Level_1.tscn"
 	var texture = "res://Game/Level/assets/slides/track-01.png"
-	var num_win = 5
+	var num_win = 6
 	var init_time_level = 20
 	var price = 2
 	var issue: = "Heat. Collect the %s hourgrass to see the finish"

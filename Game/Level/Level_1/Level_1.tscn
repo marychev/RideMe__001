@@ -297,9 +297,6 @@ position = Vector2( 50596.4, 140.675 )
 [node name="RoadBorderLevel1_3" parent="Level_1_3" instance=ExtResource( 17 )]
 position = Vector2( 55076.5, 140.675 )
 
-[node name="Hourgrass6" parent="Level_1_3" instance=ExtResource( 11 )]
-position = Vector2( 50680.5, 1110.86 )
-
 [node name="Plank3" parent="Level_1_3" instance=ExtResource( 9 )]
 position = Vector2( 47838.8, 1186.32 )
 
@@ -314,18 +311,21 @@ position = Vector2( 50117.1, 918.975 )
 linear_damp = 18.0
 applied_torque = 2.0
 
-[node name="KSMan" parent="Level_1_3" instance=ExtResource( 4 )]
-position = Vector2( 51544, 1140 )
+[node name="Hourgrass6" parent="Level_1_3" instance=ExtResource( 11 )]
+position = Vector2( 51644.1, 1081.11 )
 
-[node name="Hourgrass7" parent="Level_1_3" instance=ExtResource( 11 )]
-position = Vector2( 56129.1, 1245.84 )
+[node name="KSMan" parent="Level_1_3" instance=ExtResource( 4 )]
+position = Vector2( 52476.3, 1008.54 )
 
 [node name="LampsSetFour" parent="Level_1_3" instance=ExtResource( 19 )]
-position = Vector2( 52146.9, 1364.6 )
+position = Vector2( 55980.1, 1364.6 )
 
 [node name="Finish" parent="Level_1_3" instance=ExtResource( 15 )]
-position = Vector2( 56745.3, 1314 )
+position = Vector2( 59124.9, 1314 )
 scale = Vector2( 0.9, 0.9 )
+
+[node name="Hourgrass7" parent="Level_1_3" instance=ExtResource( 11 )]
+position = Vector2( 54572.2, 1246.09 )
 
 [node name="UpderConstarction" parent="Level_1_3" instance=ExtResource( 18 )]
 position = Vector2( 59150.6, 1331.46 )
