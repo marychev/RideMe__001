@@ -15,10 +15,10 @@
 [ext_resource path="res://Game/Character/Puddle/Puddle.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Game/Character/Start/Start.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Game/Character/Cloud/SkyClouds.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Game/Level/RoadBorderLevel1.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Game/Level/RoadBorderLevelMountain.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Game/Road/upder_constarction/UpderConstarction.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Game/Character/Lamp/LampsSetFour.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Game/Level/RoadNoTopBorderLevel1.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Game/Level/RoadNoTopBorderLevelMountain.tscn" type="PackedScene" id=20]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.02

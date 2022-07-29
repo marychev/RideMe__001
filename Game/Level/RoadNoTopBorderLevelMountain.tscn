@@ -3,7 +3,7 @@
 [ext_resource path="res://Game/Road/RoadBody.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Road/border/BordersBottom.tscn" type="PackedScene" id=4]
 
-[node name="RoadNoTopBorderLevel1" type="Node2D"]
+[node name="RoadNoTopBorderLevelMountain" type="Node2D"]
 
 [node name="RoadBody" parent="." instance=ExtResource( 1 )]
 position = Vector2( -4.68555, 1172.92 )

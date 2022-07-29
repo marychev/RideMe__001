@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Game/Road/border/BordersBottom.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game/Road/DoubleRoadBody.tscn" type="PackedScene" id=3]
+
+[node name="RoadBorderLevelCity" type="Node2D"]
+
+[node name="DoubleRoadBody" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, 1170.3 )
+
+[node name="BordersTop" parent="DoubleRoadBody" instance=ExtResource( 2 )]
+position = Vector2( 0, 29.6055 )
+scale = Vector2( 1, -1 )
+z_index = -1
+
+[node name="BordersTop2" parent="DoubleRoadBody/BordersTop" instance=ExtResource( 2 )]
+position = Vector2( 1367.81, 0 )
+z_index = -1
+
+[node name="BordersBottom" parent="DoubleRoadBody" instance=ExtResource( 2 )]
+position = Vector2( -24, 182 )
+z_index = -1
+
+[node name="BordersBottom2" parent="DoubleRoadBody/BordersBottom" instance=ExtResource( 2 )]
+position = Vector2( 1367.04, 0 )
