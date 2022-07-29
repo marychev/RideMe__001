@@ -240,9 +240,20 @@ position = Vector2( 37151.4, 140.675 )
 position = Vector2( 33607.3, 1374.65 )
 physics_material_override = SubResource( 3 )
 
+[node name="UpderConstarction7" parent="Level_1_2" instance=ExtResource( 18 )]
+position = Vector2( 36438.8, 1316.01 )
+rotation = 1.5708
+scale = Vector2( 0.236381, 0.328091 )
+
 [node name="StaticStairs2" parent="Level_1_2" instance=ExtResource( 12 )]
 position = Vector2( 36304.9, 1229.67 )
 scale = Vector2( 1.30184, 1.16259 )
+
+[node name="UpderConstarction8" parent="Level_1_2" instance=ExtResource( 18 )]
+position = Vector2( 37146.8, 1316.01 )
+rotation = 1.5708
+scale = Vector2( 0.236381, 0.328091 )
+z_index = -1
 
 [node name="Plank3" parent="Level_1_2" instance=ExtResource( 9 )]
 position = Vector2( 37054.6, 1183.25 )
