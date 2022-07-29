@@ -20,8 +20,13 @@
 [node name="RoadBorderLevel11" parent="." instance=ExtResource( 16 )]
 position = Vector2( 78068.3, 133.227 )
 
+[node name="UpderConstarctionMin2" parent="RoadBorderLevel11" instance=ExtResource( 8 )]
+position = Vector2( 4488.16, 1172.91 )
+rotation = 1.5708
+scale = Vector2( 0.236381, 0.328091 )
+
 [node name="Hourgrass" parent="." instance=ExtResource( 7 )]
-position = Vector2( 82804.2, 1143.35 )
+position = Vector2( 82736.2, 1115.35 )
 
 [node name="BridgeLRight" parent="." instance=ExtResource( 10 )]
 position = Vector2( 84098.4, 1390.43 )
@@ -60,9 +65,8 @@ position = Vector2( 90147.7, 2816.21 )
 rotation = 1.58594
 
 [node name="StaticRock" parent="." instance=ExtResource( 2 )]
-position = Vector2( 89423, 2968.32 )
+position = Vector2( 89821.4, 2981.03 )
 rotation = 0.0337196
-scale = Vector2( 1, -1 )
 
 [node name="Puddle" parent="." instance=ExtResource( 9 )]
 position = Vector2( 90940.2, 2961.09 )
@@ -111,7 +115,7 @@ z_index = -1
 position = Vector2( 98982.1, 1072.54 )
 
 [node name="StaticRock2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 98719.4, 1288.33 )
+position = Vector2( 98764.6, 1293.09 )
 rotation = -0.206318
 
 [node name="Hourgrass2" parent="." instance=ExtResource( 7 )]
