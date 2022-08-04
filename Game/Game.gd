@@ -15,6 +15,8 @@ func _ready() -> void:
 		$Player/Music.set_stream(load("res://media/track-0.wav"))
 	elif GameData.current_level.id == 2:
 		$Player/Music.set_stream(load("res://media/level_city.wav"))
+	
+	$Player/Music.autoplay = true
 	$Player/Music.play()
 
 
@@ -23,3 +25,7 @@ func _process(delta) -> void:
 	# var FirstRoadBody: StaticBody2D = f_node("RoadBody")
 	# FirstRoadBody.repeat_two_sprites()
 	
+
+func _physics_process(delta) -> void:
+	if not $Player/Music.is_playing():
+		$Player/Music.play()

@@ -6,6 +6,7 @@
 
 [node name="Crossroads" type="Node2D"]
 scale = Vector2( 0.456429, 0.414936 )
+z_index = 1
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true

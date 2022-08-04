@@ -23,15 +23,16 @@ z_index = 1
 position = Vector2( 36687.6, 3005.25 )
 
 [node name="TreeRoadOneCity" parent="." instance=ExtResource( 10 )]
+position = Vector2( 36978.7, 3067.64 )
 
 [node name="TreeRoadOneCity2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 639.945, 144.413 )
+position = Vector2( 37618.7, 3212.06 )
 
 [node name="TreeRoadOneCity3" parent="." instance=ExtResource( 10 )]
-position = Vector2( 1309.22, 63.0059 )
+position = Vector2( 38288, 3130.65 )
 
 [node name="TreeRoadOneCity4" parent="." instance=ExtResource( 10 )]
-position = Vector2( 1957.77, 146.067 )
+position = Vector2( 38936.5, 3213.71 )
 
 [node name="RoadBorderLevelCity4" parent="." instance=ExtResource( 5 )]
 position = Vector2( 39594.8, 2141.79 )
@@ -49,13 +50,13 @@ scale = Vector2( 0.502584, 0.625838 )
 offset = Vector2( -313.338, -31.7788 )
 
 [node name="TreeRoadOneCity5" parent="." instance=ExtResource( 10 )]
-position = Vector2( 5575.33, 162.315 )
+position = Vector2( 42554.1, 3229.96 )
 
 [node name="TreeRoadOneCity6" parent="." instance=ExtResource( 10 )]
-position = Vector2( 6274, 233.139 )
+position = Vector2( 43252.7, 3300.78 )
 
 [node name="TreeRoadOneCity7" parent="." instance=ExtResource( 10 )]
-position = Vector2( 6952.05, 339.085 )
+position = Vector2( 43930.8, 3406.73 )
 
 [node name="RoadBorderLevelCity5" parent="." instance=ExtResource( 5 )]
 position = Vector2( 44468.3, 2374.49 )

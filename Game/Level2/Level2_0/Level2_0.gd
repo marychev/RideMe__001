@@ -28,7 +28,7 @@ static func create_for_cfg() -> void:
 	var track_id = 4
 	var resource = "res://Game/Level2/Level2_0/Level2_0.tscn"
 	var texture = "res://Game/Level2/assets/slides/track-2_0.png"
-	var num_win = 6
+	var num_win = 8
 	var init_time_level = 40
 	var price = 20
 	var issue = "City dogs. Collect %s hourglasses as quickly as possible"

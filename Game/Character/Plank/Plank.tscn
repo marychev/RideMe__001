@@ -10,6 +10,7 @@ extents = Vector2( 154.767, 10.2655 )
 extents = Vector2( 130.961, 10.8907 )
 
 [node name="Plank" type="RigidBody2D"]
+z_index = 2
 collision_layer = 2
 collision_mask = 9
 mass = 42.0
