@@ -1,11 +1,12 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Game/Character/Bridge/BridgeLeft.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Game/Level2/assets/road_border.png" type="Texture" id=2]
-[ext_resource path="res://Game/Road/RoadBody.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Game/Road/RoadBodyOne.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Game/Character/Hourgrass/Hourgrass.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Game/Character/Bridge/BridgeRight.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Game/Level2/TreeRoadOneCity.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Game/Level2/RoadBorderLevelCity.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Game/Road/upder_constarction/UpderConstarction.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Game/Character/Lamp/LampsSetFour.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Game/Level/RoadBorderLevelMountain.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Game/Road/DoubleRoadBody.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Game/Character/Lamp/Lamp.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Game/Character/Start/Start.tscn" type="PackedScene" id=24]
@@ -15,391 +16,317 @@
 
 [node name="Level2_2_0" type="Node"]
 
-[node name="RoadBorderSet" parent="." instance=ExtResource( 25 )]
-position = Vector2( -53.1992, 2544.8 )
-z_index = 1
+[node name="RoadBorderLevelCity0" parent="." instance=ExtResource( 7 )]
+position = Vector2( -2733.21, 1438.26 )
 
-[node name="RoadBorderSet2" parent="." instance=ExtResource( 25 )]
-position = Vector2( 1093.53, 2544.8 )
+[node name="UpderConstarction" parent="RoadBorderLevelCity0" instance=ExtResource( 8 )]
+position = Vector2( -0.368164, 1190.22 )
 
-[node name="DoubleRoadBody" parent="." instance=ExtResource( 21 )]
-position = Vector2( -4.8, 2608.87 )
+[node name="UpderConstarction2" parent="RoadBorderLevelCity0" instance=ExtResource( 8 )]
+position = Vector2( -0.368164, 1290.5 )
+
+[node name="RoadBorderLevelCity" parent="." instance=ExtResource( 7 )]
+position = Vector2( 0, 1438.26 )
+
+[node name="LampsSetFour" parent="RoadBorderLevelCity" instance=ExtResource( 9 )]
+position = Vector2( 98.9323, 1224.32 )
+
+[node name="UpderConstarction" parent="RoadBorderLevelCity" instance=ExtResource( 8 )]
+position = Vector2( 2733.29, 1286.7 )
+rotation = 1.5708
+scale = Vector2( 0.202984, 0.31185 )
+
+[node name="UpderConstarction2" parent="RoadBorderLevelCity" instance=ExtResource( 8 )]
+position = Vector2( 2321.67, 1187.19 )
 
 [node name="Start" parent="." instance=ExtResource( 24 )]
 position = Vector2( -59.343, 2613.67 )
 scale = Vector2( 0.9, 0.9 )
 
-[node name="Start2" parent="." instance=ExtResource( 24 )]
-position = Vector2( 14.6247, 2705.13 )
-scale = Vector2( 1, 0.9 )
-
-[node name="Lamp2" parent="." instance=ExtResource( 23 )]
-position = Vector2( 266.721, 2545 )
-
-[node name="Lamp" parent="." instance=ExtResource( 23 )]
-position = Vector2( -67.5847, 2415.7 )
-scale = Vector2( 0.8, 0.8 )
-
 [node name="BridgeLeft" parent="." instance=ExtResource( 1 )]
-position = Vector2( 2687.26, 2283.44 )
+position = Vector2( 3023.55, 2283.44 )
 
 [node name="MovingPlatform" parent="." instance=ExtResource( 26 )]
-position = Vector2( 4438.11, 2274.97 )
+position = Vector2( 4882.41, 2274.97 )
 
 [node name="MovingPlatform2" parent="." instance=ExtResource( 26 )]
-position = Vector2( 4776.74, 2266.73 )
+position = Vector2( 5221.04, 2266.73 )
 
-[node name="BridgeRight" parent="." instance=ExtResource( 6 )]
-position = Vector2( 5179.41, 2287.24 )
+[node name="BridgeLRight" parent="." instance=ExtResource( 1 )]
+position = Vector2( 7049.6, 2333.84 )
+scale = Vector2( -1, 1 )
 
-[node name="RoadBodyOne" parent="." instance=ExtResource( 4 )]
-position = Vector2( 6800.18, 2759.59 )
+[node name="RoadBorderLevelCity1" parent="." instance=ExtResource( 7 )]
+position = Vector2( 7149.98, 1582.61 )
 
-[node name="RoadBodyOne2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 6918.35, 2759.59 )
+[node name="UpderConstarction" parent="RoadBorderLevelCity1" instance=ExtResource( 8 )]
+position = Vector2( 11.9341, 1185.06 )
+rotation = 1.5708
+scale = Vector2( 0.163396, 0.2 )
 
-[node name="RoadBodyOne3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 7027.74, 2759.59 )
+[node name="UpderConstarction2" parent="RoadBorderLevelCity1" instance=ExtResource( 8 )]
+position = Vector2( 11.8042, 1286.19 )
+rotation = 1.5708
+scale = Vector2( 0.161398, 0.21136 )
 
-[node name="Lamp3" parent="." instance=ExtResource( 23 )]
-position = Vector2( 7083.12, 2516.83 )
+[node name="Lamp3" parent="RoadBorderLevelCity1" instance=ExtResource( 23 )]
+position = Vector2( -46.1606, 981.742 )
+scale = Vector2( 0.8, 0.8 )
+z_index = -2
 
-[node name="DoubleRoadBody2" parent="." instance=ExtResource( 21 )]
-position = Vector2( 7149.9, 2753.2 )
+[node name="Lamp4" parent="RoadBorderLevelCity1" instance=ExtResource( 23 )]
+position = Vector2( 304.821, 1095.68 )
 
-[node name="DoubleRoadBody3" parent="." instance=ExtResource( 21 )]
-position = Vector2( 9588.07, 2753.2 )
+[node name="RoadBorderLevelCity2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 9868.93, 1582.61 )
+
+[node name="UpderConstarction" parent="RoadBorderLevelCity2" instance=ExtResource( 8 )]
+position = Vector2( 2732.3, 1185.06 )
+rotation = 1.5708
+scale = Vector2( 0.163396, 0.2 )
+
+[node name="UpderConstarction2" parent="RoadBorderLevelCity2" instance=ExtResource( 8 )]
+position = Vector2( 2732.17, 1286.19 )
+rotation = 1.5708
+scale = Vector2( 0.161398, 0.21136 )
+
+[node name="UpderConstarction3" parent="RoadBorderLevelCity2" instance=ExtResource( 8 )]
+position = Vector2( 2616.21, 1286.19 )
+rotation = 1.5708
+scale = Vector2( 0.161398, 0.21136 )
+
+[node name="UpderConstarction4" parent="RoadBorderLevelCity2" instance=ExtResource( 8 )]
+position = Vector2( 2491.76, 1286.19 )
+rotation = 1.5708
+scale = Vector2( 0.161398, 0.21136 )
+
+[node name="UpderConstarction5" parent="RoadBorderLevelCity2" instance=ExtResource( 8 )]
+position = Vector2( 2364.48, 1286.19 )
+rotation = 1.5708
+scale = Vector2( 0.161398, 0.21136 )
 
 [node name="BridgeLeft2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 12217.6, 2429.55 )
+position = Vector2( 12249.9, 2459.7 )
+
+[node name="RoadBorderSet" parent="BridgeLeft2" instance=ExtResource( 25 )]
+position = Vector2( -98.2871, 289.823 )
+rotation = -0.244601
 
 [node name="MovingPlatform3" parent="." instance=ExtResource( 26 )]
 position = Vector2( 13968.4, 2421.07 )
 
-[node name="MovingPlatform4" parent="." instance=ExtResource( 26 )]
-position = Vector2( 14307.1, 2412.84 )
+[node name="MovingPlatform4" parent="MovingPlatform3" instance=ExtResource( 26 )]
+position = Vector2( 338.699, -8.22998 )
 
-[node name="MovingPlatform5" parent="." instance=ExtResource( 26 )]
-position = Vector2( 14646.5, 2406.11 )
+[node name="MovingPlatform5" parent="MovingPlatform3" instance=ExtResource( 26 )]
+position = Vector2( 678.1, -14.96 )
 
-[node name="MovingPlatform6" parent="." instance=ExtResource( 26 )]
-position = Vector2( 14988.7, 2398.11 )
+[node name="MovingPlatform6" parent="MovingPlatform3" instance=ExtResource( 26 )]
+position = Vector2( 1020.3, -22.96 )
 
-[node name="BridgeRight2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 15324.1, 2424.74 )
+[node name="BridgeLRight5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 16739.1, 2422.93 )
+scale = Vector2( -1, 1 )
 
-[node name="BridgeRight3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 16538.4, 2726.37 )
+[node name="RoadBorderSet" parent="BridgeLRight5" instance=ExtResource( 25 )]
+position = Vector2( -49.9609, 274.188 )
+rotation = -0.244601
 
-[node name="BridgeRight4" parent="." instance=ExtResource( 6 )]
-position = Vector2( 17735.8, 3024.25 )
+[node name="Lamp3" parent="BridgeLRight5" instance=ExtResource( 23 )]
+position = Vector2( -37.897, 73.48 )
 
-[node name="BridgeRight5" parent="." instance=ExtResource( 6 )]
-position = Vector2( 18949.5, 3325.48 )
+[node name="BridgeLRight6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 17963.9, 2736.92 )
+scale = Vector2( -1, 1 )
 
-[node name="RoadBodyOne4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 20551.4, 3762.89 )
+[node name="RoadBorderSet" parent="BridgeLRight6" instance=ExtResource( 25 )]
+position = Vector2( -49.9609, 274.188 )
+rotation = -0.244601
 
-[node name="RoadBodyOne5" parent="." instance=ExtResource( 4 )]
-position = Vector2( 20668.7, 3762.95 )
+[node name="Lamp3" parent="BridgeLRight6" instance=ExtResource( 23 )]
+position = Vector2( -37.897, 73.48 )
 
-[node name="RoadBodyOne6" parent="." instance=ExtResource( 4 )]
-position = Vector2( 20786.9, 3762.89 )
+[node name="BridgeLRight7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 19170.7, 3046.13 )
+scale = Vector2( -1, 1 )
 
-[node name="RoadBodyOne7" parent="." instance=ExtResource( 4 )]
-position = Vector2( 20905.2, 3762.89 )
+[node name="RoadBorderSet" parent="BridgeLRight7" instance=ExtResource( 25 )]
+position = Vector2( -49.9609, 274.188 )
+rotation = -0.244601
 
-[node name="RoadBorder" type="Sprite" parent="."]
-position = Vector2( 20733, 3750.27 )
-z_index = -1
-texture = ExtResource( 2 )
+[node name="Lamp3" parent="BridgeLRight7" instance=ExtResource( 23 )]
+position = Vector2( -37.897, 73.48 )
 
-[node name="RoadBorder2" type="Sprite" parent="RoadBorder"]
-position = Vector2( 142.125, 0 )
-texture = ExtResource( 2 )
+[node name="BridgeLRight8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 20377.6, 3355.23 )
+scale = Vector2( -1, 1 )
 
-[node name="RoadBodyOne8" parent="." instance=ExtResource( 4 )]
-position = Vector2( 21297.5, 3762.89 )
+[node name="RoadBorderSet" parent="BridgeLRight8" instance=ExtResource( 25 )]
+position = Vector2( -49.9609, 274.188 )
+rotation = -0.244601
 
-[node name="RoadBodyOne9" parent="." instance=ExtResource( 4 )]
-position = Vector2( 21414.8, 3762.95 )
+[node name="Lamp3" parent="BridgeLRight8" instance=ExtResource( 23 )]
+position = Vector2( -37.897, 73.48 )
 
-[node name="RoadBodyOne10" parent="." instance=ExtResource( 4 )]
-position = Vector2( 21533, 3762.89 )
+[node name="TreeRoadOneCity" parent="." instance=ExtResource( 6 )]
+position = Vector2( 20665.5, 3763.39 )
 
-[node name="RoadBodyOne11" parent="." instance=ExtResource( 4 )]
-position = Vector2( 21651.3, 3762.89 )
+[node name="TreeRoadOneCity2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 21018.4, 3763.39 )
 
-[node name="RoadBorder2" type="Sprite" parent="."]
-position = Vector2( 21479.1, 3750.27 )
-z_index = -1
-texture = ExtResource( 2 )
+[node name="RoadBorderLevelMountain" parent="." instance=ExtResource( 10 )]
+position = Vector2( 21751.7, 2585.63 )
 
-[node name="RoadBorder2" type="Sprite" parent="RoadBorder2"]
-position = Vector2( 142.125, 0 )
-texture = ExtResource( 2 )
+[node name="Lamp6" parent="RoadBorderLevelMountain" instance=ExtResource( 23 )]
+position = Vector2( -63.3945, 930.145 )
 
-[node name="RoadBody" parent="." instance=ExtResource( 3 )]
-position = Vector2( 22042.1, 3758.49 )
+[node name="Lamp7" parent="RoadBorderLevelMountain" instance=ExtResource( 23 )]
+position = Vector2( 225.906, 1015.92 )
 
-[node name="RoadBodyOne15" parent="." instance=ExtResource( 4 )]
-position = Vector2( 24469.1, 3762.52 )
-rotation = -0.0844345
+[node name="UpderConstarction5" parent="RoadBorderLevelMountain" instance=ExtResource( 8 )]
+position = Vector2( -4.67525, 1172.95 )
+rotation = 1.5708
+scale = Vector2( 0.237898, 0.337151 )
 
-[node name="RoadBodyOne16" parent="." instance=ExtResource( 4 )]
-position = Vector2( 24579.6, 3754.09 )
-rotation = -0.188098
+[node name="UpderConstarction7" parent="RoadBorderLevelMountain" instance=ExtResource( 8 )]
+position = Vector2( 3268.13, 1187.79 )
+rotation = 1.5708
+scale = Vector2( 0.164971, 0.264599 )
+
+[node name="UpderConstarction8" parent="RoadBorderLevelMountain" instance=ExtResource( 8 )]
+position = Vector2( 3460.13, 1187.79 )
+rotation = 1.5708
+scale = Vector2( 0.164971, 0.264599 )
+
+[node name="UpderConstarction9" parent="RoadBorderLevelMountain" instance=ExtResource( 8 )]
+position = Vector2( 3672.13, 1187.79 )
+rotation = 1.5708
+scale = Vector2( 0.164971, 0.264599 )
+
+[node name="UpderConstarction10" parent="RoadBorderLevelMountain" instance=ExtResource( 8 )]
+position = Vector2( 3885.68, 1187.79 )
+rotation = 1.5708
+scale = Vector2( 0.164971, 0.264599 )
+
+[node name="UpderConstarction11" parent="RoadBorderLevelMountain" instance=ExtResource( 8 )]
+position = Vector2( 4094.98, 1187.79 )
+rotation = 1.5708
+scale = Vector2( 0.164971, 0.264599 )
+
+[node name="UpderConstarction12" parent="RoadBorderLevelMountain" instance=ExtResource( 8 )]
+position = Vector2( 4292.97, 1187.79 )
+rotation = 1.5708
+scale = Vector2( 0.164971, 0.264599 )
+
+[node name="UpderConstarction13" parent="RoadBorderLevelMountain" instance=ExtResource( 8 )]
+position = Vector2( 4486.72, 1187.79 )
+rotation = 1.5708
+scale = Vector2( 0.164971, 0.264599 )
 
 [node name="Hourgrass" parent="." instance=ExtResource( 5 )]
-position = Vector2( 22255, 3713.74 )
-
-[node name="Lamp6" parent="." instance=ExtResource( 23 )]
-position = Vector2( 21991, 3515.78 )
-
-[node name="Lamp7" parent="." instance=ExtResource( 23 )]
-position = Vector2( 22280.3, 3601.55 )
+position = Vector2( 22288.3, 3625.74 )
 
 [node name="BridgeLeft3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 24583.4, 3441.14 )
+position = Vector2( 24539.5, 3462.97 )
 
-[node name="RoadBodyOne12" parent="." instance=ExtResource( 4 )]
-position = Vector2( 26207.9, 3410.1 )
+[node name="TreeRoadOneCity3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 26206.1, 3409.65 )
 
-[node name="RoadBodyOne13" parent="." instance=ExtResource( 4 )]
-position = Vector2( 26325.2, 3410.16 )
+[node name="TreeRoadOneCity4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 26782.9, 3530.33 )
 
-[node name="RoadBodyOne14" parent="." instance=ExtResource( 4 )]
-position = Vector2( 26443.4, 3410.1 )
+[node name="TreeRoadOneCity5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 27386.3, 3661.67 )
 
-[node name="RoadBorder3" type="Sprite" parent="."]
-position = Vector2( 26317.4, 3397.48 )
-z_index = -1
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="RoadBorder2" type="Sprite" parent="RoadBorder3"]
-position = Vector2( 142.125, 0 )
-texture = ExtResource( 2 )
-
-[node name="RoadBodyOne17" parent="." instance=ExtResource( 4 )]
-position = Vector2( 26784, 3531 )
-
-[node name="RoadBodyOne18" parent="." instance=ExtResource( 4 )]
-position = Vector2( 26901.3, 3531.06 )
-
-[node name="RoadBodyOne19" parent="." instance=ExtResource( 4 )]
-position = Vector2( 27019.5, 3531 )
-
-[node name="RoadBorder4" type="Sprite" parent="."]
-position = Vector2( 26893.5, 3518.38 )
-z_index = -1
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="RoadBorder2" type="Sprite" parent="RoadBorder4"]
-position = Vector2( 142.125, 0 )
-texture = ExtResource( 2 )
-
-[node name="RoadBodyOne20" parent="." instance=ExtResource( 4 )]
-position = Vector2( 27387.6, 3661.28 )
-
-[node name="RoadBodyOne21" parent="." instance=ExtResource( 4 )]
-position = Vector2( 27504.9, 3661.34 )
-
-[node name="RoadBodyOne22" parent="." instance=ExtResource( 4 )]
-position = Vector2( 27623.1, 3661.28 )
-
-[node name="RoadBorder5" type="Sprite" parent="."]
-position = Vector2( 27497.1, 3648.66 )
-z_index = -1
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="RoadBorder2" type="Sprite" parent="RoadBorder5"]
-position = Vector2( 142.125, 0 )
-texture = ExtResource( 2 )
-
-[node name="RoadBodyOne23" parent="." instance=ExtResource( 4 )]
-position = Vector2( 27947.7, 3793.12 )
-
-[node name="RoadBodyOne24" parent="." instance=ExtResource( 4 )]
-position = Vector2( 28065, 3793.18 )
-
-[node name="RoadBodyOne25" parent="." instance=ExtResource( 4 )]
-position = Vector2( 28183.2, 3793.12 )
-
-[node name="RoadBorder6" type="Sprite" parent="."]
-position = Vector2( 28057.2, 3780.5 )
-z_index = -1
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="RoadBorder2" type="Sprite" parent="RoadBorder6"]
-position = Vector2( 142.125, 0 )
-texture = ExtResource( 2 )
+[node name="TreeRoadOneCity6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 27945.9, 3794.77 )
 
 [node name="MovingPlatform7" parent="." instance=ExtResource( 26 )]
 position = Vector2( 28739.3, 3878.26 )
 
-[node name="DoubleRoadBody4" parent="." instance=ExtResource( 21 )]
-position = Vector2( 28908.8, 3797.26 )
+[node name="RoadBorderLevelCity3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 28924.2, 2627.3 )
 
-[node name="Lamp4" parent="." instance=ExtResource( 23 )]
-position = Vector2( 28848.6, 3558.71 )
+[node name="UpderConstarction5" parent="RoadBorderLevelCity3" instance=ExtResource( 8 )]
+position = Vector2( -0.669922, 1183.98 )
+rotation = 1.5708
+scale = Vector2( 0.444581, 0.381665 )
 
-[node name="Lamp5" parent="." instance=ExtResource( 23 )]
-position = Vector2( 29159.3, 3733.34 )
+[node name="Lamp4" parent="RoadBorderLevelCity3" instance=ExtResource( 23 )]
+position = Vector2( -49.7266, 981.748 )
+scale = Vector2( 0.8, 0.8 )
+z_index = -2
 
-[node name="DoubleRoadBody5" parent="." instance=ExtResource( 21 )]
-position = Vector2( 31346.4, 3797.26 )
+[node name="Lamp5" parent="RoadBorderLevelCity3" instance=ExtResource( 23 )]
+position = Vector2( 304.369, 1110.29 )
 
-[node name="RoadBodyOne29" parent="." instance=ExtResource( 4 )]
-position = Vector2( 33767.7, 3805.48 )
-rotation = -0.19536
+[node name="RoadBorderLevelCity4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 31649.1, 2627.3 )
+
+[node name="UpderConstarction5" parent="RoadBorderLevelCity4" instance=ExtResource( 8 )]
+position = Vector2( 2733.65, 1186.76 )
+rotation = 1.5708
+scale = Vector2( 0.444581, 0.381665 )
+
+[node name="UpderConstarction6" parent="RoadBorderLevelCity4" instance=ExtResource( 8 )]
+position = Vector2( 2622.1, 1186.76 )
+rotation = 1.5708
+scale = Vector2( 0.444581, 0.381665 )
+
+[node name="UpderConstarction7" parent="RoadBorderLevelCity4" instance=ExtResource( 8 )]
+position = Vector2( 2498.29, 1186.76 )
+rotation = 1.5708
+scale = Vector2( 0.444581, 0.381665 )
+
+[node name="UpderConstarction8" parent="RoadBorderLevelCity4" instance=ExtResource( 8 )]
+position = Vector2( 2364.94, 1186.76 )
+rotation = 1.5708
+scale = Vector2( 0.444581, 0.381665 )
+
+[node name="Lamp4" parent="RoadBorderLevelCity4" instance=ExtResource( 23 )]
+position = Vector2( 2677.83, 983.867 )
+scale = Vector2( 0.8, 0.8 )
+z_index = -2
+
+[node name="Lamp5" parent="RoadBorderLevelCity4" instance=ExtResource( 23 )]
+position = Vector2( 2221.52, 1012.8 )
+z_index = 1
 
 [node name="BridgeLeft4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 33772.2, 3491.17 )
+position = Vector2( 33785.9, 3503.33 )
 
-[node name="RoadBodyOne26" parent="." instance=ExtResource( 4 )]
-position = Vector2( 35274, 3410.1 )
-
-[node name="RoadBodyOne27" parent="." instance=ExtResource( 4 )]
-position = Vector2( 35391.3, 3410.16 )
-
-[node name="RoadBodyOne28" parent="." instance=ExtResource( 4 )]
-position = Vector2( 35509.5, 3410.1 )
+[node name="TreeRoadOneCity7" parent="." instance=ExtResource( 6 )]
+position = Vector2( 35276, 3411.39 )
 
 [node name="Plank" parent="." instance=ExtResource( 27 )]
 position = Vector2( 35057.3, 3125.84 )
 
-[node name="Plank2" parent="." instance=ExtResource( 27 )]
-position = Vector2( 35310.9, 3082.73 )
+[node name="Plank2" parent="Plank" instance=ExtResource( 27 )]
+position = Vector2( 253.598, -43.1101 )
 
-[node name="Plank3" parent="." instance=ExtResource( 27 )]
-position = Vector2( 35253.9, 3177.25 )
+[node name="Plank3" parent="Plank" instance=ExtResource( 27 )]
+position = Vector2( 196.598, 51.4099 )
 
-[node name="Plank4" parent="." instance=ExtResource( 27 )]
-position = Vector2( 35859.9, 3350.96 )
+[node name="Plank4" parent="Plank" instance=ExtResource( 27 )]
+position = Vector2( 802.598, 225.12 )
 
-[node name="Plank5" parent="." instance=ExtResource( 27 )]
-position = Vector2( 36004, 3250.41 )
+[node name="Plank5" parent="Plank" instance=ExtResource( 27 )]
+position = Vector2( 946.699, 124.57 )
 
-[node name="RoadBorder7" type="Sprite" parent="."]
-position = Vector2( 35383.6, 3397.48 )
-z_index = -1
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="TreeRoadOneCity8" parent="." instance=ExtResource( 6 )]
+position = Vector2( 35967.5, 3537.62 )
 
-[node name="RoadBorder2" type="Sprite" parent="RoadBorder7"]
-position = Vector2( 142.125, 0 )
-texture = ExtResource( 2 )
+[node name="TreeRoadOneCity9" parent="." instance=ExtResource( 6 )]
+position = Vector2( 36623.5, 3672.57 )
 
-[node name="RoadBodyOne30" parent="." instance=ExtResource( 4 )]
-position = Vector2( 35969.3, 3531 )
+[node name="TreeRoadOneCity10" parent="." instance=ExtResource( 6 )]
+position = Vector2( 37229.1, 3793.52 )
 
-[node name="RoadBodyOne31" parent="." instance=ExtResource( 4 )]
-position = Vector2( 36086.6, 3531.06 )
+[node name="TreeRoadOneCity11" parent="." instance=ExtResource( 6 )]
+position = Vector2( 37911.8, 3930.83 )
 
-[node name="RoadBodyOne32" parent="." instance=ExtResource( 4 )]
-position = Vector2( 36204.8, 3531 )
-
-[node name="RoadBorder8" type="Sprite" parent="."]
-position = Vector2( 36078.8, 3518.38 )
-z_index = -1
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="RoadBorder2" type="Sprite" parent="RoadBorder8"]
-position = Vector2( 142.125, 0 )
-texture = ExtResource( 2 )
-
-[node name="RoadBodyOne33" parent="." instance=ExtResource( 4 )]
-position = Vector2( 36625.1, 3661.28 )
-
-[node name="RoadBodyOne34" parent="." instance=ExtResource( 4 )]
-position = Vector2( 36742.5, 3661.34 )
-
-[node name="RoadBodyOne35" parent="." instance=ExtResource( 4 )]
-position = Vector2( 36860.6, 3661.28 )
-
-[node name="RoadBorder9" type="Sprite" parent="."]
-position = Vector2( 36734.7, 3648.66 )
-z_index = -1
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="RoadBorder2" type="Sprite" parent="RoadBorder9"]
-position = Vector2( 142.125, 0 )
-texture = ExtResource( 2 )
-
-[node name="RoadBodyOne36" parent="." instance=ExtResource( 4 )]
-position = Vector2( 37231.8, 3793.12 )
-
-[node name="RoadBodyOne37" parent="." instance=ExtResource( 4 )]
-position = Vector2( 37349.1, 3793.18 )
-
-[node name="RoadBodyOne38" parent="." instance=ExtResource( 4 )]
-position = Vector2( 37467.3, 3793.12 )
-
-[node name="RoadBorder10" type="Sprite" parent="."]
-position = Vector2( 37341.3, 3780.5 )
-z_index = -1
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="RoadBorder2" type="Sprite" parent="RoadBorder10"]
-position = Vector2( 142.125, 0 )
-texture = ExtResource( 2 )
-
-[node name="RoadBodyOne39" parent="." instance=ExtResource( 4 )]
-position = Vector2( 37926.3, 3929.64 )
-
-[node name="RoadBodyOne40" parent="." instance=ExtResource( 4 )]
-position = Vector2( 38043.7, 3929.7 )
-
-[node name="RoadBodyOne41" parent="." instance=ExtResource( 4 )]
-position = Vector2( 38161.8, 3929.64 )
-
-[node name="RoadBodyOne42" parent="." instance=ExtResource( 4 )]
-position = Vector2( 38280, 3929.41 )
-
-[node name="RoadBodyOne43" parent="." instance=ExtResource( 4 )]
-position = Vector2( 38397.3, 3929.47 )
-
-[node name="RoadBodyOne44" parent="." instance=ExtResource( 4 )]
-position = Vector2( 38515.5, 3929.41 )
-
-[node name="RoadBorder11" type="Sprite" parent="."]
-position = Vector2( 38215.5, 3911.41 )
-z_index = -1
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="RoadBorder2" type="Sprite" parent="RoadBorder11"]
-position = Vector2( 142.125, 0 )
-texture = ExtResource( 2 )
-
-[node name="RoadBorder3" type="Sprite" parent="RoadBorder11"]
-position = Vector2( 142.125, 0 )
-texture = ExtResource( 2 )
+[node name="TreeRoadOneCity12" parent="." instance=ExtResource( 6 )]
+position = Vector2( 38264.1, 3931.05 )
 
 [node name="Plank7" parent="." instance=ExtResource( 27 )]
 position = Vector2( 37843.5, 3926.3 )
@@ -410,113 +337,32 @@ position = Vector2( 37805.3, 3895.12 )
 [node name="Plank9" parent="." instance=ExtResource( 27 )]
 position = Vector2( 37740.4, 3863 )
 
-[node name="RoadBodyOne45" parent="." instance=ExtResource( 4 )]
-position = Vector2( 38902, 3840.73 )
+[node name="TreeRoadOneCity13" parent="." instance=ExtResource( 6 )]
+position = Vector2( 38901.1, 3842.4 )
 
-[node name="RoadBodyOne46" parent="." instance=ExtResource( 4 )]
-position = Vector2( 39019.2, 3840.79 )
+[node name="TreeRoadOneCity14" parent="." instance=ExtResource( 6 )]
+position = Vector2( 39575.2, 3742.29 )
 
-[node name="RoadBodyOne47" parent="." instance=ExtResource( 4 )]
-position = Vector2( 39137.5, 3840.73 )
+[node name="TreeRoadOneCity15" parent="." instance=ExtResource( 6 )]
+position = Vector2( 40230.2, 3604.48 )
 
-[node name="RoadBorder12" type="Sprite" parent="."]
-position = Vector2( 39011.5, 3828.11 )
-z_index = -1
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="TreeRoadOneCity16" parent="." instance=ExtResource( 6 )]
+position = Vector2( 40799.7, 3493.34 )
 
-[node name="RoadBorder2" type="Sprite" parent="RoadBorder12"]
-position = Vector2( 142.125, 0 )
-texture = ExtResource( 2 )
+[node name="TreeRoadOneCity17" parent="." instance=ExtResource( 6 )]
+position = Vector2( 41325.5, 3384.2 )
 
-[node name="RoadBodyOne48" parent="." instance=ExtResource( 4 )]
-position = Vector2( 39512.2, 3737.98 )
+[node name="RoadBorderLevelCity5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 41694.6, 2222.25 )
 
-[node name="RoadBodyOne49" parent="." instance=ExtResource( 4 )]
-position = Vector2( 39629.5, 3738.04 )
+[node name="UpderConstarction5" parent="RoadBorderLevelCity5" instance=ExtResource( 8 )]
+position = Vector2( -0.460937, 1170.48 )
+rotation = 1.5708
+scale = Vector2( 0.484085, 0.381665 )
 
-[node name="RoadBodyOne50" parent="." instance=ExtResource( 4 )]
-position = Vector2( 39747.7, 3737.98 )
-
-[node name="RoadBodyOne54" parent="." instance=ExtResource( 4 )]
-position = Vector2( 39862.8, 3737.98 )
-
-[node name="RoadBorder13" type="Sprite" parent="."]
-position = Vector2( 39684.7, 3725.36 )
-z_index = -1
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="RoadBorder2" type="Sprite" parent="RoadBorder13"]
-position = Vector2( 142.125, 0 )
-texture = ExtResource( 2 )
-
-[node name="RoadBodyOne51" parent="." instance=ExtResource( 4 )]
-position = Vector2( 40234.8, 3602.81 )
-
-[node name="RoadBodyOne52" parent="." instance=ExtResource( 4 )]
-position = Vector2( 40352.1, 3602.87 )
-
-[node name="RoadBodyOne53" parent="." instance=ExtResource( 4 )]
-position = Vector2( 40470.3, 3602.81 )
-
-[node name="RoadBorder14" type="Sprite" parent="."]
-position = Vector2( 40344.3, 3590.19 )
-z_index = -1
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="RoadBorder2" type="Sprite" parent="RoadBorder14"]
-position = Vector2( 142.125, 0 )
-texture = ExtResource( 2 )
-
-[node name="RoadBodyOne55" parent="." instance=ExtResource( 4 )]
-position = Vector2( 40802.1, 3492.23 )
-
-[node name="RoadBodyOne56" parent="." instance=ExtResource( 4 )]
-position = Vector2( 40919.4, 3492.29 )
-
-[node name="RoadBodyOne57" parent="." instance=ExtResource( 4 )]
-position = Vector2( 41037.6, 3492.23 )
-
-[node name="RoadBorder15" type="Sprite" parent="."]
-position = Vector2( 40911.6, 3479.61 )
-z_index = -1
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="RoadBorder2" type="Sprite" parent="RoadBorder15"]
-position = Vector2( 142.125, 0 )
-texture = ExtResource( 2 )
-
-[node name="RoadBodyOne58" parent="." instance=ExtResource( 4 )]
-position = Vector2( 41337.1, 3392.73 )
-
-[node name="RoadBodyOne59" parent="." instance=ExtResource( 4 )]
-position = Vector2( 41454.4, 3392.79 )
-
-[node name="RoadBodyOne60" parent="." instance=ExtResource( 4 )]
-position = Vector2( 41572.6, 3392.73 )
-
-[node name="RoadBorder16" type="Sprite" parent="."]
-position = Vector2( 41446.6, 3380.11 )
-z_index = -1
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="RoadBorder2" type="Sprite" parent="RoadBorder16"]
-position = Vector2( 142.125, 0 )
-texture = ExtResource( 2 )
+[node name="Lamp7" parent="RoadBorderLevelCity5" instance=ExtResource( 23 )]
+position = Vector2( -70.2305, 931.042 )
+z_index = 1
 
 [node name="DoubleRoadBody6" parent="." instance=ExtResource( 21 )]
 position = Vector2( 41695.5, 3392.64 )

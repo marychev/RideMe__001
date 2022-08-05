@@ -12,7 +12,7 @@
 position = Vector2( 117.762, 0 )
 
 [node name="RoadBodyOne3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 236.131, 0 )
+position = Vector2( 236.052, 0 )
 
 [node name="RoadBorder" type="Sprite" parent="."]
 position = Vector2( 110.107, -24.0083 )
