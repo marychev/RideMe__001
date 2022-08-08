@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Game/Character/Bridge/BridgeLeft.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Character/Hourgrass/Hourgrass.tscn" type="PackedScene" id=5]
@@ -7,7 +7,6 @@
 [ext_resource path="res://Game/Road/upder_constarction/UpderConstarction.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Game/Character/Lamp/LampsSetFour.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Game/Level/RoadBorderLevelMountain.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Game/Road/DoubleRoadBody.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Game/Character/Lamp/Lamp.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Game/Character/Start/Start.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Game/Level2/RoadBorderSet.tscn" type="PackedScene" id=25]
@@ -106,7 +105,7 @@ rotation = 1.5708
 scale = Vector2( 0.161398, 0.21136 )
 
 [node name="BridgeLeft2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 12249.9, 2459.7 )
+position = Vector2( 12247.2, 2460.03 )
 
 [node name="RoadBorderSet" parent="BridgeLeft2" instance=ExtResource( 25 )]
 position = Vector2( -98.2871, 289.823 )
@@ -227,7 +226,7 @@ scale = Vector2( 0.164971, 0.264599 )
 position = Vector2( 22288.3, 3625.74 )
 
 [node name="BridgeLeft3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 24539.5, 3462.97 )
+position = Vector2( 24540.3, 3464 )
 
 [node name="TreeRoadOneCity3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 26206.1, 3409.65 )
@@ -363,9 +362,6 @@ scale = Vector2( 0.484085, 0.381665 )
 [node name="Lamp7" parent="RoadBorderLevelCity5" instance=ExtResource( 23 )]
 position = Vector2( -70.2305, 931.042 )
 z_index = 1
-
-[node name="DoubleRoadBody6" parent="." instance=ExtResource( 21 )]
-position = Vector2( 41695.5, 3392.64 )
 
 [node name="Hourgrass2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 44028.7, 3350.9 )

@@ -344,11 +344,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://components/buttons/TextureIconButton.gd"
 }, {
-"base": "VBoxContainer",
-"class": "Time",
-"language": "GDScript",
-"path": "res://Game/GUI/time/Time.gd"
-}, {
 "base": "MarginContainer",
 "class": "Timeout",
 "language": "GDScript",
@@ -427,7 +422,6 @@ _global_script_class_icons={
 "Start": "",
 "StopBtn": "",
 "TextureIconButton": "",
-"Time": "",
 "Timeout": "",
 "TrackCfg": ""
 }

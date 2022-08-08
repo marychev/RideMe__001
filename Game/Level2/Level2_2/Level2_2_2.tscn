@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Game/Road/RoadBody.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Character/Bench/Bench.tscn" type="PackedScene" id=2]
@@ -13,20 +13,35 @@
 [ext_resource path="res://Game/Character/Rock/StaticRock.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Game/Character/Plank/Plank.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Game/Character/Hourgrass/Hourgrass.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Game/Level/RoadNoTopBorderLevelMountain.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Game/Road/upder_constarction/UpderConstarction.tscn" type="PackedScene" id=15]
 
 [node name="Level2_2_2" type="Node"]
 
-[node name="RoadBody" parent="." instance=ExtResource( 1 )]
-position = Vector2( 69930, 3185.87 )
+[node name="RoadNoTopBorderLevelMountain2" parent="." instance=ExtResource( 14 )]
+position = Vector2( 67899.7, 2012.99 )
 
-[node name="RoadBody2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 72211, 3330.7 )
+[node name="UpderConstarction6" parent="RoadNoTopBorderLevelMountain2" instance=ExtResource( 15 )]
+position = Vector2( 4487.99, 1172.95 )
+rotation = 1.5708
+scale = Vector2( 0.238042, 0.328917 )
 
-[node name="RoadBody3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 74642.9, 3330.7 )
+[node name="RoadNoTopBorderLevelMountain3" parent="." instance=ExtResource( 14 )]
+position = Vector2( 72118.7, 2158.42 )
 
-[node name="RoadBody4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 77074.8, 3330.7 )
+[node name="UpderConstarction6" parent="RoadNoTopBorderLevelMountain3" instance=ExtResource( 15 )]
+position = Vector2( -4.40625, 1174.25 )
+rotation = 1.5708
+scale = Vector2( 0.238042, 0.328917 )
+
+[node name="UpderConstarction7" parent="RoadNoTopBorderLevelMountain3" instance=ExtResource( 15 )]
+position = Vector2( 8975.85, 1174.25 )
+rotation = 1.5708
+scale = Vector2( 0.238042, 0.328917 )
+z_index = 1
+
+[node name="RoadNoTopBorderLevelMountain4" parent="." instance=ExtResource( 14 )]
+position = Vector2( 76607.6, 2158.42 )
 
 [node name="RM" parent="." instance=ExtResource( 4 )]
 position = Vector2( 72210.2, 3095.68 )
@@ -65,8 +80,13 @@ position = Vector2( 78883.5, 3168.39 )
 [node name="Lamp" parent="." instance=ExtResource( 3 )]
 position = Vector2( 79004.9, 2812.18 )
 
-[node name="RoadBody5" parent="." instance=ExtResource( 1 )]
-position = Vector2( 79063.1, 3027.56 )
+[node name="RoadNoTopBorderLevelMountain5" parent="." instance=ExtResource( 14 )]
+position = Vector2( 79067.7, 1854.64 )
+
+[node name="UpderConstarction7" parent="RoadNoTopBorderLevelMountain5" instance=ExtResource( 15 )]
+position = Vector2( 4488.45, 1174.16 )
+rotation = 1.5708
+scale = Vector2( 0.238042, 0.328917 )
 
 [node name="Bench5" parent="." instance=ExtResource( 2 )]
 position = Vector2( 79024.9, 3092.35 )
@@ -80,75 +100,113 @@ position = Vector2( 79184.4, 2929.01 )
 [node name="Lamp2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 79293.4, 2858.8 )
 
-[node name="RoadBody6" parent="." instance=ExtResource( 1 )]
-position = Vector2( 81351.1, 3234.48 )
+[node name="RoadNoTopBorderLevelMountain6" parent="." instance=ExtResource( 14 )]
+position = Vector2( 81354.8, 2061.57 )
+
+[node name="UpderConstarction7" parent="RoadNoTopBorderLevelMountain6" instance=ExtResource( 15 )]
+position = Vector2( -4.98438, 1173.03 )
+rotation = 1.5708
+scale = Vector2( 0.238042, 0.328917 )
 
 [node name="RM4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 81425.6, 3010.16 )
+position = Vector2( 83600.1, 2920.97 )
 
-[node name="RM5" parent="." instance=ExtResource( 4 )]
-position = Vector2( 81683.7, 3095.54 )
+[node name="RM5" parent="RM4" instance=ExtResource( 4 )]
+position = Vector2( 258.102, 85.3801 )
 
-[node name="RM6" parent="." instance=ExtResource( 4 )]
-position = Vector2( 81880.5, 3220.07 )
+[node name="RM6" parent="RM4" instance=ExtResource( 4 )]
+position = Vector2( 454.898, 209.91 )
 
-[node name="RoadBody7" parent="." instance=ExtResource( 1 )]
-position = Vector2( 83783.1, 3234.48 )
+[node name="RoadNoTopBorderLevelMountain7" parent="." instance=ExtResource( 14 )]
+position = Vector2( 85844, 2061.56 )
+
+[node name="UpderConstarction7" parent="RoadNoTopBorderLevelMountain7" instance=ExtResource( 15 )]
+position = Vector2( 4488.45, 1174.16 )
+rotation = 1.5708
+scale = Vector2( 0.238042, 0.328917 )
 
 [node name="StaticRock5" parent="." instance=ExtResource( 11 )]
-position = Vector2( 85607.7, 3290.29 )
+position = Vector2( 85617.8, 3290.29 )
 
 [node name="StaticRock6" parent="." instance=ExtResource( 11 )]
-position = Vector2( 85758.1, 3211.22 )
+position = Vector2( 85768.2, 3211.22 )
 rotation = 2.72212
 scale = Vector2( 1, -1 )
 
 [node name="Bench6" parent="." instance=ExtResource( 2 )]
-position = Vector2( 85633.4, 3194.21 )
+position = Vector2( 85643.5, 3194.21 )
 
 [node name="StaticRock7" parent="." instance=ExtResource( 11 )]
-position = Vector2( 85910.3, 3220.13 )
+position = Vector2( 85920.4, 3220.13 )
 rotation = 1.39516
 
 [node name="StaticRock8" parent="." instance=ExtResource( 11 )]
-position = Vector2( 85830.3, 3289.25 )
+position = Vector2( 85840.4, 3289.25 )
 rotation = 0.0458362
 
 [node name="StaticRock9" parent="." instance=ExtResource( 11 )]
-position = Vector2( 86060.5, 3117.82 )
+position = Vector2( 86070.6, 3117.82 )
 rotation = 0.0458362
 
 [node name="StaticRock10" parent="." instance=ExtResource( 11 )]
-position = Vector2( 86068.4, 3187.66 )
+position = Vector2( 86078.5, 3187.66 )
 rotation = 0.0458362
 
 [node name="StaticRock11" parent="." instance=ExtResource( 11 )]
-position = Vector2( 86106.5, 3252.74 )
+position = Vector2( 86116.6, 3252.74 )
 rotation = 0.0458362
 
 [node name="Bench7" parent="." instance=ExtResource( 2 )]
-position = Vector2( 85808.3, 3137.02 )
+position = Vector2( 85818.4, 3137.02 )
 
 [node name="Bench8" parent="." instance=ExtResource( 2 )]
-position = Vector2( 85768, 3091.62 )
+position = Vector2( 85778.1, 3091.62 )
 
 [node name="Bench9" parent="." instance=ExtResource( 2 )]
-position = Vector2( 85909.4, 3015.58 )
+position = Vector2( 85919.5, 3015.58 )
 
 [node name="Bench10" parent="." instance=ExtResource( 2 )]
-position = Vector2( 85934.4, 3050.06 )
+position = Vector2( 85944.5, 3050.06 )
 
 [node name="Bench11" parent="." instance=ExtResource( 2 )]
-position = Vector2( 85994.3, 3048.56 )
+position = Vector2( 86004.4, 3048.56 )
+
+[node name="Plank" parent="." instance=ExtResource( 12 )]
+position = Vector2( 86775.3, 3232.7 )
+
+[node name="Puddle" parent="." instance=ExtResource( 5 )]
+position = Vector2( 87448, 3278.1 )
+
+[node name="Puddle2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 88030.3, 3278.1 )
+
+[node name="Puddle3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 88135.4, 3278.1 )
+
+[node name="Puddle4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 88692.3, 3278.1 )
+
+[node name="Puddle5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 88810.7, 3278.1 )
+
+[node name="Puddle6" parent="." instance=ExtResource( 5 )]
+position = Vector2( 88926.6, 3278.1 )
 
 [node name="MovingPlatform" parent="." instance=ExtResource( 7 )]
-position = Vector2( 86534.9, 3067.81 )
+position = Vector2( 86541.6, 2993.81 )
 
-[node name="RoadBody8" parent="." instance=ExtResource( 1 )]
-position = Vector2( 86866.4, 3234.48 )
+[node name="RoadNoTopBorderLevelMountain8" parent="." instance=ExtResource( 14 )]
+position = Vector2( 89078.3, 2299.36 )
 
-[node name="RoadBody9" parent="." instance=ExtResource( 1 )]
-position = Vector2( 89063.3, 3458.07 )
+[node name="UpderConstarction7" parent="RoadNoTopBorderLevelMountain8" instance=ExtResource( 15 )]
+position = Vector2( -3.71875, 1174.16 )
+rotation = 1.5708
+scale = Vector2( 0.238042, 0.328917 )
+
+[node name="UpderConstarction8" parent="RoadNoTopBorderLevelMountain8" instance=ExtResource( 15 )]
+position = Vector2( 4488.45, 1174.16 )
+rotation = 1.5708
+scale = Vector2( 0.238042, 0.328917 )
 
 [node name="StaticRock12" parent="." instance=ExtResource( 11 )]
 position = Vector2( 90678.2, 3504.76 )
@@ -156,36 +214,16 @@ position = Vector2( 90678.2, 3504.76 )
 [node name="Dog" parent="." instance=ExtResource( 6 )]
 position = Vector2( 91146.8, 3456.85 )
 
-[node name="Plank" parent="." instance=ExtResource( 12 )]
-position = Vector2( 86775.3, 3232.7 )
+[node name="RoadNoTopBorderLevelMountain9" parent="." instance=ExtResource( 14 )]
+position = Vector2( 91286.8, 2524.92 )
 
-[node name="Puddle" parent="." instance=ExtResource( 5 )]
-position = Vector2( 87428.9, 3285.43 )
-
-[node name="Puddle2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 88011.2, 3285.43 )
-
-[node name="Puddle3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 88116.3, 3285.43 )
-
-[node name="Puddle4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 88673.2, 3285.43 )
-
-[node name="Puddle5" parent="." instance=ExtResource( 5 )]
-position = Vector2( 88791.6, 3285.43 )
-
-[node name="Puddle6" parent="." instance=ExtResource( 5 )]
-position = Vector2( 88907.5, 3285.43 )
-
-[node name="RoadBody10" parent="." instance=ExtResource( 1 )]
-position = Vector2( 91282.1, 3698.28 )
+[node name="UpderConstarction7" parent="RoadNoTopBorderLevelMountain9" instance=ExtResource( 15 )]
+position = Vector2( -3.71875, 1174.16 )
+rotation = 1.5708
+scale = Vector2( 0.238042, 0.328917 )
 
 [node name="Crossroads" parent="." instance=ExtResource( 10 )]
-position = Vector2( 93065.4, 3748.17 )
-scale = Vector2( 0.6, 0.6 )
-
-[node name="RoadBody11" parent="." instance=ExtResource( 1 )]
-position = Vector2( 93714, 3698.28 )
+position = Vector2( 93064.3, 3745.93 )
 
 [node name="Bench12" parent="." instance=ExtResource( 2 )]
 position = Vector2( 94665.4, 3715.48 )
@@ -196,11 +234,11 @@ position = Vector2( 95139.7, 3718.85 )
 [node name="Bench14" parent="." instance=ExtResource( 2 )]
 position = Vector2( 95575.3, 3718.85 )
 
+[node name="RoadNoTopBorderLevelMountain10" parent="." instance=ExtResource( 14 )]
+position = Vector2( 95776.8, 2524.92 )
+
 [node name="Bench15" parent="." instance=ExtResource( 2 )]
 position = Vector2( 96084.7, 3718.85 )
-
-[node name="RoadBody12" parent="." instance=ExtResource( 1 )]
-position = Vector2( 96146.1, 3698.28 )
 
 [node name="Bench16" parent="." instance=ExtResource( 2 )]
 position = Vector2( 96681.4, 3718.85 )
@@ -209,19 +247,19 @@ position = Vector2( 96681.4, 3718.85 )
 position = Vector2( 98874.9, 3722.77 )
 
 [node name="RoadBodyOne4" parent="." instance=ExtResource( 9 )]
-position = Vector2( 98982.1, 3745.81 )
+position = Vector2( 101028, 3745.81 )
 
 [node name="RoadBodyOne5" parent="." instance=ExtResource( 9 )]
-position = Vector2( 99099.3, 3745.87 )
+position = Vector2( 101145, 3745.87 )
 
 [node name="RoadBodyOne6" parent="." instance=ExtResource( 9 )]
-position = Vector2( 99217.6, 3745.81 )
+position = Vector2( 101264, 3745.81 )
 
 [node name="RoadBodyOne7" parent="." instance=ExtResource( 9 )]
-position = Vector2( 99335.8, 3745.81 )
+position = Vector2( 101382, 3745.81 )
 
 [node name="RoadBorder" type="Sprite" parent="."]
-position = Vector2( 99163.6, 3733.19 )
+position = Vector2( 101210, 3733.19 )
 z_index = -1
 texture = ExtResource( 8 )
 
@@ -230,19 +268,19 @@ position = Vector2( 142.125, 0 )
 texture = ExtResource( 8 )
 
 [node name="RoadBodyOne8" parent="." instance=ExtResource( 9 )]
-position = Vector2( 99691.6, 3823.21 )
+position = Vector2( 101738, 3823.21 )
 
 [node name="RoadBodyOne9" parent="." instance=ExtResource( 9 )]
-position = Vector2( 99808.9, 3823.27 )
+position = Vector2( 101855, 3823.27 )
 
 [node name="RoadBodyOne10" parent="." instance=ExtResource( 9 )]
-position = Vector2( 99927.1, 3823.21 )
+position = Vector2( 101973, 3823.21 )
 
 [node name="RoadBodyOne11" parent="." instance=ExtResource( 9 )]
-position = Vector2( 100045, 3823.21 )
+position = Vector2( 102091, 3823.21 )
 
 [node name="RoadBorder2" type="Sprite" parent="."]
-position = Vector2( 99873.2, 3810.59 )
+position = Vector2( 101919, 3810.59 )
 z_index = -1
 texture = ExtResource( 8 )
 
