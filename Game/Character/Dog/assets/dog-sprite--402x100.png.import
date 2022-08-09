@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dog-0.png-6eeceb7ffc45f0704c0b79e41751a2fd.stex"
+path="res://.import/dog-sprite--402x100.png-a81f486e69966becc60681d0e7cc591c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Character/Dog/assets/dog-0.png"
-dest_files=[ "res://.import/dog-0.png-6eeceb7ffc45f0704c0b79e41751a2fd.stex" ]
+source_file="res://Game/Character/Dog/assets/dog-sprite--402x100.png"
+dest_files=[ "res://.import/dog-sprite--402x100.png-a81f486e69966becc60681d0e7cc591c.stex" ]
 
 [params]
 

@@ -157,7 +157,6 @@ frame = 15
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2( 41.5243, 71.1936 )
-rotation = -9.31323e-10
 shape = SubResource( 1 )
 
 [node name="Camera" type="Camera2D" parent="."]
@@ -185,7 +184,6 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionDetector"]
 position = Vector2( 5.77422, -12.6129 )
-rotation = -9.31323e-10
 shape = SubResource( 8 )
 
 [connection signal="area_entered" from="CollisionDetector" to="." method="_on_CollisionDetector_area_entered"]

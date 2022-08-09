@@ -54,6 +54,9 @@ position = Vector2( 48976.2, 3413.06 )
 [node name="Dog2" parent="." instance=ExtResource( 18 )]
 position = Vector2( 49954.7, 3430.12 )
 
+[node name="Refit2" parent="." instance=ExtResource( 28 )]
+position = Vector2( 50362, 3267.62 )
+
 [node name="RoadBorderLevelCity8" parent="." instance=ExtResource( 8 )]
 position = Vector2( 52573.4, 2222.32 )
 
