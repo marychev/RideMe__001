@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 const SPEED_JUMP_ATTACK: float = 1.4
+const HALF_HEIGHT_DOG: int = 18
 
 var animate_people = load(PathData.PATH_ANIMATE_PEOPLE).new()
 var die_player = load(PathData.PATH_DIE_PLAYER).new()
@@ -8,17 +9,22 @@ var die_player = load(PathData.PATH_DIE_PLAYER).new()
 onready var player: Player = get_node("/root/Game/Player")
 onready var direction: Vector2 = Vector2.ZERO
 onready var is_attack: bool = false
+onready var start_position: Vector2 = position
 
 
 
 func _physics_process(delta):
+	# Moving from player
 	if player and is_attack:
+		if global_position.y + HALF_HEIGHT_DOG < start_position.y:
+			global_position.y = start_position.y
+		
 		direction = (player.global_position - global_position).normalized()
 		direction = direction * (SPEED_JUMP_ATTACK + delta)
-		
+	
 		var collision := move_and_collide(direction)
 		if collision and collision.collider == player:
-			do_attack()
+			move_and_attack()
 			
 
 	
@@ -39,17 +45,16 @@ func set_is_attack(val: bool) -> void:
 	
 	if is_attack:
 		$Audio.play()
-		$Sprite.play("run")
+		$Sprite.play("attack")
 	else:
 		$Audio.stop()
 		$Sprite.play("wait")
 
 
-func do_attack():
-	print('TODO: jump Dog')
-	position.x += 180
-	position.y += 18
-
+func move_and_attack():
+	position.x += HALF_HEIGHT_DOG * 10
+	position.y += HALF_HEIGHT_DOG
+	
 	animate_people.do_collision(AnimationPlayer.new(), player)
 	player.power = 0	
 	die_player.from_bitten_by_dog(player)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Game/Character/Dog/assets/dog-sprite--402x100.png" type="Texture" id=1]
 [ext_resource path="res://Game/Character/Dog/Dog.gd" type="Script" id=2]
@@ -24,6 +24,11 @@ flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 307, 0, 95, 100 )
 
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 13, 0, 95, 100 )
+
 [sub_resource type="AtlasTexture" id=11]
 flags = 4
 atlas = ExtResource( 1 )
@@ -42,9 +47,9 @@ region = Rect2( 13, 0, 95, 100 )
 [sub_resource type="SpriteFrames" id=6]
 resource_local_to_scene = true
 animations = [ {
-"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 14 ) ],
 "loop": true,
-"name": "run",
+"name": "attack",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
@@ -66,8 +71,8 @@ script = ExtResource( 2 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
-animation = "wait"
-frame = 2
+animation = "attack"
+frame = 4
 playing = true
 centered = false
 
