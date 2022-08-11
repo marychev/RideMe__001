@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Game/Character/Bench/Bench.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Game/Road/upder_constarction/UpderConstarction.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Game/Level/RoadNoTopBorderLevelMountain.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Game/Level/RoadBorderLevelMountain.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Game/Character/Lamp/LampsSetFour.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Game/Road/upder_constarction/UpderConstarctionMin.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Game/Character/Hourgrass/Hourgrass.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Game/Character/Rock/StaticRock.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Game/Character/MovingPanel/MovingPlatform.tscn" type="PackedScene" id=23]
@@ -16,13 +16,12 @@
 [node name="RoadNoTopBorderLevelMountain" parent="." instance=ExtResource( 3 )]
 position = Vector2( 22166.2, 1439.08 )
 
+[node name="UpderConstarctionMin" parent="RoadNoTopBorderLevelMountain" instance=ExtResource( 6 )]
+position = Vector2( -25.2715, 1173.08 )
+z_index = -1
+
 [node name="LampsSetFour" parent="RoadNoTopBorderLevelMountain" instance=ExtResource( 5 )]
 position = Vector2( 1548.53, 1234.27 )
-
-[node name="UpderConstarctionVertical2" parent="RoadNoTopBorderLevelMountain" instance=ExtResource( 2 )]
-position = Vector2( -4.74805, 1172.89 )
-rotation = 1.5708
-scale = Vector2( 0.238641, 0.334414 )
 
 [node name="Bench" parent="." instance=ExtResource( 1 )]
 position = Vector2( 22659.9, 2625.53 )
@@ -147,10 +146,8 @@ rotation = 0.000649336
 [node name="RoadBorderLevelMountain3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 35622.6, 1439.07 )
 
-[node name="UpderConstarctionVertical2" parent="RoadBorderLevelMountain3" instance=ExtResource( 2 )]
-position = Vector2( 4488.09, 1172.89 )
-rotation = 1.5708
-scale = Vector2( 0.238641, 0.334414 )
+[node name="UpderConstarctionMin2" parent="RoadBorderLevelMountain3" instance=ExtResource( 6 )]
+position = Vector2( 4467.68, 1173.09 )
 
 [node name="Refit" parent="." instance=ExtResource( 28 )]
 position = Vector2( 36643.8, 2465.39 )

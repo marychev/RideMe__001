@@ -4,7 +4,7 @@
 [ext_resource path="res://Game/Character/Bench/Bench.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Game/Character/Dog/Dog.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Game/Character/People/KickScooter/KSMan/KSMan.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Game/Road/upder_constarction/UpderConstarction.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Game/Road/upder_constarction/UpderConstarctionMin.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Game/Level2/RoadBorderSet.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Game/Level/RoadBorderLevelMountain.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Game/Level2/RoadBorderLevelCity.tscn" type="PackedScene" id=9]
@@ -75,15 +75,9 @@ scale = Vector2( 1, -1 )
 [node name="RoadBorderLevelMountain2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 44749.2, 2372.24 )
 
-[node name="UpderConstarction2" parent="RoadBorderLevelMountain2" instance=ExtResource( 5 )]
-position = Vector2( -1.625, 1172.37 )
-rotation = 1.5708
-scale = Vector2( 0.244079, 0.394404 )
-
-[node name="UpderConstarction3" parent="RoadBorderLevelMountain2" instance=ExtResource( 5 )]
-position = Vector2( -1.625, 1172.37 )
-rotation = 1.5708
-scale = Vector2( 0.244079, 0.394404 )
+[node name="UpderConstarctionMin" parent="RoadBorderLevelMountain2" instance=ExtResource( 6 )]
+position = Vector2( -25, 1172.71 )
+z_index = -1
 
 [node name="Hourgrass" parent="." instance=ExtResource( 13 )]
 position = Vector2( 48106.5, 3441.52 )
@@ -91,10 +85,8 @@ position = Vector2( 48106.5, 3441.52 )
 [node name="RoadBorderLevelCity" parent="." instance=ExtResource( 9 )]
 position = Vector2( 49233.6, 2374.5 )
 
-[node name="UpderConstarction2" parent="RoadBorderLevelCity" instance=ExtResource( 5 )]
-position = Vector2( -0.368163, 1269.9 )
-rotation = 1.5708
-scale = Vector2( 0.244079, 0.394404 )
+[node name="UpderConstarctionMin2" parent="RoadBorderLevelCity" instance=ExtResource( 6 )]
+position = Vector2( -23.3047, 1269.27 )
 
 [node name="Grass" parent="." instance=ExtResource( 12 )]
 position = Vector2( 51594.7, 3509.09 )

@@ -7,9 +7,9 @@
 [ext_resource path="res://Game/Level/RoadNoTopBorderLevelMountain.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Game/Character/Grass/Grass.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Game/Character/Hourgrass/Hourgrass.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Game/Road/upder_constarction/UpderConstarction.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Game/Character/Puddle/Puddle.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Game/Character/Bridge/BridgeLeft.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Game/Road/upder_constarction/UpderConstarctionMin.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Game/Character/Bench/Bench.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Game/Character/Crossroads/CrossroadWithGirl.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Game/Character/Start/Start.tscn" type="PackedScene" id=15]
@@ -20,10 +20,8 @@
 [node name="RoadBorderLevel11" parent="." instance=ExtResource( 16 )]
 position = Vector2( 78068.3, 133.227 )
 
-[node name="UpderConstarctionMin2" parent="RoadBorderLevel11" instance=ExtResource( 8 )]
-position = Vector2( 4488.16, 1172.91 )
-rotation = 1.5708
-scale = Vector2( 0.236381, 0.328091 )
+[node name="UpderConstarctionMin" parent="RoadBorderLevel11" instance=ExtResource( 11 )]
+position = Vector2( 4465.74, 1173.14 )
 
 [node name="Hourgrass" parent="." instance=ExtResource( 7 )]
 position = Vector2( 82736.2, 1115.35 )
@@ -47,15 +45,12 @@ scale = Vector2( -1, 1 )
 [node name="RoadNoTopBorderLevel1" parent="." instance=ExtResource( 5 )]
 position = Vector2( 87854.5, 1774.72 )
 
-[node name="UpderConstarctionMin2" parent="RoadNoTopBorderLevel1" instance=ExtResource( 8 )]
-position = Vector2( -5.49219, 1172.5 )
-rotation = 1.5708
-scale = Vector2( 0.236381, 0.328091 )
+[node name="UpderConstarctionMin4" parent="RoadNoTopBorderLevel1" instance=ExtResource( 11 )]
+position = Vector2( -25.2266, 1172.67 )
 
-[node name="UpderConstarctionMin3" parent="RoadNoTopBorderLevel1" instance=ExtResource( 8 )]
-position = Vector2( 4486.88, 1172.5 )
-rotation = 1.5708
-scale = Vector2( 0.236381, 0.328091 )
+[node name="UpderConstarctionMin5" parent="RoadNoTopBorderLevel1" instance=ExtResource( 11 )]
+position = Vector2( 4467.16, 1172.67 )
+z_index = 1
 
 [node name="RM" parent="." instance=ExtResource( 1 )]
 position = Vector2( 88137.5, 2826.28 )

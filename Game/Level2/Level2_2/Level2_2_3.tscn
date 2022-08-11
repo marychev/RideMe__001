@@ -16,17 +16,18 @@
 [ext_resource path="res://Game/Character/Hourgrass/Hourgrass.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Game/Character/Start/Start.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Game/Level2/RoadBorderLevelCity.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Game/Road/upder_constarction/UpderConstarction.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Game/Road/upder_constarction/UpderConstarctionMin.tscn" type="PackedScene" id=17]
 
 [node name="Level2_2_3" type="Node"]
 
 [node name="RoadBorderLevelCity" parent="." instance=ExtResource( 16 )]
 position = Vector2( 111839, 2663.69 )
 
-[node name="UpderConstarction9" parent="RoadBorderLevelCity" instance=ExtResource( 17 )]
-position = Vector2( -0.2659, 1170.62 )
-rotation = 1.5708
-scale = Vector2( 0.485586, 0.396232 )
+[node name="UpderConstarctionMin" parent="RoadBorderLevelCity" instance=ExtResource( 17 )]
+position = Vector2( -22.7188, 1170.34 )
+
+[node name="UpderConstarctionMin2" parent="RoadBorderLevelCity/UpderConstarctionMin" instance=ExtResource( 17 )]
+position = Vector2( 0, 93.3396 )
 
 [node name="StaticRock" parent="." instance=ExtResource( 4 )]
 position = Vector2( 112938, 3896.22 )

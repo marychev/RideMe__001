@@ -1,5 +1,6 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
+[ext_resource path="res://Game/Road/upder_constarction/UpderConstarctionMin.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Character/Grass/Grass.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Game/Character/Dog/Dog.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Game/Character/Rock/StaticRock.tscn" type="PackedScene" id=4]
@@ -24,10 +25,9 @@
 [node name="RoadBorderLevelMountain" parent="." instance=ExtResource( 13 )]
 position = Vector2( 66376.7, 2375.46 )
 
-[node name="UpderConstarctionVertical2" parent="RoadBorderLevelMountain" instance=ExtResource( 15 )]
-position = Vector2( -4.65625, 1172.97 )
-rotation = 1.5708
-scale = Vector2( 0.238641, 0.334414 )
+[node name="UpderConstarctionMin" parent="RoadBorderLevelMountain" instance=ExtResource( 1 )]
+position = Vector2( -24.8828, 1172.86 )
+z_index = -1
 
 [node name="Bench1" parent="." instance=ExtResource( 5 )]
 position = Vector2( 70695.3, 3567.93 )
@@ -35,10 +35,8 @@ position = Vector2( 70695.3, 3567.93 )
 [node name="RoadBorderLevelCity1" parent="." instance=ExtResource( 17 )]
 position = Vector2( 70864.7, 2377.78 )
 
-[node name="UpderConstarctionMin" parent="RoadBorderLevelCity1" instance=ExtResource( 15 )]
-position = Vector2( 0.576172, 1270.17 )
-rotation = 1.5708
-scale = Vector2( 0.242498, 0.405015 )
+[node name="UpderConstarctionMin2" parent="RoadBorderLevelCity1" instance=ExtResource( 1 )]
+position = Vector2( -23, 1269.65 )
 
 [node name="RoadBorderLevelCity2" parent="." instance=ExtResource( 17 )]
 position = Vector2( 73591.9, 2377.78 )
@@ -124,17 +122,6 @@ position = Vector2( 81790.4, 2377.78 )
 position = Vector2( 2634.84, 1222.04 )
 offset = Vector2( -313.338, -31.7788 )
 
-[node name="UpderConstarction3" parent="RoadBorderLevelCity5" instance=ExtResource( 15 )]
-position = Vector2( 2721.7, 1250.09 )
-rotation = 1.5708
-scale = Vector2( 0.251841, 0.385628 )
-offset = Vector2( -313.338, -31.7788 )
-
-[node name="UpderConstarction2" parent="RoadBorderLevelCity5/UpderConstarction3" instance=ExtResource( 15 )]
-position = Vector2( 411.715, 0 )
-rotation = 3.55271e-15
-offset = Vector2( -313.338, -31.7788 )
-
 [node name="Lamp" parent="RoadBorderLevelCity5" instance=ExtResource( 11 )]
 position = Vector2( 2675.93, 980.79 )
 scale = Vector2( 0.8, 0.8 )
@@ -154,6 +141,9 @@ scale = Vector2( 1, -1 )
 
 [node name="Puddle3" parent="RoadBorderLevelCity5" instance=ExtResource( 8 )]
 position = Vector2( 2561.56, 1314.73 )
+
+[node name="UpderConstarctionMin" parent="RoadBorderLevelCity5" instance=ExtResource( 1 )]
+position = Vector2( 2711.63, 1269.76 )
 
 [node name="Dog3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 81172.7, 3605.14 )
@@ -346,11 +336,11 @@ z_index = -2
 texture = ExtResource( 20 )
 centered = false
 
-[node name="UpderConstarction" parent="RoadNoTopBorderLevelCity" instance=ExtResource( 15 )]
-position = Vector2( 2717.27, 1312.64 )
-rotation = 1.5708
-scale = Vector2( 0.403115, 0.492225 )
-offset = Vector2( -313.338, -31.7788 )
+[node name="UpderConstarctionMin" parent="RoadNoTopBorderLevelCity" instance=ExtResource( 1 )]
+position = Vector2( 2712.23, 1245.22 )
+
+[node name="UpderConstarctionMin2" parent="RoadNoTopBorderLevelCity/UpderConstarctionMin" instance=ExtResource( 1 )]
+position = Vector2( 0, -61.115 )
 
 [node name="Crossroads" parent="." instance=ExtResource( 12 )]
 position = Vector2( 92081, 3584.4 )
@@ -367,17 +357,17 @@ position = Vector2( 94104, 3679.6 )
 [node name="RoadBorderLevelCity8" parent="." instance=ExtResource( 17 )]
 position = Vector2( 94649.3, 2599.72 )
 
-[node name="UpderConstarction" parent="RoadBorderLevelCity8" instance=ExtResource( 15 )]
-position = Vector2( 14.2109, 1312.64 )
-rotation = 1.5708
-scale = Vector2( 0.403115, 0.492225 )
-offset = Vector2( -313.338, -31.7788 )
+[node name="UpderConstarctionMin2" parent="RoadBorderLevelCity8" instance=ExtResource( 1 )]
+position = Vector2( -22.2266, 1263.72 )
 
-[node name="UpderConstarction2" parent="RoadBorderLevelCity8" instance=ExtResource( 15 )]
-position = Vector2( 2717.27, 1312.64 )
-rotation = 1.5708
-scale = Vector2( 0.403115, 0.492225 )
-offset = Vector2( -313.338, -31.7788 )
+[node name="UpderConstarctionMin2" parent="RoadBorderLevelCity8/UpderConstarctionMin2" instance=ExtResource( 1 )]
+position = Vector2( 0, -93.3762 )
+
+[node name="UpderConstarctionMin3" parent="RoadBorderLevelCity8" instance=ExtResource( 1 )]
+position = Vector2( 2712.83, 1263.72 )
+
+[node name="UpderConstarctionMin2" parent="RoadBorderLevelCity8/UpderConstarctionMin3" instance=ExtResource( 1 )]
+position = Vector2( 0, -93.3762 )
 
 [node name="Grass4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 96934.8, 3716.78 )
@@ -396,26 +386,26 @@ position = Vector2( 97331.3, 3892.57 )
 [node name="RoadBorderLevelCity9" parent="." instance=ExtResource( 17 )]
 position = Vector2( 97770.4, 2599.72 )
 
+[node name="UpderConstarctionMin4" parent="RoadBorderLevelCity9" instance=ExtResource( 1 )]
+position = Vector2( -22.4062, 1263.72 )
+
+[node name="UpderConstarctionMin2" parent="RoadBorderLevelCity9/UpderConstarctionMin4" instance=ExtResource( 1 )]
+position = Vector2( 0, -93.3762 )
+
 [node name="Lamp2" parent="RoadBorderLevelCity9" instance=ExtResource( 11 )]
 position = Vector2( -464.336, 928.051 )
 z_index = -2
-
-[node name="UpderConstarction" parent="RoadBorderLevelCity9" instance=ExtResource( 15 )]
-position = Vector2( 14.2109, 1312.64 )
-rotation = 1.5708
-scale = Vector2( 0.403115, 0.492225 )
-offset = Vector2( -313.338, -31.7788 )
-
-[node name="UpderConstarction2" parent="RoadBorderLevelCity9" instance=ExtResource( 15 )]
-position = Vector2( 2718.12, 1312.64 )
-rotation = 1.5708
-scale = Vector2( 0.403115, 0.492225 )
-offset = Vector2( -313.338, -31.7788 )
 
 [node name="Lamp3" parent="RoadBorderLevelCity9" instance=ExtResource( 11 )]
 position = Vector2( 75.375, 928.051 )
 scale = Vector2( -1, 1 )
 z_index = -2
+
+[node name="UpderConstarctionMin5" parent="RoadBorderLevelCity9" instance=ExtResource( 1 )]
+position = Vector2( 2713.26, 1263.72 )
+
+[node name="UpderConstarctionMin2" parent="RoadBorderLevelCity9/UpderConstarctionMin5" instance=ExtResource( 1 )]
+position = Vector2( 0, -93.3762 )
 
 [node name="Bench10" parent="." instance=ExtResource( 5 )]
 position = Vector2( 97837.1, 3796.02 )
@@ -437,11 +427,11 @@ position = Vector2( 99873.6, 3767.11 )
 [node name="RoadBorderLevelCity10" parent="." instance=ExtResource( 17 )]
 position = Vector2( 100481, 2832.24 )
 
-[node name="UpderConstarction" parent="RoadBorderLevelCity10" instance=ExtResource( 15 )]
-position = Vector2( 14.2109, 1316.02 )
-rotation = 1.5708
-scale = Vector2( 0.403115, 0.492225 )
-offset = Vector2( -313.338, -31.7788 )
+[node name="UpderConstarctionMin6" parent="RoadBorderLevelCity10" instance=ExtResource( 1 )]
+position = Vector2( -22.9297, 1263.77 )
+
+[node name="UpderConstarctionMin2" parent="RoadBorderLevelCity10/UpderConstarctionMin6" instance=ExtResource( 1 )]
+position = Vector2( 0, -93.3762 )
 
 [node name="Grass6" parent="." instance=ExtResource( 2 )]
 position = Vector2( 101241, 3945.28 )
@@ -467,14 +457,14 @@ rotation = -0.013517
 [node name="RoadBorderLevelCity11" parent="." instance=ExtResource( 17 )]
 position = Vector2( 103205, 2832.24 )
 
-[node name="UpderConstarction" parent="RoadBorderLevelCity11" instance=ExtResource( 15 )]
-position = Vector2( 2718.01, 1316.02 )
-rotation = 1.5708
-scale = Vector2( 0.403115, 0.492225 )
-offset = Vector2( -313.338, -31.7788 )
-
 [node name="TreeRoadOneCity2" parent="RoadBorderLevelCity11" instance=ExtResource( 18 )]
 position = Vector2( 2865.38, 1102.02 )
+
+[node name="UpderConstarctionMin7" parent="RoadBorderLevelCity11" instance=ExtResource( 1 )]
+position = Vector2( 2714.09, 1263.77 )
+
+[node name="UpderConstarctionMin2" parent="RoadBorderLevelCity11/UpderConstarctionMin7" instance=ExtResource( 1 )]
+position = Vector2( 0, -93.3762 )
 
 [node name="Lamp3" parent="." instance=ExtResource( 11 )]
 position = Vector2( 106567, 3604.08 )
@@ -483,11 +473,11 @@ z_index = -1
 [node name="RoadBorderLevelCity12" parent="." instance=ExtResource( 17 )]
 position = Vector2( 106620, 2664.13 )
 
-[node name="UpderConstarction" parent="RoadBorderLevelCity12" instance=ExtResource( 15 )]
-position = Vector2( 14.2109, 1316.02 )
-rotation = 1.5708
-scale = Vector2( 0.403115, 0.492225 )
-offset = Vector2( -313.338, -31.7788 )
+[node name="UpderConstarctionMin8" parent="RoadBorderLevelCity12" instance=ExtResource( 1 )]
+position = Vector2( -22.5234, 1262.98 )
+
+[node name="UpderConstarctionMin2" parent="RoadBorderLevelCity12/UpderConstarctionMin8" instance=ExtResource( 1 )]
+position = Vector2( 0, -93.3762 )
 
 [node name="Lamp4" parent="." instance=ExtResource( 11 )]
 position = Vector2( 106926, 3776.78 )

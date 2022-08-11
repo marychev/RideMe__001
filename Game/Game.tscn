@@ -20,6 +20,7 @@ margin_bottom = -32.0933
 [node name="Background" parent="." instance=ExtResource( 5 )]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
+rotation = 0.0
 z_index = 1
 
 [node name="Music" type="AudioStreamPlayer2D" parent="Player"]

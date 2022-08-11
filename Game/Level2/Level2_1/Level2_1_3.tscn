@@ -6,7 +6,7 @@
 [ext_resource path="res://Game/Character/Rock/StaticRock.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Game/Character/Bench/Bench.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Game/Level2/RoadBorderLevelCity.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Game/Road/upder_constarction/UpderConstarction.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Game/Road/upder_constarction/UpderConstarctionMin.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Game/Character/Bridge/BridgeLeft.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Game/Character/Stairs/StaticStairs.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Game/Character/MovingPanel/MovingPlatform.tscn" type="PackedScene" id=16]
@@ -42,10 +42,11 @@ position = Vector2( 73886.6, 3410.39 )
 position = Vector2( 73761, 2374.5 )
 z_index = -1
 
-[node name="UpderConstarction2" parent="RoadBorderLevelCity9" instance=ExtResource( 7 )]
-position = Vector2( 2735.66, 1171.03 )
-rotation = 1.5708
-scale = Vector2( 0.481752, 0.394404 )
+[node name="UpderConstarctionMin" parent="RoadBorderLevelCity9" instance=ExtResource( 7 )]
+position = Vector2( 2712.61, 1264.41 )
+
+[node name="UpderConstarctionMin2" parent="RoadBorderLevelCity9/UpderConstarctionMin" instance=ExtResource( 7 )]
+position = Vector2( 0, -93.8262 )
 
 [node name="Refit" parent="." instance=ExtResource( 1 )]
 position = Vector2( 76785.9, 3323.24 )
