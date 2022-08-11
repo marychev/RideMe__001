@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://media/start_track.wav" type="AudioStream" id=1]
 [ext_resource path="res://SplashScreen/assets/splash_screen/background.png" type="Texture" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://SplashScreen/SplashScreen.gd" type="Script" id=5]
 [ext_resource path="res://components/buttons/TextureIconButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Menu/MainMenu/assets/main_menu/character_sataur.png" type="Texture" id=7]
+
+[sub_resource type="Animation" id=3]
+length = 0.001
 
 [sub_resource type="Animation" id=1]
 resource_name = "intro"
@@ -40,17 +43,17 @@ anchor_bottom = 0.5
 margin_left = -529.0
 margin_top = -324.0
 margin_right = 647.0
-margin_bottom = -3.9798
+margin_bottom = -4.0
 rect_scale = Vector2( 0.9, 0.9 )
 texture = ExtResource( 3 )
 
 [node name="CharacterDrawster" type="Sprite" parent="Logo"]
-position = Vector2( 1029.45, -122 )
+position = Vector2( 1021.97, -103.405 )
 scale = Vector2( -0.492552, 0.492552 )
 texture = ExtResource( 4 )
 
 [node name="CharacterSataur" type="Sprite" parent="Logo"]
-position = Vector2( 159.136, -142 )
+position = Vector2( 151.653, -123.405 )
 scale = Vector2( 0.524767, 0.524767 )
 texture = ExtResource( 7 )
 
@@ -68,16 +71,19 @@ change_scene = "res://Menu/MainMenu/MainMenu.tscn"
 is_flicker = true
 
 [node name="Copyright" type="Label" parent="."]
+anchor_left = 1.0
 anchor_top = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 29.9662
-margin_top = -42.4678
-margin_right = 188.966
-margin_bottom = -28.4678
-text = "(2001) MMarychev"
+margin_left = -159.0
+margin_top = -44.0
+text = "GenCrud
+gencrud.com"
+valign = 1
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 autoplay = "intro"
+anims/RESET = SubResource( 3 )
 anims/intro = SubResource( 1 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

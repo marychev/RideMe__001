@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://media/start_track.wav" type="AudioStream" id=1]
-[ext_resource path="res://SplashScreen/assets/splash_screen/title_logo-1176x320.png" type="Texture" id=2]
+[ext_resource path="res://Menu/MainMenu/assets/main_menu/title_logo--364x100.png" type="Texture" id=2]
 [ext_resource path="res://components/buttons/TextureIconButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Menu/MainMenu/assets/main_menu/character_drawster.png" type="Texture" id=4]
+[ext_resource path="res://Menu/LevelMenu/assets/empty-map.png" type="Texture" id=5]
 [ext_resource path="res://Menu/MainMenu/assets/main_menu/bg-color.png" type="Texture" id=7]
 [ext_resource path="res://Menu/MainMenu/assets/main_menu/character_sataur.png" type="Texture" id=8]
 [ext_resource path="res://Menu/MainMenu/MainMenu.gd" type="Script" id=11]
@@ -32,12 +33,11 @@ texture = ExtResource( 7 )
 [node name="Logo" type="Node" parent="."]
 
 [node name="Logo" type="TextureRect" parent="Logo"]
-margin_left = 1145.0
-margin_top = 10.0
-margin_right = 2321.0
-margin_bottom = 330.0
+margin_left = 976.928
+margin_top = 18.6018
+margin_right = 1346.93
+margin_bottom = 128.602
 rect_min_size = Vector2( 370, 100 )
-rect_scale = Vector2( 0.18, 0.18 )
 texture = ExtResource( 2 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
@@ -122,8 +122,13 @@ rect_min_size = Vector2( 860, 600 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="Empty-map" type="Sprite" parent="HBoxContainer/CenterContainer"]
+position = Vector2( 429.765, 304.878 )
+scale = Vector2( 1.15359, 1.20855 )
+texture = ExtResource( 5 )
+
 [node name="CurrentTrack" type="NinePatchRect" parent="HBoxContainer/CenterContainer"]
-modulate = Color( 1, 1, 1, 0.317647 )
+show_behind_parent = true
 margin_left = 30.0
 margin_top = 4.0
 margin_right = 830.0
