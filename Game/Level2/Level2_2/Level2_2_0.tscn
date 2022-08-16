@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Game/Character/Bridge/BridgeLeft.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Road/upder_constarction/UpderConstarctionMin.tscn" type="PackedScene" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://Game/Level/RoadBorderLevelMountain.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Game/Character/Lamp/Lamp.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Game/Character/Start/Start.tscn" type="PackedScene" id=24]
-[ext_resource path="res://Game/Level2/RoadBorderSet.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Game/Character/MovingPanel/MovingPlatform.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Game/Character/Plank/Plank.tscn" type="PackedScene" id=27]
 
@@ -51,8 +50,8 @@ position = Vector2( 4882.41, 2274.97 )
 position = Vector2( 5221.04, 2266.73 )
 
 [node name="BridgeLRight" parent="." instance=ExtResource( 1 )]
-position = Vector2( 7049.6, 2333.84 )
-scale = Vector2( -1, 1 )
+position = Vector2( 5729.2, 2031.46 )
+rotation = 0.240855
 
 [node name="RoadBorderLevelCity1" parent="." instance=ExtResource( 7 )]
 position = Vector2( 7149.98, 1582.61 )
@@ -87,14 +86,10 @@ position = Vector2( 2322.73, 1188.17 )
 position = Vector2( 2322.73, 1188.17 )
 
 [node name="BridgeLeft2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 12247.2, 2460.03 )
-
-[node name="RoadBorderSet" parent="BridgeLeft2" instance=ExtResource( 25 )]
-position = Vector2( -98.2871, 289.823 )
-rotation = -0.244601
+position = Vector2( 12789.6, 2417.65 )
 
 [node name="MovingPlatform3" parent="." instance=ExtResource( 26 )]
-position = Vector2( 13968.4, 2421.07 )
+position = Vector2( 14657.6, 2421.07 )
 
 [node name="MovingPlatform4" parent="MovingPlatform3" instance=ExtResource( 26 )]
 position = Vector2( 338.699, -8.22998 )
@@ -106,48 +101,16 @@ position = Vector2( 678.1, -14.96 )
 position = Vector2( 1020.3, -22.96 )
 
 [node name="BridgeLRight5" parent="." instance=ExtResource( 1 )]
-position = Vector2( 16739.1, 2422.93 )
-scale = Vector2( -1, 1 )
-
-[node name="RoadBorderSet" parent="BridgeLRight5" instance=ExtResource( 25 )]
-position = Vector2( -49.9609, 274.188 )
-rotation = -0.244601
-
-[node name="Lamp3" parent="BridgeLRight5" instance=ExtResource( 23 )]
-position = Vector2( -37.897, 73.48 )
+position = Vector2( 16325.6, 2213.17 )
+rotation = 0.240855
 
 [node name="BridgeLRight6" parent="." instance=ExtResource( 1 )]
-position = Vector2( 17963.9, 2736.92 )
-scale = Vector2( -1, 1 )
-
-[node name="RoadBorderSet" parent="BridgeLRight6" instance=ExtResource( 25 )]
-position = Vector2( -49.9609, 274.188 )
-rotation = -0.244601
-
-[node name="Lamp3" parent="BridgeLRight6" instance=ExtResource( 23 )]
-position = Vector2( -37.897, 73.48 )
+position = Vector2( 17649.9, 2538.57 )
+rotation = 0.240855
 
 [node name="BridgeLRight7" parent="." instance=ExtResource( 1 )]
-position = Vector2( 19170.7, 3046.13 )
-scale = Vector2( -1, 1 )
-
-[node name="RoadBorderSet" parent="BridgeLRight7" instance=ExtResource( 25 )]
-position = Vector2( -49.9609, 274.188 )
-rotation = -0.244601
-
-[node name="Lamp3" parent="BridgeLRight7" instance=ExtResource( 23 )]
-position = Vector2( -37.897, 73.48 )
-
-[node name="BridgeLRight8" parent="." instance=ExtResource( 1 )]
-position = Vector2( 20377.6, 3355.23 )
-scale = Vector2( -1, 1 )
-
-[node name="RoadBorderSet" parent="BridgeLRight8" instance=ExtResource( 25 )]
-position = Vector2( -49.9609, 274.188 )
-rotation = -0.244601
-
-[node name="Lamp3" parent="BridgeLRight8" instance=ExtResource( 23 )]
-position = Vector2( -37.897, 73.48 )
+position = Vector2( 18974.8, 2864.19 )
+rotation = 0.240855
 
 [node name="TreeRoadOneCity" parent="." instance=ExtResource( 6 )]
 position = Vector2( 20665.5, 3763.39 )
@@ -192,7 +155,7 @@ position = Vector2( 4465.59, 1172.96 )
 position = Vector2( 22288.3, 3625.74 )
 
 [node name="BridgeLeft3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 24540.3, 3464 )
+position = Vector2( 24520.1, 3424.45 )
 
 [node name="TreeRoadOneCity3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 26206.1, 3409.65 )
@@ -229,15 +192,6 @@ position = Vector2( 304.369, 1110.29 )
 [node name="RoadBorderLevelCity4" parent="." instance=ExtResource( 7 )]
 position = Vector2( 31649.1, 2627.3 )
 
-[node name="Lamp4" parent="RoadBorderLevelCity4" instance=ExtResource( 23 )]
-position = Vector2( 2677.83, 983.867 )
-scale = Vector2( 0.8, 0.8 )
-z_index = -2
-
-[node name="Lamp5" parent="RoadBorderLevelCity4" instance=ExtResource( 23 )]
-position = Vector2( 2221.52, 1012.8 )
-z_index = 1
-
 [node name="UpderConstarctionMin2" parent="RoadBorderLevelCity4" instance=ExtResource( 2 )]
 position = Vector2( 2711.88, 1169.68 )
 
@@ -269,7 +223,7 @@ position = Vector2( 2345.55, 1169.68 )
 position = Vector2( 0, 93.3967 )
 
 [node name="BridgeLeft4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 33785.9, 3503.33 )
+position = Vector2( 33743.2, 3463.99 )
 
 [node name="TreeRoadOneCity7" parent="." instance=ExtResource( 6 )]
 position = Vector2( 35276, 3411.39 )

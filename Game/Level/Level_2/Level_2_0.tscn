@@ -145,41 +145,11 @@ position = Vector2( 20616.6, 815.18 )
 position = Vector2( 20258.3, 576.38 )
 
 [node name="BridgeLeft" parent="." instance=ExtResource( 10 )]
-position = Vector2( 20422.3, 896.451 )
-
-[node name="Lamp3" parent="BridgeLeft" instance=ExtResource( 4 )]
-position = Vector2( -34.7227, 119.571 )
-scale = Vector2( 0.8, 0.8 )
-z_index = -1
-
-[node name="Lamp4" parent="BridgeLeft" instance=ExtResource( 4 )]
-position = Vector2( 94.2966, 129.685 )
-
-[node name="Lamp5" parent="BridgeLeft" instance=ExtResource( 4 )]
-position = Vector2( 1169.19, -180.497 )
-scale = Vector2( 0.8, 0.8 )
-z_index = -1
-
-[node name="Lamp6" parent="BridgeLeft" instance=ExtResource( 4 )]
-position = Vector2( 1332.75, -175.891 )
+position = Vector2( 20372.9, 861.152 )
 
 [node name="BridgeRight" parent="." instance=ExtResource( 10 )]
-position = Vector2( 23367.4, 896.451 )
-scale = Vector2( -1, 1 )
-
-[node name="Lamp3" parent="BridgeRight" instance=ExtResource( 4 )]
-position = Vector2( -46.3047, 59.026 )
-z_index = -1
-
-[node name="Lamp4" parent="BridgeRight" instance=ExtResource( 4 )]
-position = Vector2( 123.695, 135.03 )
-
-[node name="Lamp5" parent="BridgeRight" instance=ExtResource( 4 )]
-position = Vector2( 1136.65, -244.274 )
-z_index = -1
-
-[node name="Lamp6" parent="BridgeRight" instance=ExtResource( 4 )]
-position = Vector2( 1306.65, -168.27 )
+position = Vector2( 22194.4, 511.291 )
+rotation = 0.240855
 
 [node name="RoadBorderLevel1" parent="." instance=ExtResource( 6 )]
 position = Vector2( 23979.8, 133.191 )

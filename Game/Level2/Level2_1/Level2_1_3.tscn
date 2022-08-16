@@ -89,7 +89,11 @@ position = Vector2( 77166.9, 4804.59 )
 position = Vector2( 77674.3, 4901.48 )
 
 [node name="BridgeLeft" parent="." instance=ExtResource( 13 )]
-position = Vector2( 78746.4, 6386.54 )
+position = Vector2( 78890.3, 6445.01 )
+
+[node name="StaticRock2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 79061.5, 6707.72 )
+rotation = 0.0872346
 
 [node name="StaticStairs4" parent="." instance=ExtResource( 14 )]
 position = Vector2( 76075.3, 5647.64 )
@@ -105,7 +109,3 @@ rotation = 0.38986
 [node name="StaticStairs7" parent="." instance=ExtResource( 14 )]
 position = Vector2( 78148.9, 6160.18 )
 rotation = 0.404927
-
-[node name="StaticRock2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 78897.2, 6688.52 )
-rotation = 0.0872346

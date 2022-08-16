@@ -1,58 +1,56 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Game/Character/Bridge/assets/bridge-up.png" type="Texture" id=1]
+[ext_resource path="res://Game/Character/Bridge/assets/bridge-1365x100.png" type="Texture" id=1]
 [ext_resource path="res://Game/Character/Bridge/BridgeLeft.gd" type="Script" id=2]
 [ext_resource path="res://Game/Road/upder_constarction/UpderConstarctionMin.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 636.438, 11.2426 )
+extents = Vector2( 682.327, 11.2426 )
 
 [node name="BridgeLeft" type="StaticBody2D"]
+position = Vector2( -72, 6 )
+rotation = -0.240768
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="UpderConstarctionMinBottom" parent="." instance=ExtResource( 4 )]
-position = Vector2( 197.604, 258.768 )
-rotation = 1.33429
+position = Vector2( 190.396, 336.843 )
+rotation = 1.5708
 
 [node name="UpderConstarctionMin" parent="UpderConstarctionMinBottom" instance=ExtResource( 4 )]
 position = Vector2( -0.0517883, 85.7408 )
 
-[node name="UpderConstarctionMin3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1245.97, 1.75333 )
-rotation = 1.33429
-scale = Vector2( 1, 1 )
+[node name="UpderConstarctionMinBottom2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1365.9, 336.843 )
+rotation = 1.5708
 
-[node name="UpderConstarctionMin4" parent="UpderConstarctionMin3" instance=ExtResource( 4 )]
-position = Vector2( 0.370117, 91.88 )
-scale = Vector2( 1, 1 )
+[node name="UpderConstarctionMin" parent="UpderConstarctionMinBottom2" instance=ExtResource( 4 )]
+position = Vector2( -0.0517883, 85.7408 )
 
 [node name="SpriteLeft" type="Sprite" parent="."]
+position = Vector2( 1.04766, 345.415 )
 texture = ExtResource( 1 )
 centered = false
 
 [node name="CollisionLeft" type="CollisionShape2D" parent="."]
-position = Vector2( 738, 208 )
-rotation = -0.250882
+position = Vector2( 683.447, 418.019 )
 shape = SubResource( 1 )
 
 [node name="UpderConstarctionMin2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 253.503, 341.345 )
-rotation = 1.33429
+position = Vector2( 104.235, 437.431 )
+rotation = 1.5708
 
 [node name="UpderConstarctionMin4" parent="UpderConstarctionMin2" instance=ExtResource( 4 )]
 position = Vector2( -0.0519409, -92.9324 )
 
-[node name="UpderConstarctionMin4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1403.23, 59.4537 )
-rotation = 1.33429
-scale = Vector2( 1, 1 )
+[node name="UpderConstarctionMin3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1273.04, 437.431 )
+rotation = 1.5708
 
-[node name="UpderConstarctionMin4" parent="UpderConstarctionMin4" instance=ExtResource( 4 )]
-position = Vector2( 0.370117, 91.88 )
-scale = Vector2( 1, 1 )
+[node name="UpderConstarctionMin4" parent="UpderConstarctionMin3" instance=ExtResource( 4 )]
+position = Vector2( -0.0519409, -92.9324 )
 
 [node name="VisibilityEnabler" type="VisibilityEnabler2D" parent="."]
 position = Vector2( 123.974, 100.453 )
