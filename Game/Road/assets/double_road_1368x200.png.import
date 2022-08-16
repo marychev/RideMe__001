@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/road.png-21d228e919b83f059bd807042180099e.stex"
+path="res://.import/double_road_1368x200.png-d078f5b8478acaa4de53ab9e90a5bec8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Road/assets/road.png"
-dest_files=[ "res://.import/road.png-21d228e919b83f059bd807042180099e.stex" ]
+source_file="res://Game/Road/assets/double_road_1368x200.png"
+dest_files=[ "res://.import/double_road_1368x200.png-d078f5b8478acaa4de53ab9e90a5bec8.stex" ]
 
 [params]
 

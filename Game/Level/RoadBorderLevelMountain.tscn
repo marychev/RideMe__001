@@ -8,31 +8,28 @@
 [node name="RoadBody" parent="." instance=ExtResource( 1 )]
 position = Vector2( -4.68555, 1172.92 )
 
+[node name="BordersBottom" parent="RoadBody" instance=ExtResource( 2 )]
+position = Vector2( -0.147991, 99.5518 )
+
+[node name="BordersBottom2" parent="RoadBody/BordersBottom" instance=ExtResource( 2 )]
+position = Vector2( 1258.02, 0 )
+
+[node name="BordersBottom4" parent="RoadBody/BordersBottom" instance=ExtResource( 2 )]
+position = Vector2( 2192.16, 0 )
+
+[node name="BordersBottom5" parent="RoadBody/BordersBottom" instance=ExtResource( 2 )]
+position = Vector2( 3125.11, 0 )
+
 [node name="BordersTop" parent="RoadBody" instance=ExtResource( 2 )]
-position = Vector2( -93.9438, 29.4851 )
+position = Vector2( -0.147991, 37.6313 )
 scale = Vector2( 1, -1 )
 z_index = -1
 
-[node name="BordersTop2" parent="RoadBody/BordersTop" instance=ExtResource( 2 )]
-position = Vector2( 1308.66, 0 )
-z_index = -1
+[node name="BordersBottom2" parent="RoadBody/BordersTop" instance=ExtResource( 2 )]
+position = Vector2( 1258.02, 0 )
 
-[node name="BordersTop3" parent="RoadBody/BordersTop" instance=ExtResource( 2 )]
-position = Vector2( 2655.97, 0 )
-z_index = -1
+[node name="BordersBottom4" parent="RoadBody/BordersTop" instance=ExtResource( 2 )]
+position = Vector2( 2192.16, 0 )
 
-[node name="BordersTop4" parent="RoadBody/BordersTop" instance=ExtResource( 2 )]
-position = Vector2( 3218.5, 0 )
-z_index = -1
-
-[node name="BordersBottom" parent="RoadBody" instance=ExtResource( 2 )]
-position = Vector2( -20.1902, 98.3113 )
-
-[node name="BordersBottom2" parent="RoadBody/BordersBottom" instance=ExtResource( 2 )]
-position = Vector2( 1367.04, 0 )
-
-[node name="BordersBottom3" parent="RoadBody/BordersBottom" instance=ExtResource( 2 )]
-position = Vector2( 2723.05, 0 )
-
-[node name="BordersBottom4" parent="RoadBody/BordersBottom" instance=ExtResource( 2 )]
-position = Vector2( 3145.54, 0 )
+[node name="BordersBottom5" parent="RoadBody/BordersTop" instance=ExtResource( 2 )]
+position = Vector2( 3125.11, 0 )
