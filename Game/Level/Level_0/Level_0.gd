@@ -31,7 +31,7 @@ func _init() -> void:
 
 
 func _ready():
-	var sky: Sprite = get_parent().get_node('Background/sky')
+	var sky: Sprite = get_parent().get_node('Background/ParallaxSky/sky')
 	sky.modulate = Color(1, 1, 1)
 
 

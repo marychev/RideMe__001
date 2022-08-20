@@ -9,7 +9,7 @@ func _init():
 
 
 func _ready():
-	var sky: Sprite = get_parent().get_node('Background/sky')
+	var sky: Sprite = get_parent().get_node('Background/ParallaxSky/sky')
 	sky.modulate = Color('#e6e588')
 
 

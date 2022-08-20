@@ -13,7 +13,7 @@ func _ready():
 
 
 func do_rain():
-	var sky: Sprite = get_parent().get_node('Background/sky')
+	var sky: Sprite = get_parent().get_node('Background/ParallaxSky/sky')
 	sky.modulate = Color('#98c3dc')
 
 
