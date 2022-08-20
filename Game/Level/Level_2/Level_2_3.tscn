@@ -29,22 +29,18 @@ position = Vector2( 82736.2, 1115.35 )
 [node name="BridgeLeft2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 82804.4, 1428.04 )
 rotation = 0.23911
-scale = Vector2( 1, 1 )
 
 [node name="BridgeLeft4" parent="." instance=ExtResource( 10 )]
 position = Vector2( 84130.5, 1751.32 )
 rotation = 0.23911
-scale = Vector2( 1, 1 )
 
 [node name="BridgeLeft5" parent="." instance=ExtResource( 10 )]
 position = Vector2( 85456.3, 2074.55 )
 rotation = 0.23911
-scale = Vector2( 1, 1 )
 
 [node name="BridgeLeft6" parent="." instance=ExtResource( 10 )]
 position = Vector2( 86782.4, 2397.82 )
 rotation = 0.23911
-scale = Vector2( 1, 1 )
 
 [node name="RoadNoTopBorderLevel1" parent="." instance=ExtResource( 5 )]
 position = Vector2( 88470.5, 1774.72 )
@@ -82,8 +78,31 @@ scale = Vector2( -1.12, 1 )
 [node name="MovingPlatform2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 93378.5, 2927.16 )
 
+[node name="BridgeLeft" parent="." instance=ExtResource( 10 )]
+position = Vector2( 93708.6, 3118.83 )
+rotation = -0.279253
+
+[node name="BridgeLeft3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 95019.5, 2742.9 )
+rotation = -0.279253
+
+[node name="BridgeLeft7" parent="." instance=ExtResource( 10 )]
+position = Vector2( 96330.6, 2366.98 )
+rotation = -0.279253
+
+[node name="BridgeLeft8" parent="." instance=ExtResource( 10 )]
+position = Vector2( 97642.2, 1990.8 )
+rotation = -0.279253
+
+[node name="BridgeLeft9" parent="." instance=ExtResource( 10 )]
+position = Vector2( 98952.1, 1614.99 )
+rotation = -0.279253
+
 [node name="RoadBorderLevel1" parent="." instance=ExtResource( 16 )]
 position = Vector2( 100337, 18.6295 )
+
+[node name="RoadBorderLevel2" parent="." instance=ExtResource( 16 )]
+position = Vector2( 104768, 110.533 )
 
 [node name="Lamp9" parent="." instance=ExtResource( 4 )]
 position = Vector2( 100264, 941.658 )
@@ -102,9 +121,6 @@ position = Vector2( 100400, 1020.54 )
 [node name="Hourgrass3" parent="." instance=ExtResource( 7 )]
 position = Vector2( 103497, 1157.78 )
 rotation = 0.00330378
-
-[node name="RoadBorderLevel2" parent="." instance=ExtResource( 16 )]
-position = Vector2( 104768, 110.533 )
 
 [node name="Bench2" parent="." instance=ExtResource( 12 )]
 position = Vector2( 104784, 1233.83 )
@@ -179,7 +195,3 @@ rotation = 0.00330378
 [node name="Finish" parent="." instance=ExtResource( 15 )]
 position = Vector2( 108957, 1280.82 )
 scale = Vector2( 0.9, 0.9 )
-
-[node name="BridgeLeft" parent="." instance=ExtResource( 10 )]
-position = Vector2( 93806.8, 2914.29 )
-rotation = 0.0

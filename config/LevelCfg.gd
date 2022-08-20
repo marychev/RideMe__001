@@ -37,7 +37,8 @@ func get_passed_at(section: String):#  -> String as "" and Dict {"day": 22, "dst
 func set_passed_at(section: String) -> void:
 	config.set_value(section, KEY_PASSED_AT, OS.get_datetime())
 	var res := config.save(path_file_cfg)
-	assert(res != OK, "ERROR: set_passed_at " + str(self) + ", path_file_cfg: " + path_file_cfg)
+	if res != OK:
+		printerr("ERROR: set_passed_at " + str(self) + ", path_file_cfg: " + path_file_cfg)
 
 
 # create

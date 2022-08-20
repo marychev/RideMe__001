@@ -17,7 +17,7 @@ func from_time_up(_player: Player) -> void:
 func from_hir_person(_player: Player) -> void:
 	init_player(_player)
 	PlayerData.set_type_title(end_game_scr.TitleChoices.HIT_PERSON)
-	PlayerData.set_score(player.global_position.x)
+	PlayerData.set_score(int(player.global_position.x))
 	die()
 
 
@@ -25,14 +25,14 @@ func from_fell(_player: Player):
 	_player.position = Vector2.ZERO
 	init_player(_player)
 	PlayerData.set_type_title(end_game_scr.TitleChoices.FELL)
-	PlayerData.set_score(player.global_position.x)
+	PlayerData.set_score(int(player.global_position.x))
 	die(true)
 	
 
 func from_broke_bike(_player: Player):
 	init_player(_player)
 	PlayerData.set_type_title(end_game_scr.TitleChoices.BROKE_BIKE)
-	PlayerData.set_score(player.global_position.x)
+	PlayerData.set_score(int(player.global_position.x))
 	die()
 
 

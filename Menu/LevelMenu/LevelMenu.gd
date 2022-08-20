@@ -18,9 +18,9 @@ func _ready() -> void:
 	init_btn_current_node()
 	
 	var res = btn_refit.connect("pressed", self, "_on_btn_refit_pressed")
-	assert(not res, "ERROR: LevelMenu connect _on_btn_refit_pressed")
+	# of not res:, "ERROR: LevelMenu connect _on_btn_refit_pressed")
 	res = btn_pay.connect("pressed", self, "_on_btn_pay_pressed")
-	assert(not res, "ERROR: LevelMenu connect _on_btn_pay_pressed")
+	# assert(not res, "ERROR: LevelMenu connect _on_btn_pay_pressed")
 	
 	if selected_node != null:
 		btn_refit.modulate.a = 1

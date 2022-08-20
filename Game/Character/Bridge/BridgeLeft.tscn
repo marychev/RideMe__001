@@ -8,7 +8,7 @@
 extents = Vector2( 682.627, 5.57545 )
 
 [node name="BridgeLeft" type="StaticBody2D"]
-position = Vector2( -55.4008, 353.885 )
+position = Vector2( -801.274, 716.742 )
 rotation = -0.240855
 script = ExtResource( 2 )
 __meta__ = {
@@ -21,17 +21,14 @@ rotation = -1.5716
 
 [node name="UpderConstarctionMinBottom2" parent="UpderConstarctionMinBottom" instance=ExtResource( 4 )]
 position = Vector2( 0.0584412, 1162.83 )
-scale = Vector2( 1, 1 )
 
 [node name="UpderConstarctionMin" parent="UpderConstarctionMinBottom/UpderConstarctionMinBottom2" instance=ExtResource( 4 )]
 position = Vector2( 0.012085, 93.4622 )
 rotation = 0.00534731
-scale = Vector2( 1, 1 )
 
 [node name="UpderConstarctionMin" parent="UpderConstarctionMinBottom" instance=ExtResource( 4 )]
 position = Vector2( 0.012085, 93.4622 )
 rotation = 0.00534731
-scale = Vector2( 1, 1 )
 
 [node name="SpriteLeft" type="Sprite" parent="."]
 position = Vector2( 74.3391, -3.3336 )
@@ -40,7 +37,6 @@ centered = false
 
 [node name="CollisionLeft" type="CollisionShape2D" parent="."]
 position = Vector2( 756.854, 51.0981 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
 [node name="UpderConstarctionMinBottom2" parent="." instance=ExtResource( 4 )]
@@ -49,22 +45,19 @@ rotation = -1.5716
 
 [node name="UpderConstarctionMinBottom2" parent="UpderConstarctionMinBottom2" instance=ExtResource( 4 )]
 position = Vector2( 0.0584412, 1162.83 )
-scale = Vector2( 1, 1 )
 
 [node name="UpderConstarctionMin" parent="UpderConstarctionMinBottom2/UpderConstarctionMinBottom2" instance=ExtResource( 4 )]
 position = Vector2( 0.012085, 93.4622 )
 rotation = 0.00534731
-scale = Vector2( 1, 1 )
 
 [node name="UpderConstarctionMin" parent="UpderConstarctionMinBottom2" instance=ExtResource( 4 )]
 position = Vector2( 0.012085, 93.4622 )
 rotation = 0.00534731
-scale = Vector2( 1, 1 )
 
 [node name="VisibilityEnabler" type="VisibilityEnabler2D" parent="."]
-position = Vector2( 1672.6, 426.854 )
-rotation = -0.240855
-scale = Vector2( 596.387, 258.81 )
+position = Vector2( 3267.71, 654.646 )
+rotation = 0.240855
+scale = Vector2( -328.582, -196.997 )
 process_parent = true
 physics_process_parent = true
 

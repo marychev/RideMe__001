@@ -38,10 +38,12 @@ func on_detect_collisions_process(delta) -> void:
 		
 		if 'MovingPlatform' in body.name:
 			body.move_down(delta)
+		"""
 		elif 'BridgeLeft' in body.name:
 			if is_on_floor():
 				# rotation = lerp(rotation, get_floor_normal().angle() + PI/2, align_speed)
 				rotation = lerp(rotation, body.rotation, align_speed)
+		"""
 
 
 func detect_landing_animation(current_animation_name: String) -> String:
@@ -142,14 +144,11 @@ func _physics_process(delta: float) -> void:
 	
 	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
 	_velocity = move_and_slide_with_snap(_velocity, snap, FLOOR_NORMAL, true)
-	# _velocity = move_and_slide(_velocity, FLOOR_NORMAL)
+	# Old values : _velocity = move_and_slide(_velocity, FLOOR_NORMAL)
 	
 	if is_on_floor():
 		is_jumping = Input.is_action_just_pressed("ui_select")
-	
-	print('velocity ', _velocity,  ' ', get_floor_normal().angle())
-	print('speed ', speed)
-	print('rotation ', rotation)
+		rotation = lerp(rotation, get_floor_normal().angle() + PI/2, align_speed)
 
 	if anim_player.current_animation != 'collision':
 		modulate = Color(1, 1, 1)
