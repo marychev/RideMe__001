@@ -8,8 +8,9 @@ onready var road_width = $sprite.texture.get_size().x
 
 
 func repeat_two_sprites():
-	has_repeat and _repeat_two_sprites()
-	
+	if has_repeat:
+		_repeat_two_sprites()
+
 
 func _repeat_two_sprites():
 	if not has_repeat:

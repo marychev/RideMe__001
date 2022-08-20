@@ -10,4 +10,6 @@ func _on_pressed():
 	# GameData._ready()
 	
 	get_tree().paused = false
-	get_tree().reload_current_scene()
+	var res := get_tree().reload_current_scene()
+	if res != OK:
+		printerr("ERROR: " + str(self) + ". Res: " + str(res))

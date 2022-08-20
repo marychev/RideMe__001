@@ -61,11 +61,16 @@ static func set_param_value(label_value: Label, value: float) -> void:
 
 
 static func create_for_cfg() -> void:
-	var texture: ="res://Game/Bike/assets/I/animation/collision.png"
-	var max_speed = 0.00
-	var max_height_jump = 0.00
-	var power = 0.00
-	var max_power = 0.00
-	var price: = 0
-	var bike_cfg: BikeCfg = load(PathData.BIKE_MODEL).new()
-	bike_cfg.create("Empty", texture, max_speed, max_height_jump, power, max_power, price)
+	var _texture: ="res://Game/Bike/assets/I/collision.png"
+	var _max_speed = 0.00
+	var _max_height_jump = 0.00
+	var _power = 0.00
+	var _max_power = 0.00
+	var _price: = 0
+	var _bike_cfg: BikeCfg = load(PathData.BIKE_MODEL).new()
+	
+	var res = _bike_cfg.create("Empty", _texture, _max_speed, _max_height_jump, _power, _max_power, _price)
+	if res != OK:
+		printerr("ERROR: EmptyBike create_for_cfg")
+
+

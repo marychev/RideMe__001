@@ -2,7 +2,7 @@ extends TouchScreenButton
 class_name ControlBtn
 
 const POWER_GO: int = 10
-const POWER_RELAX: int = 4
+const POWER_RELAX: int = 6
 const POWER_WAIT: int = 2
 const MODULATE_A_OFF = 1
 const MODULATE_A_ON = 0.7
@@ -10,7 +10,7 @@ const MODULATE_A_ON = 0.7
 var calc_power: float
 var calc_speed: float
 
-onready var player: KinematicBody2D = get_node(PathData.PATH_PLAYER)
+onready var player: Player = get_node(PathData.PATH_PLAYER)
 onready var anim_player: AnimationPlayer = player.get_node("./AnimationPlayer")
 
 
@@ -26,8 +26,11 @@ func on_released() -> void:
 
 func _ready() -> void:
 	modulate.a = MODULATE_A_OFF
-	connect("pressed", self, "on_pressed")
-	connect("released", self, "on_released")
+	var res := connect("pressed", self, "on_pressed")
+	assert(not res, "ERROR: _ready connect on_pressed")
+	
+	res = connect("released", self, "on_released")
+	assert(not res, "ERROR: _ready connect on_released")
 
 
 func on_wait_process(dt: float, animation_name: String = "wait"):

@@ -36,6 +36,9 @@ func _ready():
 
 
 func init_level_track(section: String, id_track: int) -> void:
+	if not id_track and id_track != 0: 
+		printerr("ERROR: init_level_track: " + section)
+		
 	if track_cfg.get_id(section) != null:
 		level_id = track_cfg.get_level_id(section)
 		title = level_cfg.get_title(level_cfg.get_section(level_id))
@@ -60,12 +63,12 @@ func are_you_win() -> bool:
 
 
 static func create_for_cfg() -> void:
-	var resource: = "res://Game/Level/Level_0/Level_0.tscn"
-	var texture: = "res://Game/Level/assets/slides/track-00.png"
-	var num_win = 2
-	var init_time_level = 100
-	var price = 0
-	var issue: = "First experience: сollect the %s hourgrass"
-	var state: = LevelTrackStates.ACTIVE
+	var _resource: = "res://Game/Level/Level_0/Level_0.tscn"
+	var _texture: = "res://Game/Level/assets/slides/track-00.png"
+	var _num_win = 2
+	var _init_time_level = 100
+	var _price = 0
+	var _issue: = "First experience: сollect the %s hourgrass"
+	var _state: = LevelTrackStates.ACTIVE
 	
-	GameData.track_cfg.create(0, 1, issue, resource, texture, num_win, init_time_level, price, state)
+	GameData.track_cfg.create(0, 1, _issue, _resource, _texture, _num_win, _init_time_level, _price, _state)

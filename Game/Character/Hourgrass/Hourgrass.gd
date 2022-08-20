@@ -10,14 +10,16 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: KinematicBody2D) -> void:
-	if body.name == "Player":
+	if is_instance_valid(body) and body.name == "Player":
 		animation.play("fade_out")
 		player_do_anim_success(body)
 		timeout_do_anim_success()
 		body.get_node('AudioMove').set_stream(body.audio_colected)
 		body.get_node('AudioMove').play()
 		set_value_of_time_level()
-		PlayerData.set_time_level_count(body)
+		
+		var res := PlayerData.set_time_level_count(body)
+		assert(res != OK, "ERROR: Hourgrass _on_body_entered set_time_level_count")
 
 
 func _on_VisibilityNotifier_screen_exited() -> void:
@@ -27,10 +29,13 @@ func _on_VisibilityNotifier_screen_exited() -> void:
 func _on_Hourgrass_body_shape_entered(
 	body_id: int, body: Node, body_shape: int, local_shape: int
 ) -> void:
-	player_do_anim_success(body)
+	if body_id and body and body_shape and local_shape:
+		player_do_anim_success(body)
 
 
-func player_do_anim_success(player: KinematicBody2D) -> void:
+func player_do_anim_success(_player: KinematicBody2D) -> void:
+	if is_instance_valid(_player):
+		player = _player
 	player.anim_player.play('success')
 
 

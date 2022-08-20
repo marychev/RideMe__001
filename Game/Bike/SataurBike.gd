@@ -14,4 +14,6 @@ static func create_for_cfg() -> void:
 	var max_power = 400.00
 	var price: = 90
 	var bike_cfg: BikeCfg = load(PathData.BIKE_MODEL).new()
-	bike_cfg.create("Sataur", texture, max_speed, max_height_jump, power, max_power, price)
+	var res := bike_cfg.create("Sataur", texture, max_speed, max_height_jump, power, max_power, price)
+	if res != OK:
+		printerr("ERROR: SataurBike create_for_cfg")

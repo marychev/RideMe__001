@@ -27,7 +27,9 @@ func _on_Current_pressed() -> void:
 
 func _on_btn_menu_pressed() -> void:
 	var main_menu: String = PathData.RES_MAIN_MENU_TSCN
-	get_tree().change_scene(main_menu)
+	var res := get_tree().change_scene(main_menu)
+	if res != OK:
+		printerr("ERROR: BaseBikeMenu " + str(self) + " " + str(res) + "_on_btn_menu_pressed and change_scene")
 
 
 func init_slide(node: Node2D) -> void:

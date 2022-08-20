@@ -16,6 +16,7 @@ func on_jump_process(dt: float, animation_name: String = "landing") -> void:
 	
 
 func on_landing_process(dt: float, animation_name: String = "landing") -> void:
+	assert(animation_name.empty(), "ERROR: on_landing_process")
 	on_released()
 	# anim_player.stop()
 	

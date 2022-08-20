@@ -138,7 +138,9 @@ func _on_btn_yes_pressed():
 		
 		$AudioStreamPlayer2D.play()
 		yield(get_tree().create_timer(1), "timeout")
-		get_tree().reload_current_scene()
+		var res := get_tree().reload_current_scene()
+		if res != OK: 
+			printerr("ERROR: " + str(self) + " " + str(res) + "_on_btn_yes_pressed and reload_current_scene")
 
 
 func open(player_bike: Node) -> void:

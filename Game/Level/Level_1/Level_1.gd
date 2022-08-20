@@ -21,4 +21,6 @@ static func create_for_cfg() -> void:
 	var price = 2
 	var issue: = "Heat. Collect the %s hourgrass to see the finish"
 	
-	GameData.track_cfg.create(1, 1, issue, resource, texture, num_win, init_time_level, price)
+	var res := GameData.track_cfg.create(1, 1, issue, resource, texture, num_win, init_time_level, price)
+	if res != OK:
+		printerr("ERROR: Level_1 create_for_cfg")

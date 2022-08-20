@@ -5,12 +5,6 @@ signal lives_updated
 signal rms_updated
 signal time_level_updated
 
-onready var player_bike_cfg: PlayerBikeCfg = load(PathData.PLAYER_BIKE_MODEL).new()
-onready var lives_value: Label = get_node(PathData.PATH_LIVES_COUNTER_VALUE)
-onready var rms_value: Label = get_node(PathData.PATH_RMS_COUNTER_VALUE)
-onready var time_level_value: Label = get_node(PathData.PATH_TIME_LEVEL_VALUE)
-onready var gui_time: VBoxContainer = get_node(PathData.PATH_GUI_TIME)
-onready var player: KinematicBody2D = get_node(PathData.PATH_PLAYER)
 
 var score: = 0 setget set_score # not used anywhere
 var time_level_count: int = 0
@@ -22,8 +16,27 @@ var rms: int = PlayerBikeCfg.DEFAULT_VALUE_RMS setget set_rms
 var lives: int = PlayerBikeCfg.DEFAULT_VALUE_LIVES setget set_lives
 var player_bike: EmptyBike
 
+onready var player_bike_cfg: PlayerBikeCfg = load(PathData.PLAYER_BIKE_MODEL).new()
+
+var lives_value: Label
+var rms_value: Label
+var time_level_value: Label
+var gui_time: VBoxContainer
+var player: KinematicBody2D
+
 
 func _ready():
+	if has_node(PathData.PATH_LIVES_COUNTER_VALUE):
+		lives_value = get_node(PathData.PATH_LIVES_COUNTER_VALUE)
+	if has_node(PathData.PATH_RMS_COUNTER_VALUE):
+		rms_value = get_node(PathData.PATH_RMS_COUNTER_VALUE)
+	if has_node(PathData.PATH_TIME_LEVEL_VALUE):
+		time_level_value = get_node(PathData.PATH_TIME_LEVEL_VALUE)
+	if has_node(PathData.PATH_GUI_TIME):
+		gui_time = get_node(PathData.PATH_GUI_TIME)
+	if has_node(PathData.PATH_PLAYER):
+		player = get_node(PathData.PATH_PLAYER)
+	
 	var player_bike_data: = player_bike_cfg.first()
 	set_player_data(player_bike_data)
 	
@@ -69,7 +82,8 @@ func set_rms(value: int, is_game_mode:= true) -> void:
 
 	# when Splash as main sceen
 	if not is_instance_valid(rms_value):
-		rms_value = get_node(PathData.PATH_RMS_COUNTER_VALUE)
+		if has_node(PathData.PATH_RMS_COUNTER_VALUE):
+			rms_value = get_node(PathData.PATH_RMS_COUNTER_VALUE)
 	# when BikeMenu as main sceen
 	if not is_instance_valid(rms_value):
 		var path = "/root/BikeMenu/TextureRect/RMCounter/Background/Value"

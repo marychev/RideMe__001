@@ -51,8 +51,8 @@ func _on_Timer_timeout() -> void:
 		
 			$TimeToStart.get_font("font").size = 64
 			
-			var title = "Go go go\r\n%s: %d" % [GameData.current_level.title, GameData.current_track.ID]
-			$TimeToStart.set_text(title)
+			var text = "Go go go\r\n%s: %d" % [GameData.current_level.title, GameData.current_track.ID]
+			$TimeToStart.set_text(text)
 			
 			_counter -= 1
 		else:

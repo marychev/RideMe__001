@@ -46,23 +46,36 @@ func get_max_power(section: String = SECTION_1) -> float:
 
 func set_rm(rm: int) -> void:
 	config.set_value(SECTION_1, KEY_RM, rm)
-	config.save(path_file_cfg)
+	var res := config.save(path_file_cfg)
+	if res != OK:
+		printerr("ERROR: set_rm " + str(self) + ", path_file_cfg: " + path_file_cfg)
+
 
 func set_bike_title(title: String) -> void:
 	config.set_value(SECTION_1, KEY_BIKE_TITLE, title)
-	config.save(path_file_cfg)
+	var res := config.save(path_file_cfg)
+	if res != OK:
+		printerr("ERROR: set_bike_title " + str(self) + ", path_file_cfg: " + path_file_cfg)
 
 func set_max_speed(val: float) -> void:
 	config.set_value(SECTION_1, KEY_MAX_SPEED, val)
-	config.save(path_file_cfg)
+	var res := config.save(path_file_cfg)
+	if res != OK:
+		printerr("ERROR: set_max_speed " + str(self) + ", path_file_cfg: " + path_file_cfg)
+
 
 func set_max_height_jump(val: float) -> void:
 	config.set_value(SECTION_1, KEY_MAX_HEIGHT_JUMP, val)
-	config.save(path_file_cfg)
+	var res := config.save(path_file_cfg)
+	if res != OK:
+		printerr("ERROR: set_max_height_jump " + str(self) + ", path_file_cfg: " + path_file_cfg)
+
 
 func set_max_power(val: float) -> void:
 	config.set_value(SECTION_1, KEY_MAX_POWER, val)
-	config.save(path_file_cfg)
+	var res := config.save(path_file_cfg)
+	if res != OK:
+		printerr("ERROR: set_max_power " + str(self) + ", path_file_cfg: " + path_file_cfg)
 
 
 # methods

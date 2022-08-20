@@ -62,7 +62,9 @@ func _on_btn_pay_pressed() -> void:
 				field_log.success("Bike was paid success!")
 				
 				yield(get_tree().create_timer(0.4), "timeout")
-				get_tree().reload_current_scene()
+				var res := get_tree().reload_current_scene()
+				if res != OK:
+					printerr("ERROR: " + str(self) + " " + str(res) + "_on_btn_pay_pressed and reload_current_scene")
 		else:
 			var message = "A bike was not selected!"
 			field_log.error(message)

@@ -39,7 +39,7 @@ position = Vector2( 4467.69, 1173.83 )
 
 [node name="Start" parent="." instance=ExtResource( 12 )]
 position = Vector2( -59.9169, 1320.69 )
-scale = Vector2( 0.7, 0.6 )
+scale = Vector2( 1, 0.8 )
 
 [node name="StaticRock" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1216.34, 1341.86 )
@@ -145,10 +145,10 @@ position = Vector2( 20616.6, 815.18 )
 position = Vector2( 20258.3, 576.38 )
 
 [node name="BridgeLeft" parent="." instance=ExtResource( 10 )]
-position = Vector2( 20372.9, 861.152 )
+position = Vector2( 20360.2, 1346.76 )
 
 [node name="BridgeRight" parent="." instance=ExtResource( 10 )]
-position = Vector2( 22194.4, 511.291 )
+position = Vector2( 21975.5, 991.833 )
 rotation = 0.240855
 
 [node name="RoadBorderLevel1" parent="." instance=ExtResource( 6 )]

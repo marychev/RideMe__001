@@ -18,9 +18,11 @@ func _ready():
 func _on_pressed():
 	if not change_scene.empty():
 		yield(get_tree().create_timer(0.4), "timeout")
-		get_tree().change_scene(change_scene)
+		var res := get_tree().change_scene(change_scene)
+		if res != OK: 
+			printerr("ERROR: " + str(self) + " " + str(res) + "_on_pressed and change_scene")
 	else:
-		print("[warn] TextureIconButton: Change scene does not init")
+		printerr("[warn] TextureIconButton: Change scene does not init")
 
 
 func set_title(val) -> void:

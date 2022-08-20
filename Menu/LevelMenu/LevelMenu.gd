@@ -17,8 +17,10 @@ func _ready() -> void:
 	
 	init_btn_current_node()
 	
-	btn_refit.connect("pressed", self, "_on_btn_refit_pressed")
-	btn_pay.connect("pressed", self, "_on_btn_pay_pressed")
+	var res = btn_refit.connect("pressed", self, "_on_btn_refit_pressed")
+	assert(not res, "ERROR: LevelMenu connect _on_btn_refit_pressed")
+	res = btn_pay.connect("pressed", self, "_on_btn_pay_pressed")
+	assert(not res, "ERROR: LevelMenu connect _on_btn_pay_pressed")
 	
 	if selected_node != null:
 		btn_refit.modulate.a = 1
@@ -51,8 +53,8 @@ func _on_btn_pay_pressed() -> void:
 		main_menu.field_log_start_play()
 	else:
 		yield(get_tree().create_timer(0.4), "timeout")
-		get_tree().change_scene(main_menu.game_tscn) 
-
+		var res := get_tree().change_scene(main_menu.game_tscn) 
+		assert(not res, "ERROR: LevelMenu _on_btn_pay_pressed change_scene")
 
 func _on_btn_refit_pressed() -> void:
 	if GameData.current_level:

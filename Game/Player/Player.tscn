@@ -4,7 +4,7 @@
 [ext_resource path="res://Game/Player/Player.gd" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 38.3335, 40.8266 )
+extents = Vector2( 64.571, 64.571 )
 
 [sub_resource type="Animation" id=9]
 length = 0.001
@@ -132,12 +132,9 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 39.8907, 27.2418 )
+extents = Vector2( 64.3388, 32.128 )
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( -47.7295, -141.563 )
-rotation = -0.00633928
-scale = Vector2( 1.34, 1.34 )
 collision_mask = 10
 script = ExtResource( 6 )
 __meta__ = {
@@ -149,14 +146,15 @@ attenuation = 0.183011
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 42.1707, 64.314 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.78, 0.78 )
 texture = ExtResource( 1 )
+centered = false
 hframes = 6
 vframes = 4
 frame = 15
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2( 41.5243, 71.1936 )
+position = Vector2( 108.7, 175.685 )
 shape = SubResource( 1 )
 
 [node name="Camera" type="Camera2D" parent="."]
@@ -178,12 +176,12 @@ anims/wait = SubResource( 7 )
 
 [node name="CollisionDetector" type="Area2D" parent="."]
 modulate = Color( 0, 0.207843, 1, 1 )
-position = Vector2( 35.873, 98.5574 )
+position = Vector2( 101.615, 199.029 )
 collision_mask = 114
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionDetector"]
-position = Vector2( 5.77422, -12.6129 )
+position = Vector2( 7.2121, 8.78142 )
 shape = SubResource( 8 )
 
 [connection signal="area_entered" from="CollisionDetector" to="." method="_on_CollisionDetector_area_entered"]

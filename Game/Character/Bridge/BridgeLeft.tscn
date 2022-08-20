@@ -5,56 +5,65 @@
 [ext_resource path="res://Game/Road/upder_constarction/UpderConstarctionMin.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 682.327, 11.2426 )
+extents = Vector2( 682.627, 5.57545 )
 
 [node name="BridgeLeft" type="StaticBody2D"]
-position = Vector2( -72, 6 )
-rotation = -0.240768
+position = Vector2( -55.4008, 353.885 )
+rotation = -0.240855
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="UpderConstarctionMinBottom" parent="." instance=ExtResource( 4 )]
-position = Vector2( 190.396, 336.843 )
-rotation = 1.5708
+position = Vector2( 74.9506, 9.90671 )
+rotation = -1.5716
+
+[node name="UpderConstarctionMinBottom2" parent="UpderConstarctionMinBottom" instance=ExtResource( 4 )]
+position = Vector2( 0.0584412, 1162.83 )
+scale = Vector2( 1, 1 )
+
+[node name="UpderConstarctionMin" parent="UpderConstarctionMinBottom/UpderConstarctionMinBottom2" instance=ExtResource( 4 )]
+position = Vector2( 0.012085, 93.4622 )
+rotation = 0.00534731
+scale = Vector2( 1, 1 )
 
 [node name="UpderConstarctionMin" parent="UpderConstarctionMinBottom" instance=ExtResource( 4 )]
-position = Vector2( -0.0517883, 85.7408 )
-
-[node name="UpderConstarctionMinBottom2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1365.9, 336.843 )
-rotation = 1.5708
-
-[node name="UpderConstarctionMin" parent="UpderConstarctionMinBottom2" instance=ExtResource( 4 )]
-position = Vector2( -0.0517883, 85.7408 )
+position = Vector2( 0.012085, 93.4622 )
+rotation = 0.00534731
+scale = Vector2( 1, 1 )
 
 [node name="SpriteLeft" type="Sprite" parent="."]
-position = Vector2( 1.04766, 345.415 )
+position = Vector2( 74.3391, -3.3336 )
 texture = ExtResource( 1 )
 centered = false
 
 [node name="CollisionLeft" type="CollisionShape2D" parent="."]
-position = Vector2( 683.447, 418.019 )
+position = Vector2( 756.854, 51.0981 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
-[node name="UpderConstarctionMin2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 104.235, 437.431 )
-rotation = 1.5708
+[node name="UpderConstarctionMinBottom2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 74.9228, 96.6307 )
+rotation = -1.5716
 
-[node name="UpderConstarctionMin4" parent="UpderConstarctionMin2" instance=ExtResource( 4 )]
-position = Vector2( -0.0519409, -92.9324 )
+[node name="UpderConstarctionMinBottom2" parent="UpderConstarctionMinBottom2" instance=ExtResource( 4 )]
+position = Vector2( 0.0584412, 1162.83 )
+scale = Vector2( 1, 1 )
 
-[node name="UpderConstarctionMin3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1273.04, 437.431 )
-rotation = 1.5708
+[node name="UpderConstarctionMin" parent="UpderConstarctionMinBottom2/UpderConstarctionMinBottom2" instance=ExtResource( 4 )]
+position = Vector2( 0.012085, 93.4622 )
+rotation = 0.00534731
+scale = Vector2( 1, 1 )
 
-[node name="UpderConstarctionMin4" parent="UpderConstarctionMin3" instance=ExtResource( 4 )]
-position = Vector2( -0.0519409, -92.9324 )
+[node name="UpderConstarctionMin" parent="UpderConstarctionMinBottom2" instance=ExtResource( 4 )]
+position = Vector2( 0.012085, 93.4622 )
+rotation = 0.00534731
+scale = Vector2( 1, 1 )
 
 [node name="VisibilityEnabler" type="VisibilityEnabler2D" parent="."]
-position = Vector2( 123.974, 100.453 )
-rotation = -0.242957
+position = Vector2( 1672.6, 426.854 )
+rotation = -0.240855
 scale = Vector2( 596.387, 258.81 )
 process_parent = true
 physics_process_parent = true

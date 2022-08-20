@@ -26,25 +26,25 @@ position = Vector2( 4465.74, 1173.14 )
 [node name="Hourgrass" parent="." instance=ExtResource( 7 )]
 position = Vector2( 82736.2, 1115.35 )
 
-[node name="BridgeLRight" parent="." instance=ExtResource( 10 )]
-position = Vector2( 84271.8, 1468.71 )
-rotation = 0.240855
-scale = Vector2( -1, 1 )
+[node name="BridgeLeft2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 82804.4, 1428.04 )
+rotation = 0.23911
+scale = Vector2( 1, 1 )
 
-[node name="BridgeLRight2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 85596.4, 1794.2 )
-rotation = 0.240855
-scale = Vector2( -1, 1 )
+[node name="BridgeLeft4" parent="." instance=ExtResource( 10 )]
+position = Vector2( 84130.5, 1751.32 )
+rotation = 0.23911
+scale = Vector2( 1, 1 )
 
-[node name="BridgeLRight3" parent="." instance=ExtResource( 10 )]
-position = Vector2( 86911.9, 2117.83 )
-rotation = 0.240855
-scale = Vector2( -1, 1 )
+[node name="BridgeLeft5" parent="." instance=ExtResource( 10 )]
+position = Vector2( 85456.3, 2074.55 )
+rotation = 0.23911
+scale = Vector2( 1, 1 )
 
-[node name="BridgeLRight4" parent="." instance=ExtResource( 10 )]
-position = Vector2( 88228, 2441.07 )
-rotation = 0.240855
-scale = Vector2( -1, 1 )
+[node name="BridgeLeft6" parent="." instance=ExtResource( 10 )]
+position = Vector2( 86782.4, 2397.82 )
+rotation = 0.23911
+scale = Vector2( 1, 1 )
 
 [node name="RoadNoTopBorderLevel1" parent="." instance=ExtResource( 5 )]
 position = Vector2( 88470.5, 1774.72 )
@@ -80,26 +80,10 @@ rotation = 0.959184
 scale = Vector2( -1.12, 1 )
 
 [node name="MovingPlatform2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 93274.7, 2885.64 )
-
-[node name="BridgeLeft5" parent="." instance=ExtResource( 10 )]
-position = Vector2( 93618.5, 2491.79 )
-
-[node name="BridgeLeft" parent="." instance=ExtResource( 10 )]
-position = Vector2( 94943.7, 2166.43 )
-
-[node name="BridgeLeft2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 96268, 1841.28 )
-
-[node name="BridgeLeft3" parent="." instance=ExtResource( 10 )]
-position = Vector2( 97591.3, 1516.15 )
+position = Vector2( 93378.5, 2927.16 )
 
 [node name="RoadBorderLevel1" parent="." instance=ExtResource( 16 )]
 position = Vector2( 100337, 18.6295 )
-
-[node name="BridgeLeft4" parent="." instance=ExtResource( 10 )]
-position = Vector2( 98916.3, 1190.82 )
-scale = Vector2( 1, 1 )
 
 [node name="Lamp9" parent="." instance=ExtResource( 4 )]
 position = Vector2( 100264, 941.658 )
@@ -117,10 +101,6 @@ position = Vector2( 100400, 1020.54 )
 
 [node name="Hourgrass3" parent="." instance=ExtResource( 7 )]
 position = Vector2( 103497, 1157.78 )
-rotation = 0.00330378
-
-[node name="Hourgrass4" parent="." instance=ExtResource( 7 )]
-position = Vector2( 106220, 1207.72 )
 rotation = 0.00330378
 
 [node name="RoadBorderLevel2" parent="." instance=ExtResource( 16 )]
@@ -199,3 +179,7 @@ rotation = 0.00330378
 [node name="Finish" parent="." instance=ExtResource( 15 )]
 position = Vector2( 108957, 1280.82 )
 scale = Vector2( 0.9, 0.9 )
+
+[node name="BridgeLeft" parent="." instance=ExtResource( 10 )]
+position = Vector2( 93806.8, 2914.29 )
+rotation = 0.0

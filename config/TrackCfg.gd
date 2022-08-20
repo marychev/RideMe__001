@@ -54,7 +54,10 @@ func get_price(section: String) -> int:
 
 func set_state(current_level_SECTION: String, state: int):
 	config.set_value(current_level_SECTION, KEY_STATE, state)
-	config.save(path_file_cfg)
+	var res := config.save(path_file_cfg)
+	print("RES ", not res)
+	
+	assert(not res, "ERROR: set_state " + str(self) + ", path_file_cfg: " + path_file_cfg)
 
 
 # methods

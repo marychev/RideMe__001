@@ -57,7 +57,8 @@ func set_best_time(track_section: String, value: String) -> void:
 
 	config.set_value(track_section, KEY_BEST_TIME_AT, value)
 	config.set_value(track_section, KEY_ATTEMPTS, attempts)
-	config.save(path_file_cfg)
+	var res := config.save(path_file_cfg)
+	assert(not res, "ERROR: set_best_time " + str(self) + ", path_file_cfg: " + path_file_cfg)
 
 
 # metthods

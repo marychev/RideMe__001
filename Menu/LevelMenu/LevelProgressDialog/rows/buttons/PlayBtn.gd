@@ -25,9 +25,12 @@ func _on_button_down():
 func _on_pressed():
 	if GameData.current_level:
 		yield(get_tree().create_timer(0.4), "timeout")
-		get_tree().change_scene(path_data.RES_LEVEL_MENU_TSCN)
+		var res := get_tree().change_scene(path_data.RES_LEVEL_MENU_TSCN)
+		
+		if res != OK:
+			printerr("ERROR: " + str(self) + " " + str(res) + "_on_pressed and change_scene")
 	else:
-		print("[warn] GameData was undefined")
+		printerr("[warn] GameData was undefined")
 
 
 
