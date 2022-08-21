@@ -12,7 +12,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-		# animation
+	# animation
 	if PlayerData.time_level < 4:
 		$AnimationPlayer.play('danger')
 

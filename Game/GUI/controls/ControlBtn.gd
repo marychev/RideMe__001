@@ -37,11 +37,10 @@ func on_wait_process(dt: float, animation_name: String = "wait"):
 	animation_name = detect_collision_animation(animation_name)
 	anim_player.play(animation_name)
 	
-	calc_power = player.power + (dt * player.max_power / POWER_WAIT)
-	player.set_power(calc_power)
-	
-	calc_speed = 0
-	player.set_speed(calc_speed)
+	# calc_power = player.power + (dt * player.max_power / POWER_WAIT)
+	# player.set_power(calc_power)
+	# calc_speed = 0
+	# player.set_speed(calc_speed)
 
 
 func detect_collision_animation(animation_name: String) -> String:

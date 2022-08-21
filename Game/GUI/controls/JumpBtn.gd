@@ -20,7 +20,7 @@ func on_landing_process(dt: float, animation_name: String = "landing") -> void:
 		printerr("ERROR: on_landing_process")
 		
 	on_released()
-	# anim_player.stop()
+	anim_player.stop()
 	
 	calc_power = player.power + (player.power * dt * 2)
 	player.set_power(calc_power)

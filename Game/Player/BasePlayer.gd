@@ -17,29 +17,30 @@ onready var GoBtn: TouchScreenButton = get_node(PathData.PATH_GO_BTN)
 onready var StopBtn: TouchScreenButton = get_node(PathData.PATH_STOP_BTN)
 onready var anim_player: AnimationPlayer = $AnimationPlayer
 
+
 # The current speed as `x` and the max-power of jump as `y`
 
 func calculate_move_velocity(
-	linear_velocity: Vector2, direction: Vector2, _speed: Vector2,
-	is_jump_interrupted: bool
+	linear_velocity: Vector2, acceleration: Vector2, delta: float
 ) -> Vector2:
 	var out := linear_velocity
-	out.x = _speed.x  # * direction.x ## убивает релах
-	out.y += gravity + get_physics_process_delta_time()
-
-	if direction.y == -1.0:
-		out.y = _speed.y * direction.y
+	var direction := get_direction()
+	var is_jump_interrupted: bool = Input.is_action_just_released("ui_select") and out.y < 0.0
 	
+	# out.x = _speed.x  # * direction.x ## убивает релах
+	out += acceleration * delta
+	out.y += gravity + delta
+	
+	if direction.y == -1.0:
+		out.y = direction.y * (max_height_jump + power)
+		
 	if is_jump_interrupted:
 		out.y = 0.0
-	
+		
 	return out
 
 
-func calculate_stomp_velocity(
-	linear_velocity: Vector2, 
-	impulse: float
-) -> Vector2:
+func calculate_stomp_velocity(linear_velocity: Vector2, impulse: float) -> Vector2:
 	var out := linear_velocity
 	out.y = -impulse
 	return out

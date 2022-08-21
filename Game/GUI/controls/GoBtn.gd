@@ -6,14 +6,17 @@ func on_go_process(dt: float, animation_name: String = "go") -> void:
 	modulate_switcher()
 	on_pressed()
 	
-	animation_name = detect_collision_animation(animation_name)
-	anim_player.play(animation_name)
-	
-	calc_power = player.power - (dt * player.max_power / POWER_GO)
+	player.acceleration = player.transform.x * player.power
+	var calc_power = player.power - (dt * player.acceleration.x)
 	player.set_power(calc_power)
 	
-	calc_speed = player.speed.x + (dt * player.power)
-	player.set_speed(calc_speed)
+	animation_name = detect_collision_animation(animation_name)
+	anim_player.play(animation_name)
+
+	# calc_power = player.power - (dt * player.max_power / POWER_GO)
+	# player.set_power(calc_power)
+	# calc_speed = player.speed.x + (dt * player.power)
+	# player.set_speed(calc_speed)
 	
 
 func on_relax_process(dt: float, animation_name : String = "relax"):
@@ -23,11 +26,10 @@ func on_relax_process(dt: float, animation_name : String = "relax"):
 	animation_name = detect_collision_animation(animation_name)
 	anim_player.play(animation_name)
 	
-	calc_power = player.power + (dt * player.max_power / POWER_RELAX)
-	player.set_power(calc_power)
-	
-	calc_speed = player.speed.x - (dt * player.power)
-	player.set_speed(calc_speed)
+	# calc_power = player.power + (dt * player.max_power / POWER_RELAX)
+	# player.set_power(calc_power)
+	# calc_speed = player.speed.x - (dt * player.power)
+	# player.set_speed(calc_speed)
 	
 
 func modulate_switcher() -> void:
