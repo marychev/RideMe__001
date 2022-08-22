@@ -8,6 +8,10 @@ var max_height_jump: float = player_bike.max_height_jump
 var power: float = player_bike.power
 var max_power: float = player_bike.max_power
 
+var acceleration = Vector2.ZERO
+var friction = -0.2
+var drag = -0.0001
+
 onready var GUI: CanvasLayer = get_node(PathData.PATH_GUI)
 onready var GameScreen: Control = get_node(PathData.PATH_GAME_SCREEN_PAUSE)
 onready var SpeedBar: HBoxContainer = get_node(PathData.PATH_SPEED_BAR)
@@ -19,6 +23,31 @@ onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 
 # The current speed as `x` and the max-power of jump as `y`
+
+
+func calculate_friction() -> Vector2:
+	# if _velocity.length() < 5: _velocity = Vector2.ZERO
+	var friction_force = _velocity * friction
+	var drag_force = _velocity * _velocity.length() * drag
+	# if _velocity.length() < 100: friction_force *= 3
+	acceleration += drag_force + friction_force
+	return acceleration
+
+
+func calculate_steering(delta) -> Vector2:
+	var rear_wheel = position - transform.x
+	var front_wheel = position + transform.x
+	var new_heading = (front_wheel - rear_wheel).normalized()
+	var d = new_heading.dot(_velocity.normalized())
+
+	if d > 0:
+		_velocity = _velocity.linear_interpolate(new_heading * _velocity.length(), drag)
+	if d < 0:
+		_velocity = -new_heading * min(_velocity.length(), max_speed / 2)
+	
+	# rotation = new_heading.angle()
+	return _velocity
+		
 
 func calculate_move_velocity(
 	linear_velocity: Vector2, acceleration: Vector2, delta: float

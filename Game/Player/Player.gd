@@ -18,11 +18,6 @@ var audio_broke = preload("res://media/move/broken.wav")
 var audio_colected = preload("res://media/move/colected.wav")
 
 
-var acceleration = Vector2.ZERO
-var friction = -0.2
-var drag = -0.0001
-
-
 func _ready() -> void:
 	$Sprite.texture = PlayerData.player_bike.texture
 	modulate = Color(1, 1, 1)
@@ -59,57 +54,52 @@ func get_input(delta: float) -> void:
 	acceleration = Vector2.ZERO
 	
 	# Move right
-	# if Input.is_action_just_pressed("ui_right"):
-	#	animation_name = detect_landing_animation("go")
-	#	GoBtn.on_go_process(delta, animation_name)
-	#	$AudioMove.set_stream(audio_go)
-	#	if $AudioMove.playing == false:
-	#		$AudioMove.play()
-	
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_just_pressed("ui_right"):
+		animation_name = detect_landing_animation("go")
+		# GoBtn.on_go_process(delta, animation_name)
+		$AudioMove.set_stream(audio_go)
+		if $AudioMove.playing == false:
+			$AudioMove.play()
+	elif Input.is_action_pressed("ui_right"):
 		animation_name = detect_landing_animation("go")
 		GoBtn.on_go_process(delta, animation_name)
 		if $AudioMove.playing == false:
 			$AudioMove.play()
-			
-	# if Input.is_action_just_released("ui_right"):
-	#	animation_name = detect_landing_animation("relax")
-	#	GoBtn.on_relax_process(delta)
-	#	if not has_colected or not has_colected:
-	#		$AudioMove.set_stream(audio_relax)
-	#		$AudioMove.play()
-
-	# Move back
-	#if Input.is_action_just_pressed("ui_left"):
-	#	animation_name = detect_landing_animation("stop")
-	#	StopBtn.on_stop_process(delta)
-	#	$AudioMove.set_stream(audio_stop)
-	#	$AudioMove.play()
-	
-	if Input.is_action_pressed("ui_left"):
+	elif Input.is_action_just_released("ui_right"):
+		animation_name = detect_landing_animation("relax")
+		GoBtn.on_relax_process(delta)
+		if not has_colected or not has_colected:
+			$AudioMove.set_stream(audio_relax)
+			$AudioMove.play()
+	# Move backward
+	elif Input.is_action_just_pressed("ui_left"):
+		animation_name = detect_landing_animation("stop")
+		# StopBtn.on_stop_process(delta)
+		$AudioMove.set_stream(audio_stop)
+		$AudioMove.play()
+	elif Input.is_action_pressed("ui_left"):
 		animation_name = detect_landing_animation("stop")
 		StopBtn.on_stop_process(delta)
-		
-	# elif Input.is_action_just_released("ui_left"):
-	# 	animation_name = detect_landing_animation("relax")
-	# 	StopBtn.on_stop_released(delta)
-	# else:
-	# if _velocity.x < 1:
-	#	animation_name = detect_landing_animation("wait")
-	#	GoBtn.on_wait_process(delta, animation_name)
-	#else:
-	#	animation_name = detect_landing_animation("relax")
-	#	GoBtn.on_relax_process(delta, animation_name)
-	
-	# Move is not on floor. Jump / Landing
-	# if Input.is_action_just_pressed("ui_select"):
-	#	animation_name = detect_landing_animation("landing")
-	#	JumpBtn.on_jump_process(delta, animation_name)
-	#	if not has_broke or not has_colected:
-	#		$AudioMove.set_stream(audio_jump)
-	
-	if Input.is_action_pressed("ui_select"):
+	elif Input.is_action_just_released("ui_left"):
+		animation_name = detect_landing_animation("relax")
+		StopBtn.on_stop_released(delta)
+	# Idle or relax 
+	else:
+		if _velocity.x < 1:
+			animation_name = detect_landing_animation("wait")
+			GoBtn.on_wait_process(delta, animation_name)
+		else:
+			animation_name = detect_landing_animation("relax")
+			GoBtn.on_relax_process(delta, animation_name)
+
+	# Move jump up / landing
+	if Input.is_action_just_pressed("ui_select"):
 		is_jumping = true
+		animation_name = detect_landing_animation("landing")
+		# JumpBtn.on_jump_process(delta, animation_name)
+		if not has_broke or not has_colected:
+			$AudioMove.set_stream(audio_jump)
+	elif Input.is_action_pressed("ui_select"):
 		animation_name = detect_landing_animation("landing")
 		JumpBtn.on_jump_process(delta, animation_name)
 		if not has_broke or not has_colected:
@@ -121,22 +111,14 @@ func get_input(delta: float) -> void:
 		if not has_colected or not has_colected:
 			$AudioMove.set_stream(audio_go)
 		$AudioMove.play()
+	
 
-
-			
 # Processes
 
 func _physics_process(delta: float) -> void:
-	var snap: Vector2 = Vector2.DOWN * 64 if !is_jumping else Vector2.ZERO
-	
-	get_input(delta)	
+	get_input(delta)
 	on_detect_collisions_process(delta)
-	
-	acceleration = calculate_friction()
-	_velocity = calculate_steering(delta)
-	_velocity = calculate_move_velocity(_velocity, acceleration, delta)
-	_velocity = move_and_slide_with_snap(_velocity, snap, FLOOR_NORMAL, true)
-	# Old values : _velocity = move_and_slide(_velocity, FLOOR_NORMAL)
+	_calc_velocity(delta)
 	
 	if is_on_floor():
 		is_jumping = Input.is_action_just_pressed("ui_select")
@@ -170,27 +152,12 @@ func _on_CollisionDetector_body_exited(body) -> void:
 		body.position.y -= mass / DIVISION_MASS
 
 
-func calculate_friction() -> Vector2:
-	# if _velocity.length() < 5:		_velocity = Vector2.ZERO
-	var friction_force = _velocity * friction
-	var drag_force = _velocity * _velocity.length() * drag
-	# if _velocity.length() < 100:		friction_force *= 3
-	acceleration += drag_force + friction_force
-	return acceleration
-
-
-func calculate_steering(delta) -> Vector2:
-	var rear_wheel = position - transform.x
-	var front_wheel = position + transform.x
-	var new_heading = (front_wheel - rear_wheel).normalized()
-	var d = new_heading.dot(_velocity.normalized())
-
-	if d > 0:
-		_velocity = _velocity.linear_interpolate(new_heading * _velocity.length(), drag)
-	if d < 0:
-		_velocity = -new_heading * min(_velocity.length(), max_speed / 2)
+func _calc_velocity(delta: float) -> void:
+	var snap: Vector2 = Vector2.DOWN * 64 if !is_jumping else Vector2.ZERO
 	
-	# rotation = new_heading.angle()
-	return _velocity
-		
+	acceleration = calculate_friction()
+	_velocity = calculate_steering(delta)
+	_velocity = calculate_move_velocity(_velocity, acceleration, delta)
+	_velocity = move_and_slide_with_snap(_velocity, snap, FLOOR_NORMAL, true)
+	# Old calc : _velocity = move_and_slide(_velocity, FLOOR_NORMAL)
 
