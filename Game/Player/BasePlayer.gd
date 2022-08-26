@@ -26,7 +26,9 @@ onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 
 func calculate_friction() -> Vector2:
-	# if _velocity.length() < 5: _velocity = Vector2.ZERO
+	if _velocity.length() < 5: 
+		_velocity = Vector2.ZERO
+		
 	var friction_force = _velocity * friction
 	var drag_force = _velocity * _velocity.length() * drag
 	# if _velocity.length() < 100: friction_force *= 3
@@ -45,28 +47,23 @@ func calculate_steering(delta) -> Vector2:
 	if d < 0:
 		_velocity = -new_heading * min(_velocity.length(), max_speed / 2)
 	
-	# rotation = new_heading.angle()
 	return _velocity
 		
 
-func calculate_move_velocity(
-	linear_velocity: Vector2, acceleration: Vector2, delta: float
-) -> Vector2:
-	var out := linear_velocity
+func calculate_move_velocity(delta: float) -> Vector2:
 	var direction := get_direction()
-	var is_jump_interrupted: bool = Input.is_action_just_released("ui_select") and out.y < 0.0
+	var is_jump_interrupted := Input.is_action_just_released("ui_select") and _velocity.y < 0.0
 	
-	# out.x = _speed.x  # * direction.x ## убивает релах
-	out += acceleration * delta
-	out.y += gravity + delta
+	_velocity += acceleration * delta
+	_velocity.y += gravity + delta
 	
 	if direction.y == -1.0:
-		out.y = direction.y * (max_height_jump + power)
+		_velocity.y = direction.y * (max_height_jump + power)
 		
 	if is_jump_interrupted:
-		out.y = 0.0
+		_velocity.y = 0.0
 		
-	return out
+	return _velocity
 
 
 func calculate_stomp_velocity(linear_velocity: Vector2, impulse: float) -> Vector2:
@@ -78,7 +75,7 @@ func calculate_stomp_velocity(linear_velocity: Vector2, impulse: float) -> Vecto
 # setters
 
 func set_power(val):
-	power = positive_max_value(val, max_power)
+	power = positive_max_value(val, max_power)	
 	if PowerBar:
 		PowerBar.set_progress_player()
 

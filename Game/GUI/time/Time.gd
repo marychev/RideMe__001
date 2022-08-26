@@ -33,6 +33,8 @@ func player_format():
 	var py = -8.8
 	var sx = -8.8
 	var sy = -8.8
+	var pw = -8.8
+	var ac = -8.8
 	
 	if not('Deleted Object' in str(PlayerScn)):
 		vx = PlayerScn._velocity.x 
@@ -41,9 +43,13 @@ func player_format():
 		py = PlayerScn.position.y
 		sx = PlayerScn.speed.x
 		sy = PlayerScn.speed.y
+		pw = PlayerScn.power
+		ac = PlayerScn.acceleration
 		
 	return """
-	Velocity: %d, %d
-	Position: %d, %d
-	Speed: 	  %d, %d
-	""" % [vx, vy, px, py, sx, sy]
+	Velocity:   %d, %d
+	Position:   %d, %d
+	Speed: 	    %d, %d
+	Power:	    %d
+	Acceleration: %s
+	""" % [vx, vy, px, py, sx, sy, pw, ac]

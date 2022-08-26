@@ -2,13 +2,13 @@ extends BasePlayer
 class_name Player
 
 # the max height of a stopm with road area to broken bike
-const HEIGHT_STOPM_ROAD = 10000
-const DIVISION_MASS = 10.0
+const HEIGHT_STOPM_ROAD := 8989.0
+const DIVISION_MASS := 10.0
 
 var mass: int = 100
 
-var is_jumping = false
-var align_speed = 0.2
+var is_jumping := false
+var align_speed := 0.2
 
 var audio_go = preload("res://media/move/go.wav")
 var audio_relax = preload("res://media/move/relax.wav")
@@ -24,20 +24,11 @@ func _ready() -> void:
 	$AudioMove.volume_db = 1
 
 
-func _on_CollisionDetector_area_entered(area: Area2D) -> void:
-	var root = area.get_node('../')
-	if 'Plank' in root.name:
-		if Input.is_action_pressed("ui_select"):
-			_velocity = calculate_stomp_velocity(_velocity, max_power+power)
-
-
 func on_detect_collisions_process(delta) -> void:
 	for i in get_slide_count():
 		var collision := get_slide_collision(i)
-		var body := collision.collider
-		
-		if 'MovingPlatform' in body.name:
-			body.move_down(delta)
+		if 'MovingPlatform' in collision.collider.name:
+			collision.collider.move_down(delta)
 
 
 func detect_landing_animation(current_animation_name: String) -> String:
@@ -56,10 +47,8 @@ func get_input(delta: float) -> void:
 	# Move right
 	if Input.is_action_just_pressed("ui_right"):
 		animation_name = detect_landing_animation("go")
-		# GoBtn.on_go_process(delta, animation_name)
 		$AudioMove.set_stream(audio_go)
-		if $AudioMove.playing == false:
-			$AudioMove.play()
+		# if $AudioMove.playing == false:			$AudioMove.play()
 	elif Input.is_action_pressed("ui_right"):
 		animation_name = detect_landing_animation("go")
 		GoBtn.on_go_process(delta, animation_name)
@@ -74,7 +63,6 @@ func get_input(delta: float) -> void:
 	# Move backward
 	elif Input.is_action_just_pressed("ui_left"):
 		animation_name = detect_landing_animation("stop")
-		# StopBtn.on_stop_process(delta)
 		$AudioMove.set_stream(audio_stop)
 		$AudioMove.play()
 	elif Input.is_action_pressed("ui_left"):
@@ -83,9 +71,10 @@ func get_input(delta: float) -> void:
 	elif Input.is_action_just_released("ui_left"):
 		animation_name = detect_landing_animation("relax")
 		StopBtn.on_stop_released(delta)
+		
 	# Idle or relax 
 	else:
-		if _velocity.x < 1:
+		if _velocity.x < 2.0:
 			animation_name = detect_landing_animation("wait")
 			GoBtn.on_wait_process(delta, animation_name)
 		else:
@@ -96,7 +85,6 @@ func get_input(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_select"):
 		is_jumping = true
 		animation_name = detect_landing_animation("landing")
-		# JumpBtn.on_jump_process(delta, animation_name)
 		if not has_broke or not has_colected:
 			$AudioMove.set_stream(audio_jump)
 	elif Input.is_action_pressed("ui_select"):
@@ -106,6 +94,7 @@ func get_input(delta: float) -> void:
 			if $AudioMove.playing == false:
 				$AudioMove.play()
 	elif Input.is_action_just_released("ui_select"):
+		is_jumping = false
 		animation_name = detect_landing_animation("landing")
 		JumpBtn.on_landing_process(delta, animation_name)
 		if not has_colected or not has_colected:
@@ -115,21 +104,14 @@ func get_input(delta: float) -> void:
 
 # Processes
 
-func _physics_process(delta: float) -> void:
-	get_input(delta)
-	on_detect_collisions_process(delta)
-	_calc_velocity(delta)
-	
-	if is_on_floor():
-		is_jumping = Input.is_action_just_pressed("ui_select")
-		rotation = lerp(rotation, get_floor_normal().angle() + PI/2, align_speed)
-
-	set_power(power + (max_power / 2 * delta))
+func _process(delta):
 	set_speed(_velocity.x)
+	on_detect_collisions_process(delta)
 
 	if anim_player.current_animation != 'collision':
 		modulate = Color(1, 1, 1)
-
+	
+	# prepare to die
 	if PlayerData.time_level < 5:
 		if anim_player.current_animation != 'collision':
 			anim_player.stop()
@@ -138,6 +120,22 @@ func _physics_process(delta: float) -> void:
 	if position.y > HEIGHT_STOPM_ROAD:
 		var die_player = load(PathData.PATH_DIE_PLAYER).new()
 		die_player.from_fell(self)
+
+
+func _physics_process(delta: float) -> void:
+	get_input(delta)
+	_calc_velocity(delta)
+	
+	if is_on_floor():
+		is_jumping = Input.is_action_just_pressed("ui_select")
+		rotation = lerp(rotation, get_floor_normal().angle() + PI/2, align_speed)
+
+
+func _on_CollisionDetector_area_entered(area: Area2D) -> void:
+	var root = area.get_node('../')
+	if 'Plank' in root.name:
+		if Input.is_action_pressed("ui_select"):
+			_velocity = calculate_stomp_velocity(_velocity, max_power+power)
 
 
 func _on_CollisionDetector_body_entered(body) -> void:
@@ -153,11 +151,12 @@ func _on_CollisionDetector_body_exited(body) -> void:
 
 
 func _calc_velocity(delta: float) -> void:
-	var snap: Vector2 = Vector2.DOWN * 64 if !is_jumping else Vector2.ZERO
+	var snap: Vector2 = Vector2.DOWN * 128 if !is_jumping else Vector2.ZERO
 	
 	acceleration = calculate_friction()
 	_velocity = calculate_steering(delta)
-	_velocity = calculate_move_velocity(_velocity, acceleration, delta)
+	_velocity = calculate_move_velocity(delta)
+	_velocity.x = max_value(_velocity.x, max_speed)
 	_velocity = move_and_slide_with_snap(_velocity, snap, FLOOR_NORMAL, true)
 	# Old calc : _velocity = move_and_slide(_velocity, FLOOR_NORMAL)
 

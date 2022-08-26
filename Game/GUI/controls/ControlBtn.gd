@@ -1,9 +1,9 @@
 extends TouchScreenButton
 class_name ControlBtn
 
-const POWER_GO: int = 10
-const POWER_RELAX: int = 6
-const POWER_WAIT: int = 2
+const POWER_GO := 10.0
+const POWER_RELAX := 4.0
+const POWER_WAIT := 2.0
 const MODULATE_A_OFF = 1
 const MODULATE_A_ON = 0.7
 
@@ -36,11 +36,12 @@ func _ready() -> void:
 func on_wait_process(dt: float, animation_name: String = "wait"):
 	animation_name = detect_collision_animation(animation_name)
 	anim_player.play(animation_name)
-	
-	# calc_power = player.power + (dt * player.max_power / POWER_WAIT)
-	# player.set_power(calc_power)
-	# calc_speed = 0
-	# player.set_speed(calc_speed)
+	set_wait_power(dt)
+
+
+func set_wait_power(dt: float) -> void:
+	calc_power = player.power + (dt * player.max_power / POWER_WAIT)
+	player.set_power(calc_power)
 
 
 func detect_collision_animation(animation_name: String) -> String:

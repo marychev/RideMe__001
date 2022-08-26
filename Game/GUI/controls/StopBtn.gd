@@ -1,4 +1,4 @@
-extends "res://Game/GUI/controls/ControlBtn.gd"
+extends GoBtn
 class_name StopBtn
 
 # onready var has_backwards_riding: bool = false
@@ -9,6 +9,7 @@ class_name StopBtn
 func on_stop_process(dt: float, animation_name: String = "stop") -> void:
 	on_pressed()
 	player.acceleration = -player.transform.x * player.power
+	set_relax_power(dt)
 	
 	animation_name = detect_collision_animation(animation_name)
 	anim_player.play(animation_name)
@@ -16,9 +17,7 @@ func on_stop_process(dt: float, animation_name: String = "stop") -> void:
 	# has_backwards_riding = player.speed.x < 0
 	# if player.speed.x > allow_back_speed and not has_backwards_riding: player.set_speed(player.speed.x - dt * stop_value)
 	# else:		player.set_speed(allow_back_speed)
-	# player.set_power(player.power + (dt * player.max_power))
-
+	
 
 func on_stop_released(dt: float) -> void:
 	on_released()
-	# player.set_speed(player.speed.x + (dt*2))
