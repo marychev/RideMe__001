@@ -55,9 +55,9 @@ position = Vector2( 0.012085, 93.4622 )
 rotation = 0.00534731
 
 [node name="VisibilityEnabler" type="VisibilityEnabler2D" parent="."]
-position = Vector2( 3267.71, 654.646 )
+position = Vector2( 1232.8, 154.825 )
 rotation = 0.240855
-scale = Vector2( -328.582, -196.997 )
+scale = Vector2( -538.121, -196.997 )
 process_parent = true
 physics_process_parent = true
 

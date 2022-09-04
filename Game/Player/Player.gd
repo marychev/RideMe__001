@@ -154,9 +154,8 @@ func _calc_velocity(delta: float) -> void:
 	var snap: Vector2 = Vector2.DOWN * 128 if !is_jumping else Vector2.ZERO
 	
 	acceleration = calculate_friction()
-	_velocity = calculate_steering(delta)
+	# _velocity = calculate_steering(delta)
 	_velocity = calculate_move_velocity(delta)
-	_velocity.x = max_value(_velocity.x, max_speed)
-	_velocity = move_and_slide_with_snap(_velocity, snap, FLOOR_NORMAL, true)
+	_velocity.y = move_and_slide_with_snap(_velocity, snap, FLOOR_NORMAL, true).y
 	# Old calc : _velocity = move_and_slide(_velocity, FLOOR_NORMAL)
 
