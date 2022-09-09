@@ -16,7 +16,7 @@ func _init() -> void:
 func _ready() -> void:
 	apply_custom_background()
 	
-	var sky: Sprite = get_parent().get_node('Background/Sky')
+	var sky: Sprite = get_parent().get_node('Background/ParallaxSky/Sky')
 	sky.modulate = Color('#e6e588')
 
 

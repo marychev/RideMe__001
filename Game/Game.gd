@@ -20,12 +20,6 @@ func _ready() -> void:
 	$Player/Music.play()
 
 
-func _process(delta) -> void:
-	Time.start(delta, player)
-	# var FirstRoadBody: StaticBody2D = f_node("RoadBody")
-	# FirstRoadBody.repeat_two_sprites()
-	
-
-func _physics_process(delta) -> void:
+func _on_Music_finished():
 	if not $Player/Music.is_playing():
 		$Player/Music.play()

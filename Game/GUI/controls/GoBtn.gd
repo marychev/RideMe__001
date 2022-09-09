@@ -20,17 +20,12 @@ func on_relax_process(dt: float, animation_name : String = "relax"):
 
 
 func set_accelaration_power(dt: float) -> void:
-	var acceleration_power := player.power
-	var velocity_x := 0.0
+	var velocity_x := dt * ((player.max_power / POWER_GO) * 2)
+	# if rotation == 0:
+	# acceleration_power = player.max_power
+	player.acceleration = player.transform.x * player.power/2
 	
-	if rotation == 0:
-		acceleration_power = player.max_power
-		velocity_x = dt * ((player.max_power / POWER_GO) * 2)
-		
-	player.acceleration = player.transform.x * acceleration_power
-	
-	if player._velocity.x > 100.0 and velocity_x > 1.0:
-		player._velocity.x -= velocity_x
+	# if player._velocity.x > 100.0 and velocity_x > 1.0: player._velocity.x -= velocity_x
 
 
 func set_go_power(dt: float) -> void:
@@ -44,9 +39,9 @@ func set_relax_power(dt: float) -> void:
 	
 
 func modulate_switcher() -> void:
-	if player.power < player.max_power / 4:
+	if player.power < player.max_power / POWER_RELAX:
 		modulate = Color.red
-	elif player.power < player.max_power / 2:
+	elif player.power < player.max_power / POWER_WAIT:
 		modulate = Color.orange
 	else:
 		modulate = Color.white

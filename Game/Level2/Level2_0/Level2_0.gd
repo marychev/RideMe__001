@@ -10,17 +10,19 @@ onready var bd: ParallaxBackground = root.get_node("Background")
 func _init() -> void:
 	ID = 4
 	var section: = track_cfg.get_section(ID)
-	.init_level_track(section, ID)
+	init_level_track(section, ID)
 
-
+	
 func _ready() -> void:
 	apply_custom_background()
-
+	init_start_position()
+	
 
 func apply_custom_background() -> void:
 	root.remove_child(bd)
 	bd.call_deferred("free")
 	root.add_child(custom_background)
+	custom_background.visible = false
 
 
 static func create_for_cfg() -> void:

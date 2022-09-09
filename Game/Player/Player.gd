@@ -71,10 +71,9 @@ func get_input(delta: float) -> void:
 	elif Input.is_action_just_released("ui_left"):
 		animation_name = detect_landing_animation("relax")
 		StopBtn.on_stop_released(delta)
-		
 	# Idle or relax 
-	else:
-		if _velocity.x < 2.0:
+	elif not is_jumping:
+		if _velocity.x < 5.0 and _velocity.x > -5.0:
 			animation_name = detect_landing_animation("wait")
 			GoBtn.on_wait_process(delta, animation_name)
 		else:
@@ -83,7 +82,6 @@ func get_input(delta: float) -> void:
 
 	# Move jump up / landing
 	if Input.is_action_just_pressed("ui_select"):
-		is_jumping = true
 		animation_name = detect_landing_animation("landing")
 		if not has_broke or not has_colected:
 			$AudioMove.set_stream(audio_jump)
@@ -94,7 +92,6 @@ func get_input(delta: float) -> void:
 			if $AudioMove.playing == false:
 				$AudioMove.play()
 	elif Input.is_action_just_released("ui_select"):
-		is_jumping = false
 		animation_name = detect_landing_animation("landing")
 		JumpBtn.on_landing_process(delta, animation_name)
 		if not has_colected or not has_colected:

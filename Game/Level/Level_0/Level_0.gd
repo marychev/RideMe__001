@@ -1,6 +1,8 @@
 extends Node2D
 class_name Level_0
 
+export(Vector2) var start_position
+
 # Keys
 var ID: int
 var issue: String
@@ -15,7 +17,7 @@ var resource: String
 var level_id:int 
 var title: String
 
-var has_win: bool
+var has_win: bool = false
 
 var level_cfg: LevelCfg = load(PathData.LEVEL_MODEL).new()
 var track_cfg: TrackCfg = load(PathData.TRACK_MODEL).new()
@@ -26,13 +28,24 @@ func _init() -> void:
 	ID = 0
 	var section: = track_cfg.get_section(ID)
 	init_level_track(section, ID)
-	
-	has_win = false
 
 
 func _ready():
-	var sky: Sprite = get_parent().get_node('Background/ParallaxSky/sky')
+	var background := get_parent().get_node('Background')
+	var sky: Sprite = background.get_node('ParallaxSky/sky')
+	
 	sky.modulate = Color(1, 1, 1)
+	init_start_position()
+	background.visible = false
+	
+
+func init_start_position() -> void:
+	var player:Player = get_parent().get_node('Player')
+	if start_position != Vector2.ZERO and is_instance_valid(player):
+		player.global_position = start_position
+		player.position = start_position
+	else:
+		printerr("Player's start position were not initialisated!")
 
 
 func init_level_track(section: String, id_track: int) -> void:

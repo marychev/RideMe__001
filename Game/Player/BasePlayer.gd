@@ -60,9 +60,11 @@ func calculate_move_velocity(delta: float) -> Vector2:
 	_velocity += acceleration * delta
 	_velocity.y += gravity + delta
 	
+	# Jump
 	if direction.y == -1.0:
-		_velocity.y = direction.y * (max_height_jump + power)
-		
+		_velocity.y = direction.y * (power + (max_height_jump / 2))
+		_velocity.y = max_value(_velocity.y, max_height_jump)
+
 	if is_jump_interrupted:
 		_velocity.y = 0.0
 	

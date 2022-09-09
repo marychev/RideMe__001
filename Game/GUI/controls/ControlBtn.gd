@@ -26,11 +26,11 @@ func on_released() -> void:
 
 func _ready() -> void:
 	modulate.a = MODULATE_A_OFF
-	var res := connect("pressed", self, "on_pressed")
-	assert(not res, "ERROR: _ready connect on_pressed")
-	
-	res = connect("released", self, "on_released")
-	assert(not res, "ERROR: _ready connect on_released")
+	connect("pressed", self, "on_pressed")
+	connect("released", self, "on_released")
+	# var res := ... 
+	# assert(not res, "ERROR: _ready connect on_pressed")
+	# res = ... assert(not res, "ERROR: _ready connect on_released")
 
 
 func on_wait_process(dt: float, animation_name: String = "wait"):

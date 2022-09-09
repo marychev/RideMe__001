@@ -158,10 +158,10 @@ rotation = 1.5708
 shape = SubResource( 11 )
 
 [node name="Camera" type="Camera2D" parent="."]
-position = Vector2( 434.835, -40 )
+position = Vector2( 520, 0 )
 current = true
 smoothing_enabled = true
-smoothing_speed = 4.0
+smoothing_speed = 3.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "collision"

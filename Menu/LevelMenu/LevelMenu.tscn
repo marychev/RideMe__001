@@ -79,8 +79,8 @@ hint_tooltip = "Level 1"
 text = "Mountains"
 
 [node name="Level_2" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 8 )]
-margin_left = 240.0
-margin_right = 460.0
+margin_left = 260.0
+margin_right = 480.0
 hint_tooltip = "Level 2"
 text = "City"
 

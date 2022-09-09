@@ -49,46 +49,53 @@ tracks/2/keys = {
 
 [node name="Background" type="ParallaxBackground"]
 
-[node name="Sky" type="Sprite" parent="."]
+[node name="ParallaxSky" type="ParallaxLayer" parent="."]
+position = Vector2( 0, -956.931 )
+motion_scale = Vector2( 0.003, 0.01 )
+motion_mirroring = Vector2( 1368, 542 )
+
+[node name="Sky" type="Sprite" parent="ParallaxSky"]
 scale = Vector2( 1, 1.04 )
 texture = ExtResource( 1 )
 centered = false
 
-[node name="Road1368X100" type="Sprite" parent="."]
-modulate = Color( 0.643137, 0.654902, 0.596078, 0.768627 )
-position = Vector2( 981.045, 631.854 )
-rotation = -6.28319
-scale = Vector2( 0.576082, 0.637938 )
-texture = ExtResource( 5 )
+[node name="ParallaxBottom" type="ParallaxLayer" parent="."]
+modulate = Color( 0.764706, 0.811765, 0.623529, 0.913725 )
+position = Vector2( 0, 176.461 )
+z_index = -1
+motion_scale = Vector2( 0.01, 0 )
+motion_mirroring = Vector2( 1368, 0 )
 
-[node name="Road1368X101" type="Sprite" parent="Road1368X100"]
-position = Vector2( -1367.26, -0.875305 )
+[node name="Road1368X101" type="Sprite" parent="ParallaxBottom"]
 texture = ExtResource( 5 )
+centered = false
 
-[node name="Road1368X102" type="Sprite" parent="Road1368X100"]
-position = Vector2( 304.031, 101.077 )
-scale = Vector2( 1.00269, 1.08739 )
+[node name="Road1368X102" type="Sprite" parent="ParallaxBottom"]
+position = Vector2( 0, 85.9941 )
 texture = ExtResource( 5 )
+centered = false
 
-[node name="Road1368X101" type="Sprite" parent="Road1368X100/Road1368X102"]
-position = Vector2( -1367.26, 0.687073 )
-texture = ExtResource( 5 )
+[node name="ParallaxBottom2" type="ParallaxLayer" parent="."]
+modulate = Color( 0.580392, 0.686275, 0.435294, 0.682353 )
+position = Vector2( 0, 268.942 )
+motion_scale = Vector2( 0.02, 0 )
+motion_mirroring = Vector2( 980, 0 )
 
-[node name="CityHouses2-free" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0.823529 )
-position = Vector2( 538.432, 710.981 )
-scale = Vector2( -1.12, 1.12 )
+[node name="CityHouses2-free2" type="Sprite" parent="ParallaxBottom2"]
+position = Vector2( 0, 17.9594 )
 texture = ExtResource( 4 )
+centered = false
 
-[node name="CityHouses2-free2" type="Sprite" parent="CityHouses2-free"]
-position = Vector2( -989.445, -1.07587 )
-texture = ExtResource( 4 )
+[node name="ParallaxMain" type="ParallaxLayer" parent="."]
+position = Vector2( 0, -540.913 )
+motion_scale = Vector2( 0.01, 0 )
+motion_mirroring = Vector2( 1780, 0 )
 
-[node name="CityHouses2" type="Sprite" parent="."]
+[node name="CityHouses2" type="Sprite" parent="ParallaxMain"]
 modulate = Color( 1, 1, 1, 0.831373 )
-position = Vector2( 656.811, 272.885 )
-scale = Vector2( 1.44894, 1.44894 )
+scale = Vector2( 1.8, 1.6 )
 texture = ExtResource( 2 )
+centered = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 position = Vector2( -1158, 1280 )
