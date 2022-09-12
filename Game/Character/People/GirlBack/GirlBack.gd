@@ -5,6 +5,7 @@ var animation: AnimationPlayer
 var audio_girl_scream = preload("res://media/characters/girl_scream.wav")
 export var start_amination: = true
 
+
 func _ready() -> void:
 	set_physics_process(false)
 

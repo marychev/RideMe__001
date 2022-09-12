@@ -87,6 +87,7 @@ texture = ExtResource( 4 )
 centered = false
 
 [node name="ParallaxMain" type="ParallaxLayer" parent="."]
+modulate = Color( 1, 1, 1, 0.941176 )
 position = Vector2( 0, -540.913 )
 motion_scale = Vector2( 0.01, 0 )
 motion_mirroring = Vector2( 1780, 0 )

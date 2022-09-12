@@ -31,9 +31,6 @@ margin_left = 11.5147
 margin_top = 11.5147
 margin_right = 1333.51
 margin_bottom = 98.5147
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Bars" type="VBoxContainer" parent="Canvas/HBoxContainer"]
 margin_right = 410.0

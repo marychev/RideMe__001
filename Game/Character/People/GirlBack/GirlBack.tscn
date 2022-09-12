@@ -204,8 +204,6 @@ tracks/5/keys = {
 extents = Vector2( 44.6179, 87.6768 )
 
 [node name="GirlBack" type="RigidBody2D"]
-position = Vector2( 1.7, -238 )
-scale = Vector2( 0.8, 0.8 )
 collision_layer = 32
 mode = 3
 can_sleep = false

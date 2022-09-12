@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const SPEED_JUMP_ATTACK: float = 1.4
+const SPEED_JUMP_ATTACK: float = 1.8
 const HALF_HEIGHT_DOG: int = 18
 
 var animate_people = load(PathData.PATH_ANIMATE_PEOPLE).new()
@@ -56,7 +56,7 @@ func move_and_attack():
 	position.y += HALF_HEIGHT_DOG
 	
 	animate_people.do_collision(AnimationPlayer.new(), player)
-	player.power = 0	
+	player.power = 0
 	die_player.from_bitten_by_dog(player)
 	
 	set_is_attack(false)

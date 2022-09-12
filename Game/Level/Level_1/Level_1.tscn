@@ -39,6 +39,7 @@ rough = true
 
 [node name="Level_1" type="Node2D"]
 script = ExtResource( 5 )
+start_position = Vector2( 0, 200 )
 
 [node name="SkyClouds" parent="." instance=ExtResource( 16 )]
 
@@ -56,6 +57,9 @@ position = Vector2( 611.237, 384.359 )
 
 [node name="Level_1_0" type="Node" parent="."]
 
+[node name="KSMan" parent="Level_1_0" instance=ExtResource( 4 )]
+position = Vector2( 52034.5, 1200.27 )
+
 [node name="RoadBorderLevel1_0" parent="Level_1_0" instance=ExtResource( 17 )]
 position = Vector2( -4477.25, 140.483 )
 
@@ -70,14 +74,6 @@ position = Vector2( 108.678, 1372.42 )
 
 [node name="Start" parent="Level_1_0" instance=ExtResource( 15 )]
 position = Vector2( -60.5223, 1327.26 )
-scale = Vector2( 0.7, 0.6 )
-
-[node name="Start2" parent="Level_1_0" instance=ExtResource( 15 )]
-position = Vector2( -852.568, 1327.26 )
-scale = Vector2( 0.7, 0.6 )
-
-[node name="Start3" parent="Level_1_0" instance=ExtResource( 15 )]
-position = Vector2( -1656.47, 1327.26 )
 scale = Vector2( 0.7, 0.6 )
 
 [node name="RoadBorderLevel1_2" parent="Level_1_0" instance=ExtResource( 17 )]
@@ -319,9 +315,6 @@ applied_torque = 2.0
 
 [node name="Hourgrass6" parent="Level_1_3" instance=ExtResource( 11 )]
 position = Vector2( 51644.1, 1081.11 )
-
-[node name="KSMan" parent="Level_1_3" instance=ExtResource( 4 )]
-position = Vector2( 52476.3, 1008.54 )
 
 [node name="LampsSetFour" parent="Level_1_3" instance=ExtResource( 19 )]
 position = Vector2( 55980.1, 1364.6 )

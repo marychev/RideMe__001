@@ -41,16 +41,16 @@ position = Vector2( -59.343, 2613.67 )
 scale = Vector2( 0.9, 0.9 )
 
 [node name="BridgeLeft" parent="." instance=ExtResource( 1 )]
-position = Vector2( 3023.55, 2283.44 )
+position = Vector2( 2881.01, 2554.27 )
 
 [node name="MovingPlatform" parent="." instance=ExtResource( 26 )]
-position = Vector2( 4882.41, 2274.97 )
+position = Vector2( 4739.87, 2374.75 )
 
 [node name="MovingPlatform2" parent="." instance=ExtResource( 26 )]
-position = Vector2( 5221.04, 2266.73 )
+position = Vector2( 5078.5, 2366.51 )
 
 [node name="BridgeLRight" parent="." instance=ExtResource( 1 )]
-position = Vector2( 5729.2, 2031.46 )
+position = Vector2( 5586.66, 2302.29 )
 rotation = 0.240855
 
 [node name="RoadBorderLevelCity1" parent="." instance=ExtResource( 7 )]
@@ -86,7 +86,7 @@ position = Vector2( 2322.73, 1188.17 )
 position = Vector2( 2322.73, 1188.17 )
 
 [node name="BridgeLeft2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 12789.6, 2417.65 )
+position = Vector2( 12864.4, 2684.62 )
 
 [node name="MovingPlatform3" parent="." instance=ExtResource( 26 )]
 position = Vector2( 14657.6, 2421.07 )
@@ -101,15 +101,15 @@ position = Vector2( 678.1, -14.96 )
 position = Vector2( 1020.3, -22.96 )
 
 [node name="BridgeLRight5" parent="." instance=ExtResource( 1 )]
-position = Vector2( 16325.6, 2213.17 )
+position = Vector2( 16257.7, 2586.52 )
 rotation = 0.240855
 
 [node name="BridgeLRight6" parent="." instance=ExtResource( 1 )]
-position = Vector2( 17649.9, 2538.57 )
+position = Vector2( 17582, 2911.92 )
 rotation = 0.240855
 
 [node name="BridgeLRight7" parent="." instance=ExtResource( 1 )]
-position = Vector2( 18974.8, 2864.19 )
+position = Vector2( 18906.9, 3237.54 )
 rotation = 0.240855
 
 [node name="TreeRoadOneCity" parent="." instance=ExtResource( 6 )]

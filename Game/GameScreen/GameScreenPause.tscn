@@ -161,6 +161,7 @@ margin_right = 434.0
 margin_bottom = 440.0
 
 [node name="InnerSky" type="Sprite" parent="PauseRect"]
+visible = false
 position = Vector2( -27.7183, -17.6389 )
 scale = Vector2( 1.03579, 1.08 )
 z_index = -1

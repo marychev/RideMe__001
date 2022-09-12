@@ -1,12 +1,21 @@
 extends "res://Game/Player/Actor.gd"
 class_name KSMan
 
+const BOUND = 300
+
 onready var animation: AnimationPlayer = $AnimationPlayer
+
 
 
 func _ready() -> void:
 	set_physics_process(false)
 	_velocity.x = -speed.x if scale.x > 0 else speed.x
+
+
+func _process(delta: float) -> void:
+	if not animation.is_playing():
+		animation.play("walk")
+
 
 
 func _physics_process(delta: float) -> void:
@@ -16,11 +25,10 @@ func _physics_process(delta: float) -> void:
 
 func _on_StopmDetector_body_entered(body: Node) -> void:
 	if "Player" == body.name:
+		position.x += BOUND if scale.x > 0 else -BOUND
+		
 		var animate_people = load(PathData.PATH_ANIMATE_PEOPLE).new()
 		animate_people.do_collision(animation, body)
-
 		var die_player = load(PathData.PATH_DIE_PLAYER).new()
 		die_player.from_hir_person(body)
-
-		# body.get_node('AudioMove').set_stream(body.audio_broke)
-		# body.get_node('AudioMove').play()
+		

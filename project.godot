@@ -159,7 +159,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Game/Character/Hourgrass/Hourgrass.gd"
 }, {
-"base": "TouchScreenButton",
+"base": "GoBtn",
 "class": "JumpBtn",
 "language": "GDScript",
 "path": "res://Game/GUI/controls/JumpBtn.gd"

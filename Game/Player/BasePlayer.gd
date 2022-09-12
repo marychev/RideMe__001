@@ -31,26 +31,22 @@ func calculate_friction() -> Vector2:
 		
 	var friction_force = _velocity * friction
 	var drag_force = _velocity * _velocity.length() * drag
-	
-	if _velocity.length() < 100: 
-		friction_force *= 3
-	
 	acceleration += drag_force + friction_force
 	return acceleration
 
 
+"""
 func calculate_steering(delta) -> Vector2:
 	var rear_wheel = position - transform.x
 	var front_wheel = position + transform.x
 	var new_heading = (front_wheel - rear_wheel).normalized()
 	var d = new_heading.dot(_velocity.normalized())
-
 	if d > 0:
 		_velocity = _velocity.linear_interpolate(new_heading * _velocity.length(), drag)
 	# if d < 0:		_velocity = -new_heading * min(_velocity.length(), max_speed / 2)
-	
 	return _velocity
-		
+"""
+
 
 func calculate_move_velocity(delta: float) -> Vector2:
 	var direction := get_direction()
@@ -62,8 +58,7 @@ func calculate_move_velocity(delta: float) -> Vector2:
 	
 	# Jump
 	if direction.y == -1.0:
-		_velocity.y = direction.y * (power + (max_height_jump / 2))
-		_velocity.y = max_value(_velocity.y, max_height_jump)
+		_velocity.y = direction.y * (max_height_jump + power*0.4 + speed.x*0.3)
 
 	if is_jump_interrupted:
 		_velocity.y = 0.0
@@ -97,7 +92,6 @@ func set_power(val):
 
 func set_speed(val_x = null):
 	if val_x:
-		# speed.x = max_value(val_x, max_speed)
 		speed.x = val_x
 	if SpeedBar:
 		SpeedBar.set_progress_player()
@@ -105,7 +99,7 @@ func set_speed(val_x = null):
 
 func set_height_jump(val_y = null):
 	if val_y:
-		speed.y = max_value(val_y, max_height_jump)
+		_velocity.y = max_value(val_y, max_height_jump * 2)
 
 
 # Extra methods

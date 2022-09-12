@@ -62,8 +62,8 @@ animations = [ {
 extents = Vector2( 26.727, 33.4088 )
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 71.555
-height = 237.201
+radius = 85.9537
+height = 468.891
 
 [node name="Dog" type="KinematicBody2D"]
 position = Vector2( -13.773, -7.41624 )
@@ -84,7 +84,7 @@ shape = SubResource( 1 )
 position = Vector2( 27, -55 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MotionDetecter"]
-position = Vector2( 7.30254, 66.7522 )
+position = Vector2( -13.6114, 59.4432 )
 rotation = -1.57127
 shape = SubResource( 2 )
 

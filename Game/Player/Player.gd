@@ -5,7 +5,7 @@ class_name Player
 const HEIGHT_STOPM_ROAD := 8989.0
 const DIVISION_MASS := 10.0
 
-var mass: int = 100
+var mass: int = 40
 
 var is_jumping := false
 var align_speed := 0.2
@@ -73,7 +73,7 @@ func get_input(delta: float) -> void:
 		StopBtn.on_stop_released(delta)
 	# Idle or relax 
 	elif not is_jumping:
-		if _velocity.x < 5.0 and _velocity.x > -5.0:
+		if _velocity.x < 2 and _velocity.x > -2:
 			animation_name = detect_landing_animation("wait")
 			GoBtn.on_wait_process(delta, animation_name)
 		else:
@@ -154,5 +154,3 @@ func _calc_velocity(delta: float) -> void:
 	# _velocity = calculate_steering(delta)
 	_velocity = calculate_move_velocity(delta)
 	_velocity.y = move_and_slide_with_snap(_velocity, snap, FLOOR_NORMAL, true).y
-	# Old calc : _velocity = move_and_slide(_velocity, FLOOR_NORMAL)
-

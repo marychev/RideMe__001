@@ -20,6 +20,10 @@ func _ready() -> void:
 	$Player/Music.play()
 
 
+func _process(delta) -> void:
+	Time.start(delta, player)
+
+
 func _on_Music_finished():
 	if not $Player/Music.is_playing():
 		$Player/Music.play()
