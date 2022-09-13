@@ -9,6 +9,9 @@ func on_jump_process(dt: float, animation_name: String = "landing") -> void:
 	
 	set_go_power(dt)
 	player.set_height_jump(player._velocity.y)
+	# Velocity can be more than allowed max_speed when jump happen
+	player._velocity.x = player.max_value(player._velocity.x, player.max_speed * 2)
+	
 	
 
 func on_landing_process(dt: float, animation_name: String = "landing") -> void:

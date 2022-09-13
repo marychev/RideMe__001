@@ -56,7 +56,7 @@ tracks/0/keys = {
 
 [sub_resource type="CapsuleShape2D" id=3]
 radius = 15.8658
-height = 72.0158
+height = 82.7189
 
 [node name="KSMan" type="KinematicBody2D"]
 z_index = 1
@@ -90,7 +90,7 @@ anims/walk = SubResource( 5 )
 position = Vector2( 0, 20 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StopmDetector"]
-position = Vector2( 47.6951, 34.8278 )
+position = Vector2( 49.1816, 37.5035 )
 shape = SubResource( 3 )
 
 [node name="Audio" type="AudioStreamPlayer2D" parent="."]

@@ -39,7 +39,7 @@ rough = true
 
 [node name="Level_1" type="Node2D"]
 script = ExtResource( 5 )
-start_position = Vector2( 0, 200 )
+start_position = Vector2( 48000, 200 )
 
 [node name="SkyClouds" parent="." instance=ExtResource( 16 )]
 

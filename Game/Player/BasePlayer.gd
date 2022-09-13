@@ -59,7 +59,7 @@ func calculate_move_velocity(delta: float) -> Vector2:
 	# Jump
 	if direction.y == -1.0:
 		_velocity.y = direction.y * (max_height_jump + power*0.4 + speed.x*0.3)
-
+		
 	if is_jump_interrupted:
 		_velocity.y = 0.0
 	
@@ -77,9 +77,8 @@ func calculate_move_velocity(delta: float) -> Vector2:
 
 
 func calculate_stomp_velocity(linear_velocity: Vector2, impulse: float) -> Vector2:
-	var out := linear_velocity
-	out.y = -impulse
-	return out
+	linear_velocity.y = -impulse
+	return linear_velocity
 
 
 # setters
