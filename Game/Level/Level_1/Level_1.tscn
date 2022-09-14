@@ -39,7 +39,7 @@ rough = true
 
 [node name="Level_1" type="Node2D"]
 script = ExtResource( 5 )
-start_position = Vector2( 9500, 200 )
+start_position = Vector2( -150, 200 )
 
 [node name="SkyClouds" parent="." instance=ExtResource( 16 )]
 
@@ -136,8 +136,8 @@ position = Vector2( 13671.9, 1332.57 )
 position = Vector2( 18486, 140.577 )
 
 [node name="Crossroad" parent="Level_1_1" instance=ExtResource( 8 )]
-position = Vector2( 18539.1, 1361.41 )
-scale = Vector2( 0.32, 0.32 )
+position = Vector2( 18545, 1373.3 )
+scale = Vector2( 0.42, 0.42 )
 
 [node name="Lamp" parent="Level_1_1" instance=ExtResource( 7 )]
 position = Vector2( 18670.7, 1109.48 )
@@ -166,9 +166,6 @@ position = Vector2( 22920.7, 1370 )
 
 [node name="Puddle5" parent="Level_1_1" instance=ExtResource( 13 )]
 position = Vector2( 23280.7, 1370 )
-
-[node name="Puddle6" parent="Level_1_1" instance=ExtResource( 13 )]
-position = Vector2( 23620.7, 1370 )
 
 [node name="Puddle7" parent="Level_1_1" instance=ExtResource( 13 )]
 position = Vector2( 23954, 1370.49 )

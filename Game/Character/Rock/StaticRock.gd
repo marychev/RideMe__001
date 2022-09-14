@@ -10,6 +10,9 @@ func _on_StompDetector_body_entered(body: Node) -> void:
 		player_stomp_detecter.player = body
 		player_stomp_detecter.on_player_entered()
 
+		var animate_people = load(PathData.PATH_ANIMATE_PEOPLE).new()
+		animate_people.hit_player(body, 1)
+
 
 func _on_VisibilityEnabler2D_screen_exited():
 	queue_free()

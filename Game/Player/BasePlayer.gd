@@ -116,6 +116,5 @@ func max_value(value, max_value):
 	return max_value if value > max_value else value
 
 
-
 func positive_max_value(value, max_value):
 	return 0 if value < 0 else max_value(value, max_value)
