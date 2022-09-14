@@ -4,10 +4,10 @@
 [ext_resource path="res://Game/Character/Bench/Bench.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 20.2933, 11.2085 )
+extents = Vector2( 21.2131, 9.47669 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 3.80705, 7.47331 )
+extents = Vector2( 58.0486, 2.88657 )
 
 [node name="Bench" type="StaticBody2D"]
 position = Vector2( 89.6882, 61.5118 )
@@ -27,11 +27,13 @@ scale = Vector2( 131.585, 77.2899 )
 [node name="StompDetector" type="Area2D" parent="."]
 
 [node name="Collision" type="CollisionShape2D" parent="StompDetector"]
-position = Vector2( -47.8769, 36.5501 )
+position = Vector2( -49.7995, 28.3328 )
+rotation = 0.449016
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StompDetector"]
-position = Vector2( 40.3168, -9.39328 )
+position = Vector2( 19.7124, 0.0216446 )
+rotation = -0.587849
 shape = SubResource( 2 )
 
 [connection signal="screen_exited" from="VisibilityNotifier" to="." method="_on_VisibilityNotifier_screen_exited"]

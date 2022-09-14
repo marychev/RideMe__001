@@ -6,7 +6,7 @@ onready var btn_yes:TouchScreenButton  = $Nine/ButtonContainer/btn_yes
 
 const POWER_PRICE = 1
 const SPEED_PRICE = 1
-const JUMP_PRICE = 10
+const JUMP_PRICE = 1
 const audio_btn_pressed = preload("res://media/ui/btn_pressed.wav")
 const audio_btn_pay = preload("res://media/ui/btn_pay.wav")
 const audio_btn_error = preload("res://media/ui/btn_error.wav")

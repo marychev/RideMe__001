@@ -19,9 +19,6 @@ func on_player_entered() -> void:
 		elif player.speed.x > (player.max_speed * 90 / 100):
 			PlayerData.lives -= 50
 		
-		if PlayerData.lives > 0:
-			player.set_speed(-player.speed.x / 2)
-		else:
-			# die player from fell
+		if PlayerData.lives < 0:
 			var die_player = load(PathData.PATH_DIE_PLAYER).new()
 			die_player.from_broke_bike(player)
