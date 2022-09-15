@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/grass-sprite.png-5f6f0519bd21ce1f7c7016ba6abeba31.stex"
+path="res://.import/grass.png-835dbba0847a67962558b3f9f380eb49.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Character/Grass/assets/grass-sprite.png"
-dest_files=[ "res://.import/grass-sprite.png-5f6f0519bd21ce1f7c7016ba6abeba31.stex" ]
+source_file="res://Game/Character/Grass/assets/grass.png"
+dest_files=[ "res://.import/grass.png-835dbba0847a67962558b3f9f380eb49.stex" ]
 
 [params]
 
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

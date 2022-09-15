@@ -95,5 +95,6 @@ shape = SubResource( 3 )
 
 [node name="Audio" type="AudioStreamPlayer2D" parent="."]
 
+[connection signal="tree_entered" from="." to="." method="_on_KSMan_tree_entered"]
 [connection signal="screen_entered" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_entered"]
 [connection signal="body_entered" from="StopmDetector" to="." method="_on_StopmDetector_body_entered"]

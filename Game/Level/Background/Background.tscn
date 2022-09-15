@@ -65,7 +65,7 @@ centered = false
 [node name="ParallaxBottom" type="ParallaxLayer" parent="."]
 position = Vector2( 0, -242.09 )
 z_as_relative = false
-motion_scale = Vector2( 0.02, 0 )
+motion_scale = Vector2( 0.02, 0.01 )
 motion_mirroring = Vector2( 1165, 0 )
 __meta__ = {
 "_edit_group_": true
@@ -80,7 +80,7 @@ centered = false
 [node name="ParallaxMain" type="ParallaxLayer" parent="."]
 modulate = Color( 1, 1, 1, 0.980392 )
 position = Vector2( 0, -207.912 )
-motion_scale = Vector2( 0.01, 0 )
+motion_scale = Vector2( 0.01, 0.08 )
 motion_mirroring = Vector2( 1360, 0 )
 __meta__ = {
 "_edit_group_": true
