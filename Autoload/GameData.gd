@@ -1,5 +1,5 @@
 extends Node
-
+# GameData
 var current_level: Dictionary
 var current_track: Level_0
 

@@ -24,11 +24,11 @@ func _on_VisibilityNotifier_screen_exited() -> void:
 
 
 func player_do_anim_success(player: Player) -> void:
-	if player.anim_player.current_animation != 'success':
-		player.anim_player.play('success')
+	if player.anim_player.current_animation != PlayerData.ANIMATION_SUCCESS:
+		player.anim_player.play(PlayerData.ANIMATION_SUCCESS)
 
 
 func rm_counter_do_anim_success() -> void:
 	var _anim_player: AnimationPlayer = get_node(PathData.PATH_RMS_COUNTER + '/AnimationPlayer')
-	if _anim_player.current_animation != 'success':
-		_anim_player.play('success')
+	if _anim_player.current_animation != PlayerData.ANIMATION_SUCCESS:
+		_anim_player.play(PlayerData.ANIMATION_SUCCESS)

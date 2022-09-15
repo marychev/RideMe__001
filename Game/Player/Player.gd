@@ -105,14 +105,18 @@ func _process(delta):
 	set_speed(_velocity.x)
 	on_detect_collisions_process(delta)
 
-	if anim_player.current_animation != 'collision':
+	if not anim_player.current_animation in [
+		PlayerData.ANIMATION_COLLISION, 
+		PlayerData.ANIMATION_DANGER, 
+		PlayerData.ANIMATION_SUCCESS
+	]:
 		modulate = Color(1, 1, 1)
-	
+
 	# prepare to die
 	if PlayerData.time_level < 5:
-		if anim_player.current_animation != 'collision':
+		if anim_player.current_animation != PlayerData.ANIMATION_COLLISION:
 			anim_player.stop()
-		anim_player.play('collision')
+		anim_player.play(PlayerData.ANIMATION_COLLISION)
 		
 	if position.y > HEIGHT_STOPM_ROAD:
 		var die_player = load(PathData.PATH_DIE_PLAYER).new()

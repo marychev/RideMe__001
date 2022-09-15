@@ -1,10 +1,13 @@
 extends Node
-# GameData
+# PlayerData
 signal score_updated
 signal lives_updated
 signal rms_updated
 signal time_level_updated
 
+const ANIMATION_SUCCESS: String = "success"
+const ANIMATION_DANGER: String = "danger"
+const ANIMATION_COLLISION: String = "collision"
 
 var score: = 0 setget set_score # not used anywhere
 var time_level_count: int = 0
@@ -68,12 +71,16 @@ func set_score(value: int) -> void:
 func set_lives(value: int) -> void:
 	if not is_instance_valid(lives_value):
 		lives_value = get_node(PathData.PATH_LIVES_COUNTER_VALUE)
-		
-	lives = value
-	lives_value.text = str(lives)
 	
-	get_node(PathData.PATH_LIVES_COUNTER + "/AnimationPlayer").play('danger')
-	emit_signal("lives_updated")
+	if lives != value:
+		var anim_name = ANIMATION_DANGER if lives > value else ANIMATION_SUCCESS
+		var lives_counter_animation: AnimationPlayer = get_node(PathData.PATH_LIVES_COUNTER + "/AnimationPlayer")
+
+		lives = value
+		lives_value.text = str(lives)
+		lives_counter_animation.play(anim_name)
+
+		emit_signal("lives_updated")
 
 
 func set_rms(value: int, is_game_mode:= true) -> void:

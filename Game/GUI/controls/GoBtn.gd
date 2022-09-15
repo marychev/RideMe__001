@@ -20,8 +20,9 @@ func on_relax_process(dt: float, animation_name : String = "relax"):
 
 
 func set_accelaration_power(dt: float) -> void:
-	var acceleration_power = player.max_power / 2 
-	# if rotation == 0 and player._velocity.x < POWER_GO:		player._velocity.x += dt * POWER_GO
+	var acceleration_power = player.max_power / 2
+	if rotation == 0 and player.power <= 0:
+		acceleration_power = player.max_power / 8
 	player.acceleration = player.transform.x * acceleration_power
 
 

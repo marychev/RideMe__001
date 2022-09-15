@@ -46,10 +46,10 @@ func set_wait_power(dt: float) -> void:
 
 func detect_collision_animation(animation_name: String) -> String:
 	if anim_player.is_playing():
-		if anim_player.current_animation == "collision":
-			return "collision"
-		elif anim_player.current_animation == "success":
-			return "success"
+		if anim_player.current_animation == PlayerData.ANIMATION_COLLISION:
+			return PlayerData.ANIMATION_COLLISION
+		elif anim_player.current_animation == PlayerData.ANIMATION_SUCCESS:
+			return PlayerData.ANIMATION_SUCCESS
 
 	return animation_name
 

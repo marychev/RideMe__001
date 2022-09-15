@@ -81,7 +81,7 @@ rotation = -0.0711441
 scale = Vector2( 1.30184, 1.16259 )
 
 [node name="Grass2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 40712.1, 1244 )
+position = Vector2( 40734.1, 1267 )
 
 [node name="MovingPlatform6" parent="." instance=ExtResource( 2 )]
 position = Vector2( 41210.1, 1127.62 )

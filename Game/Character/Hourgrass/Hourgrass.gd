@@ -36,13 +36,13 @@ func _on_Hourgrass_body_shape_entered(
 func player_do_anim_success(_player: KinematicBody2D) -> void:
 	if is_instance_valid(_player):
 		player = _player
-	player.anim_player.play('success')
+	player.anim_player.play(PlayerData.ANIMATION_SUCCESS)
 
 
 func timeout_do_anim_success() -> void:
 	var timeout_animation: AnimationPlayer = get_node(PathData.PATH_TIMEOUT + "/AnimationPlayer")
-	if timeout_animation.current_animation != 'success':
-		timeout_animation.play('success')
+	if timeout_animation.current_animation != PlayerData.ANIMATION_SUCCESS:
+		timeout_animation.play(PlayerData.ANIMATION_SUCCESS)
 
 
 func get_value_of_time_level() -> int:

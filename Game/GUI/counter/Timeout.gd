@@ -14,7 +14,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	# animation
 	if PlayerData.time_level < 4:
-		$AnimationPlayer.play('danger')
+		$AnimationPlayer.play(PlayerData.ANIMATION_DANGER)
 
 
 func _on_Timer_timeout() -> void:
