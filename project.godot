@@ -59,6 +59,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Menu/BikeMenu/BikeMenu.gd"
 }, {
+"base": "Area2D",
+"class": "BonusArea",
+"language": "GDScript",
+"path": "res://Game/Character/script/BonusArea.gd"
+}, {
 "base": "Reference",
 "class": "Cfg",
 "language": "GDScript",
@@ -154,7 +159,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Game/Character/Grass/Grass.gd"
 }, {
-"base": "Area2D",
+"base": "BonusArea",
 "class": "Hourgrass",
 "language": "GDScript",
 "path": "res://Game/Character/Hourgrass/Hourgrass.gd"
@@ -304,12 +309,12 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Game/Character/Puddle/Puddle.gd"
 }, {
-"base": "Area2D",
+"base": "BonusArea",
 "class": "RM",
 "language": "GDScript",
 "path": "res://Game/Character/RM/RM.gd"
 }, {
-"base": "Area2D",
+"base": "BonusArea",
 "class": "Refit",
 "language": "GDScript",
 "path": "res://Game/Character/Refit/Refit.gd"
@@ -365,6 +370,7 @@ _global_script_class_icons={
 "BaseProgressDialog": "",
 "BikeCfg": "",
 "BikeMenu": "",
+"BonusArea": "",
 "Cfg": "",
 "CloudMove": "",
 "ContinueGameBtn": "",

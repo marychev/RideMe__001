@@ -45,7 +45,6 @@ scale = Vector2( 0.8, 0.8 )
 z_index = -1
 
 [node name="RM" parent="." instance=ExtResource( 1 )]
-position = Vector2( 23550.5, 1216.42 )
 
 [node name="Plank" parent="." instance=ExtResource( 5 )]
 position = Vector2( 23164, 1330.3 )
@@ -54,11 +53,10 @@ position = Vector2( 23164, 1330.3 )
 position = Vector2( 25225.6, 1349.46 )
 
 [node name="Refit" parent="." instance=ExtResource( 12 )]
-position = Vector2( 26255.1, 1224.92 )
 rotation = 3.04481
 
 [node name="Hourgrass5" parent="." instance=ExtResource( 7 )]
-position = Vector2( 28172.3, 998.632 )
+position = Vector2( 27878.8, 770.254 )
 
 [node name="BridgeLRight" parent="." instance=ExtResource( 9 )]
 position = Vector2( 28423.1, 1330.7 )
@@ -80,7 +78,6 @@ position = Vector2( 34199.1, 2085.46 )
 scale = Vector2( -1, 1 )
 
 [node name="RM2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 32806.2, 2094.62 )
 rotation = -0.0682499
 
 [node name="BridgeLeft2" parent="." instance=ExtResource( 9 )]
@@ -154,7 +151,6 @@ scale = Vector2( 0.8, 0.8 )
 z_index = -1
 
 [node name="RM3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 41331, 1241.93 )
 
 [node name="StaticRock" parent="." instance=ExtResource( 14 )]
 position = Vector2( 41405, 1483.93 )
@@ -176,7 +172,7 @@ rotation = 1.5708
 scale = Vector2( 0.236381, 0.328091 )
 
 [node name="Hourgrass6" parent="." instance=ExtResource( 7 )]
-position = Vector2( 42050.1, 1231.66 )
+position = Vector2( 24698.5, 1163.05 )
 
 [node name="Lamp15" parent="." instance=ExtResource( 4 )]
 position = Vector2( 42194.1, 1147.66 )
@@ -223,7 +219,7 @@ rotation = 1.5708
 scale = Vector2( 0.236381, 0.328091 )
 
 [node name="Hourgrass7" parent="." instance=ExtResource( 7 )]
-position = Vector2( 50454.7, 1054.23 )
+position = Vector2( 25382.8, 1173.74 )
 
 [node name="Lamp18" parent="." instance=ExtResource( 4 )]
 position = Vector2( 50459.9, 1009.74 )
@@ -264,7 +260,7 @@ scale = Vector2( 0.236381, 0.328091 )
 position = Vector2( 63662.9, 183.449 )
 
 [node name="Hourgrass8" parent="." instance=ExtResource( 7 )]
-position = Vector2( 64006, 1224.04 )
+position = Vector2( 26208.5, 1182.27 )
 
 [node name="Lamp20" parent="." instance=ExtResource( 4 )]
 position = Vector2( 63601.7, 1200.87 )
@@ -313,7 +309,7 @@ position = Vector2( 67784.3, 1323.72 )
 position = Vector2( 68144.4, 183.449 )
 
 [node name="Hourgrass9" parent="." instance=ExtResource( 7 )]
-position = Vector2( 68012.3, 1148.74 )
+position = Vector2( 27102.9, 1059.27 )
 
 [node name="Bench15" parent="." instance=ExtResource( 2 )]
 position = Vector2( 68290.3, 1362.74 )
@@ -370,7 +366,7 @@ scale = Vector2( 0.8, 0.8 )
 z_index = -1
 
 [node name="Hourgrass10" parent="." instance=ExtResource( 7 )]
-position = Vector2( 76824.5, 1114.74 )
+position = Vector2( 28690.5, 1180.36 )
 
 [node name="Bench21" parent="." instance=ExtResource( 2 )]
 position = Vector2( 76808.5, 1350.74 )
@@ -398,7 +394,7 @@ position = Vector2( 2, -57 )
 position = Vector2( 79618.5, 1367.25 )
 
 [node name="Hourgrass11" parent="." instance=ExtResource( 7 )]
-position = Vector2( 80866.5, 1094.74 )
+position = Vector2( 29390.1, 1328.36 )
 
 [node name="RoadBorderLevel1_10" parent="." instance=ExtResource( 8 )]
 position = Vector2( 81588, 183.449 )
@@ -413,7 +409,7 @@ position = Vector2( 1, -29 )
 position = Vector2( 2, -57 )
 
 [node name="Hourgrass12" parent="." instance=ExtResource( 7 )]
-position = Vector2( 83564.8, 1267.49 )
+position = Vector2( 30372.3, 1583.99 )
 
 [node name="Finish" parent="." instance=ExtResource( 16 )]
 position = Vector2( 85459.7, 1350.74 )

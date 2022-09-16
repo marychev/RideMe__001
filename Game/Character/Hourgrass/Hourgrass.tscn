@@ -11,7 +11,7 @@ extents = Vector2( 26.3023, 40.0645 )
 script = ExtResource( 3 )
 
 [node name="Sprite" parent="." index="0"]
-position = Vector2( 0, -2.97136 )
+position = Vector2( 0, -10 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" parent="." index="1"]
@@ -21,5 +21,3 @@ shape = SubResource( 1 )
 [node name="VisibilityNotifier" parent="." index="3"]
 position = Vector2( 0, 54 )
 scale = Vector2( 138, 44 )
-
-[connection signal="body_shape_entered" from="." to="." method="_on_Hourgrass_body_shape_entered"]
