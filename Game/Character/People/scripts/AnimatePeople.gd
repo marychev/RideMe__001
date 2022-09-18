@@ -25,7 +25,7 @@ func hit_player(player: Player, power_hit: int = 1) -> void:
 func player_hit_person(player: Player) -> void:
 	hit_player(player, 0)
 	if PlayerData.lives > 25:
-		PlayerData.lives /= 2
+		PlayerData.lives -= 40
 	else:
 		PlayerData.lives = 0
 		player.anim_player.get_animation(COLLISION_ANIMATE).set_loop(true)

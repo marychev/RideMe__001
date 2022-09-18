@@ -12,6 +12,9 @@ onready var is_attack: bool = false
 onready var start_position: Vector2 = position
 
 
+func _ready() -> void:
+	set_physics_process(false)
+
 
 func _physics_process(delta):
 	# Moving from player
@@ -55,8 +58,8 @@ func move_and_attack():
 	position.x += HALF_HEIGHT_DOG * 10
 	position.y += HALF_HEIGHT_DOG
 	
-	animate_people.do_collision(AnimationPlayer.new(), player)
-	player.power = 0
+	animate_people.do_collision(player.anim_player, player)
+	player.power -= 20
 	die_player.from_bitten_by_dog(player)
 	
 	set_is_attack(false)

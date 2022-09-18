@@ -63,7 +63,7 @@ extents = Vector2( 26.727, 33.4088 )
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 85.9537
-height = 468.891
+height = 644.783
 
 [node name="Dog" type="KinematicBody2D"]
 position = Vector2( -13.773, -7.41624 )
@@ -91,6 +91,12 @@ shape = SubResource( 2 )
 [node name="Audio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
 volume_db = 4.0
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+position = Vector2( 33.674, 20.2043 )
+scale = Vector2( 133.675, 47.9189 )
+process_parent = true
+physics_process_parent = true
 
 [connection signal="body_entered" from="MotionDetecter" to="." method="_on_MotionDetecter_body_entered"]
 [connection signal="body_exited" from="MotionDetecter" to="." method="_on_MotionDetecter_body_exited"]

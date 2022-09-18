@@ -16,3 +16,5 @@ func _on_StompDetector_body_entered(body: Node) -> void:
 		
 		var animate_people = load(PathData.PATH_ANIMATE_PEOPLE).new()
 		animate_people.hit_player(body, 0)
+		
+		body._velocity.x -= 4

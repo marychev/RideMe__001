@@ -5,7 +5,6 @@
 [ext_resource path="res://Game/Character/Crossroads/Crossroads.gd" type="Script" id=6]
 
 [node name="Crossroads" type="Node2D"]
-scale = Vector2( 0.456429, 0.414936 )
 z_index = 1
 script = ExtResource( 6 )
 __meta__ = {
@@ -13,7 +12,7 @@ __meta__ = {
 }
 
 [node name="crossroads" type="Sprite" parent="."]
-position = Vector2( 12.9045, 81.64 )
+position = Vector2( -24.0416, 33.9411 )
 z_index = -1
 texture = ExtResource( 1 )
 

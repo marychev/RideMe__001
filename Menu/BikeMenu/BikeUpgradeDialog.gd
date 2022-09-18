@@ -1,15 +1,18 @@
 extends PopupDialog
 
-onready var field_log: FieldLog = preload("res://components/field_log/FieldLog.gd").new()
-onready var btn_no:TouchScreenButton  = $Nine/ButtonContainer/btn_no
-onready var btn_yes:TouchScreenButton  = $Nine/ButtonContainer/btn_yes
-
-const POWER_PRICE = 1
-const SPEED_PRICE = 1
+const POWER_PRICE:int = 1
+const LIMIT_POWER_PRICE:int = 900
+const SPEED_PRICE:int = 1
+const LIMIT_SPEED_PRICE:int = 1000
 const JUMP_PRICE = 1
+const LIMIT_JUMP_PRICE:int = 620
 const audio_btn_pressed = preload("res://media/ui/btn_pressed.wav")
 const audio_btn_pay = preload("res://media/ui/btn_pay.wav")
 const audio_btn_error = preload("res://media/ui/btn_error.wav")
+
+onready var field_log: FieldLog = preload("res://components/field_log/FieldLog.gd").new()
+onready var btn_no:TouchScreenButton  = $Nine/ButtonContainer/btn_no
+onready var btn_yes:TouchScreenButton  = $Nine/ButtonContainer/btn_yes
 
 onready var title: = "Upgrade "
 onready var grid:GridContainer = $Nine/Grid
@@ -36,6 +39,10 @@ func _ready():
 
 
 func _on_btn_power_add_pressed() -> void:
+	if LIMIT_POWER_PRICE <= PlayerData.player_bike.max_power + power_added_rms:
+		field_log.error_audio("Power limit reached!", $AudioStreamPlayer2D, audio_btn_error)
+		return
+		
 	if on_btn_added(POWER_PRICE):
 		power_added_rms += POWER_PRICE
 		power_added.set_text("+" + str(power_added_rms))
@@ -57,6 +64,10 @@ func _on_btn_power_del_released() -> void:
 
 
 func _on_btn_speed_add_pressed() -> void:
+	if LIMIT_SPEED_PRICE <= PlayerData.player_bike.max_speed + speed_added_rms:
+		field_log.error_audio("Speed limit reached!", $AudioStreamPlayer2D, audio_btn_error)
+		return
+		
 	if on_btn_added(SPEED_PRICE):
 		speed_added_rms += SPEED_PRICE
 		speed_added.set_text("+" + str(speed_added_rms))
@@ -78,6 +89,10 @@ func _on_btn_speed_del_released() -> void:
 
 
 func _on_btn_jump_add_pressed() -> void:
+	if LIMIT_JUMP_PRICE <= PlayerData.player_bike.max_height_jump + jump_added_rms:
+		field_log.error_audio("Jump limit reached!", $AudioStreamPlayer2D, audio_btn_error)
+		return
+		
 	if on_btn_added(JUMP_PRICE):
 		jump_added_rms += JUMP_PRICE
 		jump_added.set_text("+" + str(jump_added_rms))
@@ -137,8 +152,9 @@ func _on_btn_yes_pressed():
 			$AudioStreamPlayer2D.set_stream(audio_btn_pay)
 		
 		$AudioStreamPlayer2D.play()
-		yield(get_tree().create_timer(1), "timeout")
+		yield(get_tree().create_timer(field_log.TIMEOUT_CLEAR), "timeout")
 		var res := get_tree().reload_current_scene()
+		
 		if res != OK: 
 			printerr("ERROR: " + str(self) + " " + str(res) + "_on_btn_yes_pressed and reload_current_scene")
 
@@ -171,9 +187,7 @@ func on_btn_added(price) -> bool:
 		$AudioStreamPlayer2D.play()
 		return true
 	else:
-		field_log.error("Have not enough the Rms")
-		$AudioStreamPlayer2D.set_stream(audio_btn_error)
-		$AudioStreamPlayer2D.play()
+		field_log.error_audio("Have not enough the Rms!", $AudioStreamPlayer2D, audio_btn_error)
 		return false
 		
 

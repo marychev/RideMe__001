@@ -24,26 +24,22 @@ position = Vector2( 50872.4, 133.227 )
 z_index = -1
 
 [node name="Crossroads2" parent="." instance=ExtResource( 13 )]
-position = Vector2( 51526.6, 1331.75 )
+position = Vector2( 51515.4, 1331.53 )
 
 [node name="Lamp0" parent="Crossroads2" instance=ExtResource( 8 )]
-position = Vector2( -898.109, -433.182 )
-scale = Vector2( 1.31455, 1.44601 )
+position = Vector2( -872.882, -259.958 )
 z_index = -4
 
 [node name="Lamp1" parent="Crossroads2" instance=ExtResource( 8 )]
-position = Vector2( -363.633, -429.827 )
-scale = Vector2( 1.31455, 1.44601 )
+position = Vector2( -338.406, -256.603 )
 z_index = -4
 
 [node name="Lamp3" parent="Crossroads2" instance=ExtResource( 8 )]
-position = Vector2( 176.867, -429.827 )
-scale = Vector2( 1.31455, 1.44601 )
+position = Vector2( 202.094, -256.603 )
 z_index = -4
 
 [node name="Lamp4" parent="Crossroads2" instance=ExtResource( 8 )]
-position = Vector2( 661.695, -436.269 )
-scale = Vector2( 1.31455, 1.44601 )
+position = Vector2( 686.922, -263.045 )
 z_index = -4
 
 [node name="Refit" parent="." instance=ExtResource( 6 )]

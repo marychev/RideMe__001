@@ -18,6 +18,13 @@ func error(message: String):
 	show_hide(message, field_log_instanse)
 
 
+func error_audio(message: String, audio_stream: AudioStreamPlayer2D, track: Resource) -> void:
+	clear()
+	error(message)
+	audio_stream.set_stream(track)
+	audio_stream.play()
+
+
 func info(message: String):
 	var field_log_instanse: FieldLog = load("res://components/field_log/FieldLog.tscn").instance()
 	show_hide(message, field_log_instanse)

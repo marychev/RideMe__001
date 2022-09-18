@@ -15,9 +15,9 @@ func on_player_entered() -> void:
 		PlayerData.lives -= 1
 		
 		if player.speed.x > player.max_speed / 2:
-			PlayerData.lives -= 20
+			PlayerData.lives -= 10
 		elif player.speed.x > (player.max_speed * 90 / 100):
-			PlayerData.lives -= 50
+			PlayerData.lives -= 30
 		
 		if PlayerData.lives < 0:
 			var die_player = load(PathData.PATH_DIE_PLAYER).new()

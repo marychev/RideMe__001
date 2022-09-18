@@ -45,6 +45,7 @@ scale = Vector2( 0.8, 0.8 )
 z_index = -1
 
 [node name="RM" parent="." instance=ExtResource( 1 )]
+position = Vector2( 26948.5, 741.357 )
 
 [node name="Plank" parent="." instance=ExtResource( 5 )]
 position = Vector2( 23164, 1330.3 )
@@ -53,6 +54,7 @@ position = Vector2( 23164, 1330.3 )
 position = Vector2( 25225.6, 1349.46 )
 
 [node name="Refit" parent="." instance=ExtResource( 12 )]
+position = Vector2( 25915.2, 875.256 )
 rotation = 3.04481
 
 [node name="Hourgrass5" parent="." instance=ExtResource( 7 )]
@@ -78,6 +80,7 @@ position = Vector2( 34199.1, 2085.46 )
 scale = Vector2( -1, 1 )
 
 [node name="RM2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 26948.5, 741.357 )
 rotation = -0.0682499
 
 [node name="BridgeLeft2" parent="." instance=ExtResource( 9 )]
@@ -151,6 +154,7 @@ scale = Vector2( 0.8, 0.8 )
 z_index = -1
 
 [node name="RM3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 26948.5, 741.357 )
 
 [node name="StaticRock" parent="." instance=ExtResource( 14 )]
 position = Vector2( 41405, 1483.93 )

@@ -19,9 +19,9 @@ func _on_body_entered(body):
 func _process(delta):
 	if is_into and player:
 		if player.power > 100:
-			player.power -= 4
+			player.power -= 1
 		if player._velocity.x > 100:
-			player._velocity.x -= 4
+			player._velocity.x -= 2
 		if PlayerData.lives < 100:
 			PlayerData.lives += 1
 
