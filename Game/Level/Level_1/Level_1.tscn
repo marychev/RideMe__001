@@ -39,7 +39,7 @@ rough = true
 
 [node name="Level_1" type="Node2D"]
 script = ExtResource( 5 )
-start_position = Vector2( -150, 200 )
+start_position = Vector2( 31500, 200 )
 
 [node name="SkyClouds" parent="." instance=ExtResource( 16 )]
 
@@ -220,14 +220,16 @@ physics_material_override = SubResource( 3 )
 position = Vector2( 32249.4, 1032.34 )
 
 [node name="Plank" parent="Level_1_2" instance=ExtResource( 9 )]
-position = Vector2( 32105.3, 1261.65 )
+position = Vector2( 32269.3, 1270.14 )
 
 [node name="Lamp" parent="Level_1_2" instance=ExtResource( 7 )]
 position = Vector2( 27388.6, 1064.52 )
 z_index = -1
 
 [node name="Plank2" parent="Level_1_2" instance=ExtResource( 9 )]
-position = Vector2( 33360.9, 1285.41 )
+position = Vector2( 33499.5, 1259.95 )
+mass = 200.0
+gravity_scale = 2.0
 
 [node name="RoadBorderLevel1" parent="Level_1_2" instance=ExtResource( 17 )]
 position = Vector2( 37151.4, 140.675 )

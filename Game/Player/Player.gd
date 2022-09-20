@@ -24,13 +24,6 @@ func _ready() -> void:
 	$AudioMove.volume_db = 1
 
 
-func on_detect_collisions_process(delta) -> void:
-	for i in get_slide_count():
-		var collision := get_slide_collision(i)
-		if 'MovingPlatform' in collision.collider.name:
-			collision.collider.move_down(delta)
-
-
 func detect_landing_animation(current_animation_name: String) -> String:
 	if not is_on_floor():
 		current_animation_name = "landing"
@@ -73,7 +66,7 @@ func get_input(delta: float) -> void:
 		StopBtn.on_stop_released(delta)
 	# Idle or relax 
 	elif not is_jumping:
-		if _velocity.x < 2 and _velocity.x > -2:
+		if _velocity.x < 10 and _velocity.x > -10:
 			animation_name = detect_landing_animation("wait")
 			GoBtn.on_wait_process(delta, animation_name)
 		else:
@@ -101,16 +94,15 @@ func get_input(delta: float) -> void:
 
 # Processes
 
-func _process(delta):
+func _process(delta: float) -> void:
 	set_speed(_velocity.x)
-	on_detect_collisions_process(delta)
 
 	if not anim_player.current_animation in [
 		PlayerData.ANIMATION_COLLISION, 
 		PlayerData.ANIMATION_DANGER, 
 		PlayerData.ANIMATION_SUCCESS
 	]:
-		modulate = Color(1, 1, 1)
+		modulate = Color.white
 
 	# prepare to die
 	if PlayerData.time_level < 5:
@@ -132,20 +124,13 @@ func _physics_process(delta: float) -> void:
 		rotation = lerp(rotation, get_floor_normal().angle() + PI/2, align_speed)
 
 
-func _on_CollisionDetector_area_entered(area: Area2D) -> void:
-	var root = area.get_node('../')
-	if 'Plank' in root.name:
-		if Input.is_action_pressed("ui_select"):
-			_velocity = calculate_stomp_velocity(_velocity, max_power+power)
-
-
-func _on_CollisionDetector_body_entered(body) -> void:
+func _on_CollisionDetector_body_entered(body: Node2D) -> void:
 	if 'MovingPlatform' in body.name:
 		body.has_move_up = false
 		body.position.y += mass / DIVISION_MASS
 
 
-func _on_CollisionDetector_body_exited(body) -> void:
+func _on_CollisionDetector_body_exited(body: Node2D) -> void:
 	if 'MovingPlatform' in body.name:
 		body.has_move_up = true
 		body.position.y -= mass / DIVISION_MASS

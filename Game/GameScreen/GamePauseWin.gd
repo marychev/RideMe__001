@@ -48,10 +48,9 @@ func set_title_and_rect_color(title: Label, pause_rect: ColorRect):
 
 
 func get_info() -> String:
-	# TODO: Nill + string error
 	if GameData.current_track.title:
-		return GameData.current_track.title + ": " + GameData.current_track.issue.to_lower()
-	return ": " + GameData.current_track.issue.to_lower()
+		return GameData.current_track.title + ": " + GameData.current_track.init_issue()
+	return ": " + GameData.current_track.init_issue()
 
 
 func update_as_win_cfg():

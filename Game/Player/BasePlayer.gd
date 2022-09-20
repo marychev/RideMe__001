@@ -76,11 +76,6 @@ func calculate_move_velocity(delta: float) -> Vector2:
 	return _velocity
 
 
-func calculate_stomp_velocity(linear_velocity: Vector2, impulse: float) -> Vector2:
-	linear_velocity.y = -impulse
-	return linear_velocity
-
-
 # setters
 
 func set_power(val):

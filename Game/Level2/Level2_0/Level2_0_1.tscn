@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Game/Character/Bridge/BridgeLeft.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Road/upder_constarction/UpderConstarctionMin.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Game/Level2/assets/road_border.png" type="Texture" id=3]
+[ext_resource path="res://Game/Character/MovingPanel/MovingPlatformVertical.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Game/Character/Hourgrass/Hourgrass.gd" type="Script" id=5]
 [ext_resource path="res://Game/Level2/RoadBorderLevelCity.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Game/Character/RM/RM.tscn" type="PackedScene" id=17]
@@ -123,21 +124,11 @@ position = Vector2( 31364.5, 2724.56 )
 [node name="MovingPlatform4" parent="." instance=ExtResource( 23 )]
 position = Vector2( 34302.4, 2856.18 )
 
-[node name="RoadBorder" type="Sprite" parent="MovingPlatform4"]
-position = Vector2( -69.0732, -30.8503 )
-z_index = -1
-texture = ExtResource( 3 )
-
-[node name="RoadBorder2" type="Sprite" parent="MovingPlatform4"]
-position = Vector2( 73.0244, -29.5137 )
-z_index = -1
-texture = ExtResource( 3 )
-
-[node name="MovingPlatform2" parent="." instance=ExtResource( 23 )]
-position = Vector2( 34713.9, 2961.88 )
+[node name="MovingPlatformVertical" parent="." instance=ExtResource( 4 )]
+position = Vector2( 34874.9, 2963.24 )
 
 [node name="RM4" parent="." instance=ExtResource( 17 )]
-position = Vector2( 34874.9, 2835.46 )
+position = Vector2( 34935.4, 2845.54 )
 z_index = 1
 
 [node name="RM5" parent="RM4" instance=ExtResource( 17 )]
@@ -152,15 +143,10 @@ z_index = 1
 position = Vector2( 685.398, 209.14 )
 z_index = 1
 
-[node name="RoadBorderSet13" parent="." instance=ExtResource( 26 )]
-position = Vector2( 34661.2, 3611.07 )
-rotation = -1.55819
-z_index = 1
-
 [node name="BridgeLeft" parent="." instance=ExtResource( 1 )]
-position = Vector2( 35031.3, 2953.85 )
+position = Vector2( 35273.2, 3533.41 )
 
 [node name="RoadBorderSet14" parent="BridgeLeft" instance=ExtResource( 26 )]
-position = Vector2( -0.300774, 283.402 )
+position = Vector2( 53.7969, 63.1628 )
 rotation = -0.00323539
 z_index = -1
