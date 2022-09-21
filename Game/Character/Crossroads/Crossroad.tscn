@@ -4,7 +4,6 @@
 [ext_resource path="res://Game/Character/Crossroads/assets/crossroads.png" type="Texture" id=2]
 
 [node name="Crossroad" type="Node2D"]
-scale = Vector2( 0.456429, 0.414936 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -12,9 +11,10 @@ __meta__ = {
 
 [node name="crossroads" type="Sprite" parent="."]
 texture = ExtResource( 2 )
+centered = false
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
-position = Vector2( 0, 10 )
+position = Vector2( 61.4026, 34.0271 )
 scale = Vector2( 18.6004, 14.6224 )
 process_parent = true
 physics_process_parent = true

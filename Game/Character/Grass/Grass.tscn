@@ -47,7 +47,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 0.388235, 0.701961, 0.227451, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.592157, 0.698039, 0.337255, 1 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:position")
@@ -59,7 +59,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 8, 4 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 4, 2 ) ]
 }
 
 [sub_resource type="ParticlesMaterial" id=7]

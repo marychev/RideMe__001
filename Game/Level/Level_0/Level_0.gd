@@ -42,7 +42,7 @@ func _ready():
 func init_start_position() -> void:
 	var player:Player = get_parent().get_node('Player')
 	if start_position != Vector2.ZERO and is_instance_valid(player):
-		player.global_position = start_position
+		# player.global_position = start_position
 		player.position = start_position
 	else:
 		printerr("Player's start position were not initialisated!")
@@ -78,8 +78,8 @@ func are_you_win() -> bool:
 static func create_for_cfg() -> void:
 	var _resource: = "res://Game/Level/Level_0/Level_0.tscn"
 	var _texture: = "res://Game/Level/assets/slides/track-00.png"
-	var _num_win = 2
-	var _init_time_level = 100
+	var _num_win = 4
+	var _init_time_level = 30
 	var _price = 0
 	var _issue: = "First experience: сollect the %s hourgrass"
 	var _state: = LevelTrackStates.ACTIVE

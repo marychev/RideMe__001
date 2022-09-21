@@ -7,10 +7,11 @@
 extents = Vector2( 21.2131, 9.47669 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 58.0486, 2.88657 )
+extents = Vector2( 58.0486, 5.13667 )
 
 [node name="Bench" type="StaticBody2D"]
 position = Vector2( 89.6882, 61.5118 )
+z_index = 1
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -32,7 +33,7 @@ rotation = 0.449016
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StompDetector"]
-position = Vector2( 19.7124, 0.0216446 )
+position = Vector2( 11.2872, 8.42947 )
 rotation = -0.587849
 shape = SubResource( 2 )
 

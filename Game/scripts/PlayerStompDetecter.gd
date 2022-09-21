@@ -1,7 +1,7 @@
 extends Node
 class_name PlayerStompDetecter
 
-var player: KinematicBody2D
+var player: Player
 var audio_broke_bike = preload("res://media/move/broken.wav")
 
 

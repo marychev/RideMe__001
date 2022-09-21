@@ -2,7 +2,7 @@ extends "res://Game/GameScreen/GamePauseDie.gd"
 class_name GamePauseWin
 
 
-var rect_color_win: = Color(0.25, 0.56, 0.34, 0.8) 		 # 428f57
+var rect_color_win: = Color(0.25, 0.56, 0.34, 0.8)
 
 
 func do_init(title: Label, pause_rect: ColorRect) -> void:

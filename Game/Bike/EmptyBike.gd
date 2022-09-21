@@ -10,6 +10,8 @@ var max_speed: float
 var max_height_jump: float
 var power: float
 var max_power: float
+var lives: float
+var max_lives: float
 var price: int
 
 

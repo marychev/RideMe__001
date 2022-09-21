@@ -3,9 +3,9 @@ class_name Player
 
 # the max height of a stopm with road area to broken bike
 const HEIGHT_STOPM_ROAD := 8989.0
-const DIVISION_MASS := 10.0
 
-var mass: int = 40
+# const DIVISION_MASS := 10.0
+# var mass: int = 40
 
 var is_jumping := false
 var align_speed := 0.2
@@ -125,15 +125,21 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_CollisionDetector_body_entered(body: Node2D) -> void:
+	"""
 	if 'MovingPlatform' in body.name:
 		body.has_move_up = false
 		body.position.y += mass / DIVISION_MASS
+	"""
+	pass
 
 
 func _on_CollisionDetector_body_exited(body: Node2D) -> void:
+	"""
 	if 'MovingPlatform' in body.name:
 		body.has_move_up = true
 		body.position.y -= mass / DIVISION_MASS
+	"""
+	pass
 
 
 func _calc_velocity(delta: float) -> void:
