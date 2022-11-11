@@ -11,39 +11,24 @@ onready var btn_drawster: Button = $TextureRect/SliderContainer/Buttons/Drawster
 onready var bike_upgrade: Resource = preload("res://Menu/BikeMenu/BikeUpgradeDialog.tscn")
 
 
-func _ready():
+func _ready() -> void:
 	._ready()
 	init_btn_current_node()
 
 
-func _on_Sataur_pressed():
+func _on_Sataur_pressed() -> void:
 	field_log.clear()
 	set_buttons_flat(btn_sataur)
 	init_slide(sataur_bike)
 
 
-func _on_Drawster_pressed():
+func _on_Drawster_pressed() -> void:
 	field_log.clear()
 	set_buttons_flat(btn_drawster)
 	init_slide(drawer_bike)
 
 
-func _on_Current_pressed() -> void:
-	._on_Current_pressed()
-	set_buttons_flat(btn_current_node)
-	
-	if not PlayerData.player_bike:
-		init_slide(selected_node)
-	else:
-		init_slide(PlayerData.player_bike)
-
-
-func _on_Current_button_down() -> void:
-	if not PlayerData.player_bike:
-		selected_node = empty_bike
-
-
-func _on_btn_pay_button_down():
+func _on_btn_pay_button_down() -> void:
 	if not PlayerData.player_bike and selected_node and PlayerData.rms > selected_node.price:
 		$TextureRect/ButtonContainer/btn_pay.type = "Buy"
 	else:
@@ -74,11 +59,12 @@ func _on_btn_pay_pressed() -> void:
 				
 				btn_pay.type = "Buy"
 
-				$TextureRect/SliderContainer/Buttons/Current.flat = true
 				field_log.success("Bike was paid success!")
 				
 				yield(get_tree().create_timer(0.4), "timeout")
-				get_tree().reload_current_scene()
+				var res := get_tree().reload_current_scene()
+				if res != OK:
+					printerr("ERROR: " + str(self) + " " + str(res) + "_on_btn_pay_pressed and reload_current_scene")
 		else:
 			var message = "A bike was not selected!"
 			field_log.error(message)
@@ -119,23 +105,14 @@ func init_slide(bike) -> void:
 func init_btn_current_node() -> void:
 	btn_pay.modulate.a = 0.4
 	btn_refit.modulate.a = 0.4
-	btn_current_node.flat = false
-	btn_current_node.disabled = true
 	
 	if PlayerData.player_bike:
 		init_slide(PlayerData.player_bike)
-		set_buttons_flat(btn_current_node)
-		
 		btn_refit.modulate.a = 1
 		btn_pay.modulate.a = 0.4
-		btn_current_node.disabled = false
 
 
-func set_title(bike) -> void:
-	.set_title(bike)
-
-
-func set_menu_options(bike):
+func set_menu_options(bike) -> void:
 	var power_text = "Max power: ....... %s" % [bike.max_power]
 	var speed_text = "Max speed: ....... %d" % [bike.max_speed]
 	var jump_text = "Max jump: .......... %d" % [bike.max_height_jump]
@@ -150,7 +127,5 @@ func set_menu_options(bike):
 
 
 func set_buttons_flat(btn_active: Button) -> void:
-	btn_current_node.flat = bool(btn_current_node.name == btn_active.name)
 	btn_sataur.flat = bool(btn_sataur.name == btn_active.name)
 	btn_drawster.flat = bool(btn_drawster.name == btn_active.name)
-

@@ -8,29 +8,33 @@ onready var bd: ParallaxBackground = root.get_node("Background")
 
 
 func _init() -> void:
-	ID = 4  # first track in level
+	ID = 4
 	var section: = track_cfg.get_section(ID)
-	.init_level_track(section, ID)
+	init_level_track(section, ID)
 
-
+	
 func _ready() -> void:
 	apply_custom_background()
-
+	init_start_position()
+	
 
 func apply_custom_background() -> void:
 	root.remove_child(bd)
 	bd.call_deferred("free")
 	root.add_child(custom_background)
+	custom_background.visible = false
 
 
 static func create_for_cfg() -> void:
 	var level_id = 2
 	var track_id = 4
 	var resource = "res://Game/Level2/Level2_0/Level2_0.tscn"
-	var texture = "res://Game/Level2/assets/city-image-0.png"
-	var num_win = 10
-	var init_time_level = 24
-	var price = 10
-	var issue = "TODO: Level in progress %"
-	var state = LevelTrackStates.ACTIVE
-	GameData.track_cfg.create(track_id, level_id, issue, resource, texture, num_win, init_time_level, price, state)
+	var texture = "res://Game/Level2/assets/slides/track-2_0.png"
+	var num_win = 8
+	var init_time_level = 40
+	var price = 20
+	var issue = "City dogs. Collect %s hourglasses as quickly as possible"
+	
+	var res := GameData.track_cfg.create(track_id, level_id, issue, resource, texture, num_win, init_time_level, price)
+	if res != OK: 
+		printerr("ERROR: Level2_0 create_for_cfg")

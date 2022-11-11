@@ -1,7 +1,7 @@
 extends Node
 class_name PlayerStompDetecter
 
-var player: KinematicBody2D
+var player: Player
 var audio_broke_bike = preload("res://media/move/broken.wav")
 
 
@@ -15,13 +15,10 @@ func on_player_entered() -> void:
 		PlayerData.lives -= 1
 		
 		if player.speed.x > player.max_speed / 2:
-			PlayerData.lives -= 20
+			PlayerData.lives -= 10
 		elif player.speed.x > (player.max_speed * 90 / 100):
-			PlayerData.lives -= 50
+			PlayerData.lives -= 30
 		
-		if PlayerData.lives > 0:
-			player.set_speed(-player.speed.x / 2)
-		else:
-			# die player from fell
+		if PlayerData.lives < 0:
 			var die_player = load(PathData.PATH_DIE_PLAYER).new()
 			die_player.from_broke_bike(player)

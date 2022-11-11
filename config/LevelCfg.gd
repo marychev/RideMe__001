@@ -31,12 +31,15 @@ func get_id(section: String) -> int:
 func get_title(section: String) -> String:
 	return config.get_value(section, KEY_TITLE)
 
-func get_passed_at(section: String) -> String:
+func get_passed_at(section: String):#  -> String as "" and Dict {"day": 22, "dst": false ...} :
 	return config.get_value(section, KEY_PASSED_AT)
 
 func set_passed_at(section: String) -> void:
 	config.set_value(section, KEY_PASSED_AT, OS.get_datetime())
-	config.save(path_file_cfg)
+	var res := config.save(path_file_cfg)
+	if res != OK:
+		printerr("ERROR: set_passed_at " + str(self) + ", path_file_cfg: " + path_file_cfg)
+
 
 # create
 

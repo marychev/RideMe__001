@@ -1,17 +1,27 @@
 extends RigidBody2D
 
+onready var added_bonuse: bool = false
 onready var live: int = 2
 
 
-func _on_StompDetector_body_entered(body: Node) -> void:
+func _ready():
+	$Particles2D.visible = false
+	set_physics_process(false)
+
+
+func _on_StompDetector_body_entered(body: Node2D) -> void:
 	if "Player" == body.name:
-		$sprite.flip_v = true
-		
 		live -= 1
-		body.anim_player.stop()
-		
-		if live == 0:
-			die()
+		modulate = Color.tomato
+		modulate.a = 0.9
+	
+	if live == 0:
+		die()
+	
+
+func _on_StompDetector_body_exited(body: Node2D) ->void:
+	if live == 0:
+		die()
 
 
 func _on_VisibilityEnabler2D_screen_exited() -> void:
@@ -19,9 +29,23 @@ func _on_VisibilityEnabler2D_screen_exited() -> void:
 
 
 func die():
-	live == 0
+	if not added_bonuse:
+		add_bonuse()
+	
+	live = 0
+	modulate = Color.white
+	$Sprite.visible = false
+	$StompDetector.visible = false
 	$Collision.disabled = true
+	
+	$Particles2D.visible = true
+	$Particles2D.emitting = true
+	yield(get_tree().create_timer(1.0), "timeout")
 	queue_free()
 
 
-
+func add_bonuse() -> void:
+	var rm: RM = load("res://Game/Character/RM/RM.tscn").instance()
+	rm.position = Vector2(position.x + 240.0, position.y - 40.0)
+	get_parent().add_child(rm)
+	added_bonuse = true

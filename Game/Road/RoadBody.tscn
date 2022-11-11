@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Game/Road/assets/road.png" type="Texture" id=1]
+[ext_resource path="res://Game/Road/assets/road_1368x100.png" type="Texture" id=1]
 [ext_resource path="res://Game/Road/RoadBody.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 610.414, 16 )
+extents = Vector2( 1124.56, 5.60373 )
 
 [node name="RoadBody" type="StaticBody2D"]
 collision_layer = 8
@@ -12,21 +12,20 @@ collision_mask = 0
 script = ExtResource( 2 )
 
 [node name="sprite" type="Sprite" parent="."]
-position = Vector2( 4.59955, 4.19646 )
 scale = Vector2( 1.64324, 1 )
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2( 610.186, 84.1965 )
+position = Vector2( 1123.73, 65.4677 )
 shape = SubResource( 1 )
 
 [node name="sprite2" type="Sprite" parent="."]
-position = Vector2( 1220.6, 4.19646 )
+position = Vector2( 2245.04, 0.0330019 )
 scale = Vector2( 1.64324, 1 )
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Collision2" type="CollisionShape2D" parent="."]
-position = Vector2( 1828.6, 84.1965 )
+position = Vector2( 3370.48, 65.4622 )
 shape = SubResource( 1 )

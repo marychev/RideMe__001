@@ -1,7 +1,14 @@
 extends BasePlayer
 class_name Player
 
-var mass: int = 130
+# the max height of a stopm with road area to broken bike
+const HEIGHT_STOPM_ROAD := 8989.0
+
+# const DIVISION_MASS := 10.0
+# var mass: int = 40
+
+var is_jumping := false
+var align_speed := 0.2
 
 var audio_go = preload("res://media/move/go.wav")
 var audio_relax = preload("res://media/move/relax.wav")
@@ -11,26 +18,10 @@ var audio_broke = preload("res://media/move/broken.wav")
 var audio_colected = preload("res://media/move/colected.wav")
 
 
-func _ready():
+func _ready() -> void:
 	$Sprite.texture = PlayerData.player_bike.texture
 	modulate = Color(1, 1, 1)
 	$AudioMove.volume_db = 1
-
-
-func _on_CollisionDetector_area_entered(area: Area2D) -> void:
-	var root = area.get_node('../')
-	if 'Plank' in root.name:
-		if Input.is_action_pressed("ui_select"):
-			_velocity = calculate_stomp_velocity(_velocity, max_power+power)
-
-
-func on_detect_collisions_process(delta):
-	for i in get_slide_count():
-		var collision := get_slide_collision(i)
-		var body := collision.collider
-		
-		if 'MovingPlatform' in body.name:
-			body.move_down(delta)
 
 
 func detect_landing_animation(current_animation_name: String) -> String:
@@ -39,42 +30,32 @@ func detect_landing_animation(current_animation_name: String) -> String:
 	return current_animation_name
 
 
-func get_input(delta: float):
+func get_input(delta: float) -> void:
 	var animation_name = "undefined"
-	
 	var has_broke: bool = $AudioMove.stream and $AudioMove.stream.resource_path.get_file().get_basename() == "broken"
 	var has_colected: bool = $AudioMove.stream and $AudioMove.stream.resource_path.get_file().get_basename() == "colected"
-		
+	
+	acceleration = Vector2.ZERO
+	
 	# Move right
 	if Input.is_action_just_pressed("ui_right"):
 		animation_name = detect_landing_animation("go")
-		GoBtn.on_go_process(delta, animation_name)
-		
 		$AudioMove.set_stream(audio_go)
-		if $AudioMove.playing == false:
-			$AudioMove.play()
-
+		# if $AudioMove.playing == false:			$AudioMove.play()
 	elif Input.is_action_pressed("ui_right"):
 		animation_name = detect_landing_animation("go")
 		GoBtn.on_go_process(delta, animation_name)
-		
-		has_broke = $AudioMove.stream and $AudioMove.stream.resource_path.get_file().get_basename() == "broken"
-		has_colected = $AudioMove.stream and $AudioMove.stream.resource_path.get_file().get_basename() == "colected"
 		if $AudioMove.playing == false:
 			$AudioMove.play()
-
 	elif Input.is_action_just_released("ui_right"):
 		animation_name = detect_landing_animation("relax")
 		GoBtn.on_relax_process(delta)
-		
 		if not has_colected or not has_colected:
 			$AudioMove.set_stream(audio_relax)
 			$AudioMove.play()
-	
-	# Move back
+	# Move backward
 	elif Input.is_action_just_pressed("ui_left"):
 		animation_name = detect_landing_animation("stop")
-		StopBtn.on_stop_process(delta)
 		$AudioMove.set_stream(audio_stop)
 		$AudioMove.play()
 	elif Input.is_action_pressed("ui_left"):
@@ -83,72 +64,88 @@ func get_input(delta: float):
 	elif Input.is_action_just_released("ui_left"):
 		animation_name = detect_landing_animation("relax")
 		StopBtn.on_stop_released(delta)
-	else:
-		if speed.x < 1:
+	# Idle or relax 
+	elif not is_jumping:
+		if _velocity.x < 10 and _velocity.x > -10:
 			animation_name = detect_landing_animation("wait")
 			GoBtn.on_wait_process(delta, animation_name)
 		else:
 			animation_name = detect_landing_animation("relax")
 			GoBtn.on_relax_process(delta, animation_name)
-	
-	# Move is not on floor. Jump / Landing
+
+	# Move jump up / landing
 	if Input.is_action_just_pressed("ui_select"):
 		animation_name = detect_landing_animation("landing")
-		JumpBtn.on_jump_process(delta, animation_name)
-		
 		if not has_broke or not has_colected:
 			$AudioMove.set_stream(audio_jump)
-		
 	elif Input.is_action_pressed("ui_select"):
 		animation_name = detect_landing_animation("landing")
 		JumpBtn.on_jump_process(delta, animation_name)
-
 		if not has_broke or not has_colected:
 			if $AudioMove.playing == false:
 				$AudioMove.play()
-			
 	elif Input.is_action_just_released("ui_select"):
 		animation_name = detect_landing_animation("landing")
 		JumpBtn.on_landing_process(delta, animation_name)
-		
 		if not has_colected or not has_colected:
 			$AudioMove.set_stream(audio_go)
 		$AudioMove.play()
-
+	
 
 # Processes
 
-func _physics_process(delta: float):
-	get_input(delta)
-	on_detect_collisions_process(delta)
-	
-	var is_jump_interrupted: = Input.is_action_just_released("ui_select") \
-		and _velocity.y < 0.0
-	
-	_velocity = calculate_move_velocity(_velocity, get_direction(), speed, is_jump_interrupted)
-	_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
-	
-	if anim_player.current_animation != 'collision':
-		modulate = Color(1, 1, 1)
+func _process(delta: float) -> void:
+	set_speed(_velocity.x)
 
+	if not anim_player.current_animation in [
+		PlayerData.ANIMATION_COLLISION, 
+		PlayerData.ANIMATION_DANGER, 
+		PlayerData.ANIMATION_SUCCESS
+	]:
+		modulate = Color.white
+
+	# prepare to die
 	if PlayerData.time_level < 5:
-		if anim_player.current_animation != 'collision':
+		if anim_player.current_animation != PlayerData.ANIMATION_COLLISION:
 			anim_player.stop()
-		anim_player.play('collision')
-	
-	# Todo: Implement calculate the max height of a stopm with road area
-	if position.y > 11000:
+		anim_player.play(PlayerData.ANIMATION_COLLISION)
+		
+	if position.y > HEIGHT_STOPM_ROAD:
 		var die_player = load(PathData.PATH_DIE_PLAYER).new()
 		die_player.from_fell(self)
 
 
-func _on_CollisionDetector_body_entered(body):
+func _physics_process(delta: float) -> void:
+	get_input(delta)
+	_calc_velocity(delta)
+	
+	if is_on_floor():
+		is_jumping = Input.is_action_just_pressed("ui_select")
+		rotation = lerp(rotation, get_floor_normal().angle() + PI/2, align_speed)
+
+
+func _on_CollisionDetector_body_entered(body: Node2D) -> void:
+	"""
 	if 'MovingPlatform' in body.name:
 		body.has_move_up = false
-		body.position.y += mass / 10
+		body.position.y += mass / DIVISION_MASS
+	"""
+	pass
 
 
-func _on_CollisionDetector_body_exited(body):
+func _on_CollisionDetector_body_exited(body: Node2D) -> void:
+	"""
 	if 'MovingPlatform' in body.name:
 		body.has_move_up = true
-		body.position.y -= mass / 10
+		body.position.y -= mass / DIVISION_MASS
+	"""
+	pass
+
+
+func _calc_velocity(delta: float) -> void:
+	var snap: Vector2 = Vector2.DOWN * 128 if !is_jumping else Vector2.ZERO
+	
+	acceleration = calculate_friction()
+	# _velocity = calculate_steering(delta)
+	_velocity = calculate_move_velocity(delta)
+	_velocity.y = move_and_slide_with_snap(_velocity, snap, FLOOR_NORMAL, true).y

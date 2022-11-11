@@ -49,6 +49,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Menu/BasePopupDialog/BaseProgressDialog.gd"
 }, {
+"base": "StaticBody2D",
+"class": "Bench",
+"language": "GDScript",
+"path": "res://Game/Character/Bench/Bench.gd"
+}, {
 "base": "Cfg",
 "class": "BikeCfg",
 "language": "GDScript",
@@ -58,6 +63,11 @@ _global_script_classes=[ {
 "class": "BikeMenu",
 "language": "GDScript",
 "path": "res://Menu/BikeMenu/BikeMenu.gd"
+}, {
+"base": "Area2D",
+"class": "BonusArea",
+"language": "GDScript",
+"path": "res://Game/Character/script/BonusArea.gd"
 }, {
 "base": "Reference",
 "class": "Cfg",
@@ -154,12 +164,12 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Game/Character/Grass/Grass.gd"
 }, {
-"base": "Area2D",
+"base": "BonusArea",
 "class": "Hourgrass",
 "language": "GDScript",
 "path": "res://Game/Character/Hourgrass/Hourgrass.gd"
 }, {
-"base": "TouchScreenButton",
+"base": "GoBtn",
 "class": "JumpBtn",
 "language": "GDScript",
 "path": "res://Game/GUI/controls/JumpBtn.gd"
@@ -173,6 +183,16 @@ _global_script_classes=[ {
 "class": "Level2_0",
 "language": "GDScript",
 "path": "res://Game/Level2/Level2_0/Level2_0.gd"
+}, {
+"base": "Level_0",
+"class": "Level2_1",
+"language": "GDScript",
+"path": "res://Game/Level2/Level2_1/Level2_1.gd"
+}, {
+"base": "Level_0",
+"class": "Level2_2",
+"language": "GDScript",
+"path": "res://Game/Level2/Level2_2/Level2_2.gd"
 }, {
 "base": "Cfg",
 "class": "LevelCfg",
@@ -294,12 +314,12 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Game/Character/Puddle/Puddle.gd"
 }, {
-"base": "Area2D",
+"base": "BonusArea",
 "class": "RM",
 "language": "GDScript",
 "path": "res://Game/Character/RM/RM.gd"
 }, {
-"base": "Area2D",
+"base": "BonusArea",
 "class": "Refit",
 "language": "GDScript",
 "path": "res://Game/Character/Refit/Refit.gd"
@@ -324,7 +344,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Game/Character/Start/Start.gd"
 }, {
-"base": "TouchScreenButton",
+"base": "GoBtn",
 "class": "StopBtn",
 "language": "GDScript",
 "path": "res://Game/GUI/controls/StopBtn.gd"
@@ -353,8 +373,10 @@ _global_script_class_icons={
 "BaseBikeMenu": "",
 "BasePlayer": "",
 "BaseProgressDialog": "",
+"Bench": "",
 "BikeCfg": "",
 "BikeMenu": "",
+"BonusArea": "",
 "Cfg": "",
 "CloudMove": "",
 "ContinueGameBtn": "",
@@ -378,6 +400,8 @@ _global_script_class_icons={
 "JumpBtn": "",
 "KSMan": "",
 "Level2_0": "",
+"Level2_1": "",
+"Level2_2": "",
 "LevelCfg": "",
 "LevelMenu": "",
 "LevelProgressDialog": "",
@@ -417,6 +441,7 @@ _global_script_class_icons={
 [application]
 
 config/name="RideMe"
+config/description="BMX race. Find your balance in motion and be the best among BMX riders. The game is available on Android, Windows, Linux"
 run/main_scene="res://SplashScreen/SplashScreen.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="RideMe"
@@ -433,18 +458,47 @@ GameData="*res://Autoload/GameData.tscn"
 window/size/width=1366
 window/size/height=768
 window/stretch/mode="2d"
-window/stretch/aspect="keep"
+window/stretch/aspect="keep_width"
 
 [global]
 
 music=false
 audio=false
 
+[importer_defaults]
+
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
+"compress/normal_map": 0,
+"detect_3d": false,
+"flags/anisotropic": false,
+"flags/filter": true,
+"flags/mipmaps": false,
+"flags/repeat": 0,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/normal_map_invert_y": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
+
 [input]
 
 pause={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+accelerate={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777237,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 

@@ -67,9 +67,6 @@ tracks/0/keys = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 8 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 1366.0
@@ -111,16 +108,12 @@ __meta__ = {
 margin_right = 1279.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 0, 40 )
+custom_constants/separation = 40
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Current" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 6 )]
-text = "Your bike"
-
 [node name="Sataur" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 6 )]
-margin_left = 224.0
-margin_right = 444.0
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 3 )
 custom_styles/disabled = SubResource( 4 )
@@ -128,8 +121,8 @@ custom_styles/normal = SubResource( 5 )
 text = "Sataur"
 
 [node name="Drawster" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 6 )]
-margin_left = 448.0
-margin_right = 668.0
+margin_left = 260.0
+margin_right = 480.0
 custom_styles/hover = SubResource( 6 )
 custom_styles/pressed = SubResource( 7 )
 custom_styles/disabled = SubResource( 8 )
@@ -172,12 +165,10 @@ rect_min_size = Vector2( 400, 360 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 0
-alignment = 1
 
 [node name="MaxPower" type="Label" parent="TextureRect/SliderContainer/Detail/MenuOptions"]
-margin_top = 30.0
 margin_right = 638.0
-margin_bottom = 90.0
+margin_bottom = 60.0
 rect_min_size = Vector2( 420, 60 )
 custom_fonts/font = SubResource( 10 )
 text = "max power: ....... 0"
@@ -185,9 +176,9 @@ align = 1
 valign = 1
 
 [node name="MaxSpeed" type="Label" parent="TextureRect/SliderContainer/Detail/MenuOptions"]
-margin_top = 90.0
+margin_top = 60.0
 margin_right = 638.0
-margin_bottom = 150.0
+margin_bottom = 120.0
 rect_min_size = Vector2( 420, 60 )
 custom_fonts/font = SubResource( 10 )
 text = "max speed: ....... 0"
@@ -195,9 +186,9 @@ align = 1
 valign = 1
 
 [node name="MaxJump" type="Label" parent="TextureRect/SliderContainer/Detail/MenuOptions"]
-margin_top = 150.0
+margin_top = 120.0
 margin_right = 638.0
-margin_bottom = 210.0
+margin_bottom = 180.0
 rect_min_size = Vector2( 420, 60 )
 custom_fonts/font = SubResource( 10 )
 text = "max jump: .......... 0	"
@@ -205,9 +196,9 @@ align = 1
 valign = 1
 
 [node name="Lives" type="Label" parent="TextureRect/SliderContainer/Detail/MenuOptions"]
-margin_top = 210.0
+margin_top = 180.0
 margin_right = 638.0
-margin_bottom = 270.0
+margin_bottom = 240.0
 rect_min_size = Vector2( 420, 60 )
 custom_fonts/font = SubResource( 10 )
 text = "lives: .................... 0"
@@ -218,9 +209,9 @@ __meta__ = {
 }
 
 [node name="Price" type="Label" parent="TextureRect/SliderContainer/Detail/MenuOptions"]
-margin_top = 270.0
+margin_top = 240.0
 margin_right = 638.0
-margin_bottom = 330.0
+margin_bottom = 300.0
 rect_min_size = Vector2( 420, 60 )
 custom_fonts/font = SubResource( 10 )
 text = "price: .................... 0"
@@ -281,8 +272,6 @@ anims/demonstration = SubResource( 11 )
 stream = ExtResource( 4 )
 autoplay = true
 
-[connection signal="button_down" from="TextureRect/SliderContainer/Buttons/Current" to="." method="_on_Current_button_down"]
-[connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Current" to="." method="_on_Current_pressed"]
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Sataur" to="." method="_on_Sataur_pressed"]
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Drawster" to="." method="_on_Drawster_pressed"]
 [connection signal="pressed" from="TextureRect/ButtonContainer/btn_refit" to="." method="_on_btn_refit_pressed"]

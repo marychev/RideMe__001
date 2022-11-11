@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Game/Character/Rock/assets/rock.png" type="Texture" id=1]
 [ext_resource path="res://Game/Character/Rock/StaticRock.gd" type="Script" id=2]
@@ -7,11 +7,8 @@
 friction = 0.02
 rough = true
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 2.83379, 15.8628 )
-
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 0.867264, 29.1898 )
+extents = Vector2( 39.1279, 2.89455 )
 
 [node name="StaticRock" type="StaticBody2D"]
 position = Vector2( 140, 70 )
@@ -28,27 +25,25 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( -1.87289, -4.12035 )
 rotation = 6.28319
 scale = Vector2( 5.7, 2.6 )
-polygon = PoolVector2Array( 3.58404, -25.0145, 9.37977, -23.7439, 13.1056, -19.2061, 14.8443, -13.2162, 16.2736, 9.67449, -22.107, 11.6677, -23.2662, 6.49453, -22.6038, -0.0399952, -8.50417, -21.9286, -2.70845, -21.3841 )
+polygon = PoolVector2Array( 10.4437, -21.888, 16.957, 10.1586, -23.9911, 11.248 )
 
-[node name="VisibilityNotifier" type="VisibilityNotifier2D" parent="."]
-position = Vector2( 4200, -11.143 )
-scale = Vector2( 12, 5.35 )
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+position = Vector2( -36.9084, 21.7387 )
+scale = Vector2( 183.031, 75.2782 )
+process_parent = true
+physics_process_parent = true
 
 [node name="StompDetector" type="Area2D" parent="."]
 position = Vector2( -1.12247, 0 )
 rotation = 0.0629231
 
 [node name="Collision" type="CollisionShape2D" parent="StompDetector"]
-position = Vector2( -124.253, 24.685 )
-rotation = -0.321638
-shape = SubResource( 2 )
-
-[node name="Collision2" type="CollisionShape2D" parent="StompDetector"]
-position = Vector2( 91.0193, -9.52735 )
-rotation = -0.134357
+position = Vector2( -87.0927, 31.6809 )
+rotation = -0.0658859
 shape = SubResource( 3 )
 
-[connection signal="screen_exited" from="VisibilityNotifier" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+[connection signal="screen_exited" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_exited"]
 [connection signal="body_entered" from="StompDetector" to="." method="_on_StompDetector_body_entered"]

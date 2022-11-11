@@ -42,7 +42,9 @@ func _on_Play_pressed() -> void:
 		field_log_start_play()
 	else:
 		yield(get_tree().create_timer(0.6), "timeout")
-		get_tree().change_scene(game_tscn)
+		var res := get_tree().change_scene(game_tscn)
+		if res != OK:
+			printerr("ERROR: " + str(self) + " " + str(res) + "_on_Play_pressed and change_scene")
 
 
 func can_start_play() -> bool:

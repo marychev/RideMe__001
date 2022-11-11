@@ -1,56 +1,64 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://media/start_track.wav" type="AudioStream" id=1]
-[ext_resource path="res://Menu/MainMenu/assets/main_menu/title.png" type="Texture" id=2]
+[ext_resource path="res://Menu/MainMenu/assets/main_menu/title_logo--364x100.png" type="Texture" id=2]
 [ext_resource path="res://components/buttons/TextureIconButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Menu/MainMenu/assets/main_menu/character_drawster.png" type="Texture" id=4]
+[ext_resource path="res://Menu/LevelMenu/assets/empty-map.png" type="Texture" id=5]
 [ext_resource path="res://Menu/MainMenu/assets/main_menu/bg-color.png" type="Texture" id=7]
 [ext_resource path="res://Menu/MainMenu/assets/main_menu/character_sataur.png" type="Texture" id=8]
 [ext_resource path="res://Menu/MainMenu/MainMenu.gd" type="Script" id=11]
 
 [node name="MainMenu" type="MarginContainer"]
-anchor_left = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -722.0
-margin_right = 722.0
-custom_constants/margin_right = 120
+custom_constants/margin_right = 40
 custom_constants/margin_top = 80
-custom_constants/margin_left = 120
+custom_constants/margin_left = 60
 custom_constants/margin_bottom = 80
 script = ExtResource( 11 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
 game_tscn = "res://Game/Game.tscn"
 
 [node name="bg-color" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.929412 )
-position = Vector2( 723.065, 383.792 )
+position = Vector2( 683.422, 383.792 )
 texture = ExtResource( 7 )
 
+[node name="Logo" type="Node" parent="."]
+
+[node name="Logo" type="TextureRect" parent="Logo"]
+margin_left = 976.928
+margin_top = 18.6018
+margin_right = 1346.93
+margin_bottom = 128.602
+rect_min_size = Vector2( 370, 100 )
+texture = ExtResource( 2 )
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_left = 120.0
+margin_left = 60.0
 margin_top = 80.0
-margin_right = 1384.0
+margin_right = 1326.0
 margin_bottom = 688.0
 rect_min_size = Vector2( 1200, 600 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 margin_right = 400.0
 margin_bottom = 608.0
 rect_min_size = Vector2( 400, 600 )
 
-[node name="Logo" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer"]
 margin_right = 400.0
-margin_bottom = 52.0
-texture = ExtResource( 2 )
+margin_bottom = 60.0
+rect_min_size = Vector2( 0, 60 )
 
 [node name="MenuOptions" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
-margin_top = 126.0
+margin_top = 64.0
 margin_right = 400.0
-margin_bottom = 520.0
-size_flags_vertical = 6
+margin_bottom = 458.0
+size_flags_vertical = 2
 custom_constants/separation = 30
 alignment = 1
 
@@ -105,24 +113,29 @@ text = "version: 0.0.0"
 
 [node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
 margin_left = 404.0
-margin_right = 1264.0
+margin_right = 1266.0
 margin_bottom = 608.0
 rect_min_size = Vector2( 860, 600 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="Empty-map" type="Sprite" parent="HBoxContainer/CenterContainer"]
+position = Vector2( 434.805, 304.878 )
+scale = Vector2( 1.15359, 1.20855 )
+texture = ExtResource( 5 )
+
 [node name="CurrentTrack" type="NinePatchRect" parent="HBoxContainer/CenterContainer"]
-modulate = Color( 1, 1, 1, 0.317647 )
-margin_left = 30.0
+show_behind_parent = true
+margin_left = 31.0
 margin_top = 4.0
-margin_right = 830.0
+margin_right = 831.0
 margin_bottom = 604.0
 rect_min_size = Vector2( 800, 600 )
 
 [node name="Characters" type="HBoxContainer" parent="HBoxContainer/CenterContainer"]
-margin_left = 30.0
+margin_left = 31.0
 margin_top = 4.0
-margin_right = 830.0
+margin_right = 831.0
 margin_bottom = 604.0
 rect_min_size = Vector2( 800, 600 )
 size_flags_horizontal = 3

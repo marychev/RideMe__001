@@ -23,9 +23,6 @@ custom_constants/margin_top = 20
 custom_constants/margin_left = 20
 custom_constants/margin_bottom = 20
 script = ExtResource( 11 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Canvas" type="CanvasLayer" parent="."]
 
@@ -34,9 +31,6 @@ margin_left = 11.5147
 margin_top = 11.5147
 margin_right = 1333.51
 margin_bottom = 98.5147
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Bars" type="VBoxContainer" parent="Canvas/HBoxContainer"]
 margin_right = 410.0
@@ -83,6 +77,9 @@ margin_right = 204.0
 [node name="Timeout" parent="Canvas/Counters" instance=ExtResource( 13 )]
 margin_left = 208.0
 margin_right = 308.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ControlContainer" type="HBoxContainer" parent="Canvas"]
 anchor_top = 1.0

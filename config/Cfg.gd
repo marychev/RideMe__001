@@ -18,19 +18,21 @@ func get_config() -> ConfigFile:
 	
 	if err != OK:
 		var message = "ERROR::" + str(err) + ". Config file was not undefined!\n" + path_file_cfg
-		push_error(message)
-		print(message)
+		printerr(message)
 
 	return config
 
 
 func clear() -> void:
 	config.clear()
-	config.save(path_file_cfg)
+	var res = config.save(path_file_cfg)
+	if res != OK:
+		printerr("ERROR: Clear " + str(self) + ", path_file_cfg: " + path_file_cfg);
+
 
 
 func as_dict(section: String) -> Dictionary:
-	return {}
+	return {} if not section.empty() else {}
 
 
 func get_all() -> Array:

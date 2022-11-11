@@ -5,15 +5,15 @@
 [ext_resource path="res://Game/Character/Crossroads/Crossroads.gd" type="Script" id=6]
 
 [node name="Crossroads" type="Node2D"]
-scale = Vector2( 0.456429, 0.414936 )
+z_index = 1
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="crossroads" type="Sprite" parent="."]
-position = Vector2( -0.773396, 0.12568 )
-scale = Vector2( 0.677725, 0.677725 )
+position = Vector2( -24.0416, 33.9411 )
+z_index = -1
 texture = ExtResource( 1 )
 
 [node name="GirlBack" parent="." instance=ExtResource( 2 )]

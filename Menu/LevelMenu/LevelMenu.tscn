@@ -28,9 +28,6 @@ font_data = ExtResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 1366.0
@@ -72,22 +69,18 @@ __meta__ = {
 margin_right = 1279.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 0, 40 )
+custom_constants/separation = 40
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Current" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 8 )]
-text = "Your level"
-
 [node name="Level_1" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 8 )]
-margin_left = 224.0
-margin_right = 444.0
 hint_tooltip = "Level 1"
 text = "Mountains"
 
 [node name="Level_2" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 8 )]
-margin_left = 448.0
-margin_right = 668.0
+margin_left = 260.0
+margin_right = 480.0
 hint_tooltip = "Level 2"
 text = "City"
 
@@ -125,12 +118,10 @@ rect_min_size = Vector2( 400, 360 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 0
-alignment = 1
 
 [node name="LevelIssue" type="Label" parent="TextureRect/SliderContainer/Detail/MenuOptions"]
-margin_top = 60.0
 margin_right = 638.0
-margin_bottom = 120.0
+margin_bottom = 60.0
 rect_min_size = Vector2( 420, 60 )
 custom_fonts/font = SubResource( 2 )
 text = "No selected track"
@@ -139,9 +130,9 @@ valign = 1
 autowrap = true
 
 [node name="Level" type="Label" parent="TextureRect/SliderContainer/Detail/MenuOptions"]
-margin_top = 120.0
+margin_top = 60.0
 margin_right = 638.0
-margin_bottom = 180.0
+margin_bottom = 120.0
 rect_min_size = Vector2( 420, 60 )
 custom_fonts/font = SubResource( 2 )
 text = "level: ....... 0"
@@ -149,9 +140,9 @@ align = 1
 valign = 1
 
 [node name="Track" type="Label" parent="TextureRect/SliderContainer/Detail/MenuOptions"]
-margin_top = 180.0
+margin_top = 120.0
 margin_right = 638.0
-margin_bottom = 240.0
+margin_bottom = 180.0
 rect_min_size = Vector2( 420, 60 )
 custom_fonts/font = SubResource( 2 )
 text = "track: .......... 0	"
@@ -159,9 +150,9 @@ align = 1
 valign = 1
 
 [node name="Price" type="Label" parent="TextureRect/SliderContainer/Detail/MenuOptions"]
-margin_top = 240.0
+margin_top = 180.0
 margin_right = 638.0
-margin_bottom = 300.0
+margin_bottom = 240.0
 rect_min_size = Vector2( 420, 60 )
 custom_fonts/font = SubResource( 2 )
 text = "price: .................... 0"
@@ -225,7 +216,5 @@ visible = false
 position = Vector2( 560.823, 512.552 )
 texture = ExtResource( 6 )
 
-[connection signal="button_down" from="TextureRect/SliderContainer/Buttons/Current" to="." method="_on_Current_button_down"]
-[connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Current" to="." method="_on_Current_pressed"]
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Level_1" to="." method="_on_Level_1_pressed"]
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Level_2" to="." method="_on_Level_2_pressed"]

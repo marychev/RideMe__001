@@ -1,16 +1,17 @@
-extends Area2D
+extends BonusArea
 class_name Refit
 
 
 func _on_body_entered(body: Player) -> void:
-	if body.name == "Player":
-		body.get_node('AudioMove').set_stream(body.audio_colected)
-		body.get_node('AudioMove').play()
+	._on_body_entered(body)
+	
+	if is_instance_valid(body) and body.name == "Player":
 		PlayerData.lives += 50
-		queue_free()
 
 
-func _ready() -> void:
-	set_physics_process(false)
+func _on_body_exited(body: Player) -> void:
+	._on_body_exited(body)
+	
 
-
+func _on_VisibilityNotifier_screen_exited() -> void:
+	._on_VisibilityNotifier_screen_exited()

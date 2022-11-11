@@ -17,7 +17,7 @@ func from_time_up(_player: Player) -> void:
 func from_hir_person(_player: Player) -> void:
 	init_player(_player)
 	PlayerData.set_type_title(end_game_scr.TitleChoices.HIT_PERSON)
-	PlayerData.set_score(player.global_position.x)
+	PlayerData.set_score(int(player.global_position.x))
 	die()
 
 
@@ -25,13 +25,20 @@ func from_fell(_player: Player):
 	_player.position = Vector2.ZERO
 	init_player(_player)
 	PlayerData.set_type_title(end_game_scr.TitleChoices.FELL)
-	PlayerData.set_score(player.global_position.x)
+	PlayerData.set_score(int(player.global_position.x))
 	die(true)
 	
 
 func from_broke_bike(_player: Player):
 	init_player(_player)
 	PlayerData.set_type_title(end_game_scr.TitleChoices.BROKE_BIKE)
+	PlayerData.set_score(int(player.global_position.x))
+	die()
+
+
+func from_bitten_by_dog(_player: Player) -> void:
+	init_player(_player)
+	PlayerData.set_type_title(end_game_scr.TitleChoices.BITTEN_BY_DOG)
 	PlayerData.set_score(player.global_position.x)
 	die()
 
@@ -59,8 +66,6 @@ func die(force: bool = false) -> void:
 		
 			var pause_die = preload("res://Game/GameScreen/GamePauseDie.gd").new()
 			pause_die.do_init(pause_screen.title, pause_screen.pause_rect)
-			# player.queue_free()
-			player.anim_player.play('collision')
 
 
 func init_player(_player: Player) -> void:

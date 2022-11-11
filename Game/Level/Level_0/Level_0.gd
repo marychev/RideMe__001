@@ -1,6 +1,8 @@
 extends Node2D
 class_name Level_0
 
+export(Vector2) var start_position
+
 # Keys
 var ID: int
 var issue: String
@@ -15,7 +17,7 @@ var resource: String
 var level_id:int 
 var title: String
 
-var has_win: bool
+var has_win: bool = false
 
 var level_cfg: LevelCfg = load(PathData.LEVEL_MODEL).new()
 var track_cfg: TrackCfg = load(PathData.TRACK_MODEL).new()
@@ -26,16 +28,30 @@ func _init() -> void:
 	ID = 0
 	var section: = track_cfg.get_section(ID)
 	init_level_track(section, ID)
-	
-	has_win = false
 
 
 func _ready():
-	var sky: Sprite = get_parent().get_node('Background/sky')
+	var background := get_parent().get_node('Background')
+	var sky: Sprite = background.get_node('ParallaxSky/sky')
+	
 	sky.modulate = Color(1, 1, 1)
+	init_start_position()
+	background.visible = false
 	
 
+func init_start_position() -> void:
+	var player:Player = get_parent().get_node('Player')
+	if start_position != Vector2.ZERO and is_instance_valid(player):
+		# player.global_position = start_position
+		player.position = start_position
+	else:
+		printerr("Player's start position were not initialisated!")
+
+
 func init_level_track(section: String, id_track: int) -> void:
+	if not id_track and id_track != 0: 
+		printerr("ERROR: init_level_track: " + section)
+		
 	if track_cfg.get_id(section) != null:
 		level_id = track_cfg.get_level_id(section)
 		title = level_cfg.get_title(level_cfg.get_section(level_id))
@@ -48,18 +64,24 @@ func init_level_track(section: String, id_track: int) -> void:
 		texture = load(track_cfg.get_texture(section))
 
 
+func init_issue() -> String:
+	if not '%s' in issue:
+		return "Todo: init issue ..."
+	return issue % [num_win]
+
+
 func are_you_win() -> bool:
 	has_win = PlayerData.time_level_count >= num_win
 	return has_win
 
 
 static func create_for_cfg() -> void:
-	var resource: = "res://Game/Level/Level_0/Level_0.tscn"
-	var texture: = "res://Game/Level/assets/slides/track-00.png"
-	var num_win = 2
-	var init_time_level = 100
-	var price = 0
-	var issue: = "Collect the %s hourgrass."
-	var state: = LevelTrackStates.ACTIVE
+	var _resource: = "res://Game/Level/Level_0/Level_0.tscn"
+	var _texture: = "res://Game/Level/assets/slides/track-00.png"
+	var _num_win = 4
+	var _init_time_level = 30
+	var _price = 0
+	var _issue: = "First experience: сollect the %s hourgrass"
+	var _state: = LevelTrackStates.ACTIVE
 	
-	GameData.track_cfg.create(0, 1, issue, resource, texture, num_win, init_time_level, price, state)
+	GameData.track_cfg.create(0, 1, _issue, _resource, _texture, _num_win, _init_time_level, _price, _state)

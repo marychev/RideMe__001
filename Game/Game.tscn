@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Game/Game.gd" type="Script" id=1]
 [ext_resource path="res://Game/Player/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://media/track-0.wav" type="AudioStream" id=3]
 [ext_resource path="res://Game/Level/Background/Background.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Game/GUI/GUI.tscn" type="PackedScene" id=8]
 
@@ -25,7 +24,7 @@ z_index = 1
 
 [node name="Music" type="AudioStreamPlayer2D" parent="Player"]
 position = Vector2( 0, -619 )
-stream = ExtResource( 3 )
-volume_db = -8.0
 autoplay = true
 attenuation = 0.125
+
+[connection signal="finished" from="Player/Music" to="." method="_on_Music_finished"]

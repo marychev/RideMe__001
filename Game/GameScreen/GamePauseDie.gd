@@ -5,11 +5,13 @@ var rect_color_lose: = Color(0.56, 0.25, 0.25, 0.8)
 
 const TIME_UP_TEXT: String = 'Your time is up'
 const BROKE_BIKE_TEXT: String = 'You broke the bike'
-const FELL_TEXT: String = 'You fell and you need to try again'
+const FELL_TEXT: String = 'You fell and you need \r\n to try again'
 const HIT_PERSON_TEXT: String = 'You hit a person'
+const BITTEN_BY_DOG_TEXT = "You've been bitten by a dog and \r\n you need to start over!"
+
 
 enum TitleChoices {
-	TIME_UP, BROKE_BIKE, FELL, HIT_PERSON, 
+	TIME_UP, BROKE_BIKE, FELL, HIT_PERSON, BITTEN_BY_DOG
 	WIN_PLAYER 
 }
 
@@ -40,16 +42,10 @@ func get_info() -> String:
 		title += TIME_UP_TEXT
 	elif PlayerData.type_title == TitleChoices.HIT_PERSON:
 		title += HIT_PERSON_TEXT
-	
+	elif PlayerData.type_title == TitleChoices.BITTEN_BY_DOG:
+		title += BITTEN_BY_DOG_TEXT
+		
 	return title
-
-
-func timer_format(time):	
-	return "%02d:%02d:%02d" % [
-		fmod(time, 60 * 60) / 60,
-		fmod(time, 60),
-		fmod(time, 1) * 100
-	]
 
 
 func update_as_fail_cfg():
@@ -63,4 +59,3 @@ func update_as_fail_cfg():
 	
 		track_cfg.set_state(track_section, LevelTrackStates.FAIL)
 		player_track_cfg.set_best_time(player_track_section, "00:00:00")
-		# player_track_cfg.set_best_time(player_track_section, timer_format(PlayerData.time_level))

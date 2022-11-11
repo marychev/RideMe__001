@@ -6,7 +6,11 @@ onready var animation: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
 	set_physics_process(false)
-	_velocity.x = -speed.x
+
+
+func _process(delta: float) -> void:
+	if not animation.is_playing():
+		animation.play("walk")
 
 
 func _physics_process(delta: float) -> void:
@@ -17,7 +21,8 @@ func _physics_process(delta: float) -> void:
 func _on_StopmDetector_body_entered(body: Node) -> void:
 	if "Player" == body.name:
 		var animate_people = load(PathData.PATH_ANIMATE_PEOPLE).new()
-		animate_people.do_collision(animation, body)
+		animate_people.do_collision(animation, body, self)
 
-		var die_player = load(PathData.PATH_DIE_PLAYER).new()
-		die_player.from_hir_person(body)
+
+func _on_KSMan_tree_entered():
+	_velocity.x = -speed.x if scale.x > 0 else speed.x

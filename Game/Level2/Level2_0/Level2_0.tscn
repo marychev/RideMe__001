@@ -1,127 +1,26 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Game/Level2/RoadBorderSet.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Game/Road/DoubleRoadBody.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Game/Road/RoadBodyOne.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Game/Level2/assets/road_border.png" type="Texture" id=4]
-[ext_resource path="res://Game/Level2/Level2_0/Level2_0_0.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Game/Level2/Level2_0/Level2_0.gd" type="Script" id=6]
-[ext_resource path="res://Game/Level2/Level2_0/Level2_0_1.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Game/Character/Crossroads/CrossroadWithGirl.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Game/Character/Crossroads/Crossroad.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Game/Character/MovingPanel/MovingPlatform.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Game/Level2/Level2_0/Level2_0_2.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Level2/Level2_0/Level2_0_3.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game/Level2/Level2_0/Level2_0.gd" type="Script" id=3]
+[ext_resource path="res://Game/Level2/Level2_0/Level2_0_0.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Game/Level2/Level2_0/Level2_0_1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Game/Level2/Level2_0/Level2_0_4.tscn" type="PackedScene" id=6]
 
 [node name="Level2_0" type="Node2D"]
 position = Vector2( -28.5183, 150.13 )
-script = ExtResource( 6 )
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
+start_position = Vector2( 0, 600 )
 
-[node name="Level2_0_0" parent="." instance=ExtResource( 5 )]
+[node name="Level2_0_0" parent="." instance=ExtResource( 4 )]
 
-[node name="Level2_0_1" parent="." instance=ExtResource( 7 )]
+[node name="Level2_0_1" parent="." instance=ExtResource( 5 )]
 
-[node name="Level2_0_2" type="Node" parent="."]
+[node name="Level2_0_2" parent="." instance=ExtResource( 1 )]
 
-[node name="RoadBorderSet13" parent="Level2_0_2" instance=ExtResource( 1 )]
-position = Vector2( 36210.5, 3723.19 )
-rotation = -1.55819
-z_index = 1
+[node name="Level2_0_3" parent="." instance=ExtResource( 2 )]
 
-[node name="MovingPlatform2" parent="Level2_0_2/RoadBorderSet13" instance=ExtResource( 16 )]
-position = Vector2( 585.79, 45.3301 )
-rotation = 1.55819
-
-[node name="TreeRoadOneBorder" type="Node" parent="Level2_0_2"]
-
-[node name="RoadBodyOne" parent="Level2_0_2/TreeRoadOneBorder" instance=ExtResource( 3 )]
-position = Vector2( 36683.6, 3294.04 )
-
-[node name="RoadBodyOne2" parent="Level2_0_2/TreeRoadOneBorder" instance=ExtResource( 3 )]
-position = Vector2( 36800.9, 3294.1 )
-
-[node name="RoadBodyOne3" parent="Level2_0_2/TreeRoadOneBorder" instance=ExtResource( 3 )]
-position = Vector2( 36919.1, 3294.04 )
-
-[node name="RoadBorder" type="Sprite" parent="Level2_0_2/TreeRoadOneBorder"]
-position = Vector2( 36793.1, 3273.42 )
-z_index = -1
-texture = ExtResource( 4 )
-
-[node name="RoadBorder2" type="Sprite" parent="Level2_0_2/TreeRoadOneBorder/RoadBorder"]
-position = Vector2( 142.125, 0 )
-texture = ExtResource( 4 )
-
-[node name="TreeRoadOneBorder2" type="Node" parent="Level2_0_2"]
-
-[node name="RoadBodyOne" parent="Level2_0_2/TreeRoadOneBorder2" instance=ExtResource( 3 )]
-position = Vector2( 37336.7, 3295.33 )
-
-[node name="RoadBodyOne2" parent="Level2_0_2/TreeRoadOneBorder2" instance=ExtResource( 3 )]
-position = Vector2( 37454, 3295.4 )
-
-[node name="RoadBodyOne3" parent="Level2_0_2/TreeRoadOneBorder2" instance=ExtResource( 3 )]
-position = Vector2( 37572.2, 3295.33 )
-
-[node name="RoadBorder" type="Sprite" parent="Level2_0_2/TreeRoadOneBorder2"]
-position = Vector2( 37446.3, 3274.72 )
-z_index = -1
-texture = ExtResource( 4 )
-
-[node name="RoadBorder2" type="Sprite" parent="Level2_0_2/TreeRoadOneBorder2/RoadBorder"]
-position = Vector2( 142.125, 0 )
-texture = ExtResource( 4 )
-
-[node name="TreeRoadOneBorder3" type="Node" parent="Level2_0_2"]
-
-[node name="RoadBodyOne" parent="Level2_0_2/TreeRoadOneBorder3" instance=ExtResource( 3 )]
-position = Vector2( 38037.7, 3300.6 )
-
-[node name="RoadBodyOne2" parent="Level2_0_2/TreeRoadOneBorder3" instance=ExtResource( 3 )]
-position = Vector2( 38155, 3300.67 )
-
-[node name="RoadBodyOne3" parent="Level2_0_2/TreeRoadOneBorder3" instance=ExtResource( 3 )]
-position = Vector2( 38273.2, 3300.6 )
-
-[node name="RoadBorder" type="Sprite" parent="Level2_0_2/TreeRoadOneBorder3"]
-position = Vector2( 38147.3, 3279.99 )
-z_index = -1
-texture = ExtResource( 4 )
-
-[node name="RoadBorder2" type="Sprite" parent="Level2_0_2/TreeRoadOneBorder3/RoadBorder"]
-position = Vector2( 142.125, 0 )
-texture = ExtResource( 4 )
-
-[node name="TreeRoadOneBorder4" type="Node" parent="Level2_0_2"]
-
-[node name="RoadBodyOne" parent="Level2_0_2/TreeRoadOneBorder4" instance=ExtResource( 3 )]
-position = Vector2( 38765.4, 3312.33 )
-
-[node name="RoadBodyOne2" parent="Level2_0_2/TreeRoadOneBorder4" instance=ExtResource( 3 )]
-position = Vector2( 38882.6, 3312.39 )
-
-[node name="RoadBodyOne3" parent="Level2_0_2/TreeRoadOneBorder4" instance=ExtResource( 3 )]
-position = Vector2( 39000.8, 3312.33 )
-
-[node name="RoadBorder" type="Sprite" parent="Level2_0_2/TreeRoadOneBorder4"]
-position = Vector2( 38874.9, 3291.72 )
-z_index = -1
-texture = ExtResource( 4 )
-
-[node name="RoadBorder2" type="Sprite" parent="Level2_0_2/TreeRoadOneBorder4/RoadBorder"]
-position = Vector2( 142.125, 0 )
-texture = ExtResource( 4 )
-
-[node name="DoubleRoadBody" parent="Level2_0_2" instance=ExtResource( 2 )]
-position = Vector2( 39124.1, 3312.9 )
-
-[node name="Crossroad" parent="Level2_0_2" instance=ExtResource( 9 )]
-position = Vector2( 39204.4, 3367.35 )
-
-[node name="Crossroads" parent="Level2_0_2" instance=ExtResource( 8 )]
-position = Vector2( 39195.7, 3461.02 )
-scale = Vector2( 0.6, 0.6 )
-
-[node name="DoubleRoadBody2" parent="Level2_0_2" instance=ExtResource( 2 )]
-position = Vector2( 41558.9, 3313.29 )
+[node name="Level2_0_4" parent="." instance=ExtResource( 6 )]

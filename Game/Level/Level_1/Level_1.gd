@@ -9,17 +9,18 @@ func _init():
 
 
 func _ready():
-	var sky: Sprite = get_parent().get_node('Background/sky')
+	var sky: Sprite = get_parent().get_node('Background/ParallaxSky/sky')
 	sky.modulate = Color('#e6e588')
 
 
 static func create_for_cfg() -> void:
 	var resource = "res://Game/Level/Level_1/Level_1.tscn"
 	var texture = "res://Game/Level/assets/slides/track-01.png"
-	var num_win = 5
+	var num_win = 6
 	var init_time_level = 20
 	var price = 2
-	var issue: = "Collect the %s hourgrass."
+	var issue: = "Heat. Collect the %s hourgrass to see the finish"
 	
-	
-	GameData.track_cfg.create(1, 1, issue, resource, texture, num_win, init_time_level, price)
+	var res := GameData.track_cfg.create(1, 1, issue, resource, texture, num_win, init_time_level, price)
+	if res != OK:
+		printerr("ERROR: Level_1 create_for_cfg")

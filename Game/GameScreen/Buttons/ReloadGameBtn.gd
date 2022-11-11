@@ -6,9 +6,10 @@ func _on_pressed():
 	._on_pressed()
 	
 	# PlayerData.score = 0
-	print(GameData.current_track)
 	GameData.reload_game(GameData.current_track.ID)
 	# GameData._ready()
 	
 	get_tree().paused = false
-	get_tree().reload_current_scene()
+	var res := get_tree().reload_current_scene()
+	if res != OK:
+		printerr("ERROR: " + str(self) + ". Res: " + str(res))

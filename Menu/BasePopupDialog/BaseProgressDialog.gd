@@ -24,7 +24,9 @@ func _on_btn_yes_pressed():
 	btn_yes.modulate.a = 0.1
 	if is_visible(): 
 		yield(get_tree().create_timer(0.4), "timeout")
-		get_tree().reload_current_scene()
+		var res := get_tree().reload_current_scene()
+		if res != OK:
+			printerr("ERROR: " + str(self) + " " + str(res) + "_on_btn_pay_pressed and reload_current_scene")
 
 
 # popup
