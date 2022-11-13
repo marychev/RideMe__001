@@ -1,7 +1,7 @@
 extends KinematicBody2D
 class_name MovingPlatform
 
-const MOVE_SPEED = 50
+const MOVE_SPEED = 100
 
 var has_move_up = true
 onready var start_pos_y = position.y

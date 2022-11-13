@@ -130,19 +130,31 @@ position = Vector2( 18597.8, 1338.2 )
 physics_material_override = SubResource( 1 )
 
 [node name="MovingPlatform" parent="." instance=ExtResource( 3 )]
-position = Vector2( 19014.1, 1154.31 )
+position = Vector2( 18997, 1168 )
 
 [node name="MovingPlatform2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 19536.9, 1050.18 )
+position = Vector2( 19528, 1067 )
+
+[node name="RM4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 19587, 918 )
 
 [node name="MovingPlatform3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 20094.9, 936.706 )
+position = Vector2( 20064, 954 )
+
+[node name="RM5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 20077, 817 )
 
 [node name="MovingPlatform4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 20616.6, 815.18 )
+position = Vector2( 20588, 838 )
+
+[node name="RM6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 20657, 704 )
+
+[node name="RM7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 21878, 836 )
 
 [node name="Plank3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 20258.3, 576.38 )
+position = Vector2( 20322, 763 )
 
 [node name="BridgeLeft" parent="." instance=ExtResource( 10 )]
 position = Vector2( 20360.2, 1346.76 )

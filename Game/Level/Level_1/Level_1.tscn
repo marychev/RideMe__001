@@ -136,8 +136,7 @@ position = Vector2( 13671.9, 1332.57 )
 position = Vector2( 18486, 140.577 )
 
 [node name="Crossroad" parent="Level_1_1" instance=ExtResource( 8 )]
-position = Vector2( 18545, 1373.3 )
-scale = Vector2( 0.42, 0.42 )
+position = Vector2( 18471, 1324 )
 
 [node name="Lamp" parent="Level_1_1" instance=ExtResource( 7 )]
 position = Vector2( 18670.7, 1109.48 )

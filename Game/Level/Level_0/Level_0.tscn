@@ -78,7 +78,7 @@ position = Vector2( 281.076, -174.483 )
 position = Vector2( 552.764, -79.4243 )
 
 [node name="Hourgrass3" parent="Level_0_1" instance=ExtResource( 21 )]
-position = Vector2( 23066.2, 1076.78 )
+position = Vector2( 28250, 1059 )
 
 [node name="BenchGrassPlank2" parent="Level_0_1" instance=ExtResource( 3 )]
 position = Vector2( 24822.5, 1191.51 )
@@ -189,13 +189,13 @@ position = Vector2( 40846, 934.608 )
 position = Vector2( 40895.3, 1204.58 )
 
 [node name="Hourgrass4" parent="Level_0_2" instance=ExtResource( 21 )]
-position = Vector2( 41703.2, 1117.05 )
-
-[node name="Hourgrass5" parent="Level_0_2" instance=ExtResource( 21 )]
-position = Vector2( 45537.6, 1117.05 )
+position = Vector2( 42777, 1120 )
 
 [node name="RoadBorderLevel9" parent="Level_0_2" instance=ExtResource( 10 )]
 position = Vector2( 45390.7, 0.157471 )
+
+[node name="Hourgrass5" parent="Level_0_2" instance=ExtResource( 21 )]
+position = Vector2( 46913, 1088 )
 
 [node name="LampsSetFour" parent="Level_0_2" instance=ExtResource( 4 )]
 position = Vector2( 45037.8, 1229.82 )

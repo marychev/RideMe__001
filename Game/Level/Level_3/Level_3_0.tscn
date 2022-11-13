@@ -30,7 +30,7 @@ position = Vector2( 4.74384, 140.518 )
 
 [node name="Start" parent="." instance=ExtResource( 12 )]
 position = Vector2( -71.8939, 1328.27 )
-scale = Vector2( 0.8, 0.6 )
+scale = Vector2( 0.8, 0.8 )
 
 [node name="Lamp" parent="." instance=ExtResource( 4 )]
 position = Vector2( 563.252, 1162.38 )
@@ -48,14 +48,14 @@ position = Vector2( -316.437, -44.0006 )
 scale = Vector2( 0.8, 0.8 )
 z_index = -3
 
-[node name="Crossroad" parent="." instance=ExtResource( 1 )]
-position = Vector2( 3638.24, 1372.48 )
-
 [node name="RoadBorderLevel2" parent="." instance=ExtResource( 9 )]
 position = Vector2( 4486.8, 140.518 )
 
 [node name="UpderConstarctionMin2" parent="RoadBorderLevel2" instance=ExtResource( 13 )]
 position = Vector2( 4466.48, 1172.76 )
+
+[node name="Crossroad" parent="." instance=ExtResource( 1 )]
+position = Vector2( 4606, 1324 )
 
 [node name="Lamp3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 4806.73, 1159.88 )
@@ -197,7 +197,6 @@ position = Vector2( -154.627, 0 )
 
 [node name="Bench6" parent="Bench3" instance=ExtResource( 2 )]
 position = Vector2( 15.4473, -45.5432 )
-z_index = 1
 
 [node name="Lamp10" parent="." instance=ExtResource( 4 )]
 position = Vector2( 22124.6, 1159.98 )

@@ -18,6 +18,9 @@ func _on_body_entered(body: Node2D) -> void:
 		# else:
 		# 	body._velocity.x = body._velocity.x / 2
 		
+		print(body._velocity)
+		
+		
 		if body.power > body.max_power / 2:
 			body.power = body.max_power / 2
 		else:
