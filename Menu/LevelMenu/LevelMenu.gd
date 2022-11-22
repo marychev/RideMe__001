@@ -38,7 +38,9 @@ func _ready() -> void:
 		elif GameData.current_level.id == 2:
 			_on_Level_2_pressed()
 			_on_btn_refit_pressed()
-	
+	elif GameData.current_track.has_passed():
+		btn_refit.anim_flicker()
+		
 	# -- Demo mode
 	# if $Completed.visible:
 	#	var popup_completed: Popup = load("res://Menu/LevelMenu/PopupCompleted/PopupCompleted.tscn").instance()
@@ -55,6 +57,7 @@ func _on_btn_pay_pressed() -> void:
 		yield(get_tree().create_timer(0.4), "timeout")
 		var res := get_tree().change_scene(main_menu.game_tscn) 
 		assert(not res, "ERROR: LevelMenu _on_btn_pay_pressed change_scene")
+
 
 func _on_btn_refit_pressed() -> void:
 	if GameData.current_level:

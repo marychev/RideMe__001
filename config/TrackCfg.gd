@@ -92,6 +92,10 @@ func get_fail_tracks(level_id: int) -> Array:
 	return store
 
 
+func has_passed_track(section: String) -> bool:
+	return LevelTrackStates.PASSED == get_state(section)
+
+
 func has_passed_level(level_id: int) -> bool:
 	var count_tracks: int = 0
 	var count_passed_tracks: int = 0
