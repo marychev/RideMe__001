@@ -179,7 +179,7 @@ position = Vector2( 24314, 1370.49 )
 position = Vector2( 24654, 1370.49 )
 
 [node name="MovingPlatform2" parent="Level_1_1" instance=ExtResource( 3 )]
-position = Vector2( 24552, 1203.69 )
+position = Vector2( 24527, 1266 )
 
 [node name="Level_1_2" type="Node" parent="."]
 
@@ -245,7 +245,7 @@ position = Vector2( 36304.9, 1229.67 )
 scale = Vector2( 1.30184, 1.16259 )
 
 [node name="Plank3" parent="Level_1_2" instance=ExtResource( 9 )]
-position = Vector2( 37054.6, 1183.25 )
+position = Vector2( 37159, 1212 )
 
 [node name="RM2" parent="Level_1_2" instance=ExtResource( 1 )]
 position = Vector2( 37398.7, 1018.81 )
@@ -265,7 +265,7 @@ z_index = -1
 position = Vector2( 37906.1, 1188.4 )
 
 [node name="MovingPlatform" parent="Level_1_3" instance=ExtResource( 3 )]
-position = Vector2( 39307.4, 1252.51 )
+position = Vector2( 39143, 1284 )
 
 [node name="Plank" parent="Level_1_3" instance=ExtResource( 9 )]
 position = Vector2( 38963.1, 1192.76 )
@@ -274,14 +274,14 @@ position = Vector2( 38963.1, 1192.76 )
 position = Vector2( 39349.9, 1195.62 )
 
 [node name="MovingPlatform2" parent="Level_1_3" instance=ExtResource( 3 )]
-position = Vector2( 40719.3, 1261.05 )
+position = Vector2( 41245, 1272 )
 collision_layer = 0
 
 [node name="RoadBorderLevel1_0" parent="Level_1_3" instance=ExtResource( 17 )]
 position = Vector2( 41632.5, 140.675 )
 
 [node name="MovingPlatform3" parent="Level_1_3" instance=ExtResource( 3 )]
-position = Vector2( 43439.8, 1250.37 )
+position = Vector2( 43437, 1315 )
 
 [node name="MovingPlatform4" parent="Level_1_3" instance=ExtResource( 3 )]
 position = Vector2( 43915, 1271.73 )
@@ -299,21 +299,21 @@ position = Vector2( 50596.4, 140.675 )
 position = Vector2( 55076.5, 140.675 )
 
 [node name="Plank3" parent="Level_1_3" instance=ExtResource( 9 )]
-position = Vector2( 47838.8, 1186.32 )
+position = Vector2( 48096, 875.345 )
 
 [node name="Plank4" parent="Level_1_3" instance=ExtResource( 9 )]
-position = Vector2( 48550.3, 1059.01 )
+position = Vector2( 48807.5, 748.035 )
 
 [node name="Plank5" parent="Level_1_3" instance=ExtResource( 9 )]
-position = Vector2( 49200.4, 1123.11 )
+position = Vector2( 49457.6, 812.135 )
 
 [node name="Plank8" parent="Level_1_3" instance=ExtResource( 9 )]
-position = Vector2( 50117.1, 918.975 )
+position = Vector2( 50374.3, 608 )
 linear_damp = 18.0
 applied_torque = 2.0
 
 [node name="Hourgrass6" parent="Level_1_3" instance=ExtResource( 11 )]
-position = Vector2( 51644.1, 1081.11 )
+position = Vector2( 51624, 1129 )
 
 [node name="LampsSetFour" parent="Level_1_3" instance=ExtResource( 19 )]
 position = Vector2( 55980.1, 1364.6 )

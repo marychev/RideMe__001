@@ -134,6 +134,7 @@ position = Vector2( 64568.6, 1396.21 )
 rotation = -0.284155
 
 [node name="Hourgrass" parent="." instance=ExtResource( 10 )]
+position = Vector2( 64869, 1195 )
 
 [node name="RoadBorderLevel9" parent="." instance=ExtResource( 3 )]
 position = Vector2( 69107.3, 133.227 )
@@ -181,8 +182,6 @@ position = Vector2( 73587.5, 133.227 )
 [node name="RM3" parent="." instance=ExtResource( 9 )]
 
 [node name="RM4" parent="." instance=ExtResource( 9 )]
-
-[node name="Hourgrass2" parent="." instance=ExtResource( 10 )]
 
 [node name="MovingPlatform13" parent="." instance=ExtResource( 2 )]
 position = Vector2( 76135.8, 1243.42 )

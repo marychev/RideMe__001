@@ -20,7 +20,7 @@ func do_rain():
 static func create_for_cfg() -> void:
 	var resource = "res://Game/Level/Level_3/Level_3.tscn"
 	var texture = "res://Game/Level/assets/slides/track-03.png"
-	var num_win = 11
+	var num_win = 8
 	var init_time_level = 18
 	var price = 20
 	var issue: = "Night road. Collect the %s hourgrass as soon as possible"
