@@ -7,7 +7,7 @@
 [ext_resource path="res://Game/Character/Bench/Bench.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Game/Level2/RoadBorderLevelCity.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Game/Road/upder_constarction/UpderConstarctionMin.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Game/Character/Bridge/BridgeLeft.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Game/Level2/TreeRoadOneCity.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Game/Character/Stairs/StaticStairs.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Game/Character/MovingPanel/MovingPlatform.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Game/Level2/RoadBorderSet.tscn" type="PackedScene" id=17]
@@ -52,7 +52,7 @@ position = Vector2( 0, -93.8262 )
 position = Vector2( 76785.9, 3323.24 )
 
 [node name="Hourgrass" parent="." instance=ExtResource( 2 )]
-position = Vector2( 77022.8, 3313.9 )
+position = Vector2( 76830, 3350 )
 
 [node name="StaticStairs" parent="." instance=ExtResource( 14 )]
 position = Vector2( 77113.7, 3057.26 )
@@ -79,21 +79,20 @@ z_index = 1
 [node name="MovingPlatform" parent="." instance=ExtResource( 16 )]
 position = Vector2( 76929.1, 3474.57 )
 
-[node name="MovingPlatform2" parent="." instance=ExtResource( 16 )]
-position = Vector2( 76928, 5040.02 )
-
 [node name="RM" parent="." instance=ExtResource( 3 )]
-position = Vector2( 77166.9, 4804.59 )
+position = Vector2( 76807, 3822 )
 
 [node name="RM2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 77674.3, 4901.48 )
+position = Vector2( 76990, 4217 )
 
-[node name="BridgeLeft" parent="." instance=ExtResource( 13 )]
-position = Vector2( 78890.3, 6445.01 )
+[node name="RM3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 76766, 4645 )
 
-[node name="StaticRock2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 79061.5, 6707.72 )
-rotation = 0.0872346
+[node name="RM4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 77024, 4964 )
+
+[node name="RM5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 76768, 5310 )
 
 [node name="StaticStairs4" parent="." instance=ExtResource( 14 )]
 position = Vector2( 76075.3, 5647.64 )
@@ -109,3 +108,12 @@ rotation = 0.38986
 [node name="StaticStairs7" parent="." instance=ExtResource( 14 )]
 position = Vector2( 78148.9, 6160.18 )
 rotation = 0.404927
+
+[node name="TreeRoadOneCity" parent="." instance=ExtResource( 8 )]
+position = Vector2( 79027, 6526 )
+
+[node name="TreeRoadOneCity2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 79375, 6526 )
+
+[node name="MovingPlatform2" parent="." instance=ExtResource( 16 )]
+position = Vector2( 80123, 6520 )

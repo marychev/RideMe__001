@@ -159,7 +159,7 @@ position = Vector2( 217.874, 81.8552 )
 position = Vector2( 5529.56, 2659.8 )
 
 [node name="Crossroads2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 6032.35, 2755.22 )
+position = Vector2( 6058, 2697 )
 
 [node name="Dog" parent="." instance=ExtResource( 22 )]
 position = Vector2( 6810.64, 2674.85 )
@@ -254,7 +254,7 @@ physics_material_override = SubResource( 1 )
 position = Vector2( 16334.8, 1438.24 )
 
 [node name="StaticRock6_1" parent="." instance=ExtResource( 20 )]
-position = Vector2( 16678.6, 2667.7 )
+position = Vector2( 16780, 2750 )
 physics_material_override = SubResource( 1 )
 
 [node name="StaticRock6" parent="StaticRock6_1" instance=ExtResource( 20 )]
@@ -263,17 +263,7 @@ rotation = 1.55683
 physics_material_override = SubResource( 1 )
 
 [node name="Plank" parent="." instance=ExtResource( 27 )]
-position = Vector2( 17003, 2646.47 )
-
-[node name="Plank2" parent="Plank" instance=ExtResource( 27 )]
-position = Vector2( -77.4199, -49.3281 )
-
-[node name="Plank3" parent="Plank" instance=ExtResource( 27 )]
-position = Vector2( 197.438, -118.35 )
-
-[node name="Plank4" parent="Plank" instance=ExtResource( 27 )]
-position = Vector2( -145.684, -186.461 )
-rotation = 0.291287
+position = Vector2( 16786, 2532 )
 
 [node name="RoadBorderLevelCity7" parent="." instance=ExtResource( 7 )]
 position = Vector2( 19055.6, 1438.24 )
@@ -284,21 +274,9 @@ position = Vector2( 2321.51, 1188.58 )
 [node name="UpderConstarctionMin" parent="RoadBorderLevelCity7" instance=ExtResource( 10 )]
 position = Vector2( 2711.64, 1269.47 )
 
-[node name="Grass2" parent="." instance=ExtResource( 18 )]
-position = Vector2( 19042.3, 2570.54 )
-
-[node name="Grass3" parent="." instance=ExtResource( 18 )]
-position = Vector2( 19387.1, 2576.91 )
-
-[node name="Grass4" parent="." instance=ExtResource( 18 )]
-position = Vector2( 19755.7, 2578.04 )
-
 [node name="ChildrenSlide" parent="." instance=ExtResource( 3 )]
 position = Vector2( 20222.3, 2298.84 )
 scale = Vector2( -1, 1 )
-
-[node name="StaticRock5" parent="." instance=ExtResource( 20 )]
-position = Vector2( 19881.7, 2734.99 )
 
 [node name="Dog3" parent="." instance=ExtResource( 22 )]
 position = Vector2( 20434, 2666.48 )
