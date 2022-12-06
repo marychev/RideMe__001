@@ -14,7 +14,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
-start_position = Vector2( 0, 600 )
+start_position = Vector2( -200, 400 )
 
 [node name="Level2_1_0" parent="." instance=ExtResource( 2 )]
 

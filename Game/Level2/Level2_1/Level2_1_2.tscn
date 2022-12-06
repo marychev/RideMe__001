@@ -38,27 +38,27 @@ position = Vector2( 42423.8, 2833.6 )
 position = Vector2( 42776.3, 2833.76 )
 
 [node name="BridgeRight3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 43488.3, 2526.53 )
+position = Vector2( 43427, 2866 )
 rotation = 0.240855
 
 [node name="RoadBorderSet" parent="BridgeRight3" instance=ExtResource( 7 )]
-position = Vector2( 1366.36, 282.721 )
+position = Vector2( 1442.72, 96.6348 )
 rotation = 3.1436
 scale = Vector2( 1, -1 )
 z_index = -1
 
 [node name="BridgeRight4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 44813.5, 2852.16 )
+position = Vector2( 44752.2, 3191.63 )
 rotation = 0.240855
 
 [node name="RoadBorderSet2" parent="BridgeRight4" instance=ExtResource( 7 )]
-position = Vector2( 1369.21, 285.477 )
+position = Vector2( 1443.48, 101.408 )
 rotation = -3.13959
 scale = Vector2( 1, -1 )
 z_index = -1
 
 [node name="KSMan5" parent="BridgeRight4" instance=ExtResource( 4 )]
-position = Vector2( 236.379, 98.9753 )
+position = Vector2( 458.109, -100.014 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 
@@ -107,7 +107,7 @@ rotation = 0.454968
 position = Vector2( 56385.4, 2374.5 )
 
 [node name="Grass2" parent="." instance=ExtResource( 12 )]
-position = Vector2( 57212.5, 3553.3 )
+position = Vector2( 57214, 3526 )
 
 [node name="Dog2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 58544, 3553.36 )

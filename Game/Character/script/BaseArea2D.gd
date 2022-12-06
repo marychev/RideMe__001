@@ -14,5 +14,6 @@ func _ready() -> void:
 
 
 func set_bike_parameters(player: Player):
-	player._velocity.x -= 100
-	player.set_power(player.power - 100)
+	if player._velocity.x > 100: 
+		player._velocity.x -= 100
+		player.set_power(player.power - 100)

@@ -125,21 +125,15 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_CollisionDetector_body_entered(body: Node2D) -> void:
-	"""
 	if 'MovingPlatform' in body.name:
 		body.has_move_up = false
-		body.position.y += mass / DIVISION_MASS
-	"""
-	pass
+		# body.position.y += mass / DIVISION_MASS
 
 
 func _on_CollisionDetector_body_exited(body: Node2D) -> void:
-	"""
 	if 'MovingPlatform' in body.name:
 		body.has_move_up = true
-		body.position.y -= mass / DIVISION_MASS
-	"""
-	pass
+		# body.position.y -= mass / DIVISION_MASS
 
 
 func _calc_velocity(delta: float) -> void:

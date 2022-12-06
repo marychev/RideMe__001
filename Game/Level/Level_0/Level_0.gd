@@ -42,7 +42,6 @@ func _ready():
 func init_start_position() -> void:
 	var player:Player = get_parent().get_node('Player')
 	if start_position != Vector2.ZERO and is_instance_valid(player):
-		# player.global_position = start_position
 		player.position = start_position
 	else:
 		printerr("Player's start position were not initialisated!")
@@ -73,6 +72,11 @@ func init_issue() -> String:
 func are_you_win() -> bool:
 	has_win = PlayerData.time_level_count >= num_win
 	return has_win
+
+
+func has_passed() -> bool:
+	var section: String = track_cfg.get_section(str(GameData.current_track.ID))
+	return track_cfg.has_passed_track(section)
 
 
 static func create_for_cfg() -> void:
