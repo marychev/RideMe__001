@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Game/Character/Bridge/BridgeLeft.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Road/upder_constarction/UpderConstarctionMin.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game/Character/MovingPanel/MovingPlatformVertical.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Game/Character/Hourgrass/Hourgrass.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Game/Level2/TreeRoadOneCity.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Game/Level2/RoadBorderLevelCity.tscn" type="PackedScene" id=7]
@@ -101,22 +102,22 @@ position = Vector2( 678.1, -14.96 )
 position = Vector2( 1020.3, -22.96 )
 
 [node name="BridgeLRight5" parent="." instance=ExtResource( 1 )]
-position = Vector2( 16257.7, 2586.52 )
+position = Vector2( 16257.7, 2525 )
 rotation = 0.240855
 
 [node name="BridgeLRight6" parent="." instance=ExtResource( 1 )]
-position = Vector2( 17582, 2911.92 )
+position = Vector2( 17582, 2850.4 )
 rotation = 0.240855
 
 [node name="BridgeLRight7" parent="." instance=ExtResource( 1 )]
-position = Vector2( 18906.9, 3237.54 )
+position = Vector2( 18906.9, 3176.02 )
 rotation = 0.240855
 
 [node name="TreeRoadOneCity" parent="." instance=ExtResource( 6 )]
-position = Vector2( 20665.5, 3763.39 )
+position = Vector2( 20665.5, 3688 )
 
 [node name="TreeRoadOneCity2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 21018.4, 3763.39 )
+position = Vector2( 21018.4, 3688 )
 
 [node name="RoadBorderLevelMountain" parent="." instance=ExtResource( 10 )]
 position = Vector2( 21751.7, 2585.63 )
@@ -154,26 +155,23 @@ position = Vector2( 4465.59, 1172.96 )
 [node name="Hourgrass" parent="." instance=ExtResource( 5 )]
 position = Vector2( 22288.3, 3625.74 )
 
-[node name="BridgeLeft3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 24520.1, 3424.45 )
-
-[node name="TreeRoadOneCity3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 26206.1, 3409.65 )
+[node name="MovingPlatformVertical" parent="." instance=ExtResource( 3 )]
+position = Vector2( 26529, 3844 )
 
 [node name="TreeRoadOneCity4" parent="." instance=ExtResource( 6 )]
-position = Vector2( 26782.9, 3530.33 )
+position = Vector2( 26900, 4596 )
 
 [node name="TreeRoadOneCity5" parent="." instance=ExtResource( 6 )]
-position = Vector2( 27386.3, 3661.67 )
+position = Vector2( 27389, 4515 )
 
 [node name="TreeRoadOneCity6" parent="." instance=ExtResource( 6 )]
-position = Vector2( 27945.9, 3794.77 )
+position = Vector2( 27887, 4403 )
 
-[node name="MovingPlatform7" parent="." instance=ExtResource( 26 )]
-position = Vector2( 28739.3, 3878.26 )
+[node name="MovingPlatform8" parent="." instance=ExtResource( 26 )]
+position = Vector2( 28599, 4346 )
 
 [node name="RoadBorderLevelCity3" parent="." instance=ExtResource( 7 )]
-position = Vector2( 28924.2, 2627.3 )
+position = Vector2( 28917, 3027 )
 
 [node name="UpderConstarctionMin" parent="RoadBorderLevelCity3" instance=ExtResource( 2 )]
 position = Vector2( -21.9727, 1169.68 )
@@ -190,7 +188,7 @@ z_index = -2
 position = Vector2( 304.369, 1110.29 )
 
 [node name="RoadBorderLevelCity4" parent="." instance=ExtResource( 7 )]
-position = Vector2( 31649.1, 2627.3 )
+position = Vector2( 31641.9, 3027 )
 
 [node name="UpderConstarctionMin2" parent="RoadBorderLevelCity4" instance=ExtResource( 2 )]
 position = Vector2( 2711.88, 1169.68 )
@@ -222,62 +220,44 @@ position = Vector2( 2345.55, 1169.68 )
 [node name="UpderConstarctionMin2" parent="RoadBorderLevelCity4/UpderConstarctionMin6" instance=ExtResource( 2 )]
 position = Vector2( 0, 93.3967 )
 
-[node name="BridgeLeft4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 33743.2, 3463.99 )
-
 [node name="TreeRoadOneCity7" parent="." instance=ExtResource( 6 )]
-position = Vector2( 35276, 3411.39 )
+position = Vector2( 34705.7, 4471.55 )
 
 [node name="Plank" parent="." instance=ExtResource( 27 )]
-position = Vector2( 35057.3, 3125.84 )
-
-[node name="Plank2" parent="Plank" instance=ExtResource( 27 )]
-position = Vector2( 253.598, -43.1101 )
-
-[node name="Plank3" parent="Plank" instance=ExtResource( 27 )]
-position = Vector2( 196.598, 51.4099 )
-
-[node name="Plank4" parent="Plank" instance=ExtResource( 27 )]
-position = Vector2( 802.598, 225.12 )
-
-[node name="Plank5" parent="Plank" instance=ExtResource( 27 )]
-position = Vector2( 946.699, 124.57 )
+position = Vector2( 34740, 4511 )
 
 [node name="TreeRoadOneCity8" parent="." instance=ExtResource( 6 )]
-position = Vector2( 35967.5, 3537.62 )
+position = Vector2( 35325, 4365 )
 
 [node name="TreeRoadOneCity9" parent="." instance=ExtResource( 6 )]
-position = Vector2( 36623.5, 3672.57 )
+position = Vector2( 35994, 4279 )
 
 [node name="TreeRoadOneCity10" parent="." instance=ExtResource( 6 )]
-position = Vector2( 37229.1, 3793.52 )
-
-[node name="TreeRoadOneCity11" parent="." instance=ExtResource( 6 )]
-position = Vector2( 37911.8, 3930.83 )
-
-[node name="TreeRoadOneCity12" parent="." instance=ExtResource( 6 )]
-position = Vector2( 38264.1, 3931.05 )
+position = Vector2( 36735, 4222 )
 
 [node name="Plank7" parent="." instance=ExtResource( 27 )]
-position = Vector2( 37843.5, 3926.3 )
+position = Vector2( 37772, 4121 )
+
+[node name="TreeRoadOneCity11" parent="." instance=ExtResource( 6 )]
+position = Vector2( 37440, 4126 )
+
+[node name="TreeRoadOneCity12" parent="." instance=ExtResource( 6 )]
+position = Vector2( 38240, 4012 )
 
 [node name="Plank8" parent="." instance=ExtResource( 27 )]
-position = Vector2( 37805.3, 3895.12 )
-
-[node name="Plank9" parent="." instance=ExtResource( 27 )]
-position = Vector2( 37740.4, 3863 )
+position = Vector2( 38284.9, 4059.95 )
 
 [node name="TreeRoadOneCity13" parent="." instance=ExtResource( 6 )]
-position = Vector2( 38901.1, 3842.4 )
+position = Vector2( 38882, 3876 )
 
 [node name="TreeRoadOneCity14" parent="." instance=ExtResource( 6 )]
-position = Vector2( 39575.2, 3742.29 )
+position = Vector2( 39575, 3757 )
 
 [node name="TreeRoadOneCity15" parent="." instance=ExtResource( 6 )]
-position = Vector2( 40230.2, 3604.48 )
+position = Vector2( 40222, 3617 )
 
 [node name="TreeRoadOneCity16" parent="." instance=ExtResource( 6 )]
-position = Vector2( 40799.7, 3493.34 )
+position = Vector2( 40808, 3502 )
 
 [node name="TreeRoadOneCity17" parent="." instance=ExtResource( 6 )]
 position = Vector2( 41325.5, 3384.2 )
