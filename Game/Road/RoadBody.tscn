@@ -29,3 +29,11 @@ centered = false
 [node name="Collision2" type="CollisionShape2D" parent="."]
 position = Vector2( 3370.48, 65.4622 )
 shape = SubResource( 1 )
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+position = Vector2( 1421, -199 )
+scale = Vector2( 586.4, 114.35 )
+process_parent = true
+physics_process_parent = true
+
+[connection signal="screen_exited" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_exited"]

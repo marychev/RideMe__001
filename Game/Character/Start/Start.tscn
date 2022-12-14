@@ -19,4 +19,8 @@ centered = false
 position = Vector2( 156.129, 54.992 )
 shape = SubResource( 1 )
 
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+position = Vector2( 73, -66.9999 )
+scale = Vector2( -156.773, -57.8846 )
+
 [connection signal="body_entered" from="." to="." method="_on_Start_body_entered"]

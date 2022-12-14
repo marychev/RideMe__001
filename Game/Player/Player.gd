@@ -17,6 +17,11 @@ var audio_jump = preload("res://media/move/jump.wav")
 var audio_broke = preload("res://media/move/broken.wav")
 var audio_colected = preload("res://media/move/colected.wav")
 
+onready var current_animation_list:= [
+	PlayerData.ANIMATION_COLLISION, 
+	PlayerData.ANIMATION_DANGER, 
+	PlayerData.ANIMATION_SUCCESS
+]
 
 func _ready() -> void:
 	$Sprite.texture = PlayerData.player_bike.texture
@@ -97,11 +102,7 @@ func get_input(delta: float) -> void:
 func _process(delta: float) -> void:
 	set_speed(_velocity.x)
 
-	if not anim_player.current_animation in [
-		PlayerData.ANIMATION_COLLISION, 
-		PlayerData.ANIMATION_DANGER, 
-		PlayerData.ANIMATION_SUCCESS
-	]:
+	if not anim_player.current_animation in current_animation_list:
 		modulate = Color.white
 
 	# prepare to die

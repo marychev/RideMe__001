@@ -23,3 +23,7 @@ func _repeat_two_sprites():
 	if PlayerScn.position.x > $sprite.position.x + road_width:
 		$sprite2.position.x = $sprite.position.x + road_width
 		$Collision2.position.x = $sprite.position.x + road_width
+
+
+func _on_VisibilityEnabler2D_screen_exited():
+	queue_free()
