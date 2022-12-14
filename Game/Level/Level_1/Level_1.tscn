@@ -87,7 +87,7 @@ position = Vector2( 4100.7, 1370.71 )
 physics_material_override = SubResource( 1 )
 
 [node name="StaticRock2" parent="Level_1_0" instance=ExtResource( 2 )]
-position = Vector2( 5951.37, 1347.12 )
+position = Vector2( 5951.37, 1351.84 )
 physics_material_override = SubResource( 1 )
 
 [node name="Bench" parent="Level_1_0" instance=ExtResource( 6 )]

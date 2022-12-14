@@ -1,6 +1,15 @@
 extends BonusArea
 class_name RM
 
+onready var refer: RM = self
+
+
+func _ready() -> void:
+	set_physics_process(false)
+	set_process(false)
+	visible = false
+	get_parent().remove_child(self)
+
 
 func _on_body_entered(body: Player) -> void:
 	._on_body_entered(body)
@@ -12,11 +21,7 @@ func _on_body_entered(body: Player) -> void:
 
 func _on_body_exited(body) -> void:
 	._on_body_exited(body)
-	
 
-func _on_VisibilityNotifier_screen_exited() -> void:
-	._on_VisibilityNotifier_screen_exited()
-	
 
 func rm_counter_do_anim_success() -> void:
 	var _anim_player: AnimationPlayer = get_node(PathData.PATH_RMS_COUNTER + '/AnimationPlayer')
@@ -24,4 +29,10 @@ func rm_counter_do_anim_success() -> void:
 		_anim_player.play(PlayerData.ANIMATION_SUCCESS)
 
 
+func _on_VisibilityEnabler_screen_exited() -> void:
+	._on_VisibilityNotifier_screen_exited()
 
+
+func _on_VisibilityEnabler_screen_entered() -> void:
+	visible = true
+	get_parent().add_child(refer)

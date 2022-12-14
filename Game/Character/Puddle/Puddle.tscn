@@ -42,10 +42,12 @@ position = Vector2( 60.343, 30.9518 )
 rotation = 1.70199
 shape = SubResource( 1 )
 
-[node name="VisibilityNotifier" type="VisibilityNotifier2D" parent="."]
+[node name="VisibilityEnabler" type="VisibilityEnabler2D" parent="."]
 position = Vector2( 141.948, 26.2682 )
 rotation = 0.427938
 scale = Vector2( 124.363, 78.0105 )
+process_parent = true
+physics_process_parent = true
 
 [node name="Particles" type="Particles2D" parent="."]
 position = Vector2( 93.5859, -16.8857 )
@@ -61,4 +63,5 @@ process_material = SubResource( 2 )
 texture = ExtResource( 3 )
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="screen_exited" from="VisibilityNotifier" to="." method="_on_VisibilityNotifier_screen_exited"]
+[connection signal="screen_entered" from="VisibilityEnabler" to="." method="_on_VisibilityEnabler_screen_entered"]
+[connection signal="screen_exited" from="VisibilityEnabler" to="." method="_on_VisibilityNotifier_screen_exited"]

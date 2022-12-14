@@ -5,6 +5,14 @@ export(bool) var has_repeat = false;
 
 var PlayerScn
 onready var road_width = $sprite.texture.get_size().x
+onready var refer: RoadBody = self
+
+
+func _ready() -> void:
+	set_physics_process(false)
+	set_process(false)
+	visible = false
+	get_parent().remove_child(self)
 
 
 func repeat_two_sprites():
@@ -27,3 +35,8 @@ func _repeat_two_sprites():
 
 func _on_VisibilityEnabler2D_screen_exited():
 	queue_free()
+
+
+func _on_VisibilityEnabler2D_screen_entered() -> void:
+	visible = true
+	get_parent().add_child(refer)

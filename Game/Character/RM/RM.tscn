@@ -98,9 +98,11 @@ anims/RESET = SubResource( 4 )
 anims/bouncing = SubResource( 2 )
 anims/fade_out = SubResource( 3 )
 
-[node name="VisibilityNotifier" type="VisibilityNotifier2D" parent="."]
+[node name="VisibilityEnabler" type="VisibilityEnabler2D" parent="."]
 position = Vector2( 1.31807, 72.0103 )
 scale = Vector2( 99.4016, 69.8789 )
+process_parent = true
+physics_process_parent = true
 
 [node name="Particles2D" type="CPUParticles2D" parent="."]
 emitting = false
@@ -117,4 +119,5 @@ hue_variation_random = 1.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
-[connection signal="screen_exited" from="VisibilityNotifier" to="." method="_on_VisibilityNotifier_screen_exited"]
+[connection signal="screen_entered" from="VisibilityEnabler" to="." method="_on_VisibilityEnabler_screen_entered"]
+[connection signal="screen_exited" from="VisibilityEnabler" to="." method="_on_VisibilityEnabler_screen_exited"]

@@ -10,7 +10,6 @@ func _on_StompDetector_body_entered(body: Node) -> void:
 		player_stomp_detecter.player = body
 		player_stomp_detecter.on_player_entered()
 
-
 		animate_people.hit_player(body, 1)
 
 

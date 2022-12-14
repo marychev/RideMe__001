@@ -36,4 +36,5 @@ scale = Vector2( 586.4, 114.35 )
 process_parent = true
 physics_process_parent = true
 
+[connection signal="screen_entered" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_entered"]
 [connection signal="screen_exited" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_exited"]

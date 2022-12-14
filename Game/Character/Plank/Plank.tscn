@@ -73,6 +73,7 @@ draw_order = 1
 process_material = SubResource( 3 )
 texture = ExtResource( 1 )
 
+[connection signal="screen_entered" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_entered"]
 [connection signal="screen_exited" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_exited"]
 [connection signal="body_entered" from="StompDetector" to="." method="_on_StompDetector_body_entered"]
 [connection signal="body_exited" from="StompDetector" to="." method="_on_StompDetector_body_exited"]

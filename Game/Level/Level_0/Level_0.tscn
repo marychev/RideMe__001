@@ -51,7 +51,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Plank" parent="Level_0_1/BenchGrassPlank" instance=ExtResource( 18 )]
+[node name="Plank2" parent="Level_0_1/BenchGrassPlank" instance=ExtResource( 18 )]
 position = Vector2( -79.6738, -71.1008 )
 
 [node name="Bench2" parent="Level_0_1/BenchGrassPlank" instance=ExtResource( 3 )]
@@ -86,10 +86,10 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Plank2" parent="Level_0_1/BenchGrassPlank2" instance=ExtResource( 18 )]
+[node name="Plank3" parent="Level_0_1/BenchGrassPlank2" instance=ExtResource( 18 )]
 position = Vector2( 240.391, -97.9088 )
 
-[node name="Plank" parent="Level_0_1/BenchGrassPlank2" instance=ExtResource( 18 )]
+[node name="Plank4" parent="Level_0_1/BenchGrassPlank2" instance=ExtResource( 18 )]
 position = Vector2( -79.6738, -71.1008 )
 
 [node name="Bench2" parent="Level_0_1/BenchGrassPlank2" instance=ExtResource( 3 )]
@@ -185,7 +185,7 @@ position = Vector2( -3.76953, 1188.11 )
 [node name="Lamp" parent="Level_0_2" instance=ExtResource( 16 )]
 position = Vector2( 40846, 934.608 )
 
-[node name="Plank" parent="Level_0_2" instance=ExtResource( 18 )]
+[node name="Plank5" parent="Level_0_2" instance=ExtResource( 18 )]
 position = Vector2( 40895.3, 1204.58 )
 
 [node name="Hourgrass4" parent="Level_0_2" instance=ExtResource( 21 )]

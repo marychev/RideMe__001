@@ -1,15 +1,21 @@
 extends RigidBody2D
+class_name Plank
 
 onready var added_bonuse: bool = false
 onready var live: int = 2
+onready var refer := self
 
 
 func _ready():
 	$Particles2D.visible = false
+	
 	set_physics_process(false)
-
-
-func _on_StompDetector_body_entered(body: Node2D) -> void:
+	set_process(false)
+	visible = false
+	get_parent().remove_child(self)
+		
+	
+func _on_StompDetector_body_entered(body: Node2D) -> void:		
 	if "Player" == body.name:
 		live -= 1
 		modulate = Color.tomato
@@ -23,6 +29,11 @@ func _on_StompDetector_body_exited(body: Node2D) ->void:
 	if live == 0:
 		die()
 
+
+func _on_VisibilityEnabler2D_screen_entered() -> void:
+	visible = true
+	get_parent().add_child(refer)
+	
 
 func _on_VisibilityEnabler2D_screen_exited() -> void:
 	queue_free()
