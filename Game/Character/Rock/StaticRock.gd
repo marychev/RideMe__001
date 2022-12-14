@@ -1,7 +1,7 @@
 extends StaticBody2D
 
-var _player_stomp_detecter = load(PathData.PATH_PLAYER_STOMP_DETECTER)
-
+onready var _player_stomp_detecter = load(PathData.PATH_PLAYER_STOMP_DETECTER)
+onready var animate_people = load(PathData.PATH_ANIMATE_PEOPLE).new()
 onready var player_stomp_detecter = _player_stomp_detecter.new()
 
 
@@ -10,7 +10,7 @@ func _on_StompDetector_body_entered(body: Node) -> void:
 		player_stomp_detecter.player = body
 		player_stomp_detecter.on_player_entered()
 
-		var animate_people = load(PathData.PATH_ANIMATE_PEOPLE).new()
+
 		animate_people.hit_player(body, 1)
 
 

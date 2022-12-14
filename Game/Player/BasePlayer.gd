@@ -26,11 +26,12 @@ onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 
 func calculate_friction() -> Vector2:
-	if _velocity.length() < 5: 
+	var len_velocity := _velocity.length()
+	if len_velocity < 5: 
 		_velocity = Vector2.ZERO
 		
 	var friction_force = _velocity * friction
-	var drag_force = _velocity * _velocity.length() * drag
+	var drag_force = _velocity * len_velocity * drag
 	acceleration += drag_force + friction_force
 	return acceleration
 
@@ -50,7 +51,7 @@ func calculate_steering(delta) -> Vector2:
 
 func calculate_move_velocity(delta: float) -> Vector2:
 	var direction := get_direction()
-	var floor_angle := get_floor_angle()
+
 	var is_jump_interrupted := Input.is_action_just_released("ui_select") and _velocity.y < 0.0
 	
 	_velocity += acceleration * delta
@@ -66,9 +67,9 @@ func calculate_move_velocity(delta: float) -> Vector2:
 	# When climb or descent
 	if is_on_floor() and direction.x == 1: 
 		if rotation < -0.2:
-			_velocity.x -= floor_angle * 10
+			_velocity.x -= get_floor_angle() * 10
 		elif rotation > 0.2:
-			_velocity.x += floor_angle * 10
+			_velocity.x += get_floor_angle() * 10
 
 		if rotation > -0.01 and rotation < 0.01:
 			_velocity.x = max_value(_velocity.x, max_speed)

@@ -16,10 +16,7 @@ func _on_body_entered(body: Node2D) -> void:
 		if body._velocity.x > body.max_speed / 2:
 			body._velocity.x = body.max_speed / 2
 		# else:
-		# 	body._velocity.x = body._velocity.x / 2
-		
-		print(body._velocity)
-		
+		# 	body._velocity.x = body._velocity.x / 2	
 		
 		if body.power > body.max_power / 2:
 			body.power = body.max_power / 2
@@ -49,3 +46,4 @@ func _process(delta):
 
 func _on_VisibilityEnabler_screen_exited() -> void:
 	queue_free()
+

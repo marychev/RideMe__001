@@ -23,3 +23,11 @@ z_index = -1
 [node name="BordersTop2" parent="DoubleRoadBody/BordersTop" instance=ExtResource( 2 )]
 position = Vector2( 1367.81, 0 )
 z_index = -1
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+position = Vector2( 542, 520 )
+scale = Vector2( 390.15, 193.45 )
+process_parent = true
+physics_process_parent = true
+
+[connection signal="screen_exited" from="VisibilityEnabler2D" to="DoubleRoadBody" method="_on_VisibilityEnabler2D_screen_exited"]

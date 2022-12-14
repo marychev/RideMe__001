@@ -26,3 +26,7 @@ func _on_StopmDetector_body_entered(body: Node) -> void:
 
 func _on_KSMan_tree_entered():
 	_velocity.x = -speed.x if scale.x > 0 else speed.x
+
+
+func _on_VisibilityEnabler2D_screen_exited():
+	queue_free()

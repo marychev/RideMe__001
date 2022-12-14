@@ -1,7 +1,7 @@
 extends Level_0
 class_name Level2_0
 
-onready var _custom_background: Resource = load("res://Game/Level2/Background/Background.tscn")
+onready var _custom_background: Resource = preload("res://Game/Level2/Background/Background.tscn")
 onready var custom_background: ParallaxBackground = _custom_background.instance()
 onready var root := get_parent()
 onready var bd: ParallaxBackground = root.get_node("Background")
@@ -36,5 +36,4 @@ static func create_for_cfg() -> void:
 	var issue = "City dogs. Collect %s hourglasses as quickly as possible"
 	
 	var res := GameData.track_cfg.create(track_id, level_id, issue, resource, texture, num_win, init_time_level, price)
-	if res != OK: 
-		printerr("ERROR: Level2_0 create_for_cfg")
+	assert(res != OK, "ERROR: Level2_0 create_for_cfg")
