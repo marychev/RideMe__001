@@ -8,14 +8,13 @@ var player_bike_cfg: PlayerBikeCfg = load(PathData.PLAYER_BIKE_MODEL).new()
 func _on_ResetGame_pressed():
 	reset_game_config()
 	
-	var audio_btn_run = load("res://media/ui/btn_run.wav")
+	var audio_btn_run = preload("res://media/ui/btn_run.wav")
 	$VBoxContainer/Return/AudioStreamPlayer2D.set_stream(audio_btn_run)
 	$VBoxContainer/Return/AudioStreamPlayer2D.play()
 	yield(get_tree().create_timer(1), "timeout")
 	
 	var res := get_tree().change_scene(PathData.RES_MAIN_MENU_TSCN)
-	if res != OK:
-		printerr("ERROR: " + str(self) + " " + str(res) + "_on_ResetGame_pressed and change_scene")
+	assert(res != OK, "ERROR: " + str(self) + " " + str(res) + "_on_ResetGame_pressed and change_scene")
 
 func reset_game_config():
 	clear_game_config()
@@ -47,8 +46,7 @@ func clear_game_config():
 
 func create_player_bike() -> void:
 	var res := player_bike_cfg.create("Empty")
-	if res != OK:
-		printerr("ERROR: create_player_bike Empty")
+	assert(res != OK, "ERROR: create_player_bike Empty")
 
 
 func create_bikes() -> void:
@@ -59,12 +57,10 @@ func create_bikes() -> void:
 
 func create_levels() -> void:
 	var res := GameData.level_cfg.create(1, "Mountains")
-	if res != OK:
-		printerr("ERROR: create_levels Mountains")
-	
+	assert(res != OK, "ERROR: create_levels Mountains")
+
 	res = GameData.level_cfg.create(2, "City")
-	if res != OK:
-		printerr(res != OK, "ERROR: create_levels City")
+	assert(res != OK, "ERROR: create_levels City")
 
 
 func create_tracks() -> void:
@@ -84,8 +80,7 @@ func create_player_track(track_train_id: int = 0) -> void:
 	
 	var player_track_section := track_section.replace(GameData.track_cfg.prefix, GameData.player_track_cfg.prefix)
 	var res := GameData.player_track_cfg.create(track_section, player_track_section)
-	if res != OK:
-		printerr("ERROR: OptionMenu create_player_track " + str(track_train_id))
+	assert(res != OK, "ERROR: OptionMenu create_player_track " + str(track_train_id))
 	
 	GameData.track_cfg.set_state(track_section, LevelTrackStates.ACTIVE)
 
