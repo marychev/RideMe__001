@@ -26,7 +26,7 @@ rough = true
 
 [node name="Level_0" type="Node2D"]
 script = ExtResource( 1 )
-start_position = Vector2( -200, 200 )
+start_position = Vector2( -200, 400 )
 
 [node name="Level_0_0" parent="." instance=ExtResource( 11 )]
 
@@ -68,13 +68,13 @@ z_index = 0
 position = Vector2( 57.5293, -56.8611 )
 z_index = 0
 
-[node name="RM" parent="Level_0_1/BenchGrassPlank" instance=ExtResource( 13 )]
+[node name="RM6" parent="Level_0_1/BenchGrassPlank" instance=ExtResource( 13 )]
 position = Vector2( 28.1094, -253.071 )
 
-[node name="RM2" parent="Level_0_1/BenchGrassPlank" instance=ExtResource( 13 )]
+[node name="RM7" parent="Level_0_1/BenchGrassPlank" instance=ExtResource( 13 )]
 position = Vector2( 281.076, -174.483 )
 
-[node name="RM3" parent="Level_0_1/BenchGrassPlank" instance=ExtResource( 13 )]
+[node name="RM8" parent="Level_0_1/BenchGrassPlank" instance=ExtResource( 13 )]
 position = Vector2( 552.764, -79.4243 )
 
 [node name="Hourgrass3" parent="Level_0_1" instance=ExtResource( 21 )]
@@ -109,7 +109,7 @@ z_index = 0
 [node name="RoadBorderLevel5" parent="Level_0_1" instance=ExtResource( 10 )]
 position = Vector2( 22418.5, 0 )
 
-[node name="RM" parent="Level_0_1" instance=ExtResource( 13 )]
+[node name="RM9" parent="Level_0_1" instance=ExtResource( 13 )]
 position = Vector2( 25150, 904 )
 
 [node name="RoadNoTopBorderLevelMountain" parent="Level_0_1" instance=ExtResource( 12 )]
@@ -124,13 +124,13 @@ position = Vector2( 31290.9, 1211 )
 [node name="Bench" parent="Level_0_1" instance=ExtResource( 3 )]
 position = Vector2( 31534.1, 1194.78 )
 
-[node name="RM2" parent="Level_0_1" instance=ExtResource( 13 )]
+[node name="RM10" parent="Level_0_1" instance=ExtResource( 13 )]
 position = Vector2( 31331.6, 1053.71 )
 
-[node name="RM3" parent="Level_0_1" instance=ExtResource( 13 )]
+[node name="RM11" parent="Level_0_1" instance=ExtResource( 13 )]
 position = Vector2( 31874.7, 1005.37 )
 
-[node name="RM4" parent="Level_0_1" instance=ExtResource( 13 )]
+[node name="RM12" parent="Level_0_1" instance=ExtResource( 13 )]
 position = Vector2( 32410.8, 1117.23 )
 
 [node name="Grass2" parent="Level_0_1" instance=ExtResource( 9 )]

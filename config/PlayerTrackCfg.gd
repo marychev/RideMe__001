@@ -43,10 +43,9 @@ func set_best_time(track_section: String, value: String) -> void:
 	attempts.append(value)
 
 	var _old_value = get_best_time_at(track_section)
-	if _old_value != "00:00" and _old_value != "00:00:00":
+	if _old_value and _old_value != "00:00" and _old_value != "00:00:00":
 		var mimsecmls_value: Array = value.rsplit(":", true, 2)
 		var old_value: Array = _old_value.rsplit(":", true, 2)
-		
 
 		if int(old_value[0]) < int(mimsecmls_value[0]):
 			value = _old_value

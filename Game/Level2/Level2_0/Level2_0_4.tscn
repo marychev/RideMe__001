@@ -64,6 +64,9 @@ position = Vector2( 118427, 3743.31 )
 position = Vector2( 119251, 3775.22 )
 rotation = -0.013517
 
+[node name="Hourgrass" parent="." instance=ExtResource( 5 )]
+position = Vector2( 123725, 3783 )
+
 [node name="Bench9" parent="." instance=ExtResource( 9 )]
 position = Vector2( 119293, 3838.21 )
 
@@ -225,8 +228,8 @@ position = Vector2( 139360, 2664.13 )
 [node name="RoadBorderLevelCity12" parent="." instance=ExtResource( 13 )]
 position = Vector2( 142080, 2664.13 )
 
-[node name="Hourgrass" parent="." instance=ExtResource( 5 )]
-position = Vector2( 141068, 3685.9 )
+[node name="Hourgrass2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 144023, 3725 )
 
 [node name="RoadBorderLevelCity13" parent="." instance=ExtResource( 13 )]
 position = Vector2( 144792, 2664.13 )
@@ -235,7 +238,7 @@ position = Vector2( 144792, 2664.13 )
 position = Vector2( 147513, 2664.13 )
 
 [node name="LampsSetFour" parent="." instance=ExtResource( 7 )]
-position = Vector2( 139752, 3883.93 )
+position = Vector2( 143459, 3883 )
 
 [node name="Finish" parent="." instance=ExtResource( 4 )]
 position = Vector2( 149321, 3873 )

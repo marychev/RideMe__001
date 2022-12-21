@@ -46,7 +46,7 @@ func clear_game_config():
 
 func create_player_bike() -> void:
 	var res := player_bike_cfg.create("Empty")
-	assert(res != OK, "ERROR: create_player_bike Empty")
+	# assert(res != OK, "ERROR: create_player_bike Empty")
 
 
 func create_bikes() -> void:
@@ -57,10 +57,9 @@ func create_bikes() -> void:
 
 func create_levels() -> void:
 	var res := GameData.level_cfg.create(1, "Mountains")
-	assert(res != OK, "ERROR: create_levels Mountains")
-
+	# assert(res != OK, "ERROR: create_levels Mountains")
 	res = GameData.level_cfg.create(2, "City")
-	assert(res != OK, "ERROR: create_levels City")
+	# assert(res != OK, "ERROR: create_levels City")
 
 
 func create_tracks() -> void:
@@ -80,7 +79,7 @@ func create_player_track(track_train_id: int = 0) -> void:
 	
 	var player_track_section := track_section.replace(GameData.track_cfg.prefix, GameData.player_track_cfg.prefix)
 	var res := GameData.player_track_cfg.create(track_section, player_track_section)
-	assert(res != OK, "ERROR: OptionMenu create_player_track " + str(track_train_id))
+	# assert(res != OK, "ERROR: OptionMenu create_player_track " + str(track_train_id))
 	
 	GameData.track_cfg.set_state(track_section, LevelTrackStates.ACTIVE)
 

@@ -11,7 +11,8 @@ onready var refer: RoadBody = self
 func _ready() -> void:
 	set_physics_process(false)
 	set_process(false)
-	visible = false
+	# # Error on level 2-0. Road no visible
+	# visible = false
 	get_parent().remove_child(self)
 
 

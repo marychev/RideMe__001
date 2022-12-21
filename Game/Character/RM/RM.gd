@@ -1,14 +1,12 @@
 extends BonusArea
 class_name RM
 
-onready var refer: RM = self
-
 
 func _ready() -> void:
 	set_physics_process(false)
 	set_process(false)
-	visible = false
-	get_parent().remove_child(self)
+	# visible = false
+	# get_parent().remove_child(self)
 
 
 func _on_body_entered(body: Player) -> void:
@@ -35,4 +33,3 @@ func _on_VisibilityEnabler_screen_exited() -> void:
 
 func _on_VisibilityEnabler_screen_entered() -> void:
 	visible = true
-	get_parent().add_child(refer)

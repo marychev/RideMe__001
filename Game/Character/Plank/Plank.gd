@@ -57,6 +57,6 @@ func die():
 
 func add_bonuse() -> void:
 	var rm: RM = preload("res://Game/Character/RM/RM.tscn").instance()
-	rm.position = Vector2(position.x + 240.0, position.y - 40.0)
+	rm.position = Vector2(position.x + 300.0, position.y - 48.0)
 	get_parent().add_child(rm)
 	added_bonuse = true

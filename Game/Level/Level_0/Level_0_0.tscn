@@ -69,7 +69,7 @@ position = Vector2( 10514.5, 1220 )
 position = Vector2( 384.082, 166.261 )
 rotation = 0.0
 
-[node name="RM" parent="Puddle2" instance=ExtResource( 10 )]
+[node name="RM2" parent="Puddle2" instance=ExtResource( 10 )]
 position = Vector2( 286.756, -22.0864 )
 rotation = 0.427762
 
@@ -77,7 +77,7 @@ rotation = 0.427762
 position = Vector2( 739.578, 336.587 )
 rotation = 0.0
 
-[node name="RM2" parent="Puddle2" instance=ExtResource( 10 )]
+[node name="RM3" parent="Puddle2" instance=ExtResource( 10 )]
 position = Vector2( 669.466, 153.689 )
 rotation = 0.427762
 
@@ -94,10 +94,10 @@ position = Vector2( 13438.9, 1050.3 )
 position = Vector2( 14498.1, 1209.44 )
 physics_material_override = SubResource( 1 )
 
-[node name="RM2" parent="StaticRock3" instance=ExtResource( 10 )]
+[node name="RM4" parent="StaticRock3" instance=ExtResource( 10 )]
 position = Vector2( 191.936, -242.437 )
 
-[node name="RM3" parent="StaticRock3" instance=ExtResource( 10 )]
+[node name="RM5" parent="StaticRock3" instance=ExtResource( 10 )]
 position = Vector2( 515.399, -152.057 )
 
 [node name="Puddle" parent="StaticRock3" instance=ExtResource( 9 )]

@@ -43,6 +43,7 @@ position = Vector2( 686.922, -263.045 )
 z_index = -4
 
 [node name="Refit" parent="." instance=ExtResource( 6 )]
+position = Vector2( 47004, 953 )
 
 [node name="StaticRock7" parent="." instance=ExtResource( 1 )]
 position = Vector2( 54539.4, 1340.56 )
@@ -172,16 +173,20 @@ position = Vector2( 71399.6, 1261.32 )
 [node name="Grass7" parent="." instance=ExtResource( 5 )]
 position = Vector2( 72021.4, 1261.32 )
 
-[node name="RM" parent="." instance=ExtResource( 9 )]
+[node name="RM10" parent="." instance=ExtResource( 9 )]
+position = Vector2( 46771, 1190 )
 
 [node name="RoadBorderLevel10" parent="." instance=ExtResource( 3 )]
 position = Vector2( 73587.5, 133.227 )
 
-[node name="RM2" parent="." instance=ExtResource( 9 )]
+[node name="RM11" parent="." instance=ExtResource( 9 )]
+position = Vector2( 48022, 1164 )
 
-[node name="RM3" parent="." instance=ExtResource( 9 )]
+[node name="RM12" parent="." instance=ExtResource( 9 )]
+position = Vector2( 48564, 1104 )
 
-[node name="RM4" parent="." instance=ExtResource( 9 )]
+[node name="RM13" parent="." instance=ExtResource( 9 )]
+position = Vector2( 49044, 1167 )
 
 [node name="MovingPlatform13" parent="." instance=ExtResource( 2 )]
 position = Vector2( 76135.8, 1243.42 )
