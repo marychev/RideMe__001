@@ -3,17 +3,17 @@ class_name RoadBody
 
 export(bool) var has_repeat = false;
 
-var PlayerScn
+var player: Player
+var _player_stomp_detecter = load(PathData.PATH_PLAYER_STOMP_DETECTER)
+
 onready var road_width = $sprite.texture.get_size().x
 onready var refer: RoadBody = self
+onready var player_stomp_detecter: PlayerStompDetecter = _player_stomp_detecter.new()
 
 
 func _ready() -> void:
-	set_physics_process(false)
-	set_process(false)
-	# # Error on level 2-0. Road no visible
+	player_stomp_detecter.ready_for_player(global_position)
 	# visible = false
-	get_parent().remove_child(self)
 
 
 func repeat_two_sprites():
@@ -26,18 +26,18 @@ func _repeat_two_sprites():
 		push_error("[ERROR] Advice: The 'Has Repeat' variable has not set at 'true'")
 		return
 
-	if PlayerScn.position.x > $sprite2.position.x + road_width:
+	if player.position.x > $sprite2.position.x + road_width:
 		$sprite.position.x = $sprite2.position.x + road_width
 		$Collision.position.x = $sprite2.position.x + road_width
-	if PlayerScn.position.x > $sprite.position.x + road_width:
+	if player.position.x > $sprite.position.x + road_width:
 		$sprite2.position.x = $sprite.position.x + road_width
 		$Collision2.position.x = $sprite.position.x + road_width
 
 
 func _on_VisibilityEnabler2D_screen_exited():
-	queue_free()
+	player_stomp_detecter.on_visibility_screen_exited_for_player(global_position)
 
 
 func _on_VisibilityEnabler2D_screen_entered() -> void:
+	player_stomp_detecter.on_visibility_screen_entered_for_player(refer)
 	visible = true
-	get_parent().add_child(refer)

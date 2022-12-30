@@ -91,15 +91,18 @@ __meta__ = {
 }
 
 [node name="JumpBtn" parent="Canvas/ControlContainer" instance=ExtResource( 5 )]
-position = Vector2( 11.32, 18.0203 )
+position = Vector2( 0, 8.99997 )
+scale = Vector2( 1.2, 1.2 )
 
 [node name="StopBtn" parent="Canvas/ControlContainer" instance=ExtResource( 7 )]
 position = Vector2( 6.82843, -168.966 )
+scale = Vector2( 1.2, 1.2 )
 
 [node name="MenuBtn" parent="Canvas/ControlContainer" instance=ExtResource( 9 )]
 position = Vector2( 630, 60 )
 
 [node name="GoBtn" parent="Canvas/ControlContainer" instance=ExtResource( 3 )]
-position = Vector2( 1192.34, -10.3137 )
+position = Vector2( 1155, -41 )
+scale = Vector2( 1.2, 1.2 )
 
 [node name="GameScreenPause" parent="Canvas" instance=ExtResource( 8 )]
