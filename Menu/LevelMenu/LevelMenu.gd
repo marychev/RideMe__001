@@ -40,12 +40,16 @@ func _ready() -> void:
 			_on_btn_refit_pressed()
 	elif GameData.current_track.has_passed():
 		btn_refit.anim_flicker()
-		
+
 	# -- Demo mode
 	# if $Completed.visible:
 	#	var popup_completed: Popup = load("res://Menu/LevelMenu/PopupCompleted/PopupCompleted.tscn").instance()
 	#	add_child(popup_completed)
 	#	popup_completed.popup()
+	if GameData.track_cfg.has_passed_level(1) and GameData.track_cfg.has_passed_level(2):
+		var popup_completed: Popup = load("res://Menu/LevelMenu/PopupCompleted/PopupFinished.tscn").instance()
+		add_child(popup_completed)
+		popup_completed.popup()
 
 
 func _on_btn_pay_pressed() -> void:

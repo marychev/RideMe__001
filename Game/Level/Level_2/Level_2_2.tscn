@@ -83,6 +83,9 @@ position = Vector2( 55316.5, 1357.95 )
 rotation = -1.0654
 scale = Vector2( 1.11773, -1.26788 )
 
+[node name="RM10" parent="." instance=ExtResource( 9 )]
+position = Vector2( 55621, 1161 )
+
 [node name="StaticRock9" parent="." instance=ExtResource( 1 )]
 position = Vector2( 55439.7, 1482.69 )
 rotation = -0.284155
@@ -173,7 +176,7 @@ position = Vector2( 71399.6, 1261.32 )
 [node name="Grass7" parent="." instance=ExtResource( 5 )]
 position = Vector2( 72021.4, 1261.32 )
 
-[node name="RM10" parent="." instance=ExtResource( 9 )]
+[node name="RM14" parent="." instance=ExtResource( 9 )]
 position = Vector2( 46771, 1190 )
 
 [node name="RoadBorderLevel10" parent="." instance=ExtResource( 3 )]

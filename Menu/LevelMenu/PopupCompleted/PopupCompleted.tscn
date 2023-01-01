@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Game/GUI/assets/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Game/GameScreen/Buttons/MainMenuBtn.tscn" type="PackedScene" id=2]
@@ -35,11 +35,6 @@ func _pressed():
 	get_tree().paused = false
 "
 
-[sub_resource type="DynamicFont" id=3]
-size = 18
-use_filter = true
-font_data = ExtResource( 1 )
-
 [node name="PopupCompleted" type="Popup"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -50,9 +45,9 @@ __meta__ = {
 
 [node name="NinePatchRect" type="ColorRect" parent="."]
 margin_left = 22.0
-margin_top = 35.0
+margin_top = 39.0
 margin_right = 1343.0
-margin_bottom = 746.0
+margin_bottom = 750.0
 color = Color( 0.227451, 0.243137, 0.937255, 0.972549 )
 __meta__ = {
 "_edit_group_": true,
@@ -114,21 +109,24 @@ is_flicker = true
 [node name="Label" parent="NinePatchRect/OptionMenu" index="1"]
 text = "Reset game to start again"
 
-[node name="Creds" type="Label" parent="NinePatchRect"]
+[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect"]
+anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -195.0
-size_flags_vertical = 1
-custom_fonts/font = SubResource( 3 )
-text = "Website: https://www.gencrud.com/
-Reddit: https://www.reddit.com/r/RideMe2D/
-Email: gencrud@gmail.com"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_left = -216.0
+margin_top = -65.0
+margin_right = -8.0
+margin_bottom = -3.0
+size_flags_stretch_ratio = 1.24
+custom_constants/line_separation = 4
+bbcode_enabled = true
+bbcode_text = "[url=https://gencrud.com]Website: www.gencrud.com[/url]
+Email: gencrud@gmail.com
+[url=https://www.reddit.com/r/RideMe2D/]Reddit: RideMe2D[/url]"
+text = "Website: www.gencrud.com
+Email: gencrud@gmail.com
+Reddit: RideMe2D"
 
 [node name="Completed" type="Sprite" parent="NinePatchRect"]
 position = Vector2( 1201.11, 104.261 )

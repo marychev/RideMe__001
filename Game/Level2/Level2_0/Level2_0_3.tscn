@@ -162,6 +162,15 @@ position = Vector2( 82503.7, 3377.49 )
 [node name="MovingPlatform7" parent="." instance=ExtResource( 16 )]
 position = Vector2( 82985.1, 3336.43 )
 
+[node name="RM3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 80996, 3343 )
+
+[node name="RM4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 82050, 3285 )
+
+[node name="RM5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 83035, 3218 )
+
 [node name="TreeRoadOneCity" parent="." instance=ExtResource( 18 )]
 position = Vector2( 85009.2, 3637.6 )
 
@@ -364,6 +373,12 @@ position = Vector2( 97336.1, 3784.64 )
 position = Vector2( 96987.9, 3820.54 )
 rotation = -0.013517
 
+[node name="RM7" parent="." instance=ExtResource( 6 )]
+position = Vector2( 97352, 3631 )
+
+[node name="RM8" parent="." instance=ExtResource( 6 )]
+position = Vector2( 97558, 3545 )
+
 [node name="Bench12" parent="." instance=ExtResource( 5 )]
 position = Vector2( 97331.3, 3892.57 )
 
@@ -390,6 +405,9 @@ position = Vector2( 2713.26, 1263.72 )
 
 [node name="UpderConstarctionMin2" parent="RoadBorderLevelCity9/UpderConstarctionMin5" instance=ExtResource( 1 )]
 position = Vector2( 0, -93.3762 )
+
+[node name="RM6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 98335, 3689 )
 
 [node name="Bench10" parent="." instance=ExtResource( 5 )]
 position = Vector2( 97837.1, 3796.02 )
