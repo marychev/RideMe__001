@@ -109,7 +109,7 @@ change_scene = "res://Menu/OptionMenu/OptionMenu.tscn"
 margin_top = 594.0
 margin_right = 400.0
 margin_bottom = 608.0
-text = "version: 0.0.0"
+text = "version: 0.0.1"
 
 [node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
 margin_left = 404.0

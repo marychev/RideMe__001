@@ -498,6 +498,10 @@ pointing/emulate_touch_from_mouse=true
 2d_physics/layer_6="girl_back"
 2d_physics/layer_7="kick_scooter"
 
+[logging]
+
+file_logging/enable_file_logging.pc=false
+
 [physics]
 
 common/enable_pause_aware_picking=true
