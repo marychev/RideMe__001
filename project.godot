@@ -458,6 +458,7 @@ config/use_custom_user_dir=true
 config/custom_user_dir_name="RideMe"
 boot_splash/image="res://logo.png"
 config/icon="res://icon.png"
+config/windows_native_icon="res://icon.ico"
 
 [autoload]
 
