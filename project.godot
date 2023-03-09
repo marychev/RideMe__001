@@ -475,6 +475,7 @@ window/stretch/aspect="keep"
 
 music=false
 audio=false
+"отладка"=false
 
 [input]
 
