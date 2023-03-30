@@ -476,6 +476,8 @@ window/stretch/aspect="keep"
 music=false
 audio=false
 "отладка"=false
+Debug=false
+"Debug Keystore"=false
 
 [input]
 
