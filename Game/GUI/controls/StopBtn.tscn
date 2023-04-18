@@ -9,6 +9,7 @@ action = "ui_left"
 script = ExtResource( 1 )
 
 [node name="Label" type="Label" parent="."]
+visible = false
 margin_left = 13.5314
 margin_top = 4.86062
 margin_right = 83.5314

@@ -8,7 +8,7 @@ func _init(section = "Bike_Sataur"):
 
 static func create_for_cfg() -> void:
 	var texture = "res://Game/Bike/assets/I/sprites.png"
-	var max_speed = 650.0
+	var max_speed = 680.0
 	var max_power = 620.0
 	var max_height_jump = 520.0
 	var power = 300.0

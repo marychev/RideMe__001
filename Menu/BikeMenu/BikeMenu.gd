@@ -38,7 +38,7 @@ func _on_btn_pay_button_down() -> void:
 func _on_btn_pay_pressed() -> void:
 	# TODO: redo
 	# field_log.clear
-	if is_instance_valid(field_log):
+	if is_instance_valid(field_log) :
 		$TextureRect/Title.remove_child(field_log)
 	
 	if not PlayerData.player_bike:
