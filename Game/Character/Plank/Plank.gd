@@ -12,7 +12,8 @@ func _ready():
 	set_physics_process(false)
 	set_process(false)
 	visible = false
-	get_parent().remove_child(self)
+	# get_parent().remove_child(self)
+	get_parent().call_deferred("remove_child", self)
 		
 	
 func _on_StompDetector_body_entered(body: Node2D) -> void:		

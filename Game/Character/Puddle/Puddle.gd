@@ -8,8 +8,8 @@ func _ready() -> void:
 	set_physics_process(false)
 	set_process(false)
 	visible = false
-	get_parent().remove_child(self)
-	
+	# get_parent().remove_child(self)
+	get_parent().call_deferred("remove_child", self)
 	
 func _on_body_entered(body):
 	if body.name == "Player":

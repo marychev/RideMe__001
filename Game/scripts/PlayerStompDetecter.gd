@@ -48,6 +48,5 @@ func on_visibility_screen_entered_for_player(refer: Node) -> void:
 
 
 func get_player_node(path: String = '/root/Game/Player') -> Player:
-	if not player:
-		return get_node(path) as Player   # noqa
+	# if not player:		return $path as Player   # noqa
 	return player

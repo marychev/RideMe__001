@@ -221,9 +221,6 @@ margin_left = 32.9226
 margin_top = 50.4824
 margin_right = 751.922
 margin_bottom = 479.482
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="AdvicePower" parent="Advices" instance=ExtResource( 7 )]
 
