@@ -17,10 +17,8 @@
 
 		#canvas {
 			display: block;
-			margin: 4% 15%;
 			color: white;
-			width: 70% !important;
-			height: 70% !important;
+			height: 90vh !important;
 		}
 
 		#canvas:focus {
@@ -122,13 +120,26 @@
 <!-- Yandex.RTB -->
 <script>window.yaContextCb=window.yaContextCb||[]</script>
 <script src="https://yandex.ru/ads/system/context.js" async></script>
-
+    
 </head>
 <body>
 	<canvas id='canvas'>
 		HTML5 canvas appears to be unsupported in the current browser.<br />
 		Please try updating or use a different browser.
 	</canvas>
+
+	<!-- Yandex.FullScreen -->
+	<div id="yandex_rtb_R-A-2294434-35" style="max-height: 80vh;">
+		<div style="height: 72vh;"></div>
+  	</div>
+	<script>
+	window.yaContextCb.push(()=>{
+		Ya.Context.AdvManager.render({
+			renderTo: 'yandex_rtb_R-A-2294434-35',
+			blockId: 'R-A-2294434-35'
+	  	})
+	});
+  </script>
 
 	<section style="position: absolute; width: 100%; height: 10%; bottom:0%; left:0%; background-color: plum;">
 		<!-- Yandex.RTB R-A-2294434-34 -->
