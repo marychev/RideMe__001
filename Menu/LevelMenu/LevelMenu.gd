@@ -32,7 +32,10 @@ func _ready() -> void:
 		btn_pay.anim_flicker()
 	
 	if not is_instance_valid(GameData.current_track):
-		if GameData.current_level.id == 1:
+		if not GameData.current_track and GameData.current_level.empty(): 
+			_on_Level_1_pressed()
+			_on_btn_refit_pressed()
+		elif GameData.current_level.id == 1:
 			_on_Level_1_pressed()
 			_on_btn_refit_pressed()
 		elif GameData.current_level.id == 2:

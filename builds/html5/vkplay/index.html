@@ -112,82 +112,71 @@
 			visibility: visible;
 		}
 	</style>
-	<!-- extra CSS -->
-	<!-- end extra CSS -->
-
-	<link id='-gd-engine-icon' rel='icon' type='image/png' href='index.icon.png' />
+<link id='-gd-engine-icon' rel='icon' type='image/png' href='index.icon.png' />
 <link rel='apple-touch-icon' href='index.apple-touch-icon.png'/>
 
 <!-- VK Play API  -->
-<script type="text/javascript" src="//vkplay.ru/app/21190/static/mailru.core.js"></script>
+<script type="text/javascript" src="https://vkplay.ru/app/21190/static/mailru.core.js"></script>
 <!-- end VK Play API -->
 
+
 </head>
+
 <body>
+	<button id="showAdsBtn" style="display: none;">show Ads</button>
+
+
+<!-- VK PLay code -->
+<script>
+	(function apiHandshake(iframeApi) {
+		if (typeof iframeApi === 'undefined') {
+			console.log('Cannot find iframeApi function, are we inside an iframe?');
+			return;
+		}
+
+		var externalApi = null;
+
+		var callbacks = {
+			appid: 21190,
+
+			getLoginStatusCallback: function(status) {},
+			userInfoCallback: function(info) {},
+			userProfileCallback: function(profile) {},
+			registerUserCallback: function(info) {},
+			paymentFrameUrlCallback: function(url) {},
+			getAuthTokenCallback: function(token) {},
+			paymentReceivedCallback: function(data) {},
+			paymentWindowClosedCallback: function() {},
+			userConfirmCallback: function() {},
+			paymentFrameItem: function(object) {},
+			getGameInventoryItems: function() {},
+			adsCallback: function(context) {},
+		};
+
+		function error(err) {
+			throw new Error('Could not init external api ' + err);
+		}
+
+		function connected(api) {
+			externalApi = api;
+		}
+
+		document.getElementById("showAdsBtn").addEventListener("click", (e) => {
+			e.preventDefault();
+			const config = { interstitial: true	};
+			externalApi.showAds(config);
+		});
+
+		iframeApi(callbacks).then(connected, error);
+	}(window.iframeApi));
+</script>
+<!-- end VK PLay code -->
+
 	<canvas id='canvas'>
 		HTML5 canvas appears to be unsupported in the current browser.<br />
 		Please try updating or use a different browser.
 	</canvas>
 
-	<!-- VK PLay code -->
-	<script>
-		(function apiHandshake(iframeApi) {
-			if (typeof iframeApi === 'undefined') {
-				console.log('Cannot find iframeApi function, are we inside an iframe?');
-				return;
-			}
-	
-			var externalApi = null;
-	
-			var callbacks = {
-				appid: 21190,
-	
-				getLoginStatusCallback: function(status) {},
-				userInfoCallback: function(info) {},
-				userProfileCallback: function(profile) {},
-				registerUserCallback: function(info) {},
-				paymentFrameUrlCallback: function(url) {},
-				getAuthTokenCallback: function(token) {},
-				paymentReceivedCallback: function(data) {},
-				paymentWindowClosedCallback: function() {},
-				userConfirmCallback: function() {},
-				paymentFrameItem: function(object) {},
-				getGameInventoryItems: function() {}
-			};
-	
-			function error(err) {
-				throw new Error('Could not init external api ' + err);
-			}
-	
-			function connected(api) {
-				externalApi = api;
-			}
-	
-			// пример вызова действия "Регистрация"
-			const registerBlock = document.getElementById("register");
-			registerBlock.addEventListener("click", (e) => {
-				e.preventDefault();
-				externalApi.registerUser();
-			});
-	
-			// пример вызова действия "Вход"
-			const authBlock = document.getElementById("auth");
-			authBlock.addEventListener("click", (e) => {
-				e.preventDefault();
-				externalApi.authUser();
-			});
-	
-			// пример получения профиля
-			const profileBlock = document.getElementById("profile");
-			profileBlock.addEventListener("click", (e) => {
-				e.preventDefault();
-				externalApi.userProfile();
-			});
-	
-			iframeApi(callbacks).then(connected, error);
-		}(window.iframeApi));
-	</script>
-	<!-- end VK PLay code -->
 
 	<div id='status'>
 		<div id='status-progress' style='display: none;' oncontextmenu='event.preventDefault();'><div id ='status-progress-inner'></div></div>
@@ -207,7 +196,7 @@
 	<script type='text/javascript' src='index.js'></script>
 	<script type='text/javascript'>//<![CDATA[
 
-		const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":55026768,"index.wasm":13789463},"focusCanvas":true,"gdnativeLibs":[]};
+		const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":55026848,"index.wasm":13789463},"focusCanvas":true,"gdnativeLibs":[]};
 		var engine = new Engine(GODOT_CONFIG);
 
 		(function() {
