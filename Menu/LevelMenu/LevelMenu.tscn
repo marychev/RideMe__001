@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Game/GUI/assets/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://media/start_track.wav" type="AudioStream" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Menu/BikeMenu/Buttons/Current.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Game/GUI/counter/RMCounter.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Game/GUI/controls/assets/refit_car.png" type="Texture" id=10]
+[ext_resource path="res://SplashScreen/BlurAndFocus.tscn" type="PackedScene" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
@@ -215,6 +216,8 @@ max_distance = 1400.0
 visible = false
 position = Vector2( 560.823, 512.552 )
 texture = ExtResource( 6 )
+
+[node name="BlurAndFocus" parent="." instance=ExtResource( 11 )]
 
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Level_1" to="." method="_on_Level_1_pressed"]
 [connection signal="pressed" from="TextureRect/SliderContainer/Buttons/Level_2" to="." method="_on_Level_2_pressed"]

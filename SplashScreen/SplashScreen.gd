@@ -11,10 +11,15 @@ func _on_Start_button_down() -> void:
 		var option_menu: OptionMenu = preload("res://Menu/OptionMenu/OptionMenu.tscn").instance()
 		option_menu.reset_game_config()
 	
-	if OS.has_feature('JavaScript'):
+	if OS.get_name() == 'HTML5' and OS.has_feature('JavaScript'):
+		# VKPlay btn to show ADs
 		JavaScript.eval("document.getElementById('showAdsBtn').click();")
-		# var window = JavaScript.get_interface("window")
-		# window.showAdsStartGame();
+	
+	# TODO: Current dev !!!!!!!!!!!!!!!!
+	if Engine.has_singleton("HuaweiRideMeModule"):
+		var singleton = Engine.get_singleton("HuaweiRideMeModule")
+		print(singleton.getPluginName())
+		queue_free()
 
 
 func _get_configuration_warning() -> String:

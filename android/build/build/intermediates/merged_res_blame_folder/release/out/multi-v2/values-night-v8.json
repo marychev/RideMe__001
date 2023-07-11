@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/ubuntu/mmc/RideMe/android/build/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-night-v8/values-night-v8.xml",
+            "map": [
+                {
+                    "source": "/home/ubuntu/.gradle/caches/transforms-3/1f77c063d852a7b104cf71bf76dc92e6/transformed/jetified-huawei-rideme-module-debug/res/values-night-v8/values-night-v8.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "100",
+                        "endLines": "14",
+                        "endColumns": "12",
+                        "endOffsets": "825"
+                    }
+                }
+            ]
+        }
+    ]
+}
