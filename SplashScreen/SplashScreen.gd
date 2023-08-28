@@ -4,6 +4,17 @@ extends TextureRect
 export (String, FILE) var main_menu_tscn: = ""
 
 
+"""
+func _ready():
+	# TODO: Current dev !!!!!!!!!!!!!!!!
+	print(Engine.has_singleton("HuaweiBuild"))
+	# if Engine.has_singleton("HuaweiBuild"):
+	var singleton = Engine.get_singleton("HuaweiBuild")
+	print(singleton.getPluginName())
+	queue_free()
+	raise()
+"""
+
 func _on_Start_button_down() -> void:
 	# First start game
 	var player_bike_cfg: PlayerBikeCfg = load(PathData.PLAYER_BIKE_MODEL).new()
@@ -16,8 +27,9 @@ func _on_Start_button_down() -> void:
 		JavaScript.eval("document.getElementById('showAdsBtn').click();")
 	
 	# TODO: Current dev !!!!!!!!!!!!!!!!
-	if Engine.has_singleton("HuaweiRideMeModule"):
-		var singleton = Engine.get_singleton("HuaweiRideMeModule")
+	print(Engine.has_singleton("HuaweiBuild"))
+	if Engine.has_singleton("HuaweiBuild"):
+		var singleton = Engine.get_singleton("HuaweiBuild")
 		print(singleton.getPluginName())
 		queue_free()
 

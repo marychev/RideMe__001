@@ -1,0 +1,11 @@
+[config]
+
+name="HuaweiBuild"
+binary_type="local"
+binary="huaweibuild-release.aar"
+
+[dependencies]
+
+local=["godot-lib.3.5.1.stable.release.aar"]
+remote=["androidx.core:core-ktx:1.10.1", "androidx.appcompat:appcompat:1.6.1", "com.google.android.material:material:1.9.0"]
+custom_maven_repos=["http://repo.mycompany.com/maven2"]

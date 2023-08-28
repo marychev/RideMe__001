@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Game/Game.gd" type="Script" id=1]
 [ext_resource path="res://Game/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://SplashScreen/BlurAndFocus.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Game/Level/Background/Background.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Game/GUI/GUI.tscn" type="PackedScene" id=8]
 
@@ -26,5 +27,7 @@ z_index = 1
 position = Vector2( 0, -619 )
 autoplay = true
 attenuation = 0.125
+
+[node name="BlurAndFocus" parent="." instance=ExtResource( 3 )]
 
 [connection signal="finished" from="Player/Music" to="." method="_on_Music_finished"]

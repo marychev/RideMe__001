@@ -1,8 +1,0 @@
-[config]
-
-name="HuaweiRideMeModule"
-binary_type="local"
-binary="huawei-rideme-module-debug.aar"
-
-[dependencies]
-
