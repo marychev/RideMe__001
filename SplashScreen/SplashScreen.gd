@@ -26,12 +26,12 @@ func _on_Start_button_down() -> void:
 		# VKPlay btn to show ADs
 		JavaScript.eval("document.getElementById('showAdsBtn').click();")
 	
-	# TODO: Current dev !!!!!!!!!!!!!!!!
+	""""# TODO: Current dev !!!!!!!!!!!!!!!!
 	print(Engine.has_singleton("HuaweiBuild"))
 	if Engine.has_singleton("HuaweiBuild"):
 		var singleton = Engine.get_singleton("HuaweiBuild")
 		print(singleton.getPluginName())
-		queue_free()
+		queue_free()"""
 
 
 func _get_configuration_warning() -> String:

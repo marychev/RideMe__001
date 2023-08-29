@@ -120,16 +120,18 @@
 	<link id='-gd-engine-icon' rel='icon' type='image/png' href='index.icon.png' />
 	<link rel='apple-touch-icon' href='index.apple-touch-icon.png'/>
 	<!-- Yandex.RTB -->
-	<script src="https://yandex.com/games/sdk/v2"></script>
-	
-	<!-- Yandex.RTB -->
+	<!-- <script src="https://yandex.com/games/sdk/v2"></script> -->
+	<script src="https://yandex.ru/games/sdk/v2"></script> 
 	<script>window.yaContextCb=window.yaContextCb||[]</script>
 	<script src="https://yandex.ru/ads/system/context.js" async></script>
 	<!-- end Yandex.RTB	-->
-
 </head>
 <body>
-	<button id="button">Показать рекламу</button>
+	<canvas id='canvas'>
+		HTML5 canvas appears to be unsupported in the current browser.<br />
+		Please try updating or use a different browser.
+	</canvas>
+
 	<!-- Yandex block scripts -->
 	<!-- Yandex.FullScreen -->
 	<div id="yandex_rtb_R-A-2294434-35" style="max-height: 80vh;">
@@ -156,49 +158,6 @@
 		</script>
 	</section>
 	<!-- end Yandex block scripts -->
-
-	<script>
-        YaGames.init({
-			app: {id: '221438'}
-		}).then(ysdk => {
-
-			console.log(ysdk.environment)
-
-            ysdk.adv.showFullscreenAdv();
-
-            const buttonElem = document.querySelector('#button');
-
-            let commonCounter = 0;
-            buttonElem.addEventListener('click', () => {
-                let counter = 0;
-
-                function getCallback(callbackName) {
-                    return () => {
-                        counter += 1;
-                        commonCounter += 1;
-
-                        console.log(`showFullscreenAdv; callback ${callbackName}; ${counter} call`);
-                    }
-                }
-
-                ysdk.adv.showFullscreenAdv({
-                    callbacks: {
-                        onClose: getCallback('onClose'),
-                        onOpen: getCallback('onOpen'),
-                        onError: getCallback('onError'),
-                        onOffline: getCallback('onOffline')
-                    }
-                });
-            });
-        });
-    </script>
-
-
-<!-- <canvas id='canvas'>
-		HTML5 canvas appears to be unsupported in the current browser.<br />
-		Please try updating or use a different browser.
-	</canvas> -->
-
 
 	<div id='status'>
 		<div id='status-progress' style='display: none;' oncontextmenu='event.preventDefault();'><div id ='status-progress-inner'></div></div>

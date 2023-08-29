@@ -92,35 +92,25 @@ func show_player_bike() -> void:
 
 
 func show_current_track() -> void:
-		
 	if is_instance_valid(GameData.current_track):
 		var _current_track: NinePatchRect = $HBoxContainer/CenterContainer/CurrentTrack
 		_current_track.visible = true
 		_current_track.texture = GameData.current_track.texture
-	elif not GameData.current_level.empty():
-		# = load(_track.resource).instance()
-		
+	elif not GameData.current_level.empty():	
 		var active_track = track_cfg.get_active_track(GameData.current_level.id)
-		if not active_track.empty():
-			
-			GameData.current_track = load(active_track.resource).instance()
-			
-			var _current_track: NinePatchRect = $HBoxContainer/CenterContainer/CurrentTrack
-			_current_track.visible = true
-			_current_track.texture = GameData.current_track.texture
-			return
-		
 		if active_track.empty():
 			var fail_tracks = track_cfg.get_fail_tracks(GameData.current_level.id)
 			if not fail_tracks.empty():
 				active_track = fail_tracks[0]
-				
-				GameData.current_track = load(active_track.resource).instance()
-				var _current_track: NinePatchRect = $HBoxContainer/CenterContainer/CurrentTrack
-				_current_track.visible = true
-				_current_track.texture = GameData.current_track.texture
-				return
 		
+		if active_track.empty():
+			return	
+		
+		GameData.current_track = load(active_track.resource).instance()
+		var _current_track: NinePatchRect = $HBoxContainer/CenterContainer/CurrentTrack
+		_current_track.visible = true
+		_current_track.texture = GameData.current_track.texture
+
 		
 func _get_configuration_warning() -> String:
 	var msg:String = "Game scene must be set "
