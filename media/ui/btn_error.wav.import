@@ -11,8 +11,8 @@ dest_files=[ "res://.import/btn_error.wav-7949f27a6e7f8de2995b8cf9144bbd91.sampl
 
 [params]
 
-force/8_bit=false
-force/mono=false
+force/8_bit=true
+force/mono=true
 force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false

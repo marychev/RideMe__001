@@ -11,8 +11,8 @@ dest_files=[ "res://.import/relax.wav-1f56ecce34a995ffe42a270e8bc4415e.sample" ]
 
 [params]
 
-force/8_bit=false
-force/mono=false
+force/8_bit=true
+force/mono=true
 force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false

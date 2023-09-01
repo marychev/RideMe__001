@@ -11,11 +11,11 @@ dest_files=[ "res://.import/level_city.wav-17721564e7102cb6c54b0afdba8d9c8f.samp
 
 [params]
 
-force/8_bit=false
-force/mono=false
-force/max_rate=false
+force/8_bit=true
+force/mono=true
+force/max_rate=true
 force/max_rate_hz=44100
-edit/trim=false
+edit/trim=true
 edit/normalize=false
 edit/loop_mode=0
 edit/loop_begin=0

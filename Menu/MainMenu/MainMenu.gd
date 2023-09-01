@@ -48,7 +48,9 @@ func _on_Play_pressed() -> void:
 
 
 func can_start_play() -> bool:
-	return PlayerData.player_bike and GameData.current_track and GameData.current_level # and has_tracks
+	if PlayerData and GameData:
+		return PlayerData.player_bike and GameData.current_track and GameData.current_level 
+	return false
 
 
 func field_log_start_play() -> void:
