@@ -91,7 +91,7 @@ margin_top = 29.3583
 margin_right = 722.885
 margin_bottom = 128.358
 custom_fonts/font = SubResource( 1 )
-text = "Choose a bike: "
+text = "KEY_BIKE_MENU_TITLE"
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -117,7 +117,7 @@ custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 3 )
 custom_styles/disabled = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
-text = "Sataur"
+text = "KEY_Sataur"
 
 [node name="Drawster" parent="TextureRect/SliderContainer/Buttons" instance=ExtResource( 6 )]
 margin_left = 260.0
@@ -126,7 +126,7 @@ custom_styles/hover = SubResource( 6 )
 custom_styles/pressed = SubResource( 7 )
 custom_styles/disabled = SubResource( 8 )
 custom_styles/normal = SubResource( 9 )
-text = "Drawster"
+text = "KEY_Drawster"
 
 [node name="Detail" type="HBoxContainer" parent="TextureRect/SliderContainer"]
 margin_top = 60.0
@@ -170,7 +170,7 @@ margin_right = 638.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 420, 60 )
 custom_fonts/font = SubResource( 10 )
-text = "max power: ....... 0"
+text = "KEY_OPTION_max_power"
 align = 1
 valign = 1
 
@@ -180,7 +180,7 @@ margin_right = 638.0
 margin_bottom = 120.0
 rect_min_size = Vector2( 420, 60 )
 custom_fonts/font = SubResource( 10 )
-text = "max speed: ....... 0"
+text = "KEY_OPTION_max_speed"
 align = 1
 valign = 1
 
@@ -190,7 +190,7 @@ margin_right = 638.0
 margin_bottom = 180.0
 rect_min_size = Vector2( 420, 60 )
 custom_fonts/font = SubResource( 10 )
-text = "max jump: .......... 0	"
+text = "KEY_OPTION_max_jump"
 align = 1
 valign = 1
 
@@ -200,7 +200,7 @@ margin_right = 638.0
 margin_bottom = 240.0
 rect_min_size = Vector2( 420, 60 )
 custom_fonts/font = SubResource( 10 )
-text = "lives: .................... 0"
+text = "KEY_OPTION_lives"
 align = 1
 valign = 1
 __meta__ = {
@@ -213,7 +213,7 @@ margin_right = 638.0
 margin_bottom = 300.0
 rect_min_size = Vector2( 420, 60 )
 custom_fonts/font = SubResource( 10 )
-text = "price: .................... 0"
+text = "KEY_OPTION_price"
 align = 1
 valign = 1
 __meta__ = {
@@ -241,7 +241,7 @@ anchor_bottom = 0.0
 margin_right = 400.0
 margin_bottom = 76.0
 expand = false
-title = "Main menu"
+title = "KEY_Menu"
 change_scene = "res://Menu/MainMenu/MainMenu.tscn"
 
 [node name="btn_refit" parent="TextureRect/ButtonContainer" instance=ExtResource( 9 )]
@@ -250,7 +250,7 @@ anchor_bottom = 0.0
 margin_left = 440.0
 margin_right = 840.0
 margin_bottom = 76.0
-title = "Upgrade"
+title = "KEY_BTN_Upgrade"
 icon = ExtResource( 5 )
 
 [node name="btn_pay" parent="TextureRect/ButtonContainer" instance=ExtResource( 9 )]
@@ -260,7 +260,7 @@ margin_left = 880.0
 margin_right = 1280.0
 margin_bottom = 76.0
 expand = false
-title = "Buy"
+title = "KEY_Buy"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect"]
 autoplay = "demonstration"

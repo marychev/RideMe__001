@@ -22,13 +22,13 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="."]
-margin_top = 98.0
+margin_top = 144.0
 margin_right = 626.0
 margin_bottom = 187.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_fonts/font = SubResource( 4 )
-text = "Release the boost button more often to regenerate Power"
+text = "KEY_ADVICE_GO"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false

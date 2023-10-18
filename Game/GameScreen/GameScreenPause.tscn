@@ -51,7 +51,7 @@ margin_left = 0.0
 margin_top = 100.432
 margin_right = 0.0
 margin_bottom = 172.432
-text = "Paused: Game menu"
+text = "KEY_Pause"
 align = 1
 autowrap = true
 
@@ -75,13 +75,14 @@ anchor_left = 0.064
 anchor_top = 0.368
 anchor_right = 0.302
 anchor_bottom = 0.664
-margin_left = -33.424
-margin_top = 0.376007
-margin_right = 0.468018
-margin_bottom = 0.0480347
+margin_left = -81.424
+margin_top = 11.376
+margin_right = -38.532
+margin_bottom = 11.048
 custom_fonts/font = SubResource( 3 )
-text = "Travel time:           %s
-Distance traveled: %d m"
+text = "Travel time:  %s
+Distance traveled:....%d m
+"
 valign = 1
 
 [node name="ResourceContainer" type="VBoxContainer" parent="PauseRect"]

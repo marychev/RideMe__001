@@ -1,0 +1,76 @@
+,en,ru
+KEY_START,START,СТАРТ
+KEY_Menu,Main menu,Меню
+KEY_Reset,Reset game,Сбросить
+KEY_Exit,Exit,Выйти
+KEY_Mountains,Mountains,Горы
+KEY_City,City,Город
+KEY_Play,Play,Играть
+KEY_version,version,версия
+KEY_Choose_level,Choose a level:,Выбрать уровень:
+KEY_No_selected_track,No selected track,Трек не выбран
+KEY_OPTION_level,level: ....... ,уровень: ..................... 
+KEY_OPTION_track,track: .......... ,трасса: ....................... 
+KEY_OPTION_price,price: .................... 0,цена: .....……..................….. 
+KEY_Tracks,Tracks,Трассы
+KEY_POPUP_FINISHED_TITLE,You are a winner!,Вы победитель!
+KEY_POPUP_FINISHED_DESCRIPTION,"Hey rider! You have passed the most difficult tracks 
+and you can rightly consider yourself 
+the best BMC racer!
+
+The community is already preparing new tracks for you in the next update. 
+Come back later!","Эй гонщик! Ты прошел самые сложные трассы и можешь 
+по праву считать себя лучшим гонщиком BMX!
+
+Сообщество уже готовит для тебя новые трассы.
+Ты крут! Возвращайся позже!!!"
+KEY_Reset_game_start,Reset game to start again,Начать сначала
+KEY_POPUP_COMPLETED_TITLE,Demo game completed!,Демо игра завершена!
+KEY_POPUP_COMPLETED_DESCRIPTION,"The release of the full version is expected in October 2022.
+
+Any help, feedback, comment, donation will give motivation, 
+give you confidence and help you prepare improvements faster.","The release of the full version is expected in October 2022.
+
+Any help, feedback, comment, donation will give motivation, 
+give you confidence and help you prepare improvements faster."
+KEY_go,go,вперед
+KEY_BIKE_MENU_TITLE,Choose a bike: ,Выберите байк:
+KEY_Sataur,Sataur,Сатаур
+KEY_Drawster,Drawster,Дравстер
+KEY_OPTION_max_power,max power: ....... ,максимальная сила: ............. 
+KEY_OPTION_max_speed,max speed: ....... ,максимальная скорость: .. 
+KEY_OPTION_max_jump,max jump: .......... ,максимальный прыжок: ...... 
+KEY_OPTION_lives,lives: .................... ,здоровье: .................................... 
+KEY_max_power,max power,максимальная сила
+KEY_max_speed,max speed,максимальная скорость
+KEY_max_jump,max jump,максимальный прыжок
+KEY_BTN_Upgrade,Upgrade,Качать
+KEY_Buy,Buy,Купить
+KEY_ADVICE_GO,Release the boost button more often to regenerate Power,"Отпускайте кнопку ускорения чаще, чтобы восстановить силу"
+KEY_ADVICE_POWER,"See to it the ""Power"" to accelerate faster and better jump.",Следите за силой чтобы  ехать быстрее и прыгать выше
+KEY_SPEED_BAR_LBL,Speed:,Скорость:
+KEY_POWER_BAR_LBL,Power:,Сила:
+KEY_Pause,Pause,Пауза
+KEY_Travel_time_TEMPLATE,Travel time:..................%s,Время в пути: …….………….. %s
+KEY_Next,Next,Далее
+KEY_Continue,Continue,Продолжить
+KEY_Reload,Reload,Заново
+KEY_Options,Options,Опции
+KEY_Level_menu,Level menu,Уровни
+KEY_Bike_menu,Bike menu,Байк
+KEY_LEVEL_ISSUE_0,First experience: сollect the %s hourgrass,Первый опыт: собрать песочные часы %s
+KEY_LEVEL_ISSUE_1,Heat. Collect the %s hourgrass to see the finish,"Жара. Соберите %s песочных часов, чтобы добраться до финиша"
+KEY_LEVEL_ISSUE_2,Around people! Don't run into them and collect the %s hourgrass,Вокруг люди! Не сталкивайтесь с ними и соберите %s песочных часов для завершения трассы
+KEY_LEVEL_ISSUE_3,Night road. Collect the %s hourgrass as soon as possible,Ночная дорога. Соберите %s песочных часов как можно скорее
+KEY_LEVEL_ISSUE_4,City dogs. Collect %s hourglasses as quickly as possible,"Городские собаки. Соберите %s песочных часов как можно быстрее, чтобы добраться до финиша"
+KEY_LEVEL_ISSUE_5,Game children's road. Collect %s hourglasses. Time is limited!,Переполненная дорога. Соберите %s песочных часов. Время ограничено!
+KEY_LEVEL_ISSUE_6,Сity jumps. Collect the %s hourgrass to see the finish,"Сумасшедшие прыжки. Соберите %s песочных часов, чтобы увидеть финиш"
+KEY_Progress_TEMPLATE,Progress: %s,Прогресс: %s
+KEY_Lose,Lose,Проигрыш
+KEY_TIME_UP_TEXT,Your time is up,Ваше время вышло
+KEY_BROKE_BIKE_TEXT,You broke the bike,Ты сломал велосипед
+KEY_FELL_TEXT,You fell and you need \r\n to try again,"Вы упали, и вам нужно \r\n повторить попытку"
+KEY_HIT_PERSON_TEXT,You hit a person,Вы сбили человека
+KEY_BITTEN_BY_DOG_TEXT,You've been bitten by a dog and \r\n you need to start over,Вас покусала собака. Аф - аф!
+KEY_Distance_traveled_TEMPLATE,Distance traveled:....%d m,Пройденное расстояние: %d
+KEY_Language,Language,Язык

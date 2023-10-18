@@ -13,8 +13,8 @@ dest_files=[ "res://.import/btn_pressed.wav-146ed45a1021f7f96773acc732d3e3ed.sam
 
 force/8_bit=true
 force/mono=true
-force/max_rate=false
-force/max_rate_hz=44100
+force/max_rate=true
+force/max_rate_hz=11025.0
 edit/trim=false
 edit/normalize=false
 edit/loop_mode=0

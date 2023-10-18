@@ -18,11 +18,9 @@ outline_color = Color( 0.129412, 0.305882, 0.45098, 1 )
 font_data = ExtResource( 1 )
 
 [sub_resource type="StreamTexture" id=5]
-flags = 4
 load_path = "res://.import/bg-normal.png-5c1cec159b8dd6f7c934939c6ffcd9fb.stex"
 
 [sub_resource type="StreamTexture" id=6]
-flags = 4
 load_path = "res://.import/bg-pressed.png-1b8256320c225bb64881484185c1dbfa.stex"
 
 [sub_resource type="GDScript" id=7]
@@ -36,6 +34,7 @@ func _pressed():
 "
 
 [node name="PopupCompleted" type="Popup"]
+visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 5
@@ -62,7 +61,7 @@ margin_right = -3.0
 margin_bottom = -584.0
 size_flags_vertical = 1
 custom_fonts/font = SubResource( 4 )
-text = "Demo game completed!"
+text = "KEY_POPUP_COMPLETED_TITLE"
 align = 1
 valign = 1
 __meta__ = {
@@ -78,12 +77,7 @@ margin_right = -3.0
 margin_bottom = -211.0
 size_flags_vertical = 1
 custom_fonts/font = SubResource( 2 )
-text = "The release of the full version is expected in October 2022.
-
-Any help, feedback, comment, donation will give motivation, 
-give you confidence and help you prepare improvements faster.
-
-"
+text = "KEY_POPUP_COMPLETED_DESCRIPTION"
 align = 1
 valign = 1
 __meta__ = {
@@ -107,7 +101,7 @@ change_scene = "res://Menu/OptionMenu/OptionMenu.tscn"
 is_flicker = true
 
 [node name="Label" parent="NinePatchRect/OptionMenu" index="1"]
-text = "Reset game to start again"
+text = "KEY_Reset_game_start"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect"]
 anchor_left = 1.0

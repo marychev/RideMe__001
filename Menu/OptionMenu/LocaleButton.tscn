@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://components/buttons/TextureIconButton.tscn" type="PackedScene" id=1]
+
+[node name="LocaleButton" instance=ExtResource( 1 )]
+anchor_right = 0.374259
+title = "KEY_Locale"
+
+[node name="Label" parent="." index="1"]
+text = "KEY_Locale"

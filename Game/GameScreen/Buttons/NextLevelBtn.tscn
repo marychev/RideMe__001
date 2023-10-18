@@ -5,7 +5,7 @@
 
 [node name="NextLevelBtn" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-title = "Next"
+title = "KEY_Next"
 change_scene = "res://Menu/LevelMenu/LevelMenu.tscn"
 
 [node name="Label" parent="." index="1"]

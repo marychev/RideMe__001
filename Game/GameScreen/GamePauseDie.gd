@@ -3,13 +3,6 @@ class_name GamePauseDie
 
 var rect_color_lose: = Color(0.56, 0.25, 0.25, 0.8)
 
-const TIME_UP_TEXT: String = 'Your time is up'
-const BROKE_BIKE_TEXT: String = 'You broke the bike'
-const FELL_TEXT: String = 'You fell and you need \r\n to try again'
-const HIT_PERSON_TEXT: String = 'You hit a person'
-const BITTEN_BY_DOG_TEXT = "You've been bitten by a dog and \r\n you need to start over!"
-
-
 enum TitleChoices {
 	TIME_UP, BROKE_BIKE, FELL, HIT_PERSON, BITTEN_BY_DOG
 	WIN_PLAYER 
@@ -32,18 +25,18 @@ func get_info() -> String:
 	#if PlayerData.type_title == TitleChoices.WIN_PLAYER:
 	#	description.set_text(PlayerData.current_level.title)
 	
-	var title = "Lose: "
+	var title = TranslationServer.translate('KEY_Lose') + ": "
 	
 	if PlayerData.type_title == TitleChoices.FELL:
-		title += FELL_TEXT
+		title += TranslationServer.translate('KEY_FELL_TEXT')
 	elif PlayerData.type_title == TitleChoices.BROKE_BIKE:
-		title += BROKE_BIKE_TEXT
+		title += TranslationServer.translate('KEY_BROKE_BIKE_TEXT')
 	elif PlayerData.type_title == TitleChoices.TIME_UP:
-		title += TIME_UP_TEXT
+		title += TranslationServer.translate('KEY_TIME_UP_TEXT')
 	elif PlayerData.type_title == TitleChoices.HIT_PERSON:
-		title += HIT_PERSON_TEXT
+		title += TranslationServer.translate('KEY_HIT_PERSON_TEXT')
 	elif PlayerData.type_title == TitleChoices.BITTEN_BY_DOG:
-		title += BITTEN_BY_DOG_TEXT
+		title += TranslationServer.translate('KEY_BITTEN_BY_DOG_TEXT')
 		
 	return title
 

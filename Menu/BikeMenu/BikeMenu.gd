@@ -113,11 +113,11 @@ func init_btn_current_node() -> void:
 
 
 func set_menu_options(bike) -> void:
-	var power_text = "Max power: ....... %s" % [bike.max_power]
-	var speed_text = "Max speed: ....... %d" % [bike.max_speed]
-	var jump_text = "Max jump: .......... %d" % [bike.max_height_jump]
-	var lives_text = "Lives: .................... %d" % [PlayerData.lives]
-	var price_text = "Price: .................... %d" % [bike.price]
+	var power_text = "%s %d" % [TranslationServer.translate('KEY_OPTION_max_power'), bike.max_power]
+	var speed_text = "%s %d" % [TranslationServer.translate('KEY_OPTION_max_speed'), bike.max_speed]
+	var jump_text = "%s %d" % [TranslationServer.translate('KEY_OPTION_max_jump'), bike.max_height_jump]
+	var lives_text = "%s %d" % [TranslationServer.translate('KEY_OPTION_lives'), PlayerData.lives]
+	var price_text = "%s %d" % [TranslationServer.translate('KEY_OPTION_price'), bike.price]
 	
 	menu_options.get_node('MaxPower').set_text(power_text)
 	menu_options.get_node('MaxSpeed').set_text(speed_text)

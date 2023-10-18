@@ -5,6 +5,7 @@
 
 [node name="MainMenuBtn" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+title = "KEY_Menu"
 change_scene = "res://Menu/MainMenu/MainMenu.tscn"
 
 [node name="Label" parent="." index="1"]

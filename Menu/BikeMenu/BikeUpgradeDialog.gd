@@ -14,7 +14,7 @@ onready var field_log: FieldLog = preload("res://components/field_log/FieldLog.g
 onready var btn_no:TouchScreenButton  = $Nine/ButtonContainer/btn_no
 onready var btn_yes:TouchScreenButton  = $Nine/ButtonContainer/btn_yes
 
-onready var title: = "Upgrade "
+onready var title: = TranslationServer.translate("KEY_BTN_Upgrade")
 onready var grid:GridContainer = $Nine/Grid
 onready var power_added:Label = grid.get_node("PowerAdded")
 onready var power_value:Label = grid.get_node("PowerValue")
@@ -163,7 +163,7 @@ func open(player_bike: Node) -> void:
 	popup()  # show()
 
 	if player_bike:
-		title += player_bike.title
+		title = title + ' ' + TranslationServer.translate('KEY_'+player_bike.title)
 		find_node("Title").set_text(title)
 
 		power_value.set_text(str(player_bike.max_power))

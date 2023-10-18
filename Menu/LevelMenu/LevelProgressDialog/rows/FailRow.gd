@@ -3,7 +3,7 @@ class_name FailRow
 
 
 func _ready() -> void:
-	$PlayBtn/Label.set_text("replay")
+	$PlayBtn/Label.set_text(TranslationServer.translate("KEY_Reload").to_lower())
 	set_time()
 
 

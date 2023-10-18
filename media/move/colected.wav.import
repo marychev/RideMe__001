@@ -13,8 +13,8 @@ dest_files=[ "res://.import/colected.wav-d152dd4195f949574a4b3631f2df0379.sample
 
 force/8_bit=true
 force/mono=true
-force/max_rate=false
-force/max_rate_hz=44100
+force/max_rate=true
+force/max_rate_hz=11025.0
 edit/trim=false
 edit/normalize=false
 edit/loop_mode=0

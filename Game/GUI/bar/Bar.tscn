@@ -7,11 +7,9 @@
 [ext_resource path="res://Game/GUI/assets/lifebar_fill.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
-size = 20
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 20
 font_data = ExtResource( 1 )
 
 [sub_resource type="Animation" id=3]
@@ -58,15 +56,17 @@ patch_margin_right = 78
 [node name="Label" type="Label" parent="Count/Background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 7.0
-margin_right = -74.0
+margin_left = 3.0
+margin_top = -1.0
+margin_right = 43.0
+margin_bottom = -1.0
 custom_fonts/font = SubResource( 1 )
-text = "Speed:"
+text = "KEY_SPEED_BAR_LBL"
 valign = 1
 
 [node name="Value" type="Label" parent="Count/Background"]
-anchor_left = 0.512658
-anchor_right = 1.0
+anchor_left = 0.525316
+anchor_right = 1.01266
 anchor_bottom = 1.0
 margin_right = -7.0
 custom_fonts/font = SubResource( 2 )

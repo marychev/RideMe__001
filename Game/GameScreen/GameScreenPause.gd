@@ -55,7 +55,12 @@ func _on_Timer_timeout() -> void:
 			
 			$TimeToStart.get_font("font").size = 64
 			
-			var text = "Go go go\r\n%s: %d" % [GameData.current_level.title, GameData.current_track.ID]
+			var KEY_go: String = TranslationServer.translate('KEY_go').to_upper()
+			var text = "%s %s %s\r\n%s: %d" % [
+				KEY_go, KEY_go, KEY_go,
+				TranslationServer.translate('KEY_'+GameData.current_level.title), 
+				GameData.current_track.ID
+			]
 			$TimeToStart.set_text(text)
 			
 			_counter -= 1

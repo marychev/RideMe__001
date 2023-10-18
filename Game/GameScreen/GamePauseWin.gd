@@ -35,13 +35,13 @@ func set_screen_items(pause_rect: ColorRect) -> void:
 	rm_item_res_value.set_text(str(PlayerData.rms_count))
 	hourgrass_item_res_value.set_text(str(PlayerData.time_level_count))
 	
-	var travel_time = 'Travel time:..................%s' % [get_traveled_time()]
-	var distance_travel = 'Distance traveled:....%d m' % [PlayerData.score / 100]
+	var travel_time = TranslationServer.translate('KEY_Travel_time_TEMPLATE') % [get_traveled_time()]
+	var distance_travel = TranslationServer.translate('KEY_Distance_traveled_TEMPLATE') % [PlayerData.score / 100]
 	pause_rect.get_node("LabelItems").set_text(travel_time + '\r\n'  + distance_travel)
 	
 
 func set_title_and_rect_color(title: Label, pause_rect: ColorRect):
-	title.set_text("You win!")
+	title.set_text(TranslationServer.translate('KEY_POPUP_FINISHED_TITLE'))
 	pause_rect.get_node("Description").visible = true
 	pause_rect.get_node("Description").set_text(get_info())
 	pause_rect.color = rect_color_win
@@ -49,7 +49,7 @@ func set_title_and_rect_color(title: Label, pause_rect: ColorRect):
 
 func get_info() -> String:
 	if GameData.current_track.title:
-		return GameData.current_track.title + ": " + GameData.current_track.init_issue()
+		return TranslationServer.translate('KEY_'+GameData.current_track.title) + ": " + GameData.current_track.init_issue()
 	return ": " + GameData.current_track.init_issue()
 
 

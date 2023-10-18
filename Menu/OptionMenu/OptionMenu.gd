@@ -5,6 +5,16 @@ var bike_cfg: BikeCfg = load(PathData.BIKE_MODEL).new()
 var player_bike_cfg: PlayerBikeCfg = load(PathData.PLAYER_BIKE_MODEL).new()
 
 
+const LANG: Dictionary = {'en': 0, 'ru': 1}
+onready var current_local_id: int = LANG['ru'] if 'ru' in TranslationServer.get_locale() else LANG['en']
+onready var option_button: OptionButton = get_node("VBoxContainer/LocaleContainer/OptionButton") 
+
+
+func _ready():
+	if option_button.get_selected_id() != current_local_id:
+		option_button.select(current_local_id)
+		
+
 func _on_ResetGame_pressed():
 	reset_game_config()
 	
@@ -85,3 +95,10 @@ func create_player_track(track_train_id: int = 0) -> void:
 
 	GameData.current_track = load(track_resource).instance()
 	GameData.current_track.resource = track_resource
+
+
+func _on_LanguageTextureIconButton_pressed():
+	var selected_id: int = option_button.get_selected_id() 
+	if selected_id != current_local_id:
+		current_local_id = selected_id
+		TranslationServer.set_locale(LANG.keys()[current_local_id])

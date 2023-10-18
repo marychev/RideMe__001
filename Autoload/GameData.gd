@@ -1,5 +1,7 @@
 extends Node
 # GameData
+const VK_PLAY_VERSION: bool = true
+
 var current_level: Dictionary
 var current_track: Level_0
 
@@ -40,3 +42,11 @@ func reload_game(track_id: int):
 		current_track = load(track_resource).instance()
 		current_level = level_cfg.as_dict(level_section)
 
+
+
+func showAdsBtnVKPlay():
+	if not VK_PLAY_VERSION:
+		return
+	if OS.get_name() == 'HTML5' and OS.has_feature('JavaScript'):
+		JavaScript.eval("document.getElementById('showAdsBtn').click();")
+	

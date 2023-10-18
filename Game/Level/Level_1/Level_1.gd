@@ -4,6 +4,7 @@ class_name Level_1
 
 func _init():
 	ID = 1
+
 	var section: = track_cfg.get_section(ID)
 	.init_level_track(section, ID)
 
@@ -14,13 +15,15 @@ func _ready():
 
 
 static func create_for_cfg() -> void:
+	var _track_id: int = 1
 	var resource = "res://Game/Level/Level_1/Level_1.tscn"
 	var texture = "res://Game/Level/assets/slides/track-01.png"
 	var num_win = 6
 	var init_time_level = 25
 	var price = 2
-	var issue: = "Heat. Collect the %s hourgrass to see the finish"
+	# var issue: = "Heat. Collect the %s hourgrass to see the finish"
+	var issue: = TranslationServer.translate('KEY_LEVEL_ISSUE_'+str(_track_id))
 	
-	var res := GameData.track_cfg.create(1, 1, issue, resource, texture, num_win, init_time_level, price)
+	var res := GameData.track_cfg.create(_track_id, 1, issue, resource, texture, num_win, init_time_level, price)
 	if res != OK:
 		printerr("ERROR: Level_1 create_for_cfg")

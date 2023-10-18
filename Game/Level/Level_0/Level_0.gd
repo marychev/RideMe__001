@@ -65,7 +65,7 @@ func init_level_track(section: String, id_track: int) -> void:
 
 func init_issue() -> String:
 	if not '%s' in issue:
-		return "Todo: init issue ..."
+		return TranslationServer.translate('KEY_No_selected_track') # "Todo: init issue ..."
 	return issue % [num_win]
 
 
@@ -80,12 +80,15 @@ func has_passed() -> bool:
 
 
 static func create_for_cfg() -> void:
+	var _track_id: int = 0
 	var _resource: = "res://Game/Level/Level_0/Level_0.tscn"
 	var _texture: = "res://Game/Level/assets/slides/track-00.png"
 	var _num_win = 4
 	var _init_time_level = 30
 	var _price = 0
-	var _issue: = "First experience: сollect the %s hourgrass"
+	var _issue: = TranslationServer.translate('KEY_LEVEL_ISSUE_'+str(_track_id)) 
+	# "First experience: сollect the %s hourgrass"
 	var _state: = LevelTrackStates.ACTIVE
 	
-	GameData.track_cfg.create(0, 1, _issue, _resource, _texture, _num_win, _init_time_level, _price, _state)
+	GameData.track_cfg.create(_track_id, 1, _issue, _resource, _texture, _num_win, _init_time_level, _price, _state)
+

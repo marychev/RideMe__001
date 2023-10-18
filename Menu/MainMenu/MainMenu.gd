@@ -4,6 +4,7 @@ class_name MainMenu
 
 export (String, FILE) var game_tscn: = ""
 
+const VERSION = '0.0.2'
 var path_data: PathData = preload("res://Autoload/PathData.gd").new()
 var track_cfg: TrackCfg = preload("res://config/TrackCfg.gd").new()
 
@@ -15,6 +16,8 @@ onready var btn_play: TextureButton = $HBoxContainer/VBoxContainer/MenuOptions/P
 
 
 func _ready() -> void:
+	$HBoxContainer/VBoxContainer/VersionLabel.text = TranslationServer.translate('KEY_version') + ': ' + VERSION
+	
 	if not can_start_play():
 		btn_play.modulate.a = 0.4
 		btn_play.type = "Error"

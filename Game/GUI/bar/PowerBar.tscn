@@ -7,7 +7,6 @@
 [ext_resource path="res://Game/GUI/assets/energy_bar_bg.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
-size = 19
 font_data = ExtResource( 2 )
 
 [node name="PowerBar" instance=ExtResource( 1 )]
@@ -23,7 +22,7 @@ rect_min_size = Vector2( 158, 40 )
 margin_bottom = 40.0
 
 [node name="Label" parent="Count/Background" index="0"]
-text = "Power:"
+text = "KEY_POWER_BAR_LBL"
 
 [node name="Value" parent="Count/Background" index="1"]
 custom_fonts/font = SubResource( 1 )

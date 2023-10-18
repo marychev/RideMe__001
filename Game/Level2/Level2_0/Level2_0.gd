@@ -33,7 +33,7 @@ static func create_for_cfg() -> void:
 	var num_win = 9
 	var init_time_level = 25
 	var price = 20
-	var issue = "City dogs. Collect %s hourglasses as quickly as possible"
-	
+	#var issue = "City dogs. Collect %s hourglasses as quickly as possible"
+	var issue: = TranslationServer.translate('KEY_LEVEL_ISSUE_'+str(track_id))
 	GameData.track_cfg.create(track_id, level_id, issue, resource, texture, num_win, init_time_level, price)
 	# assert(res != OK, "ERROR: Level2_0 create_for_cfg")

@@ -2,7 +2,7 @@ extends PopupDialog
 class_name BaseProgressDialog
 
 onready var field_log: FieldLog = preload("res://components/field_log/FieldLog.gd").new()
-onready var title: String = "Progress: %s"
+onready var title: String = TranslationServer.translate('KEY_Progress_TEMPLATE') # "Progress: %s"
 onready var btn_no:TouchScreenButton  = $Nine/ButtonContainer/btn_no
 onready var btn_yes:TouchScreenButton  = $Nine/ButtonContainer/btn_yes
 
@@ -40,4 +40,4 @@ func open(current_node: Node2D) -> void:
 
 func set_title(current_node: Node2D) -> void:
 	if current_node:
-		$Nine/Title.set_text(title % [current_node.title])
+		$Nine/Title.set_text(title % [TranslationServer.translate('KEY_'+ current_node.title)])

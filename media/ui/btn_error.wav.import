@@ -13,8 +13,8 @@ dest_files=[ "res://.import/btn_error.wav-7949f27a6e7f8de2995b8cf9144bbd91.sampl
 
 force/8_bit=true
 force/mono=true
-force/max_rate=false
-force/max_rate_hz=44100
+force/max_rate=true
+force/max_rate_hz=11025.0
 edit/trim=false
 edit/normalize=false
 edit/loop_mode=0

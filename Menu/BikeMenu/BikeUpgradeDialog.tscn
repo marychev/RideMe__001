@@ -83,9 +83,6 @@ custom_fonts/font = SubResource( 1 )
 text = "<Upgrade bike>"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Grid" type="GridContainer" parent="Nine"]
 anchor_left = 0.5
@@ -104,18 +101,18 @@ __meta__ = {
 
 [node name="PowerLabel" type="Label" parent="Nine/Grid"]
 margin_top = 32.0
-margin_right = 187.0
+margin_right = 251.0
 margin_bottom = 67.0
 custom_fonts/font = SubResource( 2 )
-text = "Max power: "
+text = "KEY_max_power"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PowerValue" type="Label" parent="Nine/Grid"]
-margin_left = 191.0
+margin_left = 255.0
 margin_top = 32.0
-margin_right = 291.0
+margin_right = 355.0
 margin_bottom = 67.0
 rect_min_size = Vector2( 100, 35 )
 custom_fonts/font = SubResource( 3 )
@@ -123,9 +120,9 @@ text = "0"
 align = 1
 
 [node name="PowerAdded" type="Label" parent="Nine/Grid"]
-margin_left = 295.0
+margin_left = 359.0
 margin_top = 27.0
-margin_right = 395.0
+margin_right = 459.0
 margin_bottom = 73.0
 rect_min_size = Vector2( 100, 35 )
 custom_fonts/font = SubResource( 4 )
@@ -133,8 +130,8 @@ text = "0"
 align = 1
 
 [node name="PowerButtons" type="VBoxContainer" parent="Nine/Grid"]
-margin_left = 399.0
-margin_right = 739.0
+margin_left = 463.0
+margin_right = 803.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 340, 100 )
 alignment = 1
@@ -157,36 +154,36 @@ normal = ExtResource( 4 )
 
 [node name="SpeedLabel" type="Label" parent="Nine/Grid"]
 margin_top = 136.0
-margin_right = 187.0
+margin_right = 251.0
 margin_bottom = 171.0
 custom_fonts/font = SubResource( 5 )
-text = "Max speed: "
+text = "KEY_max_speed"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="SpeedValue" type="Label" parent="Nine/Grid"]
-margin_left = 191.0
+margin_left = 255.0
 margin_top = 136.0
-margin_right = 291.0
+margin_right = 355.0
 margin_bottom = 171.0
 custom_fonts/font = SubResource( 6 )
 text = "0"
 align = 1
 
 [node name="SpeedAdded" type="Label" parent="Nine/Grid"]
-margin_left = 295.0
+margin_left = 359.0
 margin_top = 131.0
-margin_right = 395.0
+margin_right = 459.0
 margin_bottom = 177.0
 custom_fonts/font = SubResource( 7 )
 text = "0"
 align = 1
 
 [node name="SpeedButtons" type="VBoxContainer" parent="Nine/Grid"]
-margin_left = 399.0
+margin_left = 463.0
 margin_top = 104.0
-margin_right = 739.0
+margin_right = 803.0
 margin_bottom = 204.0
 rect_min_size = Vector2( 180, 100 )
 alignment = 1
@@ -206,36 +203,36 @@ normal = ExtResource( 4 )
 
 [node name="JumpLabel" type="Label" parent="Nine/Grid"]
 margin_top = 240.0
-margin_right = 187.0
+margin_right = 251.0
 margin_bottom = 275.0
 custom_fonts/font = SubResource( 8 )
-text = "Max jump: "
+text = "KEY_max_jump"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="JumpValue" type="Label" parent="Nine/Grid"]
-margin_left = 191.0
+margin_left = 255.0
 margin_top = 240.0
-margin_right = 291.0
+margin_right = 355.0
 margin_bottom = 275.0
 custom_fonts/font = SubResource( 9 )
 text = "0"
 align = 1
 
 [node name="JumpAdded" type="Label" parent="Nine/Grid"]
-margin_left = 295.0
+margin_left = 359.0
 margin_top = 235.0
-margin_right = 395.0
+margin_right = 459.0
 margin_bottom = 281.0
 custom_fonts/font = SubResource( 10 )
 text = "0"
 align = 1
 
 [node name="JumpButtons" type="VBoxContainer" parent="Nine/Grid"]
-margin_left = 399.0
+margin_left = 463.0
 margin_top = 208.0
-margin_right = 739.0
+margin_right = 803.0
 margin_bottom = 308.0
 rect_min_size = Vector2( 180, 100 )
 alignment = 1

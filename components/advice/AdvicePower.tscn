@@ -52,11 +52,11 @@ script = SubResource( 5 )
 [node name="Label" type="Label" parent="."]
 margin_top = 44.0
 margin_right = 703.0
-margin_bottom = 133.0
+margin_bottom = 87.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_fonts/font = SubResource( 4 )
-text = "See to it the \"Power\" to accelerate faster and better jump."
+text = "KEY_ADVICE_POWER"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false

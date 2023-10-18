@@ -6,7 +6,6 @@
 [ext_resource path="res://components/buttons/TextureIconButton.gd" type="Script" id=5]
 
 [sub_resource type="StreamTexture" id=3]
-flags = 4
 load_path = "res://.import/bg-normal.png-5c1cec159b8dd6f7c934939c6ffcd9fb.stex"
 
 [sub_resource type="DynamicFont" id=1]

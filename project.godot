@@ -462,8 +462,8 @@ config/name="Ride me"
 run/main_scene="res://SplashScreen/SplashScreen.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="RideMe"
-boot_splash/image="res://logo.png"
-config/icon="res://icon.png"
+boot_splash/image="res://logo_en.png"
+config/icon="res://icon_en.png"
 
 [autoload]
 
@@ -509,6 +509,15 @@ pointing/emulate_touch_from_mouse=true
 2d_physics/layer_5="moving_panels"
 2d_physics/layer_6="girl_back"
 2d_physics/layer_7="kick_scooter"
+
+[locale]
+
+translations=PoolStringArray( "res://text.en.translation", "res://text.ru.translation" )
+translation_remaps={
+"res://SplashScreen/assets/splash_screen/title_logo-1176x320_en.png": PoolStringArray( "res://SplashScreen/assets/splash_screen/title_logo-1176x320_ru.png:ru" ),
+"res://icon_en.png": PoolStringArray( "res://icon_ru.png:ru" ),
+"res://logo_en.png": PoolStringArray( "res://logo_ru.png:ru" )
+}
 
 [logging]
 

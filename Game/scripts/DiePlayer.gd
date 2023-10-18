@@ -56,6 +56,8 @@ func die(force: bool = false) -> void:
 
 		yield(player.get_tree().create_timer(1.6), "timeout")
 		
+		GameData.showAdsBtnVKPlay()
+		
 		if is_instance_valid(pause_screen):
 			pause_screen.set_paused(true)
 

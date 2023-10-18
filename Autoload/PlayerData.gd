@@ -43,6 +43,8 @@ func _ready():
 	var player_bike_data: = player_bike_cfg.first()
 	set_player_data(player_bike_data)
 	
+	print(player_bike_data)
+	
 	if not player_bike_data.empty() and player_bike_data["bike_title"] != "Empty":
 		player_bike = load("res://Game/Bike/" + player_bike_data["bike_title"] + "Bike.gd").new()
 		player_bike.set_player_bike(player_bike_data)

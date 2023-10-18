@@ -13,8 +13,8 @@ dest_files=[ "res://.import/stop.wav-ac2f59341c6c541414232f82e6e8a66d.sample" ]
 
 force/8_bit=true
 force/mono=true
-force/max_rate=false
-force/max_rate_hz=44100
+force/max_rate=true
+force/max_rate_hz=11025.0
 edit/trim=false
 edit/normalize=false
 edit/loop_mode=0
